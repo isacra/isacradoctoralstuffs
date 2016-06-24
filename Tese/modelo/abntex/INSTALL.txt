@@ -1,0 +1,31 @@
+Este diretório contém o abnTeX 0.8.2 r23, obtido de
+http://sourceforge.net/projects/abntex/ em 25/7/2014 22:30
+
+Instalação:
+
+---------------------------------------------------------------------------------
+No Windows, testado em:
+	Windows 7 + MiKTeX 2.9.5105
+---------------------------------------------------------------------------------
+1) Descompacte o arquivo "abntex-X.Y-rZZ.zip";
+2) Mova o diretório "texmf" para um local conhecido (por exemplo "X:\texmf");
+3) Abra a partir do menu iniciar a ferramenta "Settings (Admin)", localizada
+   no menu "MiKTeX 2.9/Maintenance (Admin)";
+4) Acesse a guia "Roots";
+5) Clique no botão "Add...";
+6) Selecione o diretório "texmf" movido anteriormente (por exemplo "X:\texmf");
+7) Clique em "Apply" e então em "OK".
+
+---------------------------------------------------------------------------------
+No Linux, testado em:
+	Ubuntu 14.04 + TeX Live 2013/Debian, TeX 3.1415926
+---------------------------------------------------------------------------------
+1) Descompacte o arquivo "abntex-X.Y-rZZ.zip";
+2) Mova o conteúdo do diretório "texmf" para o diretório "/usr/share/texmf":
+   sudo cp -R texmf/* /usr/share/texmf
+3) Atualize as referências ao pacote instalado:
+   sudo texhash
+4) Caso o pacote "subfigure" não seja encontrado, execute:
+   sudo apt-get install texlive-latex-extra
+5) Caso o idioma "brazil" do pacote "babel" não seja encontrado, execute:
+   sudo apt-get install texlive-lang-portuguese
