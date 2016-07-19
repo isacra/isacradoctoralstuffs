@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.27)  16 JUN 2016 11:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.27)  7 JUL 2016 16:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -645,16 +645,16 @@ Cap\'{\i }tulo 1.
 File: figuras/estimacaokriging.png Graphic file (type png)
 
 <use figuras/estimacaokriging.png>
-Package pdftex.def Info: figuras/estimacaokriging.png used on input line 121.
+Package pdftex.def Info: figuras/estimacaokriging.png used on input line 122.
 (pdftex.def)             Requested size: 184.37573pt x 139.59949pt.
 
-Overfull \hbox (29.91898pt too wide) in paragraph at lines 110--124
+Overfull \hbox (29.91898pt too wide) in paragraph at lines 111--125
 []\OT1/ptm/m/n/10 A ge-o-es-tat[]^^Pstica prov[]e um con-junto de fer-ra-men-ta
 s para an[]alise e interpreta[][]ao
  []
 
 
-Overfull \hbox (3.40694pt too wide) in paragraph at lines 110--124
+Overfull \hbox (3.40694pt too wide) in paragraph at lines 111--125
 \OT1/ptm/m/n/10 es-ti-ma-tiva (fi-gura 1[]), ape-nas uma realiza[][]ao, con-si-
 de-rada a ideal, da ocorr[]encia
  []
@@ -664,7 +664,7 @@ File: figuras/simulacao-geoestatistica.png Graphic file (type png)
 
 <use figuras/simulacao-geoestatistica.png>
 Package pdftex.def Info: figuras/simulacao-geoestatistica.png used on input lin
-e 128.
+e 129.
 (pdftex.def)             Requested size: 184.37573pt x 111.35114pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -676,14 +676,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figuras/unknown_points.png Graphic file (type png)
 
 <use figuras/unknown_points.png>
-Package pdftex.def Info: figuras/unknown_points.png used on input line 149.
+Package pdftex.def Info: figuras/unknown_points.png used on input line 150.
 (pdftex.def)             Requested size: 184.37573pt x 138.728pt.
 
 <figuras/estimation_points.png, id=44, 465.23813pt x 347.79938pt>
 File: figuras/estimation_points.png Graphic file (type png)
 
 <use figuras/estimation_points.png>
-Package pdftex.def Info: figuras/estimation_points.png used on input line 166.
+Package pdftex.def Info: figuras/estimation_points.png used on input line 167.
 (pdftex.def)             Requested size: 184.37573pt x 137.833pt.
  [10 <./figuras/estimacaokriging.png> <./figuras/simulacao-geoestatistica.png>]
 
@@ -691,25 +691,25 @@ Package pdftex.def Info: figuras/estimation_points.png used on input line 166.
 File: figuras/imagem_caers.png Graphic file (type png)
 
 <use figuras/imagem_caers.png>
-Package pdftex.def Info: figuras/imagem_caers.png used on input line 177.
+Package pdftex.def Info: figuras/imagem_caers.png used on input line 178.
 (pdftex.def)             Requested size: 184.37573pt x 81.20203pt.
  [11 <./figuras/unknown_points.png> <./figuras/estimation_points.png>]
 <figuras/variograma.png, id=55, 389.95688pt x 407.27156pt>
 File: figuras/variograma.png Graphic file (type png)
 
 <use figuras/variograma.png>
-Package pdftex.def Info: figuras/variograma.png used on input line 191.
+Package pdftex.def Info: figuras/variograma.png used on input line 193.
 (pdftex.def)             Requested size: 184.37573pt x 192.56111pt.
 
 <figuras/example-multipoint.png, id=56, 507.39563pt x 371.88937pt>
 File: figuras/example-multipoint.png Graphic file (type png)
 
 <use figuras/example-multipoint.png>
-Package pdftex.def Info: figuras/example-multipoint.png used on input line 209.
+Package pdftex.def Info: figuras/example-multipoint.png used on input line 211.
 
 (pdftex.def)             Requested size: 184.37573pt x 135.13414pt.
 
-Overfull \hbox (9.82912pt too wide) in paragraph at lines 195--212
+Overfull \hbox (9.82912pt too wide) in paragraph at lines 197--214
 [][]\OT1/ptm/m/n/10 E co-mum, em ge-o-es-tat[]^^Pstica, tra-ba-lhar com mo-delo
  de fun[][]oes aleat[]orias,
  []
@@ -717,19 +717,15 @@ Overfull \hbox (9.82912pt too wide) in paragraph at lines 195--212
 [12 <./figuras/imagem_caers.png>] [13 <./figuras/variograma.png>] [14 <./figura
 s/example-multipoint.png>]
 Cap\'{\i }tulo 2.
-
-LaTeX Warning: Citation `Guaridano1993' on page 15 undefined on input line 221.
-
-
 <figuras/2D-imagemsatelite-sundarbans.jpg, id=69, 227.85126pt x 140.525pt>
 File: figuras/2D-imagemsatelite-sundarbans.jpg Graphic file (type jpg)
 
 <use figuras/2D-imagemsatelite-sundarbans.jpg>
 Package pdftex.def Info: figuras/2D-imagemsatelite-sundarbans.jpg used on input
- line 233.
+ line 235.
 (pdftex.def)             Requested size: 184.37573pt x 113.71526pt.
 
-Overfull \hbox (3.0197pt too wide) in paragraph at lines 220--236
+Overfull \hbox (3.0197pt too wide) in paragraph at lines 222--238
 []\OT1/ptm/m/n/10 Estat[]^^Pstica mul-ti-ponto en-globa um con-junto de al-go-r
 it-mos de simula[][]ao
  []
@@ -738,13 +734,13 @@ it-mos de simula[][]ao
 File: figuras/3dhydrofacies.jpg Graphic file (type jpg)
 
 <use figuras/3dhydrofacies.jpg>
-Package pdftex.def Info: figuras/3dhydrofacies.jpg used on input line 240.
+Package pdftex.def Info: figuras/3dhydrofacies.jpg used on input line 242.
 (pdftex.def)             Requested size: 184.37573pt x 102.52219pt.
  [15
 
  <./figuras/2D-imagemsatelite-sundarbans.jpg>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.94446> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 281.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 283.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -753,7 +749,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figuras/templates.png Graphic file (type png)
 
 <use figuras/templates.png>
-Package pdftex.def Info: figuras/templates.png used on input line 296.
+Package pdftex.def Info: figuras/templates.png used on input line 298.
 (pdftex.def)             Requested size: 184.37573pt x 56.2777pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -763,10 +759,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: figuras/arq_rede_caers.png Graphic file (type png)
 
 <use figuras/arq_rede_caers.png>
-Package pdftex.def Info: figuras/arq_rede_caers.png used on input line 318.
+Package pdftex.def Info: figuras/arq_rede_caers.png used on input line 320.
 (pdftex.def)             Requested size: 184.37573pt x 88.4211pt.
  [18 <./figuras/templates.png> <./figuras/arq_rede_caers.png>]
-Overfull \hbox (11.04697pt too wide) in paragraph at lines 345--353
+Overfull \hbox (11.04697pt too wide) in paragraph at lines 347--355
 \OT1/ptm/m/n/10 mento []e uti-li-zada para de-ter-mi-nar as frequ[]encias de oc
 orr[]encia das configura[][]oes
  []
@@ -783,39 +779,59 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [21]
 [22]
 Cap\'{\i }tulo 3.
-(./exemplo.bbl [23
+
+Overfull \hbox (5.08727pt too wide) in paragraph at lines 416--422
+\OT1/ptm/m/it/10 ar-ning\OT1/ptm/m/n/10 , est[]ao no cen-tro das pes-qui-sas re
+-la-ci-o-na-das a apren-di-za-gem de m[]aquina.
+ []
+
+
+Overfull \hbox (26.51636pt too wide) in paragraph at lines 416--422
+\OT1/ptm/m/n/10 As RNC s[]ao muito po-pu-la-res nas []areas de classifica[][]ao
+ de ima-gens (KRIZHEVSKY;
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 431.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 431.
+ [23
 
 ] [24
 
-] [25] [26])
+]
+Cap\'{\i }tulo 4.
+(./exemplo.bbl [25] [26
+
+] [27] [28])
 +-------------------------------------------------------------------+
 | Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
 |                  http://abntex.codigolivre.org.br                 |
 +-------------------------------------------------------------------+
-[27] (./exemplo.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[29] (./exemplo.aux) ) 
 Here is how much of TeX's memory you used:
- 7507 strings out of 495004
- 110628 string characters out of 6180661
- 216332 words of memory out of 5000000
- 10504 multiletter control sequences out of 15000+600000
+ 7549 strings out of 495004
+ 111322 string characters out of 6180661
+ 216654 words of memory out of 5000000
+ 10543 multiletter control sequences out of 15000+600000
  29201 words of font info for 60 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  41i,19n,49p,282b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on exemplo.pdf (27 pages, 1236665 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.en
+c}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pf
+b>
+Output written on exemplo.pdf (29 pages, 1241613 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 148 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,8 +4,8 @@ close all; clear mex;
 cd(fileparts(mfilename('fullpath')));
 
 %funtype = 'gpu';
-funtype = 'cpu';
-%funtype = 'matlab';
+%funtype = 'cpu';
+funtype = 'matlab';
 
 disp(funtype);
 

@@ -30,6 +30,12 @@ ISSN 1573-8868.}
 ISBN 9780195138061. Dispon{\'\i}vel em:
   $<$https://books.google.com.br/books?id=1WvxAAAAMAAJ$>$.}
 
+\bibitem[Dong et al. 2016]{Dong2016}
+\abntrefinfo{Dong et al.}{DONG et al.}{2016}
+{DONG, C. et al. Image super-resolution using deep convolutional networks.
+\textbf{IEEE Transactions on Pattern Analysis and Machine Intelligence}, v.~38,
+  n.~2, p. 295--307, Feb 2016.}
+
 \bibitem[Efros e Freeman 2001]{Efros2001}
 \abntrefinfo{Efros e Freeman}{EFROS; FREEMAN}{2001}
 {EFROS, A.~A.; FREEMAN, W.~T. Image quilting for texture synthesis and
@@ -51,11 +57,25 @@ ISBN 1-58113-374-X. Dispon{\'\i}vel em:
 {GUARDIANO, F.~B.; SRIVASTAVA, R.~M. \textbf{Geostatistics Tróia 92: Volume 1}.
   Dordrecht: Springer Netherlands, 1993. 133--144~p.}
 
+\bibitem[He et al. 2014]{He2014}
+\abntrefinfo{He et al.}{HE et al.}{2014}
+{HE, K. et al. Spatial pyramid pooling in deep convolutional networks for
+  visual recognition.
+In:  \underline{\ \ \ \ \ \ \ \ }. \textbf{Computer Vision -- ECCV 2014: 13th
+  European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings,
+  Part III}. Cham: Springer International Publishing, 2014. p. 346--361.}
+
 \bibitem[Journel 1990]{journel1990}
 \abntrefinfo{Journel}{JOURNEL}{1990}
 {JOURNEL, A.~G. Fundamentals of geostatistics in five lessons.
 In:  \underline{\ \ \ \ \ \ \ \ }. \textbf{Fundamentals of Geostatistics in
   Five Lessons}. [S.l.]: American Geophysical Union, 1990. p.~40.}
+
+\bibitem[Krizhevsky, Sutskever e Hinton]{Krizhevsky2012}
+\abntrefinfo{Krizhevsky, Sutskever e Hinton}{KRIZHEVSKY; SUTSKEVER; HINTON}{}
+{KRIZHEVSKY, A.; SUTSKEVER, I.; HINTON, G.~E. Imagenet classification with deep
+  convolutional neural networks. In:  \textbf{Advances in Neural Information
+  Processing Systems}. [S.l.: s.n.]. p.~2012.}
 
 \bibitem[Mariethoz e Caers 2014]{Mariethoz2014_A}
 \abntrefinfo{Mariethoz e Caers}{MARIETHOZ; CAERS}{2014a}
@@ -152,6 +172,15 @@ In:  \underline{\ \ \ \ \ \ \ \ }. Dordrecht: Springer Netherlands, 2005. cap.
   Reproduction of Training Patterns, p. 979--988.
 ISBN 978-1-4020-3610-1.}
 
+\bibitem[Sun et al. 2014]{NyiSun2014}
+\abntrefinfo{Sun et al.}{SUN et al.}{2014}
+{SUN, Y. et al. Deep learning face representation by joint
+  identification-verification. In:  GHAHRAMANI, Z. et al. (Ed.).
+  \textbf{Advances in Neural Information Processing Systems 27}. Curran
+  Associates, Inc., 2014. p. 1988--1996.
+Dispon{\'\i}vel em:
+  $<$http://papers.nips.cc/paper/5416-deep-learning-face-representation-by-joint-identification-verification.pdf$>$.}
+
 \bibitem[Tahmasebi, Hezarkhani e Sahimi 2012]{Tahmasebi2012}
 \abntrefinfo{Tahmasebi, Hezarkhani e Sahimi}{TAHMASEBI; HEZARKHANI;
   SAHIMI}{2012}
@@ -166,6 +195,13 @@ ISSN 1573-1499.}
   distance.
 \textbf{Mathematical Geosciences}, v.~40, n.~7, p. 773--788, 2008.
 ISSN 1874-8953.}
+
+\bibitem[Zhang et al. 2014]{Zhangg_2014}
+\abntrefinfo{Zhang et al.}{ZHANG et al.}{2014}
+{ZHANG, N. et al. Part-based r-cnns for fine-grained category detection.
+In:  \underline{\ \ \ \ \ \ \ \ }. \textbf{Computer Vision -- ECCV 2014: 13th
+  European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings,
+  Part I}. Cham: Springer International Publishing, 2014. p. 834--849.}
 
 \bibitem[Zhang, Switzer e Journel 2006]{Zhang2006}
 \abntrefinfo{Zhang, Switzer e Journel}{ZHANG; SWITZER; JOURNEL}{2006}

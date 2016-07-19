@@ -15,56 +15,56 @@ Database file #2: bibliografia.bib
 Warning--I'm ignoring journel1990's extra "author" field
 --line 337 of file bibliografia.bib
 Warning--I didn't find a database entry for "abnt-url-package=html"
-Warning--I didn't find a database entry for "Guaridano1993"
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Warning--campo year vazio ou faltando em Krizhevsky2012
 +---------------------------------------------------------+
 | Estilo bibliográfico abnt-alf.bst versão 1.45.2.1           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex.codigolivre.org.br                        |
 +---------------------------------------------------------+
-You've used 27 entries,
+You've used 32 entries,
             6480 wiz_defined-function locations,
-            1346 strings with 14007 characters,
-and the built_in function-call counts, 22873 in all, are:
-= -- 1939
-> -- 792
-< -- 54
-+ -- 348
-- -- 238
-* -- 1679
-:= -- 2984
-add.period$ -- 108
-call.type$ -- 29
-change.case$ -- 274
-chr.to.int$ -- 58
-cite$ -- 23
-duplicate$ -- 1054
-empty$ -- 1711
-format.name$ -- 1133
-if$ -- 5525
+            1381 strings with 15443 characters,
+and the built_in function-call counts, 28198 in all, are:
+= -- 2367
+> -- 1016
+< -- 62
++ -- 434
+- -- 303
+* -- 2092
+:= -- 3669
+add.period$ -- 135
+call.type$ -- 34
+change.case$ -- 347
+chr.to.int$ -- 66
+cite$ -- 29
+duplicate$ -- 1297
+empty$ -- 2094
+format.name$ -- 1462
+if$ -- 6835
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 459
-newline$ -- 141
-num.names$ -- 115
-pop$ -- 551
+missing$ -- 548
+newline$ -- 165
+num.names$ -- 141
+pop$ -- 673
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 133
 quote$ -- 0
-skip$ -- 1307
+skip$ -- 1580
 stack$ -- 1
-substring$ -- 1021
-swap$ -- 572
-text.length$ -- 42
+substring$ -- 1224
+swap$ -- 705
+text.length$ -- 49
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 7
-warning$ -- 0
-while$ -- 188
+type$ -- 11
+warning$ -- 1
+while$ -- 229
 width$ -- 0
-write$ -- 406
+write$ -- 490
 (There were 3 warnings)
