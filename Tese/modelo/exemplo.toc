@@ -1,7 +1,11 @@
 \select@language {brazil}
 \contentsline {chapter}{\numberline {1}\MakeUppercase {Introdu\c c\~ao}}{9}
+\contentsline {section}{\numberline {1.1}Estimativa e Simula\c c\~ao Geoestat\IeC {\'\i }stica}{9}
+\contentsline {section}{\numberline {1.2}Simula\c c\~ao Baseada em Variograma}{12}
 \contentsline {chapter}{\numberline {2}\MakeUppercase {Simula\c c\~ao Multiponto}}{15}
 \contentsline {section}{\numberline {2.1}Simula\c c\~ao Multiponto Baseada em Pontos}{17}
 \contentsline {section}{\numberline {2.2}Simula\c c\~ao Multiponto Baseada em Blocos}{21}
-\contentsline {chapter}{\numberline {3}\MakeUppercase {Abordagem de Solu\c c\~ao}}{23}
-\contentsline {chapter}{\hspace {\espacosumario }REFER\^ENCIAS}{25}
+\contentsline {chapter}{\numberline {3}\MakeUppercase {Redes Neurais Convolucionais}}{23}
+\contentsline {section}{\numberline {3.1}Deep Learning na Restaura\c c\~ao de Imagens}{23}
+\contentsline {chapter}{\numberline {4}\MakeUppercase {Abordagem de Solu\c c\~ao}}{25}
+\contentsline {chapter}{\hspace {\espacosumario }REFER\^ENCIAS}{27}

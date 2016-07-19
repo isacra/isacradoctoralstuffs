@@ -107,6 +107,7 @@ de uma população serem normalmente distribuídas e independentes. A maioria dos d
 não satisfazem estas hipóteses, pois possuem correlação espacial. Ou seja, valores de dados de regiões que estão próximas tendem a ser mais
 similares que valores de regiões que estão mais afastadas.
 
+\section{Estimativa e Simulação Geoestatística}
 A geoestatística provê um conjunto de ferramentas para análise e interpretação de dados no processo de previsão de reservatórios de petróleo,
 aquíferos subterrâneos, meios porosos, materiais compósitos, mineração e hidrogeologia. 
 As previsões obtidas podem ser de duas formas: estimativa e simulação. Na estimativa (figura \ref{fig:estimacao}),
@@ -177,6 +178,7 @@ que emerge desta observação é: como adicionar realismo físico à modelagem estocá
    \includegraphics[width=0.6\textwidth]{figuras/imagem_caers.png} \\
 \end{figure}
 
+\section{Simulação Baseada em Variograma}
 O variograma é um dispositivo que armazena padrões,
 modelado a partir de dados experimentais e reproduzido em cada realização. O sucesso no processo
 de simulação geoestatística recai sobre o variograma, que, apesar de ser um conceito matemático, tem pouca
@@ -218,7 +220,7 @@ de simulação o conhecimento apresentado por um especialista .
 
 \chapter{Simulação Multiponto}
 Estatística multiponto engloba um conjunto de algoritmos de simulação sequencial que utilizam imagem de
-treinamento \abreviatura{IT}{Imagem de Treinamento} como dado de entrada para definir a estrutura espacial de um processo \cite{Guaridano1993,Strebelle2002}. 
+treinamento \abreviatura{IT}{Imagem de Treinamento} como dado de entrada para definir a estrutura espacial de um processo \cite{Guardiano1993,Strebelle2002}. 
 As imagens de treinamento são descrições explícitas, 2D ou 3D, da continuidade espacial estudada ou, como
 definido por Jef Caers \cite{Caers_2004}, são bancos de dados de padrões a partir dos quais, estatísticas multiponto, incluindo o variograma, podem
 ser extraídas. Elas contém informações de múltiplos pontos, são mais intuitivas para não-especialistas, não necessitam ser restritas localmente a
@@ -375,7 +377,7 @@ para remoção de ruído. Em 2013, este método sofreu modificações para simular em 
 Esta modificação acelerou a execução do DS em duas ordens de magnitude e permitiu realizar aplicações com
 simulações ainda maiores \cite{Rezaee2013293}.
 
-\section{Simulação Multiponto Baseada em Blocos}
+\section{Simulação Multiponto Baseada em Blocos}\label{SMBB}
 Uma observação comum na comparação entre a IT e as realizações geradas é a existência de padrões exatamente reproduzidos da IT para a
 grade de simulação. Este fenômeno é uma consequência de coerência de textura e o tamanho limitado da imagem de treinamento. Algoritmos de simulação
 baseados em fragmentos ou blocos (\emph{patch}) tendem a agrupar valores de simulação que estejam próximos uns dos outros na imagem de treinamento.
@@ -410,6 +412,17 @@ padrões. O método \emph{image quilting}\abreviatura{IQ}{Image Quilting} \cite{Ef
 dinâmica para realizar, na área de sobreposição, a correção de padrões que não combinam.
 
 \chapter{Redes Neurais Convolucionais}
+
+As redes neurais convolucionais \abreviatura{RNC}{Redes Neurais Convolucionais}, também conhecidas como \emph{Deep Learning}, estão no centro
+das pesquisas relacionadas a aprendizagem de máquina. As RNC são muito populares nas áreas de classificação de imagens \cite{Krizhevsky2012,He2014},
+visão computacional \cite{Zhangg_2014}, reconhecimento de faces \cite{NyiSun2014}, à segmentação de imagem e reconhecimento de ações em vídeos;
+Os fatores que conferem às RNC a importância atual são: (i) a eficiência no treinamento em GPUs modernas, (ii) a proposta das Unidades Lineares Retificadas
+(em tradução livre do termo em inglês Rectified Linear Unit - ReLU) \abreviatura{ReLU}{Rectified Linear Unit} as quais tornam a convergência mais rápida, e (iii) o acesso amplo
+aos dados para treinamento de modelos extensos (ImageNet)\cite{Krizhevsky2012}.
+
+\section{Super resolução de imagem}
+É possível sumarizar o problema da super-resolução em imagens da seguinte forma: seja a imagem $Y$, é possível obter uma imagem $F(Y)$ que seja
+tão similar quanto possível à imagem da realidade geológica de alta resolução $X$?
 
 \chapter{Abordagem de Solução}
 A simulação multiponto gera realizações que reproduzam padrões estatísticos inferidos a partir de alguma fonte, usualmente uma imagem de treinamento. 
