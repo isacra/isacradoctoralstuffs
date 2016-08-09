@@ -28,7 +28,6 @@ function net = cnnff(net, x)
     end
 
     %  concatenate all end layer feature maps into vector
-    %contatena as imagens da ultima camada
     net.fv = [];
     for j = 1 : numel(net.layers{n}.a)
         sa = size(net.layers{n}.a{j});

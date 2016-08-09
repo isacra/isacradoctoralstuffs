@@ -1,6 +1,6 @@
 function net = cnntrain(net, x, y, opts)
     m = size(x, 3);
-    numbatches = m / opts.batchsize;
+    numbatches = floor( m / opts.batchsize);
     if rem(numbatches, 1) ~= 0
         error('numbatches not integer');
     end
@@ -11,7 +11,11 @@ function net = cnntrain(net, x, y, opts)
         kk = randperm(m);
         for l = 1 : numbatches
             batch_x = x(:, :, kk((l - 1) * opts.batchsize + 1 : l * opts.batchsize));
-            batch_y = y(:,    kk((l - 1) * opts.batchsize + 1 : l * opts.batchsize));
+            %batch_y = y(:,   kk((l - 1) * opts.batchsize + 1 : l * opts.batchsize));
+            
+            %Seleciono no meu conjunto de saida as imagens equivalentes as
+            %entradas
+            batch_y = y(:, : ,  kk((l - 1) * opts.batchsize + 1 : l * opts.batchsize));
 
             net = cnnff(net, batch_x);
             net = cnnbp(net, batch_y);
