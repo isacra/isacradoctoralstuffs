@@ -33,8 +33,8 @@ function net = cnnsetup(net, x, y)
 
     %Desejo obter uma imagem 28 x 28 na saida, por isso meu bias deve ser
     %uma matriz 28 x 28
-    net.ffb = [zeros(onum, 1) zeros(onum, 1)];
-    %net.ffb = zeros(onum, 1);
-    net.ffW = (rand(onum,onum, fvnum)- 0.5) * 2 * sqrt(6 / (onum + fvnum)) ;
-    %net.ffW = (rand(onum, fvnum) - 0.5) * 2 * sqrt(6 / (onum + fvnum));
+    %net.ffb = [zeros(onum, 1) zeros(onum, 1)];
+    net.ffb = zeros(onum, 1);
+    %net.ffW = (rand(onum,onum, fvnum)- 0.5) * 2 * sqrt(6 / (onum + fvnum)) ;
+    net.ffW = (rand(onum, fvnum) - 0.5) * 2 * sqrt(6 / (onum + fvnum));
 end

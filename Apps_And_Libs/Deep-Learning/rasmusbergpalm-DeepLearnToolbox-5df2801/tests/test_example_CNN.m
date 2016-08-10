@@ -22,10 +22,10 @@ cnn.layers = {
 
 
 opts.alpha = 1;
-opts.batchsize = 28;
+opts.batchsize = 50;
 opts.numepochs =1;
-train_x = sample_facie;
-train_y = sample_facie;
+%train_x = sample_facie;
+%train_y = sample_facie;
 cnn = cnnsetup(cnn, train_x, train_y);
 
 
