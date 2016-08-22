@@ -1,0 +1,399 @@
+% $Id: AllegProposal.tex,v 1.8 2000/07/05 21:02:12 culver Exp $
+% AllegProposal.tex
+% by A. Thall
+% 13. Feb 2003
+%
+% Small edits and a few additions made by R. Roos
+% 21 Jan 2007
+% Most particularly, the "box" around the thesis statement has been removed,
+% section titles have been modified. The section named "Prior work II" has
+% been commented out. The \topmargin has been changed to -.5in and the
+% change to \parindent has been commented out.
+% The filename "nausicaa.eps" has been changed to simply "nausicaa" so that
+% pdflatex can be used on the file (and a file named "nausicaa.pdf" has
+% been created using the "epstopdf" command).
+% Several subsections have been added to illustrate subsection usage.
+% The word "comp" has been replaced by "project" or "thesis" throughout.
+% Other small changes have been made.
+%
+% This document provides a sample Senior Project Proposal template for use
+% by students in Allegheny's CS and Applied Computing programs.
+
+\NeedsTeXFormat{LaTeX2e}
+\documentclass[11pt]{article}
+
+%The following is used by WinEdt to set up cross-referencing to the BibTeX files
+%It is NOT commented out---the comment lets it be simply ignored by non-WinEdt LaTeX compilers
+
+%GATHER{mybibtexDB.bib}
+
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{algo}
+\usepackage{url}
+
+\setlength{\textheight}{9in}
+\setlength{\textwidth}{6in}
+\setlength{\oddsidemargin}{.25in}
+\setlength{\topmargin}{-.5in}  % changed from -.25 by RSR on 1/21/07
+%\parindent .5in    % commented out by RSR 1/21/07
+
+%put words in the hyphenation statement if you want to enforce
+%how LaTeX should break them (or not) at the end of a line.
+%\hyphenation{repre-sen-tations problems exact linear}
+\hyphenation{itself}
+
+%%%%%
+%% Commented out -- RSR, 1/21/07
+%%%%%
+% The following provides a box to surround the thesis statement
+%\newenvironment{Thesis}%
+%{\begin{Sbox}\begin{minipage}{.95\linewidth}}%
+%{\end{minipage}\end{Sbox}\begin{center}\fbox{\TheSbox}\end{center}}
+
+\title{Estima\c{c}\~ao de Incerteza em Invers\~ao S\'ismica N\~ao-Linear Usando Redu\c{c}\~ao Dimensional}
+\author{Isaac L.\ Santos\ Sacramento \\ Orientador: Mauro Roisenberg}
+
+\begin{document}
+
+% You can specify a language and other options for
+% the code-formatting "listings" package
+\lstset{language=C++,basicstyle=\small,
+        stringstyle=\ttfamily,showstringspaces=false}
+
+\singlespace
+\maketitle
+
+\begin{abstract}                % ~350 words max
+A Self-Organizing Map (SOM) is a nonlinear, unsupervised neural network model widely used in clustering and data visualization.
+\end{abstract}
+
+\doublespace
+% This sets section-numbering to only include Section and Subsection numbers
+\setcounter{secnumdepth}{2}
+
+\section{Introdu\c{c}\~ao}\label{ch:overview}
+
+Os m\'etodos geof\'isicos frequentemente envolvem a solu\c{c}\~ao e avalia\c{c}\~ao de problemas inversos,
+pois permitem inferir a distribui\c{c}\~ao das propriedades f\'isicas na subsuperf\'icie da Terra
+usando observa\c{c}\~oes da superf\'icie. A invers\~ao s\'ismica tem um papel fundamental na solu\c{c}\~ao 
+de problemas geof\'isicos, em especial na caracteriza\c{c}\~ao de reservat\'orios \cite{Bosch2010} \cite{Srivastava2009}.
+Do ponto de vista pr\'atico, as solu\c{c}\~oes para o problema de invers\~ao s\'ismica melhora a explora\c{c}\~ao e
+o gerenciamento na ind\'ustria petrol\'ifera, pois os dados s\'ismicos estimados possuem forte correla\c{c}\~ao com as
+propriedades f\'isicas do petr\'oleo \cite{Figueiredo2014}.
+
+De acordo com Tarantola \cite{Tarantola:05}, o procedimento cient\'ifico para o estudo de um sistema f\'isico pode ser dividido
+em tr\^es passos: a parametriza\c{c}\~ao do sistema, a  modelagem \`a frente e a modelagem inversa.
+Os dois primeiros passos n\~ao ser\~ao objetos deste trabalho. O problema da modelagem inversa, por sua vez, se caracteriza pelo
+uso de resultados atuais das medi\c{c}\~oes dos par\^ametros f\'isicos observ\'aveis, para inferir os valores atuais dos
+par\^ametros do modelo. A maioria dos problemas geof\'isicos inversos podem ser escritos em uma forma discreta como:
+\begin{equation}
+\label{eq:cp3}
+F(m) \approx d 
+\end{equation}
+onde, $m=(m_1, m_2,...,m_n) \subset R^n$ \'e o modelo geof\'isico estimado que pertence a um conjunto de modelos $M$ admiss\'iveis
+em termos de conhecimento pr\'evio, a exemplo da interpreta\c{c}\~ao geol\'ogica. O termo $d \in R^s$, s\~ao os dados observados e
+\begin{equation}F(m)=(f_1(m),f_2(m),...,f_s(m))\end{equation} representa o modelo \`a frente.
+
+Tompkins \cite{Tompkins2013} pontua que os problemas inversos admitem muitas solu\c{c}\~oes, chamadas equivalentes,
+pois s\~ao capazes de prever os dados observados, dentro de alguma toler\^ancia, e, ao mesmo tempo, s\~ao compat\'iveis com o conhecimento
+pr\'evio. A regi\~ao do espa\c{c}o de modelos onde se localizam os modelos equivalentes, \'e chamada regi\~ao de equival\^encia e pode ser
+linear ou n\~ao-linear, dependendo da rela\c{c}\~ao entre o modelo posterior e os par\^ametros ($m$).
+
+Em geof\'isica, \'e importante estimar, com precis\~ao e efici\^encia, o quanto os fatores f\'isicos (e.g., homogeneidade, isotropia,
+n\~ao-isotropia, etc) afetam as solu\c{c}\~oes dos problemas inversos. Este procedimento \'e chamado de estima\c{c}\~ao da incerteza. A teoria
+da invers\~ao linear disp\~oe de \textit{Framework} para quantificar, razoavelmente com sucesso, a incerteza no caso do
+problema inverso ser linear \cite{Menke84} \cite{Zhang07}. Entretanto, na perpectiva n\~ao-linear, os problemas inversos
+s\~ao tratados como uma aproxima\c{c}\~ao linear local \cite{Tompkins2013}. 
+
+No contexto da invers\~ao n\~ao-linear, o problema da incerteza est\'a relacionado \`a quantifica\c{c}\~ao da variabilidade
+no espa\c{c}o de modelo suportado pelas informa\c{c}\~oes pr\'evias \cite{Tompkins2012}. H\'a v\'arias abordagens para a solu\c{c}\~ao
+deste problema, entretanto, quase todas envolvem a amostragem,quase aleat\'oria, diretamente do espa\c{c}o do modelo posterior,
+além do estabelecimento de algum tipo de crit\'erio de aceita\c{c}\~ao/rejei\c{c}\~ao \cite{Meju2009}, o que, em problemas de 
+larga escala, pode se tornar uma tarefa computacionalmente custosa. 
+
+Nesse documento \'e apresentada uma proposta de trabalho de doutorado focada na investiga\c{c}\~ao de estrat\'egias para a solu\c{c}\~ao
+de problemas de estima\c{c}\~ao de incerteza em problemas de invers\~ao s\'ismica n\~ao-linear e aumentar a efici\^encia computacional,
+ou seja, reduzir o n\'umero de invers\~oes necess\'arias para quantifica\c{c}\~ao da incerteza.
+
+\section{Problemas Enfrentados e Proposta do Trabalho}
+
+\subsection{Problemas Enfrentados}
+
+Na literatura h\'a diferentes m\'etodos estabelecidos para estimar a incerteza em problemas de invers\~ao, baseados na
+aplica\c{c}\~ao de Infer\^encia Bayesiana \cite{Sambridge2002} \cite{Tarantola:05}. Embora estes m\'etodos (e.g. \textit{simulated annealing},
+algoritmos gen\'etico e da vizinhan\c{c}, etc) possam ser \'uteis para a estima\c{c}\~ao de incerteza n\~ao-linear,
+t\^em limita\c{c}\~oes como 1) amostram, prefer\^encialmente, regi\~oes de de alta probabilidade, 2) apoiam-se em
+esquemas de amostragem que dependem fortemente da dimens\~ao do espa\c{c}o de par\^ametros e ferquentemente requerem um n\'umero
+significativo de solu\c{c}\~oes posteriores.
+
+Em 2012, Tompkins \cite{Tompkins2012} apresentou uma alternativa para o esquema de amostragem capaz de melhorar a efici\^encia de sistemas
+h\'ibridos (i.e. usam a efici\^encia computacional da solu\c{c}\~ao inversa determin\'istica, enquanto incorpora a n\~ao-linearidade
+via amostragem probabil\'istica de certas entradas). O autor alca\c{c}ou o resultado com o uso de regras
+de cubagem maximamente esparsadas. Entretanto, os autores n\~ao demonstraram o m\'etodo em um problema de incerteza de larga escala
+(acima de 10,000 par\^ametros) e sugerem que, se a efici\^encia se mantiver para problemas inversos de alta dimens\~ao, a
+solu\c{c}\~ao deve ser aplicada em problemas inversos 2D e 3D. Para lidar com o aumento da parametriza\c{c}\~ao do modelo em dados 3D,
+Tompkins sugere a redu\c{c}\~ao dimensional por meio da decomposi\c{c}\~ao ortogonal, o que remete a aplica\c{c}\~ao de An\'alise de
+Componentes Principais.
+
+Em 2013, Tompkins \cite{Tompkins2013} comparou amostragens posteriores e a eficiencia computacional (em termos de solu\c{c}\~oes \`a frente)
+dos m\'etodos bem estabelecidos de amostragem aleat\'oria, como Gibbs e Metropolis-Hastings, \`a abordagem baseada em amostragem geom\'etrica
+por grades esparsas e segue, essencialmente, os conceitos 1) redu\c{c}\~ao dimensional dos par\^ametros por fatoriza\c{c}\~ao ortogonal,
+2) delimita\c{c}\~ao da amostragem por mapeamento de restri\c{c}\~ao dos par\^ametros, 3) amostragem posterior por interpola\c{c}\~ao de
+grades esparsas e 4) simula\c{c}\~ao seguinte para avalia\c{c}\~ao do modelo \cite{Tompkins2011}. De acordo com o autor, ambos os m\'etodos
+de estima\c{c}\~ao de incerteza produzem histogramas posteriores genericamente compat\'iveis, entretanto, as matrizes esparsas apresentaram
+maior efici\^encia na amostragem, isto \'e, apresentou uma ordem de magnitude menor no n\'umero de invers\~oes. Embora mais eficiente que
+os m\'etodo aleat\'orios, o m\'etodo de Tompkins foi testado apenas em problemas considerados de pequena e m\'edia escalas (1D e 2D),
+al\'em de ser limitado pelo alcance da redu\c{c}~ao de par\^ametros. 
+
+\subsection{Proposta do Trabalho}
+
+O presente trabalho tem como objetivo inicial investigar soluções para os problemas de quantifica\c{c}\~ao da
+incerteza em problemas inversos n\~ao-lineares e com grandes quantidades de dados geof\'isicos. O levantamento bibliogr\'afico feito at\'e
+aqui revela uma lacuna de solu\c{c}~oes dos problemas de invers\~ao no cen\'ario 3D, o que se justifica, em parte, pelo custo computacional
+inerente ao problema.
+
+Um caminho para transpor a limita\c{c}\~ao citada no par\'agrafo anterior est\'a em reduzir a dimens\~ao do problema,
+por um procedimento de descarte de e/ou limita\c{c}\~ao dos par\^ametros menos significativos. Uma alternativa pode 
+ser atrav\'es da aplica\c{c}\~ao de An\'alise de Componentes Principais N\~ao-linear (ACPN).
+O ponto de partida deste trabalho est\'a na reprodu\c{c}~ao dos m\'etodos aplicados \cite{Tompkins2012} \cite{Tompkins2013}.
+
+\section{Conclus\~ao}
+Acreditamos que os ramos de pesquisa aqui apresentados tenham condi\c{c}\~oes de conduzir a um trabalho relevante, n\~ao trivial, original e
+capaz de expandir a barreira de conhecimento, uma vez que inicialmente compreende solucionar problemas ligados a uma \'area 
+relevante para a engenharia e para a computa\c{c}\~ao, que s\~ao os m\'etodos de otimiza\c{c}~ao computacional para resolver probelmas
+inversos de larga escala inerentes \`aind\'ustria do petr\'oleo.
+
+\newpage
+\section{Cronograma}
+\newpage
+% \section{Prior Work}
+% 
+% Depending on the nature of the topic, prior work should either precede
+% or follow the thesis statement.  Some topics will require the
+% background information to put the thesis proposal in context.  Others
+% are best served by giving the thesis statement first and then contrasting
+% and comparing it with prior work in the field.
+% 
+% \subsection{\TeX}
+% If this were a real proposal dealing with how to write proposals,
+% it might be appropriate to say a few words
+% about Knuth, inventor of the \TeX\ typesetting language \cite{knuth:84}.
+% Description of Knuth's contribution goes here.
+% 
+% \subsection{\LaTeX\ (Lamport, 1984)}
+% Description of Lamport's contribution \cite{lamport:94} goes here.
+% 
+% \subsection{Other Work}
+% Description of other contributions leading up to this thesis goes here,
+% e.g., Zobel's book on writing for computer science \cite{zobel:97}.
+% 
+% \section{Thesis}
+% My project, therefore, will demonstrate the following thesis:
+% %\begin{Thesis}
+% \singlespace
+% \begin{quote}
+% It is both simple and useful to provide students with a \LaTeX\ template
+% for their formal thesis proposals.  This will result in far fewer
+% questions from students uncertain as to what belongs in their proposals.
+% Such a template will be of benefit to students in Computer
+% Science/Applied Computing as well as to any others willing and able
+% to use \LaTeX\ for their work.
+% \end{quote}
+% %\end{Thesis}
+% \doublespace
+% 
+% A formal thesis statement should be a \emph{falsifiable} statement about
+% the goal you will attempt to achieve with your research project.
+% For a purely scientific project, this is the hypothesis you are testing
+% with your research.  For an applied programming project, it is usually a
+% statement about the feasibility and correctness of your approach and
+% the advantages it has over other approaches.  For a survey or study,
+% it is usually a statement regarding the need or usefulness of such
+% a study, its intended audience, and so on.
+% 
+% Often, you may want to include an itemized list of goals you plan to
+% achieve.  Thus, this paper has the goals of
+% \begin{itemize}
+% \item
+% Improvement of an existing method. For example, in case of SOM, it could 
+% be an idea of adaptive change of the SOM size during the training – on 
+% one hand, detecting the active areas, and focusing computation in those 
+% regions; on the other hand decreasing the number of neurons in less active areas.
+% \item
+% Proposing a method of SOM evaluation, i.e., determining the quality (accuracy,
+% precision, original information loss, etc.) of the generated SOM structure.
+% \item
+% Combining the SOM approach with some other data analysis techniques. For example,
+% some additional dimensionality reduction preceding SOM visualization, or som
+% e clustering/classification following SOM.
+% \item
+% Application of SOM in some experimental fields. In this case, it is highly
+% important to properly (in a convincing way) justify using SOM in a particular
+% application area.
+% \end{itemize}
+% in Sec.~\ref{sec:implem}.
+% 
+% %\section{Prior work II:  advantages of the proposed work over other approaches}
+% 
+% If you didn't already discuss prior work, this is a good place to do so.
+% %You might include these remarks, if brief, in the preceding section.
+% 
+% \section{Implementation and Methodology}\label{sec:implem}
+% 
+% Here, you should lay out the details of how you propose to solve the
+% problem and otherwise conduct the research necessary to support your
+% thesis.  Include details regarding hardware and software you will use,
+% resources you will draw on, algorithms you will implement, and other
+% ideas about how you will accomplish your task.  It is inevitable that
+% your final work will deviate from earlier plans, as you research your
+% topic, learn new methods, and discover what works as expected.
+% 
+% \subsection{Using Tables and Figures}
+% Use tables and figures as appropriate; a picture can explain a lot
+% in very compact form, and can keep readers interested.  Avoid things
+% that are merely flash and do not
+% \begin{figure}
+% \centering
+% \begin{tabular}{l l l}
+% \epsfxsize=1.8in\epsffile{Nausicaa} &
+% \epsfxsize=1.8in\epsffile{Nausicaa} &
+% \epsfxsize=1.8in\epsffile{Nausicaa} \\
+% \end{tabular}
+% \caption{Include images in a proposal as appropriate}\label{fig:nausicaa}
+% \end{figure}
+% add any relevant information.  (See Fig.~\ref{fig:nausicaa}.)
+% 
+% \subsection{Working with Code and Pseudocode}
+% If you have source code to include, you can do so using the
+% \emph{listings} package,
+% which will format short inline code fragments such as
+% 
+% \singlespace
+% \begin{lstlisting} {}
+% for (int i = 0; i < n; i++)
+%     cout << "It's easy to add source code to LaTeX documents";
+% \end{lstlisting}
+% or simply using the \emph{verbatim} environment, which gives a Courier font to literal text:
+% \begin{verbatim}
+% for (int i = 0; i < n; i++)
+%     cout << "It's easy to add source code to LaTeX documents";
+% \end{verbatim}
+% \doublespace
+% The listing environment is good for longer code examples and for use in figures,
+% such as in Fig.~\ref{fig:surprisecode}.
+% 
+% \begin{figure}[t]
+% \lstset{basicstyle=\scriptsize}
+% \lstinputlisting{surprise.c}
+% \caption{This mystery code (\copyright 1987 Roemer B.\ Lievaart) was
+% included from a source file.  The \LaTeX\ file also shows how to
+% change the font-size for a code-listing.}\label{fig:surprisecode}
+% \end{figure}
+% 
+% Another frequent need is to include algorithms written in pseudocode.
+% The \emph{algo} package can be used to format algorithms presentably in your
+% documents; Fig.~\ref{fig:mutation_adequacy} on
+% Pg.~\pageref{fig:mutation_adequacy} shows an example of this.
+% For more options on these packages, consult online resources.
+% 
+% \begin{figure}[t]
+% \begin{algorithm}{CalculateMutationAdequacy}[T, P, M_o]
+% {
+% \qcomment{Calculation of Strong Mutation Adequacy}
+% \qinput{Test Suite $T$; \newline
+%         Program Under Test $P$; \newline
+%         Set of Mutation Operators; $M_o$
+% }
+% \qoutput{Mutation Adequacy Score; $MS(P,T,M_o)$}
+% }
+% ${\cal D} \qlet {\cal Z}_{n \times s}$ \\
+% ${\cal E} \qlet {\cal Z}_{s}$ \\
+% \qfor $l \in \mbox{\it ComputeMutationLocations}(P)$ \\
+% \qdo $\Phi_P \qlet \mbox{\it GenerateMutants}(l,P,M_o)$ \\
+% \qfor $\phi_r \in \Phi_P$ \\
+% \qdo \qfor $T_f \in \langle T_1, \ldots, T_e \rangle$ \\
+% \qdo $R_f^P \qlet \mbox{\it ExecuteTest}(T_f,P)$ \\
+% $R_f^{\phi_r} \qlet \mbox{\it ExecuteTest}(T_f,\phi_r)$ \\
+% \qif $R_f^P \neq R_f^{\phi_r}$ \\
+% \qdo ${\cal D}[f][r] \qlet 1$ \\
+% \qelse \qif ${\it \mbox{\it IsEquivalentMutant}}(P,\phi_r)$
+%                                                  \\ \label{equivalent}
+% \qdo ${\cal E}[r] \qlet 1$ \qfi \qfi \qrof \qrof \qrof \\
+% $D_{num} \qlet \sum_{r=1}^s pos( \sum_{f=1}^n {\cal D}[f][r] )$ \\ \label{sum1}
+% $E_{num} \qlet \sum_{r=1}^s {\cal E}[r] $ \\ \label{sum2}
+% $MS(P,T,M_o) \qlet \frac{D_{num}}{(|\Phi_P| - E_{num})}$ \\ \label{result}
+% $\qreturn \; MS(P,T,M_o)$
+% \end{algorithm}
+% \caption{Algorithm for the Computation of Mutation Adequacy.  This example
+% pseudocode is by Gregory M.\ Kapfhammer.}
+% \label{fig:mutation_adequacy}
+% \end{figure}
+% 
+% \section{Research and Writing Timetable}\label{sec:timetable}
+% 
+% Give a brief overview of how you will proceed to accomplish the project,
+% including a rough schedule for accomplishing the following tasks:
+% \begin{itemize}
+% \item background research,
+% \item final proposal completion,
+% \item proposal defense,
+% \item research intermediate and final goals, and
+% \item writing of key chapters, leading to final written thesis.
+% \end{itemize}
+% The timetable should take into account the actual schedule followed by
+% the department, CS600 in the fall is devoted to the background research,
+% final proposal and its defense, beginnings of primary project work and
+% writing of first two chapters.  CS601 in the spring is spent finishing
+% the research and the writing and preparing for the thesis defense.
+% 
+% The timetable section may also include contingency plans---see below in
+% Sec.~\ref{sec:conclusion}.
+% 
+% \section{Conclusion}\label{sec:conclusion}
+% 
+% Concluding remarks may discuss future research directions that will
+% be made possible when the work succeeds, and possible places where
+% the work might be cut short (due to difficulties) while still achieving
+% some of the significant objectives.  The latter might alternatively
+% be discussed above in Sec.~\ref{sec:timetable}.
+% 
+% The conclusion may also discuss future applications of and extensions
+% to the thesis work.  After completing this thesis proposal template,
+% a logical next step is to create a template for the written thesis itself.
+% Since writing a $50+$ page document requires even more discipline and
+% organization, this will entail creating a \LaTeX\ style file, tentatively
+% named \verb+gatorthesis.sty+, which will be called by a
+% \verb+\usepackage{gatorthesis}+ command.  This will provide automatic
+% formatting for title pages, abstract and acknowledgement pages, Tables
+% of Contents and Figures, chapter headings, and so forth.  For
+% an experienced \LaTeX\ user, with a Bib\TeX\ database already assembled
+% for the proposal, this will make thesis writing go a lot smoother.
+% 
+% This paper has shown only one of many different ways you might structure
+% your project proposal.  Individual proposals will vary depending on the
+% nature of the project, but most of them will have the same essential
+% components.  You will have many other occasions to write
+% proposals---whether for graduate projects and theses, grant proposals,
+% or industry-related projects.  The important thing is to express
+% your ideas in a concise and effective fashion, so that a reader is
+% neither confused nor bored nor irritated.  \emph{Too long and wordy}
+% is as bad as \emph{too short and lacking in detail}; grammatical
+% and spelling errors are likewise unacceptable.  Write fast, rewrite
+% thoroughly, and proofread religiously.
+% 
+% \pagebreak
+% 
+%% This includes all references from the BibTeX file in the bibliography
+ \nocite{*}
+
+\begin{spacing}{1}
+   \bibliographystyle{plain}
+   \bibliography{mybibtexDB}
+ \end{spacing}
+
+\end{document}

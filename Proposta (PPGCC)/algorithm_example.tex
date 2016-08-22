@@ -1,0 +1,85 @@
+\documentclass{article}             
+
+\textwidth = 6.5in
+\textheight = 9.05in
+\topmargin 0.0in
+\oddsidemargin 0.0in
+\evensidemargin 0.0in
+
+% set it so that subsubsections have numbers and they
+% are displayed in the TOC (maybe hard to read, might want to disable)
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% define widow protection 
+        
+\def\widow#1{\vskip #1\vbadness10000\penalty-200\vskip-#1}
+
+% define a little section heading that doesn't go with any number
+
+\def\littlesection#1{
+\widow{2cm}
+\vskip 0.5cm
+\noindent{\bf #1}
+\vskip 0.1cm
+\noindent
+}
+
+\usepackage[named]{algo}
+
+% A paraphrase mode that makes it easy to see the stuff that shouldn't
+% stay in for the final proposal
+
+\newdimen\tmpdim
+\long\def\paraphrase#1{{\parskip=0pt\hfil\break
+\tmpdim=\hsize\advance\tmpdim by -15pt\noindent%
+\hbox to \hsize
+{\vrule\hskip 3pt\vrule\hfil\hbox to \tmpdim{\vbox{\hsize=\tmpdim
+\def\par{\leavevmode\endgraf}
+\obeyspaces \obeylines 
+\let\par=\endgraf
+\bf #1}}}}}
+
+\renewcommand{\baselinestretch}{1.2}    % must go before the begin of doc
+
+% go with the way that CC sets the margins
+
+\begin{document}
+
+% handle widows appropriately
+\def\widow#1{\vskip #1\vbadness10000\penalty-200\vskip-#1}
+
+\begin{figure}[t]
+\begin{algorithm}{CalculateMutationAdequacy}[T, P, M_o]
+{
+\qcomment{Calculation of Strong Mutation Adequacy}
+\qinput{Test Suite $T$; \newline
+        Program Under Test $P$; \newline 
+        Set of Mutation Operators; $M_o$
+}
+\qoutput{Mutation Adequacy Score; $MS(P,T,M_o)$}
+}
+${\cal D} \qlet {\cal Z}_{n \times s}$ \\
+${\cal E} \qlet {\cal Z}_{s}$ \\
+\qfor $l \in \mbox{\it ComputeMutationLocations}(P)$ \\
+\qdo $\Phi_P \qlet \mbox{\it GenerateMutants}(l,P,M_o)$ \\
+\qfor $\phi_r \in \Phi_P$ \\
+\qdo \qfor $T_f \in \langle T_1, \ldots, T_e \rangle$ \\
+\qdo $R_f^P \qlet \mbox{\it ExecuteTest}(T_f,P)$ \\
+$R_f^{\phi_r} \qlet \mbox{\it ExecuteTest}(T_f,\phi_r)$ \\
+\qif $R_f^P \neq R_f^{\phi_r}$ \\
+\qdo ${\cal D}[f][r] \qlet 1$ \\
+\qelse \qif ${\it \mbox{\it IsEquivalentMutant}}(P,\phi_r)$ 
+                                                 \\ \label{equivalent}
+\qdo ${\cal E}[r] \qlet 1$ \qfi \qfi \qrof \qrof \qrof \\
+$D_{num} \qlet \sum_{r=1}^s pos( \sum_{f=1}^n {\cal D}[f][r] )$ \\ \label{sum1}
+$E_{num} \qlet \sum_{r=1}^s {\cal E}[r] $ \\ \label{sum2}
+$MS(P,T,M_o) \qlet \frac{D_{num}}{(|\Phi_P| - E_{num})}$ \\ \label{result}
+$\qreturn \; MS(P,T,M_o)$
+\end{algorithm}
+\caption{Algorithm for the Computation of Mutation Adequacy.}
+\label{fig:mutation_adequacy}
+\end{figure}
+
+\end{document}

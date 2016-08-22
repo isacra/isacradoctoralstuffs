@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: AllegProposal.aux
+The style file: plain.bst
+Database file #1: mybibtexDB.bib
+You've used 11 entries,
+            2118 wiz_defined-function locations,
+            583 strings with 6231 characters,
+and the built_in function-call counts, 3594 in all, are:
+= -- 352
+> -- 154
+< -- 0
++ -- 61
+- -- 50
+* -- 278
+:= -- 612
+add.period$ -- 33
+call.type$ -- 11
+change.case$ -- 56
+chr.to.int$ -- 0
+cite$ -- 11
+duplicate$ -- 123
+empty$ -- 293
+format.name$ -- 50
+if$ -- 738
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 13
+newline$ -- 58
+num.names$ -- 22
+pop$ -- 48
+preamble$ -- 1
+purify$ -- 47
+quote$ -- 0
+skip$ -- 77
+stack$ -- 0
+substring$ -- 275
+swap$ -- 11
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 40
+warning$ -- 0
+while$ -- 35
+width$ -- 13
+write$ -- 121

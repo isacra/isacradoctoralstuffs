@@ -1,0 +1,114 @@
+% This is a sample BibTeX bibliography file,
+%  showing articles, theses, proceedings, books
+%  and collections being cited
+
+@article{Bosch2010,
+author = {Bosch, Miguel and Mukerji, Tapan and Gonzalez, Ezequiel F.}, 
+title = {Seismic inversion for reservoir properties combining statistical rock physics and geostatistics: A review},
+volume = {75}, 
+number = {5}, 
+pages = {75A165-75A176}, 
+year = {2010}, 
+doi = {10.1190/1.3478209}, 
+URL = {http://geophysics.geoscienceworld.org/content/75/5/75A165.abstract}, 
+eprint = {http://geophysics.geoscienceworld.org/content/75/5/75A165.full.pdf+html}, 
+journal = {Geophysics} 
+}
+
+@ARTICLE{Figueiredo2014, 
+author={Passos de Figueiredo, L. and Santos, M. and Roisenberg, M. and Schwedersky Neto, G. and Figueiredo, W.}, 
+journal={Geoscience and Remote Sensing Letters, IEEE}, 
+title={Bayesian Framework to Wavelet Estimation and Linearized Acoustic Inversion}, 
+year={2014}, 
+month={Dec}, 
+volume={11}, 
+number={12}, 
+pages={2130-2134}, 
+keywords={Bayes methods;Gaussian distribution;acoustic impedance;geophysical signal processing;geophysical techniques;inverse problems;linearisation techniques;maximum likelihood estimation;seismic waves;seismology;signal sampling;wavelet transforms;Bayesian framework;Gaussian assumption;Gibbs sampling algorithm;conditional distributions;deterministic constrained sparse-spike inversion;geophysical interpretation;likelihood distribution;linearized acoustic inversion;linearized forward model;maximum a posteriori impedance;noise level estimation;posterior distribution;poststack seismic data;seismic inversion method;seismic noise level;seismic wave measurement;sequential steps;stochastic quantities;subsurface acoustic impedance;wavelet estimation;Acoustics;Bayes methods;Covariance matrices;Data models;Estimation;Impedance;Stochastic processes;Acoustic inversion;Bayesian framework;maximum a posteriori (MAP);reservoir characterization;seismic inversion;wavelet estimation}, 
+doi={10.1109/LGRS.2014.2321516}, 
+ISSN={1545-598X},}
+
+@article{Srivastava2009,
+  author={R P Srivastava and M K Sen},
+  title={Fractal-based stochastic inversion of poststack seismic data using very fast simulated annealing},
+  journal={Journal of Geophysics and Engineering},
+  volume={6},
+  number={4},
+  pages={412},
+  url={http://stacks.iop.org/1742-2140/6/i=4/a=009},
+  year={2009}
+}
+
+@BOOK{Tarantola:05,
+  AUTHOR =       "Albert Tarantola",
+  TITLE =        "Inverse Problem Theory, and Methods for Model Parameter Estimation",
+  PUBLISHER =    "SIAM Press",
+  pages=	 "1-2",
+  YEAR =         "2005",
+}
+
+@article{fritsch:redjournal:95,
+  author =        "D. Fritsch and E. Chaney and A. Boxwala and M. 
+                   McAuliffe and S. Raghavan and A. Thall and J. Earnhart",
+  title =         "Core-based portal image registration for automatic 
+                   radiotherapy treatment verification",
+  journal =       "International Journal of Radiation, Oncology, Biology, 
+                  Physics; special issue on Conformal Therapy",
+  type =          "article",
+  pages =         "1287--1300",
+  volume =        "5",
+  number =        "33",
+  year =          "1995",
+}
+
+@phdthesis{furst99,
+year = "1999",
+TYPE = "Ph. {D.} {T}hesis",
+title = "Height Ridges of Oriented Medialness",
+author = "Jacob Furst",
+school = "University of North Carolina, Dept. of Computer Science",
+key = "furst99",
+}
+
+
+
+@InCollection{blum67,
+  author =       "H. Blum",
+  title =        "A transformation for extracting new descriptors of
+                 shape",
+  booktitle =    "Models for the Perception of Speech and Visual Forms",
+  editor =       "W. Wathen-Dunn",
+  publisher =    "MIT Press",
+  year =         "1967",
+  address =      "Amsterdam",
+  pages =        "362--380",
+  annote =       "imagery",
+}
+@InBook{Plato:360BC,
+  author  =      "Plato",
+  title =        "The Republic",
+  year =         "360 B.C.",
+  volume =       "VII",
+  address =      "Athens, Greece",
+}
+
+@TechReport{damon:95,
+  author = "James N. Damon",
+  title = "Properties of ridges and cores for two-dimensional images",
+  institution = "Department of Mathematics, University of North Carolina 
+                at Chapel Hill",
+  year = "1995",
+}
+
+@TechReport{Burbeck94a,
+  author =       "C. A. Burbeck and S. M. Pizer and B. S. Morse and D. 
+                  Ariely and G. S. Zauberman and J. Rolland",
+
+  title =        "Linking object boundaries at scale:  a common mechanism 
+                  for size and shape judgements",
+  institution =  "Department of Computer Science, University of North
+                 Carolina - Chapel Hill",
+  number =       "TR94-041",
+  year =         "1994",
+  note =          "Available online at \url{ftp://ftp.cs.unc.edu/pub/publications/techreports/94-041.ps.Z} (accessed 12 February 2006).",
+}

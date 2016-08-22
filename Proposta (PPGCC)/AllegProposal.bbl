@@ -1,0 +1,72 @@
+\begin{thebibliography}{10}
+
+\bibitem{Bosch2010}
+Miguel Bosch, Tapan Mukerji, and Ezequiel~F. Gonzalez.
+\newblock Seismic inversion for reservoir properties combining statistical rock
+  physics and geostatistics: A review.
+\newblock {\em Geophysics}, 75(5):75A165--75A176, 2010.
+
+\bibitem{Meju2009}
+Max~A. Meju.
+\newblock Regularized extremal bounds analysis (reba): An approach to
+  quantifying uncertainty in nonlinear geophysical inverse problems.
+\newblock {\em Geophysical Research Letters}, 36(3):n/a--n/a, 2009.
+
+\bibitem{Figueiredo2014}
+L.~Passos~de Figueiredo, M.~Santos, M.~Roisenberg, G.~Schwedersky~Neto, and
+  W.~Figueiredo.
+\newblock Bayesian framework to wavelet estimation and linearized acoustic
+  inversion.
+\newblock {\em Geoscience and Remote Sensing Letters, IEEE}, 11(12):2130--2134,
+  Dec 2014.
+
+\bibitem{Sambridge2002}
+Malcolm Sambridge and Klaus Mosegaard.
+\newblock Monte carlo methods in geophysical inverse problems.
+\newblock {\em Reviews of Geophysics}, 40(3):3--1--3--29, 2002.
+
+\bibitem{Srivastava2009}
+R~P Srivastava and M~K Sen.
+\newblock Fractal-based stochastic inversion of poststack seismic data using
+  very fast simulated annealing.
+\newblock {\em Journal of Geophysics and Engineering}, 6(4):412, 2009.
+
+\bibitem{Tarantola:05}
+Albert Tarantola.
+\newblock {\em Inverse Problem Theory, and Methods for Model Parameter
+  Estimation}.
+\newblock SIAM Press, 2005.
+
+\bibitem{Tompkins2012}
+Michael~J. Tompkins.
+\newblock Efficient estimation of nonlinear posterior model covariances using
+  maximally sparse cubature rules.
+\newblock {\em Geophysics}, 77(5):ID1--ID8, 2012.
+
+\bibitem{Tompkins2011}
+Michael~J. Tompkins, Juan~L. Fernández~Martínez, David~L. Alumbaugh, and
+  Tapan Mukerji.
+\newblock Scalable uncertainty estimation for nonlinear inverse problems using
+  parameter reduction, constraint mapping, and geometric sampling: Marine
+  controlled-source electromagnetic examples.
+\newblock {\em Geophysics}, 76(4):F263--F281, 2011.
+
+\bibitem{Tompkins2013}
+Michael~J. Tompkins, Juan~Luis Fernández~Martínez, and Zulima
+  Fernández~Muñiz.
+\newblock Comparison of sparse-grid geometric and random sampling methods in
+  nonlinear inverse solution uncertainty estimation.
+\newblock {\em Geophysical Prospecting}, 61(1):28--41, 2013.
+
+\bibitem{Menke84}
+Menke W.
+\newblock {\em Geophysical Data Analysis: Discrete Inverse Theory}.
+\newblock Academy Press, 1984.
+
+\bibitem{Zhang07}
+H.~Zhang and C.~H. Thurber.
+\newblock Estimating the model resolution matrix for large seismic tomography
+  problems based on lanczos bidiagonalization with partial reorthogonalization.
+\newblock {\em Geophysical Journal International}, 170(1):337--345, 2007.
+
+\end{thebibliography}
