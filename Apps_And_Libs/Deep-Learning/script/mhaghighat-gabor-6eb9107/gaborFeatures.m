@@ -58,7 +58,9 @@ img = double(img);
 gaborResult = cell(u,v);
 for i = 1:u
     for j = 1:v
-        gaborResult{i,j} = imfilter(img, gaborArray{i,j});
+        %gaborResult{i,j} = imfilter(img, gaborArray{i,j});
+        %gaborResult{i,j}=sigm(convn(img, gaborArray{i,j}, 'valid'));
+        gaborResult{i,j}=convn(img, gaborArray{i,j}, 'valid');
     end
 end
 
