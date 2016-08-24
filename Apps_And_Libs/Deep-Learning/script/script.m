@@ -14,6 +14,11 @@ figure
 imagesc(simulation)
 title('Simula��o FFMA')
 
+gaborArray = gaborFilterBank(5,8,39,39);
+featureVector = gaborFeatures(white_noise,gaborArray,4,4);
+%featureVector = gaborFeatures(simulation,gaborArray,4,4);
+
+
 %Define o filtro da rede como o filtro do FFTMA:
 filtro_rede1 = fftshift(ifftn(sqrt(abs(fftn(corr1)))));
 filtro_rede2 = fftshift(ifftn(sqrt(abs(fftn(corr2)))));
