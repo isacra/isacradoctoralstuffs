@@ -22,7 +22,7 @@ function net = cnnsetup(net, x, y)
                         net.layers{l}.k{i}{j} = gb_filters{1,i};
                     else
                         net.layers{l}.k{i}{j} = (rand(net.layers{l}.kernelsize) - 0.5) * 2 * sqrt(6 / (fan_in + fan_out));
-                    end
+                     end
                     
                 end
                 net.layers{l}.b{j} = 0;
