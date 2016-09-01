@@ -1,0 +1,16 @@
+n_hor = 2;
+n_ver = 2;
+
+m_hor = (n_hor-1)/2;
+m_ver = (n_ver-1)/2;
+
+alpha_hor = [-m_hor:1:m_hor];
+alpha_ver = [-m_ver:1:m_ver];
+
+f_avg_hor = 1 - abs(alpha_hor)/m_hor;
+f_avg_ver = 1 - abs(alpha_ver)/m_ver;
+
+f_grad_hor = alpha_hor/m_hor;
+f_grad_ver = alpha_ver/m_ver;
+
+f_grad = f_grad_hor', f_grad_ver'
