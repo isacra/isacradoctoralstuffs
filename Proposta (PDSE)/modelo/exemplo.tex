@@ -1,0 +1,373 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Universidade Federal de Santa Catarina             
+% Biblioteca Universitária                     
+%----------------------------------------------------------------------
+% Exemplo de utilização da documentclass ufscThesis
+%----------------------------------------------------------------------                                                           
+% (c)2013 Roberto Simoni (roberto.emc@gmail.com)
+%         Carlos R Rocha (cticarlo@gmail.com)
+%         Rafael M Casali (rafaelmcasali@yahoo.com.br)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{ufscThesis} % Definicao do documentclass ufscThesis	
+
+%----------------------------------------------------------------------
+% Pacotes usados especificamente neste documento
+\usepackage{graphicx} % Possibilita o uso de figuras e gráficos
+\usepackage{color}    % Possibilita o uso de cores no documento
+\usepackage{pdfpages} % Possibilita a inclusão da ficha catalográfica
+\usepackage{listings}
+\usepackage{pgfgantt}
+%\usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
+%----------------------------------------------------------------------
+% Comandos criados pelo usuário
+\newcommand{\afazer}[1]{{\color{red}{#1}}} % Para destacar uma parte a ser trabalhada
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}}
+%\newcommand{\ABNTbibliographyname}{REFERÊNCIAS} % Necessário para abnTeX 0.8.2
+
+%----------------------------------------------------------------------
+% Identificadores do trabalho
+% Usados para preencher os elementos pré-textuais
+\instituicao[a]{Universidade Federal de Santa Catarina} % Opcional
+\departamento[a]{Informática e Estatística}
+\curso[o]{Programa de Pós-graduação em Ciência da Computação}
+%\documento[a]{Tese} % [o] para dissertação [a] para tese
+\titulo{Título}
+%\subtitulo{Subtítulo (se houver)} % Opcional
+\autor{Isaac Leonardo Santos Sacramento}
+%\grau{Doutorado}
+\local{Florianópolis} % Opcional (Florianópolis é o padrão)
+\data{04}{junho}{2016}
+\orientador[Orientador\\Universidade Federal de Santa Catarina]{Prof. Dr. Mauro Roisenberg}
+%\coorientador[Coorientador\\Universidade ...]{Prof. Dr.}
+%\coordenador[Coordenador\\Universidade Federal de Santa Catarina]{Profa. Dra. Karina Friedrich Dorneles}
+
+%\numerodemembrosnabanca{3} % Isso decide se haverá uma folha adicional
+%\orientadornabanca{sim} % Se faz parte da banca definir como sim
+%\coorientadornabanca{nao} % Se faz parte da banca definir como sim
+%\bancaMembroA{Primeiro membro\\Universidade ...} %Nome do presidente da banca
+%\bancaMembroB{Segundo membro\\Universidade ...}      % Nome do membro da Banca
+%\bancaMembroC{Terceiro membro\\Universidade ...}     % Nome do membro da Banca
+%\bancaMembroD{Quarto membro\\Universidade ...}       % Nome do membro da Banca
+%\bancaMembroE{Quinto membro\\Universidade ...}       % Nome do membro da Banca
+%\bancaMembroF{Sexto membro\\Universidade ...}        % Nome do membro da Banca
+%\bancaMembroG{Sétimo membro\\Universidade ...}       % Nome do membro da Banca
+
+%\dedicatoria{Este trabalho é dedicado aos meus colegas de classe e aos meus queridos pais.}
+
+%\agradecimento{Inserir os agradecimentos aos colaboradores à execução do trabalho.}
+
+%\epigrafe{Texto da Epígrafe. Citação relativa ao tema do trabalho. É opcional. A epígrafe pode também aparecer na abertura de cada seção ou capítulo.}
+%{(Autor da epígrafe, ano)}
+
+% \textoResumo {Muitos métodos de simulação multiponto (SMP) têm sido desenvolvidos na última década e são classificados em duas categorias. A primeira, aborda os métodos que mantém
+% a continuidade das estatísticas clássicas baseadas em variograma. A segunda categoria de algoritmos multiponto é baseada no cálculo de distâncias
+% entre padrões em uma imagem de treinamento. Imagens de treinamento são bancos de dados de padrões a partir dos quais, estatísticas multiponto, 
+% incluindo o variograma, podem ser extraídas. Como ferramenta de modelagem, os algoritmos de aprendizado de máquina são universais, adaptativos,
+% não-lineares, robustos e eficientes. Eles podem alcançar soluções aceitáveis para problemas de classificação, regressão e modelagem de densidade de probabilidade em
+% espaço de alta dimensão e com características espacialmente referenciados. Neste sentido, se objetiva desenvolver um método, baseado em aprendizagem de máquina,
+% capaz de gerar simulações a partir do treinamento prévio com imagens de treinamento.
+% }
+% \palavrasChave {Estatísticas Multiponto. Redes Neurais.  Amostragem Direta. Simulação Estocástica. Aprendizagem de Máquina.}
+%  
+\textAbstract {Multiple-point geostatistics has opened a new field of methodologies by which complex geological phenomena have been modeled efficiently.
+Several multiple-point simulation methods have been developed over the last decade. MPS algorithms can be classified in two categories,
+based on their underlying statistical approach. The first category comprises methods that are in the continuity of classical
+variogram-based geostatistics and the second category of MPS algorithms is based on the computation of distances between patterns. 
+}
+\keywords {Multiple-point Statistics. Neural Networks. Direct Sampling. Stochastic Simulation. Machine Learning.}
+%----------------------------------------------------------------------
+% Início do documento                                
+\begin{document}
+%--------------------------------------------------------
+% Elementos pré-textuais
+%\capa  
+\folhaderosto % Se nao quiser imprimir a ficha, é só não usar o parâmetro
+%\folhaaprovacao
+%\paginadedicatoria
+%\paginaagradecimento
+%\paginaepigrafe
+\paginaresumo
+%\paginaabstract
+%\pretextuais % Substitui todos os elementos pre-textuais acima
+%\listadefiguras % as listas dependem da necessidade do usuário
+%\listadetabelas 
+%\listadeabreviaturas
+%\listadesimbolos
+\sumario
+%--------------------------------------------------------
+% Elementos textuais
+
+\chapter{Introduction}
+This document is a work plan for a period of one year research as PhD student visitant at School of Earth Energy and
+Environmental Science, Stanford University, under the supervision of Prof. Dr. Jef Caers.
+It proposes developing a new method multi-point geostatistical simulation, in which a convolution neural network is learned to identify
+and reproduce spatial patterns.
+
+Multi-point statistics are a set of algoriths of sequencial simulation the use training images as input data to define the spatial
+structures of a process \cite{Guardiano1993,Strebelle2002}. The training images are explicit descriptions, 2D or 3D, of the studied
+spatial continuity or, as defined by Jef Caers \cite{Caers_2004}, they are pattern database from which multiple point statistics, even the variogram, can
+be obtained. Some advatages of using training images are: (i) they are more intuitive for non-specialists, (ii) they do not need to be
+localy constrained to any data, (iii) they do not need to be the same dimension of the studied area, 
+(iv) they can be rejected based on the visual assessment and (v) they reproduce a spatial continuity similar to the current phenomena.
+
+The literature of geostatistical simulation reveals the researching potential to explore multi-point simulation
+by machine learning techniques. Although there are a considerable number of algorithms for multi-point simulations,
+only to of them are based on a neural learning approach: the first one was presented by Jef Caers \cite{caers_1998} and consists
+on learning a neural network to carry out pixel-pixel simulation based on the conditional probability of a certain pixel be valued
+considering the neighborhood defined by a template. Most recently, an approach based on Genetic Algorithm \cite{Peredo2012}
+performs categorical simulation to reproduce multi-point statistics.
+
+\section{Objectives}
+
+\subsection{General Objective}
+The research proposed in this plan aims to develop a method capable to generate multiple point geostatistical simulations through the learning of
+a Convolution Neural Network.
+
+
+\subsection{Specifics Objectives}
+
+\begin{itemize}
+ \item Cataloging and detailed understanding of state of art methods for geostatistical multiple point simulations;
+ \item Formalizing an integrated method for multiple point simulation with convolution neural networks;
+ \item Implementing a convolution neural network model capable to compute regression models;
+ \item Implementing algorithms to support the integration between multiple point simulations and convolution neural model;
+ \item Integrating the multiple point method to the convolution model;
+ \item Carrying out simulation with the developed method;
+ \item Comparing the proposed approach to state-of-art multi-point simulation methods;
+\end{itemize}
+
+
+\subsection{Justification}
+Multiple-point statistics generates realizations that reproduce statistical patterns inferred from three or more
+points at a time in a training image. They make possible modeling, for example, curvilinea geological
+structures. As a modeling tool, machine learning algorithms are universals, non-linear, robust and efficients.
+They can obtain acceptable solutions for classification, regression and probability density modeling problems
+in a high dimensional space.
+Performing multi-point geostatistical simulation by an approach based on deep machine learning techniques may be 
+challenging in the absence of a large amount of training data and the training process may be time demand.
+However, the model can be learned from different training images and simulations with different pattern structures 
+can be fastly generated.
+
+This study represents an advance in both areas of study, Machine Learning and Multi-point Geostatistics.
+The main relevance to the researches in Machine Learning  is related to the development of a new convolutional nural network model
+able to succeed in regression. Since the convolution nets are mostly applied to solve classification problems, this study will
+come up with an understanding about how strong these networks can be when solving regression problems. On the other
+hand, this study represents an advance in the multi-point geostatistical simulations, which will be contemplated with a neural
+approach for solving this sort of problems, what is known there is a lack of such kind of methods. This proposal is additionally
+relevant because the method will be assessed in the presence of local actual data, like well-log and seismic data.
+
+\chapter{Method}
+For accomplishing the goal of having a convolutional neural network learned spatial patterns and reproduce them in geological
+meaningful simulations, it is important that the model in
+Training a convolutional neural network envolves 
+
+Firstly, 
+One challange on modeling this network is make it learn with a small set of training images, eventually, it is expected to
+be lernerd with only a single training image. For deal with this issue it may be possible to slide a template through the training
+image and making each sample a new potential image for training the convolution neural network.
+
+\chapter{Related Works}
+
+Os métodos tradicionais de simulação se apoiam na modelagem de estatísticas em dois pontos, geralmente as covariâncias e variogramas. Muitos
+fenômenos são complexos e inviabilizam a captura de seus padrões espaciais por meio de estatísticas de dois pontos. A simulação
+geoestatística multiponto é um método genérico e se
+baseia em três mudanças conceituais formalizadas por \cite{Guardiano1993}. A primeira, afirma que conjuntos de dados podem não ser suficiente
+para inferir todas as características estatísticas que controlam o que se deseja modelar. A segunda é adotar uma estrutura estatística
+não-paramétrica para representar a heterogeneidade. A terceira mudança conceitual é avaliar a estatística de eventos de dados de múltiplos
+pontos. As estatísticas multipontos são expressas como funções densidades cumulativas para uma variável aleatória $Z(x)$ condicionadas
+a eventos de dados locais $d_n =  {Z(x_1), Z(x_2),...,Z(x_n)}$, isto é, os valores de $Z$ nos nós vizinhos $x_i$ de $x$, equação \ref{eq:1}.
+\begin{equation}
+ f(z, x, d_n) = Prob({Z(x)<=z|x})
+ \label{eq:1}
+\end{equation}
+
+Os diferentes algoritmos que compõem este método compartilham elementos comuns, como o uso de um caminho
+de simulação (geralmente aleatório), a amostragem em distribuições de probabilidades locais e o uso de grades múltiplas \cite{Mariethoz2014_A}.
+Deste modo, alguns algoritmos diferem apenas por um pequeno componente, mas mantém um arquétipo relativamente consistente
+e que pode ser descrito como no pseudo-código \ref{alg1}.
+
+ %Código
+
+\section{Simulação Multiponto Baseada em Pontos}
+\citeonline{caers_1998} apresentam um modelo de SMP baseado em redes neurais que utilizam imagens de treinamento
+como fonte de aprendizado. Deste modo, as redes neurais podem ser ensinadas a coletar estatísticas de múltiplos pontos e utilizá-las
+para gerar modelos probabilísticos condicionados aos dados reais. Para realizar esta tarefa, as distribuições condicionais aprendidas
+pela rede, relacionam o valor em qualquer região da imagem aos dados da sua vizinhança, dentro de um \emph{template} centrado na região
+simulada, semelhante à ilustração da figura \ref{fig:templates}.
+\begin{figure}[!htb]
+   \centering
+   \caption{Definição de uma vizinhança.}\label{fig:templates}
+   \includegraphics[width=0.6\textwidth]{figuras/templates.png} \\
+   \small{Fonte: \cite{caers_1998}}
+\end{figure}
+A rede neural é treinada para determinar os valores de $y$ em qualquer região, dados os valores da vizinhança $x$. Matematicamente,
+a rede neural modela a função densidade de probabilidade (FDP) \abreviatura{FDP}{Função Densidade de Probabilidade}
+local da equação \ref{eq:a}, ou sua integral, a função de distribuição condicional cumulativa (FDCC) \abreviatura{FDCC}{Função de Distribuição Condicional Cumulativa}.
+\begin{equation}
+ f(y|x) = Pr({y<Y<y+dy|x})
+ \label{eq:a}
+\end{equation}
+
+Na fase de treinamento, são inseridos os dados $y$ condicionados a $x$, presentes na imagem de treinamento, e a rede determina o modelo $f(y|x)$.
+Na fase de simulação, é percorrido cada nó $i$ dos $N$ nós da grade de simulação e um valor simulado $y_i$ é desenhado, condicionado aos
+dados $x_i$ encontrados dentro do \emph{template} definido. A figura \ref{fig:arqrede} apresenta a proposta de rede neural para simulação estocástica
+multiponto. Os parâmetros $w$ e $u$ definem a conexão não-linear entre as médias das funções de base radial $RB$ e os dados condicionantes $x$,
+$k_1$ é o número de neurônios da primeira camada com função de ativação não-linear $S$, os
+$k_2$ é o número de neurônios da segunda camada escondida da rede, a qual recebe adicionalmente os pontos $y$ ponderados
+pelos pesos $-(V_{k_2})$. A arquitetura proposta permite interpretar a rede como uma distribuição de mistura de gaussianas e a tarefa de otimização
+da rede pode ser realizada com algoritmo de maximização de expectativa.
+\begin{figure}[!htb]
+   \centering
+   \caption{Rede neural que retorna a PDF como saída.}\label{fig:arqrede}
+   \includegraphics[width=0.6\textwidth]{figuras/arq_rede_caers.png} \\
+   \small{Fonte:\cite{caers_1998}}
+\end{figure}
+
+A abordagem multiponto baseada em redes neurais \cite{caers_1998}, fortaleceu o
+interesse no estudo dos métodos multipontos. Em 2002, o algoritmo \emph{SNESIM} \cite{Strebelle2002_B} é apresentado como uma alternativa
+para realizar simulações sequenciais livres de variogramas e capazes de lidar com a presença de padrões não-estacionários
+nas imagens de treinamento. Os autores elucidam que, no lugar de utilizar algum tipo de \emph{kriging} para construir um modelo de
+probabilidade para a propriedade a ser simulada, o \emph{SNESIM} determina diretamente o modelo de probabilidades
+a partir da imagem de treinamento sem o uso de variogramas.
+
+O método desenvolvido por \citeonline{Strebelle2002_B} realizam simulações com base na computação da distribuição de probabilidade
+condicional, derivada a partir da imagem de treinamento e alocada em uma árvore de busca.
+Em 2011, \citeonline{Straubhaar2011} apresentaram o método \emph{IMPALA}, que consiste na implementação do método multiponto original, 
+com a substituição da árvore de busca por uma estrutura de lista. Este, mais simples, permite reduzir a quantidade de memória RAM utilizada
+pelo algoritmo e, consequentemente, utilizar diferentes listas para guardar dados adicionais igualmente utilizados durante a
+simulação. Adicionalmente, o uso de diferentes listas facilita a tarefa de paralelização do  algoritmo em \emph{clusters} e
+processadores multinúcleos, e permite lidar com a não-estacionaridade na imagem de treinamento e na grade de simulação. \emph{GROWTHSIM} é
+um algoritmo similar ao \emph{SNESIM}, exceto pelo uso de um caminho aleatório de vizinhança \cite{Eskandaridalvand201059}.
+
+O número limitado de dados condicionantes ao redor do ponto simulado leva a negligenciar dados que, embora afastados, possuem
+informações importantes em escala maior. Com isto, anomalias como desconexões de canais podem ser geradas nas realizações simuladas.
+O método proposto em 2005 \cite{Strebelle2005} utiliza mais dados  para condicionamento, especialmente dados localizados distante
+do nó simulado. Uma medida de consistência entre as realizações simuladas e a IT é definida baseada no número de vezes que cada dado simulado
+teve de ser ignorado para ser capaz de inferir a distribuição de probabilidade condicional no nó.  Uma nova simulação é realizada para os valores
+de nós mais inconsistentes, o que permite melhorar a reprodução de padrões de treinamento sem aumento computacional significante.
+
+Em 2010 o algoritmo \emph{simulated annealing} foi implementado com intuito de gerar realizações estocásticas de variáveis
+categóricas por reprodução de estatísticas multipontos \cite{Peredo20111110}. A imagem de treinamento é
+utilizada para determinar as frequências de ocorrência das configurações de cada nó. Estas frequências são
+usadas como estatística alvo que deve combinar com as imagens estocásticas geradas com o algoritmo. Inicialmente é criada uma imagem aleatória
+da distribuição espacial das categorias, em seguida, os nós são perturbados aleatoriamente e a diferença entre a estatística alvo e a estatística
+atual da imagem é calculada.. A perturbação é aceita se as estatísticas são mais próximas do alvo, ou condicionalmente rejeitada.
+A principal relevância deste trabalho está no ganho de performance alcançado com a implementação paralelizada do algoritmo e sua execução sob
+um esquema especulativo.
+
+Os algoritmos, \emph{SNESIM} e \emph{IMPALA}, se baseiam no armazenamento dos eventos de dados encontrados na imagem de treinamento, são restritos 
+à simulação de variáveis categóricas e necessitam de um modelo para a vizinhança do ponto simulado. Uma nova abordagem para SMP procede com 
+amostragens diretamente sobre a imagem de treinamento para um determinado evento, de modo que o uso de um banco de dados de evento se torna 
+dispensável \cite{Mariethoz_2010}. O método de amostragem direta permite estender a aplicação de geoestatística multiponto para variáveis contínuas 
+e categóricas e se destaca por respeitar a distribuição de probabilidade condicional sem realizar a sua computação. Na utilização de múltiplas 
+variáveis, uma função $d$ é escolhida apropriadamente para variáveis categóricas ou contínuas. É possível utilizar a função de distância ($d(.)$) 
+para controlar as proporções globais e locais, ou impor uma média local. Para tanto, é adicionado um fator de erro ($E_p$) à fdp, que quantifica a 
+diferença entre a probabilidade alvo $L(x)$ e a proporção atual $P\*(x)$ na grade $SG$ parcialmente simulada, na forma da equação \ref{eq:b}.
+\begin{equation}
+ E_p ~ |P\*(x) - L(x)|
+\label{eq:b}
+\end{equation}
+
+Em 2012, é apresentado o guia prático para realizações de simulação multiponto com o algoritmo de amostragem direta (DS)\abreviatura{DS}{Direct Sample}
+\cite{Meerschman_13}.
+Neste trabalho, os autores apresentam uma análise quantitativa sobre os parâmetros de entrada do algoritmo, listam aqueles que são mais importantes,
+avaliam seu impacto nas simulações realizadas e demonstram a capacidade do algoritmo em realizar simulações 3D. O trabalho vai além e
+apresenta o resultado qualitativo obtido com pós-processamento e o potencial do algoritmo para simular problemas com duas variáveis e reproduzir 
+dados condicionantes. Os autores apresentam estratégias para definir os valores adequados para os parâmetros t (\emph{threshold}) e
+n (número de vizinhos) nos casos contínuo e categórico. Para este, se recomenda realizar uma etapa de pós-processamento
+para remoção de ruído. Em 2013, este método sofreu modificações para simular em bloco, no lugar de simular ponto a ponto.
+Esta modificação acelerou a execução do DS em duas ordens de magnitude e permitiu realizar aplicações com
+simulações ainda maiores \cite{Rezaee2013293}.
+
+\section{Simulação Multiponto Baseada em Blocos}\label{SMBB}
+Uma observação comum na comparação entre a IT e as realizações geradas é a existência de padrões exatamente reproduzidos da IT para a
+grade de simulação. Este fenômeno é uma consequência de coerência de textura e o tamanho limitado da imagem de treinamento. Algoritmos de simulação
+baseados em fragmentos ou blocos (\emph{patch}) tendem a agrupar valores de simulação que estejam próximos uns dos outros na imagem de treinamento.
+O algoritmo de simulação baseada em filtro, \emph{FILTERSIM}, foi concebido para superar a limitação do \emph{SNESIM} em funcionar apenas para
+variáveis categóricas.
+O \emph{FILTERSIM} agrupa todos os padrões obtidos da IT dentro de um conjunto de classes de padrões e, em cada local de simulação, identifica a
+classe de padrão que mais se assemelha ao evento de dado condicionante. Em seguida, um padrão é amostrado dentro do protótipo de padrões e
+copiado para a grade de simulação \cite{Zhang2006}. Na versão original do algoritmo, a escolha da classe de padrão é baseada na distância
+de pixel entre cada classe de padrão e o evento de dado condicionante, o que torna o algoritmo custoso computacionalmente
+para simulações 3D. Entretanto, uma nova abordagem é adotada, na qual o cálculo da distância é substituído por comparação de pontuação de
+filtro, ou seja, a diferença da pontuação de filtro entre o padrão condicionante e cada protótipo de padrão \cite{Wu2008}. O cálculo baseado em
+pontuação permite reduzir o custo computacional por conta da redução dimensional dos dados.
+
+O algoritmo \emph{SIMPA} \cite{Arpat2007}  abandona a abordagem por reprodução de
+estatísticas e reprodução probabilística, e se baseia em reconhecimento de padrões. Neste sentido,
+a imagem de treinamento é utilizada como um banco de dados de padrões, nos quais é 
+possível identificar entidades com algum significado. Percorrendo um caminho aleatório, o algoritmo atribui a cada localização visitada, um padrão compatível
+com os dados locais disponíveis e quaisquer padrões previamente simulados. Assim, todo o padrão é copiado para a grade de simulação.
+
+Cronologicamente próximo ao \emph{SIMPA}, é apresentado à comunidade científica o \emph{Patchwork Simulation} \cite{Ayoub2008}.
+Algoritmo de simulação sequencial estocástica, o \emph{SIMPAT} é limitado a variáveis binárias e reproduz propriedades de conectividade e a geometria
+de agrupamentos de escala pequena, ou blocos. São estimadas as probabilidades de transição entre blocos adjacentes na imagem de treinamento.
+As probabilidades são usadas para simular cada bloco da imagem e cada bloco é conectado ao bloco anteriormente simulado.
+O procedimento de conexão dos blocos reproduz estruturas de pequena escala e propriedades de conectividade local. O método apresentou performance
+considerada boa em imagens com padrão de tabuleiro de damas ou imagens compostas de pequenos discos. Para estas imagens, a simulação com
+\emph{patchwork simulations} alcançou resultados melhores que o algoritmo de Strebelle \cite{Strebelle2002,Strebelle2002_B}.
+
+Diferente dos algoritmos que constroem banco de dados de padrões e pequenos eventos de dados, o \emph{CCSIM} utiliza função de similaridade entre 
+o padrão gerado e a imagem de treinamento, de modo a obter realizações que combinem com um evento de dado existente na imagem, isto é, correlação 
+cruzada \cite{Tahmasebi2012}. As medidas de correlação cruzada são combinadas com estratégias para reproduzir a continuidade e a reprodutibilidade dos 
+padrões. O método \emph{image quilting}\abreviatura{IQ}{Image Quilting} \cite{Efros2001} é idêntico ao \emph{CCSIM}, exceto pelo uso de programação 
+dinâmica para realizar, na área de sobreposição, a correção de padrões que não combinam.
+
+\section{Redes Neurais Convolucionais}
+
+As redes neurais convolucionais \abreviatura{RNC}{Redes Neurais Convolucionais}, também conhecidas como \emph{Deep Learning}, estão no centro
+das pesquisas relacionadas a aprendizagem de máquina. As RNC são muito populares nas áreas de classificação de imagens \cite{Krizhevsky2012,He2014},
+visão computacional \cite{Zhangg_2014}, reconhecimento de faces \cite{NyiSun2014}, à segmentação de imagem e reconhecimento de ações em vídeos;
+Os fatores que conferem às RNC a importância atual são: (i) a eficiência no treinamento em GPUs modernas, (ii) a proposta das Unidades Lineares Retificadas
+(em tradução livre do termo em inglês Rectified Linear Unit - ReLU) \abreviatura{ReLU}{Rectified Linear Unit} as quais tornam a convergência mais rápida, e (iii) o acesso amplo
+aos dados para treinamento de modelos extensos (ImageNet)\cite{Krizhevsky2012}.
+
+\chapter{Expected Outcomes}
+This proposal expects to have following outcomes at the end of the project;
+\begin{itemize}
+  \item 
+  \item Analysis of applicability of convolutional neural networks to a geostatistical scenario.
+  \item The development of a Multiple Point Simulation based on Convolutional Neural Network technique.
+  \item Publication of paper of the research project.
+\end{itemize}
+
+\chapter{Schedule}
+
+This plan aims for one year visit, developed according to the following schedule:
+
+\begin{ganttchart}[
+  vgrid,
+  hgrid,
+  link label font=\small\bfseries\color{purple}
+  ]{1}{12}
+  \gantttitle{Title}{12} \\
+  \ganttbar{Task 1}{2}{3} \\
+  \ganttbar{Task 2}{2}{5} \\
+  \ganttbar{Task 3}{6}{11} \\
+  \ganttbar{Task 4}{8}{11} \\
+  \ganttbar{Task 5}{4}{7}
+  \ganttlink[link type=s-s]{elem0}{elem1}
+  \ganttlink[link type=f-s, link label={f$\to$s}]{elem1}{elem2}
+  \ganttlink[
+  link type=f-f,
+  link label node/.append style={anchor=east}
+  ]{elem2}{elem3}
+  \ganttlink[
+  link type=s-f,
+  link label node/.append style={anchor=base}
+  ]{elem3}{elem4}
+\end{ganttchart}
+
+\bibliographystyle{ufscThesis/ufsc-alf}
+\bibliography{bibliografia}
+
+%--------------------------------------------------------
+% Elementos pós-textuais
+%\apendice
+%\chapter{Exemplificando um Apêndice}
+%Texto do Apêndice aqui. 
+
+%\anexo
+%\chapter{Exemplificando um Anexo}
+%Texto do anexo aqui.
+\end{document}

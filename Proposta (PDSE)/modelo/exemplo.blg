@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: exemplo.aux
+The style file: ufscThesis/ufsc-alf.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: abnt-options.bib
+Database file #2: bibliografia.bib
+Warning--I'm ignoring journel1990's extra "author" field
+--line 337 of file bibliografia.bib
+Warning--I didn't find a database entry for "abnt-url-package=html"
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Warning--campo year vazio ou faltando em Krizhevsky2012
++---------------------------------------------------------+
+| Estilo bibliográfico abnt-alf.bst versão 1.45.2.1           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://abntex.codigolivre.org.br                        |
++---------------------------------------------------------+
+You've used 31 entries,
+            6480 wiz_defined-function locations,
+            1373 strings with 15252 characters,
+and the built_in function-call counts, 27255 in all, are:
+= -- 2303
+> -- 974
+< -- 58
++ -- 418
+- -- 291
+* -- 2014
+:= -- 3546
+add.period$ -- 132
+call.type$ -- 33
+change.case$ -- 333
+chr.to.int$ -- 62
+cite$ -- 28
+duplicate$ -- 1250
+empty$ -- 2038
+format.name$ -- 1401
+if$ -- 6611
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 530
+newline$ -- 160
+num.names$ -- 136
+pop$ -- 651
+preamble$ -- 1
+purify$ -- 128
+quote$ -- 0
+skip$ -- 1530
+stack$ -- 1
+substring$ -- 1190
+swap$ -- 678
+text.length$ -- 46
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 11
+warning$ -- 1
+while$ -- 222
+width$ -- 0
+write$ -- 473
+(There were 3 warnings)
