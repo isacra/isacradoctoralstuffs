@@ -3,11 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-train_dir = '/home/isaac/workspace/Tensor_Basics/train'
+train_dir = '/home/isaac/Documents/isacradoctoralstuffs/workspace/Tensor_Basics/train'
 IMAGE_HIGHT = 1
 IMAGE_WIDTH = 10
 NUM_CHANNELS = 1
-WORK_DIRECTORY = '/home/isaac/workspace/Tensor_Basics/Data'
+WORK_DIRECTORY = '/home/isaac/Documents/isacradoctoralstuffs/workspace/Tensor_Basics/Data'
 BATCH_SIZE = 1
 
 def extract_data(filename, num_images):
@@ -55,10 +55,12 @@ with tf.name_scope('Weights'):
 #weight
     W1 = tf.Variable(tf.random_normal([1,5]),name='Weights')
     W2 = tf.Variable(tf.random_normal([100,1]),name='Weights')
-    conv1_weights = tf.Variable(tf.truncated_normal([1, 2, NUM_CHANNELS, Num_Kernels_Con],
+    conv1_weights = tf.Variable(tf.random_normal([1, 2, NUM_CHANNELS, Num_Kernels_Con],
                         stddev=0.1,
                         dtype=np.float32),name='pesosConv1') 
-    
+    conv2_weights = tf.Variable(tf.random_normal([1, 2, Num_Kernels_Con, Num_Kernels_Con],
+                        stddev=0.1,
+                        dtype=np.float32),name='pesosConv1')
     
 
 with tf.name_scope('Biases'):
@@ -66,6 +68,7 @@ with tf.name_scope('Biases'):
     b1 = tf.Variable(tf.random_normal([100]),name='Biases')
     b2 = tf.Variable(tf.random_normal([1]),name='Biases')
     bconv = tf.Variable(tf.random_normal([Num_Kernels_Con]),name='Biases')
+    bconv2 = tf.Variable(tf.random_normal([Num_Kernels_Con]),name='Biases')
     #bconv = tf.Variable(tf.truncated_normal([Num_Kernels_Con]),name='Biases')
 #Model-linear regression
 def model(data):
@@ -74,17 +77,39 @@ def model(data):
                         conv1_weights,
                         strides=[1, 1, 1, 1],
                         padding='SAME')
-        conv1 = tf.tanh(tf.nn.bias_add(c1, bconv))
+        conv1 = tf.nn.relu6(tf.nn.bias_add(c1, bconv))
         pool1 = tf.nn.avg_pool(conv1, ksize=[1, 1, 2, 1], strides=[1, 1, 1, 1],
                          padding='SAME', name='pool1')
-        
-        reshape = tf.reshape(pool1, [BATCH_SIZE, -1])
+        c2 = tf.nn.conv2d(pool1,
+                        conv2_weights,
+                        strides=[1, 1, 1, 1],
+                        padding='SAME')
+        conv2 = tf.nn.bias_add(c2, bconv2)
+        pool2 = tf.nn.avg_pool(conv2, ksize=[1, 1, 2, 1], strides=[1, 1, 1, 1],
+                         padding='SAME', name='pool2')
+        reshape = tf.reshape(pool2, [BATCH_SIZE, -1])
         dim = reshape.get_shape()[1].value
         W = tf.Variable(tf.truncated_normal(shape=[dim,100],stddev=0.1),name='Weights')
         #W = tf.Variable(tf.truncated_normal(shape=[dim,100]),name='Weights')
         hidden = tf.add(tf.matmul(reshape,W),b1)
-        activation = tf.nn.bias_add(tf.matmul(hidden, W2), b2, name='FUllConnected')
+        activation = tf.add(tf.matmul(hidden, W2), b2, name='FUllConnected')
         
+#     with tf.name_scope('Model'):
+#         c1 = tf.nn.conv2d(data,
+#                         conv1_weights,
+#                         strides=[1, 1, 1, 1],
+#                         padding='SAME')
+#         conv1 = tf.nn.bias_add(c1, bconv)
+#         pool1 = tf.nn.avg_pool(conv1, ksize=[1, 1, 2, 1], strides=[1, 1, 1, 1],
+#                          padding='SAME', name='pool1')
+#          
+#         reshape = tf.reshape(pool1, [BATCH_SIZE, -1])
+#         dim = reshape.get_shape()[1].value
+#         W = tf.Variable(tf.truncated_normal(shape=[dim,100],stddev=0.1),name='Weights')
+#         #W = tf.Variable(tf.truncated_normal(shape=[dim,100]),name='Weights')
+#         hidden = tf.add(tf.matmul(reshape,W),b1)
+#         activation = tf.nn.bias_add(tf.matmul(hidden, W2), b2, name='FUllConnected')
+#          
         
     return activation
 
@@ -97,7 +122,7 @@ with tf.name_scope('Loss'):
 
 #training algorithm
 #optimizer = tf.train.GradientDescentOptimizer(0.00000001) #Melhor valor
-optimizer = tf.train.GradientDescentOptimizer(0.000001)
+optimizer = tf.train.GradientDescentOptimizer(0.0000001)
 train = optimizer.minimize(loss)
 
 #initializing the variables
@@ -112,7 +137,7 @@ sess.run(init)
 merged_summarry_op = tf.merge_all_summaries()
 summary_writer = tf.train.SummaryWriter(train_dir,graph=tf.get_default_graph())
 # training the line
-epochs = 25000
+epochs = 30000
 #Plot
 train_size = train_labels.shape[0]
 #for step in range(int(epochs * train_size) // BATCH_SIZE):
@@ -139,7 +164,21 @@ y_real = train_labels[end -BATCH_SIZE:end]
 fig, ax = plt.subplots(1,1)
 ax.grid()
 
+
+# out = sess.run([top_k_op]);
+# out = np.reshape(out,FLAGS.num_examples,1)
+#       
+# lab = sess.run([labels]);
+# lab = np.reshape(lab, FLAGS.num_examples,1)
+#       
+# np.savetxt('saida.csv',(lab,out),delimiter=',')
+# print('==============PREVISTO===================')
+# print(out)
+# print('============REAL=======================')
+# print(lab)
+
 for step in range(train_data.shape[0]// BATCH_SIZE):
+    #offset = (step * BATCH_SIZE) % (train_size)
     offset = (step * BATCH_SIZE) % (train_size - BATCH_SIZE)
     x_test = train_data[offset:(offset + BATCH_SIZE), ...]
     y_real = train_labels[offset:(offset + BATCH_SIZE)]
