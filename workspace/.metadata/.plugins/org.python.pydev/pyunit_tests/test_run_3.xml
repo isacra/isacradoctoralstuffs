@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+<summary errors="0" failures="0" finished="true" name="Test Run: 3" tests="0" total_time="null"/>
+<launch mode="debug">
+<launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="Tensor_Basics Tensor_Basics"/>
+]]></launch_memento>
+</launch>
+</pydev-testsuite>

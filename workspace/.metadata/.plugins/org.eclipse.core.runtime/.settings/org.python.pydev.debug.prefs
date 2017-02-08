@@ -1,0 +1,2 @@
+INTERACTIVE_CONSOLE_VM_ARGS=-Xmx128m
+eclipse.preferences.version=1

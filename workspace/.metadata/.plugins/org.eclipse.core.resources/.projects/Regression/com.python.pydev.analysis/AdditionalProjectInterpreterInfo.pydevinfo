@@ -1,0 +1,33 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/isaac/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Regression/com.python.pydev.analysis/v2_indexcache
+Code.__init__|1480269100000000000|/home/isaac/workspace/Regression/Code/__init__.py
+Code.Regression|1480371578000000000|/home/isaac/workspace/Regression/Code/Regression.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=Code.Regression
+-- END DICTIONARY
+-- START TREE 1
+17
+W|1|W!11@
+W2|1|W2!11@
+X|1|X!11@
+Y|1|Y!11@
+b|1|b!11@
+b2|1|b2!11@
+cos|1|cost!11@
+lea|1|learning_rate!11@
+mod|1|model!10@
+n_e|1|n_epochs!11@
+n_o|1|n_observations!11@
+opt|1|optimizer!11@
+pre|1|prev_training_cost!11@
+tra|1|training_cost!11@
+xs|1|xs!11@
+y_p|1|Y_pred!11@
+ys|1|ys!11@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,33 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/isaac/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Mnist/com.python.pydev.analysis/v2_indexcache
+convolutional|1477499302000000000|/home/isaac/workspace/Mnist/convolutional.py
+__init__|1477499302000000000|/home/isaac/workspace/Mnist/__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=convolutional
+-- END DICTIONARY
+-- START TREE 1
+17
+bat|1|BATCH_SIZE!11@
+dat|1|data_type!10@
+err|1|error_rate!10@
+eva|2|EVAL_BATCH_SIZE!11@EVAL_FREQUENCY!11@
+ext|2|extract_labels!10@extract_data!10@
+fak|1|fake_data!10@
+fla|1|FLAGS!11@
+ima|1|IMAGE_SIZE!11@
+mai|1|main!10@
+may|1|maybe_download!10@
+num|3|NUM_EPOCHS!11@NUM_LABELS!11@NUM_CHANNELS!11@
+par|1|parser!11@
+pix|1|PIXEL_DEPTH!11@
+see|1|SEED!11@
+sou|1|SOURCE_URL!11@
+val|1|VALIDATION_SIZE!11@
+wor|1|WORK_DIRECTORY!11@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

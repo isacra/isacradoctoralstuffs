@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+<summary errors="2" failures="0" finished="true" name="Test Run: 5" tests="0" total_time="Finished in: 0.01 secs."/>
+<test location="/home/malik/workspace/Tensor_Basics/Code/Regression_2.py" status="error" test="Code.Regression_2" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/Tensor_Basics/Code/Regression_2.py", line 5, in <module>
+    import tensorflow as tf
+ImportError: No module named tensorflow
+ERROR: Module: Code.Regression_2 could not be imported (file: /home/malik/workspace/Tensor_Basics/Code/Regression_2.py).
+]]></stderr>
+</test>
+<test location="/home/malik/workspace/Tensor_Basics/Code/Regression.py" status="error" test="Code.Regression" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/Tensor_Basics/Code/Regression.py", line 1, in <module>
+    import tensorflow as tf
+ImportError: No module named tensorflow
+ERROR: Module: Code.Regression could not be imported (file: /home/malik/workspace/Tensor_Basics/Code/Regression.py).
+]]></stderr>
+</test>
+<launch mode="run">
+<launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="Tensor_Basics Tensor_Basics"/>
+]]></launch_memento>
+</launch>
+</pydev-testsuite>

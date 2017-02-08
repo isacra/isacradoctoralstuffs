@@ -1,0 +1,5 @@
+MODULES_MANAGER_V2
+cifar10|/home/isaac/workspace/Cifar10/cifar10.py
+cifar10_eval|/home/isaac/workspace/Cifar10/cifar10_eval.py
+cifar10_input|/home/isaac/workspace/Cifar10/cifar10_input.py
+cifar10_train|/home/isaac/workspace/Cifar10/cifar10_train.py

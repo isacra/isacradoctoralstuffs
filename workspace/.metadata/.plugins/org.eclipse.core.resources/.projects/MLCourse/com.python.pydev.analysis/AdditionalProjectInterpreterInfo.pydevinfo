@@ -1,0 +1,92 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/isaac/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/MLCourse/com.python.pydev.analysis/v2_indexcache
+ex1_import_this|1481000920000000000|/home/isaac/workspace/MLCourse/ex1_import_this.py
+ex3_data_inspection|1481038681000000000|/home/isaac/workspace/MLCourse/ex3_data_inspection.py
+ex4_dimensionality_reduction|1481125637000000000|/home/isaac/workspace/MLCourse/ex4_dimensionality_reduction.py
+ex5_clustering|1481130311000000000|/home/isaac/workspace/MLCourse/ex5_clustering.py
+ex6_dendrograms|1481134052000000000|/home/isaac/workspace/MLCourse/ex6_dendrograms.py
+ex10_random_forest|1481000920000000000|/home/isaac/workspace/MLCourse/ex10_random_forest.py
+ex7_nearest_neighbors|1481000920000000000|/home/isaac/workspace/MLCourse/ex7_nearest_neighbors.py
+ex9_SVM|1481000922000000000|/home/isaac/workspace/MLCourse/ex9_SVM.py
+ex2_check_python|1481000920000000000|/home/isaac/workspace/MLCourse/ex2_check_python.py
+ex8_LDA_QDA|1481000920000000000|/home/isaac/workspace/MLCourse/ex8_LDA_QDA.py
+-- END DISKCACHE
+-- START DICTIONARY
+9
+5=ex3_data_inspection
+2=ex4_dimensionality_reduction
+7=ex5_clustering
+1=ex6_dendrograms
+3=ex7_nearest_neighbors
+6=ex10_random_forest
+8=ex9_SVM
+4=ex8_LDA_QDA
+9=ex2_check_python
+-- END DICTIONARY
+-- START TREE 1
+60
+X|2|X!11@X!19@
+Z|2|Z!27@Z!11@
+ax|1|ax!19@
+axe|3|axes!35@axes!19@axes!43@
+axi|1|axis_labels!51@
+ben|1|bench_k_means!58@
+clf|4|clf!67@clf!51@clf!35@clf!27@
+d_c|1|d_clusters!11@
+dat|1|data_index!35@
+df|4|df!59@df!19@df!75@df!11@
+df_|16|df_testing!27@df_training!35@df_testing!67@df_testing!51@df_training!27@df_testing!35@df_log!43@df_future!27@df_future!43@df_training!67@df_training!51@df_future!51@df_future!35@df_future!67@df_training!43@df_testing!43@
+dim|1|dim!19@
+fea|5|features!67@features!51@features!35@features!27@features!59@
+fig|1|fig!19@
+fna|8|fname!19@fname!43@fname!59@fname!27@fname!51@fname!11@fname!35@fname!67@
+fut|6|future_file!67@future_facies!35@future_file!27@future_file!35@future_file!51@future_file!43@
+h|1|h!27@
+ig|1|ig!19@
+imp|1|importances!51@
+ind|1|indices!51@
+ipc|1|ipca!19@
+kpc|1|kpca!19@
+lab|1|labels!59@
+m_c|1|m_clusters!11@
+max|2|max_d!11@max_clusters!11@
+mds|1|mds!19@
+met|2|metrics!11@methods!11@
+n_c|1|n_clus!59@
+n_d|1|n_digits!59@
+n_n|1|n_neighbors!27@
+one|2|one_well_mask!43@one_well!43@
+out|4|output!35@output!27@output!51@output!67@
+pca|3|pca_selected_features!59@pca!59@pca!19@
+pos|1|pos!19@
+qua|8|quality!27@quality!43@quality!19@quality!59@quality!51@quality!11@quality!67@quality!35@
+ran|1|random_values!75@
+rea|8|realization!51@realization!59@realization!11@realization!35@realization!67@realization!43@realization!27@realization!19@
+sel|1|selected_features!19@
+sim|1|similarities!19@
+std|1|std!51@
+tar|2|target!19@target!59@
+tes|5|testing_file!51@testing_file!67@testing_file!43@testing_file!27@testing_file!35@
+tra|16|training_file!27@training_fraction!59@training_file!19@training_fraction!19@training_fraction!11@training_fraction!27@training_file!11@training_fraction!43@training_file!35@training_file!67@training_file!51@training_file!43@training_file!59@training_fraction!51@training_fraction!35@training_fraction!67@
+wel|2|well_name!35@well_list!35@
+x_b|3|X_back_pca!19@X_back_ipca!19@X_back_kpca!19@
+x_d|3|x_dim!59@x_dim!11@x_dim!67@
+x_i|1|X_ipca!19@
+x_k|1|X_kpca!19@
+x_p|2|X_pca!19@X_pca!59@
+xfu|4|Xfuture!51@Xfuture!67@Xfuture!27@Xfuture!35@
+xte|4|Xtest!51@Xtest!35@Xtest!67@Xtest!27@
+xtr|4|Xtrain!35@Xtrain!67@Xtrain!51@Xtrain!27@
+xx|2|xx!19@xx!75@
+y_d|3|y_dim!11@y_dim!67@y_dim!59@
+y_p|4|y_pred_log_pca!59@y_pred_log!59@y_pred_pca!59@y_pred!59@
+yfu|8|yfuture!35@yfuture!67@Yfuture!27@Yfuture!35@Yfuture!67@Yfuture!51@yfuture!27@yfuture!51@
+yte|8|Ytest!27@ytest!35@Ytest!67@Ytest!51@Ytest!35@ytest!51@ytest!67@ytest!27@
+ytr|7|Ytrain!27@ytrain!51@Ytrain!35@ytrain!35@ytrain!67@Ytrain!67@Ytrain!51@
+yy|2|yy!19@yy!75@
+zz|2|zz!35@zz!75@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

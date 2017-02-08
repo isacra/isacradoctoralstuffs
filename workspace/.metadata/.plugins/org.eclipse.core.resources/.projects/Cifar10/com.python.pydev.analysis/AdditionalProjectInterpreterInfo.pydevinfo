@@ -1,0 +1,42 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/isaac/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Cifar10/com.python.pydev.analysis/v2_indexcache
+cifar10|1481571393000000000|/home/isaac/workspace/Cifar10/cifar10.py
+cifar10_eval|1477499302000000000|/home/isaac/workspace/Cifar10/cifar10_eval.py
+cifar10_train|1481571364000000000|/home/isaac/workspace/Cifar10/cifar10_train.py
+cifar10_input|1479317256000000000|/home/isaac/workspace/Cifar10/cifar10_input.py
+-- END DISKCACHE
+-- START DICTIONARY
+4
+1=cifar10
+3=cifar10_eval
+4=cifar10_train
+2=cifar10_input
+-- END DICTIONARY
+-- START TREE 1
+21
+_ac|1|_activation_summary!10@
+_ad|1|_add_loss_summaries!10@
+_ge|1|_generate_image_and_label_batch!18@
+_va|2|_variable_on_cpu!10@_variable_with_weight_decay!10@
+dat|1|DATA_URL!11@
+dis|2|distorted_inputs!18@distorted_inputs!10@
+eva|2|eval_once!26@evaluate!26@
+fla|3|FLAGS!11@FLAGS!27@FLAGS!35@
+ima|4|IMAGE_SIZE!11@IMAGE_SIZE!19@IMAGE_HEIGHT_SIZE!19@IMAGE_WIDTH_SIZE!19@
+inf|1|inference!10@
+ini|1|INITIAL_LEARNING_RATE!11@
+inp|2|inputs!10@inputs!18@
+lea|1|LEARNING_RATE_DECAY_FACTOR!11@
+los|1|loss!10@
+mai|2|main!34@main!26@
+may|1|maybe_download_and_extract!10@
+mov|1|MOVING_AVERAGE_DECAY!11@
+num|7|NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN!11@NUM_EPOCHS_PER_DECAY!11@NUM_EXAMPLES_PER_EPOCH_FOR_EVAL!11@NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN!19@NUM_EXAMPLES_PER_EPOCH_FOR_EVAL!19@NUM_CLASSES!19@NUM_CLASSES!11@
+rea|1|read_cifar10!18@
+tow|1|TOWER_NAME!11@
+tra|2|train!10@train!34@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

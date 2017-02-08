@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+<summary errors="1" failures="0" finished="true" name="Test Run: 8" tests="0" total_time="Finished in: 0.00 secs."/>
+<test location="/home/isaac/workspace/Tensor_Basics/Code/Regression.py" status="error" test="Code.Regression" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/isaac/.p2/pool/plugins/org.python.pydev_5.5.0.201701191708/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/isaac/workspace/Tensor_Basics/Code/Regression.py", line 36, in <module>
+    tf.gfile.MakeDirs(train_dir)
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/lib/io/file_io.py", line 299, in recursive_create_dir
+    pywrap_tensorflow.RecursivelyCreateDir(compat.as_bytes(dirname), status)
+  File "/usr/lib/python2.7/contextlib.py", line 24, in __exit__
+    self.gen.next()
+  File "/usr/local/lib/python2.7/dist-packages/tensorflow/python/framework/errors_impl.py", line 469, in raise_exception_on_not_ok_status
+    pywrap_tensorflow.TF_GetCode(status))
+PermissionDeniedError: /home/workspace
+ERROR: Module: Code.Regression could not be imported (file: /home/isaac/workspace/Tensor_Basics/Code/Regression.py).
+]]></stderr>
+</test>
+<launch mode="debug">
+<launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="Tensor_Basics Tensor_Basics"/>
+]]></launch_memento>
+</launch>
+</pydev-testsuite>

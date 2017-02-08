@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+<summary errors="10" failures="0" finished="true" name="Test Run: 1" tests="0" total_time="Finished in: 0.00 secs."/>
+<test location="/home/malik/workspace/MLCourse/ex8_LDA_QDA.py" status="error" test="ex8_LDA_QDA" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/MLCourse/ex8_LDA_QDA.py", line 53
+    print metrics.accuracy_score(ytest, Ytest, normalize=False)
+                ^
+SyntaxError: invalid syntax
+ERROR: Module: ex8_LDA_QDA could not be imported (file: /home/malik/workspace/MLCourse/ex8_LDA_QDA.py).
+]]></stderr>
+</test>
+<test location="/home/malik/workspace/MLCourse/ex6_dendrograms.py" status="error" test="ex6_dendrograms" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/MLCourse/ex6_dendrograms.py", line 35
+    print "Cophenet correlation should be close to 1 : {}".format(c)
+                                                         ^
+SyntaxError: invalid syntax
+ERROR: Module: ex6_dendrograms could not be imported (file: /home/malik/workspace/MLCourse/ex6_dendrograms.py).
+]]></stderr>
+</test>
+<test location="/home/malik/workspace/MLCourse/ex3_data_inspection.py" status="error" test="ex3_data_inspection" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/MLCourse/ex3_data_inspection.py", line 34
+    print df_training
+                    ^
+SyntaxError: Missing parentheses in call to 'print'
+ERROR: Module: ex3_data_inspection could not be imported (file: /home/malik/workspace/MLCourse/ex3_data_inspection.py).
+]]></stderr>
+</test>
+<test location="/home/malik/workspace/MLCourse/ex1_import_this.py" status="error" test="ex1_import_this" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/MLCourse/ex1_import_this.py", line 10
+    print "Python version \t: {}".format(sys.version)
+                                ^
+SyntaxError: invalid syntax
+ERROR: Module: ex1_import_this could not be imported (file: /home/malik/workspace/MLCourse/ex1_import_this.py).
+]]></stderr>
+</test>
+<test location="/home/malik/workspace/MLCourse/ex9_SVM.py" status="error" test="ex9_SVM" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/MLCourse/ex9_SVM.py", line 33
+    print df_training.columns
+                    ^
+SyntaxError: Missing parentheses in call to 'print'
+ERROR: Module: ex9_SVM could not be imported (file: /home/malik/workspace/MLCourse/ex9_SVM.py).
+]]></stderr>
+</test>
+<test location="/home/malik/workspace/MLCourse/ex2_check_python.py" status="error" test="ex2_check_python" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/MLCourse/ex2_check_python.py", line 6
+    print "Python version \t: {}".format(sys.version)
+                                ^
+SyntaxError: invalid syntax
+ERROR: Module: ex2_check_python could not be imported (file: /home/malik/workspace/MLCourse/ex2_check_python.py).
+]]></stderr>
+</test>
+<test location="/home/malik/workspace/MLCourse/ex10_random_forest.py" status="error" test="ex10_random_forest" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/MLCourse/ex10_random_forest.py", line 48
+    print 'calibrated'
+                     ^
+SyntaxError: Missing parentheses in call to 'print'
+ERROR: Module: ex10_random_forest could not be imported (file: /home/malik/workspace/MLCourse/ex10_random_forest.py).
+]]></stderr>
+</test>
+<test location="/home/malik/workspace/MLCourse/ex5_clustering.py" status="error" test="ex5_clustering" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/MLCourse/ex5_clustering.py", line 8, in <module>
+    import pandas as pd
+ImportError: No module named 'pandas'
+ERROR: Module: ex5_clustering could not be imported (file: /home/malik/workspace/MLCourse/ex5_clustering.py).
+]]></stderr>
+</test>
+<test location="/home/malik/workspace/MLCourse/ex4_dimensionality_reduction.py" status="error" test="ex4_dimensionality_reduction" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/MLCourse/ex4_dimensionality_reduction.py", line 36
+    print "Explained variance ratio : {}".format(pca.explained_variance_ratio_)
+                                        ^
+SyntaxError: invalid syntax
+ERROR: Module: ex4_dimensionality_reduction could not be imported (file: /home/malik/workspace/MLCourse/ex4_dimensionality_reduction.py).
+]]></stderr>
+</test>
+<test location="/home/malik/workspace/MLCourse/ex7_nearest_neighbors.py" status="error" test="ex7_nearest_neighbors" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/malik/.p2/pool/plugins/org.python.pydev_5.3.1.201610311318/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/malik/workspace/MLCourse/ex7_nearest_neighbors.py", line 91
+    print "MAE {}".format(metrics.mean_absolute_error(y_pred=ytest, y_true=Ytest))
+                 ^
+SyntaxError: invalid syntax
+ERROR: Module: ex7_nearest_neighbors could not be imported (file: /home/malik/workspace/MLCourse/ex7_nearest_neighbors.py).
+]]></stderr>
+</test>
+<launch mode="run">
+<launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="MLCourse MLCourse"/>
+]]></launch_memento>
+</launch>
+</pydev-testsuite>
