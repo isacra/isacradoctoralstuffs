@@ -2,6 +2,7 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import datetime
 
 train_dir = '/home/isaac/Documents/isacradoctoralstuffs/workspace/Tensor_Basics/train'
 IMAGE_HIGHT = 1
@@ -77,14 +78,14 @@ def model(data):
                         conv1_weights,
                         strides=[1, 1, 1, 1],
                         padding='SAME')
-        conv1 = tf.nn.relu6(tf.nn.bias_add(c1, bconv))
+        conv1 = tf.add(c1, bconv)
         pool1 = tf.nn.avg_pool(conv1, ksize=[1, 1, 2, 1], strides=[1, 1, 1, 1],
                          padding='SAME', name='pool1')
         c2 = tf.nn.conv2d(pool1,
                         conv2_weights,
                         strides=[1, 1, 1, 1],
                         padding='SAME')
-        conv2 = tf.nn.bias_add(c2, bconv2)
+        conv2 = tf.add(c2, bconv2)
         pool2 = tf.nn.avg_pool(conv2, ksize=[1, 1, 2, 1], strides=[1, 1, 1, 1],
                          padding='SAME', name='pool2')
         reshape = tf.reshape(pool2, [BATCH_SIZE, -1])
@@ -93,6 +94,27 @@ def model(data):
         #W = tf.Variable(tf.truncated_normal(shape=[dim,100]),name='Weights')
         hidden = tf.add(tf.matmul(reshape,W),b1)
         activation = tf.add(tf.matmul(hidden, W2), b2, name='FUllConnected')
+#     with tf.name_scope('Model'):
+#         c1 = tf.nn.conv2d(data,
+#                         conv1_weights,
+#                         strides=[1, 1, 1, 1],
+#                         padding='SAME')
+#         conv1 = tf.nn.relu6(tf.nn.bias_add(c1, bconv))
+#         pool1 = tf.nn.avg_pool(conv1, ksize=[1, 1, 2, 1], strides=[1, 1, 1, 1],
+#                          padding='SAME', name='pool1')
+#         c2 = tf.nn.conv2d(pool1,
+#                         conv2_weights,
+#                         strides=[1, 1, 1, 1],
+#                         padding='SAME')
+#         conv2 = tf.nn.bias_add(c2, bconv2)
+#         pool2 = tf.nn.avg_pool(conv2, ksize=[1, 1, 2, 1], strides=[1, 1, 1, 1],
+#                          padding='SAME', name='pool2')
+#         reshape = tf.reshape(pool2, [BATCH_SIZE, -1])
+#         dim = reshape.get_shape()[1].value
+#         W = tf.Variable(tf.truncated_normal(shape=[dim,100],stddev=0.1),name='Weights')
+#         #W = tf.Variable(tf.truncated_normal(shape=[dim,100]),name='Weights')
+#         hidden = tf.add(tf.matmul(reshape,W),b1)
+#         activation = tf.add(tf.matmul(hidden, W2), b2, name='FUllConnected')
         
 #     with tf.name_scope('Model'):
 #         c1 = tf.nn.conv2d(data,
@@ -122,7 +144,7 @@ with tf.name_scope('Loss'):
 
 #training algorithm
 #optimizer = tf.train.GradientDescentOptimizer(0.00000001) #Melhor valor
-optimizer = tf.train.GradientDescentOptimizer(0.0000001)
+optimizer = tf.train.GradientDescentOptimizer(0.00001)
 train = optimizer.minimize(loss)
 
 #initializing the variables
@@ -137,7 +159,7 @@ sess.run(init)
 merged_summarry_op = tf.merge_all_summaries()
 summary_writer = tf.train.SummaryWriter(train_dir,graph=tf.get_default_graph())
 # training the line
-epochs = 30000
+epochs = 25000
 #Plot
 train_size = train_labels.shape[0]
 #for step in range(int(epochs * train_size) // BATCH_SIZE):
@@ -153,37 +175,33 @@ for step in range(epochs):
     summary_writer.add_summary(summary,step)
   
 
-#test 
-#x_test=np.linspace(-np.pi,np.pi,200)
-#x_test = x_test.reshape(200,1)
+
 end = train_data.shape[0]
 x_test = train_data[end -BATCH_SIZE:end, ...]
 y_test=sess.run(Y_pred,feed_dict = {X:x_test})
 y_real = train_labels[end -BATCH_SIZE:end]
 
 fig, ax = plt.subplots(1,1)
+
+out_net = []
+out_real = []
+fig, ax = plt.subplots(1,1)
 ax.grid()
 
 
-# out = sess.run([top_k_op]);
-# out = np.reshape(out,FLAGS.num_examples,1)
-#       
-# lab = sess.run([labels]);
-# lab = np.reshape(lab, FLAGS.num_examples,1)
-#       
-# np.savetxt('saida.csv',(lab,out),delimiter=',')
-# print('==============PREVISTO===================')
-# print(out)
-# print('============REAL=======================')
-# print(lab)
-
 for step in range(train_data.shape[0]// BATCH_SIZE):
-    #offset = (step * BATCH_SIZE) % (train_size)
     offset = (step * BATCH_SIZE) % (train_size - BATCH_SIZE)
     x_test = train_data[offset:(offset + BATCH_SIZE), ...]
     y_real = train_labels[offset:(offset + BATCH_SIZE)]
     y_test=sess.run(Y_pred,feed_dict = {X:x_test})
-     
+    out_net.append(y_test)
+    out_real.append(y_real) 
     ax.scatter(y_real,y_test)
-plt.show()     
+
+
+basename = "saida.csv"
+prefix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
+filename = "_".join([prefix,basename])
+np.savetxt(filename,(out_net,out_real),delimiter=',')
+     
 sess.close()
