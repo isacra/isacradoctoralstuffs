@@ -1,0 +1,11 @@
+INSTUPutils
+/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/utils.py
+INFOS:&&2|1|2|0&&2|3|2|0&&2|4|2|0&&2|5|2|0&&2|6|2|0&&2|7|2|0&&2|8|2|0
+get_batch=6
+one_hot=7
+makepaths=8
+generate_ae=4
+utils=2
+save_images=5
+binarize=1
+generate_samples=3

@@ -3,7 +3,7 @@
 /home/isaac/Documents/isacradoctoralstuffs/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Tensor_Basics/com.python.pydev.analysis/v2_indexcache
 Code.__init__|1480958137000000000|/home/isaac/Documents/isacradoctoralstuffs/workspace/Tensor_Basics/Code/__init__.py
 Code.Regression_2|1480103607000000000|/home/isaac/Documents/isacradoctoralstuffs/workspace/Tensor_Basics/Code/Regression_2.py
-Code.Regression|1486587760000000000|/home/isaac/Documents/isacradoctoralstuffs/workspace/Tensor_Basics/Code/Regression.py
+Code.Regression|1487094828000000000|/home/isaac/Documents/isacradoctoralstuffs/workspace/Tensor_Basics/Code/Regression.py
 -- END DISKCACHE
 -- START DICTIONARY
 2
@@ -11,7 +11,7 @@ Code.Regression|1486587760000000000|/home/isaac/Documents/isacradoctoralstuffs/w
 2=Code.Regression
 -- END DICTIONARY
 -- START TREE 1
-39
+42
 W|1|W!11@
 W1|1|W1!19@
 W2|1|W2!19@
@@ -20,6 +20,7 @@ Y|2|Y!11@Y!19@
 b|1|b!11@
 b1|1|b1!19@
 b2|1|b2!19@
+bas|1|basename!19@
 bat|3|batch_data!19@BATCH_SIZE!19@batch_labels!19@
 bco|2|bconv!19@bconv2!19@
 con|2|conv2_weights!19@conv1_weights!19@
@@ -28,6 +29,7 @@ end|1|end!19@
 epo|1|epochs!19@
 ext|2|extract_data!18@extract_labels!18@
 fee|1|feed_dict!19@
+fil|1|filename!19@
 get|1|get_file_path!18@
 ima|2|IMAGE_HIGHT!19@IMAGE_WIDTH!19@
 ini|1|init!19@
@@ -40,7 +42,8 @@ n_o|2|n_observations!19@n_observations!11@
 num|2|Num_Kernels_Con!19@NUM_CHANNELS!19@
 off|1|offset!19@
 opt|2|optimizer!11@optimizer!19@
-pre|1|prev_training_cost!11@
+out|2|out_net!19@out_real!19@
+pre|2|prefix!19@prev_training_cost!11@
 ses|1|sess!19@
 sum|1|summary_writer!19@
 tra|8|train_labels_filename!19@train_data_filename!19@train_labels!19@train_size!19@train_data!19@train!19@training_cost!11@train_dir!19@
