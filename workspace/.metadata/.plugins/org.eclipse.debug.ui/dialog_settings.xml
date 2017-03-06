@@ -6,8 +6,8 @@
 		<item value="402" key="DIALOG_HEIGHT"/>
 	</section>
 	<section name="org.eclipse.debug.ui.SELECT_LAUNCH_SHORTCUT_DIALOG">
-		<item value="286" key="DIALOG_WIDTH"/>
-		<item value="1|Noto Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="451" key="DIALOG_HEIGHT"/>
+		<item value="299" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="437" key="DIALOG_HEIGHT"/>
 	</section>
 </section>

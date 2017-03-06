@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pydev-testrun version="1.0"?><pydev-testsuite>
+<summary errors="3" failures="0" finished="true" name="Test Run: 17" tests="0" total_time="Finished in: 0.00 secs."/>
+<test location="/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/autoencoder.py" status="error" test="autoencoder" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/isaac/.p2/pool/plugins/org.python.pydev_5.5.0.201701191708/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/autoencoder.py", line 3, in <module>
+    from utils import *
+  File "/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/utils.py", line 3, in <module>
+    import scipy.misc
+ImportError: No module named scipy.misc
+ERROR: Module: autoencoder could not be imported (file: /home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/autoencoder.py).
+]]></stderr>
+</test>
+<test location="/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/utils.py" status="error" test="utils" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/isaac/.p2/pool/plugins/org.python.pydev_5.5.0.201701191708/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/utils.py", line 3, in <module>
+    import scipy.misc
+ImportError: No module named scipy.misc
+ERROR: Module: utils could not be imported (file: /home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/utils.py).
+]]></stderr>
+</test>
+<test location="/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/main.py" status="error" test="main" time="0">
+<stdout/>
+<stderr><![CDATA[Traceback (most recent call last):
+  File "/home/isaac/.p2/pool/plugins/org.python.pydev_5.5.0.201701191708/pysrc/_pydev_runfiles/pydev_runfiles.py", line 468, in __get_module_from_str
+    mod = __import__(modname)
+  File "/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/main.py", line 5, in <module>
+    from autoencoder import *
+  File "/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/autoencoder.py", line 3, in <module>
+    from utils import *
+  File "/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/utils.py", line 3, in <module>
+    import scipy.misc
+ImportError: No module named scipy.misc
+ERROR: Module: main could not be imported (file: /home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/main.py).
+]]></stderr>
+</test>
+<launch mode="debug">
+<launch_memento><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration local="true" path="PixelCNN PixelCNN"/>
+]]></launch_memento>
+</launch>
+</pydev-testsuite>

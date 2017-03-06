@@ -1,1 +1,6 @@
 MODULES_MANAGER_V2
+autoencoder|/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/autoencoder.py
+layers|/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/layers.py
+main|/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/main.py
+models|/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/models.py
+utils|/home/isaac/Documents/isacradoctoralstuffs/workspace/PixelCNN/utils.py
