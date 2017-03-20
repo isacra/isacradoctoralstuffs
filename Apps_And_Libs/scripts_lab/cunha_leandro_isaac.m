@@ -73,11 +73,11 @@ im = prop2rgb(impedancia_profundidade_deslocamento_low);
 imwrite(im,strcat('cunha_lr/',int2str(image),'.jpg'));
 
 % Desenha a cunha Deslocamento x Profundidade
- figure;
- subplot(2,1,1)
- imagesc(impedancia_profundidade_deslocamento);
- subplot(2,1,2)
- imagesc(impedancia_profundidade_deslocamento_low);
+%  figure;
+%  subplot(2,1,1)
+%  imagesc(impedancia_profundidade_deslocamento);
+%  subplot(2,1,2)
+%  imagesc(impedancia_profundidade_deslocamento_low);
 % drawnow
 % pause
 % set(gca,'YDir','reverse');

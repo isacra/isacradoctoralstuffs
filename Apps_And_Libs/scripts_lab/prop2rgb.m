@@ -1,4 +1,4 @@
-function prop2rgb = convolve(image)
+function prop2rgb = prop2rgb(image)
     
     C = colormap;
     L = size(C,1);
