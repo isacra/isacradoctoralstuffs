@@ -3,13 +3,17 @@
 clear all;
 close all;
 
-deslocamento_max = 100;
-profundidade_max = 80;
+deslocamento_max = 32;
+profundidade_max = 32;
+mkdir cunha_hr
+mkdir cunha_lr
+delete cunha_hr/*.jpg;
+delete cunha_lr/*.jpg;
 
-for image=1:500
+for image=1:640
 
-espessura_cunha_max = 10 + rand*40;
-base_cunha = 50 + rand*25;
+espessura_cunha_max = 10 + rand*22;
+base_cunha = 10 + rand*22;
 tamanho_cunha = 0.5 + rand*0.45;
 
 % Calcula a espessura da cunha ao longo do deslocamento
@@ -60,15 +64,20 @@ impedancia_profundidade_deslocamento_low = lowPassFilter2(impedancia_profundidad
 
 
 cunha(:,:,image) = impedancia_profundidade_deslocamento;
-cunha_low(:,:,image) = impedancia_profundidade_deslocamento_low;
+im = prop2rgb(impedancia_profundidade_deslocamento);
+imwrite(im,strcat('cunha_hr/',int2str(image),'.jpg'));
 
+
+cunha_low(:,:,image) = impedancia_profundidade_deslocamento_low;
+im = prop2rgb(impedancia_profundidade_deslocamento_low);
+imwrite(im,strcat('cunha_lr/',int2str(image),'.jpg'));
 
 % Desenha a cunha Deslocamento x Profundidade
-% figure;
-% subplot(2,1,1)
-% imagesc(impedancia_profundidade_deslocamento);
-% subplot(2,1,2)
-% imagesc(impedancia_profundidade_deslocamento_low);
+ figure;
+ subplot(2,1,1)
+ imagesc(impedancia_profundidade_deslocamento);
+ subplot(2,1,2)
+ imagesc(impedancia_profundidade_deslocamento_low);
 % drawnow
 % pause
 % set(gca,'YDir','reverse');
