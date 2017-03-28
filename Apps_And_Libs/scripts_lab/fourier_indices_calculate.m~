@@ -1,0 +1,15 @@
+function [ indices ] = fourier_indices_calculate(cnn_fourier, original_fourier)
+    [~,cImCnn]  = size(cnn_fourier);
+    [~,cImOrig] = size(original_fourier);
+    for i=1:cImCnn
+        imCnn = cnn_fourier(i).frequence;
+        for j = 1 : cImOrig
+            imOrig = original_fourier(j).frequence;
+            numerator = (sum(imCnn.*imOrig)) - (32*mean2(imCnn)*mean2(imOrig));
+            T1 = pow(sum(abs(imCnn)),2) - 32*( pow(mean2(imCnn),2));
+            T2 = pow(sum(abs(imOrig)),2) - 32*( pow(mean2(imOrig),2));
+
+            res(i,j) = numerator / (T1*T2);
+        end
+    end
+end
