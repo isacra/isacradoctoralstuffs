@@ -5,7 +5,7 @@ im_size = 32;
 save_ims = false;
 isRGB = false;
 
-[~, im_cube_class] = Impedance_Image_Blur(imp_hr_dir, save_ims,im_size,isRGB);
+%[~, im_cube_class] = Impedance_Image_Blur(imp_hr_dir, save_ims,im_size,isRGB);
 
 imagefiles = dir('Images/gen_hr_imgs/*.jpg');
 nfiles = length(imagefiles);
@@ -22,6 +22,7 @@ end
 
 cnn_imgs_fourier_cube = fourier_transform(images);
 
-original_imgs_fourier_cube = fourier_transform(im_cube_class.images);
+%original_imgs_fourier_cube = fourier_transform(im_cube_class.images);
+original_imgs_fourier_cube = fourier_transform(images);
 
-fourier_indices_calculate(cnn_imgs_fourier_cube,original_imgs_fourier_cube);
+fourier_indices_calculate(images, cnn_imgs_fourier_cube,original_imgs_fourier_cube);
