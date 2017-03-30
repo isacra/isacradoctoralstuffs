@@ -1,4 +1,4 @@
-function [ indices ] = fourier_indices_calculate(images, cnn_fourier, original_fourier)
+function [ ims_matchs, indices ] = fourier_indices_calculate(images, imagesOrig, cnn_fourier, original_fourier)
     [~,cImCnn]  = size(cnn_fourier);
     [~,cImOrig] = size(original_fourier);
     k = 32;
@@ -6,9 +6,12 @@ function [ indices ] = fourier_indices_calculate(images, cnn_fourier, original_f
         imCnnFourier = cnn_fourier(i).frequence;
         imCnn = mat2gray(images(:,:,i));
         
+        ims_matchs{i}.immatch = 0;
+        ims_matchs{i}.fft_param = 0;
+        
         for j = 1 : cImOrig
             imOrigFourier = original_fourier(j).frequence;
-            imOrig = mat2gray(images(:,:,j));
+            imOrig = mat2gray(imagesOrig(:,:,j));
                         
             mult1 = imCnn.*imOrig;
             
@@ -20,7 +23,11 @@ function [ indices ] = fourier_indices_calculate(images, cnn_fourier, original_f
             T1 = sum(abs1(:).^2) - k*( mean2(imCnnFourier)^2);
             T2 = sum(abs2(:).^2) - k*( mean2(imOrigFourier)^2);
 
-            res(i,j) = numerator / (T1*T2);
+            indices(i,j) = numerator / (T1*T2);
+            if (ims_matchs{i}.fft_param < indices(i,j))
+                ims_matchs{i}.fft_param = indices(i,j);
+                ims_matchs{i}.immatch = j;
+            end
         end
-        end
+    end
 end

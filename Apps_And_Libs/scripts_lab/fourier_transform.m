@@ -1,6 +1,7 @@
 function [ fft_images_instances ] = fourier_transform(images)
 
     [~,~,p] = size(images);
+  
     for i=1:p
         image = images(:,:,i);
         four_res = fft2(mat2gray(image));
@@ -13,6 +14,6 @@ function [ fft_images_instances ] = fourier_transform(images)
         fft_instance.phase  = phase;
         fft_instance.frequence  = four_res;
         fft_images_instances(i) = fft_instance;
-
+       
     end
 end
