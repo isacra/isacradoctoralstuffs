@@ -1,0 +1,63 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+
+% Title Page
+\title{A convolutional model to predict forward velues of the sin function}
+\author{Isaac Sacramento}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\chapter{Introduction}
+
+Convolutional Neural Networks (CNNs) are specialized kind of neural network in the
+of deep learning methods for processing data that has a known,
+grid-like topology. They have been widely used to solve problems
+which objective is to classify elements in a certain domain.
+The name \textit{convolutional neural network} is related to the
+fact that these networks employ a linear operation called convolution,
+instead of ordinary matrix multiplication.
+Different convolutional models are build each day to solve specific
+classification problems, such as pointing a handwritten digit and classifying objects
+in static and dynamic scenes.
+On the other hand, there are certain domains in which a set of
+images represent a spacial distributed phenomenon, such as geo-statistic
+phenomenon. In this kind of event, points in an image area spacial correlated,
+in such a way that, in order to stud it, one must to take into consideration
+vertical and/or horizontal correlation between the points.
+
+Using shallow neural networks on the study of spacially distributed phenomenon
+may lead to not accurately measurement of the spacial correlation between the
+points, once the process of feature extraction is based on ordinary
+matrix multiplication.
+
+\chapter{Regressive Convolutional Neural Networks}
+
+\section{Predição da Função Seno}
+As an introductory experiment to model a regressive CNN, the sin function
+is estimated based on the convolution of 1D filters with n previews steps
+of the same function. This function was arbitrarily chosen to represent the
+a non-linear training set, but simples enough to make it feasible obtaining
+a regressive convolutional model, instead of a classification one.
+It is reasonable that this model must be improved and adapted to run over
+real world datasets
+
+\subsection{Conjunto de Dados}
+On supervised training, to predict the sin function through a shallow
+neural network, the input dataset is composed by the of angles  $x$
+in the interval [$-k\pi,k\pi$], $k >= 0$. Considering the input
+dataset for convolutional neural networks are training images, one
+expects to be possible recognizing spacial patterns from which the values
+of the sin function can be obtained. In this context the input Nesta matriz de senos, cada linha representa uma imagem em 1D
+composta por $10$ valores subsequentes da função seno, o valor seguinte é o que se
+deseja prever. A Figura \ref{} ilustra a forma como o conjunto experimental de imagens
+de treinamento foi gerado. É importante salientar que, neste caso os valores dos ângulos de entrada para a função
+seno não são utilizados como entrada da rede convolucional, de modo que a predição
+deverá ocorrer baseada no entendimento do padrão da curva existente no conjunto de
+de $10$ valores da função. Todo o conjunto é inicialmente por $90$ imagens.
+
+\end{document}          

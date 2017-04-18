@@ -1,0 +1,65 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+
+% Title Page
+\title{Um Modelo Convolucional Capaz de Realizar a Predição para Valores da Função Seno}
+\author{Isaac L. S. Sacramento}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\chapter{Introdução}
+
+As Redes Neurais Convolucionais são amplamente utilizadas
+na solução de problemas cujo objetivo é classificar elementos
+dentro de um determinado domínio. Diversos modelos de redes
+convolucionais surgem a cada dia para resolver problemas específicos
+de classificação como.
+
+Por outro lado há domínios em que um conjunto de imagens representa
+um fenômeno espacialmente distribuído. Exemplos de fenômenos 
+espacialmente distribuídos são: eventos geoestatísticos como 
+
+Neste tipo de evento, os pontos da imagem estão espacialmente correlacionados,
+de modo que para realizar um estudo sobre este tipo de evento, é
+importante levar em consideração esta correlação. A correlação é dada
+pela fórmula X, de modo que pontos espacialmente próximos estão mais fortemente
+correlacionados do que pontos espacialmente distantes.
+
+Quando os métodos baseados em redes neurais tradicionais são utilizados
+para lidar com problemas relacionados a fenômenos espacialmente distribuídos
+a informação de correlção espacial costuma ser perdida, uma vez que as imagens
+são tratadas como vetores na entrada da rede, de modo que não há interpretação
+da correlação espacial. Por outro lado,
+
+\chapter{Redes Neurais Convolucionais Regressivas}
+
+\section{Predição da Função Seno}
+O uso da função seno como experimento inicial visa alcançar um modelo de
+rede convolucional capaz de realizar a aproximação de função utilizando
+imagens da função. A função seno foi arbitrariamente escolhida para
+representar um conjunto de treinamento não-linear, mas ainda simples o
+suficiente que permitisse obter um modelo convolucional capaz de realizar predição
+ao invés de classificação. É importante ressaltar que este modelo deve ser
+aprimorado e adaptado para a resolução de problemas com conjuntos de dados
+do mundo real.
+
+O conjunto de treinamento das redes neurais convencionais é geralmente composto
+pelos valores das propriedades de entrada e os valores da propriedade que se
+deseja prever. Para prever a função seno com redes neurais convencionais, o
+conjunto de entrada compreende valores $x$ no intervalo [$-k\pi,\k\pi$],
+$k >= 1$. Tendo em vista que o conjunto de entrada das redes neurais convolucionais
+são imagens de treinamento, para este primeiro experimento foram geradas
+imagens da função seno
+
+%For training shallow neural networks it is commonly used the input values for
+%sin function in the interval $-\pi , \pi$. 
+\subsection{Conjunto de Dados}
+Para 
+
+
+\end{document}          

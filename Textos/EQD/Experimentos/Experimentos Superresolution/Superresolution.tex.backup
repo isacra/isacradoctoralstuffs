@@ -1,0 +1,26 @@
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+
+% Title Page
+\title{Dos experimentos relacionados à super-resolução}
+\author{Isaac Leonardo Santos Sacramento}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\chapter{Introdução}
+
+A super-resolução tem um papel importante na visão computacional \cite{}.
+Métodos baseados em interpolação são fáceis de implementar e amplamente utilizados,
+entretanto estes métodos sofrem de falta de expressividade, uma vez que modelos lineares
+não são capazes de expressar dependências complexas entre as entradas e as saídas \ref{}.
+Na prática tais métodos falham na tentativa de prever adequadamente detalhes de alta frequência
+levando a saídas de alta resolução borradas.
+
+
+
+\end{document}          

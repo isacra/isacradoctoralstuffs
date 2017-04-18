@@ -1,0 +1,170 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Artun e Mohaghegh}{2011}{Artun2011143}
+Artun, E. e Mohaghegh, S.  \harvardyearleft 2011\harvardyearright , Intelligent
+  seismic inversion workflow for high-resolution reservoir characterization, {
+  Computers \& Geosciences} {\bf 37}(2),~143 -- 157.
+
+\harvarditem[Azevedo et~al.]{Azevedo; Nunes; Soares e
+  Neto}{2013}{azevedo2013_avoinv}
+Azevedo, L.; Nunes, R.; Soares, A. e Neto, G.  \harvardyearleft
+  2013\harvardyearright , Stochastic seismic {AVO} inversion,  75th EAGE
+  Conference \& Exhibition incorporating SPE EUROPEC 2013, EAGE, Londres, Reino
+  Unido.
+
+\harvarditem{Buland e Omre}{2003{ a}}{Buland01012003}
+Buland, A. e Omre, H.  \harvardyearleft 2003{ a}\harvardyearright , Bayesian
+  linearized avo inversion, { Geophysics} {\bf 68}(1),~185--198.
+
+\harvarditem{Buland e Omre}{2003{ b}}{BulandWavStochastic}
+Buland, A. e Omre, H.  \harvardyearleft 2003{ b}\harvardyearright , Bayesian
+  wavelet estimation from seismic and well data, { Geophysics} {\bf
+  68}(6),~2000--2009.
+
+\harvarditem[]{Clapp; Clapp e Biondi}{2005}{clappRegLeast3D}
+Clapp, M.~L.; Clapp, R.~G. e Biondi, B.~L.  \harvardyearleft
+  2005\harvardyearright , Regularized least-squares inversion for {3-D} subsalt
+  imaging,  SEG Annual Meeting, Society of Exploration Geophysicists, Houston,
+  Texas, pp.~1814--1817.
+
+\harvarditem[]{Fernández~Martínez; Fernández~Muñiz e
+  Tompkins}{2012}{Martinez2011Topogra}
+Fernández~Martínez, J.~L.; Fernández~Muñiz, M.~Z. e Tompkins, M.~J.
+  \harvardyearleft 2012\harvardyearright , On the topography of the cost
+  functional in linear and nonlinear inverse problems, { Geophysics} {\bf
+  77}(1),~W1--W15.
+
+\harvarditem[Fernández~Martínez et~al.]{Fernández~Martínez; Mukerji;
+  García~Gonzalo e Suman}{2012}{MartinezPSO}
+Fernández~Martínez, J.~L.; Mukerji, T.; García~Gonzalo, E. e Suman, A.
+  \harvardyearleft 2012\harvardyearright , Reservoir characterization and
+  inversion uncertainty via a family of particle swarm optimizers, {
+  Geophysics} {\bf 77}(1),~M1--M16.
+
+\harvarditem[Figueiredo et~al.]{Figueiredo; Santos; Roisenberg e
+  Neto}{2013}{leandro_SEG}
+Figueiredo, L.~P.; Santos, M.; Roisenberg, M. e Neto, G.  \harvardyearleft
+  2013\harvardyearright , { Stochastic Bayesian algorithm to a jointly acoustic
+  inversion and wavelet estimation}, Society of Exploration Geophysicists,
+  chapter 635, pp.~3273--3277.
+
+\harvarditem[Figueiredo et~al.]{Figueiredo; Santos; Roisenberg; Neto e
+  Figueiredo}{2014}{leandroGRSL}
+Figueiredo, L.~P.; Santos, M.; Roisenberg, M.; Neto, G. e Figueiredo, W.
+  \harvardyearleft 2014\harvardyearright , Bayesian framework to wavelet
+  estimation and linearized acoustic inversion, { Geoscience and Remote Sensing
+  Letters, IEEE} {\bf PP}(99),~1--5.
+
+\harvarditem{FishSAFE}{2014}{figsismica}
+FishSAFE  \harvardyearleft 2014\harvardyearright , Seismic surveys,
+  \url{http://fishsafe.eu/en/offshore-structures/seismic-surveys.aspx}.
+
+\harvarditem[]{Hansen; Cordua e Mosegaard}{2012}{hansenGibbsPrior}
+Hansen, T.; Cordua, K. e Mosegaard, K.  \harvardyearleft 2012\harvardyearright
+  , Inverse problems with non-trivial priors: efficient solution through
+  sequential gibbs sampling, { Computational Geosciences} {\bf
+  16}(3),~593--611.
+
+\harvarditem{Isaaks e Srivastava}{1989}{isaaks1989geostats}
+Isaaks, E.~H. e Srivastava, R.~M.  \harvardyearleft 1989\harvardyearright , {
+  Applied geostatistics}, Oxford University Press, New York.
+
+\harvarditem{Jolliffe}{2002}{jolliffe2002principal}
+Jolliffe, I.~T.  \harvardyearleft 2002\harvardyearright , { Principal component
+  analysis}, Springer, New York.
+
+\harvarditem{Ma}{2002}{max_inv_simulated}
+Ma, X.  \harvardyearleft 2002\harvardyearright , Simultaneous inversion of
+  prestack seismic data for rock properties using simulated annealing, {
+  GEOPHYSICS} {\bf 67}(6),~1877--1885.
+
+\harvarditem{Mallick}{1995}{MallickGeneticInve}
+Mallick, S.  \harvardyearleft 1995\harvardyearright , Model-based inversion of
+  amplitude-variations-with-offset data using a genetic algorithm, {
+  Geophysics} {\bf 60}(4),~939--954.
+
+\harvarditem[Mart\'{\i}nez et~al.]{Mart\'{\i}nez; Gonzalo; Mu\~{n}iz; Mariethoz
+  e Mukerji}{2010}{Martinez:2010PSO}
+Mart\'{\i}nez, J. L.~F.; Gonzalo, E.~G.; Mu\~{n}iz, Z.~F.; Mariethoz, G. e
+  Mukerji, T.  \harvardyearleft 2010\harvardyearright , Posterior sampling
+  using particle swarm optimizers and model reduction techniques, { Int. J.
+  Appl. Evol. Comput.} {\bf 1}(3),~27--48.
+
+\harvarditem{Sambridge}{2013}{Sambridge22102013}
+Sambridge, M.  \harvardyearleft 2013\harvardyearright , A parallel tempering
+  algorithm for probabilistic sampling and multimodal optimization, {
+  Geophysical Journal International} .
+
+\harvarditem{Scheidt e Caers}{2009}{caers_distance_kernels_MDS}
+Scheidt, C. e Caers, J.  \harvardyearleft 2009\harvardyearright , Representing
+  spatial uncertainty using distances and kernels, { Mathematical Geosciences}
+  {\bf 41}(4),~397--419.
+
+\harvarditem{Sen}{2006}{sen_livro}
+Sen, M.~K.  \harvardyearleft 2006\harvardyearright , { {Seismic Inversion}},
+  Society of Petroleum Engineers, Richardson, TX, USA.
+
+\harvarditem{Sen e Stoffa}{1991}{senSimulatedAnnealin}
+Sen, M.~K. e Stoffa, P.~L.  \harvardyearleft 1991\harvardyearright , Nonlinear
+  one-dimensional seismic waveform inversion using simulated annealing, {
+  Geophysics} {\bf 56}(10),~1624--1638.
+
+\harvarditem{Sen e Stoffa}{1995}{Sen1995v}
+Sen, M.~K. e Stoffa, P.~L.  \harvardyearleft 1995\harvardyearright , { Global
+  Optimization Methods in Geophysical Inversion}, Vol.~4 of { Advances in
+  Exploration Geophysics}, Elsevier.
+
+\harvarditem{Smolyak}{1963}{smolyak63quadrature}
+Smolyak, S.  \harvardyearleft 1963\harvardyearright , {Quadrature and
+  interpolation formulas for tensor products of certain classes of functions},
+  { Soviet Mathematics, Doklady} {\bf 4},~240--243.
+
+\harvarditem{Soares}{2001}{2001amilcarDSS}
+Soares, A.  \harvardyearleft 2001\harvardyearright , Direct sequential
+  simulation and cosimulation, { Mathematical Geology} {\bf 33}(8),~911--926.
+
+\harvarditem[]{Soares; Diet e Guerreiro}{2007}{amilcarInversao}
+Soares, A.; Diet, J. e Guerreiro, L.  \harvardyearleft 2007\harvardyearright ,
+  Stochastic inversion with a global perturbation method,  Petroleum
+  Geostatistics 2007, EAGE.
+
+\harvarditem{Tarantola}{2005}{tarantola}
+Tarantola, A.  \harvardyearleft 2005\harvardyearright , { Inverse Problem
+  Theory and Methods for Model Parameter Estimation}, Society for Industrial
+  and Applied Mathematics.
+
+\harvarditem{Tompkins}{2012}{TompkinsCupature}
+Tompkins, M.~J.  \harvardyearleft 2012\harvardyearright , Efficient estimation
+  of nonlinear posterior model covariances using maximally sparse cubature
+  rules, { Geophysics} {\bf 77}(5),~ID1--ID8.
+
+\harvarditem[Tompkins et~al.]{Tompkins; Fernández~Martínez; Alumbaugh e
+  Mukerji}{2011}{TompkinsScalabUnce2011}
+Tompkins, M.~J.; Fernández~Martínez, J.~L.; Alumbaugh, D.~L. e Mukerji, T.
+  \harvardyearleft 2011\harvardyearright , Scalable uncertainty estimation for
+  nonlinear inverse problems using parameter reduction, constraint mapping, and
+  geometric sampling: Marine controlled-source electromagnetic examples, {
+  Geophysics} {\bf 76}(4),~F263--F281.
+
+\harvarditem[]{Tompkins; Fernández~Martínez e
+  Fernández~Muñiz}{2013}{tompkins_comparisonBayes}
+Tompkins, M.~J.; Fernández~Martínez, J.~L. e Fernández~Muñiz, Z.
+  \harvardyearleft 2013\harvardyearright , Comparison of sparse-grid geometric
+  and random sampling methods in nonlinear inverse solution uncertainty
+  estimation, { Geophysical Prospecting} {\bf 61}(1),~28--41.
+
+\harvarditem{Zhe e Hanming}{2013}{zhe_nonlinear}
+Zhe, Y. e Hanming, G.  \harvardyearleft 2013\harvardyearright , Non-linear
+  prestack seismic inversion with global optimization using an edge-preserving
+  smoothing filter, { Geophysical Prospecting} {\bf 61}(4),~747--760.
+
+\harvarditem[Zunino et~al.]{Zunino; Lange; Melnikova; Hansen e
+  Mosegaard}{2014}{zunino2014}
+Zunino, A.; Lange, K.; Melnikova, Y.; Hansen, T. e Mosegaard, K.
+  \harvardyearleft 2014\harvardyearright , Reservoir modeling combining
+  geostatistics with markov chain monte carlo inversion,  E.~Pardo-Igúzquiza;
+  C.~Guardiola-Albert; J.~Heredia; L.~Moreno-Merino; J.~J. Durán e J.~A.
+  Vargas-Guzmán, (Eds.), Mathematics of Planet Earth, Lecture Notes in Earth
+  System Sciences, Springer Berlin Heidelberg, pp.~683--687.
+
+\end{thebibliography}

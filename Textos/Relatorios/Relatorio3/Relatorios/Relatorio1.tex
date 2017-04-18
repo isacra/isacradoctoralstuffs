@@ -1,0 +1,162 @@
+% $Id: AllegProposal.tex,v 1.8 2000/07/05 21:02:12 culver Exp $
+% AllegProposal.tex
+% by A. Thall
+% 13. Feb 2003
+%
+% Small edits and a few additions made by R. Roos
+% 21 Jan 2007
+% Most particularly, the "box" around the thesis statement has been removed,
+% section titles have been modified. The section named "Prior work II" has
+% been commented out. The \topmargin has been changed to -.5in and the
+% change to \parindent has been commented out.
+% The filename "nausicaa.eps" has been changed to simply "nausicaa" so that
+% pdflatex can be used on the file (and a file named "nausicaa.pdf" has
+% been created using the "epstopdf" command).
+% Several subsections have been added to illustrate subsection usage.
+% The word "comp" has been replaced by "project" or "thesis" throughout.
+% Other small changes have been made.
+%
+% This document provides a sample Senior Project Proposal template for use
+% by students in Allegheny's CS and Applied Computing programs.
+
+\NeedsTeXFormat{LaTeX2e}
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+%The following is used by WinEdt to set up cross-referencing to the BibTeX files
+%It is NOT commented out---the comment lets it be simply ignored by non-WinEdt LaTeX compilers
+
+%GATHER{mybibtexDB.bib}
+
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{algo}
+\usepackage{url}
+
+\setlength{\textheight}{9in}
+\setlength{\textwidth}{6in}
+\setlength{\oddsidemargin}{.25in}
+\setlength{\topmargin}{-.5in}  % changed from -.25 by RSR on 1/21/07
+%\parindent .5in    % commented out by RSR 1/21/07
+
+%put words in the hyphenation statement if you want to enforce
+%how LaTeX should break them (or not) at the end of a line.
+%\hyphenation{repre-sen-tations problems exact linear}
+\hyphenation{itself}
+
+%%%%%
+%% Commented out -- RSR, 1/21/07
+%%%%%
+% The following provides a box to surround the thesis statement
+%\newenvironment{Thesis}%
+%{\begin{Sbox}\begin{minipage}{.95\linewidth}}%
+%{\end{minipage}\end{Sbox}\begin{center}\fbox{\TheSbox}\end{center}}
+
+\title{Relatório Parcial: Ano 2}
+\author{Isaac L.\ Santos\ Sacramento \\ Orientador: Mauro Roisenberg}
+
+\begin{document}
+
+% You can specify a language and other options for
+% the code-formatting "listings" package
+\lstset{language=C++,basicstyle=\small,
+        stringstyle=\ttfamily,showstringspaces=false}
+
+\singlespace
+\maketitle
+
+\begin{abstract}                % ~350 words max
+Neste relatório são apresentadas as atividades realizadas do final do segundo ano até o início do terceiro ano de projeto, mais precisamente no
+período de outubro de 2016 até abril de 2017. Neste período foram realizados estudos e experimentos relacionados à aplicação
+de \textit{Redes Neurais Convolucionais} para realizar predição de propriedades geofísicas e hiper-resolução de imagens pós-inversão.
+Estas atividades estão descritas nas seções a seguir.
+
+\end{abstract}
+
+\doublespace
+% This sets section-numbering to only include Section and Subsection numbers
+\setcounter{secnumdepth}{2}
+
+\section{Introdução}
+
+No período de outubro de 2016 até abril de 2017 foram exploradas duas novas frentes de trabalho relacionados ao uso
+das redes neurais convolucionais no processo de simulação geoestatística e na hiper-resolução pós-inversão.
+Após o estudo dos métodos de simulação multiponto, foram realizados experimentos com o intuito de obter um modelo de rede neural convolucional
+capaz de aprender os padrões das imagens de treinamento e reproduzi-los posteriormente na geração de novas realizações estatísticamente compatíveis
+com a realidade.
+
+Os primeiros experimentos realizados neste período foram implementados 
+com a biblioteca de aprendizagem de máquina (textit{Machine Learning}),
+Tensor Flow. Esta biblioteca permite a implementação de modelos de redes
+neurais convolucionais em linguagem Python.
+
+
+\section{Revisão Bibliográfica}
+
+Os métodos tradicionais de simulação se apoiam na modelagem de estatísticas em dois pontos, geralmente as covariâncias e variogramas. Muitos
+fenômenos são complexos e inviabilizam a captura de seus padrões espaciais por meio de estatísticas de dois pontos. A simulação
+geoestatística multiponto é um método genérico e se
+baseia em três mudanças conceituais formalizadas por \cite{Guardiano1993}. A primeira, afirma que conjuntos de dados podem não ser suficiente
+para inferir todas as características estatísticas que controlam o que se deseja modelar. A segunda é adotar uma estrutura estatística
+não-paramétrica para representar a heterogeneidade. A terceira mudança conceitual é avaliar a estatística de eventos de dados de múltiplos
+pontos. As estatísticas multipontos são expressas como funções densidades cumulativas para uma variável aleatória $Z(x)$ condicionadas
+a eventos de dados locais $d_n =  {Z(x_1), Z(x_2),...,Z(x_n)}$, isto é, os valores de $Z$ nos nós vizinhos $x_i$ de $x$, equação \ref{eq:1}.
+\begin{equation}
+ f(z, x, d_n) = Prob({Z(x)<=z|x})
+ \label{eq:1}
+\end{equation}
+
+
+\section{Redes Neurais Convolucionais na Predição da Função Seno}
+
+O uso da função seno como experimento inicial buscou alcançar um modelo de
+rede convolucional capaz de realizar a aproximação de função utilizando
+imagens da função. A função seno foi arbitrariamente escolhida para
+representar um conjunto de treinamento não-linear simples o
+suficiente, que permitisse obter um modelo convolucional capaz de realizar predição
+ao invés de classificação. É importante ressaltar que este modelo deve ser
+aprimorado e adaptado para a resolução de problemas com conjuntos de dados
+do mundo real.
+
+Para prever a função seno com redes neurais convencionais, o
+conjunto de entrada compreende valores $x$ no intervalo [$-k\pi,k\pi$],
+$k >= 1$. Tendo em vista que o conjunto de entrada das redes neurais convolucionais
+são imagens de treinamento a partir das quais se deseja extrais padrões espaciais
+que permitam realizar predição, para este primeiro experimento foi gerada uma
+matriz de senos. Nesta matriz de senos, cada linha representa uma imagem em 1D
+composta por $10$ valores subsequentes da função seno, o valor seguinte é o que se
+deseja prever. Desta forma, o experimento se assemelha à predição de uma série temporal.
+É importante salientar, porém, que neste caso os valores dos ângulos de entrada para a função
+seno não são utilizados como entrada da rede convolucional, de modo que a predição
+deverá ocorrer baseada no entendimento do padrão da curva existente no conjunto de
+de $10$ valores da função. Todo o conjunto é inicialmente composto por $90$ imagens.
+
+
+\section{Super-resolução em Imagens Pós-inversão Sísmica}
+
+
+\section{Conclusões}
+A simulação multiponto gera realizações que reproduzam padrões estatísticos inferidos a partir de alguma fonte, usualmente uma imagem de treinamento. 
+Como ferramenta de modelagem, os algoritmos de aprendizagem de máquina são universais, adaptativos, não-lineares, robustos e eficientes. 
+Eles podem alcançar soluções aceitáveis para problemas de classificação, regressão e modelagem de densidade de probabilidade em espaço de alta dimensão 
+e com características espacialmente referenciados. Dentre os raros trabalhos encontrados estão o uso de algoritmos genéticos na simulação de variáveis
+categóricas para reproduzir estatísticas multipontos \cite{Peredo2012}. Este algoritmo 
+requer alto desempenho computacional e, portanto, depende da disponibilidade de computadores com múltiplos núcleos, bem como unidades de processamentos 
+gráficos, características inerentes aos métodos de algoritmos genéticos. A simulação multiponto com redes neurais apresentada por Jef Caers \cite{caers_1998} explora uma 
+solução neural para a simulação pixel a pixel e, embora haja diversas citações a este trabalho, nenhuma delas está relacionada com a melhoria, expansão 
+ou aplicação do método proposto. Este fato se dá, possivelmente, por conta do interesse no desenvolvimento de novos algoritmos.Com base no levantamento literário, se observa a possibilidade de explorar a simulação multiponto por meio da 
+implementação baseada em aprendizagem de máquina. Os experimentos de simulação multiponto com os métodos de \textit{Deep Learning} estão em andamento e
+parecem promissores para este fim, entretanto, ainda não apresentaram resultados conclusivos.
+
+\nocite{*}
+
+\begin{spacing}{1}
+   \bibliographystyle{plain}
+   \bibliography{mybibtexDB}
+ \end{spacing}
+
+\end{document}
+\grid

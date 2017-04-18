@@ -1,0 +1,99 @@
+\begin{thebibliography}{10}
+
+\bibitem{caers_1998}
+Jef Caers and Andre Journel.
+\newblock Stochastic reservoir simulation using neural networks trained on
+  outcrop data.
+\newblock {\em SPE Annual Technical Conference and Exhibition}, 1998.
+
+\bibitem{Guardiano1993}
+Felipe~B. Guardiano and R.~Mohan Srivastava.
+\newblock {\em Geostatistics Tróia 92: Volume 1}.
+\newblock Springer Netherlands, Dordrecht, 1993.
+
+\bibitem{He2014}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock {\em Spatial Pyramid Pooling in Deep Convolutional Networks for
+  Visual Recognition}, pages 346--361.
+\newblock Springer International Publishing, Cham, 2014.
+
+\bibitem{Krizhevsky2012}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E. Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Advances in Neural Information Processing Systems}, page
+  2012.
+
+\bibitem{LeCun98}
+Y.~LeCun, L.~Bottou, Y.~Bengio, and P.~Haffner.
+\newblock Gradient-based learning applied to document recognition.
+\newblock In {\em Proceedings of the IEEE}, pages 28--2324, 1998.
+
+\bibitem{Mariethoz2014_A}
+Gregoire Mariethoz and Jef Caers.
+\newblock {\em Multiple-Point Geostatistics Algorithms}.
+\newblock John Wiley \& Sons, Ltd, 2014.
+
+\bibitem{Mariethoz_2010}
+Gregoire Mariethoz, Philippe Renard, and Julien Straubhaar.
+\newblock The direct sampling method to perform multiple-point geostatistical
+  simulations.
+\newblock {\em Water Resources Research}, 46(11):n/a--n/a.
+
+\bibitem{Meerschman_13}
+Eef Meerschman, Guillaume Pirot, Gregoire Mariethoz, Julien Straubhaar,
+  Marc~Van Meirvenne, and Philippe Renard.
+\newblock A practical guide to performing multiple-point statistical
+  simulations with the direct sampling algorithm.
+\newblock {\em Computers and Geosciences}, 52:307--324, 2013.
+
+\bibitem{Peredo20111110}
+Oscar Peredo and JuliÃ¡n~M. Ortiz.
+\newblock Parallel implementation of simulated annealing to reproduce
+  multiple-point statistics.
+\newblock {\em Computers \& Geosciences}, 37(8):1110 -- 1121, 2011.
+
+\bibitem{Peredo2012}
+Oscar Peredo and Julián~M. Ortiz.
+\newblock {\em Geostatistics Oslo 2012}, chapter Multiple-Point Geostatistical
+  Simulation Based on Genetic Algorithms Implemented in a Shared-Memory
+  Supercomputer, pages 103--114.
+\newblock Springer Netherlands, Dordrecht, 2012.
+
+\bibitem{Straubhaar2011}
+Julien Straubhaar, Philippe Renard, Gr{\'e}goire Mariethoz, Roland Froidevaux,
+  and Olivier Besson.
+\newblock An improved parallel multiple-point algorithm using a list approach.
+\newblock {\em Mathematical Geosciences}, 43(3):305--328, 2011.
+
+\bibitem{Strebelle2002_B}
+Sebastien Strebelle.
+\newblock Conditional simulation of complex geological structures using
+  multiple-point statistics.
+\newblock {\em Mathematical Geology}, 34(1):1--21, 2002.
+
+\bibitem{NyiSun2014}
+Yi~Sun, Yuheng Chen, Xiaogang Wang, and Xiaoou Tang.
+\newblock Deep learning face representation by joint
+  identification-verification.
+\newblock In Z.~Ghahramani, M.~Welling, C.~Cortes, N.d. Lawrence, and K.q.
+  Weinberger, editors, {\em Advances in Neural Information Processing Systems
+  27}, pages 1988--1996. Curran Associates, Inc., 2014.
+
+\bibitem{Wu2008}
+Jianbing Wu, Tuanfeng Zhang, and André Journel.
+\newblock Fast filtersim simulation with score-based distance.
+\newblock {\em Mathematical Geosciences}, 40(7):773--788, 2008.
+
+\bibitem{Zhangg_2014}
+Ning Zhang, Jeff Donahue, Ross Girshick, and Trevor Darrell.
+\newblock {\em Part-Based R-CNNs for Fine-Grained Category Detection}, pages
+  834--849.
+\newblock Springer International Publishing, Cham, 2014.
+
+\bibitem{Zhang2006}
+Tuanfeng Zhang, Paul Switzer, and Andre Journel.
+\newblock Filter-based classification of training image patterns for spatial
+  simulation.
+\newblock {\em Mathematical Geology}, 38(1):63--80, 2006.
+
+\end{thebibliography}

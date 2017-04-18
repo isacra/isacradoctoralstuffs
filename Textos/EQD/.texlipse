@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Wed Apr 29 14:01:05 BRT 2015
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=eqd.tex
+outputFile=eqd.pdf
+langSpell=pt
+markDer=true
+srcDir=

@@ -1,0 +1,182 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: eqd.aux
+A level-1 auxiliary file: cap1.aux
+A level-1 auxiliary file: cap2.aux
+A level-1 auxiliary file: cap3.aux
+The style file: my-agsm.bst
+Database file #1: bib/bibliografia.bib
+Warning--entry type for "figsismica" isn't style-file defined
+--line 456 of file bib/bibliografia.bib
+You can't pop an empty literal stack for entry aster2013parameter
+while executing---line 1226 of file my-agsm.bst
+You can't pop an empty literal stack for entry tompkins_comparisonBayes
+while executing---line 1226 of file my-agsm.bst
+You can't pop an empty literal stack for entry hansenGibbsPrior
+while executing---line 1226 of file my-agsm.bst
+You can't pop an empty literal stack for entry amilcarInversao
+while executing---line 1226 of file my-agsm.bst
+You can't pop an empty literal stack for entry clappRegLeast3D
+while executing---line 1226 of file my-agsm.bst
+You can't pop an empty literal stack for entry Martinez2011Topogra
+while executing---line 1226 of file my-agsm.bst
+You can't pop an empty literal stack for entry Martinez2011Topogra
+while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry amilcarInversao
+while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry clappRegLeast3D
+while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry tompkins_comparisonBayes
+while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry aster2013parameter
+while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry hansenGibbsPrior
+while executing---line 1298 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Artun2011143
+while executing---line 1350 of file my-agsm.bst
+You can't pop an empty literal stack for entry aster2013parameter
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry aster2013parameter
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry azevedo2013_avoinv
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Buland01012003
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry BulandWavStochastic
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry caers2011modeling
+while executing---line 1350 of file my-agsm.bst
+You can't pop an empty literal stack for entry clappRegLeast3D
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry clappRegLeast3D
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry coleou_qualityanomalyinv
+while executing---line 1350 of file my-agsm.bst
+You can't pop an empty literal stack for entry Martinez2011Topogra
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Martinez2011Topogra
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry MartinezPSO
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry leandro_SEG
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry leandroGRSL
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry figsismica
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry goovaerts1997geostatistics
+while executing---line 1350 of file my-agsm.bst
+You can't pop an empty literal stack for entry hansenGibbsPrior
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry hansenGibbsPrior
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry isaaks1989geostats
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry jolliffe2002principal
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry max_inv_simulated
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry MallickGeneticInve
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Martinez:2010PSO
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Sambridge22102013
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry caers_distance_kernels_MDS
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry sen_livro
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry senSimulatedAnnealin
+while executing---line 1350 of file my-agsm.bst
+Warning--can't use both author and editor fields in Sen1995v
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Sen1995v
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry smolyak63quadrature
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry 2001amilcarDSS
+while executing---line 1350 of file my-agsm.bst
+You can't pop an empty literal stack for entry amilcarInversao
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry amilcarInversao
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry tarantola
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry TompkinsCupature
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry TompkinsScalabUnce2011
+while executing---line 1350 of file my-agsm.bst
+You can't pop an empty literal stack for entry tompkins_comparisonBayes
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry tompkins_comparisonBayes
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry zhe_nonlinear
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry zunino2014
+while executing---line 1350 of file my-agsm.bst
+(There were 52 error messages)

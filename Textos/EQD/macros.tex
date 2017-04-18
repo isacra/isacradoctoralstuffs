@@ -1,0 +1,84 @@
+% Espacos H2, Hoo, L2, Loo
+\newcommand\Hi{{\mathcal{H}}_{\infty}}
+\newcommand\Hd{{\mathcal{H}}_{2}}
+\newcommand\Li{{\mathcal{L}}_{\infty}}
+\newcommand\Ld{{\mathcal{L}}_{2}}
+
+
+\def\reais{{\rm I\kern-.17em R}} % R de reais
+\def\Dest{{\rm I\kern-.17em D}} % R de reais
+\newcommand{\Dgest}{\ensuremath{\mathcal{D}}}
+\newcommand{\naturais}{\mathbb{N}}
+\newcommand{\inteiros}{\mathbb{Z}_{+}}
+\newcommand{\matlab}{{\sc Matlab}}
+
+%super parenteses
+\makeatletter
+\def\Biggg#1{{\hbox{$\left#1\vbox to29\p@{}\right.\n@space$}}}
+\newdimen\bracketwidth
+\settowidth{\bracketwidth}{\Biggg(} \makeatother
+
+
+%\newcommand{\carinha}{\raisebox{-.2ex}{\epsfxsize 3mm \epsffile{cara.eps}}}
+
+% Bolds
+\newcommand{\I}{{\bf I}}
+\newcommand{\Z}{{\bf 0}}
+\newcommand{\Bfres}{\mathcal{B}}
+
+% funcoes
+\newcommand{\Tr}{\mbox{Tr}}
+
+% Referencia com parenteses
+\newcommand{\bref}[1]{\mbox{(\ref{#1})}}
+
+% Ambiente de equacoes
+\newcommand\be{\begin{equation}}
+\newcommand\ee{\end{equation}}
+\newcommand\vi{\vspace{\baselineskip}}
+
+% newtheorems e similares
+
+\newtheorem{teorema}{\noindent{\bf Teorema} }[chapter]
+\newtheorem{lema}{\noindent{\bf Lema} }[chapter]
+\newtheorem{corolario}{\noindent{\bf Corolário} }[chapter]
+\newenvironment{prova}{\noindent{\bf Prova:}}{\null\hfill $\rule{1.5mm}{1.5mm}$}
+\newtheorem{definicao}{\noindent{\bf Definição} }[chapter]
+
+\newcommand{\simplex}{\Delta_N}
+
+
+
+\newcommand{\Aal}{A(\alpha)}
+\newcommand{\Bal}{B(\alpha)}
+\newcommand{\Cal}{C(\alpha)}
+\newcommand{\Dal}{D(\alpha)}
+
+
+\newcommand{\Pal}{P(\alpha)}
+\newcommand{\Gal}{G(\alpha)}
+\newcommand{\Hal}{H(\alpha)}
+\newcommand{\Qal}{Q(\alpha)}
+\newcommand{\Xal}{X(\alpha)}
+\newcommand{\Xual}{X_1(\alpha)}
+\newcommand{\Xdal}{X_2(\alpha)}
+
+\newcommand{\Sfr}{\mathcal{S}}
+
+\newcommand{\Xfal}{\mathcal{X}(\alpha)}
+\newcommand{\Bfal}{\mathcal{B}(\alpha)}
+\newcommand{\Qfal}{\mathcal{Q}(\alpha)}
+\newcommand{\Sfal}{\mathcal{S}(\alpha)}
+
+\newcommand{\Kfr}{\mathcal{K}}
+\newcommand{\Ifr}{\mathcal{I}}
+\newcommand{\Afr}{\mathcal{A}}
+\newcommand{\Pfr}{\mathcal{P}}
+\newcommand{\Cfr}{\mathcal{C}}
+\newcommand{\Gfr}{\mathcal{G}}
+
+
+\newcommand{\hiddensubsection}[1]{
+\stepcounter{subsection}
+\subsection*{\arabic{chapter}.\arabic{section}.\arabic{subsection}\hspace{1em}{#1}}}
+

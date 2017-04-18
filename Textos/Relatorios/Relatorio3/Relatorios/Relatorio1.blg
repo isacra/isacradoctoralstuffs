@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Relatorio1.aux
+The style file: plain.bst
+Database file #1: mybibtexDB.bib
+I was expecting an "="---line 357 of file mybibtexDB.bib
+ : 
+ : year = {2010},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--can't use both author and editor fields in Guardiano1993
+Warning--can't use both author and editor fields in He2014
+Warning--empty year in Krizhevsky2012
+Warning--empty year in Mariethoz_2010
+Warning--can't use both author and editor fields in Peredo2012
+Warning--can't use both author and editor fields in Zhangg_2014
+You've used 16 entries,
+            2118 wiz_defined-function locations,
+            617 strings with 7506 characters,
+and the built_in function-call counts, 6376 in all, are:
+= -- 618
+> -- 314
+< -- 7
++ -- 124
+- -- 105
+* -- 468
+:= -- 1018
+add.period$ -- 49
+call.type$ -- 16
+change.case$ -- 93
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 248
+empty$ -- 483
+format.name$ -- 105
+if$ -- 1353
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 21
+newline$ -- 83
+num.names$ -- 34
+pop$ -- 113
+preamble$ -- 1
+purify$ -- 82
+quote$ -- 0
+skip$ -- 181
+stack$ -- 0
+substring$ -- 421
+swap$ -- 77
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 54
+warning$ -- 6
+while$ -- 61
+width$ -- 18
+write$ -- 178
+(There was 1 error message)
