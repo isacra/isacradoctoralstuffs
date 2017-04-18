@@ -22,17 +22,30 @@ f_curv = [f_curv_hor',f_curv_ver'];
 
 
 %%%%%%%%%%%%%%%%%%%Gera uma simulacao com algoritmo leandro%%%%%%%%%%%%%%
-tamanho=100;
+tamanho=32;
 white_noise = randn(tamanho,tamanho);
+randomInt = randi([0,255],tamanho,tamanho,tamanho);
 
-[corr1] = construct_correlation_function_correct(2,10,white_noise);
-[corr2] = construct_correlation_function_correct(10,2,white_noise);
+[corr1] = construct_correlation_function_correct(2,10,randomInt);
+%[corr2] = construct_correlation_function_correct(10,2,white_noise);
 
-[ simulation ] = FFT_MA_3D( corr1, white_noise );
+[ simulation ] = FFT_MA_3D( corr1, randomInt );
+%[ simulation2 ] = FFT_MA_3D( corr1, randomInt);
+ im_cube_class = ImageCubeClass;
+for i=1:32
+        im_cut = simulation(:,:,i);
+        [img, im_cube_class] = prop2gray(im_cut,im_cube_class);
+        
+end
+
+
 
 figure
 imagesc(simulation)
 title('Simula��o FFMA')
+figure
+%imagesc(simulation2)
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 strt_x = 1;
 strt_y = 1;

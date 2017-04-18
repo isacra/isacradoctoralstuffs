@@ -93,6 +93,12 @@ com a biblioteca de aprendizagem de máquina (textit{Machine Learning}),
 Tensor Flow. Esta biblioteca permite a implementação de modelos de redes
 neurais convolucionais em linguagem Python.
 
+O processo de inversão sísmica disponibiliza artefatos cujos valores oscilam em torno
+do valor valor médio da propriedade invertida (\textit{Maximum-a-posteriori}). Com isso,
+o resultado de inversão é capaz de evidenciar regiões de reservatório, entretanto,
+as imagens possuem baixa resolução. Mais precisamente, as imagens são limitadas
+pela banda de frequência da sísmica e da \textit{wavelet} utilizada. Deste modo,
+com o proce
 
 \section{Revisão Bibliográfica}
 
@@ -124,7 +130,7 @@ do mundo real.
 Para prever a função seno com redes neurais convencionais, o
 conjunto de entrada compreende valores $x$ no intervalo [$-k\pi,k\pi$],
 $k >= 1$. Tendo em vista que o conjunto de entrada das redes neurais convolucionais
-são imagens de treinamento a partir das quais se deseja extrais padrões espaciais
+são imagens de treinamento a partir das quais se deseja extrair padrões espaciais
 que permitam realizar predição, para este primeiro experimento foi gerada uma
 matriz de senos. Nesta matriz de senos, cada linha representa uma imagem em 1D
 composta por $10$ valores subsequentes da função seno, o valor seguinte é o que se
@@ -134,9 +140,15 @@ seno não são utilizados como entrada da rede convolucional, de modo que a pred
 deverá ocorrer baseada no entendimento do padrão da curva existente no conjunto de
 de $10$ valores da função. Todo o conjunto é inicialmente composto por $90$ imagens.
 
+A implementação do modelo se dá de forma incremental, de modo que cada um dos
+hiper-parâmetros é ajustado de modo alcançar um capaz de convergir e minimizar
+a função de Erro Médio Quadrático (MSE).
+
+
 
 \section{Super-resolução em Imagens Pós-inversão Sísmica}
-
+Os experimentos de super-resolução objetivam definir um fluxograma de trabalho de
+pós-processamento no processo de inversão sísmica. 
 
 \section{Conclusões}
 A simulação multiponto gera realizações que reproduzam padrões estatísticos inferidos a partir de alguma fonte, usualmente uma imagem de treinamento. 

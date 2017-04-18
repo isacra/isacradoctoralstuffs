@@ -1,4 +1,4 @@
-function [ output_args ] = recover_props( immatches, images, im_cube_class)
+function [ output_args ] = recover_props( immatches,immatches2, images,lr_cube_class, hr_cube_class)
 %SELECT_IMAGES Summary of this function goes here
 %   This method recover from gray (0 - 255) images obtained from de CNN to
 %   the property. It uses the correspondence between the CNN response and
@@ -11,20 +11,36 @@ function [ output_args ] = recover_props( immatches, images, im_cube_class)
    
     
     for i = 1 : num_imgs
+        figure;
+        
         corr_idx = immatches{i}.immatch;
         
-        prop(:,:,i) = gray2prop(images(:,:,i), im_cube_class,false,corr_idx);
-        orig_prop = gray2prop(im_cube_class.images(:,:,corr_idx), im_cube_class,true,corr_idx);
+        prop(:,:,i) = gray2prop(images(:,:,i), hr_cube_class,false,corr_idx);
+        orig_prop = gray2prop(hr_cube_class.images(:,:,corr_idx), hr_cube_class,true,corr_idx);
+        lr_prop = gray2prop(lr_cube_class.images(:,:,corr_idx), lr_cube_class,true,corr_idx);
         
-        figure;
-        subplot(2,2,1)
+        
+        subplot(3,2,1)
         imagesc(prop(:,:,i));
-        subplot(2,2,2)
-        imagesc(orig_prop);
-        subplot(2,2,3)
+        text = strcat('Fourier Similarity Index.: ', mat2str(abs(immatches{i}.fft_param)));
+        title(text);
+        
+        subplot(3,2,2)
         hist(prop(:,:,i));
-        subplot(2,2,4)
-        hist(orig_prop)
+        
+        subplot(3,2,3)
+        imagesc(orig_prop);
+        subplot(3,2,4)
+        hist(orig_prop);
+        
+        subplot(3,2,5)
+        imagesc(lr_prop);
+        text = strcat('Fourier Similarity Index.: ', mat2str(abs(immatches2{i}.fft_param)));
+        title(text);
+        subplot(3,2,6)
+        hist(lr_prop)
+        
+        
     end
     
 end

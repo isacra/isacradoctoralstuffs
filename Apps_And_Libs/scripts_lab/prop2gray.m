@@ -20,7 +20,7 @@ function [ image_gray im_cube] = prop2gray( image,im_cube )
     im_cube.noise(:,:,indx) = noise;
 
     image_gray = uint8(image_gray);
-    im_cube.images(:,:,indx) = image_gray;
+    im_cube.images(indx,:,:) = image_gray;
     %recovery = gray2prop(image_gray,min_im, max_im, noise);
 end
 

@@ -84,12 +84,20 @@ Estas atividades estão descritas nas seções a seguir.
 
 No período de outubro de 2016 até abril de 2017 foram exploradas duas novas frentes de trabalho relacionados ao uso
 das redes neurais convolucionais no processo de simulação geoestatística e na hiper-resolução pós-inversão.
-Após o estudo dos métodos de simulação multiponto, experimentos foram realizados com o intuito de obter um modelo de rede neural convolucional
+Após o estudo dos métodos de simulação multiponto, foram realizados experimentos com o intuito de obter um modelo de rede neural convolucional
 capaz de aprender os padrões das imagens de treinamento e reproduzi-los posteriormente na geração de novas realizações estatísticamente compatíveis
-com a realidade. Os experimentos realizados com o intuito de 
+com a realidade.
 
-Os primeiros experimentos realizados neste período foram implementados com a biblioteca de aprendizagem de 
-máquina (textit{Machine Learning}), Tensor Flow. 
+Os primeiros experimentos realizados neste período foram implementados 
+com a biblioteca de aprendizagem de máquina (textit{Machine Learning}),
+Tensor Flow. Esta biblioteca permite a implementação de modelos de redes
+neurais convolucionais em linguagem Python.
+
+O processo de inversão sísmica disponibiliza artefatos cujos valores oscilam em torno
+do valor valor médio da propriedade invertida (\textit{Maximum-a-posteriori}). Com isso,
+o resultado de inversão é capaz de evidenciar regiões de reservatório, entretanto,
+as imagens possuem baixa resolução. Mais precisamente, as imagens são limitadas
+pela banda de frequência da sísmica e da \textit{wavelet} utilizada. Deste modo,
 
 
 \section{Revisão Bibliográfica}
@@ -110,7 +118,7 @@ a eventos de dados locais $d_n =  {Z(x_1), Z(x_2),...,Z(x_n)}$, isto é, os valo
 
 \section{Redes Neurais Convolucionais na Predição da Função Seno}
 
-O uso da função seno como experimento inicial visa alcançar um modelo de
+O uso da função seno como experimento inicial buscou alcançar um modelo de
 rede convolucional capaz de realizar a aproximação de função utilizando
 imagens da função. A função seno foi arbitrariamente escolhida para
 representar um conjunto de treinamento não-linear simples o
@@ -118,11 +126,29 @@ suficiente, que permitisse obter um modelo convolucional capaz de realizar predi
 ao invés de classificação. É importante ressaltar que este modelo deve ser
 aprimorado e adaptado para a resolução de problemas com conjuntos de dados
 do mundo real.
-Esta biblioteca permite a implementação de modelos de redes neurais convolucionais em linguagem Python.
+
+Para prever a função seno com redes neurais convencionais, o
+conjunto de entrada compreende valores $x$ no intervalo [$-k\pi,k\pi$],
+$k >= 1$. Tendo em vista que o conjunto de entrada das redes neurais convolucionais
+são imagens de treinamento a partir das quais se deseja extrair padrões espaciais
+que permitam realizar predição, para este primeiro experimento foi gerada uma
+matriz de senos. Nesta matriz de senos, cada linha representa uma imagem em 1D
+composta por $10$ valores subsequentes da função seno, o valor seguinte é o que se
+deseja prever. Desta forma, o experimento se assemelha à predição de uma série temporal.
+É importante salientar, porém, que neste caso os valores dos ângulos de entrada para a função
+seno não são utilizados como entrada da rede convolucional, de modo que a predição
+deverá ocorrer baseada no entendimento do padrão da curva existente no conjunto de
+de $10$ valores da função. Todo o conjunto é inicialmente composto por $90$ imagens.
+
+A implementação do modelo se dá de forma incremental, de modo que cada um dos
+hiper-parâmetros é ajustado de modo alcançar um capaz de convergir e minimizar
+a função de Erro Médio Quadrático (MSE).
+
 
 
 \section{Super-resolução em Imagens Pós-inversão Sísmica}
-
+Os experimentos de super-resolução objetivam definir um fluxograma de trabalho de
+pós-processamento no processo de inversão sísmica. 
 
 \section{Conclusões}
 A simulação multiponto gera realizações que reproduzam padrões estatísticos inferidos a partir de alguma fonte, usualmente uma imagem de treinamento. 
