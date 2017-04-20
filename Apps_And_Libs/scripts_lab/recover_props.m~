@@ -19,29 +19,26 @@ function [ output_args ] = recover_props( immatches,immatches2, images,lr_cube_c
         orig_prop = gray2prop(hr_cube_class.images(:,:,corr_idx), hr_cube_class,true,corr_idx);
         lr_prop = gray2prop(lr_cube_class.images(:,:,corr_idx), lr_cube_class,true,corr_idx);
         
-        set(gcf, 'color','w')
         
-        subplot(3,1,1)
+        subplot(1,3,1)
         imagesc(prop(:,:,i));
-        text = strcat('Impedância gerada - Similaridade com (IE).: ', mat2str(round(abs(immatches{i}.fft_param),4)));
+        text = strcat('Similaridade.: ', mat2str(abs(immatches{i}.fft_param)));
         title(text);
         
         %subplot(3,2,2)
         %hist(prop(:,:,i));
         
-        subplot(3,1,2)
+        subplot(1,3,2)
         imagesc(orig_prop);
-        text = strcat('Impedância Esparsa (IE)');
-        title(text);
         %subplot(3,2,4)
         %hist(orig_prop);
         
-        subplot(3,1,3)
+        subplot(1,3,3)
         imagesc(lr_prop);
-        text = strcat('Impedância MAP - Similaridade com (IE).: ', mat2str(round(abs(immatches2{i}.fft_param),4)));
+        text = strcat('Imagem Real - Similaridade.: ', mat2str(abs(immatches2{i}.fft_param)));
         title(text);
-        %subplot(3,2,6)
-        %hist(lr_prop)
+        subplot(3,2,6)
+        hist(lr_prop)
         
         
     end
