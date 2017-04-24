@@ -25,7 +25,7 @@
 
 
 
-\floatname{algorithm}{Algoritmo}
+%\floatname{algorithm}{Algoritmo}
 
 \usepackage{epstopdf}
 \DeclareGraphicsExtensions{.pdf,.jpeg,.png,.eps}

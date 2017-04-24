@@ -1,15 +1,19 @@
 \BOOKMARK [0][-]{chapter.1}{1 Introdu\347\343o}{}% 1
 \BOOKMARK [1][-]{section.1.1}{1.1 Problema Inverso}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{1.2 Invers\343o S\355smica}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{1.3 Objetivo}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.4}{1.4 Organiza\347\343o do Texto}{chapter.1}% 5
-\BOOKMARK [0][-]{chapter.2}{2 Modelos de Invers\343o S\355smica com Modelagem de Incerteza}{}% 6
-\BOOKMARK [1][-]{section.2.1}{2.1 Invers\343o S\355smica Linear e N\343o Linear}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 M\341ximo a posteriori}{section.2.1}% 8
-\BOOKMARK [1][-]{section.2.2}{2.2 Modelagem de Incerteza}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Global Stochastic Inversion}{section.2.2}% 10
-\BOOKMARK [1][-]{section.2.3}{2.3 Resumo}{chapter.2}% 11
-\BOOKMARK [0][-]{chapter.3}{3 Modelo H\355brido Bayesiano Geoestat\355stico}{}% 12
-\BOOKMARK [1][-]{section.3.1}{3.1 Resultados Preliminares}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.2}{3.2 Proposta e Plano de Trabalho}{chapter.3}% 14
-\BOOKMARK [0][-]{figure.caption.15}{Bibliografia}{}% 15
+\BOOKMARK [1][-]{section.1.3}{1.3 Simula\347\343o Multiponto}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{1.4 Redes Neurais Convolucionais}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.4.1}{1.4.1 Convolu\347\343o}{section.1.4}% 6
+\BOOKMARK [2][-]{subsection.1.4.2}{1.4.2 Pooling}{section.1.4}% 7
+\BOOKMARK [1][-]{section.1.5}{1.5 Objetivo}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.6}{1.6 Organiza\347\343o do Texto}{chapter.1}% 9
+\BOOKMARK [0][-]{chapter.2}{2 Modelos de Super-resolu\347\343o}{}% 10
+\BOOKMARK [1][-]{section.2.1}{2.1 Invers\343o S\355smica Linear e N\343o Linear}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 M\341ximo a posteriori}{section.2.1}% 12
+\BOOKMARK [1][-]{section.2.2}{2.2 Modelagem de Incerteza}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Global Stochastic Inversion}{section.2.2}% 14
+\BOOKMARK [1][-]{section.2.3}{2.3 Resumo}{chapter.2}% 15
+\BOOKMARK [0][-]{chapter.3}{3 Super-Resolu\347\343o de Imagens P\363s-Invers\343o}{}% 16
+\BOOKMARK [1][-]{section.3.1}{3.1 Resultados Preliminares}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{3.2 Proposta e Plano de Trabalho}{chapter.3}% 18
+\BOOKMARK [0][-]{figure.caption.17}{Bibliografia}{}% 19

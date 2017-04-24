@@ -24,9 +24,9 @@ You can't pop an empty literal stack for entry Martinez2011Topogra
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry amilcarInversao
 while executing---line 1298 of file my-agsm.bst
-You can't pop an empty literal stack for entry clappRegLeast3D
-while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry tompkins_comparisonBayes
+while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry clappRegLeast3D
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry aster2013parameter
 while executing---line 1298 of file my-agsm.bst
@@ -184,14 +184,14 @@ while executing---line 1350 of file my-agsm.bst
 You've used 34 entries,
             2912 wiz_defined-function locations,
             875 strings with 11686 characters,
-and the built_in function-call counts, 154325 in all, are:
-= -- 25349
+and the built_in function-call counts, 154545 in all, are:
+= -- 25389
 > -- 1861
 < -- 2
-+ -- 12110
++ -- 12130
 - -- 552
-* -- 13343
-:= -- 30757
+* -- 13363
+:= -- 30797
 add.period$ -- 34
 call.type$ -- 34
 change.case$ -- 467
@@ -200,7 +200,7 @@ cite$ -- 35
 duplicate$ -- 556
 empty$ -- 1161
 format.name$ -- 647
-if$ -- 27822
+if$ -- 27862
 int.to.chr$ -- 6
 int.to.str$ -- 0
 missing$ -- 42
@@ -212,7 +212,7 @@ purify$ -- 510
 quote$ -- 0
 skip$ -- 417
 stack$ -- 0
-substring$ -- 36084
+substring$ -- 36144
 swap$ -- 86
 text.length$ -- 478
 text.prefix$ -- 0

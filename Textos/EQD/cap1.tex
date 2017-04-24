@@ -186,34 +186,8 @@ principais (PCA) é possível reduzir a dimensão do problema e utilizar um esqu
 de amostragem determinística, ao custo de perda na resolução espacial das
 amostras.
 
-
-% amilcar aqui
-A área de Geoestatística teve início a partir do uso de ferramentas estatísticas
-para tratar dados espaciais, modelar suas continuidades e lidar com incertezas
-presentes nos problemas da Geologia \citep[p. 3]{isaaks1989geostats}. Antes de
-sua criação, um atributo de rocha, por exemplo, era tratado como se fosse uma só
-variável aleatória. Ou seja, os valores desse atributo nos pontos espaciais de
-uma área eram tratados como amostras de uma mesma distribuição de probabilidade.
-A Geoestatística passou a assumir a característica espacial dos dados, onde cada
-posição da área é tratada como uma variável aleatória possuindo correlações com
-suas vizinhas.
-
-\cite{amilcarInversao} propõem um método de inversão, chamado \textit{Global
-Stochastic Inversion (GSI)}, baseado em \textit{Direct Sequential Simulation}
-(DSS), uma importante ferramenta da Geoestatística. Na DSS são utilizados
-modelos de continuidade direcional dos dados (variogramas direcionais, ou
-funções de correlação) para simular pontos não observados da área, respeitando
-assim a continuidade espacial, a variabilidade e o histograma observados nos
-dados de poços. O processo de inversão faz uso de DSS  para encontrar um
-conjunto de soluções que tenha alta correlação com o dado sísmico. Apesar da
-vantagem de se modelar a continuidade espacial em quaisquer direções desejadas,
-o método foi concebido para trabalhar em áreas pequenas, pois assume a estacionariedade
-das médias. Além disso, não converge em problemas mais avançados como a inversão
-para dados de porosidade \citep{amilcarInversao}.
-
 \section{Simulação Multiponto}
 
-\TODO Simulação Multiponto
 
 
 \section{Redes Neurais Convolucionais}
@@ -250,8 +224,65 @@ significa que toda unidade de saída interage com toda unidade de entrada.
 As redes convolucionais, por outro lado, tipicamente possui interações
 esparsas, também chamadas d conectividade esparsa ou pesos esparsos.
 Para isto, é necessários que os filtros sejam menores que a entrada.
+De um ponto de vista prático, no processamento de uma imagem,
+a imagem de entrada pode ter milhares de pixels, entretanto, é 
+possível detectar apenas pequenas regiões de características importantes,
+por exemplo com significado geológico, com filtros que compreendam apenas
+algumas dezenas ou centenas de pixels na imagem. Como consequência,
+menos parâmetros são armazenados e aumenta a eficiência estatística do
+modelo. As figuras \ref{fig:full} e \ref{fig:sparse} ilustram
+os modelos citados anteriormente. É possível notar que o número de elementos
+que afetam elemento de saída em destaque ($s_3$) é definido pela convolução
+com filtro de largura 3 (figura \ref{fig:sparse}), por outro lado $s_3$ é
+afetado por todos os elementos da entrada quando formado por multiplicação
+matricial (figura \ref{fig:full}).
 
+\begin{figure}[htp]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{fig/full_conections}
+  \caption{Conectividade tradicional.}
+  \label{fig:full}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{fig/sparse_conections}
+  \caption{Conectividade esparsa.}
+  \label{fig:sparse}
+\end{subfigure}
+\end{figure}
 
+O \textbf{compartilhamento de parâmetros}, também chamado de \textbf{pesos amarrados} 
+em uma rede convolucional se refere ao uso do mesmo parâmetro para mais de uma função no modelo.
+Nas redes neurais tradicionais, cada elemento da matriz de pesos é usado apenas uma vez quando a
+saída da camada é calculada, pois é multiplicado por apenas um elemento da entrada. No compartilhamento
+de pesos, o valor do peso aplicado a uma entrada está relacionado ao valor de um peso aplicado em
+algum outro local. Na rede convolucional, cada elemento do filtro é usado em toda posição da entrada,
+de modo que, ao invés de aprender um conjunto separado de parâmetros toda localização da imagem, apenas
+um conjunto é aprendido.
+
+\subsection{Pooling}
+Uma camada em uma rede convolucional consiste de três estágios. No primeiro estágio,
+a camada realiza diversas convoluções para produzir um conjunto de ativações lineares.
+O segundo estágio é chamado etapa de detecção, na qual cada ativação é submetida a uma
+função não-linear. A terceira etapa é chamada de \textit{pooling}, responsável por
+modificar a saída para o resumo estatístico das saídas em uma determinada vizinhança. A operação de
+\textit{pooling} permite tornar invariante pequenas translações no conjunto de entrada,
+ou seja, ainda que haja pequenas translações na entrada, os valores da maioria das saídas após a
+o \textit{pooling} permanecem iguais. A figura \ref{fig:pool} ilustra o funcionamento da função de \textit{pooling}.
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{fig/pool}
+  \caption{Operação de \textit{pooling} com região de tamanho 3. Nesta operação é selecionado o máximo valor de ativação da etapa de detecção.}
+  \label{fig:pool}
+\end{center}
+\end{figure}
+
+A operação de \textit{pooling} permite lidar com entradas de tamanho variável.
+Classificar imagens de tamanhos diferentes, por exemplo, pode ser realizado
+variando o tamanho entre as regiões de pooling de modo que a camada de 
+de classificação sempre receba o mesmo número de sumários estatísticos
+independente do tamanho da imagem.
 
 \section{Objetivo}
 
@@ -260,7 +291,6 @@ atualização Bayesiana no processo de inversão GSI. Resultados prévios indica
 que utilizar ...
 
 Outro objetivo é ...
-\TODO Objetivo
 
 \section{Organização do Texto}
 
