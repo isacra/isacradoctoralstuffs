@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  17 OCT 2016 21:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  20 APR 2017 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -494,34 +494,58 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (./Relatorio1.aux)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen121
+\captionmargin@=\dimen122
+\captionwidth=\dimen123
+\caption@tempdima=\dimen124
+\caption@indent=\dimen125
+\caption@parindent=\dimen126
+\caption@hangindent=\dimen127
+)
+\c@ContinuedFloat=\count110
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count111
+\c@subtable=\count112
+)
+(./Relatorio1.aux)
 \openout1 = `Relatorio1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
-\scratchdimen=\dimen121
+\scratchcounter=\count113
+\scratchdimen=\dimen128
 \scratchbox=\box32
-\nofMPsegments=\count111
-\nofMParguments=\count112
+\nofMPsegments=\count114
+\nofMParguments=\count115
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count113
-\MPscratchDim=\dimen122
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen129
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
 \everyMPtoPDFconversion=\toks28
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -571,7 +595,9 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count116
+\c@lstlisting=\count119
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -582,52 +608,91 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 69.
+LaTeX Font Info:    Try loading font information for U+msa on input line 71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 69.
+LaTeX Font Info:    Try loading font information for U+msb on input line 71.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<figuras/templates.png, id=12, 589.4522pt x 179.92218pt>
-File: figuras/templates.png Graphic file (type png)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+<fig/modelo.png, id=21, 304.88907pt x 445.665pt>
+File: fig/modelo.png Graphic file (type png)
+ <use fig/modelo.png>
+Package pdftex.def Info: fig/modelo.png used on input line 179.
+(pdftex.def)             Requested size: 216.81pt x 316.92758pt.
+ [4 <./fig/modelo.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 207.
 
-<use figuras/templates.png>
-Package pdftex.def Info: figuras/templates.png used on input line 134.
-(pdftex.def)             Requested size: 260.17464pt x 79.41583pt.
- [2] [3 <./figuras/templates.png>] [4] [5] [6]
-(./Relatorio1.bbl [7]) [8] (./Relatorio1.aux) )
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 207.
+ [5]
+<fig/7.png, id=28, 578.16pt x 433.62pt>
+File: fig/7.png Graphic file (type png)
+ <use fig/7.png>
+Package pdftex.def Info: fig/7.png used on input line 247.
+(pdftex.def)             Requested size: 195.12767pt x 146.34373pt.
+
+<fig/5.png, id=29, 578.16pt x 433.62pt>
+File: fig/5.png Graphic file (type png)
+ <use fig/5.png>
+Package pdftex.def Info: fig/5.png used on input line 253.
+(pdftex.def)             Requested size: 195.12767pt x 146.34373pt.
+
+<fig/19.png, id=30, 578.16pt x 433.62pt>
+File: fig/19.png Graphic file (type png)
+ <use fig/19.png>
+Package pdftex.def Info: fig/19.png used on input line 259.
+(pdftex.def)             Requested size: 195.12767pt x 146.34373pt.
+
+<fig/25.png, id=31, 578.16pt x 433.62pt>
+File: fig/25.png Graphic file (type png)
+ <use fig/25.png>
+Package pdftex.def Info: fig/25.png used on input line 265.
+(pdftex.def)             Requested size: 195.12767pt x 146.34373pt.
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 245--269
+[]$ $[]$ 
+ []
+
+[6] [7 <./fig/7.png (PNG copy)> <./fig/5.png (PNG copy)> <./fig/19.png (PNG cop
+y)> <./fig/25.png (PNG copy)>] (./Relatorio1.bbl) [8] (./Relatorio1.aux) )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 79 (\begingroup)
+### semi simple group (level 1) entered at line 81 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 4536 strings out of 493029
- 59603 string characters out of 6136235
- 148139 words of memory out of 5000000
- 7983 multiletter control sequences out of 15000+600000
- 12045 words of font info for 45 fonts, out of 8000000 for 9000
+ 5676 strings out of 493029
+ 80043 string characters out of 6136235
+ 159997 words of memory out of 5000000
+ 9106 multiletter control sequences out of 15000+600000
+ 12711 words of font info for 47 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 38i,6n,58p,269b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,8n,58p,297b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb>
-Output written on Relatorio1.pdf (8 pages, 152401 bytes).
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti10.pfb>
+Output written on Relatorio1.pdf (8 pages, 379591 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 84 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

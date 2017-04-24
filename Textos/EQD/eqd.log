@@ -1,22 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.8.10)  21 AUG 2015 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  12 APR 2017 15:15
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **eqd.tex
-(D:\Dropbox\ufsc\workspaceDexter\EQD\eqd.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
-Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk12.clo"
-File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(./eqd.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -31,46 +24,42 @@ File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2008/07/08 v3.8m The Babel package
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/02/24 3.9q The Babel package
 
-*************************************
-* Local config file bblopts.cfg used
-*
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
-File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
-)
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\portuges.ldf"
+(/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2008/07/08 v3.8m Babel common definitions
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/02/24 3.9q Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 )
 Package babel Info: Making " an active character on input line 145.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\portuges.ldf"
+(/usr/share/texlive/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 \l@brazil = a dialect from \language\l@portuges 
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2015/12/03 v1.1r UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
-File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
    defining Unicode char U+00BB (decimal 187)
    defining Unicode char U+00BF (decimal 191)
    defining Unicode char U+00C0 (decimal 192)
@@ -135,50 +124,94 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00FD (decimal 253)
    defining Unicode char U+00FE (decimal 254)
    defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
    defining Unicode char U+0102 (decimal 258)
    defining Unicode char U+0103 (decimal 259)
    defining Unicode char U+0104 (decimal 260)
    defining Unicode char U+0105 (decimal 261)
    defining Unicode char U+0106 (decimal 262)
    defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
    defining Unicode char U+010C (decimal 268)
    defining Unicode char U+010D (decimal 269)
    defining Unicode char U+010E (decimal 270)
    defining Unicode char U+010F (decimal 271)
    defining Unicode char U+0110 (decimal 272)
    defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
    defining Unicode char U+0118 (decimal 280)
    defining Unicode char U+0119 (decimal 281)
    defining Unicode char U+011A (decimal 282)
    defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
    defining Unicode char U+011E (decimal 286)
    defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
    defining Unicode char U+0130 (decimal 304)
    defining Unicode char U+0131 (decimal 305)
    defining Unicode char U+0132 (decimal 306)
    defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
    defining Unicode char U+0139 (decimal 313)
    defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
    defining Unicode char U+013D (decimal 317)
    defining Unicode char U+013E (decimal 318)
    defining Unicode char U+0141 (decimal 321)
    defining Unicode char U+0142 (decimal 322)
    defining Unicode char U+0143 (decimal 323)
    defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
    defining Unicode char U+0147 (decimal 327)
    defining Unicode char U+0148 (decimal 328)
    defining Unicode char U+014A (decimal 330)
    defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
    defining Unicode char U+0150 (decimal 336)
    defining Unicode char U+0151 (decimal 337)
    defining Unicode char U+0152 (decimal 338)
    defining Unicode char U+0153 (decimal 339)
    defining Unicode char U+0154 (decimal 340)
    defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
    defining Unicode char U+0158 (decimal 344)
    defining Unicode char U+0159 (decimal 345)
    defining Unicode char U+015A (decimal 346)
    defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
    defining Unicode char U+015E (decimal 350)
    defining Unicode char U+015F (decimal 351)
    defining Unicode char U+0160 (decimal 352)
@@ -187,10 +220,22 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+0163 (decimal 355)
    defining Unicode char U+0164 (decimal 356)
    defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
    defining Unicode char U+016E (decimal 366)
    defining Unicode char U+016F (decimal 367)
    defining Unicode char U+0170 (decimal 368)
    defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
    defining Unicode char U+0178 (decimal 376)
    defining Unicode char U+0179 (decimal 377)
    defining Unicode char U+017A (decimal 378)
@@ -198,6 +243,31 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+017C (decimal 380)
    defining Unicode char U+017D (decimal 381)
    defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+01E02 (decimal 7682)
+   defining Unicode char U+01E03 (decimal 7683)
    defining Unicode char U+200C (decimal 8204)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
@@ -216,10 +286,12 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
-File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
    defining Unicode char U+00B8 (decimal 184)
    defining Unicode char U+00BF (decimal 191)
    defining Unicode char U+00C5 (decimal 197)
@@ -237,6 +309,14 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+0142 (decimal 322)
    defining Unicode char U+0152 (decimal 338)
    defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
    defining Unicode char U+2018 (decimal 8216)
@@ -247,8 +327,8 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
-File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -271,39 +351,39 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ae\ae.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/ae/ae.sty
 Package: ae 2001/02/12 1.3 Almost European Computer Modern
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 )
-LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
+LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\natbib.sty
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip43
 \bibsep=\skip44
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count89
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\lmodern.sty"
+(/usr/share/texmf/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -338,10 +418,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
@@ -349,7 +429,7 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyhdr\fancyhdr.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip45
 \f@ncyO@elh=\skip46
 \f@ncyO@erh=\skip47
@@ -360,7 +440,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 \f@ncyO@olf=\skip52
 \f@ncyO@orf=\skip53
 )
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\fancybox\fancybox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
 Package: fancybox 2010/05/15 1.4
 
 Style option: `fancybox' v1.4 <2010/05/15> (tvz)
@@ -373,34 +453,34 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \EndVerbatimTokens=\toks20
 \Verbatim@Outfile=\write3
 \Verbatim@Infile=\read1
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 95.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count90
@@ -411,17 +491,17 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \epsfxsize=\dimen107
 \epsfysize=\dimen108
 )
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\psfrag\psfrag.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psfrag/psfrag.sty
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
 \pfg@pcount=\count91
 \pfg@scount=\count92
 \pfg@temp=\write4
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
-Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
-Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen109
 \extrarowheight=\dimen110
 \NC@list=\toks22
@@ -436,44 +516,44 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \TX@cols=\count93
 \TX@ftn=\toks23
 )
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\setspace\setspace.sty
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2013/01/14 v2.14 AMS math features
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/03 v2.15a AMS math features
 \@mathmargin=\skip56
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
-Package: amstext 2000/06/29 v2.01
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
-File: amsgen.sty 1999/11/30 v2.0
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks24
 \ex@=\dimen116
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
-Package: amsbsy 1999/11/29 v1.2d
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen117
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count94
-LaTeX Info: Redefining \frac on input line 210.
+LaTeX Info: Redefining \frac on input line 199.
 \uproot@=\count95
 \leftroot@=\count96
-LaTeX Info: Redefining \overline on input line 306.
+LaTeX Info: Redefining \overline on input line 297.
 \classnum@=\count97
 \DOTSCASE@=\count98
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box28
 \strutbox@=\box29
 \big@size=\dimen118
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 \macc@depth=\count99
 \c@MaxMatrixCols=\count100
 \dotsspace@=\muskip10
@@ -494,21 +574,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip57
 \multlinetaggap=\skip58
 \mathdisplay@stack=\toks28
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2735.
+LaTeX Info: Redefining \] on input line 2736.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count106
@@ -523,13 +603,12 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen131
 \Gm@layoutvoffset=\dimen132
 \Gm@dimlist=\toks29
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithm.st
-y
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
- ("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count109
 \float@exts=\toks30
@@ -537,14 +616,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks31
 \@floatcapt=\box31
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks32
 \c@algorithm=\count110
 )
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithmic.
-sty
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@unique=\count111
 \c@ALC@line=\count112
@@ -552,28 +630,29 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@depth=\count114
 \ALC@tlm=\skip59
 \algorithmicindent=\skip60
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -582,7 +661,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -594,17 +673,21 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
-Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
-Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package hobsub Info: Skipping package `ifluatex' (already loaded).
@@ -623,7 +706,7 @@ Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
 Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
 Package: xcolor-patch 2011/01/30 xcolor patch
 Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
@@ -631,21 +714,21 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen133
 \Hy@linkcounter=\count115
 \Hy@pagecounter=\count116
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count117
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `final' set `true' on input line 4319.
@@ -658,7 +741,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count118
 
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -683,59 +766,58 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count123
 \c@bookmark@seq@number=\count124
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip61
 )
-Package hyperref Info: Option `debug' set `true' on input line 40.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 40.
-Package hyperref Info: Option `colorlinks' set `true' on input line 40.
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 46.
+Package hyperref Info: Option `debug' set `true' on input line 39.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 39.
+Package hyperref Info: Option `colorlinks' set `true' on input line 39.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 45.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\showkeys.sty"
-Package: showkeys 2007/08/07 v3.15 Show cite and label keys (DPC, MH)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/showkeys.sty
+Package: showkeys 2014/10/28 v3.17 Show cite and label keys (DPC, MH)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 143.
 )
-Package color Info: Redefining color refkey on input line 51.
-
-(D:\Dropbox\ufsc\workspaceDexter\EQD\macros.tex
+Package color Info: Redefining color refkey on input line 50.
+ (./macros.tex
 \bracketwidth=\dimen137
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 19.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 19.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 19.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 19.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -746,12 +828,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 19.
 LaTeX Font Info:    Try loading font information for U+msa on input line 19.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 19.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c@teorema=\count125
@@ -759,12 +841,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \c@corolario=\count127
 \c@definicao=\count128
 )
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
-Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 57.
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen138
 \captionmargin@=\dimen139
 \captionwidth=\dimen140
@@ -777,42 +859,35 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 )
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\subcaption.sty
-Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
 \c@subfigure=\count130
 \c@subtable=\count131
-) (C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\pdfpages\pdfpages.sty
-Package: pdfpages 2015/08/16 v0.5c Insert pages of external PDF documents (AM)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2015/09/18 v0.5d Insert pages of external PDF documents (AM)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
-Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count132
 \calc@Bcount=\count133
 \calc@Adimen=\dimen145
 \calc@Bdimen=\dimen146
 \calc@Askip=\skip62
 \calc@Bskip=\skip63
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count134
 \calc@Cskip=\skip64
 )
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\eso-pic\eso-pic.sty
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
 )
 \AM@pagewidth=\dimen147
 \AM@pageheight=\dimen148
 
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\latex\pdfpages\pppdftex.def
-File: pppdftex.def 2015/08/16 v0.5c Pdfpages driver for pdfTeX (AM)
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
-Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2015/09/18 v0.5d Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box32
 \AM@toc@title=\toks33
@@ -820,27 +895,28 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
 \AM@templatesizebox=\box33
 )
 \symlettersA=\mathgroup6
+ (./eqd.aux
+(./cap1.aux) (./cap2.aux) (./cap3.aux))
+\openout1 = `eqd.aux'.
 
-No file eqd.aux.
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 86.
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 85.
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-(C:\Users\fernando\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+) (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count136
 \scratchdimen=\dimen149
@@ -889,36 +965,1265 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring ON on input line 86.
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package hyperref Info: Link coloring ON on input line 85.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count142
 )
-LaTeX Info: Redefining \ref on input line 86.
-LaTeX Info: Redefining \pageref on input line 86.
-LaTeX Info: Redefining \nameref on input line 86.
+LaTeX Info: Redefining \ref on input line 85.
+LaTeX Info: Redefining \pageref on input line 85.
+LaTeX Info: Redefining \nameref on input line 85.
+
+(./eqd.out) (./eqd.out)
 \@outlinefile=\write5
+\openout5 = `eqd.out'.
 
-! I can't write on file `eqd.pdf'.
-Please type another file name for output
-! Emergency stop.
-<to be read again> 
-                   \edef 
-l.86 \begin{document}
-                     
-*** (job aborted, file error in nonstop mode)
+Package hyperref Info: Anchor `Doc-Start' on input line 85.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 
- 
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+) (./capa.tex
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+
+ []
+
+LaTeX Font Info:    Try loading font information for U+txmia on input line 38.
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
+File: utxmia.fd 2000/12/15 v3.1
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 105.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 105.
+Package hyperref Info: Anchor `page.i' on input line 105.
+ [1
+Non-PDF special ignored!
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+(./res_abstract.tex
+Package hyperref Info: Anchor `chapter*.1' on input line 2.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 18.
+Package hyperref Info: Anchor `page.ii' on input line 18.
+ [2
+
+]
+Package hyperref Info: Anchor `chapter*.2' on input line 18.
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 123.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 123.
+Package hyperref Info: Anchor `page.iii' on input line 123.
+ [3
+
+]
+Package hyperref Info: Anchor `chapter*.3' on input line 123.
+ (./eqd.toc
+Package hyperref Info: Reference (link) `chapter.1' on input line 2.
+Package hyperref Info: Reference (link) `section.1.1' on input line 3.
+Package hyperref Info: Reference (link) `section.1.2' on input line 4.
+Package hyperref Info: Reference (link) `section.1.3' on input line 5.
+Package hyperref Info: Reference (link) `section.1.4' on input line 6.
+Package hyperref Info: Reference (link) `chapter.2' on input line 7.
+Package hyperref Info: Reference (link) `section.2.1' on input line 8.
+Package hyperref Info: Reference (link) `subsection.2.1.1' on input line 9.
+Package hyperref Info: Reference (link) `section.2.2' on input line 10.
+Package hyperref Info: Reference (link) `subsection.2.2.1' on input line 11.
+Package hyperref Info: Reference (link) `section.2.3' on input line 12.
+Package hyperref Info: Reference (link) `chapter.3' on input line 13.
+Package hyperref Info: Reference (link) `section.3.1' on input line 14.
+Package hyperref Info: Reference (link) `section.3.2' on input line 15.
+)
+\tf@toc=\write6
+\openout6 = `eqd.toc'.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 129.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 129.
+Package hyperref Info: Anchor `page.iv' on input line 129.
+ [4
+
+Package `hyperref' Info: End of reference (link) `chapter.1', line 2.
+Package `hyperref' Info: End of reference (link) `section.1.1', line 3.
+Package `hyperref' Info: End of reference (link) `section.1.2', line 4.
+Package `hyperref' Info: End of reference (link) `section.1.3', line 5.
+Package `hyperref' Info: End of reference (link) `section.1.4', line 6.
+Package `hyperref' Info: End of reference (link) `chapter.2', line 7.
+Package `hyperref' Info: End of reference (link) `section.2.1', line 8.
+Package `hyperref' Info: End of reference (link) `subsection.2.1.1', line 9.
+Package `hyperref' Info: End of reference (link) `section.2.2', line 10.
+Package `hyperref' Info: End of reference (link) `subsection.2.2.1', line 11.
+Package `hyperref' Info: End of reference (link) `section.2.3', line 12.
+Package `hyperref' Info: End of reference (link) `chapter.3', line 13.
+Package `hyperref' Info: End of reference (link) `section.3.1', line 14.
+Package `hyperref' Info: End of reference (link) `section.3.2', line 15.
+]
+\openout2 = `cap1.aux'.
+
+ (./cap1.tex
+Package hyperref Info: Anchor `chapter.1' on input line 1.
+
+Cap\'{\i }tulo 1.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package hyperref Info: bookmark on input line 1:
+(hyperref)             thecounter {1}
+(hyperref)             text {\protect \numberline {\thechapter }Introdução}
+(hyperref)             reference {chapter.1}
+(hyperref)             toclevel {0}
+(hyperref)             type {toc}.
+
+Package natbib Warning: Citation `tarantola' on page 1 undefined on input line 
+13.
+
+Package hyperref Info: Anchor `section.1.1' on input line 29.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 29.
+Package hyperref Info: bookmark on input line 29:
+(hyperref)             thecounter {1.1}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Problema Inverso}
+(hyperref)             reference {section.1.1}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 37.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 37.
+Package hyperref Info: Anchor `page.1' on input line 37.
+[1
+
+
+]
+Package hyperref Info: Anchor `equation.1.1.1' on input line 43.
+Package hyperref Info: Anchor `equation.1.1.1' on input line 43.
+Package hyperref Info: Anchor `equation.1.1.1' on input line 43.
+Package hyperref Info: Anchor `equation.1.1.1' on input line 43.
+Package hyperref Info: Anchor `equation.1.1.2' on input line 49.
+Package hyperref Info: Anchor `equation.1.1.2' on input line 49.
+Package hyperref Info: Anchor `equation.1.1.2' on input line 49.
+Package hyperref Info: Anchor `equation.1.1.2' on input line 49.
+Package hyperref Info: Anchor `equation.1.1.3' on input line 55.
+Package hyperref Info: Anchor `equation.1.1.3' on input line 55.
+Package hyperref Info: Anchor `equation.1.1.3' on input line 55.
+Package hyperref Info: Anchor `equation.1.1.3' on input line 55.
+
+
+LaTeX Warning: Reference `eq:deqgm' on page 2 undefined on input line 61.
+
+
+LaTeX Warning: Reference `eq:deqgm' on page 2 undefined on input line 63.
+
+
+Package natbib Warning: Citation `aster2013parameter' on page 2 undefined on in
+put line 67.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 76.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 76.
+Package hyperref Info: Anchor `page.2' on input line 76.
+[2]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 78.
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 78.
+Package hyperref Info: Anchor `section.1.2' on input line 98.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 98.
+Package hyperref Info: bookmark on input line 98:
+(hyperref)             thecounter {1.2}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Inversão Sísmica}
+(hyperref)             reference {section.1.2}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package hyperref Info: Reference (link) `figure.caption.4' on input line 108.
+Package hyperref Info: Anchor `figure.caption.4' on input line 110.
+
+<fig/seismic_survey.png, id=114, 451.6875pt x 246.1697pt>
+File: fig/seismic_survey.png Graphic file (type png)
+
+<use fig/seismic_survey.png>
+Package pdftex.def Info: fig/seismic_survey.png used on input line 112.
+(pdftex.def)             Requested size: 389.00757pt x 212.02107pt.
+Package hyperref Info: bookmark on input line 113:
+(hyperref)             thecounter {1.1}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Método de sísmica de reflex�
+�o \citep {figsismica}\relax }}
+(hyperref)             reference {figure.caption.4}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+
+
+Package natbib Warning: Citation `figsismica' on page 3 undefined on input line
+ 113.
+
+
+Package natbib Warning: Citation `figsismica' on page 3 undefined on input line
+ 113.
+
+
+Package natbib Warning: Citation `sen_livro' on page 3 undefined on input line 
+125.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 126.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 126.
+Package hyperref Info: Anchor `page.3' on input line 126.
+[3
+Package `hyperref' Info: End of reference (link) `figure.caption.4', line 108.
+]
+Package hyperref Info: Anchor `equation.1.2.4' on input line 127.
+Package hyperref Info: Anchor `equation.1.2.4' on input line 127.
+Package hyperref Info: Anchor `equation.1.2.4' on input line 127.
+Package hyperref Info: Anchor `equation.1.2.4' on input line 127.
+Package hyperref Info: Anchor `equation.1.2.5' on input line 136.
+Package hyperref Info: Anchor `equation.1.2.5' on input line 136.
+Package hyperref Info: Anchor `equation.1.2.5' on input line 136.
+Package hyperref Info: Anchor `equation.1.2.5' on input line 136.
+
+
+Package natbib Warning: Citation `sen_livro' on page 4 undefined on input line 
+148.
+
+Package hyperref Info: Reference (link) `figure.caption.5' on input line 149.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 151.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 151.
+Package hyperref Info: Anchor `page.4' on input line 151.
+[4 <./fig/seismic_survey.png>]
+Package hyperref Info: Anchor `figure.caption.5' on input line 152.
+
+<fig/wavelet.png, id=132, 1398.72563pt x 583.42969pt>
+File: fig/wavelet.png Graphic file (type png)
+ <use fig/wavelet.png>
+Package pdftex.def Info: fig/wavelet.png used on input line 154.
+(pdftex.def)             Requested size: 389.00757pt x 162.2553pt.
+Package hyperref Info: bookmark on input line 155:
+(hyperref)             thecounter {1.2}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces \textit {Wavelet} extraída de
+ dados reais\relax }}
+(hyperref)             reference {figure.caption.5}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+
+
+Package natbib Warning: Citation `tompkins_comparisonBayes' on page 5 undefined
+ on input line 174.
+
+
+Package natbib Warning: Citation `hansenGibbsPrior' on page 5 undefined on inpu
+t line 191.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 192.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 192.
+Package hyperref Info: Anchor `page.5' on input line 192.
+[5
+Package `hyperref' Info: End of reference (link) `figure.caption.5', line 149.
+ <./fig/wavelet.png (PNG copy)>]
+
+Package natbib Warning: Citation `senSimulatedAnnealin' on page 6 undefined on 
+input line 200.
+
+
+Package natbib Warning: Citation `MallickGeneticInve' on page 6 undefined on in
+put line 200.
+
+
+Package natbib Warning: Citation `max_inv_simulated' on page 6 undefined on inp
+ut line 200.
+
+
+Package natbib Warning: Citation `Artun2011143' on page 6 undefined on input li
+ne 200.
+
+
+Package natbib Warning: Citation `MartinezPSO' on page 6 undefined on input lin
+e 200.
+
+
+Package natbib Warning: Citation `Sambridge22102013' on page 6 undefined on inp
+ut line 200.
+
+
+Package natbib Warning: Citation `leandro_SEG' on page 6 undefined on input lin
+e 209.
+
+
+Package natbib Warning: Citation `TompkinsScalabUnce2011' on page 6 undefined o
+n input line 213.
+
+
+Package natbib Warning: Citation `isaaks1989geostats' on page 6 undefined on in
+put line 222.
+
+
+Package natbib Warning: Citation `amilcarInversao' on page 6 undefined on input
+ line 230.
+
+
+Package natbib Warning: Citation `amilcarInversao' on page 6 undefined on input
+ line 241.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 242.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 242.
+Package hyperref Info: Anchor `page.6' on input line 242.
+[6]
+Package hyperref Info: Anchor `section.1.3' on input line 243.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 243.
+Package hyperref Info: bookmark on input line 243:
+(hyperref)             thecounter {1.3}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Objetivo}
+(hyperref)             reference {section.1.3}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+
+
+Package natbib Warning: Citation `Buland01012003' on page 7 undefined on input 
+line 248.
+
+
+Package natbib Warning: Citation `caers_distance_kernels_MDS' on page 7 undefin
+ed on input line 258.
+
+Package hyperref Info: Anchor `section.1.4' on input line 264.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 264.
+Package hyperref Info: bookmark on input line 264:
+(hyperref)             thecounter {1.4}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Organização do Texto}
+(hyperref)             reference {section.1.4}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package hyperref Info: Reference (link) `chapter.2' on input line 267.
+Package hyperref Info: Reference (link) `chapter.3' on input line 268.
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 129.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 129.
+Package hyperref Info: Anchor `page.7' on input line 129.
+ [7
+Package `hyperref' Info: End of reference (link) `chapter.2', line 267.
+Package `hyperref' Info: End of reference (link) `chapter.3', line 268.
+]
+\openout2 = `cap2.aux'.
+
+ (./cap2.tex
+Package hyperref Info: Anchor `chapter.2' on input line 1.
+
+Cap\'{\i }tulo 2.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package hyperref Info: bookmark on input line 1:
+(hyperref)             thecounter {2}
+(hyperref)             text {\protect \numberline {\thechapter }Modelos de Inve
+rsão Sísmica com Modelagem de Incerteza}
+(hyperref)             reference {chapter.2}
+(hyperref)             toclevel {0}
+(hyperref)             type {toc}.
+
+Package natbib Warning: Citation `sen_livro' on page 8 undefined on input line 
+13.
+
+Package hyperref Info: Anchor `equation.2.0.1' on input line 29.
+Package hyperref Info: Anchor `equation.2.0.1' on input line 29.
+Package hyperref Info: Anchor `equation.2.0.1' on input line 29.
+Package hyperref Info: Anchor `equation.2.0.1' on input line 29.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 37.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 37.
+Package hyperref Info: Anchor `page.8' on input line 37.
+[8
+
+
+
+]
+Package hyperref Info: Anchor `section.2.1' on input line 38.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 38.
+Package hyperref Info: bookmark on input line 38:
+(hyperref)             thecounter {2.1}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Inversão Sísmica Linear e Não Linear}
+(hyperref)             reference {section.2.1}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `equation.2.1.2' on input line 46.
+Package hyperref Info: Anchor `equation.2.1.2' on input line 46.
+Package hyperref Info: Anchor `equation.2.1.2' on input line 46.
+Package hyperref Info: Anchor `equation.2.1.2' on input line 46.
+Package hyperref Info: Anchor `equation.2.1.3' on input line 53.
+Package hyperref Info: Anchor `equation.2.1.3' on input line 53.
+Package hyperref Info: Anchor `equation.2.1.3' on input line 53.
+Package hyperref Info: Anchor `equation.2.1.3' on input line 53.
+Package hyperref Info: Anchor `equation.2.1.4' on input line 61.
+Package hyperref Info: Anchor `equation.2.1.4' on input line 61.
+Package hyperref Info: Anchor `equation.2.1.4' on input line 61.
+Package hyperref Info: Anchor `equation.2.1.4' on input line 61.
+
+
+Package natbib Warning: Citation `sen_livro' on page 9 undefined on input line 
+71.
+
+
+Package natbib Warning: Citation `clappRegLeast3D' on page 9 undefined on input
+ line 78.
+
+Package hyperref Info: Reference (link) `equation.2.1.4' on input line 81.
+
+Package natbib Warning: Citation `max_inv_simulated' on page 9 undefined on inp
+ut line 88.
+
+
+Package natbib Warning: Citation `MallickGeneticInve' on page 9 undefined on in
+put line 88.
+
+
+Package natbib Warning: Citation `zhe_nonlinear' on page 9 undefined on input l
+ine 89.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 90.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 90.
+Package hyperref Info: Anchor `page.9' on input line 90.
+[9
+Package `hyperref' Info: End of reference (link) `equation.2.1.4', line 81.
+]
+
+Package natbib Warning: Citation `azevedo2013_avoinv' on page 10 undefined on i
+nput line 95.
+
+
+Package natbib Warning: Citation `Buland01012003' on page 10 undefined on input
+ line 95.
+
+Package hyperref Info: Reference (link) `equation.2.1.5' on input line 100.
+Package hyperref Info: Anchor `equation.2.1.5' on input line 103.
+Package hyperref Info: Anchor `equation.2.1.5' on input line 103.
+Package hyperref Info: Anchor `equation.2.1.5' on input line 103.
+Package hyperref Info: Anchor `equation.2.1.5' on input line 103.
+Package hyperref Info: Anchor `equation.2.1.6' on input line 111.
+Package hyperref Info: Anchor `equation.2.1.6' on input line 111.
+Package hyperref Info: Anchor `equation.2.1.6' on input line 111.
+Package hyperref Info: Anchor `equation.2.1.6' on input line 111.
+Package hyperref Info: Anchor `equation.2.1.7' on input line 115.
+Package hyperref Info: Anchor `equation.2.1.7' on input line 115.
+Package hyperref Info: Anchor `equation.2.1.7' on input line 115.
+Package hyperref Info: Anchor `equation.2.1.7' on input line 115.
+Package hyperref Info: Anchor `equation.2.1.8' on input line 119.
+Package hyperref Info: Anchor `equation.2.1.8' on input line 119.
+Package hyperref Info: Anchor `equation.2.1.8' on input line 119.
+Package hyperref Info: Anchor `equation.2.1.8' on input line 119.
+
+Package natbib Warning: Citation `Buland01012003' on page 10 undefined on input
+ line 132.
+
+Package hyperref Info: Anchor `subsection.2.1.1' on input line 134.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 134.
+Package hyperref Info: bookmark on input line 134:
+(hyperref)             thecounter {2.1.1}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Máximo \textit {a posteriori}}
+(hyperref)             reference {subsection.2.1.1}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+
+Package natbib Warning: Citation `Buland01012003' on page 10 undefined on input
+ line 138.
+
+
+Package natbib Warning: Citation `leandroGRSL' on page 10 undefined on input li
+ne 138.
+
+Package hyperref Info: Anchor `equation.2.1.9' on input line 143.
+Package hyperref Info: Anchor `equation.2.1.9' on input line 143.
+Package hyperref Info: Anchor `equation.2.1.9' on input line 143.
+Package hyperref Info: Anchor `equation.2.1.9' on input line 143.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 146.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 146.
+Package hyperref Info: Anchor `page.10' on input line 146.
+[10
+Package `hyperref' Info: End of reference (link) `equation.2.1.5', line 100.
+]
+Package hyperref Info: Anchor `equation.2.1.10' on input line 156.
+Package hyperref Info: Anchor `equation.2.1.10' on input line 156.
+Package hyperref Info: Anchor `equation.2.1.10' on input line 156.
+Package hyperref Info: Anchor `equation.2.1.10' on input line 156.
+
+
+Package natbib Warning: Citation `leandroGRSL' on page 11 undefined on input li
+ne 164.
+
+Package hyperref Info: Anchor `equation.2.1.11' on input line 166.
+Package hyperref Info: Anchor `equation.2.1.11' on input line 166.
+Package hyperref Info: Anchor `equation.2.1.11' on input line 166.
+Package hyperref Info: Anchor `equation.2.1.11' on input line 166.
+
+Package natbib Warning: Citation `leandroGRSL' on page 11 undefined on input li
+ne 177.
+
+Package hyperref Info: Anchor `equation.2.1.12' on input line 179.
+Package hyperref Info: Anchor `equation.2.1.12' on input line 179.
+Package hyperref Info: Anchor `equation.2.1.12' on input line 179.
+Package hyperref Info: Anchor `equation.2.1.12' on input line 179.
+Package hyperref Info: Anchor `equation.2.1.13' on input line 183.
+Package hyperref Info: Anchor `equation.2.1.13' on input line 183.
+Package hyperref Info: Anchor `equation.2.1.13' on input line 183.
+Package hyperref Info: Anchor `equation.2.1.13' on input line 183.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 205.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 205.
+Package hyperref Info: Anchor `page.11' on input line 205.
+[11]
+Package hyperref Info: Anchor `section.2.2' on input line 215.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 215.
+Package hyperref Info: bookmark on input line 215:
+(hyperref)             thecounter {2.2}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Modelagem de Incerteza}
+(hyperref)             reference {section.2.2}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+
+
+Package natbib Warning: Citation `TompkinsScalabUnce2011' on page 12 undefined 
+on input line 220.
+
+Package hyperref Info: Anchor `equation.2.2.14' on input line 225.
+Package hyperref Info: Anchor `equation.2.2.14' on input line 225.
+Package hyperref Info: Anchor `equation.2.2.14' on input line 225.
+Package hyperref Info: Anchor `equation.2.2.14' on input line 225.
+
+Package natbib Warning: Citation `Martinez2011Topogra' on page 12 undefined on 
+input line 229.
+
+Package hyperref Info: Reference (link) `figure.caption.6' on input line 230.
+Package hyperref Info: Anchor `figure.caption.6' on input line 232.
+<fig/errorFuncTol.pdf, id=186, 750.49881pt x 291.25006pt>
+File: fig/errorFuncTol.pdf Graphic file (type pdf)
+
+<use fig/errorFuncTol.pdf>
+Package pdftex.def Info: fig/errorFuncTol.pdf used on input line 234.
+(pdftex.def)             Requested size: 340.37885pt x 132.09679pt.
+Package hyperref Info: bookmark on input line 235:
+(hyperref)             thecounter {2.1}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Efeito da tolerância na funç
+ão de erro\relax }}
+(hyperref)             reference {figure.caption.6}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package hyperref Info: Reference (link) `figure.caption.6' on input line 242.
+Package hyperref Info: Reference (link) `subsection.2.1.1' on input line 249.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 262.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 262.
+Package hyperref Info: Anchor `page.12' on input line 262.
+ [12
+Package `hyperref' Info: End of reference (link) `figure.caption.6', line 230.
+Package `hyperref' Info: End of reference (link) `figure.caption.6', line 242.
+]
+
+Package natbib Warning: Citation `leandro_SEG' on page 13 undefined on input li
+ne 263.
+
+
+Package natbib Warning: Citation `zunino2014' on page 13 undefined on input lin
+e 274.
+
+
+Package natbib Warning: Citation `BulandWavStochastic' on page 13 undefined on 
+input line 287.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 288.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 288.
+Package hyperref Info: Anchor `page.13' on input line 288.
+[13
+Package `hyperref' Info: End of reference (link) `subsection.2.1.1', line 249.
+ <./fig/errorFuncTol.pdf>]
+
+Package natbib Warning: Citation `Sen1995v' on page 14 undefined on input line 
+292.
+
+
+Package natbib Warning: Citation `Martinez:2010PSO' on page 14 undefined on inp
+ut line 295.
+
+
+Package natbib Warning: Citation `Sen1995v' on page 14 undefined on input line 
+300.
+
+
+Package natbib Warning: Citation `Martinez2011Topogra' on page 14 undefined on 
+input line 303.
+
+
+Package natbib Warning: Citation `TompkinsScalabUnce2011' on page 14 undefined 
+on input line 308.
+
+
+Package natbib Warning: Citation `smolyak63quadrature' on page 14 undefined on 
+input line 319.
+
+
+Package natbib Warning: Citation `jolliffe2002principal' on page 14 undefined o
+n input line 330.
+
+
+Package natbib Warning: Citation `TompkinsScalabUnce2011' on page 14 undefined 
+on input line 339.
+
+
+Package natbib Warning: Citation `TompkinsCupature' on page 14 undefined on inp
+ut line 340.
+
+
+Package natbib Warning: Citation `tompkins_comparisonBayes' on page 14 undefine
+d on input line 342.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 343.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 343.
+Package hyperref Info: Anchor `page.14' on input line 343.
+[14]
+
+Package natbib Warning: Citation `caers_distance_kernels_MDS' on page 15 undefi
+ned on input line 345.
+
+
+Package natbib Warning: Citation `caers2011modeling' on page 15 undefined on in
+put line 359.
+
+Package hyperref Info: Anchor `subsection.2.2.1' on input line 361.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 361.
+Package hyperref Info: bookmark on input line 361:
+(hyperref)             thecounter {2.2.1}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi \textit {Global Stochastic Inversion}}
+(hyperref)             reference {subsection.2.2.1}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+
+Package natbib Warning: Citation `2001amilcarDSS' on page 15 undefined on input
+ line 363.
+
+
+Package natbib Warning: Citation `amilcarInversao' on page 15 undefined on inpu
+t line 369.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 375.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 375.
+Package hyperref Info: Anchor `page.15' on input line 375.
+[15]
+
+Package natbib Warning: Citation `2001amilcarDSS' on page 16 undefined on input
+ line 380.
+
+Package hyperref Info: Anchor `equation.2.2.15' on input line 382.
+Package hyperref Info: Anchor `equation.2.2.15' on input line 382.
+Package hyperref Info: Anchor `equation.2.2.15' on input line 382.
+Package hyperref Info: Anchor `equation.2.2.15' on input line 382.
+
+Package natbib Warning: Citation `goovaerts1997geostatistics' on page 16 undefi
+ned on input line 388.
+
+Package hyperref Info: Anchor `equation.2.2.16' on input line 395.
+Package hyperref Info: Anchor `equation.2.2.16' on input line 395.
+Package hyperref Info: Anchor `equation.2.2.16' on input line 395.
+Package hyperref Info: Anchor `equation.2.2.16' on input line 395.
+Package hyperref Info: Reference (link) `figure.caption.7' on input line 401.
+Package hyperref Info: Anchor `figure.caption.7' on input line 403.
+<fig/transfdss.png, id=223, 1014.79124pt x 534.49687pt>
+File: fig/transfdss.png Graphic file (type png)
+
+<use fig/transfdss.png>
+Package pdftex.def Info: fig/transfdss.png used on input line 405.
+(pdftex.def)             Requested size: 243.1288pt x 128.0535pt.
+Package hyperref Info: bookmark on input line 407:
+(hyperref)             thecounter {2.2}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Amostragem global via transfor
+mação local feita pela SSD \citep {2001amilcarDSS}\relax }}
+(hyperref)             reference {figure.caption.7}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+
+
+Package natbib Warning: Citation `2001amilcarDSS' on page 16 undefined on input
+ line 407.
+
+
+Package natbib Warning: Citation `2001amilcarDSS' on page 16 undefined on input
+ line 407.
+
+
+Package natbib Warning: Citation `2001amilcarDSS' on page 16 undefined on input
+ line 419.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 421.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 421.
+Package hyperref Info: Anchor `page.16' on input line 421.
+[16
+Package `hyperref' Info: End of reference (link) `figure.caption.7', line 401.
+ <./fig/transfdss.png>]
+Package hyperref Info: Anchor `Item.1' on input line 429.
+Package hyperref Info: Anchor `Item.2' on input line 431.
+Package hyperref Info: Anchor `Item.3' on input line 433.
+Package hyperref Info: Anchor `Item.4' on input line 435.
+Package hyperref Info: Anchor `Item.5' on input line 438.
+
+
+Package natbib Warning: Citation `caers2011modeling' on page 17 undefined on in
+put line 454.
+
+Package hyperref Info: Reference (link) `figure.caption.8' on input line 455.
+Package hyperref Info: Reference (link) `equation.2.1.3' on input line 458.
+Package hyperref Info: Reference (link) `equation.2.1.2' on input line 459.
+Package hyperref Info: Anchor `figure.caption.8' on input line 463.
+<fig/horizontes.png, id=236, 663.22781pt x 506.6428pt>
+File: fig/horizontes.png Graphic file (type png)
+
+<use fig/horizontes.png>
+Package pdftex.def Info: fig/horizontes.png used on input line 465.
+(pdftex.def)             Requested size: 291.75752pt x 222.87714pt.
+Package hyperref Info: bookmark on input line 466:
+(hyperref)             thecounter {2.3}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Processo de horizontalização
+ \citep [p. 143]{caers2011modeling}\relax }}
+(hyperref)             reference {figure.caption.8}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+
+
+Package natbib Warning: Citation `caers2011modeling' on page 17 undefined on in
+put line 466.
+
+
+Package natbib Warning: Citation `caers2011modeling' on page 17 undefined on in
+put line 466.
+
+Package hyperref Info: Anchor `section.2.3' on input line 471.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 471.
+Package hyperref Info: bookmark on input line 471:
+(hyperref)             thecounter {2.3}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Resumo}
+(hyperref)             reference {section.2.3}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 478.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 478.
+Package hyperref Info: Anchor `page.17' on input line 478.
+[17
+Package `hyperref' Info: End of reference (link) `figure.caption.8', line 455.
+Package `hyperref' Info: End of reference (link) `equation.2.1.3', line 458.
+Package `hyperref' Info: End of reference (link) `equation.2.1.2', line 459.
+])
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 132.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 132.
+Package hyperref Info: Anchor `page.18' on input line 132.
+ [18 <./fig/horizontes.png>]
+\openout2 = `cap3.aux'.
+
+ (./cap3.tex
+Package hyperref Info: Anchor `chapter.3' on input line 1.
+
+Cap\'{\i }tulo 3.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1.
+Package hyperref Info: bookmark on input line 1:
+(hyperref)             thecounter {3}
+(hyperref)             text {\protect \numberline {\thechapter }Modelo Híbrido
+ Bayesiano Geoestatístico}
+(hyperref)             reference {chapter.3}
+(hyperref)             toclevel {0}
+(hyperref)             type {toc}.
+
+Package natbib Warning: Citation `amilcarInversao' on page 19 undefined on inpu
+t line 8.
+
+
+Package natbib Warning: Citation `Buland01012003' on page 19 undefined on input
+ line 10.
+
+
+Package natbib Warning: Citation `amilcarInversao' on page 19 undefined on inpu
+t line 13.
+
+
+Package natbib Warning: Citation `Buland01012003' on page 19 undefined on input
+ line 18.
+
+Package hyperref Info: Reference (link) `equation.2.1.11' on input line 31.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 37.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 37.
+Package hyperref Info: Anchor `page.19' on input line 37.
+[19
+
+
+
+Package `hyperref' Info: End of reference (link) `equation.2.1.11', line 31.
+]
+Package hyperref Info: Anchor `Item.6' on input line 37.
+Package hyperref Info: Anchor `Item.7' on input line 38.
+Package hyperref Info: Reference (link) `equation.2.1.12' on input line 40.
+Package hyperref Info: Anchor `Item.8' on input line 41.
+Package hyperref Info: Anchor `Item.9' on input line 43.
+Package hyperref Info: Anchor `Item.10' on input line 45.
+Package hyperref Info: Anchor `Item.11' on input line 47.
+Package hyperref Info: Anchor `Item.12' on input line 48.
+Package hyperref Info: Reference (link) `figure.caption.9' on input line 52.
+Package hyperref Info: Anchor `figure.caption.9' on input line 54.
+ <fig/fluxo.png, id=259, 709.90219pt x 468.24937pt>
+File: fig/fluxo.png Graphic file (type png)
+ <use fig/fluxo.png>
+Package pdftex.def Info: fig/fluxo.png used on input line 56.
+(pdftex.def)             Requested size: 291.75752pt x 192.44789pt.
+Package hyperref Info: bookmark on input line 57:
+(hyperref)             thecounter {3.1}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Fluxograma do método de inver
+são e simulação\relax }}
+(hyperref)             reference {figure.caption.9}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+
+
+Package natbib Warning: Citation `amilcarInversao' on page 20 undefined on inpu
+t line 63.
+
+Package hyperref Info: Anchor `section.3.1' on input line 69.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 69.
+Package hyperref Info: bookmark on input line 69:
+(hyperref)             thecounter {3.1}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Resultados Preliminares}
+(hyperref)             reference {section.3.1}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+
+Package natbib Warning: Citation `leandroGRSL' on page 20 undefined on input li
+ne 75.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 79.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 79.
+Package hyperref Info: Anchor `page.20' on input line 79.
+[20
+Package `hyperref' Info: End of reference (link) `equation.2.1.12', line 40.
+Package `hyperref' Info: End of reference (link) `figure.caption.9', line 52.
+ <./fig/fluxo.png>]
+Package hyperref Info: Reference (link) `figure.caption.10' on input line 104.
+Package hyperref Info: Reference (link) `figure.caption.12' on input line 106.
+Package hyperref Info: Reference (link) `figure.caption.11' on input line 106.
+Package hyperref Info: Reference (link) `figure.caption.13' on input line 110.
+Package hyperref Info: Anchor `figure.caption.10' on input line 116.
+ <fig/map.png, id=277, 1397.97281pt x 842.39719pt>
+File: fig/map.png Graphic file (type png)
+
+<use fig/map.png>
+Package pdftex.def Info: fig/map.png used on input line 118.
+(pdftex.def)             Requested size: 486.25761pt x 293.00531pt.
+Package hyperref Info: bookmark on input line 119:
+(hyperref)             thecounter {3.2}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Resultado MAP utilizado como i
+magem secundária\relax }}
+(hyperref)             reference {figure.caption.10}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package hyperref Info: Anchor `figure.caption.11' on input line 125.
+ <fig/dss1it-20realz.png, id=278, 1397.97281pt x 842.39719pt>
+File: fig/dss1it-20realz.png Graphic file (type png)
+
+<use fig/dss1it-20realz.png>
+Package pdftex.def Info: fig/dss1it-20realz.png used on input line 127.
+(pdftex.def)             Requested size: 486.25761pt x 293.00531pt.
+Package hyperref Info: bookmark on input line 128:
+(hyperref)             thecounter {3.3}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Média das amostras da primeir
+a iteração da GSI\relax }}
+(hyperref)             reference {figure.caption.11}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package hyperref Info: Anchor `figure.caption.12' on input line 133.
+
+<fig/mapdss1it-20realz-filt.png, id=279, 1397.97281pt x 842.39719pt>
+File: fig/mapdss1it-20realz-filt.png Graphic file (type png)
+
+<use fig/mapdss1it-20realz-filt.png>
+Package pdftex.def Info: fig/mapdss1it-20realz-filt.png used on input line 135.
+
+(pdftex.def)             Requested size: 486.25761pt x 293.00531pt.
+Package hyperref Info: bookmark on input line 137:
+(hyperref)             thecounter {3.4}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Média das amostras da SSD uti
+lizando MAP como imagem secundária\relax }}
+(hyperref)             reference {figure.caption.12}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package hyperref Info: Anchor `figure.caption.13' on input line 143.
+
+<fig/dss10it-20realz.png, id=280, 1397.97281pt x 842.39719pt>
+File: fig/dss10it-20realz.png Graphic file (type png)
+
+<use fig/dss10it-20realz.png>
+Package pdftex.def Info: fig/dss10it-20realz.png used on input line 145.
+(pdftex.def)             Requested size: 486.25761pt x 293.00531pt.
+Package hyperref Info: bookmark on input line 146:
+(hyperref)             thecounter {3.5}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Média das amostras após 10 i
+terações da GSI\relax }}
+(hyperref)             reference {figure.caption.13}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package hyperref Info: Reference (link) `figure.caption.14' on input line 160.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 165.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 165.
+Package hyperref Info: Anchor `page.21' on input line 165.
+ [21
+Package `hyperref' Info: End of reference (link) `figure.caption.10', line 104.
+
+Package `hyperref' Info: End of reference (link) `figure.caption.12', line 106.
+
+Package `hyperref' Info: End of reference (link) `figure.caption.11', line 106.
+
+Package `hyperref' Info: End of reference (link) `figure.caption.13', line 110.
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 165.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 165.
+Package hyperref Info: Anchor `page.22' on input line 165.
+ [22 <./fig/map.png (PNG copy)> <./fig/dss1it-20realz.png (PNG copy)>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 165.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 165.
+Package hyperref Info: Anchor `page.23' on input line 165.
+ [23 <./fig/mapdss1it-20realz-filt.png (PNG copy)> <./fig/dss10it-20realz.png (
+PNG copy)>]
+Package hyperref Info: Anchor `figure.caption.14' on input line 168.
+
+<fig/IA_com_filtro.png, id=300, 694.09312pt x 580.41844pt>
+File: fig/IA_com_filtro.png Graphic file (type png)
+
+<use fig/IA_com_filtro.png>
+Package pdftex.def Info: fig/IA_com_filtro.png used on input line 170.
+(pdftex.def)             Requested size: 218.81444pt x 182.97447pt.
+
+<fig/IA_sem_filtro.png, id=301, 694.09312pt x 580.41844pt>
+File: fig/IA_sem_filtro.png Graphic file (type png)
+
+<use fig/IA_sem_filtro.png>
+Package pdftex.def Info: fig/IA_sem_filtro.png used on input line 175.
+(pdftex.def)             Requested size: 218.81444pt x 182.97447pt.
+Package hyperref Info: bookmark on input line 178:
+(hyperref)             thecounter {3.6}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Comparação dos dados de poç
+os filtrados\relax }}
+(hyperref)             reference {figure.caption.14}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package hyperref Info: Anchor `section.3.2' on input line 185.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 185.
+Package hyperref Info: bookmark on input line 185:
+(hyperref)             thecounter {3.2}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Proposta e Plano de Trabalho}
+(hyperref)             reference {section.3.2}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+
+
+Package natbib Warning: Citation `azevedo2013_avoinv' on page 24 undefined on i
+nput line 189.
+
+
+Package natbib Warning: Citation `coleou_qualityanomalyinv' on page 24 undefine
+d on input line 192.
+
+
+Package natbib Warning: Citation `caers_distance_kernels_MDS' on page 24 undefi
+ned on input line 195.
+
+
+Package natbib Warning: Citation `caers2011modeling' on page 24 undefined on in
+put line 200.
+
+
+Package natbib Warning: Citation `coleou_qualityanomalyinv' on page 24 undefine
+d on input line 206.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 207.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 207.
+Package hyperref Info: Anchor `page.24' on input line 207.
+[24
+Package `hyperref' Info: End of reference (link) `figure.caption.14', line 160.
+
+ <./fig/IA_com_filtro.png (PNG copy)> <./fig/IA_sem_filtro.png (PNG copy)>]
+
+Package natbib Warning: Citation `caers_distance_kernels_MDS' on page 25 undefi
+ned on input line 215.
+
+Package hyperref Info: Reference (link) `figure.caption.15' on input line 217.
+Package hyperref Info: Anchor `figure.caption.15' on input line 225.
+<fig/gantt_EQD.pdf, id=309, 644.88928pt x 136.62747pt>
+File: fig/gantt_EQD.pdf Graphic file (type pdf)
+ <use fig/gantt_EQD.pdf>
+Package pdftex.def Info: fig/gantt_EQD.pdf used on input line 227.
+(pdftex.def)             Requested size: 486.25761pt x 103.02072pt.
+Package hyperref Info: bookmark on input line 228:
+(hyperref)             thecounter {3.7}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Cronograma mensal do projeto a
+ partir de jul/2014\relax }}
+(hyperref)             reference {figure.caption.15}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 256.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 256.
+Package hyperref Info: Anchor `page.25' on input line 256.
+
+[25
+Package `hyperref' Info: End of reference (link) `figure.caption.15', line 217.
+
+ <./fig/gantt_EQD.pdf>]
+
+Package natbib Warning: Citation `azevedo2013_avoinv' on page 26 undefined on i
+nput line 286.
+
+
+Package natbib Warning: Citation `amilcarInversao' on page 26 undefined on inpu
+t line 286.
+
+
+Package natbib Warning: Citation `2001amilcarDSS' on page 26 undefined on input
+ line 286.
+
+
+Package natbib Warning: Citation `leandro_SEG' on page 26 undefined on input li
+ne 289.
+
+
+Package natbib Warning: Citation `leandroGRSL' on page 26 undefined on input li
+ne 289.
+
+)
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 135.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 135.
+Package hyperref Info: Anchor `page.26' on input line 135.
+ [26]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 141.
+Package hyperref Info: bookmark on input line 141:
+(hyperref)             thecounter {3}
+(hyperref)             text {Bibliografia}
+(hyperref)             reference {figure.caption.15}
+(hyperref)             toclevel {0}
+(hyperref)             type {toc}.
+ (./eqd.bbl
+Package hyperref Info: Anchor `chapter*.16' on input line 1.
+Package hyperref Info: Anchor `cite.Artun2011143' on input line 3.
+Package hyperref Info: Anchor `cite.aster2013parameter' on input line 8.
+Package hyperref Info: Anchor `cite.azevedo2013_avoinv' on input line 13.
+Package hyperref Info: Anchor `cite.Buland01012003' on input line 19.
+Package hyperref Info: Anchor `cite.BulandWavStochastic' on input line 23.
+Package hyperref Info: Anchor `cite.caers2011modeling' on input line 28.
+Package hyperref Info: Anchor `cite.clappRegLeast3D' on input line 32.
+Package hyperref Info: Anchor `cite.coleou_qualityanomalyinv' on input line 38.
+
+Package hyperref Info: Anchor `cite.Martinez2011Topogra' on input line 44.
+Package hyperref Info: Anchor `cite.MartinezPSO' on input line 51.
+Package hyperref Info: Anchor `cite.leandro_SEG' on input line 58.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 63.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 63.
+Package hyperref Info: Anchor `page.27' on input line 63.
+ [27
+
+
+]
+Package hyperref Info: Anchor `cite.leandroGRSL' on input line 65.
+Package hyperref Info: Anchor `cite.figsismica' on input line 71.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 73.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
+[]\T1/lmr/m/n/12 FishSAFE (2014), Seis-mic sur-veys, [][]$\T1/lmtt/m/n/12 http 
+: / / fishsafe . eu / en / offshore-[]structures /
+ []
+
+Package hyperref Info: Anchor `cite.goovaerts1997geostatistics' on input line 7
+5.
+Package hyperref Info: Anchor `cite.hansenGibbsPrior' on input line 80.
+Package hyperref Info: Anchor `cite.isaaks1989geostats' on input line 86.
+Package hyperref Info: Anchor `cite.jolliffe2002principal' on input line 90.
+Package hyperref Info: Anchor `cite.max_inv_simulated' on input line 94.
+Package hyperref Info: Anchor `cite.MallickGeneticInve' on input line 99.
+Package hyperref Info: Anchor `cite.Martinez:2010PSO' on input line 105.
+Package hyperref Info: Anchor `cite.Sambridge22102013' on input line 111.
+Package hyperref Info: Anchor `cite.caers_distance_kernels_MDS' on input line 1
+16.
+Package hyperref Info: Anchor `cite.sen_livro' on input line 121.
+Package hyperref Info: Anchor `cite.senSimulatedAnnealin' on input line 125.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 129.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 129.
+Package hyperref Info: Anchor `page.28' on input line 129.
+[28
+Package `hyperref' Info: End of reference (link) `figure.caption.15', line 217.
+
+]
+Package hyperref Info: Anchor `cite.Sen1995v' on input line 130.
+Package hyperref Info: Anchor `cite.smolyak63quadrature' on input line 135.
+Package hyperref Info: Anchor `cite.2001amilcarDSS' on input line 140.
+Package hyperref Info: Anchor `cite.amilcarInversao' on input line 144.
+Package hyperref Info: Anchor `cite.tarantola' on input line 149.
+Package hyperref Info: Anchor `cite.TompkinsCupature' on input line 154.
+Package hyperref Info: Anchor `cite.TompkinsScalabUnce2011' on input line 160.
+Package hyperref Info: Anchor `cite.tompkins_comparisonBayes' on input line 168
+.
+Package hyperref Info: Anchor `cite.zhe_nonlinear' on input line 174.
+Package hyperref Info: Anchor `cite.zunino2014' on input line 180.
+)
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 150.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 150.
+Package hyperref Info: Anchor `page.29' on input line 150.
+[29]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 150.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 150.
+Package hyperref Info: Anchor `page.30' on input line 150.
+ [30]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
+ (./eqd.aux (./cap1.aux) (./cap2.aux) (./cap3.aux)
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
+
+
+Package rerunfilecheck Warning: File `eqd.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `eqd.out':
+(rerunfilecheck)             Before: C016A2976799AE30E76AA3E74BD14CE4;1050
+(rerunfilecheck)             After:  919E94A42A2DD87FB21854BC09007DB0;1106.
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
+ ) 
 Here is how much of TeX's memory you used:
- 10145 strings out of 493921
- 147957 string characters out of 3147273
- 241985 words of memory out of 3000000
- 13224 multiletter control sequences out of 15000+200000
- 20694 words of font info for 33 fonts, out of 3000000 for 9000
- 842 hyphenation exceptions out of 8191
- 42i,4n,43p,345b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 10902 strings out of 493029
+ 158742 string characters out of 6136235
+ 263782 words of memory out of 5000000
+ 14006 multiletter control sequences out of 15000+600000
+ 67966 words of font info for 57 fonts, out of 8000000 for 9000
+ 1142 hyphenation exceptions out of 8191
+ 42i,15n,43p,345b,519s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lme
+x10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmib10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+sy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on eqd.pdf (34 pages, 889033 bytes).
+PDF statistics:
+ 534 PDF objects out of 1000 (max. 8388607)
+ 429 compressed objects within 5 object streams
+ 132 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+

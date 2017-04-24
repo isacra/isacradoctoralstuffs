@@ -1,6 +1,6 @@
 %%Read the images generated on output CNN (Images/gen_hr_imgs)
-imp_hr_dir = '/home/isaac/Dados/MAPImpedancia_Porosidade/MAPjoint05_impedance_sparse.segy';
-imp_lr_dir = '/home/isaac/Dados/MAPImpedancia_Porosidade/MAPjoint05_impedance.segy';
+imp_hr_dir = '/home/malik/Dados/MAPImpedancia_Porosidade/MAPjoint05_impedance_sparse.segy';
+imp_lr_dir = '/home/malik/Dados/MAPImpedancia_Porosidade/MAPjoint05_impedance.segy';
 im_size = 32;
 save_ims = false;
 isRGB = false;

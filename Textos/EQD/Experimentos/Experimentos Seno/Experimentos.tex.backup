@@ -59,12 +59,31 @@ $k >= 1$. Tendo em vista que o conjunto de entrada das redes neurais convolucion
 são imagens de treinamento a partir das quais se deseja extrais padrões espaciais
 que permitam realizar predição, para este primeiro experimento foi gerada uma
 matriz de senos. Nesta matriz de senos, cada linha representa uma imagem em 1D
-composta por $10$ valores subsequentes da função seno, valor seguinte é o que se
-deseja prever. É importante salientar que, neste caso os valores dos ângulos de entrada para a função
+composta por $10$ valores subsequentes da função seno, o valor seguinte é o que se
+deseja prever. A Figura \ref{} ilustra a forma como o conjunto experimental de imagens
+de treinamento foi gerado. É importante salientar que, neste caso os valores dos ângulos de entrada para a função
 seno não são utilizados como entrada da rede convolucional, de modo que a predição
 deverá ocorrer baseada no entendimento do padrão da curva existente no conjunto de
 de $10$ valores da função. Todo o conjunto é inicialmente por $90$ imagens.
 
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{cnn_model}
+  \caption{Conjunto de imagens de treinamento para a função seno.}
+  \label{fig:sinFunc}
+\end{center}
+\end{figure}
+
+\subsection{Parâmetros do Modelo}
+O estudo de sensibilidade dos hiper-parâmetros do modelo convolucional objetivou 
+alcançar uma configuração capaz de realizar a predição da função seno.
+Nesta seção são listados os parâmetros estudados, os quais foi testados
+para diferentes valores e combinações entre eles.
+
+ \begin{description}
+   \item[Função de Custo] fruta amarela, a forma lembra a Lua.
+   \item[Número d] fruta vermelha e arredondada.
+ \end{description}
 
 
 \subsection{Modelo Convolucional}
@@ -83,7 +102,7 @@ ativação disponibilizadas na biblioteca.
 \begin{center}
   \includegraphics[width=0.7\textwidth]{cnn_model}
   \caption{Modelo de RNC simplificado inicial}
-  \label{fig:erroFunc}
+  \label{fig:rncSimple}
 \end{center}
 \end{figure}
 
@@ -98,7 +117,7 @@ neurônio na camada de saída.
 \begin{center}
   \includegraphics[width=0.7\textwidth]{cnn_model}
   \caption{Modelo de RNC simplificado para predição da função seno.}
-  \label{fig:erroFunc}
+  \label{fig:rncComplete}
 \end{center}
 \end{figure}
 

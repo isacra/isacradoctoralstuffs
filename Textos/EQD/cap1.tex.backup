@@ -217,7 +217,7 @@ para dados de porosidade \citep{amilcarInversao}.
 
 
 \section{Redes Neurais Convolucionais}
-Nesta seção a convolução será descrita. Serão apresentados os principais conceitos relacionados às redes
+Nesta seção será descrito o que é convolução. Serão apresentados os principais conceitos relacionados às redes
 neurais convolucionais e sua estrutura e as principais
 aplicações deste modelo de aprendizagem de máquina. Um ponto não abordado nesta seção é
 como escolher a arquitetura de uma rede convolucional.
@@ -243,13 +243,7 @@ de aprendizagem.
 \end{equation}
 
 A convolução se sustenta sobre três pilares: interações esparsas, compartilhamentos
-de parâmetros e representações equivalentes. As redes neurais tradicionais
-utilizam a multiplicação de matriz por uma matriz de parâmetros para descrever
-a interação entre cada unidade de entrada e cada unidade de saída. Isso
-significa que toda unidade de saída interage com toda unidade de entrada.
-As redes convolucionais, por outro lado, tipicamente possui interações
-esparsas, também chamadas d conectividade esparsa ou pesos esparsos.
-Para isto, é necessários que os filtros sejam menores que a entrada.
+de parâmetros e representações equivalentes. As redes neurais tradicionais 
 
 
 
