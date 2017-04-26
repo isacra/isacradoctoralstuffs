@@ -13,7 +13,7 @@ delete cunha_lr/*.jpg;
 for image=1:640
 
 espessura_cunha_max = 32 + rand*160;
-base_cunha = 192 + rand*132;
+base_cunha = 192 + rand*22;
 tamanho_cunha = 0.5 + rand*0.45;
 
 % Calcula a espessura da cunha ao longo do deslocamento

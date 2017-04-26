@@ -14,21 +14,21 @@ You can't pop an empty literal stack for entry tompkins_comparisonBayes
 while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry hansenGibbsPrior
 while executing---line 1226 of file my-agsm.bst
-You can't pop an empty literal stack for entry amilcarInversao
-while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry clappRegLeast3D
 while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry Martinez2011Topogra
 while executing---line 1226 of file my-agsm.bst
-You can't pop an empty literal stack for entry Martinez2011Topogra
-while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry amilcarInversao
+while executing---line 1226 of file my-agsm.bst
+You can't pop an empty literal stack for entry Martinez2011Topogra
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry tompkins_comparisonBayes
 while executing---line 1298 of file my-agsm.bst
-You can't pop an empty literal stack for entry clappRegLeast3D
+You can't pop an empty literal stack for entry amilcarInversao
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry aster2013parameter
+while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry clappRegLeast3D
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry hansenGibbsPrior
 while executing---line 1298 of file my-agsm.bst
@@ -99,10 +99,6 @@ while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
 ---the literal stack isn't empty for entry hansenGibbsPrior
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry isaaks1989geostats
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
@@ -181,45 +177,45 @@ ptr=1, stack=
 
 ---the literal stack isn't empty for entry zunino2014
 while executing---line 1350 of file my-agsm.bst
-You've used 34 entries,
+You've used 33 entries,
             2912 wiz_defined-function locations,
-            875 strings with 11686 characters,
-and the built_in function-call counts, 154545 in all, are:
-= -- 25389
-> -- 1861
+            871 strings with 11601 characters,
+and the built_in function-call counts, 150453 in all, are:
+= -- 24715
+> -- 1812
 < -- 2
-+ -- 12130
-- -- 552
-* -- 13363
-:= -- 30797
-add.period$ -- 34
-call.type$ -- 34
-change.case$ -- 467
-chr.to.int$ -- 33
-cite$ -- 35
-duplicate$ -- 556
-empty$ -- 1161
-format.name$ -- 647
-if$ -- 27862
++ -- 11810
+- -- 538
+* -- 13016
+:= -- 29974
+add.period$ -- 33
+call.type$ -- 33
+change.case$ -- 454
+chr.to.int$ -- 32
+cite$ -- 34
+duplicate$ -- 540
+empty$ -- 1132
+format.name$ -- 627
+if$ -- 27125
 int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 42
-newline$ -- 105
-num.names$ -- 355
-pop$ -- 162
+missing$ -- 40
+newline$ -- 102
+num.names$ -- 345
+pop$ -- 154
 preamble$ -- 1
-purify$ -- 510
+purify$ -- 495
 quote$ -- 0
-skip$ -- 417
+skip$ -- 409
 stack$ -- 0
-substring$ -- 36144
-swap$ -- 86
-text.length$ -- 478
+substring$ -- 35195
+swap$ -- 85
+text.length$ -- 464
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 118
+type$ -- 116
 warning$ -- 1
-while$ -- 743
+while$ -- 722
 width$ -- 0
-write$ -- 454
-(There were 52 error messages)
+write$ -- 441
+(There were 51 error messages)

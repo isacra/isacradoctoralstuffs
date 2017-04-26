@@ -197,7 +197,7 @@ aplicações deste modelo de aprendizagem de máquina. Um ponto não abordado ne
 como escolher a arquitetura de uma rede convolucional.
 
 As redes convolucionais, também chamadas de redes neurais convolucionais (CNN),
-são um tipo de rede neural especializada em processamento de dados que possuam uma
+são um tipo de rede neural especializada em processamento de dados que possuem uma
 topologia conhecida e em forma de grade. Exemplos deste tipo de dado são as séries
 temporais, que podem ser vistas como uma grade em uma dimensão (1D) com amostras
 em intervalos de tempo regulares, e dados de imagem, que podem ser pensados como
@@ -219,46 +219,46 @@ de aprendizagem.
 A convolução se sustenta sobre três pilares: interações esparsas, compartilhamentos
 de parâmetros e representações equivalentes. As redes neurais tradicionais
 utilizam a multiplicação de matriz por uma matriz de parâmetros para descrever
-a interação entre cada unidade de entrada e cada unidade de saída. Isso
-significa que toda unidade de saída interage com toda unidade de entrada.
+a interação entre cada unidade de entrada e cada unidade de saída. Deste modo,
+toda unidade de saída interage com toda unidade de entrada.
 As redes convolucionais, por outro lado, tipicamente possui interações
-esparsas, também chamadas d conectividade esparsa ou pesos esparsos.
+esparsas, também chamadas de conectividade esparsa ou pesos esparsos.
 Para isto, é necessários que os filtros sejam menores que a entrada.
 De um ponto de vista prático, no processamento de uma imagem,
-a imagem de entrada pode ter milhares de pixels, entretanto, é 
+a imagem de entrada pode ter milhares de \textit{pixels}, entretanto, é 
 possível detectar apenas pequenas regiões de características importantes,
 por exemplo com significado geológico, com filtros que compreendam apenas
-algumas dezenas ou centenas de pixels na imagem. Como consequência,
-menos parâmetros são armazenados e aumenta a eficiência estatística do
+algumas dezenas ou centenas de \textit{pixels} na imagem. Como consequência,
+menos parâmetros são armazenados e ha um ganho na eficiência estatística do
 modelo. As figuras \ref{fig:full} e \ref{fig:sparse} ilustram
 os modelos citados anteriormente. É possível notar que o número de elementos
-que afetam elemento de saída em destaque ($s_3$) é definido pela convolução
-com filtro de largura 3 (figura \ref{fig:sparse}), por outro lado $s_3$ é
-afetado por todos os elementos da entrada quando formado por multiplicação
-matricial (figura \ref{fig:full}).
+que afetam o elemento de saída em destaque ($s_3$) é definido pela convolução
+com filtro de largura 3 (figura \ref{fig:sparse}), por outro lado, quando formado por multiplicação
+matricial (figura \ref{fig:full}), $s_3$ é
+afetado por todos os elementos da entrada.
 
 \begin{figure}[htp]
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{fig/full_conections}
+  \includegraphics[width=.9\linewidth]{fig/full}
   \caption{Conectividade tradicional.}
   \label{fig:full}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.9\linewidth]{fig/sparse_conections}
+  \includegraphics[width=.9\linewidth]{fig/sparse}
   \caption{Conectividade esparsa.}
   \label{fig:sparse}
 \end{subfigure}
 \end{figure}
 
 O \textbf{compartilhamento de parâmetros}, também chamado de \textbf{pesos amarrados} 
-em uma rede convolucional se refere ao uso do mesmo parâmetro para mais de uma função no modelo.
+em uma rede convolucional, se refere ao uso do mesmo parâmetro para mais de uma função no modelo.
 Nas redes neurais tradicionais, cada elemento da matriz de pesos é usado apenas uma vez quando a
 saída da camada é calculada, pois é multiplicado por apenas um elemento da entrada. No compartilhamento
 de pesos, o valor do peso aplicado a uma entrada está relacionado ao valor de um peso aplicado em
 algum outro local. Na rede convolucional, cada elemento do filtro é usado em toda posição da entrada,
-de modo que, ao invés de aprender um conjunto separado de parâmetros toda localização da imagem, apenas
+de modo que, ao invés de aprender um conjunto separado de parâmetros para toda localização da imagem, apenas
 um conjunto é aprendido.
 
 \subsection{Pooling}
@@ -286,22 +286,26 @@ independente do tamanho da imagem.
 
 \section{Objetivo}
 
-O objetivo do presente trabalho consiste em propor um modelo capaz de integrar a
-atualização Bayesiana no processo de inversão GSI. Resultados prévios indicam
-que utilizar ...
+O objetivo do presente trabalho consiste em propor um modelo fluxo de trabalho
+para integração de um modelo para obter imagens de inversão sísmica em hiper-resolução.
+Resultados prévios indicam que o modelo baseado em redes neurais convolucionais é capaz
+de agregar informações de alta frequência às inversões acústicas.
 
-Outro objetivo é ...
+Outro objetivo deste trabalho é desenvolver um modelo baseado em redes neurais convolucionais que permita a
+realização de simulação geoestatística multiponto. Esta etapa de trabalho será desenvolvida
+em cooperação com o Departamento de Ciências Geológicas, Universidade Stanford, sob
+orientação do Prof. Dor. Jef Karel Caers.
+
 
 \section{Organização do Texto}
 
 Este documento está organizado da seguinte forma. Após esta breve introdução, o
 Capítulo \ref{cap:2modelosInversao} apresenta o estado da arte em modelos de
-inversão sísmica com modelagem de incerteza. O Capítulo \ref{cap:3modeloHibrido}
-trata da proposta do projeto e resultados preliminares da integração de
-atualização Bayesiana em inversão Geoestatística, a ser desenvolvido em parceria
-com o CERENA - Centro de Recursos Naturais e Ambiente do Instituto Técnico da
-Universidade de Lisboa, sob orientação do professor Dr. Amilcar Soares,
-especialista em Geoestatística e inversão sísmica. O estágio será iniciado em
-julho de 2015 e terá 12 meses de duração. Após o retorno ao Brasil, estão
-planejados mais 8 meses de trabalho para finalizar a escrita da tese e defesa.
+inversão sísmica. O Capítulo \ref{cap:2modelosSuperresolucao} apresenta o estado da arte 
+em geração de image em super-resolução a partir de imagens de baixa resolução.
+O Capítulo \ref{} trata dos métodos de simulação geoestatística multiponto. O
+Capítulo \ref{cap:3modeloHibrido} trata da proposta do projeto e resultados
+preliminares referente ao modelo de super-resolução treinado e aplicado às imagens
+de impedância pós-inversão. Após o retorno ao Brasil, estão planejados mais 8 meses
+de trabalho para finalizar a escrita da tese e defesa.
 
