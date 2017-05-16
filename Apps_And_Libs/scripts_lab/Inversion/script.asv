@@ -1,0 +1,20 @@
+
+
+wavelet_ = lowPassFilter2(wavelet,50,100,4);
+wavelet_ = wavelet;
+
+refl = impedancia2refletividade(imp);
+traces_sintetico = conv2(refl,wavelet_,'same');
+
+ruido_branco = 0.001*randn(size(traces_sintetico))*std(traces_sintetico(:));
+
+ruido = conv2(ruido_branco,wavelet,'same');
+ruido = conv2(ruido,wavelet','same');
+
+traces_sintetico_ruido = traces_sintetico + ruido;
+
+[uzl,uzl_Merged,sySeismic] = MAP_inversion(imp_low,wavelet,0.1,1.5,traces_sintetico_ruido,200);
+
+figure
+imagesc(uzl)
+caxis([5000 8000])

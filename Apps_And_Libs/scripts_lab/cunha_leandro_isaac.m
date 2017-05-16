@@ -5,16 +5,25 @@ close all;
 
 deslocamento_max = 320;
 profundidade_max = 320;
-mkdir cunha_hr
-mkdir cunha_lr
-delete cunha_hr/*.jpg;
-delete cunha_lr/*.jpg;
+crop = true;
+%deslocamento_max = 32;
+%profundidade_max = 32;
 
-for image=1:640
+mkdir Images/cunha_hr
+mkdir Images/cunha_lr
+delete Images/cunha_hr/*.jpg;
+delete Images/cunha_lr/*.jpg;
+hr_im_cube_class = ImageCubeClass;
+lr_im_cube_class = ImageCubeClass;
+
+for image=1:100
 
 espessura_cunha_max = 32 + rand*160;
 base_cunha = 192 + rand*132;
 tamanho_cunha = 0.5 + rand*0.45;
+%espessura_cunha_max = 10 + rand*15;
+%base_cunha = 15 + rand*15;
+%tamanho_cunha = 0.5 + rand*0.40;
 
 % Calcula a espessura da cunha ao longo do deslocamento
 for coluna = 1:deslocamento_max
@@ -63,14 +72,23 @@ impedancia_profundidade_deslocamento_low = lowPassFilter2(impedancia_profundidad
 %impedancia_profundidade_deslocamento_low  = exponential_filter2(2,impedancia_profundidade_deslocamento,4,100,10);
 
 
-cunha(:,:,image) = impedancia_profundidade_deslocamento;
-im = prop2rgb(impedancia_profundidade_deslocamento);
-imwrite(im,strcat('cunha_hr/',int2str(image),'.jpg'));
+%cunha(:,:,image) = impedancia_profundidade_deslocamento;
+%im = prop2rgb(impedancia_profundidade_deslocamento);
 
+[img_hr, hr_im_cube_class] = prop2gray(impedancia_profundidade_deslocamento,hr_im_cube_class);
+[img_lr, lr_im_cube_class] = prop2gray(impedancia_profundidade_deslocamento_low,lr_im_cube_class);
+if crop
+    imgs_hr = crop_and_print(img_hr,'Images/cunha_hr/', image);
+    imgs_lr = crop_and_print(img_lr,'Images/cunha_lr/', image);
+else
+    imwrite(img_hr,strcat('Images/cunha_hr/',int2str(image),'.jpg'));
+    images_hr(image,:,:) = img;
+    imwrite(img_lr,strcat('Images/cunha_lr/',int2str(image),'.jpg'));
+    images(image,:,:) = img;
+end
 
-cunha_low(:,:,image) = impedancia_profundidade_deslocamento_low;
-im = prop2rgb(impedancia_profundidade_deslocamento_low);
-imwrite(im,strcat('cunha_lr/',int2str(image),'.jpg'));
+%cunha_low(:,:,image) = impedancia_profundidade_deslocamento_low;
+%im = prop2rgb(impedancia_profundidade_deslocamento_low);
 
 % Desenha a cunha Deslocamento x Profundidade
 %  figure;
@@ -85,3 +103,5 @@ imwrite(im,strcat('cunha_lr/',int2str(image),'.jpg'));
 % ylabel('Profundidade')
 
 end
+
+pause;

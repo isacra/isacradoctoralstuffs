@@ -10,7 +10,7 @@ A modelagem direta, portanto, inicia com um modelo, sobre o qual um experimento 
 é simulado matematicamente. Se o modelo estiver correto, a resposta
 obtida deve parecer com dados reais. O processo de inversão faz exatamente o contrário,
 consiste em utilizar as medidas efetuadas para inferir os valores de parâmetros que
-caracterizam o sistema \citep{tarantola}. Muitas vezes, o problema inverso se caracteriza
+caracterizam o sistema \citep{tarantola} e muitas vezes se caracteriza
 por ser não determinístico.
 
 Considere o seguinte exemplo: imagine um exame de eletrocardiograma (ECG). Neste exame,
@@ -291,15 +291,21 @@ para integração de um modelo para obter imagens de inversão sísmica em hiper
 Resultados prévios indicam que o modelo baseado em redes neurais convolucionais é capaz
 de agregar informações de alta frequência às inversões acústicas.
 
-Outro objetivo é ...
+Outro objetivo deste trabalho é desenvolver um modelo baseado em redes neurais convolucionais que permita a
+realização de simulação geoestatística multiponto. Esta etapa de trabalho será desenvolvida
+em cooperação com o Departamento de Ciências Geológicas, Universidade Stanford, sob
+orientação do Prof. Dor. Jef Karel Caers.
+
 
 \section{Organização do Texto}
 
 Este documento está organizado da seguinte forma. Após esta breve introdução, o
 Capítulo \ref{cap:2modelosInversao} apresenta o estado da arte em modelos de
-inversão sísmica com modelagem de incerteza. O Capítulo \ref{cap:3modeloHibrido}
-trata da proposta do projeto e resultados preliminares referente ao modelo
-de super-resolução treinado e aplicado às imagens de impedância pós-inversão.
-Após o retorno ao Brasil, estão
-planejados mais 8 meses de trabalho para finalizar a escrita da tese e defesa.
+inversão sísmica. O Capítulo \ref{cap:2modelosSuperresolucao} apresenta o estado da arte 
+em geração de image em super-resolução a partir de imagens de baixa resolução.
+O Capítulo \ref{} trata dos métodos de simulação geoestatística multiponto. O
+Capítulo \ref{cap:3modeloHibrido} trata da proposta do projeto e resultados
+preliminares referente ao modelo de super-resolução treinado e aplicado às imagens
+de impedância pós-inversão. Após o retorno ao Brasil, estão planejados mais 8 meses
+de trabalho para finalizar a escrita da tese e defesa.
 
