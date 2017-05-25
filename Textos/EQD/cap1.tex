@@ -35,10 +35,6 @@ observáveis pode resultar de mais de uma configuração do coração doente. Se
 a natureza mal-posta do problema inverso, isto é, uma pequena mudança arbitrária nos
 valores observados pode causar uma mudança grande da solução fonte equivalente
 
-O problema inverso possui um papel extremamente importante em diferentes áreas do conhecimento.
-Com ele é possível por exemplo....
-
-
 Por conta da sua característica mal-posta, já mencionada anteriormente, o problema inverso
 possui muitas soluções possíveis, de modo que representaria um equívoco considerar apenas
 uma solução como a mais correta. Via de regra, ao final do processo de inversão é
@@ -46,16 +42,48 @@ se realiza um processo de amostragem dentro do conjunto das possíveis soluçõe
 de obter um estudo sobre elas. Este estudo pode ser, por exemplo, uma análise de 
 incerteza em todo da média das soluções do problema inverso.
 
-No campo da geoestatística o processo de inversão tem o papel de caracterização
-de reservatórios. Estes reservatórios podem ser....
+O problema inverso possui um papel extremamente importante em diferentes áreas do conhecimento.
+Matemática, medicina e física. Na Geoestatística,...
 
+
+No campo da geoestatística o processo de inversão tem um papel importante na caracterização
+de reservatórios. Por caracterização de reservatório se entende o processo de modelar....
 O processo de caracterização de reservatórios possui diferentes
-etapas. A etapa de inversão visa....
-O processo inverso disponibilizam artefatos que...
+etapas. Estas etapas podem ser descritas em alto nível como na
+abordagem sequencial a seguir:
+\begin{enumerate}
+ \item A primeira etapa envolve da geometria e estratigrafia dos intervalos do reservatório
+ a ser modelado. Ainda, o desenvolvimento de um modelo conceitual de continuidade para
+ propriedades como fácies, porosidade e permeabilidade \label{itm:1}.
+ \item Os tipos de contato (interfaces / \textit{facies}) entre rochas são modelados\label{itm:2}.
+ \item A propriedade porosidade é modelada com base nos tipos de facies, antes da permeabilidade.
+ Isto é possível devido à disponibilidade de dados sísmicos e dados amostrais localizados, também chamados de poços\label{itm:3}.
+ \item Os modelos 3-D para permeabilidade são atrelados à porosidade e facies anteriormente estabelecidos\label{itm:4}.
+ \item Múltiplas realizações igualmente prováveis são realizadas por repetição de todo o processo. Embora todas as
+ realizações sejam equiprováveis, há realizações mais similares a outras, de modo que a classe à qual pertencem possui
+ maior probabilidade\label{itm:5}.
+ \item Os modelos são usados como entrada em um simulador ou visualizados e usados como suporte na tomada de decisão\label{itm:6}.
+\end{enumerate}
 
+Embora a abordagem anterior apresente alguns elementos que, à primeira vista, pareçam estranhos, sua apresentação 
+serve para ressaltar que o processo de inversão no domínio do estudo geoestatístico, abordado neste
+trabalho, é realizado na etapa \ref{itm:3} e o problema abordado neste trabalho 
+Assim, a etapa de inversão sísmica na modelagem de reservatórios disponibiliza artefatos que
+são propriedades de rocha (propriedades petrofísicas) a partir, principalmente, mas não exclusivamente,
+de dados sísmicos e modelos construídos com dados amostrais.
 
-Assim, este documento propõe a incorporação de um método de um modelo
-baseado em aprendizagem de máquina ao processo de inversão sísmica.
+Como mencionado no último item (\ref{itm:6}), a inversão sísmica na modelagem de reservatórios disponibilza
+artefatos que serão utilizados na tomada de decisão. Estes artefatos são visualizados na forma de imagens
+e, é possível supor que quanto maior o nível de resolução destas imagens de propriedades petrofísicas,
+mais contundente será a justificativa para a tomada de decisão.
+
+Este trabalho aborda um problema no domínio da inversão sísmica,
+no processo de modelagem de reservatório, por meio de soluções baseadas em técnicas de \textit{Deep Learning}.
+Um modelo de baseado em \textit{Deep Learning} será incorporado á última etapa do processo de inversão sísmica,
+afim de garantir 
+Este conceitos serão definidos e detalhados nos Capítulos posteriores.
+
+Assim, este documento propõe a incorporação de
 A incorporação deste processo objetiva um ganho de resolução ....
 
 

@@ -28,34 +28,53 @@ A solução pode ser determinada inserindo um valor pra $H$ em \ref{eq:forw} e c
 valor de $T$. O problema inverso é uma abordagem mais difícil, pois se deseja
 saber a profundidade $H$, dado apenas o tempo $T$.
 
-
-
-imagine um exame de eletrocardiograma (ECG). Neste exame,
-são registradas as variações dos potenciais elétricos gerados pela atividade elétrica do coração.
-Esta medição se dá por meio da disposição de eletrodos sobre a superfície do corpo,
-próximos e distantes do coração, de modo a medir a diferença dos potenciais. 
-A situação ideal é que esta diferença de potencial seja pudesse ser realizada diretamente
-sobre a superfície do coração, o que demandaria uma intervenção cirúrgica. Neste contexto,
-o objetivo do problema inverso
-é recuperar, de forma não invasiva, informações regionais sobre atividades fisiológicas e eventos elétricos dentro do coração,
-a partir de medidas elétricas na superfície do corpo.
-Como a maioria dos problemas inversos, o problema inverso do exame de ECG recai sobre duas características
-comuns. Primeiro, a não unicidade de solução, ou seja, o mesmo conjunto de medidas
-observadas no exame pode resultar de mais de uma configuração do coração doente. Segundo,
+No exemplo citado, tanto o problema direto quanto o inverso possuem solução. Entretanto,
+a maioria dos problemas inversos recai sobre duas características
+comuns. Primeiro, a não unicidade de solução (não-determinístico), ou seja, o mesmo conjunto de medidas
+observáveis pode resultar de mais de uma configuração do coração doente. Segundo,
 a natureza mal-posta do problema inverso, isto é, uma pequena mudança arbitrária nos
-valores observados no ECG pode causar uma mudança grande da solução fonte equivalente, ou seja,
-no tipo de atividade elétrica dentro do órgão.
+valores observados pode causar uma mudança grande da solução fonte equivalente
+
+Por conta da sua característica mal-posta, já mencionada anteriormente, o problema inverso
+possui muitas soluções possíveis, de modo que representaria um equívoco considerar apenas
+uma solução como a mais correta. Via de regra, ao final do processo de inversão é
+se realiza um processo de amostragem dentro do conjunto das possíveis soluções a fim
+de obter um estudo sobre elas. Este estudo pode ser, por exemplo, uma análise de 
+incerteza em todo da média das soluções do problema inverso.
 
 O problema inverso possui um papel extremamente importante em diferentes áreas do conhecimento.
-Com ele é possível por exemplo....
+Matemática, medicina e física. Na Geoestatística,...
 
-No campo da geoestatística o processo de inversão tem o papel de caracterização
-de reservatórios. Estes reservatórios podem ser....
 
+No campo da geoestatística o processo de inversão tem um papel importante na caracterização
+de reservatórios. Por caracterização de reservatório se entende o processo de modelar....
 O processo de caracterização de reservatórios possui diferentes
-etapas. A etapa de inversão visa....
-O processo inverso disponibilizam artefatos que...
+etapas. Estas etapas podem ser descritas em alto nível como na
+abordagem sequencial a seguir:
+\begin{enumerate}
+ \item A primeira etapa envolve da geometria e estratigrafia dos intervalos do reservatório
+ a ser modelado. Ainda, o desenvolvimento de um modelo conceitual de continuidade para
+ propriedades como fácies, porosidade e permeabilidade \label{itm:1}.
+ \item Os tipos de contato (interfaces / \textit{facies}) entre rochas são modelados\label{itm:2}.
+ \item A propriedade porosidade é modelada com base nos tipos de facies, antes da permeabilidade.
+ Isto é possível devido à disponibilidade de dados sísmicos e dados amostrais localizados, também chamados de poços\label{itm:3}.
+ \item Os modelos 3-D para permeabilidade são atrelados à porosidade e facies anteriormente estabelecidos\label{itm:4}.
+ \item Múltiplas realizações igualmente prováveis são realizadas por repetição de todo o processo. Embora todas as
+ realizações sejam equiprováveis, há realizações mais similares a outras, de modo que a classe à qual pertencem possui
+ maior probabilidade\label{itm:5}.
+ \item Os modelos são usados como entrada em um simulador ou visualizados e usados como suporte na tomada de decisão\label{itm:6}.
+\end{enumerate}
 
+Embora a abordagem anterior apresente alguns elementos que, à primeira vista, pareçam estranhos, sua apresentação 
+serve para ressaltar que o processo de inversão no domínio do estudo geoestatístico, abordado neste
+trabalho, é realizado na etapa \ref{itm:3} e o problema abordado neste trabalho 
+Assim, a etapa de inversão sísmica na modelagem de reservatórios disponibiliza artefatos que
+são propriedades de rocha (propriedades petrofísicas) a partir, principalmente, mas não exclusivamente,
+de dados sísmicos e modelos construídos com dados amostrais.
+
+Este trabalho, por sua vez, aborda um problema no domínio da inversão sísmica,
+no processo de modelagem de reservatório, por meio de soluções baseadas em técnicas de \textit{Deep Learning}.
+Este conceitos serão definidos e detalhados nos Capítulos posteriores.
 
 Assim, este documento propõe a incorporação de um método de um modelo
 baseado em aprendizagem de máquina ao processo de inversão sísmica.
