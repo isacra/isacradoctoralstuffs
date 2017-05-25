@@ -1,20 +1,17 @@
 \begin{thebibliography}{xx}
 
-\harvarditem{Artun e Mohaghegh}{2011}{Artun2011143}
-Artun, E. e Mohaghegh, S.  \harvardyearleft 2011\harvardyearright , Intelligent
-  seismic inversion workflow for high-resolution reservoir characterization, {
-  Computers \& Geosciences} {\bf 37}(2),~143 -- 157.
-
-\harvarditem[]{Aster; Borchers e Thurber}{2013}{aster2013parameter}
-Aster, R.; Borchers, B. e Thurber, C.  \harvardyearleft 2013\harvardyearright ,
-  { Parameter Estimation and Inverse Problems}, Academic Press, Academic Press.
-
 \harvarditem[Azevedo et~al.]{Azevedo; Nunes; Soares e
   Neto}{2013}{azevedo2013_avoinv}
 Azevedo, L.; Nunes, R.; Soares, A. e Neto, G.  \harvardyearleft
   2013\harvardyearright , Stochastic seismic {AVO} inversion,  75th EAGE
   Conference \& Exhibition incorporating SPE EUROPEC 2013, EAGE, Londres, Reino
   Unido.
+
+\harvarditem[]{Bosch; Mukerji e Gonzalez}{2010}{Bosch2010}
+Bosch, M.; Mukerji, T. e Gonzalez, E.~F.  \harvardyearleft
+  2010\harvardyearright , Seismic inversion for reservoir properties combining
+  statistical rock physics and geostatistics: A review, { Geophysics} {\bf
+  75}(5),~75A165--75A176.
 
 \harvarditem{Buland e Omre}{2003{ a}}{Buland01012003}
 Buland, A. e Omre, H.  \harvardyearleft 2003{ a}\harvardyearright , Bayesian
@@ -47,13 +44,6 @@ Fernández~Martínez, J.~L.; Fernández~Muñiz, M.~Z. e Tompkins, M.~J.
   functional in linear and nonlinear inverse problems, { Geophysics} {\bf
   77}(1),~W1--W15.
 
-\harvarditem[Fernández~Martínez et~al.]{Fernández~Martínez; Mukerji;
-  García~Gonzalo e Suman}{2012}{MartinezPSO}
-Fernández~Martínez, J.~L.; Mukerji, T.; García~Gonzalo, E. e Suman, A.
-  \harvardyearleft 2012\harvardyearright , Reservoir characterization and
-  inversion uncertainty via a family of particle swarm optimizers, {
-  Geophysics} {\bf 77}(1),~M1--M16.
-
 \harvarditem[Figueiredo et~al.]{Figueiredo; Santos; Roisenberg e
   Neto}{2013}{leandro_SEG}
 Figueiredo, L.~P.; Santos, M.; Roisenberg, M. e Neto, G.  \harvardyearleft
@@ -77,12 +67,6 @@ Goovaerts, P.  \harvardyearleft 1997\harvardyearright , { Geostatistics for
   Natural Resources Evaluation}, Applied geostatistics series, Oxford
   University Press.
 
-\harvarditem[]{Hansen; Cordua e Mosegaard}{2012}{hansenGibbsPrior}
-Hansen, T.; Cordua, K. e Mosegaard, K.  \harvardyearleft 2012\harvardyearright
-  , Inverse problems with non-trivial priors: efficient solution through
-  sequential gibbs sampling, { Computational Geosciences} {\bf
-  16}(3),~593--611.
-
 \harvarditem{Jolliffe}{2002}{jolliffe2002principal}
 Jolliffe, I.~T.  \harvardyearleft 2002\harvardyearright , { Principal component
   analysis}, Springer, New York.
@@ -104,10 +88,12 @@ Mart\'{\i}nez, J. L.~F.; Gonzalo, E.~G.; Mu\~{n}iz, Z.~F.; Mariethoz, G. e
   using particle swarm optimizers and model reduction techniques, { Int. J.
   Appl. Evol. Comput.} {\bf 1}(3),~27--48.
 
-\harvarditem{Sambridge}{2013}{Sambridge22102013}
-Sambridge, M.  \harvardyearleft 2013\harvardyearright , A parallel tempering
-  algorithm for probabilistic sampling and multimodal optimization, {
-  Geophysical Journal International} .
+\harvarditem[Passos~de Figueiredo et~al.]{Passos~de Figueiredo; Santos;
+  Roisenberg; Schwedersky~Neto e Figueiredo}{2014}{Figueiredo2014}
+Passos~de Figueiredo, L.; Santos, M.; Roisenberg, M.; Schwedersky~Neto, G. e
+  Figueiredo, W.  \harvardyearleft 2014\harvardyearright , Bayesian framework
+  to wavelet estimation and linearized acoustic inversion, { Geoscience and
+  Remote Sensing Letters, IEEE} {\bf 11}(12),~2130--2134.
 
 \harvarditem{Scheidt e Caers}{2009}{caers_distance_kernels_MDS}
 Scheidt, C. e Caers, J.  \harvardyearleft 2009\harvardyearright , Representing
@@ -117,11 +103,6 @@ Scheidt, C. e Caers, J.  \harvardyearleft 2009\harvardyearright , Representing
 \harvarditem{Sen}{2006}{sen_livro}
 Sen, M.~K.  \harvardyearleft 2006\harvardyearright , { {Seismic Inversion}},
   Society of Petroleum Engineers, Richardson, TX, USA.
-
-\harvarditem{Sen e Stoffa}{1991}{senSimulatedAnnealin}
-Sen, M.~K. e Stoffa, P.~L.  \harvardyearleft 1991\harvardyearright , Nonlinear
-  one-dimensional seismic waveform inversion using simulated annealing, {
-  Geophysics} {\bf 56}(10),~1624--1638.
 
 \harvarditem{Sen e Stoffa}{1995}{Sen1995v}
 Sen, M.~K. e Stoffa, P.~L.  \harvardyearleft 1995\harvardyearright , { Global
@@ -141,6 +122,12 @@ Soares, A.  \harvardyearleft 2001\harvardyearright , Direct sequential
 Soares, A.; Diet, J. e Guerreiro, L.  \harvardyearleft 2007\harvardyearright ,
   Stochastic inversion with a global perturbation method,  Petroleum
   Geostatistics 2007, EAGE.
+
+\harvarditem{Srivastava e Sen}{2009}{Srivastava2009}
+Srivastava, R.~P. e Sen, M.~K.  \harvardyearleft 2009\harvardyearright ,
+  Fractal-based stochastic inversion of poststack seismic data using very fast
+  simulated annealing, { Journal of Geophysics and Engineering} {\bf
+  6}(4),~412.
 
 \harvarditem{Tarantola}{2005}{tarantola}
 Tarantola, A.  \harvardyearleft 2005\harvardyearright , { Inverse Problem

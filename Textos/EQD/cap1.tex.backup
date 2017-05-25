@@ -15,9 +15,9 @@ por ser não determinístico.
 
 Considere o seguinte exemplo: imagine um exame de eletrocardiograma (ECG). Neste exame,
 a corrente elétrica responsável pelos batimentos cardíacos
-pode ser medida  através da disposição de eletrodos sobre a superfície do corpo,
+pode ser medida através da disposição de eletrodos sobre a superfície do corpo,
 próximos e distantes do coração. Partindo da suposição de que um coração doente
-seja examinado, é possível para a um médico identificar no ECG os padrões que ratificam
+seja examinado, é possível a um médico identificar no ECG os padrões que ratificam
 a existência de um problema (problema direto). Neste contexto, o objetivo do problema inverso
 é recuperar a atividade elétrica e fisiológica do coração dado um conjunto de dados de ECG.
 Como a maioria dos problemas inversos, o problema inverso do exame de ECG recai sobre duas características
@@ -30,53 +30,65 @@ valores observados no ECG pode causar uma mudança grande da solução fonte equ
 
 A teoria de inversão é utilizada em diversas áreas para inferir os valores de
 parâmetros relacionados com processos importantes a partir dos dados medidos,
-também chamados de dados experimentais. Pode-se descrever o problema inverso
+também chamados de dados experimentais. É possível descrever o problema inverso
 como o processo de obter informações de um sistema parametrizado, a partir de
 dados observáveis, das relações teóricas dos observáveis com os parâmetros não
-observáveis e do conhecimento \textit{a priori} sobre os não observáveis.
+observáveis e do conhecimento \textit{a priori} sobre os dados não observáveis.
 
-O procedimento científico para o estudo de um sistema físico pode ser dividido
-em três passos: a parametrização do sistema, a  modelagem direta e a modelagem inversa.
-O problema da modelagem inversa, por sua vez, se caracteriza pelo
+Um sistema físico depende do domínio em estudo. Pode ser uma galáxia para um
+astro-físico, pode ser a Terra para um geofísico ou uma partícula quântica
+para um físico quântico. O procedimento científico para o estudo de um sistema
+físico pode ser dividido em três passos: a parametrização do sistema, a modelagem direta e a modelagem inversa.
+A parametrização do sistema se refere à definição do conjunto mínimo de elementos cujos
+valores caracterizam completamente o sistema. A modelagem direta se refere concerne a
+definição das leis físicas que permitem realizar previsão de dados observáveis, dados
+valores dos parâmetros do modelo. A modelagem inversa, por sua vez, se caracteriza pelo
 uso de resultados atuais das medições dos parâmetros físicos observáveis, para inferir os valores atuais dos
-parâmetros do modelo. A maioria dos problemas inversos podem ser escritos em uma forma discreta como:
+parâmetros do modelo.
+
+Resolver o problema direto significa prever os valores dos parâmetros observáveis (dados $d$),
+que correspondem a um dado modelo (conjunto de parâmetros $m$). Esta predição pode ser denotada
+pela Eq. \ref{eq:frdmdl}. Onde $F(.)$ é chamado operador direto.
+\begin{equation}
+\label{eq:frdmdl}
+F(m) = d 
+\end{equation}
+No exemplo do eletrocardiograma citado anteriormente, o problema direto pode
+ser entendido como o cálculo do potencial em algum ponto da superfície da pele,
+dados valores conhecidos da atividade elétrica do coração.
+O problema inverso pode ser descrito em uma forma discreta como:
 \begin{equation}
 \label{eq:deqgm}
-F(m) \approx d 
+m = F^{-1}(d)
 \end{equation}
-onde, $m=(m_1, m_2,...,m_n) \subset R^n$ é o modelo estimado que pertence a um conjunto de modelos $M$ admissíveis
-em termos de conhecimento prévio (\textit{à priori}). O termo $d \in R^s$, são os dados observados e
-\begin{equation}F(m)=(f_1(m),f_2(m),...,f_s(m))\end{equation} representa o direto.
-
+onde, F é p sistema físico investigado e que relaciona os parâmetros do modelo $m=(m_1, m_2,...,m_n) \subset R^n$
+estimado que pertence a um conjunto de modelos $M$ admissíveis
+em termos de conhecimento prévio (\textit{a priori}), com os dados observados $d \in R^s$.
 Na prática $d$ pode ser uma função no domínio do tempo e/ou espaço, ou pode ser
 uma coleção de observações discretas. Uma questão relevante é a presença de
-ruído nas observações. Geralmente considera-se que os dados são observações
-de um experimento perfeito $d_v$ mais uma componente de ruído $e$:
-\begin{equation}
-\begin{split}
-d &= F(m_v) + e \\
-&= d_v + e
-\end{split}
-\end{equation}
-onde $d_v$ satisfaz  \ref{eq:deqgm} para o modelo considerado verdade $m_v$, 
-$d_v = G(m_v)$, assumindo o operador $G$ como exato. Em muitos casos é possível
-ajustar matematicamente todas as partes do ruído $e$ utilizado a equação \ref{eq:deqgm},
-deixando o ruído aparecer no modelo encontrado. Situação que na prática é
-indesejável, pois em muitos casos uma solução de $m$ que é influenciada por até
-mesmo um pequeno ruído $e$ pode ter pouca similaridade com o modelo verdadeiro
-$m_v$ \citep[p. 19]{aster2013parameter}.
+ruído nas observações.
 
 \section{Inversão Sísmica}
 
-No contexto da indústria de óleo e gás, o problema de inversão sísmica é
-importante para o processo de caracterização de reservatórios de
-hidrocarbonetos, que consiste na determinação tridimensional e quantitativa da
-estrutura e das propriedades petrofísicas (porosidade, densidade, etc) das
-rochas da subsuperfície. O método de aquisição sísmica de reflexão utiliza
+Os métodos geofísicos frequentemente envolvem a solução e avaliação de problemas inversos,
+pois permitem inferir a distribuição das propriedades físicas na subsuperfície da Terra
+usando observações da superfície. A inversão sísmica tem um papel fundamental na solução 
+de problemas geofísicos, em especial na caracterização de reservatórios \cite{Bosch2010} \cite{Srivastava2009}.
+Do ponto de vista prático, as soluções para o problema de inversão sísmica melhora a exploração e
+o gerenciamento na indústria petrolífera, pois os dados sísmicos estimados possuem forte correlação com as
+propriedades petrofísicas (porosidade, densidade, etc) das rochas da subsuperfície\cite{Figueiredo2014}.
+
+O método de aquisição sísmica de reflexão utiliza
 pulsos sísmicos de uma fonte artificial controlada e monitora a resposta em
-função do tempo. Neste sistema, cada interface entre dois tipos de rochas
+função do tempo. Neste sistema, cada região de contato entre dois tipos de rochas
 diferentes gera reflexão e refração do pulso sísmico, como demonstrado na Figura
 \ref{fig:1sismica}.
+De um ponto de vista bastante elementar, é possível imaginar que a parte refletida da onda se
+propaga em todas as direções, de modo que os componentes horizontal e vertical podem ser obtidos.
+O componente horizontal (\textit{s-wave}), referente à reflexão horizontal
+da onda, é utilizada no processo de inversão conhecido como inversão elástica. Por outro lado, os componente
+vertical da onda (\textit{p-wave}), referente à reflexão vertical do pulso do pulso emitido, é utilizado no processo
+conhecido como inversão acústica.
 
 \begin{figure}[ht!]
 \begin{center}
@@ -86,37 +98,40 @@ diferentes gera reflexão e refração do pulso sísmico, como demonstrado na Fi
 \end{center}
 \end{figure}
 
-
-Para inversão acústica, o modelo mais utilizado para representar a resposta do
-pulso sísmico atravessando as interfaces entre rochas é o convolucional. Nele é
-assumido um modelo em camadas para a subsuperfície e ângulo de incidência e
-reflexão de $90^\circ$. A medida efetuada é representada pelo resultado da
-convolução do pulso sísmico, também chamado de \textit{wavelet}, com as
-refletividades das interfaces. Os coeficientes de reflexão com ângulo de
-reflexão normal são modelados por \citep[p. 69]{sen_livro}:
+O pulso de onda emitido durante a aquisição possui um formato próprio, uma identidade, e
+é conhecido como \textit{wavelet}. É possível imaginar, então, que a resposta obtida
+é composta em parte por esta identidade e, em parte, pela característica da região de contato
+entre duas camadas de rochas diferentes, na qual ocorreceu a reflexão, acrescentada de um ruído aleatório. Esta característica
+é chamada de coeficiente de refletividade.
+O dado sísmico utilizado na inversão acústica é uma aproximação da resposta da camada terrestre convolucionada com
+a wavelet de aquisição cujo ângulo de incidência é de $90^\circ$ e o valor de refletividade entre as camadas da subsuperfície
+com reflexão também de $90^\circ$, definida pela equação \ref{eq:refletv}. Por este motivo, este modelo é chamado convolucional.
 
 \begin{equation}
 r(t) = \frac{z(t+\delta t)-z(t)}{z(t+\delta t)+z(t)}
+\label{eq:refletv}
 \end{equation}
-onde $z(t)$ é a impedância acústica no tempo $t$ definida por
+
+Na equação \ref{eq:refletv}, $z(t)$ é a impedância acústica no tempo $t$ definida por
 $z(t)=\rho(t)v(t)$, onde $\rho(t)$ é a densidade da rocha e $v(t)$ a
-velocidade de propagação da onda acústica. Utilizando os coeficientes de
-reflexão, modela-se a resposta do sistema $d(t)$ aplicando a convolução
-da \textit{wavelet} $s$ com os coeficientes de refletividade:
+velocidade de propagação da onda acústica. Com os coeficientes de
+reflexão e a discretização da medida de tempo, é possível
+modelar o dado sísmico $d(t)$ aplicando a convolução $\otimes$
+da \textit{wavelet} $s$ com os coeficientes de refletividade $r$:
 
 \begin{equation}
-d(t) = \int_{-\infty}^{\infty} s(\tau)r(t-\tau)d\tau + e_d(t)
+d(t) = s(\tau) \otimes \sum{j-1}{N} r(t- t_j) \delta(t - t_j) + e_d(t)
 \end{equation}
-onde é assumida a presença de um ruído aleatório $e_d(t)$ e $d$ é o chamado dado
-sísmico. Cada sequência de dados $d$ representa um ponto no plano $xy$ e suas
-posições $(t)$ são coordenadas em tempo que se relacionam com a profundidade.
-Cada $d_{xy}$ é muitas vezes chamado de traço sísmico, o que no caso discreto
-pode ser uma coluna de uma matriz 2D, por exemplo. Um conjunto de traços
+onde $N$ é o número
+total de camadas, $e_d(t)$ representa o ruído aleatório em função do tempo
+e cada $d_{xy}$ é chamado de traço sísmico. Um conjunto de traços
 sísmicos também é chamado de uma imagem, seção ou cubo, no caso de um
 levantamento 3D. A \textit{wavelet} ideal seria um pulso tipo delta contendo
-todas as frequências, mas gerar tal pulso não é viável. Na prática as
+todas as frequências, entretanto, na prática as
 \textit{wavelets} são pulsos de banda limitada entre $6Hz$ e $65Hz$, o que
 limita a frequência da sísmica e sua resolução \citep[p. 11]{sen_livro}.
+Como consequência, as imagens resultantes do processo de inversão também terão
+o seu espectro de frequência limitado.
 A Figura \ref{fig:wavelet} ilustra uma \textit{wavelet} típica extraída de dados
 reais.
 
@@ -128,92 +143,71 @@ reais.
 \end{center}
 \end{figure}
 
-O objetivo da inversão sísmica acústica é determinar os valores de impedância
-acústica das camadas de rocha. Esse é um problema não linear, pois as equações
-que determinam o modelo direto são não lineares. Também é considerado mal posto,
-pois é ambíguo, ou seja, várias combinações de camadas e suas impedâncias podem
-gerar o mesmo resultado no dado sísmico. Essas características geram a
-necessidade de alta intervenção de especialistas para restringir o resultado
-(regularização). Quando poços são perfurados, são utilizadas outras ferramentas
-para observar dados mais próximos aos reais. Os principais métodos de inversão
-utilizam os dados de poços para regularização e geração de estatísticas.
-
-No processo de inversão é importante a modelagem da incerteza dos resultados
-obtidos, ou seja, obter soluções equivalentes respeitando os dados medidos e as
-informações \textit{a priori}. Essas soluções devem representar bem a região
-onde o erro é menor que a tolerância desejada, chamada de região de equivalência
-\citep{tompkins_comparisonBayes}. Existem várias razões para essa região de
-equivalência existir, incluindo erros nas medidas, cobertura dos dados sobre a
-as localizações desejadas, limitação de banda do pulso sísmico, suposições sobre
-o modelo físico (e.g. isotropia, modelo de camadas, homogeneidade, etc.) e
-aproximações matemáticas do modelo direto. A modelagem de incerteza ajuda na
-avaliação dos riscos envolvidos nos processos de perfuração, exploração e
-produção de óleo e gás.
-
-As médias e variâncias locais das soluções não são suficientes para caracterizar
-a incerteza na inversão, pois os modelos de impedância geralmente são utilizados
-como entrada de processos como a simulação de fluxo. Esse tipo de simulação é
-essencialmente uma função não linear, ou seja, a média das simulações de fluxo
-não é necessariamente igual a simulação da média das impedâncias:
-$F(\overline{\mathbf{m}})\neq \overline{F(\mathbf{m})}$, onde ${\mathbf{m}}$
-representa as soluções aceitáveis, $F(\cdot)$ a função não linear da
-simulação de fluxo e $ \overline{(\cdot)}$ a operação de média. Amostragem, de
-uma forma geral, possibilita análises mais sofisticadas da distribuição
-posterior \citep{hansenGibbsPrior}.
-
-%TODO importancia das realizações na modelagem, ainda falta citação da
-% simulacao de fluxo (funcao nao linear)
-
- Na literatura recente, diversos métodos foram propostos para tentar solucionar
- o problema da inversão sísmica com modelagem de incerteza.
-Modelos envolvendo técnicas de inteligência computacional foram propostos para
-tentar resolver o problema
-\citep{senSimulatedAnnealin,MallickGeneticInve,max_inv_simulated,Artun2011143,MartinezPSO,Sambridge22102013}.
-Apesar de terem oferecido bons resultados, esses modelos baseados em otimização
-não capturam de forma ideal o conhecimento do especialista. A incerteza
-resultante desses métodos é relacionada com o nível em que foi explorada a
-superfície de erro, ao invés da incerteza relacionada aos dados e conhecimentos
-\textit{a priori} inseridos.
-
-O uso de ferramental probabilístico baseado no teorema de Bayes pode ser
-aplicado, em conjunto com o amostrador de Gibbs, para gerar realizações
-estocásticas da distribuição \textit{a posteriori} \citep{leandro_SEG}. Assim,
-pode-se computar estatísticas do conjunto de soluções, obtido à alto custo
-computacional. Para atacar a maldição da dimensionalidade e diminuir o custo da
-amostragem de soluções, foram propostos métodos que utilizam redução dimensional
-\citep{TompkinsScalabUnce2011}. Neste caso, aplicando análise de componentes
-principais (PCA) é possível reduzir a dimensão do problema e utilizar um esquema
-de amostragem determinística, ao custo de perda na resolução espacial das
-amostras.
-
-\section{Simulação Multiponto}
-
-
-
 \section{Redes Neurais Convolucionais}
-Nesta seção a convolução será descrita. Serão apresentados os principais conceitos relacionados às redes
+Nesta seção serão apresentados os principais conceitos relacionados às redes
 neurais convolucionais e sua estrutura e as principais
 aplicações deste modelo de aprendizagem de máquina. Um ponto não abordado nesta seção é
 como escolher a arquitetura de uma rede convolucional.
 
-As redes convolucionais, também chamadas de redes neurais convolucionais (CNN),
+As Redes Neurais Convolucionais (CNN), também chamadas de redes convolucionais,
 são um tipo de rede neural especializada em processamento de dados que possuem uma
 topologia conhecida e em forma de grade. Exemplos deste tipo de dado são as séries
 temporais, que podem ser vistas como uma grade em uma dimensão (1D) com amostras
 em intervalos de tempo regulares, e dados de imagem, que podem ser pensados como
-uma grade 2D de \textit{pixels}. As redes convolucionais são um tipo de rede neural
-que usa a operação de convolução no lugar de multiplicação de matrizes em pelo menos uma
-de suas camadas.
+uma grade 2D de \textit{pixels}. Entretanto, as redes convolucionais não são restritas
+apenas ao processamento visual, elas têm sido empregadas com sucesso, por exemplo,
+em reconhecimento de voz e processamento de linguagem natural.
+Este modelo de rede é chamada convolucional, pois emprega a operação de convolução
+no lugar de multiplicação de matrizes em pelo menos uma de suas camadas.
+
+A estrutura mais importante de uma CNN é a camada convolucional. Esta, é organizada
+de modo a fazer com que cada um dos seus neurônios esteja conectado a um 
+pequeno grupo de \textit{pixels} da camada de entrada (figura \ref{fig:cnn_arq}) e não a todos os \text{pixels}, como
+ocorre em redes neurais tradicionais. Cada neurônio da camada seguinte se conecta apenas a neurônios
+contidos em pequena região da camada anterior e assim sucessivamente, esta região que define
+o grupo de neurônios conectados ao neurônio da próxima camada é chamada \textbf{campo perceptivo}. Esta arquitetura permite o
+aprendizado de características de baixo nível da primeira camada e de características de mais alto nível
+nas camadas seguintes.
+
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{fig/cnn_arq}
+  \caption{Camadas de uma CNN com campos receptivos retangulares.}
+  \label{fig:cnn_arq}
+\end{center}
+\end{figure}
 
 \subsection{Convolução}
+A convolução é definida como a integral do produto de duas funções após uma delas sofrer um
+certo deslocamento. Considere um exemplo em que se deseja rastrear a localização de uma
+nave espacial com um sensor a lazer. O sensor disponibiliza uma saída $x(t)$, a posição da nave
+no tempo $t$. Ambos, $x$ e $t$, são valores reais, de modo que uma saída diferente pode ser obtida
+em qualquer instante de tempo. Considerando que o sensor possui um certo ruido, para realizar uma
+estimativa mais precisa da posição da nave é possível ponderar várias medidas de posição juntas.
+Como os valores de medidos mais recentes são mais relevantes, é possível utilizar uma função peso
+$w(a)$, onde $a$ é o tempo de medição. Se esta média ponderada for aplicada a todos os instantes,
+a estimativa de posição da nave será suavizada:
 
-A operação de convolução costuma ser denotada com um asterisco (Eq. \ref{eq:1}).
-Na Equação. \ref{eq:1}, $x$ refere-se ao conjunto de imagens de entrada, uma sequência multidimensional
-de dados, e $w$ é denominado \textit{kerenl} ou filtros, uma sequência multidimensional de parâmetros otimizados pelo algoritmo
-de aprendizagem.
 \begin{equation}
- s(t) = (x * w)(t)
+ s(t) = \int{x(a) w(t-a)da}
  \label{eq:1}
+\end{equation}
+
+A operação de convolução costuma ser denotada com um asterisco (Eq. \ref{eq:1}) e utilizada com o tempo
+discretizado, de modo que o tempo $t$ é assumido como valores inteiros:
+\begin{equation}
+ s(t) = (x * w)(t) = \sum{a=-\inf}{\inf}{x(a)w(t-a)}
+ \label{eq:1}
+\end{equation}
+
+No contexto das redes convolucionais, $x$ se refere ao conjunto de imagens de entrada, uma sequência multidimensional
+de dados, e $w$ é denominado \textit{kernel} ou filtros, uma sequência multidimensional de parâmetros 
+a serem otimizados pelo algoritmo de aprendizagem.
+Nos casos em que o problema compreende imagens $I$ em duas dimensões
+e filtros $K$ utilizados serão em duas dimensões:
+
+\begin{equation}
+ S(i,j) = (I*K)(i,j) = \sum{m}\sum{n}{I(m,n)K(i-m,j-n)}
 \end{equation}
 
 A convolução se sustenta sobre três pilares: interações esparsas, compartilhamentos
@@ -226,10 +220,11 @@ esparsas, também chamadas de conectividade esparsa ou pesos esparsos.
 Para isto, é necessários que os filtros sejam menores que a entrada.
 De um ponto de vista prático, no processamento de uma imagem,
 a imagem de entrada pode ter milhares de \textit{pixels}, entretanto, é 
-possível detectar apenas pequenas regiões de características importantes,
-por exemplo com significado geológico, com filtros que compreendam apenas
-algumas dezenas ou centenas de \textit{pixels} na imagem. Como consequência,
-menos parâmetros são armazenados e ha um ganho na eficiência estatística do
+possível detectar apenas pequenas regiões de características importantes
+com filtros que compreendam apenas algumas dezenas ou centenas de \textit{pixels} na imagem.
+Por exemplo, é possível identificar características de uma face humana na identificação de pessoas, ou estruturas com
+significado geológico em um estudo geofísico. Como consequência,
+menos parâmetros são armazenados e há um ganho na eficiência estatística do
 modelo. As figuras \ref{fig:full} e \ref{fig:sparse} ilustram
 os modelos citados anteriormente. É possível notar que o número de elementos
 que afetam o elemento de saída em destaque ($s_3$) é definido pela convolução
@@ -260,6 +255,41 @@ de pesos, o valor do peso aplicado a uma entrada está relacionado ao valor de u
 algum outro local. Na rede convolucional, cada elemento do filtro é usado em toda posição da entrada,
 de modo que, ao invés de aprender um conjunto separado de parâmetros para toda localização da imagem, apenas
 um conjunto é aprendido.
+
+\subsection{Filtros}
+Os pesos dos neurônios em uma camada convolucional podem ser representados como uma pequena
+imagem do tamanho do campo receptor. Estes filtros (pesos) são os elementos
+convolvidas com a imagem de entrada para obter o resultado da camada convolucional.
+A figura \ref{fig:conv_filt} ilustra dois conjuntos de pesos possíveis. O primeiro é um quadrado preto
+(\textit{pixel} de valor 0) contendo uma coluna central branca (\textit{pixels} com valor 1). 
+Analogamente, o segundo filtro é um quadrado preto contendo uma linha central branca.
+É possível notar na imagem da esquerda que as linhas verticais brancas se tornaram mais evidentes enquanto o restante
+se tornou mais borrado. De modo análogo, na imagem da direita, a convolução com o filtro horizontal evidenciou as linhas brancas horizontais, enquanto que
+o restante ficou borrado. Assim, ao convolver uma entrada com o mesmo conjunto de filtros da camada convolucional, se obtém
+o mapa de características (feature map).
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{fig/conv_filt}
+  \caption{Aplicação de dois filtros diferentes para obter mapas de características.}
+  \label{fig:conv_filt}
+\end{center}
+\end{figure}
+
+O exemplo anterior apresenta a convolução de uma imagem com dois filtros possíveis, em uma representação 2D.
+Entretanto, em situações reais a camada convolucional possui muitos mapas de características, resultando
+em uma representação em 3D como ilustrado na figura \ref{fig:featmaps}. O mapa de características de uma camada convolucional
+é o resultado da convolução de uma das imagens de entrada com os diversos filtros específicos desta camada,
+os quais são iniciados, na maior parte dos casos, aleatoriamente. Na figura estão ilustrados os mapas para a convolução
+com apenas uma imagem, de modo que é possível imaginar que à medida que o número de imagens aumenta, a
+estrutura ilustrada se replica horizontalmente. 
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{fig/feat_maps}
+  \caption{Camadas convolucionais com múltiplos mapas de características e imagens com três canais.}
+  \label{fig:featmaps}
+\end{center}
+\end{figure}
+
 
 \subsection{Pooling}
 Uma camada em uma rede convolucional consiste de três estágios. No primeiro estágio,
@@ -300,10 +330,10 @@ orientação do Prof. Dor. Jef Karel Caers.
 \section{Organização do Texto}
 
 Este documento está organizado da seguinte forma. Após esta breve introdução, o
-Capítulo \ref{cap:2modelosInversao} apresenta o estado da arte em modelos de
+Capítulo \ref{cap:2modelosSuperresolucao} apresenta o estado da arte em modelos de
 inversão sísmica. O Capítulo \ref{cap:2modelosSuperresolucao} apresenta o estado da arte 
-em geração de image em super-resolução a partir de imagens de baixa resolução.
-O Capítulo \ref{} trata dos métodos de simulação geoestatística multiponto. O
+em geração de imagens em super-resolução a partir de imagens de baixa resolução.
+O Capítulo trata dos métodos de simulação geoestatística multiponto. O
 Capítulo \ref{cap:3modeloHibrido} trata da proposta do projeto e resultados
 preliminares referente ao modelo de super-resolução treinado e aplicado às imagens
 de impedância pós-inversão. Após o retorno ao Brasil, estão planejados mais 8 meses
