@@ -1,20 +1,20 @@
 
-load /home/isaac/Documentos/Dados_Doutorado/dados.mat
+load /home/isaac/Documentos/Dados_Doutorado/Dados_leandro/dados.mat
 
-wavelet_ = lowPassFilter2(wavelet,40,100,4);
-%wavelet_ = wavelet;
+%wavelet_ = lowPassFilter2(wavelet,4,100,8);
+wavelet_ = wavelet;
 
 refl = impedancia2refletividade(impedancia_cubo);
 traces_sintetico = conv2(refl,wavelet_,'same');
 
-ruido_branco = 0.15*randn(size(traces_sintetico))*std(traces_sintetico(:));
+ruido_branco = 0.30*randn(size(traces_sintetico))*std(traces_sintetico(:));
 
 ruido = conv2(ruido_branco,wavelet_,'same');
 ruido = conv2(ruido,wavelet_','same');
 
 traces_sintetico_ruido = traces_sintetico + ruido;
 
-imp_low = lowPassFilter2(impedancia_cubo,40, 100,2);
+imp_low = lowPassFilter2(impedancia_cubo,4, 100,4);
 
 [uzl,uzl_Merged,sySeismic] = MAP_inversion(imp_low,wavelet_,0.1,1.5,traces_sintetico_ruido,200);
 
@@ -38,23 +38,31 @@ inversion_cut = uzl_Cube(160:191,100:131,:);
 
 %gen_images(dir_lr_imgs, dir_hr_imgs, im_width, im_hight, im_res_size);
 
-delete Images/sintetico_hr/*.jpg;
-delete Images/sintetico_hr/*.jpg;
+delete Images/sintetico_hr;
+delete Images/sintetico_lr;
+delete Images/sintetico_test/*.jpg;
 mkdir Images/sintetico_hr
 mkdir Images/sintetico_lr
+mkdir 'Images/sintetico_lr_test/'
+
 images = [];
 randomIndx = randi(239,[1,32]);
+%randomIndx = randi(239,[1,1]);
 
 images_hr_test = impedance_cut(:,:,randomIndx);
 images_lr_test = inversion_cut(:,:,randomIndx);
 impedance_cut(:,:,randomIndx) = [];
 inversion_cut(:,:,randomIndx) = [];
 
+im_cube_class_test = ImageCubeClass;
 for i=1:size(images_lr_test,3)
-    images(i,:,:)= images_lr_test(:,:,i);
-    
+    img=prop2gray(images_lr_test(:,:,i),im_cube_class_test);
+    images = crop_and_print(img, 'Images/sintetico_lr_test/',i);
 end
+
 save 'images.mat' images;
+
+
 im_cube_class = ImageCubeClass;
 im_cube_class_inv = ImageCubeClass;
 for i=1:size(impedance_cut,3)
@@ -63,8 +71,11 @@ for i=1:size(impedance_cut,3)
     
     [img, im_cube_class] = prop2gray(imp_cut,im_cube_class);
     [img_inv, im_cube_class_inv] = prop2gray(inv_cut,im_cube_class_inv);
-    
+    %crop_and_print(img,'Images/sintetico_hr/',i);
+    %crop_and_print(img_inv,'Images/sintetico_lr/',i);
+     
+     
     imwrite(img,strcat('Images/sintetico_hr/',int2str(i),'.jpg'));
     imwrite(img_inv,strcat('Images/sintetico_lr/',int2str(i),'.jpg'));    
 end
-
+save workspace_sintetico.mat

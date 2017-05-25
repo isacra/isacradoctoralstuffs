@@ -3,36 +3,14 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: eqd.aux
 A level-1 auxiliary file: cap1.aux
 A level-1 auxiliary file: cap2.aux
-A level-1 auxiliary file: cap2_2.aux
-A level-1 auxiliary file: cap3.aux
 The style file: my-agsm.bst
 Database file #1: bib/bibliografia.bib
 Warning--entry type for "figsismica" isn't style-file defined
 --line 985 of file bib/bibliografia.bib
 You can't pop an empty literal stack for entry Bosch2010
 while executing---line 1226 of file my-agsm.bst
-You can't pop an empty literal stack for entry clappRegLeast3D
-while executing---line 1226 of file my-agsm.bst
-You can't pop an empty literal stack for entry Martinez2011Topogra
-while executing---line 1226 of file my-agsm.bst
-You can't pop an empty literal stack for entry tompkins_comparisonBayes
-while executing---line 1226 of file my-agsm.bst
-You can't pop an empty literal stack for entry amilcarInversao
-while executing---line 1226 of file my-agsm.bst
-You can't pop an empty literal stack for entry clappRegLeast3D
-while executing---line 1298 of file my-agsm.bst
-You can't pop an empty literal stack for entry amilcarInversao
-while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
 while executing---line 1298 of file my-agsm.bst
-You can't pop an empty literal stack for entry Martinez2011Topogra
-while executing---line 1298 of file my-agsm.bst
-You can't pop an empty literal stack for entry tompkins_comparisonBayes
-while executing---line 1298 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry azevedo2013_avoinv
-while executing---line 1350 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
@@ -41,63 +19,7 @@ ptr=1, stack=
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
----the literal stack isn't empty for entry Buland01012003
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry BulandWavStochastic
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry caers2011modeling
-while executing---line 1350 of file my-agsm.bst
-You can't pop an empty literal stack for entry clappRegLeast3D
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry clappRegLeast3D
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry coleou_qualityanomalyinv
-while executing---line 1350 of file my-agsm.bst
-You can't pop an empty literal stack for entry Martinez2011Topogra
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry Martinez2011Topogra
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry leandro_SEG
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry leandroGRSL
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
 ---the literal stack isn't empty for entry figsismica
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry goovaerts1997geostatistics
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry jolliffe2002principal
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry max_inv_simulated
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry MallickGeneticInve
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry Martinez:2010PSO
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
@@ -105,30 +27,7 @@ ptr=1, stack=
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
----the literal stack isn't empty for entry caers_distance_kernels_MDS
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
 ---the literal stack isn't empty for entry sen_livro
-while executing---line 1350 of file my-agsm.bst
-Warning--can't use both author and editor fields in Sen1995v
-ptr=1, stack=
-
----the literal stack isn't empty for entry Sen1995v
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry smolyak63quadrature
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry 2001amilcarDSS
-while executing---line 1350 of file my-agsm.bst
-You can't pop an empty literal stack for entry amilcarInversao
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry amilcarInversao
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
@@ -138,67 +37,45 @@ ptr=1, stack=
 
 ---the literal stack isn't empty for entry tarantola
 while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry TompkinsCupature
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry TompkinsScalabUnce2011
-while executing---line 1350 of file my-agsm.bst
-You can't pop an empty literal stack for entry tompkins_comparisonBayes
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry tompkins_comparisonBayes
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry zhe_nonlinear
-while executing---line 1350 of file my-agsm.bst
-ptr=1, stack=
-
----the literal stack isn't empty for entry zunino2014
-while executing---line 1350 of file my-agsm.bst
-You've used 30 entries,
+You've used 6 entries,
             2912 wiz_defined-function locations,
-            853 strings with 10980 characters,
-and the built_in function-call counts, 139003 in all, are:
-= -- 22833
-> -- 1687
-< -- 2
-+ -- 10924
-- -- 503
-* -- 12052
-:= -- 27657
-add.period$ -- 30
-call.type$ -- 30
-change.case$ -- 413
-chr.to.int$ -- 29
-cite$ -- 31
-duplicate$ -- 495
-empty$ -- 1044
-format.name$ -- 584
-if$ -- 25067
-int.to.chr$ -- 6
+            682 strings with 5869 characters,
+and the built_in function-call counts, 26707 in all, are:
+= -- 4393
+> -- 306
+< -- 0
++ -- 2101
+- -- 91
+* -- 2300
+:= -- 5353
+add.period$ -- 6
+call.type$ -- 6
+change.case$ -- 82
+chr.to.int$ -- 6
+cite$ -- 6
+duplicate$ -- 88
+empty$ -- 194
+format.name$ -- 106
+if$ -- 4796
+int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 36
-newline$ -- 93
-num.names$ -- 314
-pop$ -- 140
+missing$ -- 7
+newline$ -- 21
+num.names$ -- 62
+pop$ -- 32
 preamble$ -- 1
-purify$ -- 450
+purify$ -- 90
 quote$ -- 0
-skip$ -- 375
+skip$ -- 65
 stack$ -- 0
-substring$ -- 32537
-swap$ -- 81
-text.length$ -- 422
+substring$ -- 6269
+swap$ -- 9
+text.length$ -- 84
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
-warning$ -- 1
-while$ -- 658
+type$ -- 20
+warning$ -- 0
+while$ -- 129
 width$ -- 0
-write$ -- 402
-(There were 45 error messages)
+write$ -- 79
+(There were 9 error messages)

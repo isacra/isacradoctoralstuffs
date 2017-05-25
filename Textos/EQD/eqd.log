@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  24 MAY 2017 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.18)  25 MAY 2017 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **eqd.tex
 (./eqd.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 4 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
@@ -894,7 +894,11 @@ File: pppdftex.def 2015/09/18 v0.5d Pdfpages driver for pdfTeX (AM)
 )
 \symlettersA=\mathgroup6
  (./eqd.aux
-(./cap1.aux) (./cap2.aux) (./cap2_2.aux) (./cap3.aux))
+(./cap1.aux) (./cap2.aux
+
+LaTeX Warning: Label `eq:1' multiply defined.
+
+))
 \openout1 = `eqd.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
@@ -912,8 +916,7 @@ LaTeX Font Info:    ... okay on input line 86.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
 LaTeX Font Info:    ... okay on input line 86.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 86.
-
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -1039,22 +1042,15 @@ Package hyperref Info: Anchor `chapter*.3' on input line 124.
 Package hyperref Info: Reference (link) `chapter.1' on input line 2.
 Package hyperref Info: Reference (link) `section.1.1' on input line 3.
 Package hyperref Info: Reference (link) `section.1.2' on input line 4.
-Package hyperref Info: Reference (link) `section.1.3' on input line 5.
-Package hyperref Info: Reference (link) `subsection.1.3.1' on input line 6.
-Package hyperref Info: Reference (link) `subsection.1.3.2' on input line 7.
-Package hyperref Info: Reference (link) `section.1.4' on input line 8.
-Package hyperref Info: Reference (link) `section.1.5' on input line 9.
-Package hyperref Info: Reference (link) `chapter.2' on input line 10.
-Package hyperref Info: Reference (link) `section.2.1' on input line 11.
-Package hyperref Info: Reference (link) `subsection.2.1.1' on input line 12.
-Package hyperref Info: Reference (link) `section.2.2' on input line 13.
-Package hyperref Info: Reference (link) `subsection.2.2.1' on input line 14.
-Package hyperref Info: Reference (link) `section.2.3' on input line 15.
-Package hyperref Info: Reference (link) `chapter.3' on input line 16.
-Package hyperref Info: Reference (link) `chapter.4' on input line 17.
-Package hyperref Info: Reference (link) `section.4.1' on input line 18.
-Package hyperref Info: Reference (link) `section.4.2' on input line 19.
-Package hyperref Info: Reference (link) `figure.caption.20' on input line 20.
+Package hyperref Info: Reference (link) `chapter.2' on input line 5.
+Package hyperref Info: Reference (link) `section.2.1' on input line 6.
+Package hyperref Info: Reference (link) `section.2.2' on input line 7.
+Package hyperref Info: Reference (link) `section.2.3' on input line 8.
+Package hyperref Info: Reference (link) `section.2.4' on input line 9.
+Package hyperref Info: Reference (link) `subsection.2.4.1' on input line 10.
+Package hyperref Info: Reference (link) `subsection.2.4.2' on input line 11.
+Package hyperref Info: Reference (link) `subsection.2.4.3' on input line 12.
+Package hyperref Info: Reference (link) `figure.caption.10' on input line 13.
 )
 \tf@toc=\write6
 \openout6 = `eqd.toc'.
@@ -1069,22 +1065,15 @@ Package hyperref Info: Anchor `page.iv' on input line 130.
 Package `hyperref' Info: End of reference (link) `chapter.1', line 2.
 Package `hyperref' Info: End of reference (link) `section.1.1', line 3.
 Package `hyperref' Info: End of reference (link) `section.1.2', line 4.
-Package `hyperref' Info: End of reference (link) `section.1.3', line 5.
-Package `hyperref' Info: End of reference (link) `subsection.1.3.1', line 6.
-Package `hyperref' Info: End of reference (link) `subsection.1.3.2', line 7.
-Package `hyperref' Info: End of reference (link) `section.1.4', line 8.
-Package `hyperref' Info: End of reference (link) `section.1.5', line 9.
-Package `hyperref' Info: End of reference (link) `chapter.2', line 10.
-Package `hyperref' Info: End of reference (link) `section.2.1', line 11.
-Package `hyperref' Info: End of reference (link) `subsection.2.1.1', line 12.
-Package `hyperref' Info: End of reference (link) `section.2.2', line 13.
-Package `hyperref' Info: End of reference (link) `subsection.2.2.1', line 14.
-Package `hyperref' Info: End of reference (link) `section.2.3', line 15.
-Package `hyperref' Info: End of reference (link) `chapter.3', line 16.
-Package `hyperref' Info: End of reference (link) `chapter.4', line 17.
-Package `hyperref' Info: End of reference (link) `section.4.1', line 18.
-Package `hyperref' Info: End of reference (link) `section.4.2', line 19.
-Package `hyperref' Info: End of reference (link) `figure.caption.20', line 20.
+Package `hyperref' Info: End of reference (link) `chapter.2', line 5.
+Package `hyperref' Info: End of reference (link) `section.2.1', line 6.
+Package `hyperref' Info: End of reference (link) `section.2.2', line 7.
+Package `hyperref' Info: End of reference (link) `section.2.3', line 8.
+Package `hyperref' Info: End of reference (link) `section.2.4', line 9.
+Package `hyperref' Info: End of reference (link) `subsection.2.4.1', line 10.
+Package `hyperref' Info: End of reference (link) `subsection.2.4.2', line 11.
+Package `hyperref' Info: End of reference (link) `subsection.2.4.3', line 12.
+Package `hyperref' Info: End of reference (link) `figure.caption.10', line 13.
 ]
 \openout2 = `cap1.aux'.
 
@@ -1102,13 +1091,13 @@ Package hyperref Info: bookmark on input line 1:
 (hyperref)             type {toc}.
 Package hyperref Info: Reference (cite) `cite.tarantola' on input line 13.
 Package hyperref Info: Reference (cite) `cite.tarantola' on input line 13.
-Package hyperref Info: Anchor `section.1.1' on input line 29.
+Package hyperref Info: Anchor `section.1.1' on input line 31.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 29.
-Package hyperref Info: bookmark on input line 29:
+(babel)             in language  on input line 31.
+Package hyperref Info: bookmark on input line 31:
 (hyperref)             thecounter {1.1}
 (hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
- {\csname thesection\endcsname }\fi Problema Inverso}
+ {\csname thesection\endcsname }\fi Objetivo}
 (hyperref)             reference {section.1.1}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
@@ -1123,327 +1112,36 @@ Package hyperref Info: Anchor `page.1' on input line 37.
 Package `hyperref' Info: End of reference (cite) `cite.tarantola', line 13.
 Package `hyperref' Info: End of reference (cite) `cite.tarantola', line 13.
 ]
-Package hyperref Info: Reference (link) `equation.1.1.1' on input line 51.
-Package hyperref Info: Anchor `equation.1.1.1' on input line 52.
-Package hyperref Info: Anchor `equation.1.1.1' on input line 52.
-Package hyperref Info: Anchor `equation.1.1.1' on input line 52.
-Package hyperref Info: Anchor `equation.1.1.1' on input line 52.
-Package hyperref Info: Anchor `equation.1.1.2' on input line 60.
-Package hyperref Info: Anchor `equation.1.1.2' on input line 60.
-Package hyperref Info: Anchor `equation.1.1.2' on input line 60.
-Package hyperref Info: Anchor `equation.1.1.2' on input line 60.
-
-Overfull \hbox (24.0515pt too wide) in paragraph at lines 63--70
-\T1/lmr/m/n/12 onde, F � p sis-tema f�-sico in-ves-ti-gado e que re-la-ci-ona o
-s pa-r�-me-tros do mo-delo $\OML/lmm/m/it/12 m \OT1/lmr/m/n/12 = (\OML/lmm/m/it
-/12 m[]; m[]; :::; m[]\OT1/lmr/m/n/12 ) \OMS/lmsy/m/n/12 ^^Z
- []
-
-Package hyperref Info: Anchor `section.1.2' on input line 71.
+Package hyperref Info: Anchor `section.1.2' on input line 44.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 71.
-Package hyperref Info: bookmark on input line 71:
+(babel)             in language  on input line 44.
+Package hyperref Info: bookmark on input line 44:
 (hyperref)             thecounter {1.2}
 (hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
- {\csname thesection\endcsname }\fi Inversão Sísmica}
+ {\csname thesection\endcsname }\fi Organização do Texto}
 (hyperref)             reference {section.1.2}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.Bosch2010' on input line 76.
-Package hyperref Info: Reference (cite) `cite.Bosch2010' on input line 76.
-Package hyperref Info: Reference (cite) `cite.Srivastava2009' on input line 76.
 
-Package hyperref Info: Reference (cite) `cite.Srivastava2009' on input line 76.
 
-Package hyperref Info: Reference (cite) `cite.Figueiredo2014' on input line 79.
+LaTeX Warning: Reference `cap:2modelosSuperresolucao' on page 2 undefined on in
+put line 47.
 
-Package hyperref Info: Reference (cite) `cite.Figueiredo2014' on input line 79.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 80.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 80.
-Package hyperref Info: Anchor `page.2' on input line 80.
-[2
-Package `hyperref' Info: End of reference (link) `equation.1.1.1', line 51.
-]
-Package hyperref Info: Reference (link) `figure.caption.4' on input line 85.
-Package hyperref Info: Anchor `figure.caption.4' on input line 93.
- <fig/seismic_survey.png, id=149, 451.6875pt x 246.1697pt>
-File: fig/seismic_survey.png Graphic file (type png)
+LaTeX Warning: Reference `cap:2modelosSuperresolucao' on page 2 undefined on in
+put line 48.
 
-<use fig/seismic_survey.png>
-Package pdftex.def Info: fig/seismic_survey.png used on input line 95.
-(pdftex.def)             Requested size: 389.00757pt x 212.02107pt.
-Package hyperref Info: bookmark on input line 96:
-(hyperref)             thecounter {1.1}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Método de sísmica de reflex�
-�o \citep {figsismica}\relax }}
-(hyperref)             reference {figure.caption.4}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Reference (cite) `cite.figsismica' on input line 96.
-Package hyperref Info: Reference (cite) `cite.figsismica' on input line 96.
-Package hyperref Info: Reference (cite) `cite.figsismica' on input line 96.
-Package hyperref Info: Reference (cite) `cite.figsismica' on input line 96.
-Package hyperref Info: Reference (link) `equation.1.2.3' on input line 108.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 109.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 109.
-Package hyperref Info: Anchor `page.3' on input line 109.
- [3
-Package `hyperref' Info: End of reference (cite) `cite.Bosch2010', line 76.
-Package `hyperref' Info: End of reference (cite) `cite.Bosch2010', line 76.
-Package `hyperref' Info: End of reference (cite) `cite.Srivastava2009', line 76
-.
-Package `hyperref' Info: End of reference (cite) `cite.Srivastava2009', line 76
-.
-Package `hyperref' Info: End of reference (cite) `cite.Figueiredo2014', line 79
-.
-Package `hyperref' Info: End of reference (cite) `cite.Figueiredo2014', line 79
-.
-Package `hyperref' Info: End of reference (link) `figure.caption.4', line 85.
-Package `hyperref' Info: End of reference (cite) `cite.figsismica', line 96.
-Package `hyperref' Info: End of reference (cite) `cite.figsismica', line 96.
- <./fig/seismic_survey.png>]
-Package hyperref Info: Anchor `equation.1.2.3' on input line 110.
-Package hyperref Info: Anchor `equation.1.2.3' on input line 110.
-Package hyperref Info: Anchor `equation.1.2.3' on input line 110.
-Package hyperref Info: Anchor `equation.1.2.3' on input line 110.
-Package hyperref Info: Reference (link) `equation.1.2.3' on input line 115.
-Package hyperref Info: Anchor `equation.1.2.4' on input line 122.
-Package hyperref Info: Anchor `equation.1.2.4' on input line 122.
-Package hyperref Info: Anchor `equation.1.2.4' on input line 122.
-Package hyperref Info: Anchor `equation.1.2.4' on input line 122.
-Package hyperref Info: Reference (cite) `cite.sen_livro' on input line 132.
-Package hyperref Info: Reference (cite) `cite.sen_livro' on input line 132.
-Package hyperref Info: Reference (link) `figure.caption.5' on input line 135.
-Package hyperref Info: Anchor `figure.caption.5' on input line 138.
 
-<fig/wavelet.png, id=172, 1398.72563pt x 583.42969pt>
-File: fig/wavelet.png Graphic file (type png)
- <use fig/wavelet.png>
-Package pdftex.def Info: fig/wavelet.png used on input line 140.
-(pdftex.def)             Requested size: 389.00757pt x 162.2553pt.
-Package hyperref Info: bookmark on input line 141:
-(hyperref)             thecounter {1.2}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces \textit {Wavelet} extraída de
- dados reais\relax }}
-(hyperref)             reference {figure.caption.5}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Anchor `section.1.3' on input line 146.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 146.
-Package hyperref Info: bookmark on input line 146:
-(hyperref)             thecounter {1.3}
-(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
- {\csname thesection\endcsname }\fi Redes Neurais Convolucionais}
-(hyperref)             reference {section.1.3}
-(hyperref)             toclevel {1}
-(hyperref)             type {toc}.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 162.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 162.
-Package hyperref Info: Anchor `page.4' on input line 162.
+LaTeX Warning: Reference `cap:3modeloHibrido' on page 2 undefined on input line
+ 51.
 
-[4
-Package `hyperref' Info: End of reference (link) `equation.1.2.3', line 108.
-Package `hyperref' Info: End of reference (link) `equation.1.2.3', line 115.
-Package `hyperref' Info: End of reference (cite) `cite.sen_livro', line 132.
-Package `hyperref' Info: End of reference (cite) `cite.sen_livro', line 132.
-Package `hyperref' Info: End of reference (link) `figure.caption.5', line 135.
-]
-Package hyperref Info: Reference (link) `figure.caption.6' on input line 165.
-Package hyperref Info: Anchor `figure.caption.6' on input line 172.
- <fig/cnn_arq.png, id=183, 404.26031pt x 247.67531pt>
-File: fig/cnn_arq.png Graphic file (type png)
- <use fig/cnn_arq.png>
-Package pdftex.def Info: fig/cnn_arq.png used on input line 174.
-(pdftex.def)             Requested size: 389.00757pt x 238.33247pt.
-Package hyperref Info: bookmark on input line 175:
-(hyperref)             thecounter {1.3}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Camadas de uma CNN com campos 
-receptivos retangulares.\relax }}
-(hyperref)             reference {figure.caption.6}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Reference (link) `equation.1.3.5' on input line 180.
-Package hyperref Info: Reference (link) `equation.1.3.5' on input line 181.
-Package hyperref Info: Anchor `equation.1.3.5' on input line 184.
-Package hyperref Info: Anchor `equation.1.3.5' on input line 184.
-Package hyperref Info: Anchor `equation.1.3.5' on input line 184.
-Package hyperref Info: Anchor `equation.1.3.5' on input line 184.
-Package hyperref Info: Reference (link) `figure.caption.7' on input line 204.
-Package hyperref Info: Reference (link) `figure.caption.7' on input line 204.
-Package hyperref Info: Reference (link) `figure.caption.7' on input line 207.
-Package hyperref Info: Reference (link) `figure.caption.7' on input line 208.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 210.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 210.
-Package hyperref Info: Anchor `page.5' on input line 210.
-
-[5
-Package `hyperref' Info: End of reference (link) `figure.caption.6', line 165.
-Package `hyperref' Info: End of reference (link) `equation.1.3.5', line 180.
-Package `hyperref' Info: End of reference (link) `equation.1.3.5', line 181.
- <./fig/wavelet.png (PNG copy)>]
-Package hyperref Info: Anchor `figure.caption.7' on input line 211.
-
-<fig/full.png, id=196, 818.05624pt x 405.515pt>
-File: fig/full.png Graphic file (type png)
- <use fig/full.png>
-Package pdftex.def Info: fig/full.png used on input line 214.
-(pdftex.def)             Requested size: 218.81442pt x 108.46335pt.
-
-<fig/sparse.png, id=197, 818.05624pt x 405.515pt>
-File: fig/sparse.png Graphic file (type png)
- <use fig/sparse.png>
-Package pdftex.def Info: fig/sparse.png used on input line 220.
-(pdftex.def)             Requested size: 218.81442pt x 108.46335pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 234.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 234.
-Package hyperref Info: Anchor `page.6' on input line 234.
- [6
-Package `hyperref' Info: End of reference (link) `figure.caption.7', line 204.
-Package `hyperref' Info: End of reference (link) `figure.caption.7', line 204.
-Package `hyperref' Info: End of reference (link) `figure.caption.7', line 207.
-Package `hyperref' Info: End of reference (link) `figure.caption.7', line 208.
- <./fig/cnn_arq.png>]
-Package hyperref Info: Anchor `subsection.1.3.1' on input line 235.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 235.
-Package hyperref Info: bookmark on input line 235:
-(hyperref)             thecounter {1.3.1}
-(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
- {\csname thesubsection\endcsname }\fi Filtros}
-(hyperref)             reference {subsection.1.3.1}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Reference (link) `figure.caption.8' on input line 239.
-Package hyperref Info: Anchor `figure.caption.8' on input line 246.
- <fig/conv_filt.png, id=205, 615.0478pt x 388.45125pt>
-File: fig/conv_filt.png Graphic file (type png)
-
-<use fig/conv_filt.png>
-Package pdftex.def Info: fig/conv_filt.png used on input line 248.
-(pdftex.def)             Requested size: 340.37885pt x 214.97655pt.
-Package hyperref Info: bookmark on input line 249:
-(hyperref)             thecounter {1.5}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Aplicação de dois filtros di
-ferentes para obter mapas de características.\relax }}
-(hyperref)             reference {figure.caption.8}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Reference (link) `figure.caption.9' on input line 256.
-Package hyperref Info: Anchor `figure.caption.9' on input line 261.
- <fig/feat_maps.png, id=207, 405.76593pt x 360.59718pt>
-File: fig/feat_maps.png Graphic file (type png)
-
-<use fig/feat_maps.png>
-Package pdftex.def Info: fig/feat_maps.png used on input line 263.
-(pdftex.def)             Requested size: 340.37885pt x 302.4979pt.
-Package hyperref Info: bookmark on input line 264:
-(hyperref)             thecounter {1.6}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Camadas convolucionais com mú
-ltiplos mapas de características e imagens com três canais.\relax }}
-(hyperref)             reference {figure.caption.9}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Anchor `subsection.1.3.2' on input line 270.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 270.
-Package hyperref Info: bookmark on input line 270:
-(hyperref)             thecounter {1.3.2}
-(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
- {\csname thesubsection\endcsname }\fi Pooling}
-(hyperref)             reference {subsection.1.3.2}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Reference (link) `figure.caption.10' on input line 278.
-Package hyperref Info: Anchor `figure.caption.10' on input line 279.
- <fig/pool.png, id=209, 904.37875pt x 301.125pt>
-File: fig/pool.png Graphic file (type png)
-
-<use fig/pool.png>
-Package pdftex.def Info: fig/pool.png used on input line 281.
-(pdftex.def)             Requested size: 340.37885pt x 113.33052pt.
-Package hyperref Info: bookmark on input line 282:
-(hyperref)             thecounter {1.7}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Operação de \textit {pooling
-} com região de tamanho 3. Nesta operação é selecionado o máximo valor de 
-ativação da etapa de detecção.\relax }}
-(hyperref)             reference {figure.caption.10}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 286.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 286.
-Package hyperref Info: Anchor `page.7' on input line 286.
- [7
-Package `hyperref' Info: End of reference (link) `figure.caption.8', line 239.
-Package `hyperref' Info: End of reference (link) `figure.caption.9', line 256.
- <./fig/full.png> <./fig/sparse.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 286.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 286.
-Package hyperref Info: Anchor `page.8' on input line 286.
- [8 <./fig/conv_filt.png> <./fig/feat_maps.png (PNG copy)>]
-Package hyperref Info: Anchor `section.1.4' on input line 293.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 293.
-Package hyperref Info: bookmark on input line 293:
-(hyperref)             thecounter {1.4}
-(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
- {\csname thesection\endcsname }\fi Objetivo}
-(hyperref)             reference {section.1.4}
-(hyperref)             toclevel {1}
-(hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.1.5' on input line 306.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 306.
-Package hyperref Info: bookmark on input line 306:
-(hyperref)             thecounter {1.5}
-(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
- {\csname thesection\endcsname }\fi Organização do Texto}
-(hyperref)             reference {section.1.5}
-(hyperref)             toclevel {1}
-(hyperref)             type {toc}.
-Package hyperref Info: Reference (link) `chapter.2' on input line 309.
-Package hyperref Info: Reference (link) `chapter.2' on input line 310.
-Package hyperref Info: Reference (link) `chapter.4' on input line 313.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 317.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 317.
-Package hyperref Info: Anchor `page.9' on input line 317.
- [9
-Package `hyperref' Info: End of reference (link) `figure.caption.10', line 278.
-
- <./fig/pool.png>])
+)
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 130.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 130.
-Package hyperref Info: Anchor `page.10' on input line 130.
- [10
-Package `hyperref' Info: End of reference (link) `chapter.2', line 309.
-Package `hyperref' Info: End of reference (link) `chapter.2', line 310.
-Package `hyperref' Info: End of reference (link) `chapter.4', line 313.
-]
+Package hyperref Info: Anchor `page.2' on input line 130.
+ [2]
 \openout2 = `cap2.aux'.
 
  (./cap2.tex
@@ -1454,1062 +1152,421 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 1.
 Package hyperref Info: bookmark on input line 1:
 (hyperref)             thecounter {2}
-(hyperref)             text {\protect \numberline {\thechapter }Modelos de Inve
-rsão Sísmica}
+(hyperref)             text {\protect \numberline {\thechapter }Funddamentacao 
+Teorica}
 (hyperref)             reference {chapter.2}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.sen_livro' on input line 13.
-Package hyperref Info: Reference (cite) `cite.sen_livro' on input line 13.
-Package hyperref Info: Anchor `equation.2.0.1' on input line 29.
-Package hyperref Info: Anchor `equation.2.0.1' on input line 29.
-Package hyperref Info: Anchor `equation.2.0.1' on input line 29.
-Package hyperref Info: Anchor `equation.2.0.1' on input line 29.
+Package hyperref Info: Anchor `section.2.1' on input line 2.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 37.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 37.
-Package hyperref Info: Anchor `page.11' on input line 37.
-[11
-
-
-
-Package `hyperref' Info: End of reference (cite) `cite.sen_livro', line 13.
-Package `hyperref' Info: End of reference (cite) `cite.sen_livro', line 13.
-]
-Package hyperref Info: Anchor `section.2.1' on input line 38.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 38.
-Package hyperref Info: bookmark on input line 38:
+(babel)             in language  on input line 2.
+Package hyperref Info: bookmark on input line 2:
 (hyperref)             thecounter {2.1}
 (hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
- {\csname thesection\endcsname }\fi Inversão Sísmica Linear e Não Linear}
+ {\csname thesection\endcsname }\fi Problema Inverso}
 (hyperref)             reference {section.2.1}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `equation.2.1.2' on input line 46.
-Package hyperref Info: Anchor `equation.2.1.2' on input line 46.
-Package hyperref Info: Anchor `equation.2.1.2' on input line 46.
-Package hyperref Info: Anchor `equation.2.1.2' on input line 46.
-Package hyperref Info: Anchor `equation.2.1.3' on input line 53.
-Package hyperref Info: Anchor `equation.2.1.3' on input line 53.
-Package hyperref Info: Anchor `equation.2.1.3' on input line 53.
-Package hyperref Info: Anchor `equation.2.1.3' on input line 53.
-Package hyperref Info: Anchor `equation.2.1.4' on input line 61.
-Package hyperref Info: Anchor `equation.2.1.4' on input line 61.
-Package hyperref Info: Anchor `equation.2.1.4' on input line 61.
-Package hyperref Info: Anchor `equation.2.1.4' on input line 61.
-Package hyperref Info: Reference (cite) `cite.sen_livro' on input line 71.
-Package hyperref Info: Reference (cite) `cite.sen_livro' on input line 71.
-Package hyperref Info: Reference (cite) `cite.clappRegLeast3D' on input line 78
-.
-Package hyperref Info: Reference (cite) `cite.clappRegLeast3D' on input line 78
-.
-Package hyperref Info: Reference (link) `equation.2.1.4' on input line 81.
-Package hyperref Info: Reference (cite) `cite.max_inv_simulated' on input line 
-88.
-Package hyperref Info: Reference (cite) `cite.max_inv_simulated' on input line 
-88.
-Package hyperref Info: Reference (cite) `cite.MallickGeneticInve' on input line
- 88.
-Package hyperref Info: Reference (cite) `cite.MallickGeneticInve' on input line
- 88.
-Package hyperref Info: Reference (cite) `cite.zhe_nonlinear' on input line 89.
-Package hyperref Info: Reference (cite) `cite.zhe_nonlinear' on input line 89.
+Package hyperref Info: Reference (link) `equation.2.1.1' on input line 24.
+Package hyperref Info: Anchor `equation.2.1.1' on input line 25.
+Package hyperref Info: Anchor `equation.2.1.1' on input line 25.
+Package hyperref Info: Anchor `equation.2.1.1' on input line 25.
+Package hyperref Info: Anchor `equation.2.1.1' on input line 25.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 90.
+(babel)             in language  on input line 33.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 90.
-Package hyperref Info: Anchor `page.12' on input line 90.
- [12
-Package `hyperref' Info: End of reference (cite) `cite.sen_livro', line 71.
-Package `hyperref' Info: End of reference (cite) `cite.sen_livro', line 71.
-Package `hyperref' Info: End of reference (cite) `cite.clappRegLeast3D', line 7
-8.
-Package `hyperref' Info: End of reference (cite) `cite.clappRegLeast3D', line 7
-8.
-Package `hyperref' Info: End of reference (link) `equation.2.1.4', line 81.
+(babel)             in language  on input line 33.
+Package hyperref Info: Anchor `page.3' on input line 33.
+[3
+
+
+
+Package `hyperref' Info: End of reference (link) `equation.2.1.1', line 24.
 ]
-Package hyperref Info: Reference (cite) `cite.azevedo2013_avoinv' on input line
- 95.
-Package hyperref Info: Reference (cite) `cite.azevedo2013_avoinv' on input line
- 95.
-Package hyperref Info: Reference (cite) `cite.Buland01012003' on input line 95.
+Package hyperref Info: Anchor `equation.2.1.2' on input line 33.
+Package hyperref Info: Anchor `equation.2.1.2' on input line 33.
+Package hyperref Info: Anchor `equation.2.1.2' on input line 33.
+Package hyperref Info: Anchor `equation.2.1.2' on input line 33.
 
-Package hyperref Info: Reference (cite) `cite.Buland01012003' on input line 95.
+Overfull \hbox (24.0515pt too wide) in paragraph at lines 36--43
+\T1/lmr/m/n/12 onde, F � p sis-tema f�-sico in-ves-ti-gado e que re-la-ci-ona o
+s pa-r�-me-tros do mo-delo $\OML/lmm/m/it/12 m \OT1/lmr/m/n/12 = (\OML/lmm/m/it
+/12 m[]; m[]; :::; m[]\OT1/lmr/m/n/12 ) \OMS/lmsy/m/n/12 ^^Z
+ []
 
-Package hyperref Info: Reference (link) `equation.2.1.5' on input line 100.
-Package hyperref Info: Anchor `equation.2.1.5' on input line 103.
-Package hyperref Info: Anchor `equation.2.1.5' on input line 103.
-Package hyperref Info: Anchor `equation.2.1.5' on input line 103.
-Package hyperref Info: Anchor `equation.2.1.5' on input line 103.
-Package hyperref Info: Anchor `equation.2.1.6' on input line 111.
-Package hyperref Info: Anchor `equation.2.1.6' on input line 111.
-Package hyperref Info: Anchor `equation.2.1.6' on input line 111.
-Package hyperref Info: Anchor `equation.2.1.6' on input line 111.
-Package hyperref Info: Anchor `equation.2.1.7' on input line 115.
-Package hyperref Info: Anchor `equation.2.1.7' on input line 115.
-Package hyperref Info: Anchor `equation.2.1.7' on input line 115.
-Package hyperref Info: Anchor `equation.2.1.7' on input line 115.
-Package hyperref Info: Anchor `equation.2.1.8' on input line 119.
-Package hyperref Info: Anchor `equation.2.1.8' on input line 119.
-Package hyperref Info: Anchor `equation.2.1.8' on input line 119.
-Package hyperref Info: Anchor `equation.2.1.8' on input line 119.
-Package hyperref Info: Reference (cite) `cite.Buland01012003' on input line 132
-.
-Package hyperref Info: Reference (cite) `cite.Buland01012003' on input line 132
-.
-Package hyperref Info: Anchor `subsection.2.1.1' on input line 134.
+Package hyperref Info: Anchor `section.2.2' on input line 44.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 134.
-Package hyperref Info: bookmark on input line 134:
-(hyperref)             thecounter {2.1.1}
-(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
- {\csname thesubsection\endcsname }\fi Máximo \textit {a posteriori}}
-(hyperref)             reference {subsection.2.1.1}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.Buland01012003' on input line 138
-.
-Package hyperref Info: Reference (cite) `cite.Buland01012003' on input line 138
-.
-Package hyperref Info: Reference (cite) `cite.leandroGRSL' on input line 138.
-Package hyperref Info: Reference (cite) `cite.leandroGRSL' on input line 138.
-Package hyperref Info: Anchor `equation.2.1.9' on input line 143.
-Package hyperref Info: Anchor `equation.2.1.9' on input line 143.
-Package hyperref Info: Anchor `equation.2.1.9' on input line 143.
-Package hyperref Info: Anchor `equation.2.1.9' on input line 143.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 146.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 146.
-Package hyperref Info: Anchor `page.13' on input line 146.
- [13
-Package `hyperref' Info: End of reference (cite) `cite.max_inv_simulated', line
- 88.
-Package `hyperref' Info: End of reference (cite) `cite.max_inv_simulated', line
- 88.
-Package `hyperref' Info: End of reference (cite) `cite.MallickGeneticInve', lin
-e 88.
-Package `hyperref' Info: End of reference (cite) `cite.MallickGeneticInve', lin
-e 88.
-Package `hyperref' Info: End of reference (cite) `cite.zhe_nonlinear', line 89.
-
-Package `hyperref' Info: End of reference (cite) `cite.zhe_nonlinear', line 89.
-
-Package `hyperref' Info: End of reference (cite) `cite.azevedo2013_avoinv', lin
-e 95.
-Package `hyperref' Info: End of reference (cite) `cite.azevedo2013_avoinv', lin
-e 95.
-Package `hyperref' Info: End of reference (cite) `cite.Buland01012003', line 95
-.
-Package `hyperref' Info: End of reference (cite) `cite.Buland01012003', line 95
-.
-Package `hyperref' Info: End of reference (link) `equation.2.1.5', line 100.
-Package `hyperref' Info: End of reference (cite) `cite.Buland01012003', line 13
-2.
-Package `hyperref' Info: End of reference (cite) `cite.Buland01012003', line 13
-2.
-Package `hyperref' Info: End of reference (cite) `cite.Buland01012003', line 13
-8.
-Package `hyperref' Info: End of reference (cite) `cite.Buland01012003', line 13
-8.
-Package `hyperref' Info: End of reference (cite) `cite.leandroGRSL', line 138.
-Package `hyperref' Info: End of reference (cite) `cite.leandroGRSL', line 138.
-]
-Package hyperref Info: Anchor `equation.2.1.10' on input line 156.
-Package hyperref Info: Anchor `equation.2.1.10' on input line 156.
-Package hyperref Info: Anchor `equation.2.1.10' on input line 156.
-Package hyperref Info: Anchor `equation.2.1.10' on input line 156.
-Package hyperref Info: Reference (cite) `cite.leandroGRSL' on input line 164.
-Package hyperref Info: Reference (cite) `cite.leandroGRSL' on input line 164.
-Package hyperref Info: Anchor `equation.2.1.11' on input line 166.
-Package hyperref Info: Anchor `equation.2.1.11' on input line 166.
-Package hyperref Info: Anchor `equation.2.1.11' on input line 166.
-Package hyperref Info: Anchor `equation.2.1.11' on input line 166.
-Package hyperref Info: Reference (cite) `cite.leandroGRSL' on input line 177.
-Package hyperref Info: Reference (cite) `cite.leandroGRSL' on input line 177.
-Package hyperref Info: Anchor `equation.2.1.12' on input line 179.
-Package hyperref Info: Anchor `equation.2.1.12' on input line 179.
-Package hyperref Info: Anchor `equation.2.1.12' on input line 179.
-Package hyperref Info: Anchor `equation.2.1.12' on input line 179.
-Package hyperref Info: Anchor `equation.2.1.13' on input line 183.
-Package hyperref Info: Anchor `equation.2.1.13' on input line 183.
-Package hyperref Info: Anchor `equation.2.1.13' on input line 183.
-Package hyperref Info: Anchor `equation.2.1.13' on input line 183.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 205.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 205.
-Package hyperref Info: Anchor `page.14' on input line 205.
- [14
-Package `hyperref' Info: End of reference (cite) `cite.leandroGRSL', line 164.
-Package `hyperref' Info: End of reference (cite) `cite.leandroGRSL', line 164.
-Package `hyperref' Info: End of reference (cite) `cite.leandroGRSL', line 177.
-Package `hyperref' Info: End of reference (cite) `cite.leandroGRSL', line 177.
-]
-Package hyperref Info: Anchor `section.2.2' on input line 215.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 215.
-Package hyperref Info: bookmark on input line 215:
+(babel)             in language  on input line 44.
+Package hyperref Info: bookmark on input line 44:
 (hyperref)             thecounter {2.2}
 (hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
- {\csname thesection\endcsname }\fi Modelagem de Incerteza}
+ {\csname thesection\endcsname }\fi Inversão Sísmica}
 (hyperref)             reference {section.2.2}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.TompkinsScalabUnce2011' on input 
-line 220.
-Package hyperref Info: Reference (cite) `cite.TompkinsScalabUnce2011' on input 
-line 220.
-Package hyperref Info: Anchor `equation.2.2.14' on input line 225.
-Package hyperref Info: Anchor `equation.2.2.14' on input line 225.
-Package hyperref Info: Anchor `equation.2.2.14' on input line 225.
-Package hyperref Info: Anchor `equation.2.2.14' on input line 225.
-Package hyperref Info: Reference (cite) `cite.Martinez2011Topogra' on input lin
-e 229.
-Package hyperref Info: Reference (cite) `cite.Martinez2011Topogra' on input lin
-e 229.
-Package hyperref Info: Reference (link) `figure.caption.11' on input line 230.
-Package hyperref Info: Anchor `figure.caption.11' on input line 232.
- <fig/errorFuncTol.pdf, id=314, 750.49881pt x 291.25006pt>
-File: fig/errorFuncTol.pdf Graphic file (type pdf)
+Package hyperref Info: Reference (cite) `cite.Bosch2010' on input line 49.
+Package hyperref Info: Reference (cite) `cite.Bosch2010' on input line 49.
+Package hyperref Info: Reference (cite) `cite.Srivastava2009' on input line 49.
 
-<use fig/errorFuncTol.pdf>
-Package pdftex.def Info: fig/errorFuncTol.pdf used on input line 234.
-(pdftex.def)             Requested size: 340.37885pt x 132.09679pt.
-Package hyperref Info: bookmark on input line 235:
+Package hyperref Info: Reference (cite) `cite.Srivastava2009' on input line 49.
+
+Package hyperref Info: Reference (cite) `cite.Figueiredo2014' on input line 52.
+
+Package hyperref Info: Reference (cite) `cite.Figueiredo2014' on input line 52.
+
+Package hyperref Info: Reference (link) `figure.caption.4' on input line 58.
+Package hyperref Info: Anchor `figure.caption.4' on input line 66.
+<fig/seismic_survey.png, id=114, 451.6875pt x 246.1697pt>
+File: fig/seismic_survey.png Graphic file (type png)
+
+<use fig/seismic_survey.png>
+Package pdftex.def Info: fig/seismic_survey.png used on input line 68.
+(pdftex.def)             Requested size: 389.00757pt x 212.02107pt.
+Package hyperref Info: bookmark on input line 69:
 (hyperref)             thecounter {2.1}
 (hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Efeito da tolerância na funç
-ão de erro\relax }}
-(hyperref)             reference {figure.caption.11}
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Método de sísmica de reflex�
+�o \citep {figsismica}\relax }}
+(hyperref)             reference {figure.caption.4}
 (hyperref)             toclevel {0}
 (hyperref)             type {lof}.
-Package hyperref Info: Reference (link) `figure.caption.11' on input line 242.
+Package hyperref Info: Reference (cite) `cite.figsismica' on input line 69.
+Package hyperref Info: Reference (cite) `cite.figsismica' on input line 69.
+Package hyperref Info: Reference (cite) `cite.figsismica' on input line 69.
+Package hyperref Info: Reference (cite) `cite.figsismica' on input line 69.
+Package hyperref Info: Reference (link) `equation.2.2.3' on input line 81.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 249.
+(babel)             in language  on input line 82.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 249.
-Package hyperref Info: Anchor `page.15' on input line 249.
- [15
-Package `hyperref' Info: End of reference (cite) `cite.TompkinsScalabUnce2011',
- line 220.
-Package `hyperref' Info: End of reference (cite) `cite.TompkinsScalabUnce2011',
- line 220.
-Package `hyperref' Info: End of reference (cite) `cite.Martinez2011Topogra', li
-ne 229.
-Package `hyperref' Info: End of reference (cite) `cite.Martinez2011Topogra', li
-ne 229.
-Package `hyperref' Info: End of reference (link) `figure.caption.11', line 230.
-
-Package `hyperref' Info: End of reference (link) `figure.caption.11', line 242.
-
+(babel)             in language  on input line 82.
+Package hyperref Info: Anchor `page.4' on input line 82.
+ [4
+Package `hyperref' Info: End of reference (cite) `cite.Bosch2010', line 49.
+Package `hyperref' Info: End of reference (cite) `cite.Bosch2010', line 49.
+Package `hyperref' Info: End of reference (cite) `cite.Srivastava2009', line 49
+.
+Package `hyperref' Info: End of reference (cite) `cite.Srivastava2009', line 49
+.
+Package `hyperref' Info: End of reference (cite) `cite.Figueiredo2014', line 52
+.
+Package `hyperref' Info: End of reference (cite) `cite.Figueiredo2014', line 52
+.
+Package `hyperref' Info: End of reference (link) `figure.caption.4', line 58.
 ]
-Package hyperref Info: Reference (link) `subsection.2.1.1' on input line 249.
-Package hyperref Info: Reference (cite) `cite.leandro_SEG' on input line 263.
-Package hyperref Info: Reference (cite) `cite.leandro_SEG' on input line 263.
-Package hyperref Info: Reference (cite) `cite.zunino2014' on input line 274.
-Package hyperref Info: Reference (cite) `cite.zunino2014' on input line 274.
+Package hyperref Info: Anchor `equation.2.2.3' on input line 83.
+Package hyperref Info: Anchor `equation.2.2.3' on input line 83.
+Package hyperref Info: Anchor `equation.2.2.3' on input line 83.
+Package hyperref Info: Anchor `equation.2.2.3' on input line 83.
+Package hyperref Info: Reference (link) `equation.2.2.3' on input line 88.
+Package hyperref Info: Anchor `equation.2.2.4' on input line 95.
+Package hyperref Info: Anchor `equation.2.2.4' on input line 95.
+Package hyperref Info: Anchor `equation.2.2.4' on input line 95.
+Package hyperref Info: Anchor `equation.2.2.4' on input line 95.
+Package hyperref Info: Reference (cite) `cite.sen_livro' on input line 105.
+Package hyperref Info: Reference (cite) `cite.sen_livro' on input line 105.
+Package hyperref Info: Reference (link) `figure.caption.5' on input line 108.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 279.
+(babel)             in language  on input line 110.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 279.
-Package hyperref Info: Anchor `page.16' on input line 279.
- [16
-Package `hyperref' Info: End of reference (link) `subsection.2.1.1', line 249.
-Package `hyperref' Info: End of reference (cite) `cite.leandro_SEG', line 263.
-Package `hyperref' Info: End of reference (cite) `cite.leandro_SEG', line 263.
-Package `hyperref' Info: End of reference (cite) `cite.zunino2014', line 274.
-Package `hyperref' Info: End of reference (cite) `cite.zunino2014', line 274.
- <./fig/errorFuncTol.pdf>]
-Package hyperref Info: Reference (cite) `cite.BulandWavStochastic' on input lin
-e 287.
-Package hyperref Info: Reference (cite) `cite.BulandWavStochastic' on input lin
-e 287.
-Package hyperref Info: Reference (cite) `cite.Sen1995v' on input line 292.
-Package hyperref Info: Reference (cite) `cite.Sen1995v' on input line 292.
-Package hyperref Info: Reference (cite) `cite.Martinez:2010PSO' on input line 2
-95.
-Package hyperref Info: Reference (cite) `cite.Martinez:2010PSO' on input line 2
-95.
-Package hyperref Info: Reference (cite) `cite.Sen1995v' on input line 300.
-Package hyperref Info: Reference (cite) `cite.Sen1995v' on input line 300.
-Package hyperref Info: Reference (cite) `cite.Martinez2011Topogra' on input lin
-e 303.
-Package hyperref Info: Reference (cite) `cite.Martinez2011Topogra' on input lin
-e 303.
-Package hyperref Info: Reference (cite) `cite.TompkinsScalabUnce2011' on input 
-line 308.
-Package hyperref Info: Reference (cite) `cite.TompkinsScalabUnce2011' on input 
-line 308.
-Package hyperref Info: Reference (cite) `cite.smolyak63quadrature' on input lin
-e 319.
-Package hyperref Info: Reference (cite) `cite.smolyak63quadrature' on input lin
-e 319.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 325.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 325.
-Package hyperref Info: Anchor `page.17' on input line 325.
- [17
-Package `hyperref' Info: End of reference (cite) `cite.BulandWavStochastic', li
-ne 287.
-Package `hyperref' Info: End of reference (cite) `cite.BulandWavStochastic', li
-ne 287.
-Package `hyperref' Info: End of reference (cite) `cite.Sen1995v', line 292.
-Package `hyperref' Info: End of reference (cite) `cite.Sen1995v', line 292.
-Package `hyperref' Info: End of reference (cite) `cite.Martinez:2010PSO', line 
-295.
-Package `hyperref' Info: End of reference (cite) `cite.Martinez:2010PSO', line 
-295.
-Package `hyperref' Info: End of reference (cite) `cite.Sen1995v', line 300.
-Package `hyperref' Info: End of reference (cite) `cite.Sen1995v', line 300.
-Package `hyperref' Info: End of reference (cite) `cite.Martinez2011Topogra', li
-ne 303.
-Package `hyperref' Info: End of reference (cite) `cite.Martinez2011Topogra', li
-ne 303.
-Package `hyperref' Info: End of reference (cite) `cite.TompkinsScalabUnce2011',
- line 308.
-Package `hyperref' Info: End of reference (cite) `cite.TompkinsScalabUnce2011',
- line 308.
-]
-Package hyperref Info: Reference (cite) `cite.jolliffe2002principal' on input l
-ine 330.
-Package hyperref Info: Reference (cite) `cite.jolliffe2002principal' on input l
-ine 330.
-Package hyperref Info: Reference (cite) `cite.TompkinsScalabUnce2011' on input 
-line 339.
-Package hyperref Info: Reference (cite) `cite.TompkinsScalabUnce2011' on input 
-line 339.
-Package hyperref Info: Reference (cite) `cite.TompkinsCupature' on input line 3
-40.
-Package hyperref Info: Reference (cite) `cite.TompkinsCupature' on input line 3
-40.
-Package hyperref Info: Reference (cite) `cite.tompkins_comparisonBayes' on inpu
-t line 342.
-Package hyperref Info: Reference (cite) `cite.tompkins_comparisonBayes' on inpu
-t line 342.
-Package hyperref Info: Reference (cite) `cite.caers_distance_kernels_MDS' on in
-put line 345.
-Package hyperref Info: Reference (cite) `cite.caers_distance_kernels_MDS' on in
-put line 345.
-Package hyperref Info: Reference (cite) `cite.caers2011modeling' on input line 
-359.
-Package hyperref Info: Reference (cite) `cite.caers2011modeling' on input line 
-359.
-Package hyperref Info: Anchor `subsection.2.2.1' on input line 361.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 361.
-Package hyperref Info: bookmark on input line 361:
-(hyperref)             thecounter {2.2.1}
-(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
- {\csname thesubsection\endcsname }\fi \textit {Global Stochastic Inversion}}
-(hyperref)             reference {subsection.2.2.1}
-(hyperref)             toclevel {2}
-(hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 363
-.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 363
-.
-Package hyperref Info: Reference (cite) `cite.amilcarInversao' on input line 36
-9.
-Package hyperref Info: Reference (cite) `cite.amilcarInversao' on input line 36
-9.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 374.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 374.
-Package hyperref Info: Anchor `page.18' on input line 374.
- [18
-Package `hyperref' Info: End of reference (cite) `cite.smolyak63quadrature', li
-ne 319.
-Package `hyperref' Info: End of reference (cite) `cite.smolyak63quadrature', li
-ne 319.
-Package `hyperref' Info: End of reference (cite) `cite.jolliffe2002principal', 
-line 330.
-Package `hyperref' Info: End of reference (cite) `cite.jolliffe2002principal', 
-line 330.
-Package `hyperref' Info: End of reference (cite) `cite.TompkinsScalabUnce2011',
- line 339.
-Package `hyperref' Info: End of reference (cite) `cite.TompkinsScalabUnce2011',
- line 339.
-Package `hyperref' Info: End of reference (cite) `cite.TompkinsCupature', line 
-340.
-Package `hyperref' Info: End of reference (cite) `cite.TompkinsCupature', line 
-340.
-Package `hyperref' Info: End of reference (cite) `cite.tompkins_comparisonBayes
-', line 342.
-Package `hyperref' Info: End of reference (cite) `cite.tompkins_comparisonBayes
-', line 342.
-Package `hyperref' Info: End of reference (cite) `cite.caers_distance_kernels_M
-DS', line 345.
-Package `hyperref' Info: End of reference (cite) `cite.caers_distance_kernels_M
-DS', line 345.
-Package `hyperref' Info: End of reference (cite) `cite.caers2011modeling', line
- 359.
-Package `hyperref' Info: End of reference (cite) `cite.caers2011modeling', line
- 359.
-Package `hyperref' Info: End of reference (cite) `cite.2001amilcarDSS', line 36
-3.
-Package `hyperref' Info: End of reference (cite) `cite.2001amilcarDSS', line 36
-3.
-]
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 380
-.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 380
-.
-Package hyperref Info: Anchor `equation.2.2.15' on input line 382.
-Package hyperref Info: Anchor `equation.2.2.15' on input line 382.
-Package hyperref Info: Anchor `equation.2.2.15' on input line 382.
-Package hyperref Info: Anchor `equation.2.2.15' on input line 382.
-Package hyperref Info: Reference (cite) `cite.goovaerts1997geostatistics' on in
-put line 388.
-Package hyperref Info: Reference (cite) `cite.goovaerts1997geostatistics' on in
-put line 388.
-Package hyperref Info: Anchor `equation.2.2.16' on input line 395.
-Package hyperref Info: Anchor `equation.2.2.16' on input line 395.
-Package hyperref Info: Anchor `equation.2.2.16' on input line 395.
-Package hyperref Info: Anchor `equation.2.2.16' on input line 395.
-Package hyperref Info: Reference (link) `figure.caption.12' on input line 401.
-Package hyperref Info: Anchor `figure.caption.12' on input line 403.
+(babel)             in language  on input line 110.
+Package hyperref Info: Anchor `page.5' on input line 110.
+ [5
+Package `hyperref' Info: End of reference (cite) `cite.figsismica', line 69.
+Package `hyperref' Info: End of reference (cite) `cite.figsismica', line 69.
+Package `hyperref' Info: End of reference (link) `equation.2.2.3', line 81.
+Package `hyperref' Info: End of reference (link) `equation.2.2.3', line 88.
+Package `hyperref' Info: End of reference (cite) `cite.sen_livro', line 105.
+Package `hyperref' Info: End of reference (cite) `cite.sen_livro', line 105.
+ <./fig/seismic_survey.png>]
+Package hyperref Info: Anchor `figure.caption.5' on input line 111.
 
-<fig/transfdss.png, id=405, 1014.79124pt x 534.49687pt>
-File: fig/transfdss.png Graphic file (type png)
-
-<use fig/transfdss.png>
-Package pdftex.def Info: fig/transfdss.png used on input line 405.
-(pdftex.def)             Requested size: 243.1288pt x 128.0535pt.
-Package hyperref Info: bookmark on input line 407:
+<fig/wavelet.png, id=148, 1398.72563pt x 583.42969pt>
+File: fig/wavelet.png Graphic file (type png)
+ <use fig/wavelet.png>
+Package pdftex.def Info: fig/wavelet.png used on input line 113.
+(pdftex.def)             Requested size: 389.00757pt x 162.2553pt.
+Package hyperref Info: bookmark on input line 114:
 (hyperref)             thecounter {2.2}
 (hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Amostragem global via transfor
-mação local feita pela SSD \citep {2001amilcarDSS}\relax }}
-(hyperref)             reference {figure.caption.12}
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces \textit {Wavelet} extraída de
+ dados reais\relax }}
+(hyperref)             reference {figure.caption.5}
 (hyperref)             toclevel {0}
 (hyperref)             type {lof}.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 407
-.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 407
-.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 407
-.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 407
-.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 419
-.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 419
-.
+Package hyperref Info: Anchor `section.2.3' on input line 119.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 427.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 427.
-Package hyperref Info: Anchor `page.19' on input line 427.
- [19
-Package `hyperref' Info: End of reference (cite) `cite.amilcarInversao', line 3
-69.
-Package `hyperref' Info: End of reference (cite) `cite.amilcarInversao', line 3
-69.
-Package `hyperref' Info: End of reference (cite) `cite.2001amilcarDSS', line 38
-0.
-Package `hyperref' Info: End of reference (cite) `cite.2001amilcarDSS', line 38
-0.
-Package `hyperref' Info: End of reference (cite) `cite.goovaerts1997geostatisti
-cs', line 388.
-Package `hyperref' Info: End of reference (cite) `cite.goovaerts1997geostatisti
-cs', line 388.
-Package `hyperref' Info: End of reference (link) `figure.caption.12', line 401.
-
-Package `hyperref' Info: End of reference (cite) `cite.2001amilcarDSS', line 41
-9.
-Package `hyperref' Info: End of reference (cite) `cite.2001amilcarDSS', line 41
-9.
-]
-Package hyperref Info: Anchor `Item.1' on input line 429.
-Package hyperref Info: Anchor `Item.2' on input line 431.
-Package hyperref Info: Anchor `Item.3' on input line 433.
-Package hyperref Info: Anchor `Item.4' on input line 435.
-Package hyperref Info: Anchor `Item.5' on input line 438.
-Package hyperref Info: Reference (cite) `cite.caers2011modeling' on input line 
-454.
-Package hyperref Info: Reference (cite) `cite.caers2011modeling' on input line 
-454.
-Package hyperref Info: Reference (link) `figure.caption.13' on input line 455.
-Package hyperref Info: Reference (link) `equation.2.1.3' on input line 458.
-Package hyperref Info: Reference (link) `equation.2.1.2' on input line 459.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 461.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 461.
-Package hyperref Info: Anchor `page.20' on input line 461.
- [20
-Package `hyperref' Info: End of reference (cite) `cite.2001amilcarDSS', line 40
-7.
-Package `hyperref' Info: End of reference (cite) `cite.2001amilcarDSS', line 40
-7.
- <./fig/transfdss.png>]
-Package hyperref Info: Anchor `figure.caption.13' on input line 463.
-
-<fig/horizontes.png, id=439, 663.22781pt x 506.6428pt>
-File: fig/horizontes.png Graphic file (type png)
-
-<use fig/horizontes.png>
-Package pdftex.def Info: fig/horizontes.png used on input line 465.
-(pdftex.def)             Requested size: 291.75752pt x 222.87714pt.
-Package hyperref Info: bookmark on input line 466:
-(hyperref)             thecounter {2.3}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Processo de horizontalização
- \citep [p. 143]{caers2011modeling}\relax }}
-(hyperref)             reference {figure.caption.13}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Reference (cite) `cite.caers2011modeling' on input line 
-466.
-Package hyperref Info: Reference (cite) `cite.caers2011modeling' on input line 
-466.
-Package hyperref Info: Reference (cite) `cite.caers2011modeling' on input line 
-466.
-Package hyperref Info: Reference (cite) `cite.caers2011modeling' on input line 
-466.
-Package hyperref Info: Anchor `section.2.3' on input line 471.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 471.
-Package hyperref Info: bookmark on input line 471:
+(babel)             in language  on input line 119.
+Package hyperref Info: bookmark on input line 119:
 (hyperref)             thecounter {2.3}
 (hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
- {\csname thesection\endcsname }\fi Resumo}
+ {\csname thesection\endcsname }\fi Deep Learning}
 (hyperref)             reference {section.2.3}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-)
+Package hyperref Info: Anchor `section.2.4' on input line 122.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 122.
+Package hyperref Info: bookmark on input line 122:
+(hyperref)             thecounter {2.4}
+(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
+ {\csname thesection\endcsname }\fi Redes Neurais Convolucionais}
+(hyperref)             reference {section.2.4}
+(hyperref)             toclevel {1}
+(hyperref)             type {toc}.
+Package hyperref Info: Reference (link) `figure.caption.6' on input line 140.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 146.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 146.
+Package hyperref Info: Anchor `page.6' on input line 146.
+
+[6
+Package `hyperref' Info: End of reference (link) `figure.caption.5', line 108.
+Package `hyperref' Info: End of reference (link) `figure.caption.6', line 140.
+ <./fig/wavelet.png (PNG copy)>]
+Package hyperref Info: Anchor `figure.caption.6' on input line 147.
+
+<fig/cnn_arq.png, id=157, 404.26031pt x 247.67531pt>
+File: fig/cnn_arq.png Graphic file (type png)
+ <use fig/cnn_arq.png>
+Package pdftex.def Info: fig/cnn_arq.png used on input line 149.
+(pdftex.def)             Requested size: 389.00757pt x 238.33247pt.
+Package hyperref Info: bookmark on input line 150:
+(hyperref)             thecounter {2.3}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Camadas de uma CNN com campos 
+receptivos retangulares.\relax }}
+(hyperref)             reference {figure.caption.6}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package hyperref Info: Anchor `subsection.2.4.1' on input line 155.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 155.
+Package hyperref Info: bookmark on input line 155:
+(hyperref)             thecounter {2.4.1}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Convolução}
+(hyperref)             reference {subsection.2.4.1}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Anchor `equation.2.4.5' on input line 166.
+Package hyperref Info: Anchor `equation.2.4.5' on input line 166.
+Package hyperref Info: Anchor `equation.2.4.5' on input line 166.
+Package hyperref Info: Anchor `equation.2.4.5' on input line 166.
+Package hyperref Info: Reference (link) `equation.2.4.6' on input line 171.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 173.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 173.
+Package hyperref Info: Anchor `page.7' on input line 173.
+
+[7 <./fig/cnn_arq.png>]
+Package hyperref Info: Anchor `equation.2.4.6' on input line 173.
+Package hyperref Info: Anchor `equation.2.4.6' on input line 173.
+Package hyperref Info: Anchor `equation.2.4.6' on input line 173.
+Package hyperref Info: Anchor `equation.2.4.6' on input line 173.
+Package hyperref Info: Anchor `equation.2.4.7' on input line 183.
+Package hyperref Info: Anchor `equation.2.4.7' on input line 183.
+Package hyperref Info: Anchor `equation.2.4.7' on input line 183.
+Package hyperref Info: Anchor `equation.2.4.7' on input line 183.
+Package hyperref Info: Anchor `subsection.2.4.2' on input line 187.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 187.
+Package hyperref Info: bookmark on input line 187:
+(hyperref)             thecounter {2.4.2}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Filtros}
+(hyperref)             reference {subsection.2.4.2}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Reference (link) `figure.caption.7' on input line 191.
+Package hyperref Info: Anchor `figure.caption.7' on input line 198.
+ <fig/conv_filt.png, id=166, 615.0478pt x 388.45125pt>
+File: fig/conv_filt.png Graphic file (type png)
+
+<use fig/conv_filt.png>
+Package pdftex.def Info: fig/conv_filt.png used on input line 200.
+(pdftex.def)             Requested size: 340.37885pt x 214.97655pt.
+Package hyperref Info: bookmark on input line 201:
+(hyperref)             thecounter {2.4}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Aplicação de dois filtros di
+ferentes para obter mapas de características.\relax }}
+(hyperref)             reference {figure.caption.7}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package hyperref Info: Reference (link) `figure.caption.8' on input line 208.
+Package hyperref Info: Anchor `figure.caption.8' on input line 213.
+ <fig/feat_maps.png, id=168, 405.76593pt x 360.59718pt>
+File: fig/feat_maps.png Graphic file (type png)
+
+<use fig/feat_maps.png>
+Package pdftex.def Info: fig/feat_maps.png used on input line 215.
+(pdftex.def)             Requested size: 340.37885pt x 302.4979pt.
+Package hyperref Info: bookmark on input line 216:
+(hyperref)             thecounter {2.5}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Camadas convolucionais com mú
+ltiplos mapas de características e imagens com três canais.\relax }}
+(hyperref)             reference {figure.caption.8}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package hyperref Info: Reference (link) `figure.caption.9' on input line 233.
+Package hyperref Info: Reference (link) `figure.caption.9' on input line 233.
+Package hyperref Info: Reference (link) `figure.caption.9' on input line 235.
+Package hyperref Info: Reference (link) `figure.caption.9' on input line 236.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 239.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 239.
+Package hyperref Info: Anchor `page.8' on input line 239.
+ [8
+Package `hyperref' Info: End of reference (link) `equation.2.4.6', line 171.
+Package `hyperref' Info: End of reference (link) `figure.caption.7', line 191.
+Package `hyperref' Info: End of reference (link) `figure.caption.8', line 208.
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 239.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 239.
+Package hyperref Info: Anchor `page.9' on input line 239.
+ [9 <./fig/conv_filt.png> <./fig/feat_maps.png (PNG copy)>]
+Package hyperref Info: Anchor `figure.caption.9' on input line 240.
+ <fig/full.png, id=187, 818.05624pt x 405.515pt>
+File: fig/full.png Graphic file (type png)
+ <use fig/full.png>
+Package pdftex.def Info: fig/full.png used on input line 243.
+(pdftex.def)             Requested size: 218.81442pt x 108.46335pt.
+
+<fig/sparse.png, id=188, 818.05624pt x 405.515pt>
+File: fig/sparse.png Graphic file (type png)
+ <use fig/sparse.png>
+Package pdftex.def Info: fig/sparse.png used on input line 249.
+(pdftex.def)             Requested size: 218.81442pt x 108.46335pt.
+Package hyperref Info: Anchor `subsection.2.4.3' on input line 266.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 266.
+Package hyperref Info: bookmark on input line 266:
+(hyperref)             thecounter {2.4.3}
+(hyperref)             text {\ifnum 2>\c@secnumdepth \else \protect \numberline
+ {\csname thesubsection\endcsname }\fi Pooling}
+(hyperref)             reference {subsection.2.4.3}
+(hyperref)             toclevel {2}
+(hyperref)             type {toc}.
+Package hyperref Info: Reference (link) `figure.caption.10' on input line 274.
+Package hyperref Info: Anchor `figure.caption.10' on input line 275.
+
+<fig/pool.png, id=190, 904.37875pt x 301.125pt>
+File: fig/pool.png Graphic file (type png)
+ <use fig/pool.png>
+Package pdftex.def Info: fig/pool.png used on input line 277.
+(pdftex.def)             Requested size: 340.37885pt x 113.33052pt.
+Package hyperref Info: bookmark on input line 278:
+(hyperref)             thecounter {2.7}
+(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
+p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Operação de \textit {pooling
+} com região de tamanho 3. Nesta operação é selecionado o máximo valor de 
+ativação da etapa de detecção.\relax }}
+(hyperref)             reference {figure.caption.10}
+(hyperref)             toclevel {0}
+(hyperref)             type {lof}.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 282.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 282.
+Package hyperref Info: Anchor `page.10' on input line 282.
+ [10
+Package `hyperref' Info: End of reference (link) `figure.caption.9', line 233.
+Package `hyperref' Info: End of reference (link) `figure.caption.9', line 233.
+Package `hyperref' Info: End of reference (link) `figure.caption.9', line 235.
+Package `hyperref' Info: End of reference (link) `figure.caption.9', line 236.
+ <./fig/full.png> <./fig/sparse.png>])
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 133.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 133.
-Package hyperref Info: Anchor `page.21' on input line 133.
- [21
-Package `hyperref' Info: End of reference (cite) `cite.caers2011modeling', line
- 454.
-Package `hyperref' Info: End of reference (cite) `cite.caers2011modeling', line
- 454.
-Package `hyperref' Info: End of reference (link) `figure.caption.13', line 455.
+Package hyperref Info: Anchor `page.11' on input line 133.
+ [11
+Package `hyperref' Info: End of reference (link) `figure.caption.10', line 274.
 
-Package `hyperref' Info: End of reference (link) `equation.2.1.3', line 458.
-Package `hyperref' Info: End of reference (link) `equation.2.1.2', line 459.
-Package `hyperref' Info: End of reference (cite) `cite.caers2011modeling', line
- 466.
-Package `hyperref' Info: End of reference (cite) `cite.caers2011modeling', line
- 466.
- <./fig/horizontes.png>]
-\openout2 = `cap2_2.aux'.
-
- (./cap2_2.tex
-Package hyperref Info: Anchor `chapter.3' on input line 1.
-
-Cap\'{\i }tulo 3.
+ <./fig/pool.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1.
-Package hyperref Info: bookmark on input line 1:
-(hyperref)             thecounter {3}
-(hyperref)             text {\protect \numberline {\thechapter }Modelos de supe
-r-resolucao}
-(hyperref)             reference {chapter.3}
-(hyperref)             toclevel {0}
-(hyperref)             type {toc}.
-)
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 136.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 136.
-Package hyperref Info: Anchor `page.22' on input line 136.
- [22
-
-
-
-]
-\openout2 = `cap3.aux'.
-
- (./cap3.tex
-Package hyperref Info: Anchor `chapter.4' on input line 1.
-
-Cap\'{\i }tulo 4.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1.
-Package hyperref Info: bookmark on input line 1:
-(hyperref)             thecounter {4}
-(hyperref)             text {\protect \numberline {\thechapter }Super-Resoluç�
-�o de Imagens Pós-Inversão}
-(hyperref)             reference {chapter.4}
-(hyperref)             toclevel {0}
-(hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.amilcarInversao' on input line 7.
-
-Package hyperref Info: Reference (cite) `cite.amilcarInversao' on input line 7.
-
-Package hyperref Info: Reference (cite) `cite.Buland01012003' on input line 9.
-Package hyperref Info: Reference (cite) `cite.Buland01012003' on input line 9.
-Package hyperref Info: Reference (cite) `cite.amilcarInversao' on input line 12
-.
-Package hyperref Info: Reference (cite) `cite.amilcarInversao' on input line 12
-.
-Package hyperref Info: Reference (cite) `cite.Buland01012003' on input line 17.
-
-Package hyperref Info: Reference (cite) `cite.Buland01012003' on input line 17.
-
-Package hyperref Info: Reference (link) `equation.2.1.11' on input line 30.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 33.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 33.
-Package hyperref Info: Anchor `page.23' on input line 33.
-[23
-
-
-
-Package `hyperref' Info: End of reference (cite) `cite.amilcarInversao', line 7
-.
-Package `hyperref' Info: End of reference (cite) `cite.amilcarInversao', line 7
-.
-Package `hyperref' Info: End of reference (cite) `cite.Buland01012003', line 9.
-
-Package `hyperref' Info: End of reference (cite) `cite.Buland01012003', line 9.
-
-Package `hyperref' Info: End of reference (cite) `cite.amilcarInversao', line 1
-2.
-Package `hyperref' Info: End of reference (cite) `cite.amilcarInversao', line 1
-2.
-Package `hyperref' Info: End of reference (cite) `cite.Buland01012003', line 17
-.
-Package `hyperref' Info: End of reference (cite) `cite.Buland01012003', line 17
-.
-Package `hyperref' Info: End of reference (link) `equation.2.1.11', line 30.
-]
-Package hyperref Info: Anchor `Item.6' on input line 36.
-Package hyperref Info: Anchor `Item.7' on input line 37.
-Package hyperref Info: Reference (link) `equation.2.1.12' on input line 39.
-Package hyperref Info: Anchor `Item.8' on input line 40.
-Package hyperref Info: Anchor `Item.9' on input line 42.
-Package hyperref Info: Anchor `Item.10' on input line 44.
-Package hyperref Info: Anchor `Item.11' on input line 46.
-Package hyperref Info: Anchor `Item.12' on input line 47.
-Package hyperref Info: Reference (link) `figure.caption.14' on input line 51.
-Package hyperref Info: Anchor `figure.caption.14' on input line 53.
- <fig/fluxo.png, id=472, 709.90219pt x 468.24937pt>
-File: fig/fluxo.png Graphic file (type png)
- <use fig/fluxo.png>
-Package pdftex.def Info: fig/fluxo.png used on input line 55.
-(pdftex.def)             Requested size: 291.75752pt x 192.44789pt.
-Package hyperref Info: bookmark on input line 56:
-(hyperref)             thecounter {4.1}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Fluxograma do método de inver
-são e simulação\relax }}
-(hyperref)             reference {figure.caption.14}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Reference (cite) `cite.amilcarInversao' on input line 62
-.
-Package hyperref Info: Reference (cite) `cite.amilcarInversao' on input line 62
-.
-Package hyperref Info: Anchor `section.4.1' on input line 68.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 68.
-Package hyperref Info: bookmark on input line 68:
-(hyperref)             thecounter {4.1}
-(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
- {\csname thesection\endcsname }\fi Resultados Preliminares}
-(hyperref)             reference {section.4.1}
-(hyperref)             toclevel {1}
-(hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.leandroGRSL' on input line 74.
-Package hyperref Info: Reference (cite) `cite.leandroGRSL' on input line 74.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 78.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 78.
-Package hyperref Info: Anchor `page.24' on input line 78.
-
-[24
-Package `hyperref' Info: End of reference (link) `equation.2.1.12', line 39.
-Package `hyperref' Info: End of reference (link) `figure.caption.14', line 51.
-Package `hyperref' Info: End of reference (cite) `cite.amilcarInversao', line 6
-2.
-Package `hyperref' Info: End of reference (cite) `cite.amilcarInversao', line 6
-2.
- <./fig/fluxo.png>]
-Package hyperref Info: Reference (link) `figure.caption.15' on input line 103.
-Package hyperref Info: Reference (link) `figure.caption.17' on input line 105.
-Package hyperref Info: Reference (link) `figure.caption.16' on input line 105.
-Package hyperref Info: Reference (link) `figure.caption.18' on input line 109.
-Package hyperref Info: Anchor `figure.caption.15' on input line 115.
- <fig/map.png, id=494, 1397.97281pt x 842.39719pt>
-File: fig/map.png Graphic file (type png)
-
-<use fig/map.png>
-Package pdftex.def Info: fig/map.png used on input line 117.
-(pdftex.def)             Requested size: 486.25761pt x 293.00531pt.
-Package hyperref Info: bookmark on input line 118:
-(hyperref)             thecounter {4.2}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Resultado MAP utilizado como i
-magem secundária\relax }}
-(hyperref)             reference {figure.caption.15}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Anchor `figure.caption.16' on input line 124.
- <fig/dss1it-20realz.png, id=495, 1397.97281pt x 842.39719pt>
-File: fig/dss1it-20realz.png Graphic file (type png)
-
-<use fig/dss1it-20realz.png>
-Package pdftex.def Info: fig/dss1it-20realz.png used on input line 126.
-(pdftex.def)             Requested size: 486.25761pt x 293.00531pt.
-Package hyperref Info: bookmark on input line 127:
-(hyperref)             thecounter {4.3}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Média das amostras da primeir
-a iteração da GSI\relax }}
-(hyperref)             reference {figure.caption.16}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Anchor `figure.caption.17' on input line 132.
-
-<fig/mapdss1it-20realz-filt.png, id=496, 1397.97281pt x 842.39719pt>
-File: fig/mapdss1it-20realz-filt.png Graphic file (type png)
-
-<use fig/mapdss1it-20realz-filt.png>
-Package pdftex.def Info: fig/mapdss1it-20realz-filt.png used on input line 134.
-
-(pdftex.def)             Requested size: 486.25761pt x 293.00531pt.
-Package hyperref Info: bookmark on input line 136:
-(hyperref)             thecounter {4.4}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Média das amostras da SSD uti
-lizando MAP como imagem secundária\relax }}
-(hyperref)             reference {figure.caption.17}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Anchor `figure.caption.18' on input line 142.
-
-<fig/dss10it-20realz.png, id=497, 1397.97281pt x 842.39719pt>
-File: fig/dss10it-20realz.png Graphic file (type png)
-
-<use fig/dss10it-20realz.png>
-Package pdftex.def Info: fig/dss10it-20realz.png used on input line 144.
-(pdftex.def)             Requested size: 486.25761pt x 293.00531pt.
-Package hyperref Info: bookmark on input line 145:
-(hyperref)             thecounter {4.5}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Média das amostras após 10 i
-terações da GSI\relax }}
-(hyperref)             reference {figure.caption.18}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Reference (link) `figure.caption.19' on input line 159.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 164.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 164.
-Package hyperref Info: Anchor `page.25' on input line 164.
- [25
-Package `hyperref' Info: End of reference (cite) `cite.leandroGRSL', line 74.
-Package `hyperref' Info: End of reference (cite) `cite.leandroGRSL', line 74.
-Package `hyperref' Info: End of reference (link) `figure.caption.15', line 103.
-
-Package `hyperref' Info: End of reference (link) `figure.caption.17', line 105.
-
-Package `hyperref' Info: End of reference (link) `figure.caption.16', line 105.
-
-Package `hyperref' Info: End of reference (link) `figure.caption.18', line 109.
-
-]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 164.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 164.
-Package hyperref Info: Anchor `page.26' on input line 164.
- [26 <./fig/map.png (PNG copy)> <./fig/dss1it-20realz.png (PNG copy)>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 164.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 164.
-Package hyperref Info: Anchor `page.27' on input line 164.
- [27 <./fig/mapdss1it-20realz-filt.png (PNG copy)> <./fig/dss10it-20realz.png (
-PNG copy)>]
-Package hyperref Info: Anchor `figure.caption.19' on input line 167.
-
-<fig/IA_com_filtro.png, id=516, 694.09312pt x 580.41844pt>
-File: fig/IA_com_filtro.png Graphic file (type png)
-
-<use fig/IA_com_filtro.png>
-Package pdftex.def Info: fig/IA_com_filtro.png used on input line 169.
-(pdftex.def)             Requested size: 218.81444pt x 182.97447pt.
-
-<fig/IA_sem_filtro.png, id=517, 694.09312pt x 580.41844pt>
-File: fig/IA_sem_filtro.png Graphic file (type png)
-
-<use fig/IA_sem_filtro.png>
-Package pdftex.def Info: fig/IA_sem_filtro.png used on input line 174.
-(pdftex.def)             Requested size: 218.81444pt x 182.97447pt.
-Package hyperref Info: bookmark on input line 177:
-(hyperref)             thecounter {4.6}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Comparação dos dados de poç
-os filtrados\relax }}
-(hyperref)             reference {figure.caption.19}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-Package hyperref Info: Anchor `section.4.2' on input line 184.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 184.
-Package hyperref Info: bookmark on input line 184:
-(hyperref)             thecounter {4.2}
-(hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
- {\csname thesection\endcsname }\fi Proposta e Plano de Trabalho}
-(hyperref)             reference {section.4.2}
-(hyperref)             toclevel {1}
-(hyperref)             type {toc}.
-Package hyperref Info: Reference (cite) `cite.azevedo2013_avoinv' on input line
- 188.
-Package hyperref Info: Reference (cite) `cite.azevedo2013_avoinv' on input line
- 188.
-Package hyperref Info: Reference (cite) `cite.coleou_qualityanomalyinv' on inpu
-t line 191.
-Package hyperref Info: Reference (cite) `cite.coleou_qualityanomalyinv' on inpu
-t line 191.
-Package hyperref Info: Reference (cite) `cite.caers_distance_kernels_MDS' on in
-put line 194.
-Package hyperref Info: Reference (cite) `cite.caers_distance_kernels_MDS' on in
-put line 194.
-Package hyperref Info: Reference (cite) `cite.caers2011modeling' on input line 
-199.
-Package hyperref Info: Reference (cite) `cite.caers2011modeling' on input line 
-199.
-Package hyperref Info: Reference (cite) `cite.coleou_qualityanomalyinv' on inpu
-t line 205.
-Package hyperref Info: Reference (cite) `cite.coleou_qualityanomalyinv' on inpu
-t line 205.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 206.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 206.
-Package hyperref Info: Anchor `page.28' on input line 206.
- [28
-Package `hyperref' Info: End of reference (link) `figure.caption.19', line 159.
-
-Package `hyperref' Info: End of reference (cite) `cite.azevedo2013_avoinv', lin
-e 188.
-Package `hyperref' Info: End of reference (cite) `cite.azevedo2013_avoinv', lin
-e 188.
-Package `hyperref' Info: End of reference (cite) `cite.coleou_qualityanomalyinv
-', line 191.
-Package `hyperref' Info: End of reference (cite) `cite.coleou_qualityanomalyinv
-', line 191.
-Package `hyperref' Info: End of reference (cite) `cite.caers_distance_kernels_M
-DS', line 194.
-Package `hyperref' Info: End of reference (cite) `cite.caers_distance_kernels_M
-DS', line 194.
- <./fig/IA_com_filtro.png (PNG copy)> <./fig/IA_sem_filtro.png (PNG copy)>]
-Package hyperref Info: Reference (cite) `cite.caers_distance_kernels_MDS' on in
-put line 214.
-Package hyperref Info: Reference (cite) `cite.caers_distance_kernels_MDS' on in
-put line 214.
-Package hyperref Info: Reference (link) `figure.caption.20' on input line 216.
-Package hyperref Info: Anchor `figure.caption.20' on input line 224.
-
-<fig/gantt_EQD.pdf, id=538, 644.88928pt x 136.62747pt>
-File: fig/gantt_EQD.pdf Graphic file (type pdf)
- <use fig/gantt_EQD.pdf>
-Package pdftex.def Info: fig/gantt_EQD.pdf used on input line 226.
-(pdftex.def)             Requested size: 486.25761pt x 103.02072pt.
-Package hyperref Info: bookmark on input line 227:
-(hyperref)             thecounter {4.7}
-(hyperref)             text {\protect \numberline {\caption@lstfmt {\@nameuse {
-p@figure}}{\@nameuse {thefigure}}}{\ignorespaces Cronograma mensal do projeto a
- partir de jul/2014\relax }}
-(hyperref)             reference {figure.caption.20}
-(hyperref)             toclevel {0}
-(hyperref)             type {lof}.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 239.
-
-
-(/usr/share/texmf/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 239.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 254.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 254.
-Package hyperref Info: Anchor `page.29' on input line 254.
- [29
-Package `hyperref' Info: End of reference (cite) `cite.caers2011modeling', line
- 199.
-Package `hyperref' Info: End of reference (cite) `cite.caers2011modeling', line
- 199.
-Package `hyperref' Info: End of reference (cite) `cite.coleou_qualityanomalyinv
-', line 205.
-Package `hyperref' Info: End of reference (cite) `cite.coleou_qualityanomalyinv
-', line 205.
-Package `hyperref' Info: End of reference (cite) `cite.caers_distance_kernels_M
-DS', line 214.
-Package `hyperref' Info: End of reference (cite) `cite.caers_distance_kernels_M
-DS', line 214.
-Package `hyperref' Info: End of reference (link) `figure.caption.20', line 216.
-
- <./fig/gantt_EQD.pdf>]
-Package hyperref Info: Reference (cite) `cite.azevedo2013_avoinv' on input line
- 285.
-Package hyperref Info: Reference (cite) `cite.azevedo2013_avoinv' on input line
- 285.
-Package hyperref Info: Reference (cite) `cite.amilcarInversao' on input line 28
-5.
-Package hyperref Info: Reference (cite) `cite.amilcarInversao' on input line 28
-5.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 285
-.
-Package hyperref Info: Reference (cite) `cite.2001amilcarDSS' on input line 285
-.
-Package hyperref Info: Reference (cite) `cite.leandro_SEG' on input line 288.
-Package hyperref Info: Reference (cite) `cite.leandro_SEG' on input line 288.
-Package hyperref Info: Reference (cite) `cite.leandroGRSL' on input line 288.
-)
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 139.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 139.
-Package hyperref Info: Anchor `page.30' on input line 139.
- [30
-Package `hyperref' Info: End of reference (cite) `cite.azevedo2013_avoinv', lin
-e 285.
-Package `hyperref' Info: End of reference (cite) `cite.azevedo2013_avoinv', lin
-e 285.
-Package `hyperref' Info: End of reference (cite) `cite.amilcarInversao', line 2
-85.
-Package `hyperref' Info: End of reference (cite) `cite.amilcarInversao', line 2
-85.
-Package `hyperref' Info: End of reference (cite) `cite.2001amilcarDSS', line 28
-5.
-Package `hyperref' Info: End of reference (cite) `cite.2001amilcarDSS', line 28
-5.
-Package `hyperref' Info: End of reference (cite) `cite.leandro_SEG', line 288.
-Package `hyperref' Info: End of reference (cite) `cite.leandro_SEG', line 288.
-Package `hyperref' Info: End of reference (cite) `cite.leandroGRSL', line 288.
-]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 145.
-Package hyperref Info: bookmark on input line 145:
-(hyperref)             thecounter {4}
+(babel)             in language  on input line 142.
+Package hyperref Info: bookmark on input line 142:
+(hyperref)             thecounter {2}
 (hyperref)             text {Bibliografia}
-(hyperref)             reference {figure.caption.20}
+(hyperref)             reference {figure.caption.10}
 (hyperref)             toclevel {0}
 (hyperref)             type {toc}.
+ (./eqd.bbl
+Package hyperref Info: Anchor `chapter*.11' on input line 1.
+Package hyperref Info: Anchor `cite.Bosch2010' on input line 3.
+Package hyperref Info: Anchor `cite.figsismica' on input line 9.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 11.
 
-(./eqd.bbl
-Package hyperref Info: Anchor `chapter*.21' on input line 1.
-Package hyperref Info: Anchor `cite.azevedo2013_avoinv' on input line 4.
-Package hyperref Info: Anchor `cite.Bosch2010' on input line 10.
-Package hyperref Info: Anchor `cite.Buland01012003' on input line 16.
-Package hyperref Info: Anchor `cite.BulandWavStochastic' on input line 20.
-Package hyperref Info: Anchor `cite.caers2011modeling' on input line 25.
-Package hyperref Info: Anchor `cite.clappRegLeast3D' on input line 29.
-Package hyperref Info: Anchor `cite.coleou_qualityanomalyinv' on input line 35.
-
-Package hyperref Info: Anchor `cite.Martinez2011Topogra' on input line 41.
-Package hyperref Info: Anchor `cite.leandro_SEG' on input line 48.
-Package hyperref Info: Anchor `cite.leandroGRSL' on input line 55.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 60.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 60.
-Package hyperref Info: Anchor `page.31' on input line 60.
- [31
-
-
-]
-Package hyperref Info: Anchor `cite.figsismica' on input line 61.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 63.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 62--64
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
 []\T1/lmr/m/n/12 FishSAFE (2014), Seis-mic sur-veys, [][]$\T1/lmtt/m/n/12 http 
 : / / fishsafe . eu / en / offshore-[]structures /
  []
 
-Package hyperref Info: Anchor `cite.goovaerts1997geostatistics' on input line 6
-5.
-Package hyperref Info: Anchor `cite.jolliffe2002principal' on input line 70.
-Package hyperref Info: Anchor `cite.max_inv_simulated' on input line 74.
-Package hyperref Info: Anchor `cite.MallickGeneticInve' on input line 79.
-Package hyperref Info: Anchor `cite.Martinez:2010PSO' on input line 85.
-Package hyperref Info: Anchor `cite.Figueiredo2014' on input line 92.
-Package hyperref Info: Anchor `cite.caers_distance_kernels_MDS' on input line 9
-8.
-Package hyperref Info: Anchor `cite.sen_livro' on input line 103.
-Package hyperref Info: Anchor `cite.Sen1995v' on input line 107.
-Package hyperref Info: Anchor `cite.smolyak63quadrature' on input line 112.
-Package hyperref Info: Anchor `cite.2001amilcarDSS' on input line 117.
-Package hyperref Info: Anchor `cite.amilcarInversao' on input line 121.
+Package hyperref Info: Anchor `cite.Figueiredo2014' on input line 14.
+Package hyperref Info: Anchor `cite.sen_livro' on input line 20.
+Package hyperref Info: Anchor `cite.Srivastava2009' on input line 24.
+Package hyperref Info: Anchor `cite.tarantola' on input line 30.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 151.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 126.
+(babel)             in language  on input line 151.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 126.
-Package hyperref Info: Anchor `page.32' on input line 126.
-[32
-Package `hyperref' Info: End of reference (link) `figure.caption.20', line 216.
+(babel)             in language  on input line 151.
+Package hyperref Info: Anchor `page.12' on input line 151.
+ [12
+
+
+Package `hyperref' Info: End of reference (link) `figure.caption.10', line 274.
 
 ]
-Package hyperref Info: Anchor `cite.Srivastava2009' on input line 126.
-Package hyperref Info: Anchor `cite.tarantola' on input line 132.
-Package hyperref Info: Anchor `cite.TompkinsCupature' on input line 137.
-Package hyperref Info: Anchor `cite.TompkinsScalabUnce2011' on input line 143.
-Package hyperref Info: Anchor `cite.tompkins_comparisonBayes' on input line 151
-.
-Package hyperref Info: Anchor `cite.zhe_nonlinear' on input line 157.
-Package hyperref Info: Anchor `cite.zunino2014' on input line 163.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 154.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 154.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 154.
-Package hyperref Info: Anchor `page.33' on input line 154.
- [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 154.
- (./eqd.aux (./cap1.aux) (./cap2.aux) (./cap2_2.aux) (./cap3.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 154.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 154.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
+ (./eqd.aux (./cap1.aux) (./cap2.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
 Package rerunfilecheck Info: File `eqd.out' has not changed.
-(rerunfilecheck)             Checksum: 0212BF23C9DEEE3AABF6C32BCCC37769;1362.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 154.
+(rerunfilecheck)             Checksum: BCACB357EC37E8D2EAAE606D264678C6;790.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
  ) 
 Here is how much of TeX's memory you used:
- 10950 strings out of 493029
- 159284 string characters out of 6136235
- 263642 words of memory out of 5000000
- 14033 multiletter control sequences out of 15000+600000
- 67966 words of font info for 57 fonts, out of 8000000 for 9000
- 1142 hyphenation exceptions out of 8191
- 42i,8n,45p,390b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 10659 strings out of 494929
+ 154079 string characters out of 6180142
+ 256174 words of memory out of 5000000
+ 13625 multiletter control sequences out of 15000+600000
+ 52893 words of font info for 47 fonts, out of 8000000 for 9000
+ 17 hyphenation exceptions out of 8191
+ 42i,8n,45p,391b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
--mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lme
-x10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmib10.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/t
-exmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-sy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on eqd.pdf (37 pages, 1688786 bytes).
+ips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
+hare/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/l
+m/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
+12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/font
+s/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmtt12.pfb>
+Output written on eqd.pdf (16 pages, 1028678 bytes).
 PDF statistics:
- 738 PDF objects out of 1000 (max. 8388607)
- 611 compressed objects within 7 object streams
- 140 named destinations out of 1000 (max. 500000)
- 248 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 269 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 

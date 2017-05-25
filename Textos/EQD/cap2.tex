@@ -1,480 +1,303 @@
-\chapter{Modelos de Inversão Sísmica}
-\label{cap:2modelosSuperresolucao}
+\chapter{Fundamenta Teórica}
+Neste capítulo serão apresentados os conceitos
+abordados neste trabalho. O problema inverso será apresentado
+em linhas gerais e o leitor tomará conhecimento do processo de inversão sísmica.
+Serão apresentados os conceitos relacionados a \textit{Deep Learning}, assim como os
+elementos de redes neurais convolucionais. Esta fundamentação
+teórica é relevante para o entendimento de como o modelo de rede neural convolucional
+pode ser adotado para obter ganho qualitativo e quantitativo no pós-processamento
+da inversão sísmica.
 
+\section{Problema Inverso}
 
-Numa configuração de experimentos físicos se tem o espaço dos parâmetros do
-modelo e o espaço das medidas. No contexto da sísmica de reflexão, os dados
-sísmicos $d$ são representados no espaço das medidas e a propriedade de
-impedância acústica $m$ das rochas é representada no espaço do modelo.
+A teoria de inversão é utilizada em diversas áreas para inferir os valores de
+parâmetros relacionados com processos importantes a partir dos dados medidos,
+também chamados de dados experimentais. É possível descrever o problema inverso
+como o processo de obter informações de um sistema parametrizado, a partir de
+dados observáveis, das relações teóricas dos observáveis com os parâmetros não
+observáveis e do conhecimento \textit{a priori} sobre os dados não observáveis.
 
-A princípio parece descomplicada a utilização de equações físicas que descrevem
-o sistema de forma inversa, fazendo o mapeamento do espaço das medidas ao espaço
-do modelo. No entanto, esses métodos de inversão direta sofrem de instabilidades
-devido à ruído e características do problema \citep[p. 50]{sen_livro}. Outra
-opção é utilizar tentativa e erro para ajustar os parâmetros até conseguir uma
-resposta semelhante aos dados experimentais. Formalmente isto é automatizado
-utilizando métodos de otimização. Para tanto, é preciso definir uma função de
-custo, ou função objetivo, que mede o ajuste dos dados produzidos pelos
-parâmetros do modelo (dado sintético) ao dado medido.
+Um sistema físico depende do domínio em estudo. Pode ser uma galáxia para um
+astro-físico, pode ser a Terra para um geofísico ou uma partícula quântica
+para um físico quântico. O procedimento científico para o estudo de um sistema
+físico pode ser dividido em três passos: a parametrização do sistema, a modelagem direta e a modelagem inversa.
+A parametrização do sistema se refere à definição do conjunto mínimo de elementos cujos
+valores caracterizam completamente o sistema. A modelagem direta se refere concerne a
+definição das leis físicas que permitem realizar previsão de dados observáveis, dados
+valores dos parâmetros do modelo. A modelagem inversa, por sua vez, se caracteriza pelo
+uso de resultados atuais das medições dos parâmetros físicos observáveis, para inferir os valores atuais dos
+parâmetros do modelo.
 
-O objetivo da inversão, no entanto, vai além de encontrar os parâmetros que
-melhor se ajustam aos dados. Quando os dados são ruidosos, o modelo direto não é
-exato e não existem dados suficientes, a inversão tem solução não única, ou
-seja, vários modelos ajustam aos dados de forma equivalente. Consequentemente é
-importante modelar a incerteza envolvida no processo, indicando qual a
-variabilidade dos modelos que se ajustam bem aos dados.
-
-A relação entre o modelo e os dados (modelo direto) é dada por:
-
+Resolver o problema direto significa prever os valores dos parâmetros observáveis (dados $d$),
+que correspondem a um dado modelo (conjunto de parâmetros $m$). Esta predição pode ser denotada
+pela Eq. \ref{eq:frdmdl}. Onde $F(.)$ é chamado operador direto.
 \begin{equation}
-d = G(m_v) + e
+\label{eq:frdmdl}
+F(m) = d 
 \end{equation}
-onde $G(\cdot)$ é uma função não linear, e assume-se que um ruído $e$ está
-presente. Em teoria o ruído é uma interferência aleatória que não se tem
-controle, na prática se considera ruído tudo que não é explicado pela função
-$G$, e.g. imprecisões no modelo físico e problemas com filtragem e processamento
-dos dados.
-
-\section{Inversão Sísmica Linear e Não Linear}
-
-O modelo mais utilizado para aproximar a função $G$, no caso da inversão
-sísmica, é o modelo convolucional. No caso discreto a convolução é dada pelo
-produto acumulado de cada amostra do vetor de refletividades por todas as
-amostras da \textit{wavelet}. Portanto pode ser representado por uma operação
-matricial:
-
+No exemplo do eletrocardiograma citado anteriormente, o problema direto pode
+ser entendido como o cálculo do potencial em algum ponto da superfície da pele,
+dados valores conhecidos da atividade elétrica do coração.
+O problema inverso pode ser descrito em uma forma discreta como:
 \begin{equation}
-\label{eq:sismDiscreta}
-\mathbf{d = Gr}
+\label{eq:deqgm}
+m = F^{-1}(d)
 \end{equation}
-onde $\mathbf{G}$ é uma matriz convolucional construída utilizando uma
-\textit{wavelet} e $\mathbf r$ o vetor das refletividades definido por:
+onde, F é p sistema físico investigado e que relaciona os parâmetros do modelo $m=(m_1, m_2,...,m_n) \subset R^n$
+estimado que pertence a um conjunto de modelos $M$ admissíveis
+em termos de conhecimento prévio (\textit{a priori}), com os dados observados $d \in R^s$.
+Na prática $d$ pode ser uma função no domínio do tempo e/ou espaço, ou pode ser
+uma coleção de observações discretas. Uma questão relevante é a presença de
+ruído nas observações.
+
+\section{Inversão Sísmica}
+
+Os métodos geofísicos frequentemente envolvem a solução e avaliação de problemas inversos,
+pois permitem inferir a distribuição das propriedades físicas na subsuperfície da Terra
+usando observações da superfície. A inversão sísmica tem um papel fundamental na solução 
+de problemas geofísicos, em especial na caracterização de reservatórios \cite{Bosch2010} \cite{Srivastava2009}.
+Do ponto de vista prático, as soluções para o problema de inversão sísmica melhora a exploração e
+o gerenciamento na indústria petrolífera, pois os dados sísmicos estimados possuem forte correlação com as
+propriedades petrofísicas (porosidade, densidade, etc) das rochas da subsuperfície\cite{Figueiredo2014}.
+
+O método de aquisição sísmica de reflexão utiliza
+pulsos sísmicos de uma fonte artificial controlada e monitora a resposta em
+função do tempo. Neste sistema, cada região de contato entre dois tipos de rochas
+diferentes gera reflexão e refração do pulso sísmico, como demonstrado na Figura
+\ref{fig:1sismica}.
+De um ponto de vista bastante elementar, é possível imaginar que a parte refletida da onda se
+propaga em todas as direções, de modo que os componentes horizontal e vertical podem ser obtidos.
+O componente horizontal (\textit{s-wave}), referente à reflexão horizontal
+da onda, é utilizada no processo de inversão conhecido como inversão elástica. Por outro lado, os componente
+vertical da onda (\textit{p-wave}), referente à reflexão vertical do pulso do pulso emitido, é utilizado no processo
+conhecido como inversão acústica.
+
+\begin{figure}[ht!]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{fig/seismic_survey}
+  \caption{Método de sísmica de reflexão \citep{figsismica}}
+  \label{fig:1sismica}
+\end{center}
+\end{figure}
+
+O pulso de onda emitido durante a aquisição possui um formato próprio, uma identidade, e
+é conhecido como \textit{wavelet}. É possível imaginar, então, que a resposta obtida
+é composta em parte por esta identidade e, em parte, pela característica da região de contato
+entre duas camadas de rochas diferentes, na qual ocorreceu a reflexão, acrescentada de um ruído aleatório. Esta característica
+é chamada de coeficiente de refletividade.
+O dado sísmico utilizado na inversão acústica é uma aproximação da resposta da camada terrestre convolucionada com
+a wavelet de aquisição cujo ângulo de incidência é de $90^\circ$ e o valor de refletividade entre as camadas da subsuperfície
+com reflexão também de $90^\circ$, definida pela equação \ref{eq:refletv}. Por este motivo, este modelo é chamado convolucional.
 
 \begin{equation}
-\label{eq:refletDiscreta}
-r(t)=\frac{z(t+\delta t) - z(t)}{z(t+\delta t) + z(t)}
-\end{equation}
-o que torna não linear a relação entre impedância $\mathbf z$ e o dado sísmico.
-Uma aproximação válida quando valores de refletividades não ultrapassam $0.3$ é:
-
-
-\begin{equation}
-r(t) = \frac{1}{2}\Delta \ln(z(t))
-\label{eq:lnz}
-\end{equation}
-
-
-Utilizando estas aproximações para o modelo direto, a alternativa mais objetiva
-é incorporar as aproximações na matriz $\mathbf{G}$ e invertê-la para obter
-$\mathbf{\ln(z)}$, por fim aplicar o exponencial para obter $\mathbf{z}$.
-Neste caso temos os seguintes problemas: existência; unicidade; estabilidade; e
-robustez \citep[p. 56-57]{sen_livro}. Utilizando a formulação de mínimos
-quadrados também é possível resolver sistemas sobredeterminados, solucionando
-problemas com a melhor estimativa possível no sentido de minimizar o erro
-quadrático (norma $L_2$). Apesar de ser uma solução mais geral, ainda é
-utilizado somente um critério de ajuste aos dados, o que não possibilita a
-inserção de conhecimento \textit{a priori}. É possível regularizar o método de
-mínimos quadrados, mas ainda não se tem muita liberdade para inserir
-conhecimentos \textit{a priori} e de outras fontes \citep{clappRegLeast3D}.
-
-
-Quando não é possível o uso da aproximação da Equação \ref{eq:lnz}, o problema
-deve ser abordado utilizando métodos de otimização não linear. Com isso os erros
-devido às aproximações do modelo \textit{forward} diminuem, mas a otimização se
-torna mais custosa. Como a relação entre os dados e os parâmetros é não linear, a
-função objetivo a ser minimizada irá possuir mínimos locais, tornando necessário
-o uso de métodos de otimização global. Esta prática está bem documentada na
-literatura de inversão, como o uso de \textit{simulated annealing}
-\citep{max_inv_simulated}, de algoritmos genéticos \citep{MallickGeneticInve} e
-enxame de partículas \citep{zhe_nonlinear}. 
-
-
-%falar mais das vantagens e desvantagens do nao linear
-
-Outra forma de inversão presente na literatura é a elástica
-\citep{azevedo2013_avoinv,Buland01012003}. Nesse tipo de inversão os dados
-sísmicos estão em um nível diferente de processamento onde os traços sísmicos
-são empilhados em intervalos de ângulos de incidência. Com isso é possível
-inverter para Vp (velocidade primária/compressional), Vs (velocidade
-secundária/cisalhante) e $\rho$ (densidade), ao invés de somente impedância
-acústica. A Equação \ref{eq:elastica} modela a relação da refletividade $c_{pp}$
-com Vp ($\alpha$), Vs ($\beta$) e $\rho$ para cada ângulo disponível.
-
-\begin{equation}
-c_{pp}(\theta) = a_\alpha(\theta)\frac{\Delta\alpha}{\bar{\alpha}} +
-a_\beta(\theta) \frac{\Delta\beta}{\bar{\beta}} +
-a_\rho(\theta) \frac{\Delta\rho}{\bar{\rho}}
-\label{eq:elastica}
+r(t) = \frac{z(t+\delta t)-z(t)}{z(t+\delta t)+z(t)}
+\label{eq:refletv}
 \end{equation}
 
-onde:
+Na equação \ref{eq:refletv}, $z(t)$ é a impedância acústica no tempo $t$ definida por
+$z(t)=\rho(t)v(t)$, onde $\rho(t)$ é a densidade da rocha e $v(t)$ a
+velocidade de propagação da onda acústica. Com os coeficientes de
+reflexão e a discretização da medida de tempo, é possível
+modelar o dado sísmico $d(t)$ aplicando a convolução $\otimes$
+da \textit{wavelet} $s$ com os coeficientes de refletividade $r$:
+
 \begin{equation}
-a_\alpha(\theta)= \frac{1}{2}(1+\tan^2\theta),
+d(t) = s(\tau) \otimes \sum{j-1}{N} r(t- t_j) \delta(t - t_j) + e_d(t)
 \end{equation}
-
-\begin{equation}
-a_\beta(\theta)= -4\frac{\bar{\beta}^2}{\bar{\alpha}^2}\sin^2\theta,
-\end{equation}
-
-\begin{equation}
-a_\rho(\theta) = \frac{1}{2} \left (  
-1-4\frac{\bar{\beta}^2}{\bar{\alpha}^2}\sin^2\theta \right ).
-\end{equation}
-
-Adicionalmente $\bar{\alpha}$, $\bar{\beta}$ e $\bar{\rho}$ são as respectivas
-médias sobre a interface; $\Delta\alpha$, $\Delta\beta$ e $\Delta\rho$ são os
-contrastes e $\theta$ o ângulo médio de reflexão. Essas propriedades são
-importantes, pois a velocidade secundária é indicador de hidrocarbonetos por não
-se propagar em meio líquido, desta forma áreas com presença destes compostos se
-destacam numa imagem de Vs, podendo indicar interfaces rocha/óleo e água/óleo.
-As metodologias para resolução do problema são semelhantes, mas neste caso
-aumentando a dimensão dos dados e números de parâmetros a serem estimados
-\citep{Buland01012003}.
-
-\subsection{Máximo \textit{a posteriori}}
-\label{sec:map}
-
-A inversão por Máximo \textit{a posteriori} (MAP)
-\citep{Buland01012003,leandroGRSL} é realizada para cada traço individualmente.
-Baseado no modelo convolucional e assumindo que o ruído presente nos dados é
-Gaussiano, o vetor das sísmicas experimentais $\boldsymbol{d}$, é modelado pela
-distribuição de probabilidade:
-
-\begin{equation}
-p(\boldsymbol{d}|\boldsymbol{\mu_{d}},\boldsymbol{\Sigma_{d}}) =
-N(\boldsymbol{\mu_{d}},\boldsymbol{\Sigma_{d}}),
-\end{equation}
-onde $\boldsymbol{\mu_{d}} = \boldsymbol{Gm}$ é o vetor com a sísmica
-sintética e $\boldsymbol{\Sigma_{d}}$ é a matriz de covariância do ruído da
-sísmica, a qual é definida conforme a confiabilidade que o especialista tem no
-dado sísmico ou seu nível de ruído. Geralmente se utiliza uma matriz diagonal
-com mesma variância para todos os elementos.
-
-Para o vetor modelo $\boldsymbol{m}$ com o logaritmo natural da impedância
-acústica, considerou-se também uma distribuição normal:
-
-\begin{equation}
-p(\boldsymbol{m}|\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}) =
-N(\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}),
-\end{equation} 
-no qual $\boldsymbol{\mu_{m}}$ é um vetor contendo a baixa frequência do
-logaritmo natural da impedância. Este dado é outra informação adicional que é
-fornecida pelo especialista via análise de velocidades ou interpolando
-dados de poços por Krigagem. Os componentes da matriz de covariância
-$\boldsymbol{\Sigma_{m}}$ foram definidos conforme \citep{leandroGRSL}:
-
-\begin{equation}
-\label{eq:correlVert}
-\boldsymbol{\nu}_{t,t'} = \sigma_{m}^{2} exp \left (-\frac{(t-t')^2)}{L^2}
-\right ),
-\end{equation} 
-que define a correlação entre as componentes de $\boldsymbol{m}$ no tempo $t$ e
-$t'$, na qual $\sigma_{m}^{2}$ é a variância da impedância acústica calculada
-nos dados de poços sem a baixa frequência, e $L$ é a distância de correlação
-vertical a ser imposta ao resultado.
-
-Neste arcabouço a média e variância posterior para cada traço podem ser
-calculadas analiticamente via \citep{leandroGRSL}:
-
-\begin{equation}
-\label{eqn:mapSolution}
-\boldsymbol{\mu}_{m|} = \boldsymbol{\mu}_{m} + \boldsymbol{\Sigma}_{m}\boldsymbol{G}^{T}(\boldsymbol{G\Sigma}_{m}\boldsymbol{G}^{T}+\boldsymbol{\Sigma}_{d})^{-1}\left ( \boldsymbol{d}_{o} - \boldsymbol{G\mu}_{m} \right ),
-\end{equation}
-\begin{equation}
-\boldsymbol{\Sigma}_{m|} = \boldsymbol{\Sigma}_{m} - \boldsymbol{\Sigma}_{m}\boldsymbol{G}^{T}(\boldsymbol{G\Sigma}_{m}\boldsymbol{G}^{T}+\boldsymbol{\Sigma}_{d})^{-1}\boldsymbol{G\Sigma}_{m}.
-\end{equation} 
-onde o cálculo da matriz inversa acima pode ser aproveitado para vários traços
-de uma região de interesse em certos casos, ou seja, quando as matrizes de
-covariância possam ser assumidas iguais para todos os traços da sísmica da região.
-Desta forma alteram-se a sísmica $\mathbf{d}_0$ e a baixa frequência
-$\boldsymbol{\mu_m}$ obtendo-se a média posterior para o traço desejado.
-
-
-Utilizando esta metodologia a solução é representada por uma distribuição
-posterior Gaussiana com expressões explícitas para o valor esperado e para a
-covariância. Não são necessárias iterações para ajuste do modelo, tornando o
-método eficiente e útil em casos de uso reais, possibilitando o especialista
-alterar parâmetros e avaliar o resultado em tempo real numa pequena área.
-Satisfeito com a parametrização, o método é aplicado a todo o campo. A matriz de
-covariância posterior indica a incerteza presente no resultado, não é necessário
-definir a tolerância de ajuste aos dados explicitamente, mas é preciso definir a
-matriz de covariância \textit{a priori} do resultado esperado, ou seja, é
-preciso ter conhecimento, mesmo que de forma grosseira, das correlações espaciais e
-variâncias que se espera do resultado. Ao final, a covariância posterior é
-calculada.
-
-Uma desvantagem destacada na literatura é a dificuldade em inserir modelos de
-continuidade mais abrangentes, pois é necessário incluir as covariâncias entre
-traços vizinhos, aumentando as matrizes de covariância e a matriz a ser
-invertida. Inserindo as correlações horizontais também inviabiliza aproveitar o
-cálculo da matriz inversa, pois desta forma o resultado da inversão precisa ser
-calculado para todos os pontos a serem invertidos ao mesmo tempo.
-Atualmente é inserida somente covariância entre amostras no mesmo traço, ou
-seja, somente na direção vertical.
-
-\section{Modelagem de Incerteza}
-
-Novas propostas surgiram recentemente para tentar encontrar modelos
-$\mathbf{m}_f \in \mathbf{M} \subset \mathbf{R}^N$, onde $\mathbf M$ é o
-conjunto de modelos admissíveis que atendem o conhecimento \textit{a priori} e
-são consistentes com o domínio do problema \citep{TompkinsScalabUnce2011}. Para o
-problema da incerteza, o objetivo é encontrar o conjunto de modelos pertencentes
-a $\mathbf M$ que se ajustam aos dados observados com uma certa tolerância
-($tol$):
-
-\begin{equation}
-||G\mathbf{(m)-d}||_p \leq tol
-\end{equation}
-onde $||\cdot||_p$ é uma norma $L_p$ de erro escolhida. Na prática esse
-parâmetro cria um vale plano na função de erro  \citep{Martinez2011Topogra}, como
-ilustrado em uma dimensão na Figura \ref{fig:erroFunc}.
+onde $N$ é o número
+total de camadas, $e_d(t)$ representa o ruído aleatório em função do tempo
+e cada $d_{xy}$ é chamado de traço sísmico. Um conjunto de traços
+sísmicos também é chamado de uma imagem, seção ou cubo, no caso de um
+levantamento 3D. A \textit{wavelet} ideal seria um pulso tipo delta contendo
+todas as frequências, entretanto, na prática as
+\textit{wavelets} são pulsos de banda limitada entre $6Hz$ e $65Hz$, o que
+limita a frequência da sísmica e sua resolução \citep[p. 11]{sen_livro}.
+Como consequência, as imagens resultantes do processo de inversão também terão
+o seu espectro de frequência limitado.
+A Figura \ref{fig:wavelet} ilustra uma \textit{wavelet} típica extraída de dados
+reais.
 
 \begin{figure}[htp]
 \begin{center}
-  \includegraphics[width=0.7\textwidth]{fig/errorFuncTol}
-  \caption{Efeito da tolerância na função de erro}
-  \label{fig:erroFunc}
+  \includegraphics[width=0.8\textwidth]{fig/wavelet}
+  \caption{\textit{Wavelet} extraída de dados reais}
+  \label{fig:wavelet}
 \end{center}
 \end{figure}
 
-A justificativa para o uso desse nível de tolerância é evitar o ajuste dos dados
-ao ruído. No caso do erro atingir o mínimo, o modelo está tentando explicar o
-ruído presente nos dados medidos. Apesar da Figura \ref{fig:erroFunc} ser uma
-simplificação, consegue-se perceber que ao adicionar a tolerância um conjunto de
-modelos passa a ser aceitável. Sem a tolerância um só modelo seria eleito como
-melhor e não teríamos a estimativa da incerteza, apesar de se ajustar melhor aos
-dados. Este parâmetro é definido empiricamente e deve refletir a incerteza e o
-ruído presente nos dados.
-
-Na técnica MAP, citada anteriormente na Seção \ref{sec:map}, além de retornar a
-matriz de covariância indicando a incerteza presente no resultado, não é
-necessário definir a tolerância explicitamente, mas é preciso definir a matriz
-de covariância \textit{a priori} do resultado esperado, ou seja, é preciso ter
-conhecimento, mesmo que de forma grosseira, das correlações espaciais e
-variâncias que se espera do resultado. Ao final, a covariância posterior é
-calculada e o conhecimento \textit{a priori} é atualizado com os dados. Uma
-desvantagem importante é a dificuldade em inserir modelos de continuidade mais abrangentes,
-pois para tanto é necessário incluir as covariâncias entre os pontos a serem
-estimados. Atualmente é inserida somente covariância entre amostras no mesmo
-traço, ou seja, somente na direção vertical. Inserir covariância em outras
-direções aumenta o número de elementos da matriz de covariância de forma
-quadrática, tornando o processo custoso.
-
-Utilizando uma abordagem estocástica Bayesiana, \cite{leandro_SEG} leva em
-consideração a incerteza na \textit{wavelet} gerando amostras das distribuições
-posteriores da impedância acústica e da \textit{wavelet}. O problema continua
-linearizado e com suposição Gaussiana, mas é preciso utilizar um esquema de
-amostragem baseado em simulação \textit{Markov-chain Monte Carlo} (MCMC) via
-algoritmo de Gibbs, pois não é possível obter as distribuições posteriores
-analiticamente. Com realizações da distribuição posterior, é possível calcular
-as estatísticas de interesse e modelar a incerteza envolvida. A desvantagem é o
-alto custo computacional para gerar amostras dessas distribuições,
-principalmente com o aumento da dimensão do problema. Um estudo recente utiliza
-MCMC para realizar amostragem da propriedades de porosidade e permeabilidade das
-rochas \citep{zunino2014}. Estas propriedades são geralmente estimadas em uma
-etapa posterior à estimativa de propriedades primárias, como a impedância.
-Portanto o método gera interesse ao realizar inversão de forma mais avançada no
-fluxo de trabalho, além de gerar estimativas da incerteza. Apesar de sofrer com
-o alto custo computacional da amostragem o autor relata bons resultados.
-
-A estimativa de \textit{wavelets} também é objeto de estudo na literatura. O
-problema consiste em determinar o pulso sísmico que gerou o sinal medido,
-utilizando os dados de poços como referência. \textit{Wavelets} podem ser
-consideradas o elo entre os dados sísmicos e as propriedades de rocha. Como
-podem haver erros de conversão da escala de profundidade dos poços para a escala
-de tempo dos dados sísmicos, é necessário avaliar a incerteza na estimativa da
-\textit{wavelet}. Por isso, um esquema de amostragem semelhante, baseado em 
-MCMC, foi utilizado em \cite{BulandWavStochastic}.
-
-Esforços na área de inteligência computacional foram inicialmente empregados
-utilizando métodos que possuem componentes estocásticas, mas foram desenvolvidos
-originalmente para explotação, ou seja, encontrar rapidamente o mínimo global da
-função objetivo \citep{Sen1995v}. Otimização por enxame de partículas é um
-exemplo. O método foi modificado para permanecer em sua fase de exploração,
-favorecendo soluções que ficam abaixo de certa tolerância. Realizando, portanto,
-o que é chamado de \textit{importance sampling} \citep{Martinez:2010PSO}. Os
-autores dessa metodologia defendem que a função de erro é um bom \textit{proxy}
-para a distribuição posterior.
-
-Trabalhos anteriores tentaram sem êxito utilizar várias execuções de algoritmos
-genéticos (GA) para estimar a incerteza \citep[p. 152]{Sen1995v}. A hipótese de
-trabalho era a que ao executar o algoritmo várias vezes, seriam encontrados
-vários mínimos locais que representariam a incerteza. Mas como demonstrado em
-\cite{Martinez2011Topogra}, a topografia da função de erro em inversão sísmica
-possui grandes vales alongados de mínimo global. Com isso os métodos devem ser
-modificados para capturar essa característica e portanto, a simples execução
-múltipla não gera boa estimativa da incerteza.
-
-O trabalho de \cite{TompkinsScalabUnce2011} trata de inversão de dados
-eletromagnéticos, outro tipo de metodologia utilizada na indústria para
-imageamento de subsuperfície. Neste problema o modelo direto é mais complexo e
-não linear. Apesar de não utilizar dados sísmicos, a metodologia proposta tem
-objetivos pertinentes a inversão sísmica. A hipótese é que não é necessário
-amostrar exaustivamente a distribuição posterior para modelar a incerteza, e sim
-utilizar amostras representativas. A proposta utiliza redução dimensional
-com análise de componentes principais (PCA) sobre a matriz de covariância.
-Esta matriz, por sua vez, é calculada a partir de um conjunto de soluções ou
-aproximada utilizando informação do gradiente da função objetivo após a execução
-de um método de inversão não linear. Restrições \textit{a priori} são mapeadas
-para o espaço reduzido e a técnica de \cite{smolyak63quadrature} é utilizada para
-amostrar de forma determinística e hierárquica este espaço. Retornando ao espaço
-original, é utilizado um critério de rejeição para eliminar soluções acima de
-certa tolerância. Os passos de amostragem e rejeição são repetidos, refinando o
-\textit{grid} de Smolyak, até que haja convergência de estatísticas das amostras
-aceitas.
-
-Ao reduzir a dimensão do problema se perde resolução espacial das amostras a
-serem geradas, pois serão considerados somente parte dos primeiros autovetores,
-ordenados de forma decrescente em relação aos seus autovalores, da matriz de
-covariância. Ou seja, menores variabilidades são desconsideradas \citep[p.
-3]{jolliffe2002principal}. Essa perda é justificada por serem desprezíveis em
-certos casos e pela diminuição do custo computacional ao trabalhar no espaço
-reduzido. Além do custo de computar os autovetores e autovalores, são
-adicionados os custos de computar o grid de Smolyak e do mapeamento de
-restrições do espaço original ao espaço reduzido. Esses custos extras se tornam
-proibitivos quando a dimensão do problema cresce e não é mais possível reduzir a
-dimensão à centenas de variáveis. Com isso alternativas surgiram para tentar
-expandir o limite do tamanho do problema, em detrimento da resolução das
-amostras utilizando decomposição em valores singulares
-\citep{TompkinsScalabUnce2011} e utilizando outro esquema de amostragem
-determinística \citep{TompkinsCupature}. Apesar dos avanços não se sabe se é
-possível aplicar a metodologia aos problemas de larga escala ($>10^5$ variáveis)
-\citep{tompkins_comparisonBayes}.
+\section{Deep Learning}
 
 
-A metodologia de \cite{caers_distance_kernels_MDS} também utiliza redução
-dimensional, mas baseada em \textit{multi-dimensional scaling} (MDS). Técnica
-que visa preservar distâncias do espaço original no espaço reduzido.
-Característica que possibilita o uso de diferentes métricas para modelar
-distâncias entre modelos. Análise de agrupamento de dados (\textit{cluster
-analysis}) é utilizada para definir modelos equivalentes no espaço reduzido,
-selecionando somente poucos modelos para simulação de fluxo de petróleo. Esse
-fluxo de trabalho é possível pois os autores modelam a incerteza já com o
-objetivo de verificar sua influência na simulação de fluxo. Essa metodologia
-permite realizar análise de sensibilidade e integrar outras fontes de incerteza
-ao processo de inversão, como diferentes \textit{wavelets} ou parâmetros de
-continuidade espacial. Desta forma, é possível verificar os pontos que mais
-influenciam na incerteza do modelo final visualizando os modelos em um espaço
-reduzido e selecionando representativos via agrupamento de dados \citep[p.
-188]{caers2011modeling}.
+\section{Redes Neurais Convolucionais}
+Nesta seção serão apresentados os principais conceitos relacionados às redes
+neurais convolucionais, sua estrutura e as principais
+aplicações deste modelo de aprendizagem de máquina.
 
-\subsection{\textit{Global Stochastic Inversion}}
+As Redes Neurais Convolucionais (CNN), também chamadas de redes convolucionais,
+são um tipo de rede neural especializada em processamento de dados que possuem uma
+topologia conhecida e em forma de grade. Exemplos deste tipo de dado são as séries
+temporais, que podem ser vistas como uma grade em uma dimensão (1D) com amostras
+em intervalos de tempo regulares, e dados de imagem, que podem ser pensados como
+uma grade 2D de \textit{pixels}. Entretanto, as redes convolucionais não são restritas
+apenas ao processamento visual, elas têm sido empregadas com sucesso, por exemplo,
+em reconhecimento de voz e processamento de linguagem natural.
+Este modelo de rede é chamada convolucional, pois emprega a operação de convolução
+no lugar de multiplicação de matrizes, em pelo menos uma de suas camadas.
 
-\cite{2001amilcarDSS} propõe o uso de Simulação Sequencial Direta (SSD)
-utilizando dados de poços e seus variogramas para realizar amostragem sequencial
-da distribuição de probabilidades da impedância baseada na média e variância da
-Krigagem. O autor avança no sentido de amostrar da distribuição global sem
-precisar fazer transformações para variáveis Gaussianas. Inversão sísmica
-utilizando SSD, chamada de \textit{Global Stochastic Inversion} (GSI), é
-proposta em \cite{amilcarInversao}, onde a ideia de combinação presente em algoritmos
-genéticos é utilizada. Regiões locais de simulações estocásticas são combinadas
-afim de encontrar uma amostra global que maximize a correlação da sísmica
-sintética com a medida. Como o método utiliza SSD, a continuidade espacial é
-modelada em qualquer direção definida pelos variogramas.
-
-Pode ser utilizado qualquer tipo de Krigagem para a SSD, incluindo a co-Krigagem
-que utiliza uma variável secundária $Z_1$. Esta variável representa um
-atributo ou outra propriedade que possui correlação com a variável primária $Z_2$ a ser
-simulada, por exemplo, o resultado de um método determinístico. A SSD utilizando
-co-Krigagem é denominada co-SSD. A estimativa de co-Krigagem simples para a
-variável primária $Z_2$ é dada por \citep{2001amilcarDSS}:
-
-\begin{equation}
-[Z_{2}(x_{u})^{*}]_{CKS}=\sum_{\alpha=1}^N\lambda_{\alpha}z_{2}(x_{\alpha})+\lambda_{\beta}z_{1}(x_{u})^{*}
-\end{equation}
-onde $x_u$ são as coordenadas dos pontos onde se quer estimar e $x_a$ são as
-coordenadas dos pontos onde possuem dados amostrados ou que já foram simulados,
-$\lambda$ são os pesos calculados pela Krigagem \citep[p.
-169]{goovaerts1997geostatistics}. Para calcular os pesos da co-Krigagem é
-necessário definir uma correlação da variável primária com a secundária,
-informação retirada dos dados de poço ou informada por um especialista e que
-pode ser global, todos os pontos de $Z_1$ tem a mesma correlação com $Z_2$, ou
-local onde cada ponto possui sua correlação entre as variáveis primária e
-secundária. A variância da co-Krigagem simples é dada por:
-
-\begin{equation}
-\sigma^2_{CKS}(x_{u})=Var\{ Z_2(x_u)^* -Z_2(x_u)\}
-\end{equation}
-
-A variância e média da Krigagem são então utilizadas para amostrar a
-distribuição global $F_{Z_2}$ via transformação local Gaussiana como
-demonstrado na Figura \ref{fig:transfdss}.
-
-\begin{figure}[!htp]
-\begin{center}
-  \includegraphics[width=0.5\textwidth]{fig/transfdss}
-  \caption{Amostragem global via transformação local feita pela SSD
-  \citep{2001amilcarDSS}}
-  \label{fig:transfdss}
-\end{center}
-\end{figure}
-
-
-Com esta transformação o autor demonstra que é possível amostrar a distribuição
-global utilizando amostras de Gaussianas equivalentes a
-$G(y(x_u)^*,\sigma^2_{SK}(x_u))$, ou seja, centrada nas médias e com as
-variâncias locais da Krigagem. Esta abordagem se diferencia da
-\textit{Sequential Gaussian Simulation} (SGS) por não realizar a transformação
-da distribuição global para uma variável Gaussiana, o que pode acarretar
-problemas em certos casos \citep{2001amilcarDSS}.
-
-O processo de inversão GSI inicia-se sem imagem secundária, efetuando uma SSD
-somente utilizando os variogramas e dados de poço. As melhores regiões dos dados
-simulados são selecionadas baseado na correlação da sísmica sintética com a
-original. Uma imagem auxiliar é então criada com essas melhores regiões e
-utilizada como variável secundária na próxima iteração. Os passos da inversão
-GSI estão resumidos a seguir:
-
-\begin{enumerate}
-  \item Gerar um conjunto de inicial de imagens de impedância acústica
-  utilizando SSD
-  \item Calcular a sísmica sintética efetuando a convolução das refletividades,
-  calculadas a partir das impedâncias, com uma \textit{wavelet} conhecida
-  \item Avaliar o casamento das sísmicas sintéticas com a real utilizando
-  correlação local
-  \item Ordenar as impedâncias por melhor casamento de sua sísmica sintética e
-  selecionar delas os melhores traços de impedância. Com os melhores traços,
-  compor uma imagem auxiliar para o próximo passo
-  \item Gerar um novo conjunto de imagens utilizando co-SSD e retornar ao passo
-  2 até que um critério de convergência seja atingido
-\end{enumerate}
-
-
-
-Uma limitação dos métodos geoestatísticos é a necessidade de transformar o
-espaço físico para um espaço deposicional, ou seja, levar em consideração que ao
-longo do tempo a estrutura em que foram depositados os sedimentos foi deformada
-por falhas e dobramentos. No espaço físico são modelados os processos de
-propagação de ondas e fluxo, por exemplo. No espaço deposicional são modeladas
-as propriedades das rochas. Para contornar essa limitação é feita uma
-transformação onde são utilizados dados chamados de horizontes, criados pelo
-especialista para acompanhar as deformações sofridas pelas camadas utilizando
-uma superfície interpretada na sísmica. Desta forma assume-se que quando as
-camadas de sedimentos foram depositadas elas eram planas e os dados são
-transformados horizontalizando as superfícies \citep[p. 140]{caers2011modeling}.
-O processo é ilustrado na Figura \ref{fig:hor}. A transformação deve ser
-aplicada aos dados de poços e à variável secundária antes de modelar os
-variogramas e efetuar a SSD, e revertida para visualizar os resultados e
-calcular a sísmica sintética (Equações \ref{eq:refletDiscreta} e
-\ref{eq:sismDiscreta}). Esta transformação também é chamada de conversão para
-grade estratigráfica.
-
+A estrutura mais importante de uma CNN é a camada convolucional. Esta, é organizada
+de modo a fazer com que cada um dos seus neurônios esteja conectado a um 
+pequeno grupo de \textit{pixels} da camada de entrada (figura \ref{fig:cnn_arq}) e não a todos os \text{pixels}, como
+ocorre em redes neurais tradicionais. Cada neurônio da camada seguinte se conecta apenas a neurônios
+contidos em uma pequena região da camada anterior e assim sucessivamente, esta região que define
+o grupo de neurônios conectados ao neurônio da próxima camada é chamada \textbf{campo perceptivo}. Esta arquitetura permite o
+aprendizado de características de baixo nível na primeira camada e de características de mais alto nível
+nas camadas seguintes.
 
 \begin{figure}[htp]
 \begin{center}
-  \includegraphics[width=0.6\textwidth]{fig/horizontes}
-  \caption{Processo de horizontalização \citep[p. 143]{caers2011modeling}}
-  \label{fig:hor}
+  \includegraphics[width=0.8\textwidth]{fig/cnn_arq}
+  \caption{Camadas de uma CNN com campos receptivos retangulares.}
+  \label{fig:cnn_arq}
 \end{center}
 \end{figure}
 
-\section{Resumo}
+\subsection{Convolução}
+A operação de convolução é definida como a integral do produto de duas funções após uma delas sofrer um
+certo deslocamento. Considere um exemplo em que se deseja rastrear a localização de uma
+nave espacial com um sensor a lazer. O sensor disponibiliza uma saída $x(t)$ referente à posição da nave
+no tempo $t$. Ambos, $x$ e $t$, são valores reais, de modo que uma saída diferente pode ser obtida
+em qualquer instante de tempo. Considerando que o sensor possui um certo ruido, para realizar uma
+estimativa mais precisa da posição da nave é possível ponderar várias medidas de posição juntas.
+Como os valores medidos mais recentemente são mais relevantes, é possível utilizar uma função peso
+$w(a)$, onde $a$ é o tempo de medição, para fazer uma estimativa ponderada. Se esta média ponderada for aplicada a todos os instantes,
+a estimativa de posição da nave será suavizada:
 
-Neste capítulo foi revisado o estado da arte em inversão sísmica acústica
-com modelagem de incerteza. Pontos críticos dos métodos foram considerados e
-identificados para pesquisa futura. O próximo capítulo irá definir a proposta de
-pesquisa, apresentar o plano de trabalho e concluir com as perspectivas de
-contribuição.
+\begin{equation}
+ s(t) = \int{x(a) w(t-a)da}
+ \label{eq:1}
+\end{equation}
+
+A operação de convolução costuma ser denotada com um asterisco (Eq. \ref{eq:1}) e utilizada com o tempo
+discretizado, de modo que o tempo $t$ é assumido como valores inteiros:
+\begin{equation}
+ s(t) = (x * w)(t) = \sum{a=-\inf}{\inf}{x(a)w(t-a)}
+ \label{eq:1}
+\end{equation}
+
+No contexto das redes convolucionais, $x$ se refere ao conjunto de imagens de entrada, uma sequência multidimensional
+de dados, e $w$ é denominado \textit{kernel} ou filtros, uma sequência multidimensional de parâmetros 
+a serem otimizados pelo algoritmo de aprendizagem.
+Nos casos em que o problema compreende imagens $I$ e filtros $K$ utilizados em duas dimensões:
+
+\begin{equation}
+ S(i,j) = (I*K)(i,j) = \sum{m}\sum{n}{I(m,n)K(i-m,j-n)}
+\end{equation}
+
+\subsection{Filtros}
+Os pesos dos neurônios em uma camada convolucional podem ser representados como uma pequena
+imagem do tamanho do campo receptor. Estes filtros (pesos) são os elementos
+convolvidas com a imagem de entrada para obter o resultado da camada convolucional.
+A figura \ref{fig:conv_filt} ilustra dois conjuntos de pesos possíveis. O primeiro é um quadrado preto
+(\textit{pixel} de valor 0) contendo uma coluna central branca (\textit{pixels} com valor 1). 
+Analogamente, o segundo filtro é um quadrado preto contendo uma linha central branca.
+É possível notar na imagem da esquerda que as linhas verticais brancas se tornaram mais evidentes enquanto o restante
+se tornou mais borrado. De modo análogo, na imagem da direita, a convolução com o filtro horizontal evidenciou as linhas brancas horizontais, enquanto que
+o restante ficou borrado. Assim, ao convolver uma entrada com o mesmo conjunto de filtros da camada convolucional, se obtém
+o mapa de características (feature map).
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{fig/conv_filt}
+  \caption{Aplicação de dois filtros diferentes para obter mapas de características.}
+  \label{fig:conv_filt}
+\end{center}
+\end{figure}
+
+O exemplo anterior apresenta a convolução de uma imagem com dois filtros possíveis, em uma representação 2D.
+Entretanto, em situações reais a camada convolucional possui muitos mapas de características, resultando
+em uma representação em 3D como ilustrado na figura \ref{fig:featmaps}. O mapa de características de uma camada convolucional
+é o resultado da convolução de uma das imagens de entrada com os diversos filtros específicos desta camada,
+os quais são iniciados, na maior parte dos casos, aleatoriamente. Na figura estão ilustrados os mapas para a convolução
+com apenas uma imagem, de modo que é possível imaginar que à medida que o número de imagens aumenta, a
+estrutura ilustrada se replica horizontalmente. 
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{fig/feat_maps}
+  \caption{Camadas convolucionais com múltiplos mapas de características e imagens com três canais.}
+  \label{fig:featmaps}
+\end{center}
+\end{figure}
+
+As redes convolucionais se sustentam sobre três pilares: interações esparsas, compartilhamentos
+de parâmetros e representações equivalentes. 
+As interações esparsas, também chamadas de conectividade esparsa ou pesos esparsos,
+ocorre quando os filtros possuem  dimensão menor que a entrada, ou seja a
+dimensão do campo receptivo é menor que a dimensão das imagens de entrada.
+De um ponto de vista prático,
+a imagem de entrada pode ter milhares de \textit{pixels}, entretanto, é 
+possível detectar apenas pequenas regiões com características de maior relevância
+com filtros que compreendam apenas algumas dezenas ou centenas de \textit{pixels} na imagem.
+Por exemplo, é possível identificar características de uma face humana na identificação de pessoas, ou estruturas com
+significado geológico em um estudo geofísico. Como consequência,
+menos parâmetros são armazenados e há um ganho na eficiência estatística do
+modelo. As figuras \ref{fig:full} e \ref{fig:sparse} ilustram
+os modelos de sem conectividade esparsa e com conectividade esparsa, respectivamente.
+É possível notar que na conectividade tradicional (figura \ref{fig:full}) todos os elementos da camada inferior
+afetam o elemento em destaque $s_3$ da camada seguinte, enquanto que na conectividade esparsa (figura \ref{fig:sparse}) apenas
+três elementos afetam o elemento em destaque. O número de elementos que afetam o elemento em destaque na
+conectividade esparsa é definido pelo tamanho do filtro utilizado na convolução.
+
+\begin{figure}[htp]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{fig/full}
+  \caption{Conectividade tradicional.}
+  \label{fig:full}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{fig/sparse}
+  \caption{Conectividade esparsa.}
+  \label{fig:sparse}
+\end{subfigure}
+\end{figure}
+
+O \textbf{compartilhamento de parâmetros}, também chamado de \textbf{pesos amarrados} 
+em uma rede convolucional, se refere ao uso do mesmo parâmetro para mais de uma função no modelo.
+Nas redes neurais tradicionais, cada elemento da matriz de pesos é usado apenas uma vez quando a
+saída da camada é calculada, pois é multiplicado por apenas um elemento da entrada. No compartilhamento
+de pesos, o valor do peso aplicado a uma entrada está relacionado ao valor de um peso aplicado em
+algum outro local. Assim, cada elemento do filtro é usado em toda posição da entrada,
+de modo que, ao invés de aprender um conjunto separado de parâmetros para toda localização da imagem, apenas
+um conjunto é aprendido. Isto faz com que a convolução seja mais eficiente que a multiplicação de matriz
+do ponto de vista de requisitos de memória e eficiência estatística.
+
+
+\subsection{Pooling}
+Uma camada em uma rede convolucional consiste de três estágios. No primeiro estágio,
+a camada realiza diversas convoluções para produzir um conjunto de ativações lineares.
+O segundo estágio é chamado etapa de detecção, na qual cada ativação é submetida a uma
+função não-linear. A terceira etapa é chamada de \textit{pooling}, responsável por
+modificar a saída para o resumo estatístico das saídas em uma determinada vizinhança. A operação de
+\textit{pooling} permite tornar invariante pequenas translações no conjunto de entrada,
+ou seja, ainda que haja pequenas translações na entrada, os valores da maioria das saídas após a
+o \textit{pooling} permanecem iguais. A figura \ref{fig:pool} ilustra o funcionamento da função de \textit{pooling}.
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{fig/pool}
+  \caption{Operação de \textit{pooling} com região de tamanho 3. Nesta operação é selecionado o máximo valor de ativação da etapa de detecção.}
+  \label{fig:pool}
+\end{center}
+\end{figure}
+
+A operação de \textit{pooling} permite lidar com entradas de tamanho variável.
+Classificar imagens de tamanhos diferentes, por exemplo, pode ser realizado
+variando o tamanho entre as regiões de \textit{pooling} de modo que a camada de 
+de classificação sempre receba o mesmo número de sumários estatísticos
+independente do tamanho da imagem.
+
+
+
+
 
 
 
