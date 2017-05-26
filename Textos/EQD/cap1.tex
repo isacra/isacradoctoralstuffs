@@ -10,8 +10,7 @@ A modelagem direta, portanto, inicia com um modelo, sobre o qual um experimento 
 é simulado matematicamente. Se o modelo estiver correto, a resposta
 obtida deve parecer com dados reais. O processo de inversão faz exatamente o contrário,
 consiste em utilizar as medidas efetuadas para inferir os valores de parâmetros que
-caracterizam o sistema \citep{tarantola} e muitas vezes se caracteriza
-por ser não determinístico.
+caracterizam o sistema \citep{tarantola}.
 
 Para entender o problema inverso é conveniente explicar o problema direto antes.
 Considere o seguinte exemplo: suponha que uma pedra é lançada em um poço de água.
@@ -22,7 +21,7 @@ ocorre a existência de uma relação causa-efeito para este evento dada por:
 \label{eq:forw}
 T = \sqrt{\frac{1}{5}H} + \frac{1}{340}H
 \end{equation}
-Na qual $H$ é a causa e $T$ é o efeito.
+onde a profundidade $H$ é a causa e tempo $T$ é o efeito.
 Neste caso, o problema direto é calcular o tempo $T$ para uma dada profundidade $H$.
 A solução pode ser determinada inserindo um valor pra $H$ em \ref{eq:forw} e calcular o
 valor de $T$. O problema inverso é uma abordagem mais difícil, pois se deseja
@@ -30,24 +29,25 @@ saber a profundidade $H$, dado apenas o tempo $T$.
 
 No exemplo citado, tanto o problema direto quanto o inverso possuem solução. Entretanto,
 a maioria dos problemas inversos recai sobre duas características
-comuns. Primeiro, a não unicidade de solução (não-determinístico), ou seja, o mesmo conjunto de medidas
-observáveis pode resultar de mais de uma configuração do coração doente. Segundo,
+comuns. Primeiro, a não unicidade de solução (problema não-determinístico), ou seja, o mesmo conjunto de medidas
+observáveis pode resultar de mais de uma configuração de parâmetros. Segundo,
 a natureza mal-posta do problema inverso, isto é, uma pequena mudança arbitrária nos
-valores observados pode causar uma mudança grande da solução fonte equivalente
+valores observados pode causar uma mudança grande da solução fonte equivalente.
 
-Por conta da sua característica mal-posta, já mencionada anteriormente, o problema inverso
+Por conta da sua característica mal-posta, o problema inverso
 possui muitas soluções possíveis, de modo que representaria um equívoco considerar apenas
-uma solução como a mais correta. Via de regra, ao final do processo de inversão é
-se realiza um processo de amostragem dentro do conjunto das possíveis soluções a fim
+uma solução como a mais correta. Via de regra, ao final do processo de inversão é comum
+realizar um processo de amostragem dentro do conjunto das possíveis soluções a fim
 de obter um estudo sobre elas. Este estudo pode ser, por exemplo, uma análise de 
 incerteza em todo da média das soluções do problema inverso.
 
-O problema inverso possui um papel extremamente importante em diferentes áreas do conhecimento.
-Matemática, medicina e física. Na Geoestatística,...
-
-
-No campo da geoestatística o processo de inversão tem um papel importante na caracterização
-de reservatórios. Por caracterização de reservatório se entende o processo de modelar....
+O problema inverso possui um papel extremamente importante em diferentes áreas do conhecimento,
+como matemática, medicina, física e Geoestatística. Geoestatística é a aplicação de métodos
+estatísticos nas ciências da terra. Esta é a ciência que trata, por exemplo, da modelagem
+e caracterização de reservatórios, cujo tema é de amplo interesse para a indústria de óleo
+e gás. Por caracterização de reservatório se entende o processo para obter um modelo de propriedades
+petrofísicas (por exemplo, tipos de contato entre rochas, porosidade e permeabilidade),
+em 3-D e alta resolução, que seja consistente com os dados de que se dispõe.
 O processo de caracterização de reservatórios possui diferentes
 etapas. Estas etapas podem ser descritas em alto nível como na
 abordagem sequencial a seguir:
@@ -65,27 +65,21 @@ abordagem sequencial a seguir:
  \item Os modelos são usados como entrada em um simulador ou visualizados e usados como suporte na tomada de decisão\label{itm:6}.
 \end{enumerate}
 
-Embora a abordagem anterior apresente alguns elementos que, à primeira vista, pareçam estranhos, sua apresentação 
-serve para ressaltar que o processo de inversão no domínio do estudo geoestatístico, abordado neste
-trabalho, é realizado na etapa \ref{itm:3} e o problema abordado neste trabalho 
-Assim, a etapa de inversão sísmica na modelagem de reservatórios disponibiliza artefatos que
-são propriedades de rocha (propriedades petrofísicas) a partir, principalmente, mas não exclusivamente,
-de dados sísmicos e modelos construídos com dados amostrais.
+Embora a abordagem anterior utilize alguns termos que, à primeira vista, pareçam incompreensíveis, sua apresentação 
+serve para contextualizar que o processo de inversão no domínio da modelagem de reservatório,
+é realizado na etapa \ref{itm:3}. Porque os dados medidos são obtidos por sísmica de reflexão,
+este modelo de inversão é chamado de inversão sísmica. A inversão sísmica na
+modelagem de reservatórios disponibiliza artefatos que são modelos de propriedades de rocha
+(propriedades petrofísicas) a partir, principalmente, mas não exclusivamente,
+da sísmica disponível e de modelos construídos com dados amostrais. Tais artefatos
+são visualizados na forma de imagens, de modo que é possível supor que quanto maior
+o nível de resolução destas imagens, mais contundente será a justificativa para a tomada de decisão (\ref{itm:6}).
 
-Como mencionado no último item (\ref{itm:6}), a inversão sísmica na modelagem de reservatórios disponibilza
-artefatos que serão utilizados na tomada de decisão. Estes artefatos são visualizados na forma de imagens
-e, é possível supor que quanto maior o nível de resolução destas imagens de propriedades petrofísicas,
-mais contundente será a justificativa para a tomada de decisão.
-
-Este trabalho aborda um problema no domínio da inversão sísmica,
-no processo de modelagem de reservatório, por meio de soluções baseadas em técnicas de \textit{Deep Learning}.
-Um modelo de baseado em \textit{Deep Learning} será incorporado á última etapa do processo de inversão sísmica,
-afim de garantir 
-Este conceitos serão definidos e detalhados nos Capítulos posteriores.
-
-Assim, este documento propõe a incorporação de
-A incorporação deste processo objetiva um ganho de resolução ....
-
+Este trabalho aborda busca exatamente atacar a problemática da super-resolução dos artefatos da inversão sísmica,
+por meio de soluções baseadas na técnica de \textit{Redes Neurais Convolucionais}.
+A abordagem se dá por meio da incorporação deste modelo de rede neural á última
+etapa do processo de inversão sísmica, as realizações, para alcaçar um maior nível de
+resolução das imagens de proriedades petrofísicas obtidas por meio de inversão sísmica.
 
 \section{Objetivo}
 
@@ -103,11 +97,14 @@ orientação do Prof. Dor. Jef Karel Caers.
 \section{Organização do Texto}
 
 Este documento está organizado da seguinte forma. Após esta breve introdução, o
-Capítulo \ref{cap:2modelosSuperresolucao} apresenta o estado da arte em modelos de
-inversão sísmica. O Capítulo \ref{cap:2modelosSuperresolucao} apresenta o estado da arte 
+Capítulo %\ref{cap:2modelosSuperresolucao}
+apresenta o estado da arte em modelos de
+inversão sísmica. O Capítulo %\ref{cap:2modelosSuperresolucao}
+apresenta o estado da arte 
 em geração de imagens em super-resolução a partir de imagens de baixa resolução.
 O Capítulo trata dos métodos de simulação geoestatística multiponto. O
-Capítulo \ref{cap:3modeloHibrido} trata da proposta do projeto e resultados
+Capítulo %\ref{cap:3modeloHibrido} 
+trata da proposta do projeto e resultados
 preliminares referente ao modelo de super-resolução treinado e aplicado às imagens
 de impedância pós-inversão. Após o retorno ao Brasil, estão planejados mais 8 meses
 de trabalho para finalizar a escrita da tese e defesa.

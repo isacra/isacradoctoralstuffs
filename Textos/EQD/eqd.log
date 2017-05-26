@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  25 MAY 2017 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.5)  26 MAY 2017 01:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -894,11 +894,7 @@ File: pppdftex.def 2015/09/18 v0.5d Pdfpages driver for pdfTeX (AM)
 )
 \symlettersA=\mathgroup6
  (./eqd.aux
-(./cap1.aux) (./cap2.aux
-
-LaTeX Warning: Label `eq:1' multiply defined.
-
-))
+(./cap1.aux) (./cap2.aux))
 \openout1 = `eqd.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
@@ -1091,22 +1087,22 @@ Package hyperref Info: bookmark on input line 1:
 (hyperref)             type {toc}.
 Package hyperref Info: Reference (cite) `cite.tarantola' on input line 13.
 Package hyperref Info: Reference (cite) `cite.tarantola' on input line 13.
-Package hyperref Info: Anchor `equation.1.0.1' on input line 21.
-Package hyperref Info: Anchor `equation.1.0.1' on input line 21.
-Package hyperref Info: Anchor `equation.1.0.1' on input line 21.
-Package hyperref Info: Anchor `equation.1.0.1' on input line 21.
-Package hyperref Info: Reference (link) `equation.1.0.1' on input line 27.
+Package hyperref Info: Anchor `equation.1.0.1' on input line 20.
+Package hyperref Info: Anchor `equation.1.0.1' on input line 20.
+Package hyperref Info: Anchor `equation.1.0.1' on input line 20.
+Package hyperref Info: Anchor `equation.1.0.1' on input line 20.
+Package hyperref Info: Reference (link) `equation.1.0.1' on input line 26.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 37.
-Package hyperref Info: Anchor `page.1' on input line 37.
+(babel)             in language  on input line 36.
+Package hyperref Info: Anchor `page.1' on input line 36.
 [1
 
 
 Package `hyperref' Info: End of reference (cite) `cite.tarantola', line 13.
 Package `hyperref' Info: End of reference (cite) `cite.tarantola', line 13.
-Package `hyperref' Info: End of reference (link) `equation.1.0.1', line 27.
+Package `hyperref' Info: End of reference (link) `equation.1.0.1', line 26.
 ]
 Package hyperref Info: Anchor `Item.1' on input line 55.
 Package hyperref Info: Anchor `Item.2' on input line 58.
@@ -1114,47 +1110,34 @@ Package hyperref Info: Anchor `Item.3' on input line 59.
 Package hyperref Info: Anchor `Item.4' on input line 61.
 Package hyperref Info: Anchor `Item.5' on input line 62.
 Package hyperref Info: Anchor `Item.6' on input line 65.
-Package hyperref Info: Reference (link) `Item.3' on input line 70.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 74.
+(babel)             in language  on input line 66.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 74.
-Package hyperref Info: Anchor `page.2' on input line 74.
+(babel)             in language  on input line 66.
+Package hyperref Info: Anchor `page.2' on input line 66.
  [2]
-Package hyperref Info: Reference (link) `Item.6' on input line 75.
-Package hyperref Info: Anchor `section.1.1' on input line 90.
+Package hyperref Info: Reference (link) `Item.3' on input line 70.
+Package hyperref Info: Reference (link) `Item.6' on input line 76.
+Package hyperref Info: Anchor `section.1.1' on input line 84.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 90.
-Package hyperref Info: bookmark on input line 90:
+(babel)             in language  on input line 84.
+Package hyperref Info: bookmark on input line 84:
 (hyperref)             thecounter {1.1}
 (hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
  {\csname thesection\endcsname }\fi Objetivo}
 (hyperref)             reference {section.1.1}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-Package hyperref Info: Anchor `section.1.2' on input line 103.
+Package hyperref Info: Anchor `section.1.2' on input line 97.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 103.
-Package hyperref Info: bookmark on input line 103:
+(babel)             in language  on input line 97.
+Package hyperref Info: bookmark on input line 97:
 (hyperref)             thecounter {1.2}
 (hyperref)             text {\ifnum 1>\c@secnumdepth \else \protect \numberline
  {\csname thesection\endcsname }\fi Organização do Texto}
 (hyperref)             reference {section.1.2}
 (hyperref)             toclevel {1}
 (hyperref)             type {toc}.
-
-
-LaTeX Warning: Reference `cap:2modelosSuperresolucao' on page 3 undefined on in
-put line 106.
-
-
-LaTeX Warning: Reference `cap:2modelosSuperresolucao' on page 3 undefined on in
-put line 107.
-
-
-LaTeX Warning: Reference `cap:3modeloHibrido' on page 3 undefined on input line
- 110.
-
 )
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 130.
@@ -1163,7 +1146,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package hyperref Info: Anchor `page.3' on input line 130.
  [3
 Package `hyperref' Info: End of reference (link) `Item.3', line 70.
-Package `hyperref' Info: End of reference (link) `Item.6', line 75.
+Package `hyperref' Info: End of reference (link) `Item.6', line 76.
 ]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 130.
@@ -1571,20 +1554,13 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
 Package rerunfilecheck Info: File `eqd.out' has not changed.
 (rerunfilecheck)             Checksum: 6449701DB17691615806033E2A8314D2;789.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
  ) 
 Here is how much of TeX's memory you used:
- 10676 strings out of 493029
- 154201 string characters out of 6136235
- 260160 words of memory out of 5000000
- 13873 multiletter control sequences out of 15000+600000
+ 10675 strings out of 493029
+ 154159 string characters out of 6136235
+ 260164 words of memory out of 5000000
+ 13872 multiletter control sequences out of 15000+600000
  52893 words of font info for 47 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  42i,8n,45p,391b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1599,7 +1575,7 @@ s/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb><
 ublic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmtt12.pfb>
-Output written on eqd.pdf (19 pages, 1034757 bytes).
+Output written on eqd.pdf (19 pages, 1035611 bytes).
 PDF statistics:
  294 PDF objects out of 1000 (max. 8388607)
  243 compressed objects within 3 object streams

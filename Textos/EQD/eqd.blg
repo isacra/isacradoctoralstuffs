@@ -6,7 +6,7 @@ A level-1 auxiliary file: cap2.aux
 The style file: my-agsm.bst
 Database file #1: bib/bibliografia.bib
 Warning--entry type for "figsismica" isn't style-file defined
---line 985 of file bib/bibliografia.bib
+--line 1007 of file bib/bibliografia.bib
 You can't pop an empty literal stack for entry Bosch2010
 while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
