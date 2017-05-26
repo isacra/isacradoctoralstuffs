@@ -6,10 +6,14 @@ A level-1 auxiliary file: cap2.aux
 The style file: my-agsm.bst
 Database file #1: bib/bibliografia.bib
 Warning--entry type for "figsismica" isn't style-file defined
---line 1007 of file bib/bibliografia.bib
+--line 1037 of file bib/bibliografia.bib
+You can't pop an empty literal stack for entry Goodfellow2016
+while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
 while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
+while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry Goodfellow2016
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
 while executing---line 1350 of file my-agsm.bst
@@ -19,7 +23,17 @@ ptr=1, stack=
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
+---the literal stack isn't empty for entry Buduma15
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
 ---the literal stack isn't empty for entry figsismica
+while executing---line 1350 of file my-agsm.bst
+You can't pop an empty literal stack for entry Goodfellow2016
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Goodfellow2016
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
@@ -37,45 +51,45 @@ ptr=1, stack=
 
 ---the literal stack isn't empty for entry tarantola
 while executing---line 1350 of file my-agsm.bst
-You've used 6 entries,
+You've used 8 entries,
             2912 wiz_defined-function locations,
-            682 strings with 5869 characters,
-and the built_in function-call counts, 26707 in all, are:
-= -- 4393
-> -- 306
+            696 strings with 6099 characters,
+and the built_in function-call counts, 34043 in all, are:
+= -- 5584
+> -- 403
 < -- 0
-+ -- 2101
-- -- 91
-* -- 2300
-:= -- 5353
-add.period$ -- 6
-call.type$ -- 6
-change.case$ -- 82
-chr.to.int$ -- 6
-cite$ -- 6
-duplicate$ -- 88
-empty$ -- 194
-format.name$ -- 106
-if$ -- 4796
++ -- 2667
+- -- 119
+* -- 2911
+:= -- 6854
+add.period$ -- 9
+call.type$ -- 8
+change.case$ -- 108
+chr.to.int$ -- 8
+cite$ -- 8
+duplicate$ -- 120
+empty$ -- 252
+format.name$ -- 136
+if$ -- 6113
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 7
-newline$ -- 21
-num.names$ -- 62
-pop$ -- 32
+missing$ -- 11
+newline$ -- 28
+num.names$ -- 83
+pop$ -- 46
 preamble$ -- 1
-purify$ -- 90
+purify$ -- 120
 quote$ -- 0
-skip$ -- 65
+skip$ -- 83
 stack$ -- 0
-substring$ -- 6269
-swap$ -- 9
-text.length$ -- 84
+substring$ -- 7940
+swap$ -- 11
+text.length$ -- 112
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
+type$ -- 24
 warning$ -- 0
-while$ -- 129
+while$ -- 171
 width$ -- 0
-write$ -- 79
-(There were 9 error messages)
+write$ -- 108
+(There were 14 error messages)

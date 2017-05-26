@@ -21,28 +21,32 @@ ocorre a existência de uma relação causa-efeito para este evento dada por:
 \label{eq:forw}
 T = \sqrt{\frac{1}{5}H} + \frac{1}{340}H
 \end{equation}
-onde a profundidade $H$ é a causa e tempo $T$ é o efeito.
+onde a profundidade $H$ é a causa e o tempo $T$ é o efeito.
 Neste caso, o problema direto é calcular o tempo $T$ para uma dada profundidade $H$.
 A solução pode ser determinada inserindo um valor pra $H$ em \ref{eq:forw} e calcular o
 valor de $T$. O problema inverso é uma abordagem mais difícil, pois se deseja
 saber a profundidade $H$, dado apenas o tempo $T$.
 
-No exemplo citado, tanto o problema direto quanto o inverso possuem solução. Entretanto,
+No exemplo citado, tanto o problema direto quanto o inverso possui solução. Entretanto,
 a maioria dos problemas inversos recai sobre duas características
-comuns. Primeiro, a não unicidade de solução (problema não-determinístico), ou seja, o mesmo conjunto de medidas
-observáveis pode resultar de mais de uma configuração de parâmetros. Segundo,
-a natureza mal-posta do problema inverso, isto é, uma pequena mudança arbitrária nos
-valores observados pode causar uma mudança grande da solução fonte equivalente.
+comuns que tornam sua solução não-trivial. Primeiro, a não unicidade de solução
+(problema não-determinístico), de modo que o mesmo conjunto de medidas
+observáveis pode resultar de mais de uma configuração de parâmetros. No exemplo
+citado, seria como obter a mesma altura $H$ para diferentes tempos
+de queda da pedra $T$. Segundo, a natureza mal-posta do problema inverso, isto é,
+uma pequena mudança arbitrária nos valores observados pode causar uma mudança grande
+da solução fonte equivalente. Em um paralelo com o exemplo do poço, seria como
+obter uma grande variação na profundidade, dado uma pequena variação no valor do tempo de queda.
 
 Por conta da sua característica mal-posta, o problema inverso
 possui muitas soluções possíveis, de modo que representaria um equívoco considerar apenas
 uma solução como a mais correta. Via de regra, ao final do processo de inversão é comum
 realizar um processo de amostragem dentro do conjunto das possíveis soluções a fim
 de obter um estudo sobre elas. Este estudo pode ser, por exemplo, uma análise de 
-incerteza em todo da média das soluções do problema inverso.
+incerteza em todo da média de um conjunto de soluções do problema inverso.
 
-O problema inverso possui um papel extremamente importante em diferentes áreas do conhecimento,
-como matemática, medicina, física e Geoestatística. Geoestatística é a aplicação de métodos
+O problema inverso possui um papel extremamente importante em diferentes áreas do conhecimento
+como Matemática, Medicina, Física e Geoestatística. Geoestatística é a aplicação de métodos
 estatísticos nas ciências da terra. Esta é a ciência que trata, por exemplo, da modelagem
 e caracterização de reservatórios, cujo tema é de amplo interesse para a indústria de óleo
 e gás. Por caracterização de reservatório se entende o processo para obter um modelo de propriedades
@@ -52,11 +56,11 @@ O processo de caracterização de reservatórios possui diferentes
 etapas. Estas etapas podem ser descritas em alto nível como na
 abordagem sequencial a seguir:
 \begin{enumerate}
- \item A primeira etapa envolve da geometria e estratigrafia dos intervalos do reservatório
+ \item A primeira etapa envolve definição da geometria e estratigrafia dos intervalos do reservatório
  a ser modelado. Ainda, o desenvolvimento de um modelo conceitual de continuidade para
  propriedades como fácies, porosidade e permeabilidade \label{itm:1}.
- \item Os tipos de contato (interfaces / \textit{facies}) entre rochas são modelados\label{itm:2}.
- \item A propriedade porosidade é modelada com base nos tipos de facies, antes da permeabilidade.
+ \item Modelagem dos tipos de contato (interfaces / \textit{facies}) entre rochas\label{itm:2}.
+ \item Modelagem da propriedade porosidade com base nos tipos de facies, antes da permeabilidade.
  Isto é possível devido à disponibilidade de dados sísmicos e dados amostrais localizados, também chamados de poços\label{itm:3}.
  \item Os modelos 3-D para permeabilidade são atrelados à porosidade e facies anteriormente estabelecidos\label{itm:4}.
  \item Múltiplas realizações igualmente prováveis são realizadas por repetição de todo o processo. Embora todas as
@@ -65,26 +69,82 @@ abordagem sequencial a seguir:
  \item Os modelos são usados como entrada em um simulador ou visualizados e usados como suporte na tomada de decisão\label{itm:6}.
 \end{enumerate}
 
-Embora a abordagem anterior utilize alguns termos que, à primeira vista, pareçam incompreensíveis, sua apresentação 
-serve para contextualizar que o processo de inversão no domínio da modelagem de reservatório,
-é realizado na etapa \ref{itm:3}. Porque os dados medidos são obtidos por sísmica de reflexão,
+Embora a abordagem anterior utilize alguns termos que, à primeira vista, pareçam incompreensíveis,
+sua apresentação contextualiza em qual ponto do processo de modelagem de
+reservatório, o processo de inversão acontece (etapa \ref{itm:3}).
+Porque os dados medidos são obtidos por sísmica de reflexão,
 este modelo de inversão é chamado de inversão sísmica. A inversão sísmica na
 modelagem de reservatórios disponibiliza artefatos que são modelos de propriedades de rocha
 (propriedades petrofísicas) a partir, principalmente, mas não exclusivamente,
 da sísmica disponível e de modelos construídos com dados amostrais. Tais artefatos
 são visualizados na forma de imagens, de modo que é possível supor que quanto maior
-o nível de resolução destas imagens, mais contundente será a justificativa para a tomada de decisão (\ref{itm:6}).
+o nível de resolução destas imagens, mais contundente será a justificativa para a tomada de decisão
+(etapa \ref{itm:6}).
 
-Este trabalho aborda busca exatamente atacar a problemática da super-resolução dos artefatos da inversão sísmica,
-por meio de soluções baseadas na técnica de \textit{Redes Neurais Convolucionais}.
-A abordagem se dá por meio da incorporação deste modelo de rede neural á última
-etapa do processo de inversão sísmica, as realizações, para alcaçar um maior nível de
-resolução das imagens de proriedades petrofísicas obtidas por meio de inversão sísmica.
+Atualmente, em Aprendizagem de Máquina, \textit{Deep Learning} é o tema em
+maior evidência. \textit{Deep Learning} é toda solução que permite aos
+computadores aprender a partir da experiência e entender o mundo em
+termos de hierarquia de conceitos, com cada conceito definido em termos
+do seu relacionamento com conceitos mais simples \cite{Goodfellow2016}.
+Assim, o aprendizado por experiência evita a necessidade de interferência
+humana para especificar formalmente o conhecimento que o computado necessita,
+e a hierarquia de conceitos permite aos computadores aprenderem
+conceitos complicados a partir de conceitos mais simples.
+
+Muitos algoritmos são desenvolvidos e representam
+o estado da arte em diferentes áreas como processamento de imagens, 
+sinais e linguagem natural, e reconhecimento de padrões. No campo de
+processamento de imagens o método de \textit{Deep Learning} de
+maior destaque nos dias atuais é conhecido
+como Redes Neurais Convolucionais (CNN). O surgimento das redes neurais convolucionais
+data da década de 1980, com aplicação essencialmente no reconhecimento de imagens.
+Entretanto, com o advento das Unidades Gráficas de Processamento (GPU) e a maior
+disponibilidade de dados para treinamento, as redes convolucionais
+são empregadas com sucesso em serviços de busca de imagens, carros auto-dirigíveis,
+sistemas de classificação de imagens em video, entre outras aplicações complexas \cite[p. 50]{Buduma15}.
+
+O processo de super-resolução é uma forma de processamento de imagens e visão computacional.
+A super-resolução de imagens consiste em recuperar uma imagem de alta resolução a partir de uma imagem
+de baixa resolução. Semelhante ao problema da inversão sísmica, o problema da super-resolução
+também é mal-posto, uma vez que pode haver múltiplas soluções em alta resolução para uma dada imagem em baixa
+resolução. Em ambos os problemas, uma forma de lidar com esta questão é restringir o espaço
+de soluções com informações \textit{a-priori}. 
+Considere $Y$ uma imagem de baixa resolução, por exemplo, uma
+imagem interpolada. O objetivo da super-resolução é
+recuperar a partir de $Y$ uma imagem $F(Y)$ que é
+o mais similar possível a uma imagem de alta resolução $X$
+considerada como imagem que representa a verdade. De um ponto de vista conceitual, o mapeamento $F$ consiste essencialmente em
+realizar três operações:
+
+\begin{enumerate}
+ \item Extração de mapas de características da imagem de baixa resolução $Y$. Um mapa de características
+ pode ser imaginado como um conjunto de sub-imagens com determinadas características da imagem.
+ \item Mapeamento não-linear do mapa de características. Após a operação não-linear, cada característica mapeada
+ passa a ter uma representação em alta resolução.
+ \item Reconstrução da imagem a partir das representações de alta resolução citadas. Esta nova imagem
+ deve ser similar à imagem que representa a verdade $X$.
+\end{enumerate}
+
+Um modelo de rede neural convolucional pode ser capaz de realizar as etapas listadas anteriormente,
+de forma iterativa e para um conjunto de diferentes imagens. 
+...FALTA COISA AQUI...
+Esta abordagem pode ser incorporada ao final do processo de inversão, de modo que as
+imagens obtidas da inversão sísmica sejam pós-processadas pelo modelo convolucional
+para obter imagens com maior riqueza de detalhes. Como mencionado, o ganho de resolução
+nas imagens de propriedades petrofísicas pós-inversão pode conferir maior confiabilidade
+na interpretação da solução inversa e, consequentemente na tomada de decisão.
+
+A seção seguinte apresenta os objetivos deste trabalho. Nos capítulos posteriores
+serão apresentados os aspectos físicos e de implementação. Serão
+apresentados também os resultados preliminares da pesquisa.
 
 \section{Objetivo}
 
-O objetivo do presente trabalho consiste em propor um modelo fluxo de trabalho
-para integração de um modelo para obter imagens de inversão sísmica em hiper-resolução.
+Este trabalho busca atacar a problemática da super-resolução dos artefatos da inversão sísmica,
+por meio de um modelo de \textit{Redes Neurais Convolucionais}.
+A abordagem se dá através da incorporação deste modelo de rede neural á última
+etapa do processo de inversão sísmica, as realizações, para alcançar um maior nível de
+resolução das imagens de propriedades petrofísicas, obtidas por meio de inversão sísmica.
 Resultados prévios indicam que o modelo baseado em redes neurais convolucionais é capaz
 de agregar informações de alta frequência às inversões acústicas.
 

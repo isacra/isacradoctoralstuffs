@@ -6,9 +6,18 @@ Bosch, M.; Mukerji, T. e Gonzalez, E.~F.  \harvardyearleft
   statistical rock physics and geostatistics: A review, { Geophysics} {\bf
   75}(5),~75A165--75A176.
 
+\harvarditem{Buduma}{2015}{Buduma15}
+Buduma, N.  \harvardyearleft 2015\harvardyearright , { Fundamentals of Deep
+  Learning}, Academic Press, O'Reilly Media.
+
 \harvarditem{FishSAFE}{2014}{figsismica}
 FishSAFE  \harvardyearleft 2014\harvardyearright , Seismic surveys,
   \url{http://fishsafe.eu/en/offshore-structures/seismic-surveys.aspx}.
+
+\harvarditem[]{Goodfellow; Bengio e Courville}{2016}{Goodfellow2016}
+Goodfellow, I.; Bengio, Y. e Courville, A.  \harvardyearleft
+  2016\harvardyearright , { Deep Learning}, MIT Press.
+\newblock \url{http://www.deeplearningbook.org}.
 
 \harvarditem[Passos~de Figueiredo et~al.]{Passos~de Figueiredo; Santos;
   Roisenberg; Schwedersky~Neto e Figueiredo}{2014}{Figueiredo2014}

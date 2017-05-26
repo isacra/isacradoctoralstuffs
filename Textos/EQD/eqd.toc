@@ -1,13 +1,13 @@
 \select@language {brazil}
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Objetivo}{3}{section.1.1}
-\contentsline {section}{\numberline {1.2}Organiza\IeC {\c c}\IeC {\~a}o do Texto}{3}{section.1.2}
-\contentsline {chapter}{\numberline {2}Fundamenta Te\IeC {\'o}rica}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}Problema Inverso}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Invers\IeC {\~a}o S\IeC {\'\i }smica}{6}{section.2.2}
-\contentsline {section}{\numberline {2.3}Deep Learning}{8}{section.2.3}
-\contentsline {section}{\numberline {2.4}Redes Neurais Convolucionais}{8}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Convolu\IeC {\c c}\IeC {\~a}o}{9}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Filtros}{10}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Pooling}{13}{subsection.2.4.3}
-\contentsline {chapter}{Bibliografia}{15}{figure.caption.10}
+\contentsline {section}{\numberline {1.1}Objetivo}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Organiza\IeC {\c c}\IeC {\~a}o do Texto}{5}{section.1.2}
+\contentsline {chapter}{\numberline {2}Fundamenta Te\IeC {\'o}rica}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Problema Inverso}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Invers\IeC {\~a}o S\IeC {\'\i }smica}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}Deep Learning}{9}{section.2.3}
+\contentsline {section}{\numberline {2.4}Redes Neurais Convolucionais}{9}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Convolu\IeC {\c c}\IeC {\~a}o}{10}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Filtros}{11}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Pooling}{14}{subsection.2.4.3}
+\contentsline {chapter}{Bibliografia}{16}{figure.caption.10}
