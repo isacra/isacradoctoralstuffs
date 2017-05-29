@@ -6,14 +6,14 @@ A level-1 auxiliary file: cap2.aux
 The style file: my-agsm.bst
 Database file #1: bib/bibliografia.bib
 Warning--entry type for "figsismica" isn't style-file defined
---line 1037 of file bib/bibliografia.bib
-You can't pop an empty literal stack for entry Goodfellow2016
+--line 1053 of file bib/bibliografia.bib
+You can't pop an empty literal stack for entry Gdfl16
 while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
 while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
 while executing---line 1298 of file my-agsm.bst
-You can't pop an empty literal stack for entry Goodfellow2016
+You can't pop an empty literal stack for entry Gdfl16
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
 while executing---line 1350 of file my-agsm.bst
@@ -27,13 +27,21 @@ ptr=1, stack=
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
----the literal stack isn't empty for entry figsismica
+---the literal stack isn't empty for entry deutsch2002
 while executing---line 1350 of file my-agsm.bst
-You can't pop an empty literal stack for entry Goodfellow2016
+You can't pop an empty literal stack for entry Gdfl16
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
----the literal stack isn't empty for entry Goodfellow2016
+---the literal stack isn't empty for entry Gdfl16
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry figsismica
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry aurelien17
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
@@ -51,45 +59,45 @@ ptr=1, stack=
 
 ---the literal stack isn't empty for entry tarantola
 while executing---line 1350 of file my-agsm.bst
-You've used 8 entries,
+You've used 10 entries,
             2912 wiz_defined-function locations,
-            696 strings with 6099 characters,
-and the built_in function-call counts, 34043 in all, are:
-= -- 5584
-> -- 403
+            707 strings with 6375 characters,
+and the built_in function-call counts, 36829 in all, are:
+= -- 5978
+> -- 451
 < -- 0
-+ -- 2667
-- -- 119
-* -- 2911
-:= -- 6854
-add.period$ -- 9
-call.type$ -- 8
-change.case$ -- 108
-chr.to.int$ -- 8
-cite$ -- 8
-duplicate$ -- 120
-empty$ -- 252
-format.name$ -- 136
-if$ -- 6113
++ -- 2825
+- -- 133
+* -- 3101
+:= -- 7522
+add.period$ -- 11
+call.type$ -- 10
+change.case$ -- 134
+chr.to.int$ -- 10
+cite$ -- 10
+duplicate$ -- 152
+empty$ -- 310
+format.name$ -- 154
+if$ -- 6597
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 11
-newline$ -- 28
-num.names$ -- 83
-pop$ -- 46
+missing$ -- 15
+newline$ -- 34
+num.names$ -- 103
+pop$ -- 60
 preamble$ -- 1
-purify$ -- 120
+purify$ -- 150
 quote$ -- 0
-skip$ -- 83
+skip$ -- 101
 stack$ -- 0
-substring$ -- 7940
-swap$ -- 11
-text.length$ -- 112
+substring$ -- 8434
+swap$ -- 13
+text.length$ -- 140
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 28
 warning$ -- 0
-while$ -- 171
+while$ -- 213
 width$ -- 0
-write$ -- 108
-(There were 14 error messages)
+write$ -- 134
+(There were 16 error messages)

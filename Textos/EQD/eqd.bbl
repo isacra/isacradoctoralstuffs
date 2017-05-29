@@ -10,14 +10,22 @@ Bosch, M.; Mukerji, T. e Gonzalez, E.~F.  \harvardyearleft
 Buduma, N.  \harvardyearleft 2015\harvardyearright , { Fundamentals of Deep
   Learning}, Academic Press, O'Reilly Media.
 
-\harvarditem{FishSAFE}{2014}{figsismica}
-FishSAFE  \harvardyearleft 2014\harvardyearright , Seismic surveys,
-  \url{http://fishsafe.eu/en/offshore-structures/seismic-surveys.aspx}.
+\harvarditem{Deutsch}{2002}{deutsch2002}
+Deutsch, C.  \harvardyearleft 2002\harvardyearright , { Geostatistical
+  Reservoir Modeling}, Applied geostatistics series, Oxford University Press.
 
-\harvarditem[]{Goodfellow; Bengio e Courville}{2016}{Goodfellow2016}
+\harvarditem[]{Goodfellow; Bengio e Courville}{2016}{Gdfl16}
 Goodfellow, I.; Bengio, Y. e Courville, A.  \harvardyearleft
   2016\harvardyearright , { Deep Learning}, MIT Press.
 \newblock \url{http://www.deeplearningbook.org}.
+
+\harvarditem{GSIPL}{2017}{figsismica}
+GSIPL  \harvardyearleft 2017\harvardyearright , Seismic surveys,
+  \url{http://geostar-surveys.com/methodology%20-%20High%20Resolution%20Seismic%20surveys.html}.
+
+\harvarditem{Géron}{2017}{aurelien17}
+Géron, A.  \harvardyearleft 2017\harvardyearright , { Hands-on Machine
+  Learning with Scikit0Learn and TensorFlow}, Academic Press, O'Reilly Media.
 
 \harvarditem[Passos~de Figueiredo et~al.]{Passos~de Figueiredo; Santos;
   Roisenberg; Schwedersky~Neto e Figueiredo}{2014}{Figueiredo2014}
