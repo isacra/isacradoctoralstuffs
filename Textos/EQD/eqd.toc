@@ -8,5 +8,7 @@
 \contentsline {section}{\numberline {2.3}Redes Neurais Convolucionais}{9}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Convolu\IeC {\c c}\IeC {\~a}o}{10}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Filtros}{12}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Pooling}{15}{subsection.2.3.3}
-\contentsline {chapter}{Bibliografia}{17}{figure.caption.12}
+\contentsline {subsection}{\numberline {2.3.3}Pooling}{13}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Propriedades das Redes Convolucionais}{15}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}Resumo}{17}{section.2.4}
+\contentsline {chapter}{Bibliografia}{18}{section.2.4}

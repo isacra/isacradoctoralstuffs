@@ -100,7 +100,7 @@ Com os coeficientes de reflexão e a discretização da medida de tempo, é poss
 modelar o dado sísmico $d(t)$ aplicando a convolução $\otimes$
 da \textit{wavelet} $s$ com os coeficientes de refletividade $r$:
 \begin{equation}
-d(t) = s(\tau) \otimes \sum{j-1}{N} r(t- t_j) \delta(t - t_j) + e_d(t)
+d(t) = s(\tau) \otimes \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
 \end{equation}
 onde $N$ é o número total de camadas, $e_d(t)$ representa o ruído aleatório em função do tempo
 e cada $d_{xy}$ é chamado de traço sísmico. Um conjunto de traços
@@ -157,7 +157,7 @@ funções para as quais a integral da equação \ref{eq:1} esteja definida. A co
 costuma ser denotada com um asterisco e aplicada com
 o tempo discretizado, de modo que o tempo $t$ é assumido como valores inteiros:
 \begin{equation}
- s(t) = (x * w)(t) = \sum{a=-\inf}{\inf}{x(a)w(t-a)}
+ s(t) = (x * w)(t) = \sum_{a=-\infty}^{\infty}{x(a)w(t-a)}
  \label{eq:2}
 \end{equation}
 
@@ -168,7 +168,7 @@ Nos casos em que o problema compreende imagens $I$ e filtros $K$ utilizados em d
 a convolução ganha o seguinte formato:
 
 \begin{equation}
- S(i,j) = (I*K)(i,j) = \sum{m}\sum{n}{I(m,n)K(i-m,j-n)}
+ S(i,j) = (I*K)(i,j) = \sum_{m}\sum_{n}{I(m,n)K(i-m,j-n)}
 \end{equation}
 
 Nas CNN há pelo menos duas estruturas básicas, a camada convolucional e a camada de \textit{pooling}.
@@ -224,16 +224,19 @@ $0$ faz com que a camada seguinte tenha as mesmas dimensões da camada anterior.
 
 \subsection{Filtros}
 Os pesos dos neurônios em uma camada convolucional podem ser representados como uma pequena
-imagem do tamanho do campo receptivo. Estes filtros (pesos) são os elementos
-convolvidas com a imagem de entrada para obter o resultado da camada convolucional.
+imagem do tamanho do campo receptivo. Estes pesos, também chamados de filtros ou \textit{kernels}, são os elementos
+convolvidos com a imagem de entrada para obter o resultado da camada convolucional.
 A figura \ref{fig:conv_filt} ilustra dois conjuntos de pesos possíveis. O primeiro filtro é um quadrado preto
 (\textit{pixel} de valor 0) contendo uma coluna central branca (\textit{pixels} com valor 1). 
 Analogamente, o segundo filtro é um quadrado preto contendo uma linha central branca.
 É possível notar na imagem da esquerda que as linhas verticais brancas se tornaram mais
 evidentes enquanto o restante se tornou mais borrado. De modo análogo, na imagem da direita,
-a convolução com o filtro horizontal evidenciou as linhas brancas horizontais, enquanto que
-o restante ficou borrado. Assim, ao convolver uma entrada com o mesmo conjunto de filtros da camada convolucional, se obtém
-o mapa de características (feature map).
+a convolução com o filtro horizontal destacou as linhas brancas horizontais, ao passo que
+o restante ficou borrado. Ao convolver uma entrada com o mesmo conjunto de filtros
+da camada convolucional, se obtém o mapa de características (feature map). Assim, uma
+característica detectada por um neurônio representa o tipo de padrão da entrada que causará
+a sua ativação. Estes padrões podem ser bordas, contornos ou estruturas com outras
+formas.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/conv_filt}
@@ -242,13 +245,13 @@ o mapa de características (feature map).
 \end{center}
 \end{figure}
 
-O exemplo anterior apresenta a convolução de uma imagem com dois filtros possíveis, em uma representação 2D.
-Entretanto, em situações reais a camada convolucional possui muitos mapas de características, resultando
-em uma representação em 3D como ilustrado na figura \ref{fig:featmaps}. O mapa de características de uma camada convolucional
-é o resultado da convolução de uma das imagens de entrada com os diversos filtros específicos desta camada,
-os quais são iniciados, na maior parte dos casos, aleatoriamente. Na figura estão ilustrados os mapas para a convolução
-com apenas uma imagem, de modo que é possível imaginar que à medida que o número de imagens aumenta, a
-estrutura ilustrada se replica horizontalmente. 
+A figura \ref{fig:conv_filt} ilustra a convolução de uma imagem com dois filtros possíveis, em uma representação 2D.
+Entretanto, em situações reais, a camada convolucional possui muitos mapas de características, resultando
+em uma representação em 3D como ilustrado na figura \ref{fig:featmaps}. Os mapas de características
+de uma camada convolucional são o resultado da convolução de uma das imagens de entrada com os diversos
+filtros específicos desta camada, os quais são iniciados, na maior parte dos casos, aleatoriamente.
+Na figura estão ilustrados os mapas para a convolução com apenas uma imagem, de modo que é possível
+imaginar que à medida que o número de imagens aumenta, a estrutura ilustrada se replica horizontalmente. 
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/feat_maps}
@@ -257,49 +260,6 @@ estrutura ilustrada se replica horizontalmente.
 \end{center}
 \end{figure}
 
-As redes convolucionais se sustentam sobre três pilares: interações esparsas, compartilhamentos
-de parâmetros e representações equivalentes. 
-As interações esparsas, também chamadas de conectividade esparsa ou pesos esparsos,
-ocorre quando os filtros possuem  dimensão menor que a entrada, ou seja a
-dimensão do campo receptivo é menor que a dimensão das imagens de entrada.
-De um ponto de vista prático,
-a imagem de entrada pode ter milhares de \textit{pixels}, entretanto, é 
-possível detectar apenas pequenas regiões com características de maior relevância
-com filtros que compreendam apenas algumas dezenas ou centenas de \textit{pixels} na imagem.
-Por exemplo, é possível identificar características de uma face humana na identificação de pessoas, ou estruturas com
-significado geológico em um estudo geofísico. Como consequência,
-menos parâmetros são armazenados e há um ganho na eficiência estatística do
-modelo. As figuras \ref{fig:full} e \ref{fig:sparse} ilustram
-os modelos de sem conectividade esparsa e com conectividade esparsa, respectivamente.
-É possível notar que na conectividade tradicional (figura \ref{fig:full}) todos os elementos da camada inferior
-afetam o elemento em destaque $s_3$ da camada seguinte, enquanto que na conectividade esparsa (figura \ref{fig:sparse}) apenas
-três elementos afetam o elemento em destaque. O número de elementos que afetam o elemento em destaque na
-conectividade esparsa é definido pelo tamanho do filtro utilizado na convolução.
-
-\begin{figure}[htp]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{fig/full}
-  \caption{Conectividade tradicional.}
-  \label{fig:full}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{fig/sparse}
-  \caption{Conectividade esparsa.}
-  \label{fig:sparse}
-\end{subfigure}
-\end{figure}
-
-O \textbf{compartilhamento de parâmetros}, também chamado de \textbf{pesos amarrados} 
-em uma rede convolucional, se refere ao uso do mesmo parâmetro para mais de uma função no modelo.
-Nas redes neurais tradicionais, cada elemento da matriz de pesos é usado apenas uma vez quando a
-saída da camada é calculada, pois é multiplicado por apenas um elemento da entrada. No compartilhamento
-de pesos, o valor do peso aplicado a uma entrada está relacionado ao valor de um peso aplicado em
-algum outro local. Assim, cada elemento do filtro é usado em toda posição da entrada,
-de modo que, ao invés de aprender um conjunto separado de parâmetros para toda localização da imagem, apenas
-um conjunto é aprendido. Isto faz com que a convolução seja mais eficiente que a multiplicação de matriz
-do ponto de vista de requisitos de memória e eficiência estatística.
 
 \subsection{Pooling}
 Uma camada em uma rede convolucional consiste de três estágios. No primeiro estágio,
@@ -323,3 +283,78 @@ Classificar imagens de tamanhos diferentes, por exemplo, pode ser realizado
 variando o tamanho entre as regiões de \textit{pooling} de modo que a camada de 
 de classificação sempre receba o mesmo número de sumários estatísticos
 independente do tamanho da imagem.
+
+\subsection{Propriedades das Redes Convolucionais}
+Por conta da sua arquitetura, as redes convolucionais se sustentam sobre três pilares: interações esparsas, compartilhamentos
+de parâmetros e representações equivariantes. As propriedades de interação esparsa e compartilhamento de pesos serão apresentadas
+com maior nível de detalhes nesta seção, embora já tenham sido introduzidos de forma intuitiva nas seções anteriores.
+
+As O \textbf{interações esparsas}, também chamadas de conectividade esparsa ou pesos esparsos,
+ocorre quando os filtros possuem  dimensão menor que a entrada, ou seja a
+dimensão do campo receptivo é menor que a dimensão das imagens de entrada.
+De um ponto de vista prático, a imagem de entrada pode ter milhares de \textit{pixels}, entretanto, é 
+possível detectar apenas pequenas regiões com características de maior relevância na imagem de entrada
+com filtros que compreendam apenas algumas dezenas ou centenas de \textit{pixels}.
+Por exemplo, é possível identificar características de uma face humana na identificação de pessoas, ou estruturas com
+significado geológico em um estudo geofísico. Como consequência,
+menos parâmetros são armazenados e há um ganho na eficiência estatística do
+modelo. As figuras \ref{fig:sparse} e \ref{fig:full} ilustram
+os modelos de conectividade esparsa e tradicional, respectivamente.
+É possível notar que na conectividade tradicional (figura \ref{fig:full}) todos os elementos da camada inferior
+afetam o elemento em destaque $s_3$ da camada seguinte, enquanto na conectividade esparsa (figura \ref{fig:sparse}) apenas
+três elementos afetam o elemento em destaque. O número de elementos que afetam o elemento em destaque na
+conectividade esparsa é definido pelo tamanho do filtro utilizado na convolução.
+
+\begin{figure}[htp]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{fig/sparse}
+  \caption{Conectividade esparsa.}
+  \label{fig:sparse}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{fig/full}
+  \caption{Conectividade tradicional.}
+  \label{fig:full}
+\end{subfigure}%
+\end{figure}
+
+O \textbf{compartilhamento de parâmetros}, também chamado de \textbf{pesos amarrados},
+se refere ao uso do mesmo parâmetro para mais de uma função no modelo.
+Como já mencionado, nas redes neurais tradicionais todos os neurônios de uma camada são conectados a todos os neurônios
+da camada anterior e cada neurônio possui um \textit{bias}, como ilustrado na imagem \ref{}.
+Entretanto, este modelo é pouco eficiente, pois não tira vantagem da estruturas espaciais das imagens
+de entrada \cite{Gdfl16}. Estas informações estruturais são muito relevantes quando o problema em estudo é geoestatístico.
+Por outro lado, no compartilhamento de pesos a saída de cada neurônio de uma camada depende apenas do conjunto de neurônios
+de uma pequena região definida pelo campo receptivo da camada anterior:
+
+\begin{equation}
+ {\sigma} \times \bigg( b + \sum_{m}\sum_{n}{w_{m,n}a_{i+m,j+n} \bigg) }
+\end{equation}
+onde, $\sigma$ é uma função de ativação, $b$ é o valor compartilhado do \textit{bias}, $w_{m,n}$ é
+uma matriz de pesos compartilhados (filtros) e $a_{i+m,j+n}$ denota a entrada $a_{x,y}$ na posição
+$x,y$. Como o mesmo filtro é convolvido ao logo da imagem,
+os mesmos pesos e \textit{bias} aprendem diferentes características da imagem. Deste modo, cada conjunto de pesos e \textit{bias} é compartilhado
+por diferentes regiões em cada imagem e o número de pesos conectados ao neurônio
+da camada seguinte diminui em relação ao modelo tradicional. Isto faz com que a convolução seja mais eficiente que a multiplicação de matriz
+do ponto de vista de requisitos de memória e eficiência estatística.
+
+O compartilhamento de pesos confere às redes convolucionais a propriedade de \textbf{equivariância} de
+translação. Se uma função é equivariante, significa que se a entrada muda,
+a saída muda igualmente. Matematicamente, a função $f(x)$ é equivariante à função $g$ se
+$f(g(x)) = g(f(x))$. No caso da convolução, se $g$ é uma função que translada a entrada, então
+a convolução será equivariante a $g$.
+A convolução com imagens cria um mapa 2-D dos locais onde certas características aparecem na entrada.
+A propriedade de equivariância permite rastrear objetos transladados na entrada. Se um objeto aparece
+em uma determinada posição e, em seguida, aparece em outra posição, sua representação
+irá mover a mesma quantidade na saída.
+
+\section{Resumo}
+
+Este Capítulo detalhou os principais conceitos abordados neste trabalho. O
+problema inverso foi introduzido e a inversão sísmica apresentada em
+maiores detalhes. Foram apresentados os elementos que compõem as redes
+neurais convolucionais: a convolução, as camadas convolucionais, os filtros e a camada de \textit{pooling}.
+Foram apresentadas também as propriedades das camadas convolucionais: conectividade esparsa,
+compartilhamento de parâmetros, equivariância de translação, 
