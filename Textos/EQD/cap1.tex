@@ -35,26 +35,25 @@ observáveis pode resultar de mais de uma configuração de parâmetros. No exem
 citado, seria como obter a mesma altura $H$ para diferentes tempos
 de queda $T$ da pedra. Segundo, a natureza mal-posta do problema inverso, isto é,
 uma pequena mudança arbitrária nos valores observados pode causar uma mudança grande
-da solução fonte equivalente. Em um paralelo com o exemplo do poço, é como
+na solução fonte equivalente. Em um paralelo com o exemplo do poço, é como
 obter uma grande variação na profundidade, dado uma pequena variação no valor do tempo de queda.
 
 Por conta da sua característica mal-posta, o problema inverso
 possui muitas soluções possíveis, de modo que representaria um equívoco considerar apenas
 uma solução como a mais correta. Via de regra, ao final do processo de inversão é comum
 realizar um processo de amostragem dentro do conjunto das possíveis soluções a fim
-de obter um estudo sobre elas. Este estudo pode ser, por exemplo, uma análise de 
-incerteza em todo da média de um conjunto de soluções do problema inverso.
+de obter um estudo sobre elas. Este estudo pode ser uma análise de 
+incerteza em torno da média de um conjunto de soluções do problema inverso.
 
 O problema inverso possui um papel extremamente importante em diferentes áreas do conhecimento
 como Matemática, Medicina, Física e Geoestatística. Geoestatística é a aplicação de métodos
-estatísticos nas ciências da terra. Esta é a ciência que trata, por exemplo, da modelagem
+estatísticos nas ciências da terra. Esta é a ciência que trata, dentre outros assuntos, da modelagem
 e caracterização de reservatórios, cujo tema é de amplo interesse para a indústria de óleo
 e gás. Por caracterização de reservatório se entende o processo para obter um modelo de propriedades
-petrofísicas (por exemplo, tipos de contato entre rochas, porosidade e permeabilidade),
+petrofísicas (tais como, tipos de contato entre rochas, porosidade e permeabilidade),
 em 3-D e alta resolução, que seja consistente com os dados de que se dispõe \cite{deutsch2002}.
 O processo de caracterização de reservatórios possui diferentes
-etapas. Estas etapas podem ser descritas em alto nível como na
-abordagem sequencial a seguir:
+etapas que podem ser descritas em alto nível como na abordagem sequencial a seguir:
 \begin{enumerate}
  \item A primeira etapa envolve definição da geometria e estratigrafia dos intervalos do reservatório
  a ser modelado. Ainda, o desenvolvimento de um modelo conceitual de continuidade para
@@ -64,17 +63,17 @@ abordagem sequencial a seguir:
  costuma ser realizada antes da permeabilidade, devido à disponibilidade de dados sísmicos e dados
  amostrais localizados, também chamados de poços\label{itm:3}.
  \item Os modelos 3-D para permeabilidade são atrelados à porosidade e facies anteriormente estabelecidos\label{itm:4}.
- \item Múltiplas realizações igualmente prováveis são realizadas por repetição de todo o processo. Embora todas as
+ \item Múltiplas realizações, igualmente prováveis, são realizadas por repetição de todo o processo. Embora todas as
  realizações sejam equiprováveis, há realizações mais similares a outras, de modo que a classe à qual pertencem possui
  maior probabilidade\label{itm:5}.
  \item Os modelos são usados como entrada em um simulador ou visualizados e usados como suporte na tomada de decisão\label{itm:6}.
 \end{enumerate}
 
 Embora a abordagem anterior utilize alguns termos que, à primeira vista, pareçam incompreensíveis,
-sua apresentação contextualiza em qual ponto do processo de modelagem de
-reservatório, o processo de inversão acontece (etapa \ref{itm:3}).
+sua apresentação contextualiza o ponto do processo de modelagem de
+reservatório em que a inversão sísmica acontece (etapa \ref{itm:3}).
 Porque os dados medidos são obtidos por sísmica de reflexão,
-este modelo de inversão é chamado de inversão sísmica. A inversão sísmica na
+este método é chamado de inversão sísmica. A inversão sísmica na
 modelagem de reservatórios disponibiliza artefatos que são modelos de propriedades de rocha
 (propriedades petrofísicas) a partir principalmente, mas não exclusivamente,
 da sísmica disponível e de modelos construídos com dados amostrais. Tais artefatos
@@ -85,27 +84,27 @@ o nível de resolução destas imagens, mais contundente será a justificativa p
 Atualmente, em Aprendizagem de Máquina, \textit{Deep Learning} é o tema em
 maior evidência. \textit{Deep Learning} é toda solução que permite aos
 computadores aprender a partir da experiência e entender o mundo em
-termos de hierarquia de conceitos, com cada conceito definido em termos
-do seu relacionamento com conceitos mais simples \cite{Gdfl16}.
-Assim, o aprendizado por experiência evita a necessidade de interferência
-humana no sentido de especificar formalmente o conhecimento que o computado necessita,
-e a hierarquia de conceitos permite aos computadores aprenderem
-conceitos complicados a partir de conceitos mais simples.
+termos de hierarquia de conceitos.
+Assim, nos algoritmos de \textit{Deep Learning}, o aprendizado
+por experiência (supervisionado) evita a interferência
+humana no sentido de especificar formalmente o conhecimento que o computador necessita.
+Adicionalmente, a hierarquia de conceitos permite aos computadores aprenderem
+conceitos complicados a partir de conceitos mais simples\cite{Gdfl16}.
 
-Muitos algoritmos são desenvolvidos e representam
+Muitos algoritmos representam
 o estado da arte em diferentes áreas como processamento de imagens, 
 sinais e linguagem natural, e reconhecimento de padrões. No campo de
 processamento de imagens o método de \textit{Deep Learning} de
 maior destaque nos dias atuais é conhecido
-como Redes Neurais Convolucionais (CNN). O surgimento das redes neurais convolucionais
+como Redes Neurais Convolucionais (CNN). Seu surgimento
 data da década de 1980, com aplicação essencialmente no reconhecimento de imagens.
 Entretanto, com o advento das Unidades Gráficas de Processamento (GPU) e a maior
 disponibilidade de dados para treinamento, as redes convolucionais
 são empregadas com sucesso em serviços de busca de imagens, carros auto-dirigíveis,
 sistemas de classificação de imagens em video, entre outras aplicações complexas \cite[p. 50]{Buduma15}.
 
-O processo de super-resolução é uma forma de processamento de imagens e visão computacional.
-A super-resolução de imagens consiste em recuperar uma imagem de alta resolução a partir de uma imagem
+O processo de super-resolução é um método de processamento de imagens e visão computacional.
+Consiste em recuperar uma imagem de alta resolução a partir de uma imagem
 de baixa resolução. Semelhante ao problema da inversão sísmica, o problema da super-resolução
 também é mal-posto, uma vez que pode haver múltiplas soluções em alta resolução para uma dada imagem em baixa
 resolução. Em ambos os problemas, uma forma de lidar com esta questão é restringir o espaço
@@ -118,7 +117,7 @@ considerada como imagem que representa a verdade.
 De um ponto de vista conceitual, o mapeamento $F$ consiste essencialmente em
 realizar três operações:
 \begin{enumerate}
- \item Extração de mapas de características da imagem de baixa resolução $Y$. Um mapa de características
+ \item Para a imagem de baixa resolução $Y$, extração de mapas de características. Um mapa de características
  pode ser imaginado como um conjunto de sub-imagens com determinadas características da imagem original.
  \item Mapeamento não-linear do mapa de características. Após a operação não-linear, cada característica mapeada
  passa a ter uma representação em alta resolução.
@@ -130,7 +129,7 @@ Um modelo de rede neural convolucional pode ser capaz de realizar as etapas list
 de forma iterativa e para um conjunto de diferentes imagens.
 Esta abordagem pode ser incorporada ao final do processo de inversão, de modo que as
 imagens obtidas da inversão sísmica sejam pós-processadas pelo modelo convolucional
-para obter imagens com maior riqueza de detalhes. Como mencionado, o ganho de resolução
+a fim de obter imagens com maior riqueza de detalhes. Como mencionado, o ganho de resolução
 nas imagens de propriedades petrofísicas pós-inversão pode conferir maior confiabilidade
 na interpretação da solução inversa e, consequentemente na tomada de decisão.
 
@@ -157,15 +156,15 @@ orientação do Prof. Dor. Jef Karel Caers.
 \section{Organização do Texto}
 
 Este documento está organizado da seguinte forma. Após esta breve introdução, o
-Capítulo \ref{cap:2fundamentacao}
-apresenta a fundamentação teórica para os processos de inversão, redes neurais
-convolucionais e super-resolução. O Capítulo 3 %\ref{cap:3modelosinversao}
+Capítulo \ref{cap:2fundamentacao} apresenta a fundamentação teórica para os
+processos de inversão, redes neurais 
+convolucionais e super-resolução. O Capítulo 3 %\ref{cap:3modelosinversao} 
 apresenta o estado da arte 
-em geração de imagens em super-resolução a partir de imagens de baixa resolução, bem como as justificativas
+em geração de imagens em super-resolução a partir de imagens de baixa resolução, bem como as justificativas 
 para a realização desta pesquisa.
-O Capítulo trata dos métodos de simulação geoestatística multiponto. O
-Capítulo 4 %\ref{cap:3modeloHibrido} 
-trata da proposta do projeto e resultados
-preliminares referente ao modelo de super-resolução treinado e aplicado às imagens
-de impedância pós-inversão. Após o retorno ao Brasil, estão planejados mais 8 meses
+O Capítulo trata dos métodos de simulação geoestatística multiponto.
+O Capítulo 4 %\ref{cap:3modeloHibrido} 
+trata da proposta do projeto e resultados 
+preliminares referente ao modelo de super-resolução treinado e aplicado às imagens 
+de impedância pós-inversão. Após o retorno ao Brasil, estão planejados mais 8 meses 
 de trabalho para finalizar a escrita da tese e defesa.

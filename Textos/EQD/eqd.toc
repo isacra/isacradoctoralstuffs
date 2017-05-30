@@ -5,7 +5,10 @@
 \contentsline {chapter}{\numberline {2}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}Problema Inverso}{6}{section.2.1}
 \contentsline {section}{\numberline {2.2}Invers\IeC {\~a}o S\IeC {\'\i }smica}{7}{section.2.2}
-\contentsline {section}{\numberline {2.3}Redes Neurais Convolucionais}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.2.1}Aquisi\IeC {\c c}\IeC {\~a}o S\IeC {\'\i }smica}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{10}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}M\IeC {\'a}ximo \textit {a posteriori}}{10}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Redes Neurais Convolucionais}{10}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Convolu\IeC {\c c}\IeC {\~a}o}{10}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Filtros}{12}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Pooling}{13}{subsection.2.3.3}

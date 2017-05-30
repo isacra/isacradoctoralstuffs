@@ -2,7 +2,7 @@
 \label{cap:2fundamentacao}
 Neste capítulo serão apresentados os conceitos
 abordados neste trabalho. O problema inverso será apresentado
-em linhas gerais e o leitor tomará conhecimento do processo de inversão sísmica.
+em linhas gerais e a inversão sísmica será abordada em maiores detalhes.
 Serão apresentados os conceitos relacionados a \textit{Deep Learning}, assim como os
 elementos de redes neurais convolucionais. Esta fundamentação
 teórica é relevante para o entendimento de como o modelo de rede neural convolucional
@@ -13,23 +13,25 @@ da inversão sísmica.
 
 A teoria de inversão é utilizada em diversas áreas para inferir os valores de
 parâmetros relacionados com processos físicos a partir de um conjunto de dados medidos,
-também chamados de dados experimentais. É possível descrever o problema inverso
+os quais são chamados dados experimentais. É possível descrever o problema inverso
 como o processo de obter informações de um sistema parametrizado, a partir de
-dados observáveis e das relações teóricas com os parâmetros não
-observáveis e, quando possível, algum conhecimento \textit{a priori}.
+dados que podem ser medidos por meio de algum experimento físico e das relações teóricas com os parâmetros
+desejados, mas que não são passíveis de medição. Frequentemente, algum conhecimento \textit{a priori}
+é incorporado ao modelo.
 
 Um sistema físico depende do domínio em estudo. Pode ser uma galáxia para um
 astro-físico, pode ser a Terra para um geofísico ou uma partícula quântica
 para um físico quântico. Em comum, o fato de que, para ser estudado, um sistema
 físico segue três passos básicos: a parametrização do sistema, a modelagem direta e a modelagem inversa \cite{tarantola}.
 A parametrização do sistema se refere à definição do conjunto mínimo de elementos (parãmetros, variáveis)
-cujos valores caracterizam completamente o sistema. Como mencionado no Capítulo de introdução,
-a modelagem direta se refere a definição das leis físicas que permitem realizar previsão
-de dados observáveis, a partir de valores dos parâmetros do modelo. A modelagem inversa,
-por sua vez, se caracteriza pelo uso de resultados atuais das medições dos parâmetros
-físicos observáveis, para inferir os valores atuais dos parâmetros do modelo.
+cujos valores caracterizam completamente o sistema.
+%Como mencionado no Capítulo \ref{cap:1intro},
+%a modelagem direta se refere à definição das leis físicas que permitem realizar previsão
+%de dados observáveis, a partir de valores dos parâmetros do modelo. A modelagem inversa,
+%por sua vez, se caracteriza pelo uso de resultados atuais das medições dos parâmetros
+%físicos observáveis, para inferir os valores atuais dos parâmetros do modelo (não-observáveis).
 
-Resolver o problema direto significa prever os valores dos parâmetros observáveis (dados $d$),
+A modelagem direta significa prever os valores dos parâmetros observáveis (dados $d$),
 que correspondem a um dado modelo (conjunto de parâmetros $m$). Esta predição pode ser denotada
 pela Eq. \ref{eq:frdmdl}. Onde $F(.)$ é chamado operador direto.
 \begin{equation}
@@ -37,6 +39,8 @@ pela Eq. \ref{eq:frdmdl}. Onde $F(.)$ é chamado operador direto.
 F(m) = d 
 \end{equation}
 
+Por sua vez, a modelagem inversa se refere ao uso de resultados atuais das medições dos parâmetros
+físicos observáveis, para inferir os valores atuais dos parâmetros do modelo (não-observáveis).
 O problema inverso pode ser descrito em uma forma discreta como:
 \begin{equation}
 \label{eq:deqgm}
@@ -44,8 +48,8 @@ m = F^{-1}(d)
 \end{equation}
 onde, F é o sistema físico investigado, e relaciona os parâmetros do modelo $m=(m_1, m_2,...,m_n) \subset R^n$
 estimado com os dados observados $d \in R^s$.
-Como mencionado, um problema inverso possui múltiplas soluções,
-deste modo o modelo $m$ pertence a um conjunto de modelos $M$ admissíveis.
+Como mencionado no Capítulo \ref{cap:1intro}, um problema inverso possui múltiplas soluções,
+de modo que o modelo $m$ pertence a um conjunto de modelos $M$ admissíveis.
 Na prática, $d$ pode ser uma função no domínio do tempo e/ou espaço, ou pode ser
 uma coleção de observações discretas.
 
@@ -55,22 +59,26 @@ Os métodos geofísicos frequentemente envolvem a solução e avaliação de pro
 pois permitem inferir a distribuição das propriedades físicas na subsuperfície da Terra
 usando observações da superfície. A inversão sísmica tem um papel fundamental na solução 
 de problemas geofísicos, em especial na caracterização de reservatórios \cite{Bosch2010} \cite{Srivastava2009}.
-Do ponto de vista prático, as soluções para o problema de inversão sísmica melhora a exploração e
-o gerenciamento na indústria petrolífera, pois os dados sísmicos estimados possuem forte correlação com as
+Do ponto de vista prático, as soluções para o problema de inversão sísmica melhoram a exploração e
+o gerenciamento na indústria petrolífera, uma vez que os dados sísmicos estimados possuem forte correlação com as
 propriedades petrofísicas (porosidade, densidade, etc.) das rochas da subsuperfície \cite{Figueiredo2014}.
+Para facilitar o entendimento da inversão sísmica, considere a subsuperfície como sendo formada por camadas
+sobrepostas de diferentes tipos de rochas. As regiões onde ocorrem as transições entre tipos
+diferentes de rochas são comumente chamadas de \textit{facies} e podem ter espessuras diferentes.
 
-O método de aquisição sísmica de reflexão utiliza
-pulsos sísmicos de uma fonte artificial controlada e monitora a resposta em
+\subsection{Aquisição Sísmica}
+O dado sísmico é o principal parâmetro observável utilizado na inversão sísmica.
+A aquisição destes dados se dá por meio da sísmica de reflexão. Este
+método utiliza pulsos sísmicos de uma fonte artificial controlada e monitora a resposta em
 função do tempo. Neste sistema, cada região de contato entre dois tipos de rochas
 diferentes gera reflexão e refração do pulso sísmico, como demonstrado na Figura
 \ref{fig:1sismica}.
-De um ponto de vista bastante elementar, é possível imaginar que a parte refletida da onda se
+De um ponto de vista bastante elementar, é possível intuir que a parte refletida da onda se
 propaga em todas as direções, de modo que os componentes horizontal e vertical podem ser medidos.
 O componente horizontal (\textit{s-wave}), referente à reflexão horizontal
-da onda, é utilizada no processo de inversão conhecido como inversão elástica. Por outro lado, o componente
+da onda, é utilizado no processo de inversão conhecido como inversão elástica. Por outro lado, o componente
 vertical da onda (\textit{p-wave}), referente à reflexão vertical do pulso emitido, é utilizado no processo
 conhecido como inversão acústica.
-
 \begin{figure}[ht!]
 \begin{center}
   \includegraphics[width=0.8\textwidth]{fig/seismic_survey_2}
@@ -79,9 +87,9 @@ conhecido como inversão acústica.
 \end{center}
 \end{figure}
 
-O pulso de onda emitido durante a aquisição sísmica possui um formato próprio, uma identidade, 
-conhecido como \textit{wavelet}. É possível imaginar que a resposta sísmica medida
-é composta em parte por esta identidade e, em parte, pela característica da região de contato
+O pulso de onda emitido durante a aquisição possui um formato próprio, uma identidade, 
+conhecido como \textit{wavelet}. Assim, a resposta sísmica medida
+é composta em parte por esta identidade e, em parte, pela característica da interface
 entre duas camadas de rochas diferentes, na qual o pulso reflete.
 Esta característica é chamada de coeficiente de refletividade (equação \ref{eq:refletv}):
 \begin{equation}
@@ -92,9 +100,9 @@ onde, $z(t)$ é a impedância acústica no tempo $t$ definida por
 $z(t)=\rho(t)v(t)$, onde $\rho(t)$ é a densidade da rocha e $v(t)$ a
 velocidade de propagação da onda acústica.
 O dado sísmico utilizado na inversão acústica, portanto,
-é uma aproximação da resposta da camada terrestre;
-a convolução entre a wavelet de aquisição e o valor de refletividade entre as
-camadas da subsuperfície, com ângulo de incidência e reflexão de $90^\circ$,
+é uma aproximação da resposta da camada terrestre. Pode ainda ser definido como
+a convolução entre a \textit{wavelet} de aquisição e o valor de refletividade entre as
+camadas, com ângulo de incidência e reflexão de $90^\circ$,
 respectivamente. Por este motivo, este modelo é chamado convolucional.
 Com os coeficientes de reflexão e a discretização da medida de tempo, é possível
 modelar o dado sísmico $d(t)$ aplicando a convolução $\otimes$
@@ -104,16 +112,14 @@ d(t) = s(\tau) \otimes \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
 \end{equation}
 onde $N$ é o número total de camadas, $e_d(t)$ representa o ruído aleatório em função do tempo
 e cada $d_{xy}$ é chamado de traço sísmico. Um conjunto de traços
-sísmicos também é chamado de uma imagem, seção ou cubo, no caso de um
+sísmicos também é chamado de imagem, seção ou cubo, no caso de um
 levantamento 3D. A \textit{wavelet} ideal seria um pulso tipo delta contendo
 todas as frequências, entretanto, na prática as
 \textit{wavelets} são pulsos de banda limitada entre $6Hz$ e $65Hz$, o que
 limita a frequência da sísmica e sua resolução \citep[p. 11]{sen_livro}.
 Como consequência, as imagens resultantes do processo de inversão também terão
-o seu espectro de frequência limitado.
-A Figura \ref{fig:wavelet} ilustra uma \textit{wavelet} típica extraída de dados
-reais.
-
+o seu espectro de frequência limitado. A Figura \ref{fig:wavelet} ilustra uma
+\textit{wavelet} típica extraída de dados reais.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.8\textwidth]{fig/wavelet}
@@ -122,28 +128,30 @@ reais.
 \end{center}
 \end{figure}
 
-\section{Redes Neurais Convolucionais}
-Nesta seção serão apresentados os principais conceitos relacionados às redes
-neurais convolucionais, sua estrutura e as principais
-aplicações deste modelo de aprendizagem de máquina.
+%%
+Falta explicar como ocorre a inversão.
+\subsection{Inversão Sísmica Linear e Não Linear}
 
+\subsection{Máximo \textit{a posteriori}}
+
+\section{Redes Neurais Convolucionais}
 As Redes Neurais Convolucionais (CNN), também chamadas de redes convolucionais,
 são um tipo de rede neural especializada em processamento de dados que possuem uma
 topologia conhecida e em forma de grade \cite{Gdfl16}. Exemplos deste tipo de dado são as séries
-temporais, que podem ser vistas como uma grade em uma dimensão (1D) com amostras
-em intervalos de tempo regulares, e dados de imagem, que podem ser pensados como
-uma grade 2D de \textit{pixels}. Este modelo de rede neural é chamada convolucional,
+temporais, que podem ser vistas como uma grade em uma dimensão (1-D) com amostras
+em intervalos regulares de tempo, e dados de imagem, que podem ser vistos como
+uma grade (2-D) de \textit{pixels}. Este modelo de rede neural é chamada convolucional,
 pois emprega a operação de convolução no lugar de multiplicação comum entre matrizes,
 em pelo menos uma de suas camadas.
 
 \subsection{Convolução}
 A operação de convolução é definida como a integral do produto de duas funções após uma delas sofrer um
-certo deslocamento. Considere um exemplo em que se deseja rastrear a localização de uma
+certo deslocamento. Considere o exemplo em que se deseja rastrear a localização de uma
 nave espacial com um sensor a lazer. O sensor disponibiliza uma saída $x(t)$ referente à posição da nave
 no tempo $t$. Ambos, $x$ e $t$, são valores reais, de modo que uma saída diferente pode ser obtida
 em qualquer instante de tempo. Considerando que o sensor possui um certo ruido, para realizar uma
-estimativa mais precisa da posição da nave é possível ponderar várias medidas de posição juntas.
-Como os valores medidos mais recentemente são mais relevantes, é possível estimar uma função peso
+estimativa mais precisa da posição da nave é preciso ponderar várias medidas de posição juntas.
+Como os valores medidos mais recentemente são mais relevantes, se estima uma função peso
 $w(a)$, onde $a$ é o tempo de medição. Se esta média ponderada for aplicada a todos os instantes,
 a estimativa de posição da nave será suavizada:
 
@@ -153,33 +161,33 @@ a estimativa de posição da nave será suavizada:
 \end{equation}
 
 Esta operação é chamada convolução e pode ser definida para quaisquer
-funções para as quais a integral da equação \ref{eq:1} esteja definida. A convolução
-costuma ser denotada com um asterisco e aplicada com
-o tempo discretizado, de modo que o tempo $t$ é assumido como valores inteiros:
+funções, às quais a integral da equação \ref{eq:1} esteja definida. A convolução
+costuma ser denotada com um asterisco e aplicada com o tempo $t$ discretizado para valores inteiros:
 \begin{equation}
  s(t) = (x * w)(t) = \sum_{a=-\infty}^{\infty}{x(a)w(t-a)}
  \label{eq:2}
 \end{equation}
 
-No contexto das redes convolucionais, $x$ se refere ao conjunto de imagens de entrada, uma sequência multidimensional
-de dados, e $w$ é denominado \textit{kernel} ou filtros, uma sequência multidimensional de parâmetros 
-a serem otimizados pelo algoritmo de aprendizagem.
-Nos casos em que o problema compreende imagens $I$ e filtros $K$ utilizados em duas dimensões
+No contexto das redes convolucionais, $x$ se refere ao conjunto de imagens de entrada 
+e $w$ é denominado \textit{kernel} ou filtros. As imagens de entrada são uma sequência multidimensional 
+de dados, enquanto os filtros são uma sequência multidimensional de parâmetros a serem 
+otimizados pelo algoritmo de aprendizagem.
+Nos casos em que o problema compreende imagens $X$ e filtros $W$ utilizados em duas dimensões 
 a convolução ganha o seguinte formato:
 
 \begin{equation}
- S(i,j) = (I*K)(i,j) = \sum_{m}\sum_{n}{I(m,n)K(i-m,j-n)}
+ S(i,j) = (X*W)(i,j) = \sum_{m}\sum_{n}{X(m,n)W(i-m,j-n)}
 \end{equation}
 
-Nas CNN há pelo menos duas estruturas básicas, a camada convolucional e a camada de \textit{pooling}.
-A arquitetura típica de uma CNN compreende duas camadas convolucionais, cada uma das quais é seguida de
-uma camada \textit{pooling} como ilustrado na figura \ref{fig:cnn_basic_arq}. As imagens 
-de entrada se tornam menores à medida que progridem ao longo da rede,
-mas se tornam mais profundas em termos de hierarquia de conceitos extraídos. No topo da pilha de camadas
-são adicionados um conjunto de camadas completamente conectadas e a última camada onde ocorre
-a saída prevista. Esta estrutura de camadas completamente
-conectadas é a mesma utilizada nas redes neurais tradicionais do tipo \textit{feedforward}, nas quais todos
-os nerônios de uma camada estão conectados a todos os neurônios da camada seguinte. 
+Nas redes convolucionais há pelo menos duas estruturas básicas, a camada convolucional e a camada de \textit{pooling}.
+A arquitetura típica de uma CNN compreende duas camadas convolucionais, cada uma das quais é seguida por
+uma camada \textit{pooling}, como ilustrado na Figura \ref{fig:cnn_basic_arq}. À medida que as imagens progridem
+ao longo da rede, suas dimensões diminuem, entretanto, elas se tornam mais profundas
+em termos de hierarquia de conceitos extraídos. No topo da pilha de camadas da rede
+se adiciona camadas completamente conectadas, sendo que, na última camada ocorre a saída prevista.
+Esta estrutura de camadas completamente conectadas é a mesma utilizada nas redes neurais tradicionais
+do tipo \textit{feedforward}, nas quais todos os nerônios de uma camada estão conectados a todos os
+neurônios da camada seguinte. 
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.8\textwidth]{fig/cnn_basic_arq}
@@ -190,9 +198,9 @@ os nerônios de uma camada estão conectados a todos os neurônios da camada seg
 
 A camada convolucional é o elemento mais importante de uma CNN. Esta camada é estruturada
 de modo a fazer com que cada um dos seus neurônios esteja conectado a um 
-pequeno grupo de \textit{pixels} da camada de entrada (figura \ref{fig:cnn_arq}) e não a todos os \text{pixels}, como
-ocorre em redes neurais tradicionais. Cada neurônio da camada seguinte se conecta apenas a neurônios
-contidos em uma pequena região da camada anterior e assim sucessivamente, esta região que define
+pequeno grupo de \textit{pixels} da camada de entrada (Figura \ref{fig:cnn_arq}) e não a todos os \text{pixels}, como
+ocorre em redes neurais tradicionais. Cada neurônio da camada seguinte se conecta apenas aos neurônios
+contidos em uma pequena região da camada anterior e assim sucessivamente. Esta região que define
 o grupo de neurônios conectados ao neurônio da próxima camada é chamada \textbf{campo perceptivo}.
 Este formato permite o aprendizado de características de baixo nível na primeira camada e de
 características de mais alto nível nas camadas seguintes.
@@ -204,7 +212,7 @@ características de mais alto nível nas camadas seguintes.
 \end{center}
 \end{figure}
 
-A figura \ref{fig:cnn_stride} ilustra a conexão entre as camadas de uma rede convolucional.
+A Figura \ref{fig:cnn_stride} ilustra a conexão entre as camadas de uma rede convolucional.
 Considere um neurônio localizado na linha $i$ e coluna $j$ de uma dada camada.
 Este neurônio estará conectado às saídas dos neurônios da camada anterior
 localizados nas linhas $\times{i}{s_h}$ até $\times{i}{s_h}+f_h - 1$, colunas
@@ -212,8 +220,8 @@ $\times{j}{s_w}$ até $\times{j}{s_w}+f_w - 1$, onde
 $f_h$ e $f_w$ são a altura e a largura do campo receptivo, $s_h$ e $s_w$
 são os deslocamentos vertical e horizontal ao longo das imagens da camada anterior.
 O tamanho destes deslocamentos é chamado de passo ou \textit{stride}
-e quanto maior o \textit{stride}, menor será a imagem resultante na camada seguinte. \textit{Stride} de tamanho
-$0$ faz com que a camada seguinte tenha as mesmas dimensões da camada anterior.
+e quanto maior o \textit{stride}, menor será a imagem resultante na camada seguinte. Para \textit{stride}
+de tamanho $0$ a camada seguinte terá as mesmas dimensões da camada anterior.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.8\textwidth]{fig/cnn_layer_stride_2}
@@ -223,10 +231,10 @@ $0$ faz com que a camada seguinte tenha as mesmas dimensões da camada anterior.
 \end{figure}
 
 \subsection{Filtros}
-Os pesos dos neurônios em uma camada convolucional podem ser representados como uma pequena
-imagem do tamanho do campo receptivo. Estes pesos, também chamados de filtros ou \textit{kernels}, são os elementos
+Os pesos dos neurônios em uma camada convolucional são representados como uma pequena
+imagem com as mesmas dimensões do campo receptivo. Estes pesos, também chamados de filtros ou \textit{kernels}, são os elementos
 convolvidos com a imagem de entrada para obter o resultado da camada convolucional.
-A figura \ref{fig:conv_filt} ilustra dois conjuntos de pesos possíveis. O primeiro filtro é um quadrado preto
+A Figura \ref{fig:conv_filt} ilustra dois conjuntos de pesos possíveis. O primeiro filtro é um quadrado preto
 (\textit{pixel} de valor 0) contendo uma coluna central branca (\textit{pixels} com valor 1). 
 Analogamente, o segundo filtro é um quadrado preto contendo uma linha central branca.
 É possível notar na imagem da esquerda que as linhas verticais brancas se tornaram mais
@@ -245,12 +253,12 @@ formas.
 \end{center}
 \end{figure}
 
-A figura \ref{fig:conv_filt} ilustra a convolução de uma imagem com dois filtros possíveis, em uma representação 2D.
+A Figura \ref{fig:conv_filt} ilustra a convolução de uma imagem com dois filtros possíveis, em uma representação 2D.
 Entretanto, em situações reais, a camada convolucional possui muitos mapas de características, resultando
-em uma representação em 3D como ilustrado na figura \ref{fig:featmaps}. Os mapas de características
+em uma representação em 3-D como ilustrado na Figura \ref{fig:featmaps}. Os mapas de características
 de uma camada convolucional são o resultado da convolução de uma das imagens de entrada com os diversos
 filtros específicos desta camada, os quais são iniciados, na maior parte dos casos, aleatoriamente.
-Na figura estão ilustrados os mapas para a convolução com apenas uma imagem, de modo que é possível
+Estão ilustrados os mapas para a convolução com apenas uma imagem, de modo que é possível
 imaginar que à medida que o número de imagens aumenta, a estrutura ilustrada se replica horizontalmente. 
 \begin{figure}[htp]
 \begin{center}
@@ -269,7 +277,7 @@ função não-linear. A terceira etapa é chamada de \textit{pooling}, responsá
 modificar a saída para o resumo estatístico das saídas em uma determinada vizinhança. A operação de
 \textit{pooling} permite tornar invariante pequenas translações no conjunto de entrada,
 ou seja, ainda que haja pequenas translações na entrada, os valores da maioria das saídas após a
-o \textit{pooling} permanecem iguais. A figura \ref{fig:pool} ilustra o funcionamento da função de \textit{pooling}.
+o \textit{pooling} permanecem iguais. A Figura \ref{fig:pool} ilustra o funcionamento da função de \textit{pooling}.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/pool}
@@ -298,10 +306,10 @@ com filtros que compreendam apenas algumas dezenas ou centenas de \textit{pixels
 Por exemplo, é possível identificar características de uma face humana na identificação de pessoas, ou estruturas com
 significado geológico em um estudo geofísico. Como consequência,
 menos parâmetros são armazenados e há um ganho na eficiência estatística do
-modelo. As figuras \ref{fig:sparse} e \ref{fig:full} ilustram
+modelo. As Figuras \ref{fig:sparse} e \ref{fig:full} ilustram
 os modelos de conectividade esparsa e tradicional, respectivamente.
-É possível notar que na conectividade tradicional (figura \ref{fig:full}) todos os elementos da camada inferior
-afetam o elemento em destaque $s_3$ da camada seguinte, enquanto na conectividade esparsa (figura \ref{fig:sparse}) apenas
+É possível notar que na conectividade tradicional (Figura \ref{fig:full}) todos os elementos da camada inferior
+afetam o elemento em destaque $s_3$ da camada seguinte, enquanto na conectividade esparsa (Figura \ref{fig:sparse}) apenas
 três elementos afetam o elemento em destaque. O número de elementos que afetam o elemento em destaque na
 conectividade esparsa é definido pelo tamanho do filtro utilizado na convolução.
 
@@ -323,9 +331,17 @@ conectividade esparsa é definido pelo tamanho do filtro utilizado na convoluç�
 O \textbf{compartilhamento de parâmetros}, também chamado de \textbf{pesos amarrados},
 se refere ao uso do mesmo parâmetro para mais de uma função no modelo.
 Como já mencionado, nas redes neurais tradicionais todos os neurônios de uma camada são conectados a todos os neurônios
-da camada anterior e cada neurônio possui um \textit{bias}, como ilustrado na imagem \ref{}.
+da camada anterior e cada neurônio possui um \textit{bias}, como ilustrado na imagem \ref{fig:shallow}.
 Entretanto, este modelo é pouco eficiente, pois não tira vantagem da estruturas espaciais das imagens
-de entrada \cite{Gdfl16}. Estas informações estruturais são muito relevantes quando o problema em estudo é geoestatístico.
+de entrada \cite{Gdfl16}.
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{fig/shallow_nn}
+  \caption{Organização de camadas de uma rede neural do tipo \textit{feedforward}.}
+  \label{fig:shallow}
+\end{center}
+\end{figure}
+Estas informações estruturais são muito relevantes quando o problema em estudo é geoestatístico.
 Por outro lado, no compartilhamento de pesos a saída de cada neurônio de uma camada depende apenas do conjunto de neurônios
 de uma pequena região definida pelo campo receptivo da camada anterior:
 
@@ -348,7 +364,9 @@ a convolução será equivariante a $g$.
 A convolução com imagens cria um mapa 2-D dos locais onde certas características aparecem na entrada.
 A propriedade de equivariância permite rastrear objetos transladados na entrada. Se um objeto aparece
 em uma determinada posição e, em seguida, aparece em outra posição, sua representação
-irá mover a mesma quantidade na saída.
+irá mover a mesma quantidade na saída. É importante frisar que, nas CNN, a propriedade de equivariância
+é aplicável apenas para a translação, de modo que a convolução não é equivariante para transformações 
+de escala e rotações na imagem.
 
 \section{Resumo}
 
