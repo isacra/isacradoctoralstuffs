@@ -14,6 +14,12 @@ Buduma, N.  \harvardyearleft 2015\harvardyearright , { Fundamentals of Deep
 Deutsch, C.  \harvardyearleft 2002\harvardyearright , { Geostatistical
   Reservoir Modeling}, Applied geostatistics series, Oxford University Press.
 
+\harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2016}{DongLoy2016}
+Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2016\harvardyearright
+  , Image super-resolution using deep convolutional networks, { IEEE
+  Transactions on Pattern Analysis and Machine Intelligence} {\bf
+  38}(2),~295--307.
+
 \harvarditem[]{Goodfellow; Bengio e Courville}{2016}{Gdfl16}
 Goodfellow, I.; Bengio, Y. e Courville, A.  \harvardyearleft
   2016\harvardyearright , { Deep Learning}, MIT Press.
@@ -26,6 +32,11 @@ GSIPL  \harvardyearleft 2017\harvardyearright , Seismic surveys,
 \harvarditem{Géron}{2017}{aurelien17}
 Géron, A.  \harvardyearleft 2017\harvardyearright , { Hands-on Machine
   Learning with Scikit0Learn and TensorFlow}, Academic Press, O'Reilly Media.
+
+\harvarditem{Hou e Andrews}{1978}{HsiehAndrews1978}
+Hou, H. e Andrews, H.  \harvardyearleft 1978\harvardyearright , Cubic splines
+  for image interpolation and digital filtering, { IEEE Transactions on
+  Acoustics, Speech, and Signal Processing} {\bf 26}(6),~508--517.
 
 \harvarditem[Passos~de Figueiredo et~al.]{Passos~de Figueiredo; Santos;
   Roisenberg; Schwedersky~Neto e Figueiredo}{2014}{Figueiredo2014}

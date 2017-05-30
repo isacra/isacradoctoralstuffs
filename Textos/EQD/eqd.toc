@@ -6,12 +6,16 @@
 \contentsline {section}{\numberline {2.1}Problema Inverso}{6}{section.2.1}
 \contentsline {section}{\numberline {2.2}Invers\IeC {\~a}o S\IeC {\'\i }smica}{7}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Aquisi\IeC {\c c}\IeC {\~a}o S\IeC {\'\i }smica}{7}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{10}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}M\IeC {\'a}ximo \textit {a posteriori}}{10}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Redes Neurais Convolucionais}{10}{section.2.3}
+\contentsline {section}{\numberline {2.3}Redes Neurais Convolucionais}{9}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Convolu\IeC {\c c}\IeC {\~a}o}{10}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Filtros}{12}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Pooling}{13}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Propriedades das Redes Convolucionais}{15}{subsection.2.3.4}
-\contentsline {section}{\numberline {2.4}Resumo}{17}{section.2.4}
-\contentsline {chapter}{Bibliografia}{18}{section.2.4}
+\contentsline {subsection}{\numberline {2.3.2}Filtros}{13}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Pooling}{15}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Propriedades das Redes Convolucionais}{16}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}Resumo}{18}{section.2.4}
+\contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o da Literatura}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}M\IeC {\'e}todos de Invers\IeC {\~a}o S\IeC {\'\i }smica}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{20}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}M\IeC {\'a}ximo \textit {a posteriori}}{20}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}M\IeC {\'e}todos Inteligentes de Super-resolu\IeC {\c c}\IeC {\~a}o de Imagens}{20}{section.3.3}
+\contentsline {section}{\numberline {3.4}Resumo}{20}{section.3.4}
+\contentsline {chapter}{Bibliografia}{22}{section.3.4}

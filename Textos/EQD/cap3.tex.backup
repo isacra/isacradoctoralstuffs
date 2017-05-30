@@ -1,33 +1,44 @@
 \chapter{Revisão da Literatura}
-\label{cap:2modelosSuperresolucao}
+\label{cap:3revisaoliteraria}
 
-- foram feitas pesquisas com estas palavras chaves
-- foram encontrados estes textos
-- porem não foram encontrados trabalhos que abordem as questões abordadas neste trabalho
+Neste capítulo serão apresentadas as revisões sistemáticas relacionadas
+ao método de inversão sísmica e dos modelos de super-resolução de imagens.
+Esta revisão evidenciou o potencial de pesquisa desta proposta, pois
+ficou evidente uma lacuna em métodos de pós-processamento da inversão sísmica.
 
+\section{Métodos de Inversão Sísmica}
+É importante ter em mente que, durante a inversão, se trabalha com dois espaços
+de representações diferentes: o espaço do modelo e o espaço de dados.
+No contexto da inversão sísmica, os dados sísmicos $d$ são representados no espaço
+dos dados e a propriedade de impedância acústica $m$ das rochas é representada
+no espaço do modelo.
 
+A escolha dos parâmetros do modelo geralmente é não única, de modo que dois conjuntos
+de parâmetros diferentes podem ser equivalentes. Independente de uma parametrização
+específica, é possível introduzir um espaço de pontos no qual cada ponto representa um modelo
+do sistema. Entretanto, para uma abordagem quantitativa, uma parametrização precisa ser definida \cite{tarantola}.
+Por outro lado, para obter informações sobre os parâmetros do modelo, é necessário
+realizar observações através de experimentos físicos, como por exemplo, a
+aquisição sísmica. Este conjunto de dados representa os parâmetros observáveis do sistema,
+ou, espaço de dados.
 
-Numa configuração de experimentos físicos se tem o espaço dos parâmetros do
-modelo e o espaço das medidas. No contexto da sísmica de reflexão, os dados
-sísmicos $d$ são representados no espaço das medidas e a propriedade de
-impedância acústica $m$ das rochas é representada no espaço do modelo.
-
-A princípio parece descomplicada a utilização de equações físicas que descrevem
-o sistema de forma inversa, fazendo o mapeamento do espaço das medidas ao espaço
-do modelo. No entanto, esses métodos de inversão direta sofrem de instabilidades
+Sob um olhar ingênuo é possível questionar por quê não definir a
+função inversa da modelagem direta e calcular, de forma imediata,
+os parâmetros do modelo a partir dos espaço dos dados.
+No entanto, esses métodos de inversão direta sofrem de instabilidades
 devido à ruído e características do problema \citep[p. 50]{sen_livro}. Outra
 opção é utilizar tentativa e erro para ajustar os parâmetros até conseguir uma
 resposta semelhante aos dados experimentais. Formalmente isto é automatizado
 utilizando métodos de otimização. Para tanto, é preciso definir uma função de
 custo, ou função objetivo, que mede o ajuste dos dados produzidos pelos
 parâmetros do modelo (dado sintético) ao dado medido.
-
-O objetivo da inversão, no entanto, vai além de encontrar os parâmetros que
-melhor se ajustam aos dados. Quando os dados são ruidosos, o modelo direto não é
-exato e não existem dados suficientes, a inversão tem solução não única, ou
-seja, vários modelos ajustam aos dados de forma equivalente. Consequentemente é
-importante modelar a incerteza envolvida no processo, indicando qual a
-variabilidade dos modelos que se ajustam bem aos dados.
+% 
+% O objetivo da inversão, no entanto, vai além de encontrar os parâmetros que
+% melhor se ajustam aos dados. Quando os dados são ruidosos, o modelo direto não é
+% exato e não existem dados suficientes, a inversão tem solução não única, ou
+% seja, vários modelos ajustam aos dados de forma equivalente. Consequentemente é
+% importante modelar a incerteza envolvida no processo, indicando qual a
+% variabilidade dos modelos que se ajustam bem aos dados.
 
 A relação entre o modelo e os dados (modelo direto) é dada por:
 
@@ -42,181 +53,211 @@ dos dados.
 
 \section{Inversão Sísmica Linear e Não Linear}
 
-O modelo mais utilizado para aproximar a função $G$, no caso da inversão
-sísmica, é o modelo convolucional. No caso discreto a convolução é dada pelo
-produto acumulado de cada amostra do vetor de refletividades por todas as
-amostras da \textit{wavelet}. Portanto pode ser representado por uma operação
-matricial:
-
-\begin{equation}
-\label{eq:sismDiscreta}
-\mathbf{d = Gr}
-\end{equation}
-onde $\mathbf{G}$ é uma matriz convolucional construída utilizando uma
-\textit{wavelet} e $\mathbf r$ o vetor das refletividades definido por:
-
-\begin{equation}
-\label{eq:refletDiscreta}
-r(t)=\frac{z(t+\delta t) - z(t)}{z(t+\delta t) + z(t)}
-\end{equation}
-o que torna não linear a relação entre impedância $\mathbf z$ e o dado sísmico.
-Uma aproximação válida quando valores de refletividades não ultrapassam $0.3$ é:
-
-
-\begin{equation}
-r(t) = \frac{1}{2}\Delta \ln(z(t))
-\label{eq:lnz}
-\end{equation}
-
-
-Utilizando estas aproximações para o modelo direto, a alternativa mais objetiva
-é incorporar as aproximações na matriz $\mathbf{G}$ e invertê-la para obter
-$\mathbf{\ln(z)}$, por fim aplicar o exponencial para obter $\mathbf{z}$.
-Neste caso temos os seguintes problemas: existência; unicidade; estabilidade; e
-robustez \citep[p. 56-57]{sen_livro}. Utilizando a formulação de mínimos
-quadrados também é possível resolver sistemas sobredeterminados, solucionando
-problemas com a melhor estimativa possível no sentido de minimizar o erro
-quadrático (norma $L_2$). Apesar de ser uma solução mais geral, ainda é
-utilizado somente um critério de ajuste aos dados, o que não possibilita a
-inserção de conhecimento \textit{a priori}. É possível regularizar o método de
-mínimos quadrados, mas ainda não se tem muita liberdade para inserir
-conhecimentos \textit{a priori} e de outras fontes \citep{clappRegLeast3D}.
-
-
-Quando não é possível o uso da aproximação da Equação \ref{eq:lnz}, o problema
-deve ser abordado utilizando métodos de otimização não linear. Com isso os erros
-devido às aproximações do modelo \textit{forward} diminuem, mas a otimização se
-torna mais custosa. Como a relação entre os dados e os parâmetros é não linear, a
-função objetivo a ser minimizada irá possuir mínimos locais, tornando necessário
-o uso de métodos de otimização global. Esta prática está bem documentada na
-literatura de inversão, como o uso de \textit{simulated annealing}
-\citep{max_inv_simulated}, de algoritmos genéticos \citep{MallickGeneticInve} e
-enxame de partículas \citep{zhe_nonlinear}. 
-
-
-%falar mais das vantagens e desvantagens do nao linear
-
-Outra forma de inversão presente na literatura é a elástica
-\citep{azevedo2013_avoinv,Buland01012003}. Nesse tipo de inversão os dados
-sísmicos estão em um nível diferente de processamento onde os traços sísmicos
-são empilhados em intervalos de ângulos de incidência. Com isso é possível
-inverter para Vp (velocidade primária/compressional), Vs (velocidade
-secundária/cisalhante) e $\rho$ (densidade), ao invés de somente impedância
-acústica. A Equação \ref{eq:elastica} modela a relação da refletividade $c_{pp}$
-com Vp ($\alpha$), Vs ($\beta$) e $\rho$ para cada ângulo disponível.
-
-\begin{equation}
-c_{pp}(\theta) = a_\alpha(\theta)\frac{\Delta\alpha}{\bar{\alpha}} +
-a_\beta(\theta) \frac{\Delta\beta}{\bar{\beta}} +
-a_\rho(\theta) \frac{\Delta\rho}{\bar{\rho}}
-\label{eq:elastica}
-\end{equation}
-
-onde:
-\begin{equation}
-a_\alpha(\theta)= \frac{1}{2}(1+\tan^2\theta),
-\end{equation}
-
-\begin{equation}
-a_\beta(\theta)= -4\frac{\bar{\beta}^2}{\bar{\alpha}^2}\sin^2\theta,
-\end{equation}
-
-\begin{equation}
-a_\rho(\theta) = \frac{1}{2} \left (  
-1-4\frac{\bar{\beta}^2}{\bar{\alpha}^2}\sin^2\theta \right ).
-\end{equation}
-
-Adicionalmente $\bar{\alpha}$, $\bar{\beta}$ e $\bar{\rho}$ são as respectivas
-médias sobre a interface; $\Delta\alpha$, $\Delta\beta$ e $\Delta\rho$ são os
-contrastes e $\theta$ o ângulo médio de reflexão. Essas propriedades são
-importantes, pois a velocidade secundária é indicador de hidrocarbonetos por não
-se propagar em meio líquido, desta forma áreas com presença destes compostos se
-destacam numa imagem de Vs, podendo indicar interfaces rocha/óleo e água/óleo.
-As metodologias para resolução do problema são semelhantes, mas neste caso
-aumentando a dimensão dos dados e números de parâmetros a serem estimados
-\citep{Buland01012003}.
+% O modelo mais utilizado para aproximar a função $G$, no caso da inversão
+% sísmica, é o modelo convolucional. No caso discreto a convolução é dada pelo
+% produto acumulado de cada amostra do vetor de refletividades por todas as
+% amostras da \textit{wavelet}. Portanto pode ser representado por uma operação
+% matricial:
+% 
+% \begin{equation}
+% \label{eq:sismDiscreta}
+% \mathbf{d = Gr}
+% \end{equation}
+% onde $\mathbf{G}$ é uma matriz convolucional construída utilizando uma
+% \textit{wavelet} e $\mathbf r$ o vetor das refletividades definido por:
+% 
+% \begin{equation}
+% \label{eq:refletDiscreta}
+% r(t)=\frac{z(t+\delta t) - z(t)}{z(t+\delta t) + z(t)}
+% \end{equation}
+% o que torna não linear a relação entre impedância $\mathbf z$ e o dado sísmico.
+% Uma aproximação válida quando valores de refletividades não ultrapassam $0.3$ é:
+% 
+% 
+% \begin{equation}
+% r(t) = \frac{1}{2}\Delta \ln(z(t))
+% \label{eq:lnz}
+% \end{equation}
+% 
+% 
+% Utilizando estas aproximações para o modelo direto, a alternativa mais objetiva
+% é incorporar as aproximações na matriz $\mathbf{G}$ e invertê-la para obter
+% $\mathbf{\ln(z)}$, por fim aplicar o exponencial para obter $\mathbf{z}$.
+% Neste caso temos os seguintes problemas: existência; unicidade; estabilidade; e
+% robustez \citep[p. 56-57]{sen_livro}. Utilizando a formulação de mínimos
+% quadrados também é possível resolver sistemas sobredeterminados, solucionando
+% problemas com a melhor estimativa possível no sentido de minimizar o erro
+% quadrático (norma $L_2$). Apesar de ser uma solução mais geral, ainda é
+% utilizado somente um critério de ajuste aos dados, o que não possibilita a
+% inserção de conhecimento \textit{a priori}. É possível regularizar o método de
+% mínimos quadrados, mas ainda não se tem muita liberdade para inserir
+% conhecimentos \textit{a priori} e de outras fontes \citep{clappRegLeast3D}.
+% 
+% 
+% Quando não é possível o uso da aproximação da Equação \ref{eq:lnz}, o problema
+% deve ser abordado utilizando métodos de otimização não linear. Com isso os erros
+% devido às aproximações do modelo \textit{forward} diminuem, mas a otimização se
+% torna mais custosa. Como a relação entre os dados e os parâmetros é não linear, a
+% função objetivo a ser minimizada irá possuir mínimos locais, tornando necessário
+% o uso de métodos de otimização global. Esta prática está bem documentada na
+% literatura de inversão, como o uso de \textit{simulated annealing}
+% \citep{max_inv_simulated}, de algoritmos genéticos \citep{MallickGeneticInve} e
+% enxame de partículas \citep{zhe_nonlinear}. 
+% 
+% 
+% %falar mais das vantagens e desvantagens do nao linear
+% 
+% Outra forma de inversão presente na literatura é a elástica
+% \citep{azevedo2013_avoinv,Buland01012003}. Nesse tipo de inversão os dados
+% sísmicos estão em um nível diferente de processamento onde os traços sísmicos
+% são empilhados em intervalos de ângulos de incidência. Com isso é possível
+% inverter para Vp (velocidade primária/compressional), Vs (velocidade
+% secundária/cisalhante) e $\rho$ (densidade), ao invés de somente impedância
+% acústica. A Equação \ref{eq:elastica} modela a relação da refletividade $c_{pp}$
+% com Vp ($\alpha$), Vs ($\beta$) e $\rho$ para cada ângulo disponível.
+% 
+% \begin{equation}
+% c_{pp}(\theta) = a_\alpha(\theta)\frac{\Delta\alpha}{\bar{\alpha}} +
+% a_\beta(\theta) \frac{\Delta\beta}{\bar{\beta}} +
+% a_\rho(\theta) \frac{\Delta\rho}{\bar{\rho}}
+% \label{eq:elastica}
+% \end{equation}
+% 
+% onde:
+% \begin{equation}
+% a_\alpha(\theta)= \frac{1}{2}(1+\tan^2\theta),
+% \end{equation}
+% 
+% \begin{equation}
+% a_\beta(\theta)= -4\frac{\bar{\beta}^2}{\bar{\alpha}^2}\sin^2\theta,
+% \end{equation}
+% 
+% \begin{equation}
+% a_\rho(\theta) = \frac{1}{2} \left (  
+% 1-4\frac{\bar{\beta}^2}{\bar{\alpha}^2}\sin^2\theta \right ).
+% \end{equation}
+% 
+% Adicionalmente $\bar{\alpha}$, $\bar{\beta}$ e $\bar{\rho}$ são as respectivas
+% médias sobre a interface; $\Delta\alpha$, $\Delta\beta$ e $\Delta\rho$ são os
+% contrastes e $\theta$ o ângulo médio de reflexão. Essas propriedades são
+% importantes, pois a velocidade secundária é indicador de hidrocarbonetos por não
+% se propagar em meio líquido, desta forma áreas com presença destes compostos se
+% destacam numa imagem de Vs, podendo indicar interfaces rocha/óleo e água/óleo.
+% As metodologias para resolução do problema são semelhantes, mas neste caso
+% aumentando a dimensão dos dados e números de parâmetros a serem estimados
+% \citep{Buland01012003}.
 
 \subsection{Máximo \textit{a posteriori}}
 \label{sec:map}
 
-A inversão por Máximo \textit{a posteriori} (MAP)
-\citep{Buland01012003,leandroGRSL} é realizada para cada traço individualmente.
-Baseado no modelo convolucional e assumindo que o ruído presente nos dados é
-Gaussiano, o vetor das sísmicas experimentais $\boldsymbol{d}$, é modelado pela
-distribuição de probabilidade:
+% A inversão por Máximo \textit{a posteriori} (MAP)
+% \citep{Buland01012003,leandroGRSL} é realizada para cada traço individualmente.
+% Baseado no modelo convolucional e assumindo que o ruído presente nos dados é
+% Gaussiano, o vetor das sísmicas experimentais $\boldsymbol{d}$, é modelado pela
+% distribuição de probabilidade:
+% 
+% \begin{equation}
+% p(\boldsymbol{d}|\boldsymbol{\mu_{d}},\boldsymbol{\Sigma_{d}}) =
+% N(\boldsymbol{\mu_{d}},\boldsymbol{\Sigma_{d}}),
+% \end{equation}
+% onde $\boldsymbol{\mu_{d}} = \boldsymbol{Gm}$ é o vetor com a sísmica
+% sintética e $\boldsymbol{\Sigma_{d}}$ é a matriz de covariância do ruído da
+% sísmica, a qual é definida conforme a confiabilidade que o especialista tem no
+% dado sísmico ou seu nível de ruído. Geralmente se utiliza uma matriz diagonal
+% com mesma variância para todos os elementos.
+% 
+% Para o vetor modelo $\boldsymbol{m}$ com o logaritmo natural da impedância
+% acústica, considerou-se também uma distribuição normal:
+% 
+% \begin{equation}
+% p(\boldsymbol{m}|\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}) =
+% N(\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}),
+% \end{equation} 
+% no qual $\boldsymbol{\mu_{m}}$ é um vetor contendo a baixa frequência do
+% logaritmo natural da impedância. Este dado é outra informação adicional que é
+% fornecida pelo especialista via análise de velocidades ou interpolando
+% dados de poços por Krigagem. Os componentes da matriz de covariância
+% $\boldsymbol{\Sigma_{m}}$ foram definidos conforme \citep{leandroGRSL}:
+% 
+% \begin{equation}
+% \label{eq:correlVert}
+% \boldsymbol{\nu}_{t,t'} = \sigma_{m}^{2} exp \left (-\frac{(t-t')^2)}{L^2}
+% \right ),
+% \end{equation} 
+% que define a correlação entre as componentes de $\boldsymbol{m}$ no tempo $t$ e
+% $t'$, na qual $\sigma_{m}^{2}$ é a variância da impedância acústica calculada
+% nos dados de poços sem a baixa frequência, e $L$ é a distância de correlação
+% vertical a ser imposta ao resultado.
+% 
+% Neste arcabouço a média e variância posterior para cada traço podem ser
+% calculadas analiticamente via \citep{leandroGRSL}:
+% 
+% \begin{equation}
+% \label{eqn:mapSolution}
+% \boldsymbol{\mu}_{m|} = \boldsymbol{\mu}_{m} + \boldsymbol{\Sigma}_{m}\boldsymbol{G}^{T}(\boldsymbol{G\Sigma}_{m}\boldsymbol{G}^{T}+\boldsymbol{\Sigma}_{d})^{-1}\left ( \boldsymbol{d}_{o} - \boldsymbol{G\mu}_{m} \right ),
+% \end{equation}
+% \begin{equation}
+% \boldsymbol{\Sigma}_{m|} = \boldsymbol{\Sigma}_{m} - \boldsymbol{\Sigma}_{m}\boldsymbol{G}^{T}(\boldsymbol{G\Sigma}_{m}\boldsymbol{G}^{T}+\boldsymbol{\Sigma}_{d})^{-1}\boldsymbol{G\Sigma}_{m}.
+% \end{equation} 
+% onde o cálculo da matriz inversa acima pode ser aproveitado para vários traços
+% de uma região de interesse em certos casos, ou seja, quando as matrizes de
+% covariância possam ser assumidas iguais para todos os traços da sísmica da região.
+% Desta forma alteram-se a sísmica $\mathbf{d}_0$ e a baixa frequência
+% $\boldsymbol{\mu_m}$ obtendo-se a média posterior para o traço desejado.
+% 
+% 
+% Utilizando esta metodologia a solução é representada por uma distribuição
+% posterior Gaussiana com expressões explícitas para o valor esperado e para a
+% covariância. Não são necessárias iterações para ajuste do modelo, tornando o
+% método eficiente e útil em casos de uso reais, possibilitando o especialista
+% alterar parâmetros e avaliar o resultado em tempo real numa pequena área.
+% Satisfeito com a parametrização, o método é aplicado a todo o campo. A matriz de
+% covariância posterior indica a incerteza presente no resultado, não é necessário
+% definir a tolerância de ajuste aos dados explicitamente, mas é preciso definir a
+% matriz de covariância \textit{a priori} do resultado esperado, ou seja, é
+% preciso ter conhecimento, mesmo que de forma grosseira, das correlações espaciais e
+% variâncias que se espera do resultado. Ao final, a covariância posterior é
+% calculada.
+% 
+% Uma desvantagem destacada na literatura é a dificuldade em inserir modelos de
+% continuidade mais abrangentes, pois é necessário incluir as covariâncias entre
+% traços vizinhos, aumentando as matrizes de covariância e a matriz a ser
+% invertida. Inserindo as correlações horizontais também inviabiliza aproveitar o
+% cálculo da matriz inversa, pois desta forma o resultado da inversão precisa ser
+% calculado para todos os pontos a serem invertidos ao mesmo tempo.
+% Atualmente é inserida somente covariância entre amostras no mesmo traço, ou
+% seja, somente na direção vertical.
+% 
+\section{Métodos Inteligentes de Super-resolução de Imagens}
 
-\begin{equation}
-p(\boldsymbol{d}|\boldsymbol{\mu_{d}},\boldsymbol{\Sigma_{d}}) =
-N(\boldsymbol{\mu_{d}},\boldsymbol{\Sigma_{d}}),
-\end{equation}
-onde $\boldsymbol{\mu_{d}} = \boldsymbol{Gm}$ é o vetor com a sísmica
-sintética e $\boldsymbol{\Sigma_{d}}$ é a matriz de covariância do ruído da
-sísmica, a qual é definida conforme a confiabilidade que o especialista tem no
-dado sísmico ou seu nível de ruído. Geralmente se utiliza uma matriz diagonal
-com mesma variância para todos os elementos.
+A super-resolução tem aplicações nas mais diferentes áreas...
 
-Para o vetor modelo $\boldsymbol{m}$ com o logaritmo natural da impedância
-acústica, considerou-se também uma distribuição normal:
+A super-resolução tem um papel importante na visão computacional \cite{DongLoy2016}.
+Métodos baseados em interpolação são fáceis de implementar e amplamente utilizados,
+entretanto estes métodos sofrem de falta de expressividade, uma vez que modelos lineares
+não são capazes de expressar dependências complexas entre as entradas e as saídas \cite{HsiehAndrews1978}.
+Na prática tais métodos falham na tentativa de prever adequadamente detalhes de alta frequência
+levando a saídas de alta resolução borradas. Efeito semelhante ocorre durante a inversão sísmica,
+na qual as imagens resultantes apresentam resolução limitada e contornos borrados. Assim, um modelo
+de rede convolucional foi testado para atribuir às imagens de inversão sísmica para impedância
+elementos de alta frequência.
 
-\begin{equation}
-p(\boldsymbol{m}|\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}) =
-N(\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}),
-\end{equation} 
-no qual $\boldsymbol{\mu_{m}}$ é um vetor contendo a baixa frequência do
-logaritmo natural da impedância. Este dado é outra informação adicional que é
-fornecida pelo especialista via análise de velocidades ou interpolando
-dados de poços por Krigagem. Os componentes da matriz de covariância
-$\boldsymbol{\Sigma_{m}}$ foram definidos conforme \citep{leandroGRSL}:
+A proposta para pesquisar um modelo baseado em redes convolucionais para pós-processamento
+da inversão sísmica se fundamenta na lacuna existente de métodos...
+\textbf{A revisão da literatura foi realizada com as seguintes palavras-chaves:}
+A revisão foi realizada sistematicamente nos seguintes periódicos:
 
-\begin{equation}
-\label{eq:correlVert}
-\boldsymbol{\nu}_{t,t'} = \sigma_{m}^{2} exp \left (-\frac{(t-t')^2)}{L^2}
-\right ),
-\end{equation} 
-que define a correlação entre as componentes de $\boldsymbol{m}$ no tempo $t$ e
-$t'$, na qual $\sigma_{m}^{2}$ é a variância da impedância acústica calculada
-nos dados de poços sem a baixa frequência, e $L$ é a distância de correlação
-vertical a ser imposta ao resultado.
+Foram selecionados os documentos que datam de, pelo menos 10 anos. Ficou evidente que o problema
+de super-resolução vem sendo tratado por diferentes abordagens....
+Mais recentemente, os avanços das pesquisas do Google em \textit{Deep Learning} disponibilizaram
+ferramentas de implementação de diferentes algoritmos de aprendizagem de máquina. Dentre estas
+ferramentas está o \textit{Framework} de \textit{Deep Learning} TensorFlow, no qual os modelos
+de redes convolucionais podem ser implementadas e testadas.
 
-Neste arcabouço a média e variância posterior para cada traço podem ser
-calculadas analiticamente via \citep{leandroGRSL}:
-
-\begin{equation}
-\label{eqn:mapSolution}
-\boldsymbol{\mu}_{m|} = \boldsymbol{\mu}_{m} + \boldsymbol{\Sigma}_{m}\boldsymbol{G}^{T}(\boldsymbol{G\Sigma}_{m}\boldsymbol{G}^{T}+\boldsymbol{\Sigma}_{d})^{-1}\left ( \boldsymbol{d}_{o} - \boldsymbol{G\mu}_{m} \right ),
-\end{equation}
-\begin{equation}
-\boldsymbol{\Sigma}_{m|} = \boldsymbol{\Sigma}_{m} - \boldsymbol{\Sigma}_{m}\boldsymbol{G}^{T}(\boldsymbol{G\Sigma}_{m}\boldsymbol{G}^{T}+\boldsymbol{\Sigma}_{d})^{-1}\boldsymbol{G\Sigma}_{m}.
-\end{equation} 
-onde o cálculo da matriz inversa acima pode ser aproveitado para vários traços
-de uma região de interesse em certos casos, ou seja, quando as matrizes de
-covariância possam ser assumidas iguais para todos os traços da sísmica da região.
-Desta forma alteram-se a sísmica $\mathbf{d}_0$ e a baixa frequência
-$\boldsymbol{\mu_m}$ obtendo-se a média posterior para o traço desejado.
+\textbf{Dentre os textos encontrados é possível destacar:}
 
 
-Utilizando esta metodologia a solução é representada por uma distribuição
-posterior Gaussiana com expressões explícitas para o valor esperado e para a
-covariância. Não são necessárias iterações para ajuste do modelo, tornando o
-método eficiente e útil em casos de uso reais, possibilitando o especialista
-alterar parâmetros e avaliar o resultado em tempo real numa pequena área.
-Satisfeito com a parametrização, o método é aplicado a todo o campo. A matriz de
-covariância posterior indica a incerteza presente no resultado, não é necessário
-definir a tolerância de ajuste aos dados explicitamente, mas é preciso definir a
-matriz de covariância \textit{a priori} do resultado esperado, ou seja, é
-preciso ter conhecimento, mesmo que de forma grosseira, das correlações espaciais e
-variâncias que se espera do resultado. Ao final, a covariância posterior é
-calculada.
-
-Uma desvantagem destacada na literatura é a dificuldade em inserir modelos de
-continuidade mais abrangentes, pois é necessário incluir as covariâncias entre
-traços vizinhos, aumentando as matrizes de covariância e a matriz a ser
-invertida. Inserindo as correlações horizontais também inviabiliza aproveitar o
-cálculo da matriz inversa, pois desta forma o resultado da inversão precisa ser
-calculado para todos os pontos a serem invertidos ao mesmo tempo.
-Atualmente é inserida somente covariância entre amostras no mesmo traço, ou
-seja, somente na direção vertical.
-
+\textbf{porém} não foram encontrados trabalhos que abordem as questões abordadas neste trabalho
 
 \section{Resumo}
 

@@ -231,20 +231,18 @@ de tamanho $0$ a camada seguinte terá as mesmas dimensões da camada anterior.
 \end{figure}
 
 \subsection{Filtros}
-Os pesos dos neurônios em uma camada convolucional são representados como uma pequena
-imagem com as mesmas dimensões do campo receptivo. Estes pesos, também chamados de filtros ou \textit{kernels}, são os elementos
+Os filtros (pesos) em uma camada convolucional são representados como uma pequena
+imagem com as mesmas dimensões do campo receptivo. São eles os elementos
 convolvidos com a imagem de entrada para obter o resultado da camada convolucional.
-A Figura \ref{fig:conv_filt} ilustra dois conjuntos de pesos possíveis. O primeiro filtro é um quadrado preto
-(\textit{pixel} de valor 0) contendo uma coluna central branca (\textit{pixels} com valor 1). 
+A Figura \ref{fig:conv_filt} ilustra dois conjuntos de filtros possíveis. O primeiro filtro é um quadrado preto
+(\textit{pixels} de valor 0) contendo uma coluna central branca (\textit{pixels} com valor 1). 
 Analogamente, o segundo filtro é um quadrado preto contendo uma linha central branca.
 É possível notar na imagem da esquerda que as linhas verticais brancas se tornaram mais
-evidentes enquanto o restante se tornou mais borrado. De modo análogo, na imagem da direita,
+evidentes, enquanto as outras partes da imagem se tornaram mais borradas. Igualmente, na imagem da direita 
 a convolução com o filtro horizontal destacou as linhas brancas horizontais, ao passo que
-o restante ficou borrado. Ao convolver uma entrada com o mesmo conjunto de filtros
-da camada convolucional, se obtém o mapa de características (feature map). Assim, uma
-característica detectada por um neurônio representa o tipo de padrão da entrada que causará
-a sua ativação. Estes padrões podem ser bordas, contornos ou estruturas com outras
-formas.
+o restante ficou borrado. Assim, uma característica detectada por um neurônio representa
+o tipo de padrão da entrada que causará a sua ativação.
+Estes padrões podem ser bordas, contornos ou estruturas com outras formas.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/conv_filt}
@@ -253,13 +251,12 @@ formas.
 \end{center}
 \end{figure}
 
-A Figura \ref{fig:conv_filt} ilustra a convolução de uma imagem com dois filtros possíveis, em uma representação 2D.
-Entretanto, em situações reais, a camada convolucional possui muitos mapas de características, resultando
+Em situações reais, a camada convolucional possui muitos mapas de características, resultando
 em uma representação em 3-D como ilustrado na Figura \ref{fig:featmaps}. Os mapas de características
 de uma camada convolucional são o resultado da convolução de uma das imagens de entrada com os diversos
-filtros específicos desta camada, os quais são iniciados, na maior parte dos casos, aleatoriamente.
-Estão ilustrados os mapas para a convolução com apenas uma imagem, de modo que é possível
-imaginar que à medida que o número de imagens aumenta, a estrutura ilustrada se replica horizontalmente. 
+filtros específicos desta camada. Na Figura \ref{fig:featmaps} estão ilustrados os mapas para a convolução
+com apenas uma imagem, de modo que é possível imaginar que, à medida que o número de imagens aumenta,
+a estrutura ilustrada se replica horizontalmente. 
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/feat_maps}
@@ -268,29 +265,41 @@ imaginar que à medida que o número de imagens aumenta, a estrutura ilustrada s
 \end{center}
 \end{figure}
 
-
 \subsection{Pooling}
-Uma camada em uma rede convolucional consiste de três estágios. No primeiro estágio,
-a camada realiza diversas convoluções para produzir um conjunto de ativações lineares.
+O processamento ao longo de uma rede convolucional ocorre em três estágios. No primeiro estágio,
+acontecem as convoluções entre as imagens e os filtros para produzir um conjunto de ativações lineares.
 O segundo estágio é chamado etapa de detecção, na qual cada ativação é submetida a uma
 função não-linear. A terceira etapa é chamada de \textit{pooling}, responsável por
-modificar a saída para o resumo estatístico das saídas em uma determinada vizinhança. A operação de
-\textit{pooling} permite tornar invariante pequenas translações no conjunto de entrada,
-ou seja, ainda que haja pequenas translações na entrada, os valores da maioria das saídas após a
-o \textit{pooling} permanecem iguais. A Figura \ref{fig:pool} ilustra o funcionamento da função de \textit{pooling}.
+modificar a saída da camada convolucional para obter um sumário estatístico das saídas em uma determinada vizinhança.
+Semelhante ao que ocorre na convolução, a região sobre a qual se aplica \textit{pooling} é definida por um
+campo receptivo e o deslocamento é definido por um \textit{stride}. O \textit{pooling} permite tornar
+invariante pequenas translações no conjunto de entrada, ou seja, ainda que haja pequenas translações na
+entrada, os valores da maioria das saídas após o \textit{pooling} permanecem iguais.
+A Figura \ref{fig:pool} ilustra o funcionamento da função de \textit{pooling} máximo, na qual
+o máximo valor de ativação dentro de uma vizinhança é selecionado. Outras funções de \textit{pooling} incluem o valor médio
+dentro de uma região retangular, a normalização $L^2$ de uma vizinhança, ou a média ponderada baseada na distância do \textit{pixel} central.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/pool}
-  \caption{Operação de \textit{pooling} com região de tamanho 3. Nesta operação é selecionado o máximo valor de ativação da etapa de detecção.}
+  \caption{Operação de \textit{pooling} com campo receptivo de tamanho 3. Nesta operação é selecionado o máximo valor de ativação da etapa de detecção.}
   \label{fig:pool}
 \end{center}
 \end{figure}
 
-A operação de \textit{pooling} permite lidar com entradas de tamanho variável.
-Classificar imagens de tamanhos diferentes, por exemplo, pode ser realizado
-variando o tamanho entre as regiões de \textit{pooling} de modo que a camada de 
-de classificação sempre receba o mesmo número de sumários estatísticos
-independente do tamanho da imagem.
+A propriedade de invariância é útil quando a existência de uma característica é mais relevante que
+o local exato onde ela ocorre. Por exemplo, para determinar se o rosto de uma pessoa ocorre em uma certa imagem, não é necessário saber
+com precisão o local dos olhos, basta saber se há um olho do lado esquerdo da rosto e outro olho do lado direito
+\footnote{O rosto da figura pública Nestor Cerveró, por exemplo, seria facilmente identificável por uma rede convolucional com uma camada de \textit{pooling}}.
+Por outro lado, há contextos em que o local da característica é uma informação relevante e deve ser preservada. Por exemplo,
+em modelagem de reservatórios, a detecção de bordas referentes a uma facie selante sobre uma região de reservatório.
+Adicionalmente, a operação de \textit{pooling} permite lidar com entradas de tamanho variável. Por exemplo, na classificação de imagens
+as entradas para a camada de classificação devem ter o mesmo tamanho. Assim, o \textit{stride} entre regiões de \textit{pooling} pode variar
+para que a camada de classificação receba o mesmo número de sumários estatísticos, independente do tamanho das imagens.
+
+As função de \textit{pooling} sumariza as respostas de vizinhanças separadas por $k$ \textit{pixels}, por isso, o tamanho do seu campo receptivo é menor
+que o campo receptivo da convolução. Isto aumenta a eficiência computacional da rede, pois a camada seguinte à \textit{pooling} terá $k$ vezes
+menos entradas para processar. Quando o número de filtros da camada seguinte é função do tamanho da sua entrada, a redução promovida pela
+função de \textit{pooling} pode resultar em maior eficiência estatística e redução da quantidade de memória.
 
 \subsection{Propriedades das Redes Convolucionais}
 Por conta da sua arquitetura, as redes convolucionais se sustentam sobre três pilares: interações esparsas, compartilhamentos
@@ -375,4 +384,4 @@ problema inverso foi introduzido e a inversão sísmica apresentada em
 maiores detalhes. Foram apresentados os elementos que compõem as redes
 neurais convolucionais: a convolução, as camadas convolucionais, os filtros e a camada de \textit{pooling}.
 Foram apresentadas também as propriedades das camadas convolucionais: conectividade esparsa,
-compartilhamento de parâmetros, equivariância de translação, 
+compartilhamento de parâmetros e equivariância de translação 
