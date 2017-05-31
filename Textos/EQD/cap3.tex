@@ -96,11 +96,6 @@ se torna linear por:
 
 Com isto, o problema da inversão acústica se torna não-linear e passa a ter representação matricial.
 
-Apesar de apresentar uma solução para o problema da inversão sísmica não-linear, uma questão
-vem à tona: o que fazer quando se dispõe de informações \texit{a priori}, por exemplo,
-informações de impedância acústica obtidas a partir de um conjunto de poços já
-perfurados, como inserir esta informação do modelo de inversão?
-
 % 
 % \begin{equation}
 % \label{eq:refletDiscreta}
@@ -182,35 +177,61 @@ perfurados, como inserir esta informação do modelo de inversão?
 \subsection{Máximo \textit{a posteriori}}
 \label{sec:map}
 
+A teoria mais simples e genérica possível é obtida quando se usa uma
+abordagem probabilística \citep{tarantola}.
+Na solução para a inversão sísmica, os parâmetros podem ser representados em
+termos de suas distribuições de probabilidade.
+Assim, assumindo que o ruído respeita uma distribuição gaussiana,
+as distribuições de probabilidade para o vetor dos
+dados sísmicos experimentais $\boldsymbol{d}$, para a \textit{wavelet} $\boldsymbol{d}$ e para
+o vetor dos parâmetros do modelo $\boldsymbol{m}$ são
+definidos, respectivamente, pelas distribuições \ref{} e \ref{}:
+
 % A inversão por Máximo \textit{a posteriori} (MAP)
 % \citep{Buland01012003,leandroGRSL} é realizada para cada traço individualmente.
 % Baseado no modelo convolucional e assumindo que o ruído presente nos dados é
-% Gaussiano, o vetor das sísmicas experimentais $\boldsymbol{d}$, é modelado pela
+% Gaussiano, o vetor das , é modelado pela
 % distribuição de probabilidade:
 % 
-% \begin{equation}
-% p(\boldsymbol{d}|\boldsymbol{\mu_{d}},\boldsymbol{\Sigma_{d}}) =
-% N(\boldsymbol{\mu_{d}},\boldsymbol{\Sigma_{d}}),
-% \end{equation}
-% onde $\boldsymbol{\mu_{d}} = \boldsymbol{Gm}$ é o vetor com a sísmica
-% sintética e $\boldsymbol{\Sigma_{d}}$ é a matriz de covariância do ruído da
-% sísmica, a qual é definida conforme a confiabilidade que o especialista tem no
-% dado sísmico ou seu nível de ruído. Geralmente se utiliza uma matriz diagonal
+\begin{equation}
+p(\boldsymbol{d}|\boldsymbol{\mu_{d}},\boldsymbol{\Sigma_{d}}) =
+N(\boldsymbol{\mu_{d}},\boldsymbol{\Sigma_{d}}),
+\end{equation}
+onde $\boldsymbol{\mu_{d}} = \boldsymbol{Gm}$ é o vetor com a sísmica
+sintética e $\boldsymbol{\Sigma_{d}}$ é a matriz de covariância do ruído da
+sísmica, a qual é definida conforme a confiabilidade que o especialista tem no
+dado sísmico ou seu nível de ruído.
+
+%Geralmente se utiliza uma matriz diagonal
 % com mesma variância para todos os elementos.
 % 
 % Para o vetor modelo $\boldsymbol{m}$ com o logaritmo natural da impedância
 % acústica, considerou-se também uma distribuição normal:
 % 
-% \begin{equation}
-% p(\boldsymbol{m}|\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}) =
-% N(\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}),
-% \end{equation} 
-% no qual $\boldsymbol{\mu_{m}}$ é um vetor contendo a baixa frequência do
-% logaritmo natural da impedância. Este dado é outra informação adicional que é
+\begin{equation}
+p(\boldsymbol{m}|\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}) =
+N(\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}),
+\end{equation} 
+neste ponto, é possível inserir no método de inversão informações \texit{a priori}
+que eventualmente estejam disponíveis. Por exemplo, uma matriz de baixas frequências pode
+ser gerada a partir da interpolação da impedância acústica observada em dois poços
+já perfurados \cite{Figueiredo2014}. Assim, $\boldsymbol{\mu_{m}}$ é o vetor com a informação \texit{a priori}.
+
+%Este dado é outra informação adicional que é
 % fornecida pelo especialista via análise de velocidades ou interpolando
 % dados de poços por Krigagem. Os componentes da matriz de covariância
 % $\boldsymbol{\Sigma_{m}}$ foram definidos conforme \citep{leandroGRSL}:
-% 
+%Apesar de apresentar uma solução geral para o problema da inversão sísmica não-linear, uma questão
+% vem à tona: o que fazer quando se dispõe de informações , por exemplo,
+informações de impedância acústica obtidas a partir de um conjunto de poços já
+perfurados, como inserir esta informação do modelo de inversão?
+
+\begin{equation}
+p(\boldsymbol{s}|\boldsymbol{\mu_{s}},\boldsymbol{\Sigma_{s}}) =
+N(\boldsymbol{\mu_{s}},\boldsymbol{\Sigma_{s}}),
+\end{equation} 
+onde o valor esperado da \textit{wavelet} $\boldsymbol{\mu_{s}}$ é definido
+como um vetor nulo.
 % \begin{equation}
 % \label{eq:correlVert}
 % \boldsymbol{\nu}_{t,t'} = \sigma_{m}^{2} exp \left (-\frac{(t-t')^2)}{L^2}
