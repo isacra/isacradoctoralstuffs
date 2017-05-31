@@ -15,7 +15,7 @@
 \contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o da Literatura}{19}{chapter.3}
 \contentsline {section}{\numberline {3.1}M\IeC {\'e}todos de Invers\IeC {\~a}o S\IeC {\'\i }smica}{19}{section.3.1}
 \contentsline {section}{\numberline {3.2}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{20}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}M\IeC {\'a}ximo \textit {a posteriori}}{20}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}M\IeC {\'e}todos Inteligentes de Super-resolu\IeC {\c c}\IeC {\~a}o de Imagens}{20}{section.3.3}
-\contentsline {section}{\numberline {3.4}Resumo}{20}{section.3.4}
+\contentsline {subsection}{\numberline {3.2.1}M\IeC {\'a}ximo \textit {a posteriori}}{21}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}M\IeC {\'e}todos Inteligentes de Super-resolu\IeC {\c c}\IeC {\~a}o de Imagens}{21}{section.3.3}
+\contentsline {section}{\numberline {3.4}Resumo}{21}{section.3.4}
 \contentsline {chapter}{Bibliografia}{22}{section.3.4}

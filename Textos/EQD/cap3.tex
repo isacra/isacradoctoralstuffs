@@ -7,20 +7,19 @@ Esta revisão evidenciou o potencial de pesquisa desta proposta, pois
 ficou evidente uma lacuna em métodos de pós-processamento da inversão sísmica.
 
 \section{Métodos de Inversão Sísmica}
-É importante ter em mente que, durante a inversão, se trabalha com dois espaços
-de representações diferentes: o espaço do modelo e o espaço de dados.
+É importante ter em mente que, durante a inversão, as operações são realizadas
+sobre dois espaços de representações diferentes: o espaço do modelo e o espaço de dados.
 No contexto da inversão sísmica, os dados sísmicos $d$ são representados no espaço
 dos dados e a propriedade de impedância acústica $m$ das rochas é representada
 no espaço do modelo.
 
 A escolha dos parâmetros do modelo geralmente é não única, de modo que dois conjuntos
-de parâmetros diferentes podem ser equivalentes. Independente de uma parametrização
-específica, é possível introduzir um espaço de pontos no qual cada ponto representa um modelo
-do sistema. Entretanto, para uma abordagem quantitativa, uma parametrização precisa ser definida \cite{tarantola}.
+de parâmetros diferentes podem ser equivalentes.
+Entretanto, para uma abordagem quantitativa, uma parametrização precisa ser definida \cite{tarantola}.
 Por outro lado, para obter informações sobre os parâmetros do modelo, é necessário
 realizar observações através de experimentos físicos, como por exemplo, a
 aquisição sísmica. Este conjunto de dados representa os parâmetros observáveis do sistema,
-ou, espaço de dados.
+ou espaço de dados, e é o ponto de partida para a inversão.
 
 Sob um olhar ingênuo é possível questionar por quê não definir a
 função inversa da modelagem direta e calcular, de forma imediata,
@@ -32,52 +31,85 @@ resposta semelhante aos dados experimentais. Formalmente isto é automatizado
 utilizando métodos de otimização. Para tanto, é preciso definir uma função de
 custo, ou função objetivo, que mede o ajuste dos dados produzidos pelos
 parâmetros do modelo (dado sintético) ao dado medido.
-% 
-% O objetivo da inversão, no entanto, vai além de encontrar os parâmetros que
-% melhor se ajustam aos dados. Quando os dados são ruidosos, o modelo direto não é
-% exato e não existem dados suficientes, a inversão tem solução não única, ou
-% seja, vários modelos ajustam aos dados de forma equivalente. Consequentemente é
-% importante modelar a incerteza envolvida no processo, indicando qual a
-% variabilidade dos modelos que se ajustam bem aos dados.
 
-A relação entre o modelo e os dados (modelo direto) é dada por:
+A relação entre o modelo e os dados sísmicos (modelo direto) é dada por:
 
 \begin{equation}
 d = G(m_v) + e
 \end{equation}
-onde $G(\cdot)$ é uma função não linear, e assume-se que um ruído $e$ está
-presente. Em teoria o ruído é uma interferência aleatória que não se tem
+onde $G(\cdot)$ é uma função não linear e se assume que um ruído $e$.
+Em teoria o ruído é uma interferência aleatória que não se tem
 controle, na prática se considera ruído tudo que não é explicado pela função
 $G$, e.g. imprecisões no modelo físico e problemas com filtragem e processamento
 dos dados.
 
-\section{Inversão Sísmica Linear e Não Linear}
+\subsection{Inversão Sísmica Linear e Não Linear}
+O conteúdo desta seção apresenta as suposições de linearidade necessárias
+que tornam a inversão acústica um processo analítico e computacionalmente
+eficiente. O detalhamento matemático pode ser consultado em \cite{Figueiredo2014}.
 
-% O modelo mais utilizado para aproximar a função $G$, no caso da inversão
-% sísmica, é o modelo convolucional. No caso discreto a convolução é dada pelo
-% produto acumulado de cada amostra do vetor de refletividades por todas as
-% amostras da \textit{wavelet}. Portanto pode ser representado por uma operação
-% matricial:
-% 
-% \begin{equation}
-% \label{eq:sismDiscreta}
-% \mathbf{d = Gr}
-% \end{equation}
-% onde $\mathbf{G}$ é uma matriz convolucional construída utilizando uma
-% \textit{wavelet} e $\mathbf r$ o vetor das refletividades definido por:
+Para entender o processo de inversão sísmica, é conveniente ter em mente
+que os problemas inversos podem ser classificados de acordo com a natureza
+do relacionamento entre os dados e o modelo, e de acordo com o comportamento da função objetivo.
+Assim, eles podem ser: linear, fracamente não-linear, quasi-linear e não-linear.
+Na maioria dos problemas geofísicos o operador direto $G$ é não-linear.
+Assim como nos algoritmos de aprendizagem de máquina, na inversão sísmica
+a não-linearidade implica em uma função de custo com forma complicada,
+possivelmente com mínimos locais.
+Por outro lado, se o operador $G$ for aproximadamente linear, a
+função de erro se tornará convenientemente quadrática em relação a perturbações
+no espaço do modelo. A maior parte da teoria de inversão é baseada em problemas
+de inversão linear e, em muitas aplicações, a inversão linear é 
+adequada para representar a natureza do sistema \cite{sen_livro}.
+
+A representação discreta para o modelo convolucional do dado sísmico é
+dado pela operação matricial: 
+\begin{equation}
+\label{eq:sismDiscreta}
+\mathbf{d = Sr + e}
+\end{equation}
+onde $\mathbf{S}$ é uma matriz convolucional construída utilizando uma
+\textit{wavelet} e $\mathbf{r}$  é a matriz de refletividades.
+
+Como já mencionado, a relação entre o pulso sísmico e a
+propriedade de impedância acústica é não-linear.
+Para escapar da problemática da não-linearidade do operador direto, é
+necessário aproxima linearmente o pulso sísmico da impedância acústica.
+Para isto, duas medidas são necessárias: a primeira é admitir a 
+refletividade como o logaritmo da impedância acústica (equação \ref{eq:lnz}).
+
+\begin{equation}
+r(t) = \frac{1}{2}\Delta \ln(z(t))
+\label{eq:lnz}
+\end{equation}
+
+Esta aproximação é válida para valores de refletividade menores que $0.3$.
+A segunda medida, é adotar um operador diferencial $\textbf{D}$. Assim,
+se define o operador linear $\textbf{G=(1/2)SD}$ e o modelo $m=ln(z)$.
+Com isto, a relação entre o dado sísmico e o parâmetro do modelo (impedância acústica)
+se torna linear por:
+
+\begin{equation}
+\label{eq:sismDiscreta}
+\mathbf{d = Gm + e}
+\end{equation}
+
+Com isto, o problema da inversão acústica se torna não-linear e passa a ter representação matricial.
+
+Apesar de apresentar uma solução para o problema da inversão sísmica não-linear, uma questão
+vem à tona: o que fazer quando se dispõe de informações \texit{a priori}, por exemplo,
+informações de impedância acústica obtidas a partir de um conjunto de poços já
+perfurados, como inserir esta informação do modelo de inversão?
+
 % 
 % \begin{equation}
 % \label{eq:refletDiscreta}
 % r(t)=\frac{z(t+\delta t) - z(t)}{z(t+\delta t) + z(t)}
 % \end{equation}
 % o que torna não linear a relação entre impedância $\mathbf z$ e o dado sísmico.
-% Uma aproximação válida quando valores de refletividades não ultrapassam $0.3$ é:
+% Uma aproximação válida quando valores de refletividades não ultrapassam é:
 % 
 % 
-% \begin{equation}
-% r(t) = \frac{1}{2}\Delta \ln(z(t))
-% \label{eq:lnz}
-% \end{equation}
 % 
 % 
 % Utilizando estas aproximações para o modelo direto, a alternativa mais objetiva
