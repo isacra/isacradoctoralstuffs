@@ -28,11 +28,19 @@ ptr=1, stack=
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
+---the literal stack isn't empty for entry Buland01012003
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
 ---the literal stack isn't empty for entry deutsch2002
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
 ---the literal stack isn't empty for entry DongLoy2016
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry leandroGRSL
 while executing---line 1350 of file my-agsm.bst
 You can't pop an empty literal stack for entry Gdfl16
 while executing---line 1350 of file my-agsm.bst
@@ -68,45 +76,45 @@ ptr=1, stack=
 
 ---the literal stack isn't empty for entry tarantola
 while executing---line 1350 of file my-agsm.bst
-You've used 12 entries,
+You've used 14 entries,
             2912 wiz_defined-function locations,
-            724 strings with 6767 characters,
-and the built_in function-call counts, 45201 in all, are:
-= -- 7319
-> -- 591
+            737 strings with 6986 characters,
+and the built_in function-call counts, 57473 in all, are:
+= -- 9356
+> -- 752
 < -- 0
-+ -- 3467
-- -- 175
-* -- 3840
-:= -- 9204
-add.period$ -- 13
-call.type$ -- 12
-change.case$ -- 162
-chr.to.int$ -- 12
-cite$ -- 12
-duplicate$ -- 182
-empty$ -- 380
-format.name$ -- 205
-if$ -- 8105
++ -- 4466
+- -- 224
+* -- 4939
+:= -- 11603
+add.period$ -- 15
+call.type$ -- 14
+change.case$ -- 190
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 212
+empty$ -- 446
+format.name$ -- 263
+if$ -- 10319
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 17
-newline$ -- 40
-num.names$ -- 124
-pop$ -- 65
+missing$ -- 19
+newline$ -- 46
+num.names$ -- 145
+pop$ -- 70
 preamble$ -- 1
-purify$ -- 180
+purify$ -- 210
 quote$ -- 0
-skip$ -- 126
+skip$ -- 151
 stack$ -- 0
-substring$ -- 10326
-swap$ -- 17
-text.length$ -- 168
+substring$ -- 13251
+swap$ -- 21
+text.length$ -- 196
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
+type$ -- 44
 warning$ -- 0
-while$ -- 257
+while$ -- 301
 width$ -- 0
-write$ -- 160
-(There were 18 error messages)
+write$ -- 186
+(There were 20 error messages)
