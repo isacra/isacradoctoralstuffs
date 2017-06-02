@@ -22,8 +22,8 @@ desejados, mas que não são passíveis de medição. Frequentemente, algum conh
 Um sistema físico depende do domínio em estudo. Pode ser uma galáxia para um
 astro-físico, pode ser a Terra para um geofísico ou uma partícula quântica
 para um físico quântico. Em comum, o fato de que, para ser estudado, um sistema
-físico segue três passos básicos: a parametrização do sistema, a modelagem direta e a modelagem inversa \cite{tarantola}.
-A parametrização do sistema se refere à definição do conjunto mínimo de elementos (parãmetros, variáveis)
+físico segue três passos básicos: a parametrização do sistema, a modelagem direta e a modelagem inversa \citep{tarantola}.
+A parametrização do sistema se refere à definição do conjunto mínimo de elementos (parâmetros, variáveis)
 cujos valores caracterizam completamente o sistema.
 %Como mencionado no Capítulo \ref{cap:1intro},
 %a modelagem direta se refere à definição das leis físicas que permitem realizar previsão
@@ -58,10 +58,10 @@ uma coleção de observações discretas.
 Os métodos geofísicos frequentemente envolvem a solução e avaliação de problemas inversos,
 pois permitem inferir a distribuição das propriedades físicas na subsuperfície da Terra
 usando observações da superfície. A inversão sísmica tem um papel fundamental na solução 
-de problemas geofísicos, em especial na caracterização de reservatórios \cite{Bosch2010} \cite{Srivastava2009}.
+de problemas geofísicos, em especial na caracterização de reservatórios \citep{Bosch2010,Srivastava2009}.
 Do ponto de vista prático, as soluções para o problema de inversão sísmica melhoram a exploração e
 o gerenciamento na indústria petrolífera, uma vez que os dados sísmicos estimados possuem forte correlação com as
-propriedades petrofísicas (porosidade, densidade, etc.) das rochas da subsuperfície \cite{Figueiredo2014}.
+propriedades petrofísicas (porosidade, densidade, etc.) das rochas da subsuperfície \citep{Figueiredo2014}.
 Para facilitar o entendimento da inversão sísmica, considere a subsuperfície como sendo formada por camadas
 sobrepostas de diferentes tipos de rochas. As regiões onde ocorrem as transições entre tipos
 diferentes de rochas são comumente chamadas de \textit{facies} e podem ter espessuras diferentes.
@@ -134,7 +134,7 @@ o seu espectro de frequência limitado. A Figura \ref{fig:wavelet} ilustra uma
 \section{Redes Neurais Convolucionais}
 As Redes Neurais Convolucionais (CNN), também chamadas de redes convolucionais,
 são um tipo de rede neural especializada em processamento de dados que possuem uma
-topologia conhecida e em forma de grade \cite{Gdfl16}. Exemplos deste tipo de dado são as séries
+topologia conhecida e em forma de grade \citep{Gdfl16}. Exemplos deste tipo de dado são as séries
 temporais, que podem ser vistas como uma grade em uma dimensão (1-D) com amostras
 em intervalos regulares de tempo, e dados de imagem, que podem ser vistos como
 uma grade (2-D) de \textit{pixels}. Este modelo de rede neural é chamada convolucional,
@@ -144,7 +144,7 @@ em pelo menos uma de suas camadas.
 \subsection{Convolução}
 A operação de convolução é definida como a integral do produto de duas funções após uma delas sofrer um
 certo deslocamento. Considere o exemplo em que se deseja rastrear a localização de uma
-nave espacial com um sensor a lazer. O sensor disponibiliza uma saída $x(t)$ referente à posição da nave
+nave espacial com um sensor a laser. O sensor disponibiliza uma saída $x(t)$ referente à posição da nave
 no tempo $t$. Ambos, $x$ e $t$, são valores reais, de modo que uma saída diferente pode ser obtida
 em qualquer instante de tempo. Considerando que o sensor possui um certo ruído, para realizar uma
 estimativa mais precisa da posição da nave é preciso ponderar várias medidas de posição juntas.
@@ -177,7 +177,7 @@ a convolução ganha o seguinte formato:
 \end{equation}
 
 Nas redes convolucionais há pelo menos duas estruturas básicas, a camada convolucional e a camada de \textit{pooling}.
-A arquitetura típica de uma CNN compreende duas camadas convolucionais, cada uma das quais é seguida por
+A arquitetura típica de uma CNN compreende duas camadas convolucionais, cada uma é seguida por
 uma camada \textit{pooling}, como ilustrado na Figura \ref{fig:cnn_basic_arq}. À medida que as imagens progridem
 ao longo da rede, suas dimensões diminuem, entretanto, elas se tornam mais profundas
 em termos de hierarquia de conceitos extraídos. No topo da pilha de camadas da rede
@@ -188,7 +188,7 @@ neurônios da camada seguinte.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.8\textwidth]{fig/cnn_basic_arq}
-  \caption{Arquitetura típica de uma rede neural convolucional. Fonte:\cite{aurelien17}}
+  \caption{Arquitetura típica de uma rede neural convolucional. Fonte:\citep{aurelien17}}
   \label{fig:cnn_basic_arq}
 \end{center}
 \end{figure}
@@ -285,10 +285,9 @@ dentro de uma região retangular, a normalização $L^2$ de uma vizinhança, ou 
 
 A propriedade de invariância é útil quando a existência de uma característica é mais relevante que
 o local exato onde ela ocorre. Por exemplo, para determinar se o rosto de uma pessoa ocorre em uma certa imagem, não é necessário saber
-com precisão o local dos olhos, basta saber se há um olho do lado esquerdo da rosto e outro olho do lado direito
+com precisão o local dos olhos, basta saber se há um olho do lado esquerdo do rosto e outro olho do lado direito
 \footnote{O rosto da figura pública Nestor Cerveró, por exemplo, seria facilmente identificável por uma rede convolucional com uma camada de \textit{pooling}}.
-Por outro lado, há contextos em que o local da característica é uma informação relevante e deve ser preservada. Por exemplo,
-em modelagem de reservatórios, a detecção de bordas referentes a uma facie selante sobre uma região de reservatório.
+Por outro lado, há contextos em que o local da característica é uma informação relevante e deve ser preservada. Em modelagem de reservatórios, a detecção de bordas referentes a uma facie selante sobre uma região de reservatório.
 Adicionalmente, a operação de \textit{pooling} permite lidar com entradas de tamanho variável. Por exemplo, na classificação de imagens
 as entradas para a camada de classificação devem ter o mesmo tamanho. Assim, o \textit{stride} entre regiões de \textit{pooling} pode variar
 para que a camada de classificação receba o mesmo número de sumários estatísticos, independente do tamanho das imagens.
@@ -303,13 +302,13 @@ Por conta da sua arquitetura, as redes convolucionais se sustentam sobre três p
 de parâmetros e representações equivariantes. As propriedades de interação esparsa e compartilhamento de pesos serão apresentadas
 com maior nível de detalhes nesta seção, embora já tenham sido introduzidos de forma intuitiva nas seções anteriores.
 
-As O \textbf{interações esparsas}, também chamadas de conectividade esparsa ou pesos esparsos,
+As \textbf{interações esparsas}, também chamadas de conectividade esparsa ou pesos esparsos,
 ocorre quando os filtros possuem  dimensão menor que a entrada, ou seja a
 dimensão do campo receptivo é menor que a dimensão das imagens de entrada.
 De um ponto de vista prático, a imagem de entrada pode ter milhares de \textit{pixels}, entretanto, é 
 possível detectar apenas pequenas regiões com características de maior relevância na imagem de entrada
 com filtros que compreendam apenas algumas dezenas ou centenas de \textit{pixels}.
-Por exemplo, é possível identificar características de uma face humana na identificação de pessoas, ou estruturas com
+Por exemplo, é possível identificar características de uma face humana no reconhecimento de pessoas, ou estruturas com
 significado geológico em um estudo geofísico. Como consequência,
 menos parâmetros são armazenados e há um ganho na eficiência estatística do
 modelo. As Figuras \ref{fig:sparse} e \ref{fig:full} ilustram
@@ -339,7 +338,7 @@ se refere ao uso do mesmo parâmetro para mais de uma função no modelo.
 Como já mencionado, nas redes neurais tradicionais todos os neurônios de uma camada são conectados a todos os neurônios
 da camada anterior e cada neurônio possui um \textit{bias}, como ilustrado na imagem \ref{fig:shallow}.
 Entretanto, este modelo é pouco eficiente, pois não tira vantagem da estruturas espaciais das imagens
-de entrada \cite{Gdfl16}.
+de entrada \citep{Gdfl16}.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/shallow_nn}
@@ -356,7 +355,7 @@ de uma pequena região definida pelo campo receptivo da camada anterior:
 \end{equation}
 onde, $\sigma$ é uma função de ativação, $b$ é o valor compartilhado do \textit{bias}, $w_{m,n}$ é
 uma matriz de pesos compartilhados (filtros) e $a_{i+m,j+n}$ denota a entrada $a_{x,y}$ na posição
-$x,y$. Como o mesmo filtro é convolvido ao logo da imagem,
+$x,y$. Como o mesmo filtro é convolucionado ao logo da imagem,
 os mesmos pesos e \textit{bias} aprendem diferentes características da imagem. Deste modo, cada conjunto de pesos e \textit{bias} é compartilhado
 por diferentes regiões em cada imagem e o número de pesos conectados ao neurônio
 da camada seguinte diminui em relação ao modelo tradicional. Isto faz com que a convolução seja mais eficiente que a multiplicação de matriz

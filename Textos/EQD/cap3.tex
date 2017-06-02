@@ -246,40 +246,22 @@ Desta forma alteram-se a sísmica $\mathbf{d}_0$ e a baixa frequência
 $\boldsymbol{\mu_m}$ obtendo-se a média posterior para o traço desejado.
   
 % 
-% Utilizando esta metodologia a solução é representada por uma distribuição
-% posterior Gaussiana com expressões explícitas para o valor esperado e para a
-% covariância. Não são necessárias iterações para ajuste do modelo, tornando o
-% método eficiente e útil em casos de uso reais, possibilitando o especialista
-% alterar parâmetros e avaliar o resultado em tempo real numa pequena área.
-% Satisfeito com a parametrização, o método é aplicado a todo o campo. A matriz de
-% covariância posterior indica a incerteza presente no resultado, não é necessário
-% definir a tolerância de ajuste aos dados explicitamente, mas é preciso definir a
-% matriz de covariância \textit{a priori} do resultado esperado, ou seja, é
-% preciso ter conhecimento, mesmo que de forma grosseira, das correlações espaciais e
-% variâncias que se espera do resultado. Ao final, a covariância posterior é
-% calculada.
-% 
+A solução para o método de inversão MAP é expressa em termos da covariância
+e do valor esperado. 
+A matriz de covariância posterior indica a incerteza presente no resultado, não é necessário
+definir a tolerância de ajuste aos dados explicitamente, mas é preciso definir a
+matriz de covariância \textit{a priori} do resultado esperado, ou seja, é
+preciso ter conhecimento, mesmo que de forma grosseira, das correlações espaciais e
+variâncias que se espera do resultado.
+Por ser o valor esperado, as imagens de impedância acústica obtidas
+se caracterizam por serem suavizadas, principalmente na região de
+transição entre camadas. Durante a convolução, a \texit{wavelet} funciona
+como uma modeladora, de modo que as altas frequências são filtradas
+e nível de detalhes das imagens se torna limitado. 
 
-%Finalizar falando do aumento de resolução e puxar o gancho para próxima seção
-
-% Uma desvantagem destacada na literatura é a dificuldade em inserir modelos de
-% continuidade mais abrangentes, pois é necessário incluir as covariâncias entre
-% traços vizinhos, aumentando as matrizes de covariância e a matriz a ser
-% invertida. Inserindo as correlações horizontais também inviabiliza aproveitar o
-% cálculo da matriz inversa, pois desta forma o resultado da inversão precisa ser
-% calculado para todos os pontos a serem invertidos ao mesmo tempo.
-% Atualmente é inserida somente covariância entre amostras no mesmo traço, ou
-% seja, somente na direção vertical.
-% 
-
-Assim, a inversão por MAP disponibiliza um cubo de impedâncias acústicas
-médias, além disto, o nível de resolução das imagens é limitada a resolução
-da sísmica e o método depende de um modelo interpolado de baixa resolução
-\texit{a priori}. Com isto, as imagens de impedância acústica obtidas
-se caracterizam por serem imagens suavizadas, principalmente na região de
-transição entre camadas.
-
-\section{Métodos Inteligentes de Super-resolução de Imagens}
+\section{Métodos de Super-resolução de Imagens}
+Super-resolução é o processo de  obter uma ou mais imagens de alta
+resolução a partir de uma ou mais imagens de baixa-resolução.
 
 A super-resolução tem aplicações nas mais diferentes áreas...
 
