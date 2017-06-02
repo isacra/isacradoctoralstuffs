@@ -260,37 +260,54 @@ como uma modeladora, de modo que as altas frequências são filtradas
 e nível de detalhes das imagens se torna limitado. 
 
 \section{Métodos de Super-resolução de Imagens}
-Super-resolução é o processo de  obter uma ou mais imagens de alta
+Super-resolução é o processo de obter uma ou mais imagens de alta
 resolução a partir de uma ou mais imagens de baixa-resolução.
+Os algoritmos de super-resolução visam alcançar detalhes finos
+em uma dada imagem através do aumento no número de pixel por unidade
+de área. Os algoritmos de super-resolução têm aplicação nas mais diferentes áreas,
+tais como, processamento de imagens aéreas e de satélite, reconhecimento de
+íris, holografia digital, melhoramento de imagens faciais e de texto, entre
+outras.
 
-A super-resolução tem aplicações nas mais diferentes áreas...
-
-A super-resolução tem um papel importante na visão computacional \citep{DongLoy2016}.
 Métodos baseados em interpolação são fáceis de implementar e amplamente utilizados,
 entretanto estes métodos sofrem de falta de expressividade, uma vez que modelos lineares
 não são capazes de expressar dependências complexas entre as entradas e as saídas \citep{HsiehAndrews1978}.
 Na prática tais métodos falham na tentativa de prever adequadamente detalhes de alta frequência
 levando a saídas de alta resolução borradas. Efeito semelhante ocorre durante a inversão sísmica,
-na qual as imagens resultantes apresentam resolução limitada e contornos borrados. Assim, um modelo
-de rede convolucional foi testado para atribuir às imagens de inversão sísmica para impedância
-elementos de alta frequência.
+na qual as imagens resultantes apresentam resolução limitada e contornos borrados. Assim,
+a 
+
+A revisão da literatura foi realizada com as seguintes palavras-chaves:
+A revisão foi realizada sistematicamente nos seguintes periódicos:
+Até 2014 os algoritmos de super-resolução eram classificados baseados
+no domínio de aplicação (espeço de frequência ou espaço ...) e baseados
+no número de imagens processadas (imagem única ou imagens múltiplas).
+
+Os algoritmos de super-resolução variam de acordo com o 
+Foram selecionados os documentos que datam de, pelo menos 10 anos. Ficou evidente que o problema
+de super-resolução vem sendo tratado por diferentes abordagens....
+
+
+Não há evidência, na literatura, de trabalhos que abordem o problema de aumento de resolução
+de imagens de propriedades petrofísicas pós-inversão. De acordo com \cite{Xiaoyu2012}
+para melhorar a resolução da inversão sísmica é necessário adicionar alta frequência
+na aquisição e processamento do dado sísmico. Entretanto, expandir a reflexão de alta frequência é uma tarefa
+difícil por conta de fatores como atenuação da terra, ruído de alta frequência, 
+entre outros. Além disso, como já mencionado na seção \ref{sec:map}, o próprio processo
+de inversão modula a sísmica durante a convolução.
+
+Assim, a estratégia sugerida neste
+trabalho objetiva a inserção de faixas de alta frequência no pós-processamento da impedância
+invertida.
+
 
 A proposta para pesquisar um modelo baseado em redes convolucionais para pós-processamento
 da inversão sísmica se fundamenta na lacuna existente de métodos...
-A revisão da literatura foi realizada com as seguintes palavras-chaves:
-A revisão foi realizada sistematicamente nos seguintes periódicos:
-
-Foram selecionados os documentos que datam de, pelo menos 10 anos. Ficou evidente que o problema
-de super-resolução vem sendo tratado por diferentes abordagens....
 Mais recentemente, os avanços das pesquisas do Google em \textit{Deep Learning} disponibilizaram
 ferramentas de implementação de diferentes algoritmos de aprendizagem de máquina. Dentre estas
 ferramentas está o \textit{Framework} de \textit{Deep Learning} TensorFlow, no qual os modelos
 de redes convolucionais podem ser implementadas e testadas.
 
-Dentre os textos encontrados é possível destacar:
-
-porém não foram encontrados trabalhos que abordem o problema de aumento de resolução de imagens de propriedades petrofísicas
-pós-inversão.
 
 \section{Resumo}
 

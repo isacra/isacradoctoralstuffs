@@ -69,12 +69,6 @@ não é mais necessário selecionar melhores amostras e efetuar iterações para
 realizar a inversão, dado que o resultado do MAP já fornece uma estimativa
 próxima à média desejada.
 
-\textit{ As questões a serem respondidas neste trabalho são: o modelo de rede convolucional é capaz de aumentar a Resolução de imagens de impedância
-sob um ponto de vista visual? As imagens de teste apresentaram maior resolução que as imagens originais, sob o ponto 
-de vista de altas frequências? Quais as faixas de alta frequências foram inseridas? Como as redes neurais aprenderam
-as altas frequencias? É possível parametrizar o processo de super-resolução para imagens pós-inversão?
-Qual o limite de alta frequência é possível inserir nas imagens de alta resolução?}
-
 
 \section{Resultados Preliminares}
 
