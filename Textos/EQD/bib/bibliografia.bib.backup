@@ -7,7 +7,77 @@
   publisher={Academic Press}
 }
 
-@book{Buduma,
+@inbook{Xiaoyu2012,
+author = {Xi Xiaoyu and Ling Yun and Sun Desheng and Guo Xiangyu and Wang Huifeng},
+title = {Studying the effect of expanding low or high frequency on post-stack seismic inversion},
+booktitle = {SEG Technical Program Expanded Abstracts 2012},
+chapter = {},
+pages = {1-5},
+year = {2012},
+doi = {10.1190/segam2012-0146.1},
+URL = {http://library.seg.org/doi/abs/10.1190/segam2012-0146.1},
+eprint = {http://library.seg.org/doi/pdf/10.1190/segam2012-0146.1}
+}
+
+@ARTICLE{DongLoy2016,
+author={C. Dong and C. C. Loy and K. He and X. Tang},
+journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+title={Image Super-Resolution Using Deep Convolutional Networks},
+year={2016},
+volume={38},
+number={2},
+pages={295-307},
+keywords={convolution;image resolution;image restoration;learning (artificial intelligence);neural nets;CNN;color channel;deep convolutional neural network;deep learning method;end-to-end mapping;image restoration;image super-resolution;low-resolution image;reconstruction quality;sparse-coding;Convolutional codes;Feature extraction;Image reconstruction;Image resolution;Neural networks;Training;Super-resolution;deep convolutional neural networks;sparse coding},
+doi={10.1109/TPAMI.2015.2439281},
+ISSN={0162-8828},
+month={Feb},
+}
+
+@article{Oord16,
+  author    = {A. van den Oord and
+               N. Kalchbrenner and
+               O. Vinyals and
+               L. Espeholt and
+               A. Graves and
+               K. Kavukcuoglu},
+  title     = {Conditional Image Generation with PixelCNN Decoders},
+  journal   = {CoRR},
+  volume    = {abs/1606.05328},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1606.05328},
+  timestamp = {Tue, 12 Jul 2016 21:51:09 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/OordKVEGK16},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@ARTICLE{Dong16,
+author={C. Dong and C. C. Loy and K. He and X. Tang},
+journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+title={Image Super-Resolution Using Deep Convolutional Networks},
+year={2016},
+volume={38},
+number={2},
+pages={295-307},
+keywords={convolution;image resolution;image restoration;learning (artificial intelligence);neural nets;CNN;color channel;deep convolutional neural network;deep learning method;end-to-end mapping;image restoration;image super-resolution;low-resolution image;reconstruction quality;sparse-coding;Convolutional codes;Feature extraction;Image reconstruction;Image resolution;Neural networks;Training;Super-resolution;deep convolutional neural networks;sparse coding},
+doi={10.1109/TPAMI.2015.2439281},
+ISSN={0162-8828},
+month={Feb},}
+
+@ARTICLE{HsiehAndrews1978,
+author={Hsieh Hou and H. Andrews},
+journal={IEEE Transactions on Acoustics, Speech, and Signal Processing},
+title={Cubic splines for image interpolation and digital filtering},
+year={1978},
+volume={26},
+number={6},
+pages={508-517},
+keywords={Application software;Digital filters;Filtering theory;Hardware;Image converters;Image sampling;Interpolation;Signal processing;Signal sampling;Spline},
+doi={10.1109/TASSP.1978.1163154},
+ISSN={0096-3518},
+month={Dec},
+}
+
+@book{Buduma15,
   title={Fundamentals of Deep Learning},
   author={Buduma, N.},
   series={Academic Press},
@@ -15,6 +85,21 @@
   publisher={O'Reilly Media}
 }
 
+@book{aurelien17,
+  title={Hands-on Machine Learning with Scikit0Learn and TensorFlow},
+  author={Géron, A.},
+  series={Academic Press},
+  year={2017},
+  publisher={O'Reilly Media}
+}
+
+@book{Gdfl16,
+    title={Deep Learning},
+    author={Goodfellow, I. and Bengio, Y. and Courville, A.},
+    publisher={MIT Press},
+    note={\url{http://www.deeplearningbook.org}},
+    year={2016}
+}
 
 @InProceedings{azevedo2013_avoinv,
   author = 	 {L. Azevedo and R. Nunes and A. Soares and G.S. Neto},
@@ -510,12 +595,12 @@ year = {2013},
 
 
 @OTHER{figsismica,
-author = {FishSAFE},
+author = {GSIPL},
 title = {Seismic Surveys},
-month = dec,
-year = {2014},
-url = {fishsafe.eu/en/offshore-structures/seismic-surveys.aspx},
-howpublished={\url{http://fishsafe.eu/en/offshore-structures/seismic-surveys.aspx}}
+month = may,
+year = {2017},
+url = {http://geostar-surveys.com/methodology%20-%20High%20Resolution%20Seismic%20surveys.html},
+howpublished={\url{http://geostar-surveys.com/methodology%20-%20High%20Resolution%20Seismic%20surveys.html}}
 }
 
 

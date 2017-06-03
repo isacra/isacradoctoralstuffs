@@ -245,7 +245,6 @@ covariância possam ser assumidas iguais para todos os traços da sísmica da re
 Desta forma alteram-se a sísmica $\mathbf{d}_0$ e a baixa frequência
 $\boldsymbol{\mu_m}$ obtendo-se a média posterior para o traço desejado.
   
-% 
 A solução para o método de inversão MAP é expressa em termos da covariância
 e do valor esperado. 
 A matriz de covariância posterior indica a incerteza presente no resultado, não é necessário
@@ -255,16 +254,15 @@ preciso ter conhecimento, mesmo que de forma grosseira, das correlações espaci
 variâncias que se espera do resultado.
 Por ser o valor esperado, as imagens de impedância acústica obtidas
 se caracterizam por serem suavizadas, principalmente na região de
-transição entre camadas. Durante a convolução, a \texit{wavelet} funciona
+transição entre camadas. Durante a convolução, a \textit{wavelet} funciona
 como uma modeladora, de modo que as altas frequências são filtradas
 e nível de detalhes das imagens se torna limitado. 
 
 \section{Métodos de Super-resolução de Imagens}
 Super-resolução é o processo de obter uma ou mais imagens de alta
-resolução a partir de uma ou mais imagens de baixa-resolução.
-Os algoritmos de super-resolução visam alcançar detalhes finos
-em uma dada imagem através do aumento no número de pixel por unidade
-de área. Os algoritmos de super-resolução têm aplicação nas mais diferentes áreas,
+resolução a partir de uma ou mais imagens de baixa-resolução
+através do aumento no número de pixel por unidade de área.
+Os algoritmos de super-resolução têm aplicação nas mais diferentes áreas,
 tais como, processamento de imagens aéreas e de satélite, reconhecimento de
 íris, holografia digital, melhoramento de imagens faciais e de texto, entre
 outras.
@@ -274,21 +272,48 @@ entretanto estes métodos sofrem de falta de expressividade, uma vez que modelos
 não são capazes de expressar dependências complexas entre as entradas e as saídas \citep{HsiehAndrews1978}.
 Na prática tais métodos falham na tentativa de prever adequadamente detalhes de alta frequência
 levando a saídas de alta resolução borradas. Efeito semelhante ocorre durante a inversão sísmica,
-na qual as imagens resultantes apresentam resolução limitada e contornos borrados. Assim,
-a 
+na qual as imagens resultantes apresentam resolução limitada e contornos borrados.
 
 A revisão da literatura foi realizada com as seguintes palavras-chaves:
 A revisão foi realizada sistematicamente nos seguintes periódicos:
+O uso de métodos de Deep Learning para resolver problemas de super-resolução
+é uma abordagem recente.
 
-Foram selecionados os documentos que datam de, pelo menos 10 anos. Ficou evidente que o problema
-de super-resolução vem sendo tratado por diferentes abordagens....
+\subsection{Super-resolução por CNN}
 
+As redes convolucionais são capazes de modelar a distribuição conjunta sobre
+uma imagem $x$ como o produto de distribuições condicionais \citep{Oord16}:
+\begin{equation}
+\label{eqn:prodcnn}
+p(x) = \prod_{i=1}^{n^2}p(x_i|x_1,...,x_{i-1}
+\end{equation}
+onde, $x_i$ é o pixel modelado. A imagem é percorrida linha por linha e cada
+pixel depende apenas dos \textit{pixels} localizados acima e à sua esquerda.
+
+modo a reconstruir imagens condicionadas . O uso de convolução
+permite que a previsão para todos os \texit{pixels} seja realizada de
+forma paralela durante o treinamento. Durante a amostragem,
+cada pixel é reinserido para a rede para que o próximo pixel seja previsto,
+deste modo cada pixel depende fortemente dos pixels anteriores
+sob uma perspectiva não-linear.
+
+ podem ser utilizadas com arquitetura de redes autoencoders
+para reconstrução de imagens pixel a pixel.
+
+Em \cite{Dong16}
+
+Em \cite{DahlNS17}
 
 Não há evidência, na literatura, de trabalhos que abordem o problema de aumento de resolução
-de imagens de propriedades petrofísicas pós-inversão. 
-A expandir a reflexão de alta frequência é uma tarefa
+de imagens de propriedades petrofísicas pós-inversão. De acordo com \cite{Xiaoyu2012}
+para melhorar a resolução da inversão sísmica é necessário adicionar alta frequência
+na aquisição e processamento do dado sísmico. Entretanto, expandir a reflexão de alta frequência é uma tarefa
 difícil por conta de fatores como atenuação da terra, ruído de alta frequência, 
-entre outros \cite{Xiaoyu2012}
+entre outros. Além disso, como já mencionado na seção \ref{sec:map}, o próprio processo
+de inversão modula a sísmica durante a convolução.
+
+Assim, a estratégia sugerida neste trabalho objetiva a inserção de faixas de alta frequência
+no pós-processamento da impedância invertida.
 
 
 A proposta para pesquisar um modelo baseado em redes convolucionais para pós-processamento

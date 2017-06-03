@@ -1,24 +1,14 @@
 \begin{thebibliography}{xx}
 
-\harvarditem[]{Bosch; Mukerji e Gonzalez}{2010}{Bosch2010}
-Bosch, M.; Mukerji, T. e Gonzalez, E.~F.  \harvardyearleft
-  2010\harvardyearright , Seismic inversion for reservoir properties combining
-  statistical rock physics and geostatistics: A review, { Geophysics} {\bf
-  75}(5),~75A165--75A176.
-
-\harvarditem{Buduma}{2015}{Buduma15}
-Buduma, N.  \harvardyearleft 2015\harvardyearright , { Fundamentals of Deep
-  Learning}, Academic Press, O'Reilly Media.
-
 \harvarditem{Buland e Omre}{2003}{Buland01012003}
 Buland, A. e Omre, H.  \harvardyearleft 2003\harvardyearright , Bayesian
   linearized avo inversion, { Geophysics} {\bf 68}(1),~185--198.
 
-\harvarditem{Deutsch}{2002}{deutsch2002}
-Deutsch, C.  \harvardyearleft 2002\harvardyearright , { Geostatistical
-  Reservoir Modeling}, Applied geostatistics series, Oxford University Press.
+\harvarditem[]{Dahl; Norouzi e Shlens}{2017}{DahlNS17}
+Dahl, R.; Norouzi, M. e Shlens, J.  \harvardyearleft 2017\harvardyearright ,
+  Pixel recursive super resolution, { CoRR} .
 
-\harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2016}{DongLoy2016}
+\harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2016}{Dong16}
 Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2016\harvardyearright
   , Image super-resolution using deep convolutional networks, { IEEE
   Transactions on Pattern Analysis and Machine Intelligence} {\bf
@@ -30,19 +20,6 @@ Figueiredo, L.~P.; Santos, M.; Roisenberg, M.; Neto, G. e Figueiredo, W.
   \harvardyearleft 2014\harvardyearright , Bayesian framework to wavelet
   estimation and linearized acoustic inversion, { Geoscience and Remote Sensing
   Letters, IEEE} {\bf PP}(99),~1--5.
-
-\harvarditem[]{Goodfellow; Bengio e Courville}{2016}{Gdfl16}
-Goodfellow, I.; Bengio, Y. e Courville, A.  \harvardyearleft
-  2016\harvardyearright , { Deep Learning}, MIT Press.
-\newblock \url{http://www.deeplearningbook.org}.
-
-\harvarditem{GSIPL}{2017}{figsismica}
-GSIPL  \harvardyearleft 2017\harvardyearright , Seismic surveys,
-  \url{http://geostar-surveys.com/methodology%20-%20High%20Resolution%20Seismic%20surveys.html}.
-
-\harvarditem{Géron}{2017}{aurelien17}
-Géron, A.  \harvardyearleft 2017\harvardyearright , { Hands-on Machine
-  Learning with Scikit0Learn and TensorFlow}, Academic Press, O'Reilly Media.
 
 \harvarditem{Hou e Andrews}{1978}{HsiehAndrews1978}
 Hou, H. e Andrews, H.  \harvardyearleft 1978\harvardyearright , Cubic splines
@@ -60,15 +37,21 @@ Passos~de Figueiredo, L.; Santos, M.; Roisenberg, M.; Schwedersky~Neto, G. e
 Sen, M.~K.  \harvardyearleft 2006\harvardyearright , { {Seismic Inversion}},
   Society of Petroleum Engineers, Richardson, TX, USA.
 
-\harvarditem{Srivastava e Sen}{2009}{Srivastava2009}
-Srivastava, R.~P. e Sen, M.~K.  \harvardyearleft 2009\harvardyearright ,
-  Fractal-based stochastic inversion of poststack seismic data using very fast
-  simulated annealing, { Journal of Geophysics and Engineering} {\bf
-  6}(4),~412.
-
 \harvarditem{Tarantola}{2005}{tarantola}
 Tarantola, A.  \harvardyearleft 2005\harvardyearright , { Inverse Problem
   Theory and Methods for Model Parameter Estimation}, Society for Industrial
   and Applied Mathematics.
+
+\harvarditem[van~den Oord et~al.]{van~den Oord; Kalchbrenner; Vinyals;
+  Espeholt; Graves e Kavukcuoglu}{2016}{Oord16}
+van~den Oord, A.; Kalchbrenner, N.; Vinyals, O.; Espeholt, L.; Graves, A. e
+  Kavukcuoglu, K.  \harvardyearleft 2016\harvardyearright , Conditional image
+  generation with pixelcnn decoders, { CoRR} {\bf abs/1606.05328}.
+
+\harvarditem[Xiaoyu et~al.]{Xiaoyu; Yun; Desheng; Xiangyu e
+  Huifeng}{2012}{Xiaoyu2012}
+Xiaoyu, X.; Yun, L.; Desheng, S.; Xiangyu, G. e Huifeng, W.  \harvardyearleft
+  2012\harvardyearright , { Studying the effect of expanding low or high
+  frequency on post-stack seismic inversion}, pp.~1--5.
 
 \end{thebibliography}
