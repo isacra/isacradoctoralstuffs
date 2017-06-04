@@ -267,6 +267,11 @@ tais como, processamento de imagens aéreas e de satélite, reconhecimento de
 íris, holografia digital, melhoramento de imagens faciais e de texto, entre
 outras.
 
+Os modelos de super-resolução podem ser classificados
+de acordo com diferentes fatores. Este fatores incluem o domínio de aplicação,
+o número de imagens de baixa resolução aplicadas e o método de reconstrução \cite{}.
+
+
 Métodos baseados em interpolação são fáceis de implementar e amplamente utilizados,
 entretanto estes métodos sofrem de falta de expressividade, uma vez que modelos lineares
 não são capazes de expressar dependências complexas entre as entradas e as saídas \citep{HsiehAndrews1978}.
@@ -280,27 +285,76 @@ O uso de métodos de \textit{Deep Learning} para resolver problemas de super-res
 é uma abordagem recente.
 
 \subsection{Super-resolução por CNN}
+Os algoritmos de super-resolução realizam buscas em por
+fragmentos de estruturas e os combinam para criar detalhes
+de alta-frequência \citep{}. Outra abordagem caminha no sentido
+de melhorar métodos de interpolação simples através da construção
+de dicionários de filtros pré-treinados e selecionar os fragmentos
+por algum algoritmo de \textit{Hashing}. Os algoritmos citados
+possuem o foco na velocidade de inferência, as redes convolucionais, por outro lado,
+focam na construção das imagens de alta resolução, de modo a obter magnitudes
+cada vez maiores de detalhes.
 
-As redes convolucionais são capazes de modelar a distribuição conjunta sobre
+A aplicação de redes convolucionais para realizar super-resolução é um
+recente na literatura. Os primeiros trabalhos neste sentido datam
+do ano de 2014 e visaram a super-resolução de imagens únicas no
+domínio espacial \cite{dong16}. As redes convolucionais extraem implicitamente
+múltiplas camadas de abstração através da otimização dos seus filtros.
+Elas são capazes são capazes de modelar a distribuição conjunta sobre
 uma imagem $x$ como o produto de distribuições condicionais \citep{Oord16}:
 \begin{equation}
 \label{eqn:prodcnn}
 p(x) = \prod_{i=1}^{n^2}p(x_i|x_1,...,x_{i-1})
 \end{equation}
 onde, $x_i$ é o pixel modelado. A imagem é percorrida linha por linha e cada
-pixel depende apenas dos \textit{pixels} localizados acima e à sua esquerda.
-Para garantir esta propriedade os filtros da convolução ganham uma máscara,
-ou seja, os pesos fora da zona de interesse são zerados.
-O uso de convolução permite que a previsão para todos os \textit{pixels} seja realizada de
-forma paralela durante o treinamento. Durante a amostragem é sequencial,
-cada pixel é reinserido para a rede para que o próximo pixel seja previsto,
+pixel depende apenas dos \textit{pixels} localizados em uma vizinhança pré-determinada.
+Para garantir esta propriedade se define uma máscara para os filtros da convolução,
+ou seja, é atribuído valo 0 para os pesos fora da zona de interesse.
+A amostragem ocorre sequencialmente, cada pixel é reinserido para a rede para que o próximo pixel seja previsto,
 deste modo cada pixel depende fortemente dos \textit{pixels} anteriores
-sob uma perspectiva não-linear.
+sob uma perspectiva não-linear. O uso de convolução permite que a previsão para todos os \textit{pixels} seja realizada de
+forma paralela durante o treinamento.
 
+O modelo condicional sofreu melhoria para o reconhecimento de estruturas mais complexas.
+Entre as camadas convolucionais do modelo condicionado foram adicionadas unidades
+multiplicativas com a seguinte ativação:
+\begin{equation}
+\label{eqn:actvcnn}
+y = tanh(W_{k,f} * x)\bigodot \sigma(W_{k,g}*x)
+\end{equation}
+onde $\sigma$ é a função sigmoide, $k$ é o número da camada, $*$ é o operado
+convolucional e $\bigodot$ é a produto membro a membro. Este modelo é
+conhecido como \textit{Gated PixelNN} \citep{Oord16}.
 
-Em \cite{Dong16}
+O modelo de super-resolução condicional leva em consideração vetores de
+descrição $\boldsymbol{h}$, de modo que o modelo da distribuição condicional é dada
+por:
+\begin{equation}
+\label{eqn:prodcnncond}
+p(x|\boldsymbol{h}) = \prod_{i=1}^{n^2}p(x_i|x_1,...,x_{i-1}|\boldsymbol{h})
+\end{equation}
 
-Em \cite{DahlNS17}
+Desta forma as ativações das camadas convolucionais dependem de $\boldsymbol{h}$,
+antes de passarem pela função de não-linearidade. Se $\boldsymbol{h}$ for
+informação referente a uma classe, todas as camadas terão um \textit{bias} que determina
+a dependência desta classe. Entretanto, esta dependência não estará relacionada à
+localização do \textit{pixel}. Por outro lado, se $\boldsymbol{h}$ for mapeado
+para uma representação espacial $\boldsymbol{s}=m(\boldsymbol{h})$, onde $m$ é uma rede
+deconvolucional, as camadas convolucionais terão \textit{biases} dependentes da localização
+das estruturas contidas em $\boldsymbol{h}$, presentes na imagem. Assim, a equação \ref{eqn:actvcnn}
+ganha a seguinte forma:
+\begin{equation}
+\label{eqn:actvcnncond}
+y = tanh(W_{k,f} * x + V_{k,f}*\boldsymbol{s})\bigodot \sigma(W_{k,g}*x + V_{k,g}*\boldsymbol{s})
+\end{equation}
+
+O modelo de rede condicional proposto por \cite{DahlNS17} representa o estado da arte em modelos convolucionais para
+super-resolução de múltiplas imagens. O modelo é composto de uma rede condicionante, do tipo tipo ResNet \citep{He2016}
+e uma rede \textit{prior}, to tipo PixelCNN \citep{Oord16}.
+A rede condicionante realiza o mapeamento de uma imagem de baixa resolução para uma estrutura probabilística
+de alta resolução. Assim, ela permite compor a estrutura da imagem através da distribuição
+de probabilidade marginal dos \textit{pixels}. A rede \textit{prior} adiciona detalhes de alta resolução
+para tornar as saída mais realísticas. 
 
 Não há evidência, na literatura, de trabalhos que abordem o problema de aumento de resolução
 de imagens de propriedades petrofísicas pós-inversão. De acordo com \cite{Xiaoyu2012}
@@ -313,7 +367,6 @@ de inversão modula a sísmica durante a convolução.
 Assim, a estratégia sugerida neste trabalho objetiva a inserção de faixas de alta frequência
 no pós-processamento da impedância invertida.
 
-
 A proposta para pesquisar um modelo baseado em redes convolucionais para pós-processamento
 da inversão sísmica se fundamenta na lacuna existente de métodos...
 Mais recentemente, os avanços das pesquisas do Google em \textit{Deep Learning} disponibilizaram
@@ -321,11 +374,11 @@ ferramentas de implementação de diferentes algoritmos de aprendizagem de máqu
 ferramentas está o \textit{Framework} de \textit{Deep Learning} TensorFlow, no qual os modelos
 de redes convolucionais podem ser implementadas e testadas.
 
-
 \section{Resumo}
 
-Neste capítulo foi revisado o estado da arte em inversão sísmica acústica
-com modelagem de incerteza. Pontos críticos dos métodos foram considerados e
+Neste capítulo foram revisados os estados da arte em inversão sísmica acústica e modelos
+de rede convolucional para super-resolução.
+Pontos críticos dos métodos foram considerados e
 identificados para pesquisa futura. O próximo capítulo irá definir a proposta de
 pesquisa, apresentar o plano de trabalho e concluir com as perspectivas de
 contribuição.
