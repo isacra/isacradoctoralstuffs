@@ -35,6 +35,11 @@ Figueiredo, L.~P.; Santos, M.; Roisenberg, M.; Neto, G. e Figueiredo, W.
   estimation and linearized acoustic inversion, { Geoscience and Remote Sensing
   Letters, IEEE} {\bf PP}(99),~1--5.
 
+\harvarditem[]{Freeman; Jones e Pasztor}{2002}{Freeman2002}
+Freeman, W.~T.; Jones, T.~R. e Pasztor, E.~C.  \harvardyearleft
+  2002\harvardyearright , Example-based super-resolution, { IEEE Computer
+  Graphics and Applications} {\bf 22}(2),~56--65.
+
 \harvarditem[]{Goodfellow; Bengio e Courville}{2016}{Gdfl16}
 Goodfellow, I.; Bengio, Y. e Courville, A.  \harvardyearleft
   2016\harvardyearright , { Deep Learning}, MIT Press.
@@ -58,12 +63,27 @@ Hou, H. e Andrews, H.  \harvardyearleft 1978\harvardyearright , Cubic splines
   for image interpolation and digital filtering, { IEEE Transactions on
   Acoustics, Speech, and Signal Processing} {\bf 26}(6),~508--517.
 
+\harvarditem[]{Huang; Singh e Ahuja}{2015}{Huang2015}
+Huang, J.~B.; Singh, A. e Ahuja, N.  \harvardyearleft 2015\harvardyearright ,
+  Single image super-resolution from transformed self-exemplars,  2015 IEEE
+  Conference on Computer Vision and Pattern Recognition (CVPR), pp.~5197--5206.
+
+\harvarditem{Nasrollahi e Moeslund}{2014}{Nasrollahi2014}
+Nasrollahi, K. e Moeslund, T.~B.  \harvardyearleft 2014\harvardyearright ,
+  Super-resolution: a comprehensive survey, { Machine Vision and Applications}
+  {\bf 25}(6),~1423--1468.
+
 \harvarditem[Passos~de Figueiredo et~al.]{Passos~de Figueiredo; Santos;
   Roisenberg; Schwedersky~Neto e Figueiredo}{2014}{Figueiredo2014}
 Passos~de Figueiredo, L.; Santos, M.; Roisenberg, M.; Schwedersky~Neto, G. e
   Figueiredo, W.  \harvardyearleft 2014\harvardyearright , Bayesian framework
   to wavelet estimation and linearized acoustic inversion, { Geoscience and
   Remote Sensing Letters, IEEE} {\bf 11}(12),~2130--2134.
+
+\harvarditem[]{Romano; Isidoro e Milanfar}{2017}{Romano2017}
+Romano, Y.; Isidoro, J. e Milanfar, P.  \harvardyearleft 2017\harvardyearright
+  , Raisr: Rapid and accurate image super resolution, { IEEE Transactions on
+  Computational Imaging} {\bf 3}(1),~110--125.
 
 \harvarditem{Sen}{2006}{sen_livro}
 Sen, M.~K.  \harvardyearleft 2006\harvardyearright , { {Seismic Inversion}},
