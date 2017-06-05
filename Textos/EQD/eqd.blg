@@ -26,11 +26,11 @@ You can't pop an empty literal stack for entry Gdfl16
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry Huang2015
 while executing---line 1298 of file my-agsm.bst
-You can't pop an empty literal stack for entry Freeman2002
-while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry Romano2017
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry DahlNS17
+while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry Freeman2002
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
 while executing---line 1350 of file my-agsm.bst
@@ -136,14 +136,14 @@ while executing---line 1350 of file my-agsm.bst
 You've used 22 entries,
             2912 wiz_defined-function locations,
             789 strings with 8446 characters,
-and the built_in function-call counts, 108529 in all, are:
-= -- 17831
+and the built_in function-call counts, 110465 in all, are:
+= -- 18183
 > -- 1429
 < -- 0
-+ -- 8617
++ -- 8793
 - -- 427
-* -- 9454
-:= -- 21540
+* -- 9630
+:= -- 21892
 add.period$ -- 23
 call.type$ -- 22
 change.case$ -- 301
@@ -152,7 +152,7 @@ cite$ -- 23
 duplicate$ -- 358
 empty$ -- 735
 format.name$ -- 481
-if$ -- 19583
+if$ -- 19935
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 28
@@ -164,7 +164,7 @@ purify$ -- 330
 quote$ -- 0
 skip$ -- 280
 stack$ -- 0
-substring$ -- 25415
+substring$ -- 25943
 swap$ -- 55
 text.length$ -- 308
 text.prefix$ -- 0
