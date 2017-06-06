@@ -1,11 +1,24 @@
 \select@language {brazil}
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{2}{chapter.2}
-\contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o da Literatura}{3}{chapter.3}
-\contentsline {section}{\numberline {3.1}M\IeC {\'e}todos de Invers\IeC {\~a}o S\IeC {\'\i }smica}{4}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{4}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}M\IeC {\'a}ximo \textit {a posteriori}}{6}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}M\IeC {\'e}todos de Super-resolu\IeC {\c c}\IeC {\~a}o de Imagens}{7}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Super-resolu\IeC {\c c}\IeC {\~a}o por CNN}{8}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Resumo}{10}{section.3.3}
-\contentsline {chapter}{Bibliografia}{12}{section.3.3}
+\contentsline {section}{\numberline {1.1}Hip\IeC {\'o}tese}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objetivos}{5}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Objetivos Espec\IeC {\'\i }ficos}{5}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}Organiza\IeC {\c c}\IeC {\~a}o do Texto}{5}{section.1.3}
+\contentsline {chapter}{\numberline {2}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Problema Inverso}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Invers\IeC {\~a}o S\IeC {\'\i }smica}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Aquisi\IeC {\c c}\IeC {\~a}o S\IeC {\'\i }smica}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Redes Neurais Convolucionais}{10}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Convolu\IeC {\c c}\IeC {\~a}o}{11}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Filtros}{14}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Pooling}{16}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Propriedades das Redes Convolucionais}{17}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}Resumo}{19}{section.2.4}
+\contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o da Literatura}{20}{chapter.3}
+\contentsline {section}{\numberline {3.1}M\IeC {\'e}todos de Invers\IeC {\~a}o S\IeC {\'\i }smica}{21}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{21}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}M\IeC {\'a}ximo \textit {a posteriori}}{23}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}M\IeC {\'e}todos de Super-resolu\IeC {\c c}\IeC {\~a}o de Imagens}{25}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Super-resolu\IeC {\c c}\IeC {\~a}o por CNN}{25}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Resumo}{28}{section.3.3}
+\contentsline {chapter}{Bibliografia}{29}{section.3.3}

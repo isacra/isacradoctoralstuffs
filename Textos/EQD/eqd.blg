@@ -6,6 +6,12 @@ A level-1 auxiliary file: cap2.aux
 A level-1 auxiliary file: cap3.aux
 The style file: my-agsm.bst
 Database file #1: bib/bibliografia.bib
+Warning--entry type for "figsismica" isn't style-file defined
+--line 1391 of file bib/bibliografia.bib
+You can't pop an empty literal stack for entry Gdfl16
+while executing---line 1226 of file my-agsm.bst
+You can't pop an empty literal stack for entry Bosch2010
+while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry Freeman2002
 while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry Huang2015
@@ -14,6 +20,8 @@ You can't pop an empty literal stack for entry Romano2017
 while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry DahlNS17
 while executing---line 1226 of file my-agsm.bst
+You can't pop an empty literal stack for entry Gdfl16
+while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry Huang2015
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry Freeman2002
@@ -22,6 +30,18 @@ You can't pop an empty literal stack for entry Romano2017
 while executing---line 1298 of file my-agsm.bst
 You can't pop an empty literal stack for entry DahlNS17
 while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry Bosch2010
+while executing---line 1298 of file my-agsm.bst
+You can't pop an empty literal stack for entry Bosch2010
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Bosch2010
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Buduma15
+while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
 ---the literal stack isn't empty for entry Buland01012003
@@ -38,6 +58,10 @@ ptr=1, stack=
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
+---the literal stack isn't empty for entry deutsch2002
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
 ---the literal stack isn't empty for entry dong16
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
@@ -49,6 +73,20 @@ while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
 ---the literal stack isn't empty for entry Freeman2002
+while executing---line 1350 of file my-agsm.bst
+You can't pop an empty literal stack for entry Gdfl16
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Gdfl16
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry figsismica
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry aurelien17
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
@@ -92,6 +130,10 @@ ptr=1, stack=
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
+---the literal stack isn't empty for entry Srivastava2009
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
 ---the literal stack isn't empty for entry tarantola
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
@@ -107,45 +149,45 @@ ptr=1, stack=
 
 ---the literal stack isn't empty for entry zhe_nonlinear
 while executing---line 1350 of file my-agsm.bst
-You've used 19 entries,
+You've used 26 entries,
             2912 wiz_defined-function locations,
-            776 strings with 8210 characters,
-and the built_in function-call counts, 103236 in all, are:
-= -- 17010
-> -- 1368
+            819 strings with 9360 characters,
+and the built_in function-call counts, 129378 in all, are:
+= -- 21287
+> -- 1659
 < -- 0
-+ -- 8265
-- -- 413
-* -- 9096
-:= -- 20334
-add.period$ -- 19
-call.type$ -- 19
-change.case$ -- 263
-chr.to.int$ -- 19
-cite$ -- 20
-duplicate$ -- 313
-empty$ -- 664
-format.name$ -- 466
-if$ -- 18645
++ -- 10279
+- -- 497
+* -- 11291
+:= -- 25649
+add.period$ -- 27
+call.type$ -- 26
+change.case$ -- 357
+chr.to.int$ -- 26
+cite$ -- 27
+duplicate$ -- 418
+empty$ -- 878
+format.name$ -- 564
+if$ -- 23336
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 22
-newline$ -- 60
-num.names$ -- 201
-pop$ -- 77
+missing$ -- 32
+newline$ -- 82
+num.names$ -- 273
+pop$ -- 118
 preamble$ -- 1
-purify$ -- 285
+purify$ -- 390
 quote$ -- 0
-skip$ -- 258
+skip$ -- 329
 stack$ -- 0
-substring$ -- 24348
-swap$ -- 54
-text.length$ -- 266
+substring$ -- 30393
+swap$ -- 63
+text.length$ -- 364
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 70
+type$ -- 90
 warning$ -- 1
-while$ -- 419
+while$ -- 568
 width$ -- 0
-write$ -- 255
-(There were 31 error messages)
+write$ -- 348
+(There were 44 error messages)

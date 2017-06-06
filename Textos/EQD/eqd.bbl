@@ -1,5 +1,15 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[]{Bosch; Mukerji e Gonzalez}{2010}{Bosch2010}
+Bosch, M.; Mukerji, T. e Gonzalez, E.~F.  \harvardyearleft
+  2010\harvardyearright , Seismic inversion for reservoir properties combining
+  statistical rock physics and geostatistics: A review, { Geophysics} {\bf
+  75}(5),~75A165--75A176.
+
+\harvarditem{Buduma}{2015}{Buduma15}
+Buduma, N.  \harvardyearleft 2015\harvardyearright , { Fundamentals of Deep
+  Learning}, Academic Press, O'Reilly Media.
+
 \harvarditem{Buland e Omre}{2003}{Buland01012003}
 Buland, A. e Omre, H.  \harvardyearleft 2003\harvardyearright , Bayesian
   linearized avo inversion, { Geophysics} {\bf 68}(1),~185--198.
@@ -15,6 +25,10 @@ de~Figueiredo, L.~P.; Grana, D.; Santos, M.; Figueiredo, W.; Roisenberg, M. e
   inversion based on rock-physics prior modeling for the joint estimation of
   acoustic impedance, porosity and lithofacies, { Journal of Computational
   Physics} {\bf 336},~128 -- 142.
+
+\harvarditem{Deutsch}{2002}{deutsch2002}
+Deutsch, C.  \harvardyearleft 2002\harvardyearright , { Geostatistical
+  Reservoir Modeling}, Applied geostatistics series, Oxford University Press.
 
 \harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2014}{dong16}
 Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2014\harvardyearright
@@ -33,6 +47,19 @@ Figueiredo, L.~P.; Santos, M.; Roisenberg, M.; Neto, G. e Figueiredo, W.
 Freeman, W.~T.; Jones, T.~R. e Pasztor, E.~C.  \harvardyearleft
   2002\harvardyearright , Example-based super-resolution, { IEEE Computer
   Graphics and Applications} {\bf 22}(2),~56--65.
+
+\harvarditem[]{Goodfellow; Bengio e Courville}{2016}{Gdfl16}
+Goodfellow, I.; Bengio, Y. e Courville, A.  \harvardyearleft
+  2016\harvardyearright , { Deep Learning}, MIT Press.
+\newblock \url{http://www.deeplearningbook.org}.
+
+\harvarditem{GSIPL}{2017}{figsismica}
+GSIPL  \harvardyearleft 2017\harvardyearright , Seismic surveys,
+  \url{http://geostar-surveys.com/methodology%20-%20High%20Resolution%20Seismic%20surveys.html}.
+
+\harvarditem{Géron}{2017}{aurelien17}
+Géron, A.  \harvardyearleft 2017\harvardyearright , { Hands-on Machine
+  Learning with Scikit0Learn and TensorFlow}, Academic Press, O'Reilly Media.
 
 \harvarditem[He et~al.]{He; Zhang; Ren e Sun}{2016}{He2016}
 He, K.; Zhang, X.; Ren, S. e Sun, J.  \harvardyearleft 2016\harvardyearright ,
@@ -79,6 +106,12 @@ Romano, Y.; Isidoro, J. e Milanfar, P.  \harvardyearleft 2017\harvardyearright
 \harvarditem{Sen}{2006}{sen_livro}
 Sen, M.~K.  \harvardyearleft 2006\harvardyearright , { {Seismic Inversion}},
   Society of Petroleum Engineers, Richardson, TX, USA.
+
+\harvarditem{Srivastava e Sen}{2009}{Srivastava2009}
+Srivastava, R.~P. e Sen, M.~K.  \harvardyearleft 2009\harvardyearright ,
+  Fractal-based stochastic inversion of poststack seismic data using very fast
+  simulated annealing, { Journal of Geophysics and Engineering} {\bf
+  6}(4),~412.
 
 \harvarditem{Tarantola}{2005}{tarantola}
 Tarantola, A.  \harvardyearleft 2005\harvardyearright , { Inverse Problem
