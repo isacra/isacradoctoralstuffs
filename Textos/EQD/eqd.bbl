@@ -1,15 +1,5 @@
 \begin{thebibliography}{xx}
 
-\harvarditem[]{Bosch; Mukerji e Gonzalez}{2010}{Bosch2010}
-Bosch, M.; Mukerji, T. e Gonzalez, E.~F.  \harvardyearleft
-  2010\harvardyearright , Seismic inversion for reservoir properties combining
-  statistical rock physics and geostatistics: A review, { Geophysics} {\bf
-  75}(5),~75A165--75A176.
-
-\harvarditem{Buduma}{2015}{Buduma15}
-Buduma, N.  \harvardyearleft 2015\harvardyearright , { Fundamentals of Deep
-  Learning}, Academic Press, O'Reilly Media.
-
 \harvarditem{Buland e Omre}{2003}{Buland01012003}
 Buland, A. e Omre, H.  \harvardyearleft 2003\harvardyearright , Bayesian
   linearized avo inversion, { Geophysics} {\bf 68}(1),~185--198.
@@ -18,9 +8,13 @@ Buland, A. e Omre, H.  \harvardyearleft 2003\harvardyearright , Bayesian
 Dahl, R.; Norouzi, M. e Shlens, J.  \harvardyearleft 2017\harvardyearright ,
   Pixel recursive super resolution, { CoRR} .
 
-\harvarditem{Deutsch}{2002}{deutsch2002}
-Deutsch, C.  \harvardyearleft 2002\harvardyearright , { Geostatistical
-  Reservoir Modeling}, Applied geostatistics series, Oxford University Press.
+\harvarditem[de~Figueiredo et~al.]{de~Figueiredo; Grana; Santos; Figueiredo;
+  Roisenberg e Neto}{2017}{Figueiredo17}
+de~Figueiredo, L.~P.; Grana, D.; Santos, M.; Figueiredo, W.; Roisenberg, M. e
+  Neto, G.~S.  \harvardyearleft 2017\harvardyearright , Bayesian seismic
+  inversion based on rock-physics prior modeling for the joint estimation of
+  acoustic impedance, porosity and lithofacies, { Journal of Computational
+  Physics} {\bf 336},~128 -- 142.
 
 \harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2014}{dong16}
 Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2014\harvardyearright
@@ -40,19 +34,6 @@ Freeman, W.~T.; Jones, T.~R. e Pasztor, E.~C.  \harvardyearleft
   2002\harvardyearright , Example-based super-resolution, { IEEE Computer
   Graphics and Applications} {\bf 22}(2),~56--65.
 
-\harvarditem[]{Goodfellow; Bengio e Courville}{2016}{Gdfl16}
-Goodfellow, I.; Bengio, Y. e Courville, A.  \harvardyearleft
-  2016\harvardyearright , { Deep Learning}, MIT Press.
-\newblock \url{http://www.deeplearningbook.org}.
-
-\harvarditem{GSIPL}{2017}{figsismica}
-GSIPL  \harvardyearleft 2017\harvardyearright , Seismic surveys,
-  \url{http://geostar-surveys.com/methodology%20-%20High%20Resolution%20Seismic%20surveys.html}.
-
-\harvarditem{Géron}{2017}{aurelien17}
-Géron, A.  \harvardyearleft 2017\harvardyearright , { Hands-on Machine
-  Learning with Scikit0Learn and TensorFlow}, Academic Press, O'Reilly Media.
-
 \harvarditem[He et~al.]{He; Zhang; Ren e Sun}{2016}{He2016}
 He, K.; Zhang, X.; Ren, S. e Sun, J.  \harvardyearleft 2016\harvardyearright ,
   Deep residual learning for image recognition,  2016 IEEE Conference on
@@ -67,6 +48,16 @@ Hou, H. e Andrews, H.  \harvardyearleft 1978\harvardyearright , Cubic splines
 Huang, J.~B.; Singh, A. e Ahuja, N.  \harvardyearleft 2015\harvardyearright ,
   Single image super-resolution from transformed self-exemplars,  2015 IEEE
   Conference on Computer Vision and Pattern Recognition (CVPR), pp.~5197--5206.
+
+\harvarditem{Ma}{2002}{max_inv_simulated}
+Ma, X.  \harvardyearleft 2002\harvardyearright , Simultaneous inversion of
+  prestack seismic data for rock properties using simulated annealing, {
+  GEOPHYSICS} {\bf 67}(6),~1877--1885.
+
+\harvarditem{Mallick}{1995}{MallickGeneticInve}
+Mallick, S.  \harvardyearleft 1995\harvardyearright , Model-based inversion of
+  amplitude-variations-with-offset data using a genetic algorithm, {
+  Geophysics} {\bf 60}(4),~939--954.
 
 \harvarditem{Nasrollahi e Moeslund}{2014}{Nasrollahi2014}
 Nasrollahi, K. e Moeslund, T.~B.  \harvardyearleft 2014\harvardyearright ,
@@ -89,12 +80,6 @@ Romano, Y.; Isidoro, J. e Milanfar, P.  \harvardyearleft 2017\harvardyearright
 Sen, M.~K.  \harvardyearleft 2006\harvardyearright , { {Seismic Inversion}},
   Society of Petroleum Engineers, Richardson, TX, USA.
 
-\harvarditem{Srivastava e Sen}{2009}{Srivastava2009}
-Srivastava, R.~P. e Sen, M.~K.  \harvardyearleft 2009\harvardyearright ,
-  Fractal-based stochastic inversion of poststack seismic data using very fast
-  simulated annealing, { Journal of Geophysics and Engineering} {\bf
-  6}(4),~412.
-
 \harvarditem{Tarantola}{2005}{tarantola}
 Tarantola, A.  \harvardyearleft 2005\harvardyearright , { Inverse Problem
   Theory and Methods for Model Parameter Estimation}, Society for Industrial
@@ -111,5 +96,10 @@ van~den Oord, A.; Kalchbrenner, N.; Vinyals, O.; Espeholt, L.; Graves, A. e
 Xiaoyu, X.; Yun, L.; Desheng, S.; Xiangyu, G. e Huifeng, W.  \harvardyearleft
   2012\harvardyearright , { Studying the effect of expanding low or high
   frequency on post-stack seismic inversion}, pp.~1--5.
+
+\harvarditem{Zhe e Hanming}{2013}{zhe_nonlinear}
+Zhe, Y. e Hanming, G.  \harvardyearleft 2013\harvardyearright , Non-linear
+  prestack seismic inversion with global optimization using an edge-preserving
+  smoothing filter, { Geophysical Prospecting} {\bf 61}(4),~747--760.
 
 \end{thebibliography}
