@@ -1,19 +1,25 @@
 \chapter{Super-Resolução de Imagens Pós-Inversão}
 \label{cap:3modeloHibrido}
 
+Neste Capítulo é apresentada a metodologia discutida proposta neste trabalho.
+São apresentados as estratégias iniciais de aplicação do modelo convolucional,
+os resultados preliminares obtidos e o cronograma de atividades.
+
 \section{Geração das imagens}
 Explicar o uso do método de Leandro para gerar as imagens
-Explicar a geração das imagens de cunha
-Deixar claro o uso de imagens 32 x 32 mostrar a região de teste apliada da imagem total
+%Explicar a geração das imagens de cunha
+%Deixar claro o uso de imagens 32 x 32 mostrar a região de teste apliada da imagem total
 
 \section{Modelo de Super-Resolução}
-% 
-% Este trabalho propõe desenvolver um novo modelo para inversão sísmica acústica e
-% elástica com modelagem de incerteza. No capítulo anterior foi apresentado um
-% método que trata o problema utilizando amostragem da distribuição posterior via
-% simulação sequencial direta \citep{amilcarInversao}. Outro método apresentado
-% utiliza o cálculo do máximo \textit{a posteriori} (MAP) para determinar o
-% resultado mais provável \citep{Buland01012003}.
+
+Este trabalho propõe desenvolver um modelo de rede neural convolucional para
+realizar supre-resolução de imagens da inversão sísmica acústica.
+
+No capítulo anterior foi apresentado o método de inversão acústica que
+representa o estado da arte trata o problema utilizando amostragem da distribuição posterior via
+simulação sequencial direta \citep{amilcarInversao}. Outro método apresentado
+utiliza o cálculo do máximo \textit{a posteriori} (MAP) para determinar o
+resultado mais provável \citep{Buland01012003}.
 % 
 % A presente proposta tem como objetivo aumentar a eficiência do método GSI
 % \citep{amilcarInversao} afim de evitar amostrar soluções que não estejam dentro
@@ -71,17 +77,17 @@ Deixar claro o uso de imagens 32 x 32 mostrar a região de teste apliada da imag
 % realizar a inversão, dado que o resultado do MAP já fornece uma estimativa
 % próxima à média desejada.
 % 
-\textit{ As questões a serem respondidas neste trabalho são: o modelo de rede convolucional é capaz de aumentar a Resolução de imagens de impedância
-sob um ponto de vista visual? As imagens de teste apresentaram maior resolução que as imagens originais, sob o ponto 
-de vista de altas frequências? Quais as faixas de alta frequências foram inseridas? Como as redes neurais aprenderam
-as altas frequências? É possível parametrizar o processo de super-resolução para imagens pós-inversão?
-Qual o limite de alta frequência é possível inserir nas imagens de alta resolução?}
-Investigar a possibilidade de adaptação da rede para diferentes tipo de \textit{upscaling}.
+% \textit{ As questões a serem respondidas neste trabalho são: o modelo de rede convolucional é capaz de aumentar a Resolução de imagens de impedância
+% sob um ponto de vista visual? As imagens de teste apresentaram maior resolução que as imagens originais, sob o ponto 
+% de vista de altas frequências? Quais as faixas de alta frequências foram inseridas? Como as redes neurais aprenderam
+% as altas frequências? É possível parametrizar o processo de super-resolução para imagens pós-inversão?
+% Qual o limite de alta frequência é possível inserir nas imagens de alta resolução?}
+% Investigar a possibilidade de adaptação da rede para diferentes tipo de \textit{upscaling}.
 
 \section{Resultados Preliminares}
 
 \subsection{Transformada rápida de Fourier}
-Explicar a aplicação da transformada de Fourier como métrica de comparação entre as imagens
+%Explicar a aplicação da transformada de Fourier como métrica de comparação entre as imagens
 
 % 
 % Experimentos realizados com o método para cálculo do MAP obtiveram resultados e
@@ -197,7 +203,8 @@ Explicar a aplicação da transformada de Fourier como métrica de comparação 
 
 
 \section{Proposta e Plano de Trabalho}
-
+contribuições esperadas para este trabalho devem alcançar ambas as
+áreas de conhecimento: aprendizagem de máquina e inversão sísmica.
 % A proposta para o restante do projeto é implementar a inversão elástica, que
 % utiliza sísmica pré empilhada para obter as velocidades primária e secundária e
 % densidade na linha de \cite{azevedo2013_avoinv} dentro da nova metodologia

@@ -14,11 +14,4 @@
 \contentsline {subsection}{\numberline {2.3.3}Pooling}{14}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Propriedades das Redes Convolucionais}{16}{subsection.2.3.4}
 \contentsline {section}{\numberline {2.4}Resumo}{18}{section.2.4}
-\contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o da Literatura}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}M\IeC {\'e}todos de Invers\IeC {\~a}o S\IeC {\'\i }smica}{20}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{20}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}M\IeC {\'a}ximo \textit {a posteriori}}{22}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}M\IeC {\'e}todos de Super-resolu\IeC {\c c}\IeC {\~a}o de Imagens}{24}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Super-resolu\IeC {\c c}\IeC {\~a}o por CNN}{24}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Resumo}{27}{section.3.3}
-\contentsline {chapter}{Bibliografia}{28}{section.3.3}
+\contentsline {chapter}{Bibliografia}{19}{section.2.4}

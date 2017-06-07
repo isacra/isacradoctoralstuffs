@@ -1,8 +1,14 @@
 \chapter{Super-Resolução de Imagens Pós-Inversão}
 \label{cap:3modeloHibrido}
 
-\section{Inversão}
+Neste Capítulo é apresentada a metodologia discutida proposta neste trabalho.
+São apresentados as estratégias iniciais de aplicação do modelo convolucional,
+os resultados preliminares obtidos e o cronograma de atividades.
 
+\section{Geração das imagens}
+Explicar o uso do método de Leandro para gerar as imagens
+%Explicar a geração das imagens de cunha
+%Deixar claro o uso de imagens 32 x 32 mostrar a região de teste apliada da imagem total
 
 \section{Modelo de Super-Resolução}
 % 
@@ -79,6 +85,8 @@
 \section{Resultados Preliminares}
 
 \subsection{Transformada rápida de Fourier}
+%Explicar a aplicação da transformada de Fourier como métrica de comparação entre as imagens
+
 % 
 % Experimentos realizados com o método para cálculo do MAP obtiveram resultados e
 % tempo de execução comparáveis com métodos implementados na indústria

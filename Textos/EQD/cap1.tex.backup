@@ -122,7 +122,7 @@ Consiste em recuperar uma imagem de alta resolução a partir de uma imagem
 de baixa resolução. Semelhante ao problema da inversão sísmica, o problema da super-resolução
 também é mal-posto, uma vez que pode haver múltiplas soluções em alta resolução para uma dada imagem em baixa
 resolução. Em ambos os problemas, uma forma de lidar com esta questão é restringir o espaço
-de soluções com informações \textit{a-priori}. 
+de soluções com informações \textit{a priori} \citep{DongLoy14}. 
 Considere $Y$ uma imagem de baixa resolução, por exemplo, uma
 imagem interpolada. O objetivo da super-resolução é
 recuperar, a partir de $Y$, uma imagem $F(Y)$ que é
@@ -159,7 +159,7 @@ na inversão sísmica através da aplicação de um modelo de rede neural convol
 
 \section{Objetivos}
 
-Este trabalho ataca a problemática da super-resolução dos artefatos da inversão sísmica
+Este trabalho investiga a problemática da super-resolução dos artefatos da inversão sísmica
 por meio de um modelo de redes neurais convolucionais.
 A abordagem se dá através da incorporação deste modelo de rede neural na última
 etapa do processo de inversão sísmica, para alcançar um maior nível de
@@ -171,7 +171,7 @@ de agregar informações de alta frequência às inversões sísmicas.
 Os objetivos específicos deste trabalho são:
 \begin{itemize}
  \item Conceber um modelo de rede neural convolucional para super-resolução de imagens de inversão.
- \item Entender das abstrações em cada camada da rede neural.
+ \item Entender as abstrações em cada camada da rede neural.
  \item Estudar o espectro de frequência das imagens pós-processadas com o modelo de rede convolucional.
  \item Definir uma estratégia de aplicação do modelo para diferentes tipos de dados de inversão (parametrização).
  \item Estudo de incerteza do processo de super-resolução.
@@ -180,7 +180,7 @@ Os objetivos específicos deste trabalho são:
 Um objetivo secundário deste trabalho é utilizar o conhecimento acumulado para estudar estratégias que
 relacionem as redes convolucionais e a simulação geoestatística multiponto. Esta etapa de trabalho será desenvolvida
 mediante aprovação do processo de doutorado sanduíche, em tramitação no CNPq com número 202482/2017-0.
-Em caso de aprovação, esta etapa do trabalho será realizada em cooperação com o Departamento
+Em caso de aprovação, esta atividade será realizada em cooperação com o Departamento
 de Ciências Geológicas, Universidade Stanford, sob orientação do Prof. Dr. Jef Karel Caers.
 
 \section{Organização do Texto}
