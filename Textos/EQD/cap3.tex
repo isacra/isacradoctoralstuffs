@@ -38,8 +38,7 @@ sobre dois espaços de representações diferentes: o espaço do modelo e o espa
 No contexto da inversão sísmica, os dados sísmicos são representados no espaço
 dos dados e a propriedade de impedância acústica, por exemplo, é representada
 no espaço do modelo.
-A escolha dos parâmetros do modelo geralmente é não única, de modo que dois conjuntos
-de parâmetros diferentes podem ser equivalentes.
+
 Entretanto, para uma abordagem quantitativa, uma parametrização precisa ser definida \cite{tarantola} e,
 no contexto da inversão acústica, o parâmetro adotado é a impedância acústica.
 Para obter informações sobre os parâmetros do modelo, é necessário
@@ -101,7 +100,7 @@ propriedade de impedância acústica é não-linear.
 Para escapar da problemática da não-linearidade do operador direto, é
 necessário aproximar linearmente o pulso sísmico da impedância acústica.
 Para isto, duas medidas são necessárias. A primeira é admitir a 
-refletividade como o logaritmo da impedância acústica (equação \ref{eq:lnz}).
+refletividade como o logaritmo da impedância acústica (Equação \ref{eq:lnz}).
 Esta aproximação é válida para valores de refletividade menores que $0.3$.
 \begin{equation}
 r(t) = \frac{1}{2}\Delta \ln(z(t))
@@ -344,8 +343,8 @@ p(y_i|\boldsymbol{x},\boldsymbol{y}_{<i}) = softmax(A_i(\boldsymbol{x}) + B_i(\b
 \end{equation}
 
 O algoritmo Gradiente Descente Estocástico é usado para otimizar os parâmetros $A$ e $B$, a fim de maximizar
-a \textit{log-likelihood} da equação \ref{eqn:objfunc}. O aprendizado da rede ocorre pela otimização da função de custo entre
-as predições do modelo (equação \ref{eqn:cnnpred}) e os valores discretos da imagem que representa
+a \textit{log-likelihood} da Equação \ref{eqn:objfunc}. O aprendizado da rede ocorre pela otimização da função de custo entre
+as predições do modelo (Equação \ref{eqn:cnnpred}) e os valores discretos da imagem que representa
 a realidade $y_i^* \in \{1...K\}$:
 
 \begin{equation}

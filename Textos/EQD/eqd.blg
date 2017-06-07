@@ -7,7 +7,7 @@ A level-1 auxiliary file: cap3.aux
 The style file: my-agsm.bst
 Database file #1: bib/bibliografia.bib
 Warning--entry type for "figsismica" isn't style-file defined
---line 1391 of file bib/bibliografia.bib
+--line 1357 of file bib/bibliografia.bib
 You can't pop an empty literal stack for entry Gdfl16
 while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
@@ -63,6 +63,10 @@ while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
 ---the literal stack isn't empty for entry dong16
+while executing---line 1350 of file my-agsm.bst
+ptr=1, stack=
+
+---the literal stack isn't empty for entry DongLoy14
 while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
@@ -149,45 +153,45 @@ ptr=1, stack=
 
 ---the literal stack isn't empty for entry zhe_nonlinear
 while executing---line 1350 of file my-agsm.bst
-You've used 26 entries,
+You've used 27 entries,
             2912 wiz_defined-function locations,
-            819 strings with 9360 characters,
-and the built_in function-call counts, 129378 in all, are:
-= -- 21287
-> -- 1659
+            826 strings with 9606 characters,
+and the built_in function-call counts, 133866 in all, are:
+= -- 22002
+> -- 1750
 < -- 0
-+ -- 10279
-- -- 497
-* -- 11291
-:= -- 25649
-add.period$ -- 27
-call.type$ -- 26
-change.case$ -- 357
++ -- 10634
+- -- 525
+* -- 11689
+:= -- 26550
+add.period$ -- 28
+call.type$ -- 27
+change.case$ -- 370
 chr.to.int$ -- 26
-cite$ -- 27
-duplicate$ -- 418
-empty$ -- 878
-format.name$ -- 564
-if$ -- 23336
-int.to.chr$ -- 5
+cite$ -- 28
+duplicate$ -- 434
+empty$ -- 907
+format.name$ -- 595
+if$ -- 24145
+int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 32
-newline$ -- 82
-num.names$ -- 273
-pop$ -- 118
+missing$ -- 34
+newline$ -- 85
+num.names$ -- 284
+pop$ -- 123
 preamble$ -- 1
-purify$ -- 390
+purify$ -- 405
 quote$ -- 0
-skip$ -- 329
+skip$ -- 339
 stack$ -- 0
-substring$ -- 30393
-swap$ -- 63
-text.length$ -- 364
+substring$ -- 31390
+swap$ -- 66
+text.length$ -- 378
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 90
+type$ -- 92
 warning$ -- 1
-while$ -- 568
+while$ -- 589
 width$ -- 0
-write$ -- 348
-(There were 44 error messages)
+write$ -- 363
+(There were 45 error messages)

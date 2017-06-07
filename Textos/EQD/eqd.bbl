@@ -30,11 +30,16 @@ de~Figueiredo, L.~P.; Grana, D.; Santos, M.; Figueiredo, W.; Roisenberg, M. e
 Deutsch, C.  \harvardyearleft 2002\harvardyearright , { Geostatistical
   Reservoir Modeling}, Applied geostatistics series, Oxford University Press.
 
-\harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2014}{dong16}
-Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2014\harvardyearright
-  , Image super-resolution using deep convolutional networks, { IEEE
-  Transactions on Pattern Analysis and Machine Intelligence} {\bf
-  38}(2),~295--307.
+\harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2014{ a}}{dong16}
+Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2014{
+  a}\harvardyearright , Image super-resolution using deep convolutional
+  networks, { IEEE Transactions on Pattern Analysis and Machine Intelligence}
+  {\bf 38}(2),~295--307.
+
+\harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2014{ b}}{DongLoy14}
+Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2014{
+  b}\harvardyearright , { Learning a Deep Convolutional Network for Image
+  Super-Resolution}, Springer International Publishing, Cham.
 
 \harvarditem[Figueiredo et~al.]{Figueiredo; Santos; Roisenberg; Neto e
   Figueiredo}{2014}{leandroGRSL}
