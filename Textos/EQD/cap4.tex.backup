@@ -1,43 +1,72 @@
 \chapter{Super-Resolução de Imagens Pós-Inversão}
 \label{cap:3modeloHibrido}
 
-Neste Capítulo é apresentada a metodologia discutida proposta neste trabalho.
-São apresentados as estratégias iniciais de aplicação do modelo convolucional,
+Neste Capítulo é apresentada a metodologia discutida neste trabalho.
+São apresentadas as estratégias iniciais de aplicação do modelo convolucional,
 os resultados preliminares obtidos e o cronograma de atividades.
 
-\section{Geração das imagens}
-Explicar o uso do método de Leandro para gerar as imagens
-%Explicar a geração das imagens de cunha
-%Deixar claro o uso de imagens 32 x 32 mostrar a região de teste apliada da imagem total
-
 \section{Modelo de Super-Resolução}
+
+Este trabalho propõe desenvolver um modelo de rede neural convolucional para
+realizar supre-resolução de imagens da inversão sísmica acústica.
+No capítulo anterior foi apresentado o método de inversão acústica que
+representa o estado da arte no cálculo do máximo \textit{a posteriori} (MAP) para determinar o
+resultado mais provável \citep{Buland01012003, Figueiredo2014}. Foram apresentados os trabalhos relacionados
+com o desenvolvimento de modelos de redes neurais convolucionais para tratar problemas de
+super-resolução \citep{Oord16,He2016,DahlNS17}. 
 % 
-% Este trabalho propõe desenvolver um novo modelo para inversão sísmica acústica e
-% elástica com modelagem de incerteza. No capítulo anterior foi apresentado um
-% método que trata o problema utilizando amostragem da distribuição posterior via
-% simulação sequencial direta \citep{amilcarInversao}. Outro método apresentado
-% utiliza o cálculo do máximo \textit{a posteriori} (MAP) para determinar o
-% resultado mais provável \citep{Buland01012003}.
-% 
-% A presente proposta tem como objetivo aumentar a eficiência do método GSI
-% \citep{amilcarInversao} afim de evitar amostrar soluções que não estejam dentro
-% da distribuição posterior. Neste caso o termo distribuição posterior é utilizado
-% para denotar o conjunto de soluções que é consistente com os conhecimentos
-% \textit{a priori} e com os dados sísmicos. Para melhorar a eficiência do método,
-% mantendo sua capacidade de modelagem da continuidade espacial direcional, serão
-% utilizadas resultados de \cite{Buland01012003} para guiar a amostragem via
-% imagem secundária.
-% 
-% Antes de efetuar a SSD, os dados de poços e resultado do MAP são submetidos à um
-% filtro passa alta com frequência de corte de $8Hz$. Desta forma a simulação é
-% efetuada somente para as frequências onde a sísmica tem amplitude significativa,
-% assumindo o mesmo modelo para as baixas frequências ($<8Hz$) que foi utilizado
-% para o cálculo do MAP. Após a simulação, o modelo de baixa frequência é
-% adicionado aos resultados para cálculo das sísmicas sintéticas e correlações.
-% 
-% O método proposto necessita dos seguintes dados de entrada: impedância acústica
-% medida nos poços na escala da sísmica, \textit{wavelet}, modelo de baixa
-% frequência para impedância acústica ($<8Hz$), matriz de covariância da sísmica,
+A presente proposta tem como objetivo o emprego de um modelo de rede neural convolucional
+para aumentar a resolução das imagens de impedância acústica
+resultantes do processo de inversão sísmica. Com esta abordagem se espera obter um ganho
+quantitativo, através da inserção de altas frequências no espectro de frequência da
+propriedade, e qualitativo, através de imagens com maior definição entre camadas.
+Além disto, por se tratar de um problema de inversão, um estudo de incerteza sobre os
+resultados das redes convolucionais será realizado sobre os resultados.
+
+A proposta de adaptação e expansão do modelo apresentado por
+\cite{DahlNS17} parece viável, pois apresenta os fundamentos para o desenvolvimento
+de modelos convolucionais condicionados. Entretanto, o modelo apresentado por
+\cite{} funciona como uma rede classificadora, de modo que os valores previsos
+pela rede são discretos. Para ser aplicado sobre dados geoestatísticos o modelo
+necessita ser ajustado. Esta mudança visa tornar o modelo capaz de realizar regressão
+diretamente sobre os valores de impedância, ou para impedância normalizada no intervalo real
+$[-1,+1]$.
+
+Antes de efetuar o treinamento do modelo de rede neural as imagens são submetidas a
+um processo de normalização para escala de cinza no intevalo de 0 a 255.
+O método de normalização é flexível em relação a esta escala, de modo que as imagens
+podem ser normalizadas em escalas mais finas.
+
+Desta forma a simulação é
+efetuada somente para as frequências onde a sísmica tem amplitude significativa,
+assumindo o mesmo modelo para as baixas frequências ($<8Hz$) que foi utilizado
+para o cálculo do MAP. Após a simulação, o modelo de baixa frequência é
+adicionado aos resultados para cálculo das sísmicas sintéticas e correlações.
+
+A rede convolucional é um modelo cujo treinamento é supervisionado, de modo que,
+para ajustar seus parâmetros, é necessário dispor dos pares de imagens de alta
+resolução, consideradas a verdade conhecida, e a baixa resolução. Uma vez a
+rede convolucional treinada, imagens de baixa resolução provenientes de outros cenários de inversão
+que não se dispõe da imagem real, podem ser aplicadas ao modelo.
+
+Os dados de entrada para o modelo convolucional são as imagens da inversão sísmica
+proposta por \cite{}. Para realizar a inversão acústica é necessário
+ter disponível a sísmica, a \textit{wavelet}, o modelo de baixa frequência para
+impedância acústica ($<8Hz$) (Equação \ref{eqn:mapSolution}).
+O fluxo de trabalho segue as etapas listadas:
+ 
+\begin{enumerate}
+  \item Parametrização do método de inversão acústica com a sísmica, a \textit{wavelet} e o modelo de baixa frequência.
+  \item Geração das imagens de baixa resolução
+  \item Normalização das imagens de impedância para escala de cinza.
+  \item Divisão do conjunto de dados entre conjunto de treinamento e conjunto de teste.
+  \item Treinamento do modelo de rede convolucional com os pares de imagens de treinamento.
+  \item Amostragem das imagens de alta resolução a partir das imagens de teste de baixa resolução.
+  \item Comparação entre as imagens obtidas da rede e a imagem real.
+  \item Recuperação dos valores de impedância das imagens de alta resolução obtidas.
+\end{enumerate}
+
+% medida nos poços na escala da sísmica, , , matriz de covariância da sísmica,
 % distância de correlação vertical $L$ (Equação \ref{eq:correlVert}), modelo de
 % horizontes e variogramas verticais e horizontais modelados nos dados filtrados
 % ($>8Hz$) para simulação sequencial. Resumindo, os principais passos são:
@@ -46,8 +75,7 @@ Explicar o uso do método de Leandro para gerar as imagens
 % \begin{enumerate}
 %   \item Preparar dados de entrada e modelar variogramas
 %   \item Inversão pelo método MAP utilizando as matrizes de covariância da
-%   sísmica e do modelo, \textit{wavelet} e modelo de baixa (Equação
-%   \ref{eqn:mapSolution}).
+%   sísmica e do modelo, \textit{wavelet} e modelo de baixa 
 %   \item Filtragem dos dados de poços e resultado do MAP com filtro passa alta
 %   ($>8Hz$)
 %   \item Horizontalização dos dados de poços e resultado do MAP filtrados
@@ -75,14 +103,30 @@ Explicar o uso do método de Leandro para gerar as imagens
 % realizar a inversão, dado que o resultado do MAP já fornece uma estimativa
 % próxima à média desejada.
 % 
-% \textit{ As questões a serem respondidas neste trabalho são: o modelo de rede convolucional é capaz de aumentar a Resolução de imagens de impedância
-% sob um ponto de vista visual? As imagens de teste apresentaram maior resolução que as imagens originais, sob o ponto 
-% de vista de altas frequências? Quais as faixas de alta frequências foram inseridas? Como as redes neurais aprenderam
-% as altas frequências? É possível parametrizar o processo de super-resolução para imagens pós-inversão?
-% Qual o limite de alta frequência é possível inserir nas imagens de alta resolução?}
-% Investigar a possibilidade de adaptação da rede para diferentes tipo de \textit{upscaling}.
+
+As questões a serem respondidas neste trabalho são: o modelo de rede convolucional é capaz de aumentar a Resolução de imagens de impedância
+quantitativamente? As imagens de teste apresentaram maior resolução que as imagens originais, sob o ponto 
+de vista de altas frequências? Quais as faixas de alta frequências foram inseridas? Como as redes neurais aprenderam
+as altas frequências? É possível parametrizar o processo de super-resolução para imagens pós-inversão?
+Qual o limite de alta frequência é possível inserir nas imagens de alta resolução? Existe coerência geoestatística
+no resultado do modelo convolucional? Investigar a possibilidade de adaptação da rede para diferentes tipos de \textit{upscaling}.
+
 
 \section{Resultados Preliminares}
+Como experimento do modelo inicial foram usados dois conjuntos de dados sintéticos.
+
+ 
+\subsection{Caso sintético: Cunha}
+
+%Explicar a geração das imagens de cunha
+%Deixar claro o uso de imagens 32 x 32 mostrar a região de teste apliada da imagem total
+\subsection{Caso sintético: impedância Acústica}
+Falar dos dados sintéticos:
+
+Explicar o uso do método de Leandro para gerar as imagens:
+-falar da parametrização.
+
+Falar do conjunto de dados composto por pares de imagens de alta e baixa resolução:
 
 \subsection{Transformada rápida de Fourier}
 %Explicar a aplicação da transformada de Fourier como métrica de comparação entre as imagens
@@ -201,6 +245,16 @@ Explicar o uso do método de Leandro para gerar as imagens
 
 
 \section{Proposta e Plano de Trabalho}
+
+Os resultados preliminares apontam que é possível obter imagens de
+inversão acústica em maior resolução. Entretanto, a aplicabilidade
+do modelo depende da existência de conjunto de pares de imagens
+de alta e baixa resolução para treinamento da rede e, consequentemente,
+o limite da capacidade de inserção de altas frequências das imagens previstas
+será limitada pelo faixa de altas frequências das imagens de treinamento.
+
+contribuições esperadas para este trabalho devem alcançar ambas as
+áreas de conhecimento: aprendizagem de máquina e inversão sísmica.
 
 % A proposta para o restante do projeto é implementar a inversão elástica, que
 % utiliza sísmica pré empilhada para obter as velocidades primária e secundária e
