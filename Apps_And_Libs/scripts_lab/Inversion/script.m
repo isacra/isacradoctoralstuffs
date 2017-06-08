@@ -57,7 +57,7 @@ inversion_cut(:,:,randomIndx) = [];
 im_cube_class_test = ImageCubeClass;
 for i=1:size(images_lr_test,3)
     img=prop2gray(images_lr_test(:,:,i),im_cube_class_test);
-    images = crop_and_print(img, 'Images/sintetico_lr_test/',i);
+    images(i,:,:) = crop_and_print(img, 'Images/sintetico_lr_test/',i);
 end
 
 save 'images.mat' images;
