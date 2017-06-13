@@ -29,7 +29,7 @@ limita a sísmica em uma determinada banda de frequência. Assim, a estratégia 
 objetiva a inserção de faixas de alta frequência no pós-processamento da propriedade invertida.
 
 Embora a CNN seja um método antigo, o estudo e desenvolvimento de modelos para resolver problemas de super-resolução
-é recente, cujos primeiros trabalhos datam de 2014. Os modelos que representam o estado da arte
+é recente. Os modelos que representam o estado da arte
 em inversão acústica e redes convolucionais para super-resolução são discutidos nas seções a seguir.
 
 \section{Métodos de Inversão Sísmica}
@@ -45,21 +45,21 @@ Para obter informações sobre os parâmetros do modelo, é necessário
 realizar observações através de experimentos físicos, como por exemplo, a
 aquisição sísmica.
 
-Sob um olhar ingênuo é possível questionar por quê não definir a
+Sob um olhar ingênuo é possível questionar por que não definir a
 função inversa da modelagem direta e calcular, de forma imediata,
 os parâmetros do modelo a partir dos espaço dos dados.
 No entanto, os métodos de inversão direta sofrem de instabilidades
 devido ao ruído e características do problema \citep[p. 50]{sen_livro}. Outra
 opção é utilizar tentativa e erro para ajustar os parâmetros até conseguir uma
 resposta semelhante aos dados experimentais. Formalmente isto é automatizado
-utilizando métodos de otimização. Para tanto, é preciso definir uma função de
-custo, ou função objetivo, que mede o ajuste dos dados produzidos pelos
+utilizando métodos de otimização. Para tanto é preciso definir uma função
+objetivo, que mede o ajuste dos dados produzidos pelos
 parâmetros do modelo (dado sintético) ao dado medido.
 
 \subsection{Inversão Sísmica Linear e Não Linear}
 O conteúdo desta seção apresenta as suposições de linearidade necessárias
 que tornam a inversão acústica um processo analítico e computacionalmente
-eficiente. O detalhamento matemático pode ser consultado em \cite{Figueiredo2014,Figueiredo17}.
+eficiente. O detalhamento matemático pode ser consultado em \cite{leandroGRSL,Figueiredo17}.
 
 Para entender o processo de inversão sísmica, é conveniente ter em mente
 que os problemas inversos podem ser classificados de acordo com a natureza
@@ -70,7 +70,7 @@ Como nos algoritmos de aprendizagem de máquina, na inversão sísmica
 a não-linearidade implica em uma função de custo com forma complicada,
 possivelmente com mínimos locais.
 Por outro lado, se o operador $G$ for aproximadamente linear, a
-função de erro se tornará convenientemente quadrática em relação a perturbações
+função de erro se tornará quadrática em relação a perturbações
 no espaço do modelo. A maior parte da teoria de inversão é baseada em problemas
 de inversão linear e, em muitas aplicações, ela é 
 adequada para representar a natureza do sistema \cite{sen_livro}.
@@ -81,7 +81,7 @@ d(t) = \int_{-\infty}^{\infty} s(\tau) r(t - \tau)\mathrm{d}\tau + e_{d}(t)
 \label{eq:conmodel}
 \end{equation}
 onde $d(t)$ é o traço sísmico, $s(t)$ é a \textit{wavelet}, $e(t)$ é
-um ruído aleatório e $r(t)$ é o refletividade.
+um ruído aleatório e $r(t)$ é a refletividade.
 A representação discreta para o modelo convolucional do dado sísmico é
 dada pela operação matricial: 
 \begin{equation}
@@ -120,7 +120,7 @@ Quando não é possível o uso da aproximação da Equação \ref{eq:lnz}, o pro
 deve ser abordado utilizando métodos de otimização não-linear. Com isso os erros
 devido às aproximações do modelo \textit{forward} diminuem, mas a otimização se
 torna mais custosa. Como a relação entre os dados e os parâmetros é não linear, a
-função objetivo a ser minimizada irá possuir mínimos locais, tornando necessário
+função objetivo a ser minimizada terá mínimos locais, tornando necessário
 o uso de métodos de otimização global. Esta prática está bem documentada na
 literatura de inversão, como o uso de \textit{simulated annealing}
 \citep{max_inv_simulated}, de algoritmos genéticos \citep{MallickGeneticInve} e
@@ -133,7 +133,7 @@ A teoria mais simples e genérica possível é obtida quando se usa uma
 abordagem probabilística \citep{tarantola}. Na solução para a inversão
 sísmica, os parâmetros do modelo convolucional da equação \ref{eq:sismDiscreta2}
 podem ser representados em termos de suas distribuições de probabilidade.
-No modelo estocástico proposto por \cite{Figueiredo2014}, as distribuições
+No modelo estocástico proposto por \cite{leandroGRSL}, as distribuições
 são consideradas normais e multivariadas e são denotadas por $N(\boldsymbol{\mu},\boldsymbol{\Sigma})$.
 Assumindo que o ruído $\boldsymbol{e}$ respeita uma distribuição também gaussiana,
 as distribuições de probabilidade para o vetor dos dados sísmicos experimentais
@@ -161,7 +161,7 @@ como um vetor nulo. Para que o método possa ser aplicado para a inversão
 acústica, é necessário estimar uma \textit{wavelet} que possa ser aplicada
 no modelo convolucional. Esta estimativa é realizada aplicando este mesmo processo
 de inversão na região de ocorrência de amostragem de dados, um poço perfurado por exemplo, onde a refletividade pode
-ser calculada diretamente \citep{Figueiredo2014}. O algoritmo de
+ser calculada diretamente \citep{leandroGRSL}. O algoritmo de
 Gibbs então é utilizado para amostrar na distribuição posterior da \textit{wavelet}, 
 o valor médio e a variância são calculados.
 
@@ -170,10 +170,10 @@ o valor médio e a variância são calculados.
 p(\boldsymbol{m}|\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}) =
 N(\boldsymbol{\mu_{m}},\boldsymbol{\Sigma_{m}}),
 \end{equation} 
-Na representação da distribuição dos parâmetros do modelo é possível inserir no método de inversão informações \textit{a priori}
+Na representação da distribuição dos parâmetros do modelo é possível inserir no método de inversão, informações \textit{a priori}
 que eventualmente estejam disponíveis. Por exemplo, $\boldsymbol{\mu_{m}}$ pode ser
 uma matriz de baixas frequências gerada a partir da interpolação da impedância acústica observada em dois poços
-já perfurados \citep{Figueiredo2014}.
+já perfurados \citep{leandroGRSL}.
 
 % \begin{equation}
 % \label{eq:correlVert}
@@ -209,15 +209,15 @@ A média e variância posterior para cada traço podem ser calculadas analiticam
 \boldsymbol{\Sigma}_{m|} = \boldsymbol{\Sigma}_{m} - \boldsymbol{\Sigma}_{m}\boldsymbol{G}^{T}(\boldsymbol{G\Sigma}_{m}\boldsymbol{G}^{T}+\boldsymbol{\Sigma}_{d})^{-1}\boldsymbol{G\Sigma}_{m}.
 \end{equation} 
 onde o cálculo da matriz inversa acima pode ser aproveitado para vários traços
-de uma região de interesse em certos casos, ou seja, quando as matrizes de
-covariância possam ser assumidas iguais para todos os traços da sísmica da região.
+de uma região de interesse, em certos casos, ou seja, quando as matrizes de
+covariância podem ser assumidas iguais para todos os traços da sísmica da região.
 Desta forma alteram-se a sísmica $\mathbf{d}_0$ e a baixa frequência
 $\boldsymbol{\mu_m}$ obtendo-se a média posterior para o traço desejado.
   
 A matriz de covariância posterior indica a incerteza
 presente no resultado, não é necessário
-definir a tolerância de ajuste aos dados explicitamente, mas é preciso definir a
-matriz de covariância \textit{a priori} do resultado esperado, ou seja, é
+definir a tolerância de ajuste aos dados, mas é preciso definir a
+matriz de covariância do resultado esperado, ou seja, é
 preciso ter conhecimento, mesmo que de forma grosseira, das correlações espaciais e
 variâncias que se espera do resultado. Outro ponto relevante é o fato da
 solução para o método de inversão MAP ser expressa em termos da covariância
@@ -228,7 +228,7 @@ como uma modeladora, de modo que as altas frequências são filtradas
 e o nível de detalhes das imagens se torna limitado. 
 
 \section{Métodos de Super-resolução de Imagens}
-Super-resolução é o processo de obter uma ou mais imagens de alta
+Super-resolução é o processo para gerar uma ou mais imagens de alta
 resolução a partir de uma ou mais imagens de baixa-resolução
 através do aumento no número de pixel por unidade de área.
 Os algoritmos de super-resolução têm aplicação nas mais diferentes áreas
@@ -241,7 +241,7 @@ o número de imagens de baixa resolução aplicadas e o método de reconstruçã
 Métodos baseados em interpolação são fáceis de implementar e amplamente utilizados,
 entretanto estes métodos sofrem de falta de expressividade, uma vez que modelos lineares
 não são capazes de expressar dependências complexas entre as entradas e as saídas \citep{HsiehAndrews1978}.
-Na prática tais métodos falham na tentativa de prever adequadamente detalhes de alta frequência
+Na prática, tais métodos falham na tentativa de prever adequadamente detalhes de alta frequência,
 levando a saídas de alta resolução borradas. Efeito semelhante ocorre durante a inversão sísmica,
 na qual as imagens resultantes apresentam resolução limitada e contornos borrados.
 
@@ -258,12 +258,9 @@ velocidade de inferência. As redes convolucionais, por outro lado,
 focam na construção das imagens de alta resolução, de modo a obter magnitudes
 cada vez maiores de detalhes.
 
-A aplicação de redes convolucionais para realizar super-resolução é uma abordagem
-recente na literatura. Os primeiros trabalhos neste sentido datam
-do ano de 2014 e visaram a super-resolução de imagens únicas no
-domínio espacial \cite{dong16}. As redes convolucionais extraem implicitamente
+As redes convolucionais extraem implicitamente
 múltiplas camadas de abstração através da otimização dos seus filtros.
-Elas são capazes são capazes de modelar a distribuição conjunta sobre
+Elas são capazes de modelar a distribuição conjunta sobre
 uma imagem $x$ como o produto de distribuições condicionais \citep{Oord16}:
 \begin{equation}
 \label{eqn:prodcnn}
@@ -274,10 +271,10 @@ onde, $x_i$ é o pixel modelado. A imagem é percorrida linha por linha e cada
 Para garantir esta propriedade se define uma máscara para os filtros da convolução,
 ou seja, é atribuído valo $0$ para os pesos fora da zona de interesse.
 A nova imagem é gerada sequencialmente, cada pixel é reinserido para a rede para que o próximo pixel seja previsto,
-deste modo cada \textit{pixel} depende fortemente dos \textit{pixels} anteriores
+deste modo cada \textit{pixel} depende dos \textit{pixels} anteriores
 sob uma perspectiva não-linear.
 
-O modelo condicional sofreu melhoria para que permitiram o reconhecimento de estruturas mais complexas.
+O modelo condicional sofreu melhoria que permitiram o reconhecimento de estruturas mais complexas.
 Entre as camadas convolucionais do modelo condicionado foram adicionadas unidades
 multiplicativas com a seguinte ativação:
 \begin{equation}
@@ -310,8 +307,8 @@ y = tanh(W_{k,f} * x + V_{k,f}*\boldsymbol{s})\bigodot \sigma(W_{k,g}*x + V_{k,g
 \end{equation}
 
 O modelo de rede condicional proposto por \cite{DahlNS17} representa o estado da arte em modelos convolucionais para
-super-resolução de múltiplas imagens. O modelo é composto de uma rede condicionante, do tipo tipo ResNet \citep{He2016}
-e uma rede \textit{prior}, to tipo \textit{Gated PixelNN} \citep{Oord16}.
+super-resolução de múltiplas imagens. O modelo é composto de uma rede condicionante, do tipo ResNet \citep{He2016}
+e uma rede \textit{prior}, do tipo \textit{Gated PixelNN} \citep{Oord16}.
 A rede condicionante realiza o mapeamento de uma imagem de baixa resolução para uma estrutura probabilística
 de alta resolução. Assim, ela permite compor a estrutura da imagem alta resolução através da distribuição
 de probabilidade marginal dos \textit{pixels} na imagem de baixa resolução. A rede \textit{prior} adiciona detalhes de alta resolução

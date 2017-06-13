@@ -14,6 +14,11 @@ Buduma, N.  \harvardyearleft 2015\harvardyearright , { Fundamentals of Deep
 Buland, A. e Omre, H.  \harvardyearleft 2003\harvardyearright , Bayesian
   linearized avo inversion, { Geophysics} {\bf 68}(1),~185--198.
 
+\harvarditem{Coléou}{2012}{coleou_qualityanomalyinv}
+Coléou, T.  \harvardyearleft 2012\harvardyearright , Use of quality and
+  anomaly indicators in the {QC} of seismic inversion,  74th EAGE Conference
+  and Exhibition - Workshops, EAGE, Copenhague, Dinamarca.
+
 \harvarditem[]{Dahl; Norouzi e Shlens}{2017}{DahlNS17}
 Dahl, R.; Norouzi, M. e Shlens, J.  \harvardyearleft 2017\harvardyearright ,
   Pixel recursive super resolution, { CoRR} .
@@ -30,16 +35,10 @@ de~Figueiredo, L.~P.; Grana, D.; Santos, M.; Figueiredo, W.; Roisenberg, M. e
 Deutsch, C.  \harvardyearleft 2002\harvardyearright , { Geostatistical
   Reservoir Modeling}, Applied geostatistics series, Oxford University Press.
 
-\harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2014{ a}}{dong16}
-Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2014{
-  a}\harvardyearright , Image super-resolution using deep convolutional
-  networks, { IEEE Transactions on Pattern Analysis and Machine Intelligence}
-  {\bf 38}(2),~295--307.
-
-\harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2014{ b}}{DongLoy14}
-Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2014{
-  b}\harvardyearright , { Learning a Deep Convolutional Network for Image
-  Super-Resolution}, Springer International Publishing, Cham.
+\harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2014}{DongLoy14}
+Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2014\harvardyearright
+  , { Learning a Deep Convolutional Network for Image Super-Resolution},
+  Springer International Publishing, Cham.
 
 \harvarditem[Figueiredo et~al.]{Figueiredo; Santos; Roisenberg; Neto e
   Figueiredo}{2014}{leandroGRSL}
@@ -64,7 +63,7 @@ GSIPL  \harvardyearleft 2017\harvardyearright , Seismic surveys,
 
 \harvarditem{Géron}{2017}{aurelien17}
 Géron, A.  \harvardyearleft 2017\harvardyearright , { Hands-on Machine
-  Learning with Scikit0Learn and TensorFlow}, Academic Press, O'Reilly Media.
+  Learning with Scikit-Learn and TensorFlow}, Academic Press, O'Reilly Media.
 
 \harvarditem[He et~al.]{He; Zhang; Ren e Sun}{2016}{He2016}
 He, K.; Zhang, X.; Ren, S. e Sun, J.  \harvardyearleft 2016\harvardyearright ,
@@ -96,12 +95,9 @@ Nasrollahi, K. e Moeslund, T.~B.  \harvardyearleft 2014\harvardyearright ,
   Super-resolution: a comprehensive survey, { Machine Vision and Applications}
   {\bf 25}(6),~1423--1468.
 
-\harvarditem[Passos~de Figueiredo et~al.]{Passos~de Figueiredo; Santos;
-  Roisenberg; Schwedersky~Neto e Figueiredo}{2014}{Figueiredo2014}
-Passos~de Figueiredo, L.; Santos, M.; Roisenberg, M.; Schwedersky~Neto, G. e
-  Figueiredo, W.  \harvardyearleft 2014\harvardyearright , Bayesian framework
-  to wavelet estimation and linearized acoustic inversion, { Geoscience and
-  Remote Sensing Letters, IEEE} {\bf 11}(12),~2130--2134.
+\harvarditem{Nielson}{2015}{Nielson15}
+Nielson, M.~A.  \harvardyearleft 2015\harvardyearright , { Neural Network and
+  Deep Learning}, Determination Press.
 
 \harvarditem[]{Romano; Isidoro e Milanfar}{2017}{Romano2017}
 Romano, Y.; Isidoro, J. e Milanfar, P.  \harvardyearleft 2017\harvardyearright

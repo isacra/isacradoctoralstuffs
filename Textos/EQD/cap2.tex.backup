@@ -54,10 +54,9 @@ usando observações a partir da superfície. A inversão sísmica tem um papel 
 de problemas geofísicos, em especial na caracterização de reservatórios \citep{Bosch2010,Srivastava2009}.
 Do ponto de vista prático, as soluções para o problema de inversão sísmica melhoram a exploração e
 o gerenciamento na indústria petrolífera, uma vez que os dados sísmicos estimados possuem forte correlação com as
-propriedades petrofísicas (porosidade, densidade, etc.) das rochas da subsuperfície \citep{Figueiredo2014}.
+propriedades petrofísicas (porosidade, densidade, etc.) das rochas da subsuperfície \citep{leandroGRSL}.
 Para facilitar o entendimento da inversão sísmica, considere a subsuperfície como sendo formada por camadas
-sobrepostas de diferentes tipos de rochas. As regiões onde ocorrem as transições entre tipos
-diferentes de rochas são chamadas de \textit{facies} e possuem espessuras diferentes.
+sobrepostas de diferentes tipos de rochas.
 
 \subsection{Aquisição Sísmica}
 O dado sísmico é o principal parâmetro observável utilizado na inversão sísmica.
@@ -104,7 +103,7 @@ da \textit{wavelet} $s$ com os coeficientes de refletividade $r$:
 d(t) = s(\tau) * \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
 \end{equation}
 onde $N$ é o número total de camadas, $e_d(t)$ representa o ruído aleatório em função do tempo
-e cada $d_{xy}$ é chamado de traço sísmico. Um conjunto de traços
+e cada $d$ é chamado de traço sísmico. Um conjunto de traços
 sísmicos também é chamado de imagem, seção ou cubo, no caso de um
 levantamento 3-D. A \textit{wavelet} ideal seria um pulso tipo delta contendo
 todas as frequências, entretanto, na prática as
@@ -175,12 +174,12 @@ neurônios da camada seguinte.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.8\textwidth]{fig/cnn_basic_arq}
-  \caption{Arquitetura típica de uma rede neural convolucional. Fonte:\citep{aurelien17}}
+  \caption{Arquitetura típica de uma rede neural convolucional. \citep{aurelien17}}
   \label{fig:cnn_basic_arq}
 \end{center}
 \end{figure}
 
-A camada convolucional é o elemento mais importante de uma CNN. Esta camada é estruturada
+A camada convolucional é o elemento mais importante de uma RNC. Esta camada é estruturada
 de modo a fazer com que cada um dos seus neurônios esteja conectado a um 
 pequeno grupo de \textit{pixels} da camada de entrada (Figura \ref{fig:cnn_arq}) e não a todos os \textit{pixels}, como
 ocorre em redes neurais tradicionais. Cada neurônio da camada seguinte se conecta apenas aos neurônios
@@ -191,7 +190,7 @@ características de mais alto nível nas camadas seguintes.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.6\textwidth]{fig/cnn_arq}
-  \caption{Camadas de uma CNN com campos receptivos retangulares.}
+  \caption{Camadas de uma RNC com campos receptivos retangulares.}
   \label{fig:cnn_arq}
 \end{center}
 \end{figure}
@@ -219,19 +218,20 @@ Os filtros (pesos) em uma camada convolucional são representados como uma peque
 imagem com as mesmas dimensões do campo receptivo. São eles os elementos
 convolvidos com a imagem de entrada para obter o resultado da camada convolucional.
 Durante o treinamento de uma rede convolucional cada elemento dos filtros é otimzado.
-A Figura \ref{fig:conv_filt} ilustra dois conjuntos de filtros possíveis. O primeiro filtro é um quadrado preto
+A Figura \ref{fig:conv_filt} ilustra dois filtros exemplos e o resultado da convolução
+de cada um com uma certa imagem. O primeiro filtro é um quadrado preto
 (\textit{pixels} de valor 0) contendo uma coluna central branca (\textit{pixels} com valor 1). 
 Analogamente, o segundo filtro é um quadrado preto contendo uma linha central branca.
 É possível notar na imagem da esquerda que as linhas verticais brancas se tornaram mais
-evidentes, enquanto as outras partes da imagem se tornaram mais borradas. Igualmente, na imagem da direita 
+evidentes, enquanto as outras partes da imagem se tornaram mais borradas. Na imagem da direita 
 a convolução com o filtro horizontal destacou as linhas brancas horizontais, ao passo que
-o restante ficou borrado. Assim, uma característica detectada por um neurônio representa
+o restante ficou borrado. Assim, quando uma característica é detectada por um neurônio, ela representa
 o tipo de padrão da entrada que causará a sua ativação.
 Estes padrões podem ser bordas, contornos ou estruturas com outras formas.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/conv_filt}
-  \caption{Aplicação de dois filtros diferentes para obter mapas de características.}
+  \caption{Exemplo de convolução com dois tipos diferentes de filtros.}
   \label{fig:conv_filt}
 \end{center}
 \end{figure}
@@ -239,9 +239,8 @@ Estes padrões podem ser bordas, contornos ou estruturas com outras formas.
 Em situações reais, a camada convolucional possui muitos mapas de características, resultando
 em uma representação em 3-D como ilustrado na Figura \ref{fig:featmaps}. Os mapas de características
 de uma camada convolucional são o resultado da convolução de uma das imagens de entrada com os diversos
-filtros específicos desta camada. Na Figura \ref{fig:featmaps} estão ilustrados os mapas para a convolução
-com apenas uma imagem, de modo que é possível imaginar que, à medida que o número de imagens aumenta,
-a estrutura ilustrada se replica horizontalmente. 
+filtros específicos desta camada, de modo que, é possível imaginar que à medida que o número de imagens aumenta,
+a estrutura ilustrada se replica horizontalmente.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.6\textwidth]{fig/feat_maps}
@@ -251,22 +250,21 @@ a estrutura ilustrada se replica horizontalmente.
 \end{figure}
 
 \subsection{Pooling}
-O processamento ao longo de uma rede convolucional ocorre em três estágios. No primeiro estágio,
-acontecem as convoluções entre as imagens e os filtros para produzir um conjunto de ativações lineares.
-O segundo estágio é chamado etapa de detecção, na qual cada ativação é submetida a uma
-função não-linear. A terceira etapa é chamada de \textit{pooling}, responsável por
-modificar a saída da camada convolucional para obter um sumário estatístico das saídas em uma determinada vizinhança.
-Semelhante ao que ocorre na convolução, a região sobre a qual se aplica \textit{pooling} é definida por um
+O processamento ao longo de uma rede convolucional ocorre em três estágios. No primeiro estágio
+acontecem as convoluções entre as imagens e os filtros, para produzir um conjunto de ativações lineares.
+O segundo estágio é chamado estágio de detecção, na qual cada ativação é submetida a uma
+função não-linear. O terceiro estágio é chamado de \textit{pooling}, responsável por
+modificar a saída da camada convolucional para obter um sumário estatístico das saídas da convolução.
+Semelhante ao que ocorre na convolução, a região sobre a qual se aplica o \textit{pooling} é definida por um
 campo receptivo e o deslocamento é definido por um \textit{stride}. O \textit{pooling} permite tornar
 invariante pequenas translações no conjunto de entrada, ou seja, ainda que haja pequenas translações na
 entrada, os valores da maioria das saídas após o \textit{pooling} permanecem iguais.
 A Figura \ref{fig:pool} ilustra o funcionamento da função de \textit{pooling} máximo, na qual
-o máximo valor de ativação dentro de uma vizinhança é selecionado. Outras funções de \textit{pooling} incluem o valor médio
-dentro de uma região retangular, a normalização $L^2$ de uma vizinhança, ou a média ponderada baseada na distância do \textit{pixel} central.
+o máximo valor de ativação dentro de uma vizinhança é selecionado.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/pool}
-  \caption{Operação de \textit{pooling} com campo receptivo de tamanho 3. Nesta operação é selecionado o máximo valor de ativação da etapa de detecção.}
+  \caption{Operação de \textit{pooling} com campo receptivo de tamanho $3$. Nesta operação é selecionado o máximo valor de ativação da etapa de detecção.}
   \label{fig:pool}
 \end{center}
 \end{figure}
@@ -275,37 +273,35 @@ A propriedade de invariância é útil quando a existência de uma característi
 o local exato onde ela ocorre. Por exemplo, para determinar se o rosto de uma pessoa ocorre em uma certa imagem, não é necessário saber
 com precisão o local dos olhos, basta saber se há um olho do lado esquerdo do rosto e outro olho do lado direito
 \footnote{O rosto da figura pública Nestor Cerveró, por exemplo, seria facilmente identificável por uma rede convolucional com uma camada de \textit{pooling}}.
-Por outro lado, há contextos em que o local da característica é uma informação relevante e deve ser preservada. Em modelagem de reservatórios, a detecção de bordas referentes a uma facie selante sobre uma região de reservatório.
-Adicionalmente, a operação de \textit{pooling} permite lidar com entradas de tamanho variável. Por exemplo, na classificação de imagens
-as entradas para a camada de classificação devem ter o mesmo tamanho. Assim, o \textit{stride} entre regiões de \textit{pooling} pode variar
-para que a camada de classificação receba o mesmo número de sumários estatísticos, independente do tamanho das imagens.
+Por outro lado, há contextos em que o local da característica é uma informação relevante e deve ser preservada. 
+Por exemplo, em modelagem de reservatórios, a detecção de bordas referentes a uma facie selante sobre uma região de reservatório.
+Adicionalmente, a operação de \textit{pooling} permite lidar com entradas de tamanho variável. Na classificação de imagens,
+as entradas para a camada classificadora devem ter o mesmo tamanho. Assim, o \textit{stride} entre regiões de \textit{pooling} pode variar
+para que a camada classificadora receba o mesmo número de sumários estatísticos, independente do tamanho das imagens.
 
 As função de \textit{pooling} sumariza as respostas de vizinhanças separadas por $k$ \textit{pixels}, por isso, o tamanho do seu campo receptivo é menor
-que o campo receptivo da convolução. Isto aumenta a eficiência computacional da rede, pois a camada seguinte à \textit{pooling} terá $k$ vezes
+que o campo receptivo da convolução. Isto aumenta a eficiência computacional da rede, pois a camada seguinte à de \textit{pooling} terá $k$ vezes
 menos entradas para processar. Quando o número de filtros da camada seguinte é função do tamanho da sua entrada, a redução promovida pela
-função de \textit{pooling} pode resultar em maior eficiência estatística e redução da quantidade de memória.
+função de \textit{pooling} pode resultar em maior eficiência estatística e redução da quantidade de memória \citep{aurelien17}.
 
 \subsection{Propriedades das Redes Convolucionais}
 Por conta da sua arquitetura, as redes convolucionais se sustentam sobre três pilares: interações esparsas, compartilhamentos
-de parâmetros e representações equivariantes. As propriedades de interação esparsa e compartilhamento de pesos serão apresentadas
-com maior nível de detalhes nesta seção, embora já tenham sido introduzidos de forma intuitiva nas seções anteriores.
+de parâmetros e representações equivariantes. As propriedades de interação esparsa e compartilhamento de pesos serão apresentados
+em maiores detalhes nesta seção, embora já tenham sido introduzidos de forma intuitiva nas seções anteriores.
 
 As \textbf{interações esparsas}, também chamadas de conectividade esparsa ou pesos esparsos,
-ocorre quando os filtros possuem  dimensão menor que a entrada, ou seja a
+ocorre quando os filtros possuem dimensão menor que a entrada, ou seja, a
 dimensão do campo receptivo é menor que a dimensão das imagens de entrada.
 De um ponto de vista prático, a imagem de entrada pode ter milhares de \textit{pixels}, entretanto, é 
 possível detectar apenas pequenas regiões com características de maior relevância na imagem de entrada
-com filtros que compreendam apenas algumas dezenas ou centenas de \textit{pixels}.
+com filtros que compreendam apenas algumas dezenas \textit{pixels}.
 Por exemplo, é possível identificar características de uma face humana no reconhecimento de pessoas, ou estruturas com
-significado geológico em um estudo geofísico. Como consequência,
-menos parâmetros são armazenados e há um ganho na eficiência estatística do
-modelo. As Figuras \ref{fig:sparse} e \ref{fig:full} ilustram
-os modelos de conectividade esparsa e tradicional, respectivamente.
-É possível notar que na conectividade tradicional (Figura \ref{fig:full}) todos os elementos da camada inferior
+significado geológico em um estudo geofísico. As Figuras \ref{fig:sparse} e \ref{fig:full} ilustram
+os modelos de conectividade esparsa e não-esparsa, respectivamente.
+É possível notar que na conectividade não-esparsa (Figura \ref{fig:full}) todos os elementos da camada inferior
 afetam o elemento em destaque $s_3$ da camada seguinte, enquanto na conectividade esparsa (Figura \ref{fig:sparse}) apenas
 três elementos afetam o elemento em destaque. O número de elementos que afetam o elemento em destaque na
 conectividade esparsa é definido pelo tamanho do filtro utilizado na convolução.
-
 \begin{figure}[htp]
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -334,10 +330,11 @@ de entrada \citep{Gdfl16}.
   \label{fig:shallow}
 \end{center}
 \end{figure}
-Estas informações estruturais são muito relevantes quando o problema em estudo é geoestatístico.
-Por outro lado, no compartilhamento de pesos a saída de cada neurônio de uma camada depende apenas do conjunto de neurônios
-de uma pequena região definida pelo campo receptivo da camada anterior:
+Parece senso comum que estas informações estruturais são muito relevantes em problemas geoestatísticos, afinal as imagens
+neste domínio representam estruturas geológicas.
 
+No compartilhamento de pesos a saída de cada neurônio
+de uma camada depende apenas do conjunto de neurônios de uma pequena região definida pelo campo receptivo da camada anterior:
 \begin{equation}
  {\sigma} \times \bigg( b + \sum_{m}\sum_{n}{w_{m,n}a_{i+m,j+n} \bigg) }
 \end{equation}
@@ -357,7 +354,7 @@ a convolução será equivariante a $g$.
 A convolução com imagens cria um mapa 2-D dos locais onde certas características aparecem na entrada.
 A propriedade de equivariância permite rastrear objetos transladados na entrada. Se um objeto aparece
 em uma determinada posição e, em seguida, aparece em outra posição, sua representação
-irá mover a mesma quantidade na saída. É importante frisar que, nas CNN, a propriedade de equivariância
+irá mover a mesma quantidade na saída. É importante frisar que, nas RNC, a propriedade de equivariância
 é aplicável apenas para a translação, de modo que a convolução não é equivariante para transformações 
 de escala e rotações na imagem.
 
@@ -368,4 +365,5 @@ problema inverso foi introduzido e a inversão sísmica apresentada em
 maiores detalhes. Foram apresentados os elementos que compõem as redes
 neurais convolucionais: a convolução, as camadas convolucionais, os filtros e a camada de \textit{pooling}.
 Foram apresentadas também as propriedades das camadas convolucionais: conectividade esparsa,
-compartilhamento de parâmetros e equivariância de translação.
+compartilhamento de parâmetros e equivariância de translação. O Capítulo seguinte apresenta a
+revisão do estado da arte para inversão sísmica e para os modelos de RNC utilizados para Super-resolução.

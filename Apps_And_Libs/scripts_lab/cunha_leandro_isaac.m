@@ -126,3 +126,13 @@ end
 save 'images.mat' images;
 save workspace.mat;
 
+image = [];
+ims = [];
+for i=1:25
+image = [image, reshape(images(i,:,:),32,32)];
+if mod(i, 5) == 0
+ims = [ims;image];
+image = [];
+end
+end
+

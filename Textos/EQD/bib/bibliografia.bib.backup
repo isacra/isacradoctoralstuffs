@@ -19,19 +19,59 @@ URL = {http://library.seg.org/doi/abs/10.1190/segam2012-0146.1},
 eprint = {http://library.seg.org/doi/pdf/10.1190/segam2012-0146.1}
 }
 
-@ARTICLE{DongLoy2016,
-author={C. Dong and C. C. Loy and K. He and X. Tang},
-journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-title={Image Super-Resolution Using Deep Convolutional Networks},
-year={2016},
-volume={38},
+
+@ARTICLE{Freeman2002,
+author={W. T. Freeman and T. R. Jones and E. C. Pasztor},
+journal={IEEE Computer Graphics and Applications},
+title={Example-based super-resolution},
+year={2002},
+volume={22},
 number={2},
-pages={295-307},
-keywords={convolution;image resolution;image restoration;learning (artificial intelligence);neural nets;CNN;color channel;deep convolutional neural network;deep learning method;end-to-end mapping;image restoration;image super-resolution;low-resolution image;reconstruction quality;sparse-coding;Convolutional codes;Feature extraction;Image reconstruction;Image resolution;Neural networks;Training;Super-resolution;deep convolutional neural networks;sparse coding},
-doi={10.1109/TPAMI.2015.2439281},
-ISSN={0162-8828},
-month={Feb},
+pages={56-65},
+keywords={image representation;image resolution;image texture;interpolation;learning by example;rendering (computer graphics);NTSC video content conversion;example-based super-resolution;graphics;high frequency details;high-definition television;high-resolution enlargements;image based rendering;image processing;image-based representations;nearest-neighbor search;pixel-based images;texture mapping;training-based super-resolution algorithm;zoomed images;Graphics;HDTV;High definition video;Image converters;Image processing;Image resolution;Nearest neighbor searches;Pixel;Rendering (computer graphics);TV},
+doi={10.1109/38.988747},
+ISSN={0272-1716},
+month={Mar},
 }
+
+@Article{Nasrollahi2014,
+author={Nasrollahi, Kamal
+and Moeslund, Thomas B."},
+title={Super-resolution: a comprehensive survey},
+journal={Machine Vision and Applications},
+year={2014},
+volume={25},
+number={6},
+pages={1423--1468},
+issn={1432-1769},
+doi={10.1007/s00138-014-0623-4},
+url={http://dx.doi.org/10.1007/s00138-014-0623-4},
+}
+
+
+@ARTICLE{Romano2017,
+author={Y. Romano and J. Isidoro and P. Milanfar},
+journal={IEEE Transactions on Computational Imaging},
+title={RAISR: Rapid and Accurate Image Super Resolution},
+year={2017},
+volume={3},
+number={1},
+pages={110-125},
+keywords={image enhancement;image resolution;RAISR;contrast enhancement;image quality;image sharpening;rapid and accurate image superresolution;Complexity theory;Image resolution;Image restoration;Interpolation;Kernel;Memory management;Training;Filter Learning, image enhancement, image sharpening, super resolution},
+doi={10.1109/TCI.2016.2629284},
+ISSN={2333-9403},
+month={March},}
+
+@INPROCEEDINGS{Huang2015,
+author={J. B. Huang and A. Singh and N. Ahuja},
+booktitle={2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+title={Single image super-resolution from transformed self-exemplars},
+year={2015},
+pages={5197-5206},
+keywords={geometry;image resolution;statistical analysis;geometric variations;internal dictionary;local shape variations;patch search process;self-similarity based SR algorithm;self-similarity based super-resolution algorithms;single image super-resolution;statistical prior;Databases;Dictionaries;Estimation;Image resolution;Shape;Training;Transmission line matrix methods},
+doi={10.1109/CVPR.2015.7299156},
+ISSN={1063-6919},
+month={June},}
 
 @article{Oord16,
   author    = {A. van den Oord and
@@ -61,21 +101,17 @@ month={Feb},
   biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/DahlNS17},
   bibsource = {dblp computer science bibliography, http://dblp.org},
 }
-@Inbook{Dong2014,
-author= {C. Dong
-and C. C. Loy
-and K. He
-and X. Tang"},
-title={Learning a Deep Convolutional Network for Image Super-Resolution},
-bookTitle={Computer Vision -- ECCV 2014: 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part IV},
-year={2014},
-publisher={Springer International Publishing},
-address={Cham},
-pages={184--199},
-isbn={978-3-319-10593-2},
-doi={10.1007/978-3-319-10593-2_13},
-url={http://dx.doi.org/10.1007/978-3-319-10593-2_13},
+
+@book{DongLoy14,
+  author= {C. Dong and C. C. Loy and K. He and X. Tang},
+  title={Learning a Deep Convolutional Network for Image Super-Resolution},
+  bookTitle={Computer Vision -- ECCV 2014: 13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part IV},
+  year={2014},
+  publisher={Springer International Publishing},
+  address={Cham},
+  pages={184--199},
 }
+
 @INPROCEEDINGS{He2016,
 author={K. He and X. Zhang and S. Ren and J. Sun},
 booktitle={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -89,7 +125,7 @@ month={June},}
 author={C. Dong and C. C. Loy and K. He and X. Tang},
 journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
 title={Image Super-Resolution Using Deep Convolutional Networks},
-year={2016},
+year={2014},
 volume={38},
 number={2},
 pages={295-307},
@@ -272,19 +308,6 @@ eprint = {http://geophysics.geoscienceworld.org/content/75/5/75A165.full.pdf+htm
 journal = {Geophysics} 
 }
 
-@ARTICLE{Figueiredo2014, 
-author={Passos de Figueiredo, L. and Santos, M. and Roisenberg, M. and Schwedersky Neto, G. and Figueiredo, W.}, 
-journal={Geoscience and Remote Sensing Letters, IEEE}, 
-title={Bayesian Framework to Wavelet Estimation and Linearized Acoustic Inversion}, 
-year={2014}, 
-month={Dec}, 
-volume={11}, 
-number={12}, 
-pages={2130-2134}, 
-keywords={Bayes methods;Gaussian distribution;acoustic impedance;geophysical signal processing;geophysical techniques;inverse problems;linearisation techniques;maximum likelihood estimation;seismic waves;seismology;signal sampling;wavelet transforms;Bayesian framework;Gaussian assumption;Gibbs sampling algorithm;conditional distributions;deterministic constrained sparse-spike inversion;geophysical interpretation;likelihood distribution;linearized acoustic inversion;linearized forward model;maximum a posteriori impedance;noise level estimation;posterior distribution;poststack seismic data;seismic inversion method;seismic noise level;seismic wave measurement;sequential steps;stochastic quantities;subsurface acoustic impedance;wavelet estimation;Acoustics;Bayes methods;Covariance matrices;Data models;Estimation;Impedance;Stochastic processes;Acoustic inversion;Bayesian framework;maximum a posteriori (MAP);reservoir characterization;seismic inversion;wavelet estimation}, 
-doi={10.1109/LGRS.2014.2321516}, 
-ISSN={1545-598X},
-}
 
 @article{Srivastava2009,
   author={R P Srivastava and M K Sen},
@@ -321,30 +344,30 @@ ISSN={1545-598X},
   year = 2014
 }
 
-
-
-
-@article{MartinezPSO,
-author = {Fernández Martínez, Juan Luis and Mukerji, Tapan and García Gonzalo, Esperanza and Suman, Amit}, 
-title = {Reservoir characterization and inversion uncertainty via a family of particle swarm optimizers},
-volume = {77}, 
-number = {1}, 
-pages = {M1-M16}, 
-year = {2012}, 
-doi = {10.1190/geo2011-0041.1}, 
-journal = {Geophysics} 
+@ARTICLE{Figueiredo2014, 
+author={ L. P. Figueiredo and M. Santos and M. Roisenberg and G. N. Schwedersky and W. Figueiredo}, 
+journal={Geoscience and Remote Sensing Letters, IEEE}, 
+title={Bayesian Framework to Wavelet Estimation and Linearized Acoustic Inversion}, 
+year={2014}, 
+month={Dec}, 
+volume={11}, 
+number={12}, 
+pages={2130-2134}, 
+keywords={Bayes methods;Gaussian distribution;acoustic impedance;geophysical signal processing;geophysical techniques;inverse problems;linearisation techniques;maximum likelihood estimation;seismic waves;seismology;signal sampling;wavelet transforms;Bayesian framework;Gaussian assumption;Gibbs sampling algorithm;conditional distributions;deterministic constrained sparse-spike inversion;geophysical interpretation;likelihood distribution;linearized acoustic inversion;linearized forward model;maximum a posteriori impedance;noise level estimation;posterior distribution;poststack seismic data;seismic inversion method;seismic noise level;seismic wave measurement;sequential steps;stochastic quantities;subsurface acoustic impedance;wavelet estimation;Acoustics;Bayes methods;Covariance matrices;Data models;Estimation;Impedance;Stochastic processes;Acoustic inversion;Bayesian framework;maximum a posteriori (MAP);reservoir characterization;seismic inversion;wavelet estimation}, 
+doi={10.1109/LGRS.2014.2321516}, 
+ISSN={1545-598X},
 }
 
-
-@article{senSimulatedAnnealin,
-author = {Sen, Mrinal K. and Stoffa, Paul L.}, 
-title = {Nonlinear one-dimensional seismic waveform inversion using simulated annealing},
-volume = {56}, 
-number = {10}, 
-pages = {1624-1638}, 
-year = {1991}, 
-doi = {10.1190/1.1442973}, 
-journal = {Geophysics} 
+@article{Figueiredo17,
+title = {Bayesian seismic inversion based on rock-physics prior modeling for the joint estimation of acoustic impedance, porosity and lithofacies },
+journal = {Journal of Computational Physics },
+volume = {336},
+pages = {128 - 142},
+year = {2017},
+issn = {0021-9991"},
+doi = {https://doi.org/10.1016/j.jcp.2017.02.013},
+author = {L. P. de Figueiredo and D. Grana and M. Santos and W. Figueiredo and M. Roisenberg and G. Schwedersky Neto},
+}
 }
 
 @book{sen_livro,
