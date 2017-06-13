@@ -111,7 +111,12 @@ month={June},}
   address={Cham},
   pages={184--199},
 }
-
+@book{Nielson15,
+  author= {M. A. Nielson},
+  title={Neural Network and Deep Learning},
+  year={2015},
+  publisher={Determination Press},
+}
 @INPROCEEDINGS{He2016,
 author={K. He and X. Zhang and S. Ren and J. Sun},
 booktitle={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -156,7 +161,7 @@ month={Dec},
 }
 
 @book{aurelien17,
-  title={Hands-on Machine Learning with Scikit0Learn and TensorFlow},
+  title={Hands-on Machine Learning with Scikit-Learn and TensorFlow},
   author={Géron, A.},
   series={Academic Press},
   year={2017},

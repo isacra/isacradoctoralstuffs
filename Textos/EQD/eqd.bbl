@@ -14,11 +14,6 @@ Buduma, N.  \harvardyearleft 2015\harvardyearright , { Fundamentals of Deep
 Buland, A. e Omre, H.  \harvardyearleft 2003\harvardyearright , Bayesian
   linearized avo inversion, { Geophysics} {\bf 68}(1),~185--198.
 
-\harvarditem{Coléou}{2012}{coleou_qualityanomalyinv}
-Coléou, T.  \harvardyearleft 2012\harvardyearright , Use of quality and
-  anomaly indicators in the {QC} of seismic inversion,  74th EAGE Conference
-  and Exhibition - Workshops, EAGE, Copenhague, Dinamarca.
-
 \harvarditem[]{Dahl; Norouzi e Shlens}{2017}{DahlNS17}
 Dahl, R.; Norouzi, M. e Shlens, J.  \harvardyearleft 2017\harvardyearright ,
   Pixel recursive super resolution, { CoRR} .
@@ -89,6 +84,11 @@ Ma, X.  \harvardyearleft 2002\harvardyearright , Simultaneous inversion of
 Mallick, S.  \harvardyearleft 1995\harvardyearright , Model-based inversion of
   amplitude-variations-with-offset data using a genetic algorithm, {
   Geophysics} {\bf 60}(4),~939--954.
+
+\harvarditem{Narayana15 e Thirivikraman}{2015}{Narayana15}
+Narayana15, S. e Thirivikraman, P.~K.  \harvardyearleft 2015\harvardyearright ,
+  Image similarity using fourier transform, { International Journal of Computer
+  Engeneering and Technology} {\bf 6}(2),~29--37.
 
 \harvarditem{Nasrollahi e Moeslund}{2014}{Nasrollahi2014}
 Nasrollahi, K. e Moeslund, T.~B.  \harvardyearleft 2014\harvardyearright ,

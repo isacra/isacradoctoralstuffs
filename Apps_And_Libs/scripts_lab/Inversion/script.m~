@@ -31,13 +31,13 @@ uzl_Cube =  reshape(uzl,251,199,47561/199);
 
 xini = 80;
 yini = 170
-delta = 31;
+delta = 32;
 % imWidth = 199;
 % imHight = 251;
 % im_h_beggin = imHight-(32-1);
 % im_w_beggin = imWidth-(32-1);
-impedance_cut = impedance_Cube(yini:yini+delta,xini:xini+delta,:);
-inversion_cut = uzl_Cube(yini:yini+delta,xini:xini+delta,:);
+impedance_cut = impedance_Cube(160:192,100:132,:);
+inversion_cut = uzl_Cube(160:191,100:131,:);
 
 %gen_images(dir_lr_imgs, dir_hr_imgs, im_width, im_hight, im_res_size);
 
@@ -81,7 +81,6 @@ for i=1:size(impedance_cut,3)
     imwrite(img,strcat('Images/sintetico_hr/',int2str(i),'.jpg'));
     imwrite(img_inv,strcat('Images/sintetico_lr/',int2str(i),'.jpg'));    
 end
-save workspace_sintetico.mat
 
 figure; imagesc(impedance_Cube(:,:,100))
 h = colorbar;
@@ -89,7 +88,7 @@ xlabel('Traço','FontSize',12)
 ylabel('Profundidade','FontSize',12)
 ylabel(h,'Impedância','FontSize',12)
 set(gcf,'color','w')
-rectangle('Position',[xini,yini,32,32],'EdgeColor','r',...
-    'LineWidth',1.5)
-figure; imagesc(impedance_Cube(yini:yini+delta,xini:xini+delta,100))
-set(gcf,'color','w')
+rectangle('Position',[100,192,32,32],'EdgeColor','r',...
+    'LineWidth',2.5)
+figure; imagesc(impedance_Cube(160:192,100:132,100))
+save workspace_sintetico.mat

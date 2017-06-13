@@ -100,34 +100,33 @@ a cunha sintética em alta resolução e a Figura \ref{fig:cunhalr} apresenta a 
 \label{fig:cunhas}
 \end{figure}
 
-A Figura \ref{fig:cunhasteste} ilustra os resultados da super-resolução obtidos pela rede para um conjunto de imagens
-não pertencentes ao conjunto de treinamento. Na Figura \ref{fig:cunha_pixel_lr} são apresentas as imagens filtradas em
+Nas Figuras \ref{fig:cunha_pixel_lr}, \ref{fig:cunha_pixel_hr} e \ref{fig:result_cunha_pixel} é possível comparar
+o resultado da super-resolução com a imagem sintética da cunha. Na Figura \ref{fig:cunha_pixel_lr} são apresentas as imagens filtradas em
 baixa resolução, na Figura \ref{fig:cunha_pixel_hr} são apresentadas as imagens de referência em alta resolução e na 
 Figura \ref{fig:result_cunha_pixel} são apresentadas as imagens obtidas na saída da rede convolucional.
+As imagens sintéticas e de baixa resolução são imagens de teste, de modo que não fizeram parte do conjunto de treinamento
+da rede.
 
-
-\begin{figure}
+\begin{figure}[htp]
   \centering
   \includegraphics[width=.7\linewidth]{fig/cunha_pixel_lr}
   \caption{Imagens da cunha em baixa resolução.}
   \label{fig:cunha_pixel_lr}
 \end{figure}
 
-% 
-% \begin{figure}[htp]
-% \begin{subfigure}{.8\textwidth}
-%   \includegraphics[width=.7\linewidth]{fig/result_cunha_pixel}
-%   \caption{Resultados da super-resolução.}
-%   \label{fig:result_cunha_pixel}
-% \end{subfigure}%
-% \begin{subfigure}{.8\textwidth}
-%   \includegraphics[width=.7\linewidth]{fig/cunha_pixel_hr}
-%   \caption{Imagens de cunhas em alta resolução.}
-%   \label{fig:cunha_pixel_hr}
-% \end{subfigure}
-% \caption{}
-% \label{fig:cunhasteste}
-% \end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=.7\linewidth]{fig/result_cunha_pixel}
+  \caption{Resultados da super-resolução.}
+  \label{fig:result_cunha_pixel}
+\end{figure}%
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.7\linewidth]{fig/cunha_pixel_hr}
+  \caption{Imagens de cunhas em alta resolução.}
+  \label{fig:cunha_pixel_hr}
+\end{figure}
 
 \subsection{Caso sintético: impedância Acústica}
 Para realizar o segundo experimento foi utilizado um cubo sintético de impedância
@@ -170,7 +169,6 @@ da inversão sísmica, o ruido adicionado à sísmica e visível na inversão fo
 A avaliação quantitativa é realizada utilizando uma métrica baseadad no Transformada Rápida de Fourier (FFT),
 discutido na seção seguinte.
 
-
 Uma estratégia para lidar com a limitação de memória de processamento é definir uma janela deslizante sobre as imagens, de
 modo que cada imagem seja dividida em um novo conjuntos de treinamento composto por sub-imagens e a mesma rede pode
 aprender com base nas sub-imagens. Um conjunto de sub-imagens pode ser usada para teste e, ao final, a imagem em tamanho
@@ -179,26 +177,30 @@ original é reconstruída a partir das subimagens de alta resolução obtidas pe
 \subsection{Transformada rápida de Fourier}
 
 A Transformada Rápida de Fourier (FFT) foi utilizada como método de comparação entre as imagens calculadas pela rede
-e as imagens de alta resolução de impedância esparsa. A métrica de similaridade entre as imagens é calculada usando a fórmula \ref{eq:fourier}, baseada
-no espectro de frequência das imagens.
+e as imagens de alta resolução de impedância sintética. A métrica de similaridade entre as imagens é calculada usando a fórmula \ref{eq:fourier}, com base
+no espectro de frequência das imagens \citep{Narayana15}.
 \begin{equation}
- C = \frac{ (\sum_{i=1}^{N}{F_{1i}F_{2i}} - N \bar{F}_1\bar{F}_2 )^2 }{ (\sum_{i=1}^{N}{|F_{1i}|^2} - N{\bar{F}^2}_1)( \sum_{i=1}^{N}{|F_{2i}|^2} - N{\bar{F}^2}_2 ) }
+ C = \frac{ (\sum_{i=1}^{N}{F_{1i}F_{2i}} - N \bar{F}_1\bar{F}_2 )^2 }{ (\sum_{i=1}^{N}{|F_{1i}|^2} - N{\bar{F}^2}_1)( \sum_{i=1}^{N}{|F_{2i}|^2} - N{\bar{F}^2}_2 )},
  \label{eq:fourier}
 \end{equation}
 
-Para cada frequência, um valor de intensidade é obtido das partes real e complexa da Transformada de Fourier.
-Por conta da limitação de memória para processamento, foram utilizadas sub-imagens ($32$\textit{px} x $32$\textit{px}) das
-imagens de impedância. $F_{1i}$ é o valor de intensidade do i-ésimo pixel da primeira imagem, enquanto $F_{2i}$
-é o valor de intensidade do i-ésimo pixel da segunda imagem. $\bar{F}_1$ e $\bar{F}_2$ representam os valores
-de frequência média de cada imagem. A métrica varia no intervalo de $0$ a $1$, sendo que, similaridade igual a $1$
-representa a comparação entre imagens iguais.
+onde, para cada frequência, um valor de intensidade é obtido das partes real e complexa da Transformada de Fourier.
+Por conta da limitação de memória para processamento. $F_{1i}$ é o valor de intensidade do i-ésimo \textit{pixel} da primeira imagem, enquanto $F_{2i}$
+é o valor de intensidade do i-ésimo \textit{pixel} da segunda imagem. $\bar{F}_1$ e $\bar{F}_2$ representam os valores
+de frequência média de cada imagem. De acordo com \cite{Narayana15}, quanto mais próximo de $1$, mais similares as imagens
+comparadas. Com base nos testes realizados, se notou que a métrica assume valor $1$ quando se compara duas imagens exatamente iguais igual.
+Esta observação se deu ao comparar uma imagem com sua cópia. Entretanto, a $C$ pode assumir valores negativos e estas ocorrências
+não são claramente explicada por \cite{Narayana15}, de modo que esta métrica ainda necessita ser melhor compreendida. Para
+o cálculo de $C$, as imagens necessitam ser normalizadas para o intervalo \numrange{1}{10}. 
 
-A métrica $C$ foi calculada entre as imagens obtidas pela rede e as imagens de alta resolução de impedância esparsa, também, entre estas e
-as imagens de MAP de impedância (baixa resolução). Com a utilização da métrica $C$, ficou evidente que as imagens em alta resolução obtidas com a rede apresentaram
-maior similaridade com a imagem de impedância esparsa (alta resolução) e que, de fato a rede foi capaz de agregar elementos de
-alta frequência à maioria das imagens de baixa resolução (MAP de impedância), em torno de $84\%$.
+A métrica $C$ foi calculada entre as imagens obtidas pela rede e as imagens de alta resolução de impedância sintética, também, entre estas e
+as imagens de MAP de impedância (baixa resolução). Com a utilização da métrica $C$, foi possível realizar uma busca dentro do conjunto de 
+imagens sintéticas, para identificar aquela que forma o par com a imagem obtida da rede. Em todos os casos a imagem encontrada era a imagem
+que realmente equivale à imagem simulada. Na maioria dos casos, em torno de $84\%$, as imagens obtidas pela rede
+apresentaram maior similaridade com as imagens sintéticas. Por outro lado, em cerca de $16\%$ dos casos as imagens da rede apresentaram mais similaridade com
+a imagem de baixa resolução. Este fato é um indicativo de que em alguns casos a rede não foi capaz de realizar super-resolução das imagens borradas e
+as causas deste evento ainda precisam ser investigadas.
 
-% 
 % Experimentos realizados com o método para cálculo do MAP obtiveram resultados e
 % tempo de execução comparáveis com métodos implementados na indústria
 % \citep{leandroGRSL}. Apesar de resultar somente nas médias e variâncias, a
@@ -308,70 +310,51 @@ alta frequência à maioria das imagens de baixa resolução (MAP de impedância
 % \end{figure}
 % 
 
-
-
-
 \section{Proposta e Plano de Trabalho}
 
-Os resultados preliminares apontam que é possível obter imagens de
+Os resultados preliminares indicam ser possível obter imagens de
 inversão acústica em maior resolução. Entretanto, a aplicabilidade
-do modelo depende da existência de conjunto de pares de imagens
+do modelo depende da existência do conjunto de pares de imagens
 de alta e baixa resolução para treinamento da rede e, consequentemente,
 o limite da capacidade de inserção de altas frequências das imagens previstas
 será limitada pelo faixa de altas frequências das imagens de treinamento.
 
-Ao final da pesquisa se espera ter respostas para as seguintes questões:
+Ao final da pesquisa se espera alcançar as respostas para as seguintes questões:
 \begin{itemize}
- \item o modelo de rede convolucional é capaz de aumentar a Resolução de imagens de impedância
+ \item O modelo de rede convolucional é capaz de aumentar a resolução de imagens de impedância acústica
 quantitativamente?
  \item As imagens de teste apresentaram maior resolução que as imagens originais, sob o ponto 
 de vista de altas frequências?
- \item Quais as faixas de alta frequências foram inseridas?
  \item Como as redes neurais aprenderam as altas frequências?
  \item É possível parametrizar o processo de super-resolução para imagens pós-inversão?
+ \item Quais as faixas de alta frequências foram inseridas?
  \item Qual o limite de alta frequência é possível inserir nas imagens de alta resolução?
  \item Existe coerência geoestatística no resultado do modelo convolucional?
+ \item O modelo é expansível para outros tipos de propriedades petrofísicas?
 \end{itemize}
 
 A proposta para o restante do projeto é implementar a rede convolucional para
-realizar super-resolução sobre valores contínuos, realizar a análise de incerteza
-sobre os resultados da rede convolucional, adaptar o modeo para realizar a super-resolução
-de imagens em dimensões maiores e analisar o comportamento da rede para inversão
+realizar super-resolução sobre valores contínuos, definir uma estratégia para
+a análise de incerteza sobre os resultados da rede convolucional, adaptar o modelo para realizar a super-resolução
+de imagens em dimensões maiores que $32$ x $32$ e analisar o comportamento da rede para inversão
 com um conjunto de dados reais.
-Os resultados obtidos serão comparados com os resultados da GSI em
-termos de variância e qualidade do resultado baseado na metodologia de
-\cite{coleou_qualityanomalyinv}, amplamente utilizada para avaliação dos
-resultados da inversão sísmica na indústria.
-% 
-% A metodologia de \cite{caers_distance_kernels_MDS} será integrada na proposta
-% para possibilitar a análise da incerteza envolvida com os parâmetros e dados de
-% entrada definidos pelo especialista, como o modelo de baixa, \textit{wavelets} e
-% horizontes, pois a essas incertezas geológicas são apontadas como maiores
-% influências na incerteza do resultado da inversão \citep[p.
-% 133]{caers2011modeling}. Para tanto, será proposto um esquema de amostragem com
-% Monte Carlo para selecionar os dados de entrada aleatoriamente a cada amostragem
-% do resultado da inversão. Após obter várias amostras com combinações diferentes
-% de dados de entrada, uma análise baseada em \textit{Multi-Dimensional Scaling}
-% será aplicada para avaliar a sensibilidade ao variar cada parâmetro de entrada
-% na incerteza final do resultado da inversão. Será utilizada como métrica as
-% medidas de \textit{Quality-Anomaly} \citep{coleou_qualityanomalyinv}.
-% 
 
-O caráter de originalidade do trabalho é garantido pelas contribuições para a
-aprendizado por redes neurais convolucionais e inversão sísmica.
-A primeira contribuição está realcionada com o desenvolvimento de um
+O caráter de originalidade do trabalho é garantido pelas contribuições para as
+áreas de aprendizagem por redes neurais convolucionais e inversão sísmica.
+A primeira contribuição está relacionada com o desenvolvimento de um
 novo modelo de rede convolucional para super-resolução.
-A segunda contribuição será modelar as incertezas presentes nos dados
-de saída da rede para obter um entendimento sobre que tipo de modificação
-as redes causam nas imagens e quais frequências são inseridas passaram a existir
-nas imagens de alta resolução que não estavam presentes nas imagens de baixa resolução.
-
+A segunda contribuição será a disponibilização de um método capaz de
+proporcionar imagens da inversão acústica em maior resolução que auxiliem
+na tomada de decisão na caracterização de reservatório. Além disso, a modelagem
+das incertezas nos dados de saída da RNC permitirá um entendimento sobre que tipo de modificações
+ocorreram e quais frequências inseridas pela RNC passaram a existir
+nas imagens de alta resolução, mas que não estavam presentes nas imagens de baixa resolução.
 O caráter de ineditismo é garantido, pois não se verificou na literatura uma
 abordagem de super-resolução para a inversão sísmica que permita um
 ganho quantitativo e qualitativo das imagens da propriedade invertida.
-Além disso, 
-
-O caráter de não-trivialidade é obserado, pois a implementação da...
+O caráter de não-trivialidade é observado, pois a implementação do modelo
+envolve aspectos técnicos complexos como formalismos matemáticos, estudo
+de incerteza e generalização do modelo.
 
 Dentre os periódicos que apresentam trabalhos relacionados com esta área, se
 destacam os seguintes com suas classificações no Qualis para Ciências da
@@ -394,31 +377,31 @@ Computação:
 \begin{itemize}
   \setlength{\itemsep}{0pt}
   \setlength{\parskip}{0pt}
-  \item Computers \& Geosciences
-  \item ISSN: 0098-3004 - Elsevier - Qualis A2
+  \item Pattern Recognition
+  \item ISSN: 0031-3203 - Elsevier - Qualis A1
 \end{itemize}
 
 
 \begin{itemize}
   \setlength{\itemsep}{0pt}
   \setlength{\parskip}{0pt}
-  \item Computational Geosciences
-  \item ISSN: 1420-0597 - Springer - Qualis B1
+  \item Pattern Recognition Letters
+  \item ISSN: 0167-8655 - Springer - Qualis A1
 \end{itemize}
 
-
-\begin{itemize}
-  \setlength{\itemsep}{0pt}
-  \setlength{\parskip}{0pt}
-  \item Geophysics
-  \item ISSN: 0016-8033 - Society of Exploration Geophysicists - Qualis A2 Interdisciplinar
-\end{itemize}
-
-
-\begin{itemize}
-  \setlength{\itemsep}{0pt}
-  \setlength{\parskip}{0pt}
-  \item Mathematical Geosciences
-  \item ISSN: 1874-8961 - Springer - Qualis A2 Interdisciplinar
-\end{itemize}
+% 
+% \begin{itemize}
+%   \setlength{\itemsep}{0pt}
+%   \setlength{\parskip}{0pt}
+%   \item Geophysics
+%   \item ISSN: 0016-8033 - Society of Exploration Geophysicists - Qualis A2 Interdisciplinar
+% \end{itemize}
+% 
+% 
+% \begin{itemize}
+%   \setlength{\itemsep}{0pt}
+%   \setlength{\parskip}{0pt}
+%   \item Mathematical Geosciences
+%   \item ISSN: 1874-8961 - Springer - Qualis A2 Interdisciplinar
+% \end{itemize}
 
