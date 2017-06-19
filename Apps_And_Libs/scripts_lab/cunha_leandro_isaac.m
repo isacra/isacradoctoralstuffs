@@ -129,7 +129,7 @@ save workspace.mat;
 image = [];
 ims = [];
 for i=1:25
-image = [image, reshape(images(i,:,:),32,32)];
+image = [image, reshape(images_hr_test(:,:,i),32,32)];
 if mod(i, 5) == 0
 ims = [ims;image];
 image = [];
