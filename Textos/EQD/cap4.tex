@@ -3,48 +3,47 @@
 
 Neste Capítulo é apresentada a metodologia discutida neste trabalho.
 São apresentadas as estratégias iniciais de aplicação do modelo convolucional,
-os resultados preliminare e o cronograma de atividades.
+os resultados preliminares e o cronograma de atividades.
 
 \section{Modelo de Super-Resolução}
 
 No capítulo anterior foi apresentado o método de inversão acústica que
 representa o estado da arte no cálculo do máximo \textit{a posteriori} (MAP) para determinar o
-resultado mais provável \citep{Buland01012003, leandroGRSL}. Foram apresentados os trabalhos relacionados
-com o desenvolvimento de modelos de redes neurais convolucionais para tratar problemas de
-super-resolução \citep{Oord16,He2016,DahlNS17}. 
- 
-A presente proposta tem como objetivo o emprego de um modelo de rede neural convolucional
+resultado mais provável para impedância acústica \citep{Buland01012003, leandroGRSL}.
+Foram apresentados os trabalhos relacionados com o desenvolvimento de modelos de redes neurais
+convolucionais para tratar problemas de
+super-resolução \citep{Oord16,He2016,DahlNS17}. Esta proposta investiga o emprego de um modelo de rede neural convolucional
 para aumentar a resolução das imagens de impedância acústica
-resultantes do processo de inversão sísmica. Com esta abordagem se espera obter um ganho
+obtidas pelo processo de inversão sísmica. Com esta abordagem se espera obter um ganho
 quantitativo, através da inserção de altas frequências no espectro de frequência da
-propriedade, e qualitativo, com a entrega de imagens com maior definição entre camadas.
+propriedade acústica, e qualitativo, com a entrega de imagens com maior definição entre camadas.
 Além disto, por se tratar de um problema de inversão, um estudo de incerteza sobre os
 resultados das redes convolucionais será realizado sobre os resultados.
 
 O modelo apresentado por \cite{DahlNS17} admite que cada \textit{pixel} pode assumir valores discretos entre
-$0$ e $255$, e funciona como uma rede classificadora. Para ser aplicado sobre dados geoestatísticos o modelo
-necessita ser ajustado para ser capaz de realizar regressão
+$0$ e $255$, e funciona como uma rede classificadora nesta faixa de valores. Nesta proposta,
+se deseja modificar este modelo para que seja capaz de realizar regressão
 diretamente sobre os valores de impedância, ou para impedância normalizada no intervalo real
-$[-1,+1]$. Com isto, se espera abandonar a discretização dos valores de impedância utilizadas
-nos experimentos iniciais, uma vez que esta medida causou a perda de informação. 
+$[-1,+1]$. Com isto, se espera abandonar a discretização da impedância utilizada
+nos experimentos iniciais, uma vez que esta medida leva à perda de informação. 
 Embora os autores pontuem as dificuldades para implementação de um modelo regressivo,
 se acredita ser razoável realizar uma nova investigação sobre a implementação de um
-modelo convolucional que realize a pervisão para valores contínuos. Esta adaptação
+modelo convolucional que realize a previsão para valores contínuos. Esta adaptação
 passa pela substituição da função de \textit{softmax} e modificação da função de custo.
 
 Para realizar a inversão acústica é necessário ter disponível a sísmica, a \textit{wavelet}
-e o modelo de baixa frequência para impedância acústica ($<8Hz$) %(Equação \ref{eqn:mapSolution}).
-O fluxo de trabalho segue as etapas listadas:
- 
+e o modelo de baixa frequência para impedância acústica ($<8Hz$). %(Equação \ref{eqn:mapSolution}).
+A união de ambos os processos, inversão e treinamento da rede de super-resolução,
+pode ser sintetizada de acordo com as seguintes etapas:
 \begin{enumerate}
   \item Parametrização do método de inversão acústica com a sísmica, a \textit{wavelet} e o modelo de baixa frequência.
-  \item Geração das imagens de baixa resolução
-  \item Normalização das imagens de impedância para escala de cinza.
+  \item Aplicação da inversão MAP para gerar as imagens de baixa resolução.
+  \item Formação dos pares de imagens de treinamento: impedância invertida(sem alta frequência) e impedância sintética
+  (com alta frequência).
   \item Divisão do conjunto de dados entre conjunto de treinamento e conjunto de teste.
   \item Treinamento do modelo de rede convolucional com os pares de imagens de treinamento.
-  \item Amostragem das imagens de alta resolução a partir das imagens de teste de baixa resolução.
-  \item Comparação entre as imagens obtidas da rede e a imagem real.
-  \item Recuperação dos valores de impedância das imagens de alta resolução obtidas.
+  \item Aplicação da rede treinada ao conjunto de imagens usadas para teste.
+  \item Comparação entre as imagens obtidas da rede e as imagens reais.
 \end{enumerate}
 
 A rede convolucional é um modelo cujo treinamento é supervisionado, de modo que,
@@ -58,33 +57,34 @@ o estado da arte em super-resolução. Este modelo foi adaptado para realizara s
 sobre dois conjuntos de dados sintéticos. O primeiro conjunto de dados representa uma estrutura
 geológica em formato de cunha envolto de uma segunda estrutura.
 O segundo conjunto consiste em um cubo de impedâncias sintéticas usadas para realizar a inversão
-sísmica para a própria impedância.
-Em ambos os casos as imagens foram discretizadas de modo que cada \textit{pixel} $I_{i,j}$ assume 
-valores entre $0$ e $255$, com aplicação da Equação \ref{eqn:norm_im}:
+sísmica para a própria impedância. Em ambos os casos foram separadas $25$ imagens para testes,
+de modo que elas não foram utilizadas durante a fase de treinamento da RNC. Para ilustrar os resultados
+no texto, as $25$ imagens de teste, de dimensões $32$ x $32$, foram agrupados em uma única imagem de $160 x 160$. 
 
+Os valores de impedância foram discretizadas para o intervalo entre $0$ e $255$, com a aplicação da Equação \ref{eqn:norm_im}:
 \begin{equation}
  K_{(i,j)} = \floor*{\big( \frac{256*(I_{i,j} - min(I))}{max(I)} \big)},
 \label{eqn:norm_im}
  \end{equation}
-
-onde $max(I)$ é o \textit{pixel} de maior intensidade e $min(I)$ é o \textit{pixel} de menor intensidade
-na imagem $I$. Os valores de maior e menor intensidade de cada \textit{pixel} foi armazenado, de modo que é
-possível recuperar os valores de impedância das imagens de alta resolução obtidas pela rede
-se todos os valores forem armazenados para posterior aplicação na função inversa. Entetando,
-a função de arredondamento aplicada gera uma perda de informação.
+onde $I_{i,j}$ é a intensidade do \textit{pixel} na posição $(i,j)$ da imagem $I$,
+$max(I)$ é o \textit{pixel} de maior intensidade e $min(I)$ é o \textit{pixel} de menor intensidade
+na imagem $I$. Os valores $min(I)$ e $max(I)$ foram armazenados, de modo que é
+possível recuperar os valores de impedância das imagens de alta resolução obtidas da rede,
+através da aplicação da relação inversa da Equação \ref{eqn:norm_im}. Entretanto,
+a função de arredondamento utilizada leva à perda de informação.
 
 \subsection{Caso sintético: Cunha}
-Neste caso, foram geradas $640$ imagens de tamanho $32$ x $32$ de uma estrutura geológica em forma
+No exemplo da \textit{cunha}, foram geradas $640$ imagens de tamanho $32$ x $32$ da estrutura geológica em forma
 de cunha, perfazendo um total de $20$ grupos de treinamento. Adicionalmente, foram geradas $32$
 novas imagens para teste da rede. As estruturas criadas correspondem a valores de impedância
-acústica na profundidade e representam um conjunto de dados simples, pois os valores
-de impedância possuem... 
+acústica em função da profundidade e representam um conjunto de dados simples, pois as camadas são uniformes,
+de modo que todo os pontos de uma camada possuem o mesmo valor de impedância.
 
-Para gerar o conjunto de imagens de baixa resolução, as imagens foram filtradas por meio de filtro
+Para gerar o conjunto de imagens de baixa resolução, as imagens de alta resolução foram filtradas por meio de filtro
 passa baixa, com frequência de corte em $4Hz$. A Figura \ref{fig:cunhas} apresenta um conjunto exemplo
 usado no treinamento da rede convolucional para o caso em questão. A Figura \ref{fig:cunhahr} exibe
 a cunha sintética em alta resolução e a Figura \ref{fig:cunhalr} apresenta a mesma cunha filtrada.
-\begin{figure}[htp]
+\begin{figure}[ht]
 \centering
 \begin{subfigure}{.8\textwidth}
   \includegraphics[width=.9\linewidth]{fig/cunha_hr}
@@ -93,59 +93,65 @@ a cunha sintética em alta resolução e a Figura \ref{fig:cunhalr} apresenta a 
 \end{subfigure}
 \begin{subfigure}{.8\textwidth}
   \includegraphics[width=.9\linewidth]{fig/cunha_lr}
-  \caption{Cunha Filtrada.}
+  \caption{Cunha em baixa resolução.}
   \label{fig:cunhalr}
 \end{subfigure}%
 \caption{Exemplo de um conjunto de treinamento da rede convolucional.}
 \label{fig:cunhas}
 \end{figure}
 
-Nas Figuras \ref{fig:cunha_pixel_lr}, \ref{fig:cunha_pixel_hr} e \ref{fig:result_cunha_pixel} é possível comparar
-o resultado da super-resolução com a imagem sintética da cunha. Na Figura \ref{fig:cunha_pixel_lr} são apresentas as imagens filtradas em
-baixa resolução, na Figura \ref{fig:cunha_pixel_hr} são apresentadas as imagens de referência em alta resolução e na 
-Figura \ref{fig:result_cunha_pixel} são apresentadas as imagens obtidas na saída da rede convolucional.
-As imagens sintéticas e de baixa resolução são imagens de teste, de modo que não fizeram parte do conjunto de treinamento
-da rede.
+Nas Figuras \ref{fig:result_cunha_pixel}, \ref{fig:cunha_pixel_hr} e \ref{fig:cunha_pixel_lr} é possível comparar
+o resultado da super-resolução com a imagem sintética da cunha. Na Figura \ref{fig:result_cunha_pixel} são
+apresentadas as imagens obtidas na saída da rede convolucional, na Figura \ref{fig:cunha_pixel_hr} são
+apresentadas as imagens de referência em alta resolução e na Figura \ref{fig:cunha_pixel_lr} são apresentas
+as imagens filtradas em baixa resolução. Estas imagens fazem parte do conjunto de teste,
+de modo que não foram utilizadas durante o treinamento da rede. 
 
-\begin{figure}[htp]
-  \centering
-  \includegraphics[width=.7\linewidth]{fig/cunha_pixel_lr}
-  \caption{Imagens da cunha em baixa resolução.}
-  \label{fig:cunha_pixel_lr}
-\end{figure}
-
-\begin{figure}
-  \centering
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{.8\textwidth}
+ \centering
   \includegraphics[width=.7\linewidth]{fig/result_cunha_pixel}
-  \caption{Resultados da super-resolução.}
+  \caption{Imagens de cunhas em super-resolução.}
   \label{fig:result_cunha_pixel}
-\end{figure}%
+\end{subfigure}
 
-\begin{figure}
-  \centering
+\begin{subfigure}{.8\textwidth}
+ \centering
   \includegraphics[width=.7\linewidth]{fig/cunha_pixel_hr}
   \caption{Imagens de cunhas em alta resolução.}
   \label{fig:cunha_pixel_hr}
+\end{subfigure}
+
+\begin{subfigure}{.8\textwidth}
+  \centering
+  \includegraphics[width=.7\linewidth]{fig/cunha_pixel_lr}
+  \caption{Imagens de cunhas em baixa resolução.}
+  \label{fig:cunha_pixel_lr}
+\end{subfigure}
 \end{figure}
 
-\subsection{Caso sintético: impedância Acústica}
+Para este exemplo inicial apenas a avaliação qualitativa foi realizada e se observa que a rede foi capaz de 
+identificar e aprender as estruturas observadas das imagens de baixa resolução. A resolução foi
+aumentada, mas se observa algumas regiões de incerteza da rede.
+
+\subsection{Caso sintético: Impedância Acústica}
 Para realizar o segundo experimento foi utilizado um cubo sintético de impedância
 acústica com $239$ imagens de dimensões $250$ x $199$. Do cubo de impedância foram calculados os
 valores de refletividade. Uma \textit{wavelet}
 sintética foi estimada e o cubo sísmico foi obtido por meio da
-convolução entre a refletividade e a \textit{wavelet}. A este cubo sísmico foi adicionado ainda
-$30\%$ de ruído. O cubo de impedância foi filtrado abaixo de $8Hz$ para obter o modelo de baixa frequência e
-um ruído foi adicionado à sísmica. 
-O método de inversão acústica por MAP foi parametrizado para disponibilizar imagens com nível elevado de ruído e baixa resolução.
-Com isto é possível obter um resultado quantitativo e qualitativo da rede, ou seja, os resultados
-obtidos podem ser avaliados sob a perspectiva da análise visual e do espectro de frequência.
+convolução entre a refletividade e a \textit{wavelet}. O cubo de impedância 
+foi filtrado abaixo de $8Hz$ para obter o modelo de baixa frequência e
+um ruído foi adicionado à sísmica. O método de inversão acústica por MAP
+foi parametrizado para disponibilizar imagens com nível elevado de ruído.
+Esta medida visou resultados que pudessem ser avaliados sob a perspectiva qualitativa e quantitativa.
 Na figura \ref{fig:ipedances} estão ilustrados os exemplos de pares de imagens de alta e baixa resolução.
 Por conta das limitações de memória de processamento, foi necessário realizar um recorte das imagens de impedância
 obtidas da inversão. Para efeito de teste do modelo, foram utilizadas imagens com dimensões $32$ x $32$ do cubo de impedância.
-O recorte realizado nas imagens compreendeu as regiões próximas do reservatório, como ilustrado nas Figuras \ref{fig:impedancehr}
+O recorte realizado nas imagens compreendeu as regiões de provável reservatório, como ilustrado nas Figuras \ref{fig:impedancehr}
 e \ref{fig:impedancelr}.
 
-\begin{figure}[htp]
+\begin{figure}[ht]
 \centering
 \begin{subfigure}{.8\textwidth}
   \centering
@@ -163,20 +169,50 @@ e \ref{fig:impedancelr}.
 \label{fig:ipedances}
 \end{figure}
 
-As redes convolucionais foram treinadas por 16 mil iterações e o modelo convergiu para erro (qual erro?) de ..
-Nas Figuras \ref{} e \ref{} é possível notar que a rede é capaz de aumentar a resolução das imagens
-da inversão sísmica, o ruido adicionado à sísmica e visível na inversão foi filtrado, e as camadas são mais evidentes.
-A avaliação quantitativa é realizada utilizando uma métrica baseadad no Transformada Rápida de Fourier (FFT),
+As redes convolucionais foram treinadas por 16 mil iterações e o modelo se mostrou convergente,
+a Figura
+\ref{fig:inversionhr} apresenta o resultado da RNC, a Figura \ref{fig:inversionhr} os recortes da impedância sintética e a
+Figura \ref{fig:inversionlr} apresenta os recortes das imagens obtidas pelo processo de inversão
+por MAP. A quantidade elevada de erros observados na predição da rede pode estar relacionada
+ao número limitado de imagens de treinamento. Além disto, o erro da predição no conjunto de teste
+é, frequentemente, maior que o erro da predição dentro do conjunto de treinamento. Se o número de imagens
+de treinamento é pequeno, a rede pode ser levada a prever estruturas desconhecidas no conjunto
+de teste e sua capacidade preditiva se tornar limitada. Por outro lado, nas regiões reconhecidas pela rede
+o ruido, que era visível na inversão, foi filtrado e as camadas se tornaram mais evidentes.
+A avaliação quantitativa foi realizada utilizando uma métrica baseada no Transformada Rápida de Fourier (FFT),
 discutido na seção seguinte.
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{.8\textwidth}
+  \centering
+  \includegraphics[width=.7\linewidth]{fig/inversion_cnn}
+  \caption{Imagens obtidas por super-resolução.}
+  \label{fig:inversionhr}
+\end{subfigure}
+
+\begin{subfigure}{.8\textwidth}
+  \centering
+  \includegraphics[width=.7\linewidth]{fig/inversion_hr_test}
+  \caption{Imagens da impedância sintética.}
+  \label{fig:hr}
+\end{subfigure}
+\begin{subfigure}{.8\textwidth}
+  \centering
+  \includegraphics[width=.7\linewidth]{fig/inversion_map}
+  \caption{Imagens da inversão por MAP.}
+  \label{fig:inversionlr}
+\end{subfigure}%
+\label{fig:inversions}
+\end{figure}
 
 Uma estratégia para lidar com a limitação de memória de processamento é definir uma janela deslizante sobre as imagens, de
 modo que cada imagem seja dividida em um novo conjuntos de treinamento composto por sub-imagens e a mesma rede pode
 aprender com base nas sub-imagens. Um conjunto de sub-imagens pode ser usada para teste e, ao final, a imagem em tamanho
-original é reconstruída a partir das subimagens de alta resolução obtidas pela rede.
+original é reconstruída a partir das sub-imagens de alta resolução obtidas pela rede.
 
-\subsection{Transformada rápida de Fourier}
+\subsection{Transformada Rápida de Fourier}
 
-A Transformada Rápida de Fourier (FFT) foi utilizada como método de comparação entre as imagens calculadas pela rede
+A Transformada Rápida de Fourier (FFT) foi utilizada para avaliação quantitativa e comparação entre as imagens calculadas pela rede
 e as imagens de alta resolução de impedância sintética. A métrica de similaridade entre as imagens é calculada usando
 a Equação \ref{eq:fourier}, com base no espectro de frequência das imagens \citep{Narayana15}.
 \begin{equation}
@@ -185,8 +221,8 @@ a Equação \ref{eq:fourier}, com base no espectro de frequência das imagens \c
 \end{equation}
 
 onde, para cada frequência, um valor de intensidade é obtido das partes real e complexa da Transformada de Fourier.
-Por conta da limitação de memória para processamento. $F_{1i}$ é o valor de intensidade do i-ésimo \textit{pixel} da primeira imagem, enquanto $F_{2i}$
-é o valor de intensidade do i-ésimo \textit{pixel} da segunda imagem. $\bar{F}_1$ e $\bar{F}_2$ representam os valores
+$F_{1i}$ é o valor de intensidade do $i$-ésimo \textit{pixel} da primeira imagem, enquanto $F_{2i}$
+é o valor de intensidade do $i$-ésimo \textit{pixel} da segunda imagem. $\bar{F}_1$ e $\bar{F}_2$ representam os valores
 de frequência média de cada imagem. De acordo com \cite{Narayana15}, quanto mais próximo de $1$, mais similares as imagens
 comparadas.
 
@@ -208,7 +244,7 @@ um estudo de dissimilaridade entre imagens para a compreensão mais ampla da fai
 Os resultados preliminares indicam ser possível obter imagens de
 inversão acústica em maior resolução. Entretanto, a aplicabilidade
 do modelo depende da existência do conjunto de pares de imagens
-de alta e baixa resolução para treinamento da rede e, consequentemente,
+de alta e baixa resolução suficientemente grande para o treinamento da rede. Consequentemente,
 o limite da capacidade de inserção de altas frequências das imagens previstas
 será limitada pelo faixa de altas frequências das imagens de treinamento.
 
@@ -218,16 +254,16 @@ Ao final da pesquisa se espera alcançar as respostas para as seguintes questõe
 quantitativamente?
  \item As imagens de teste apresentaram maior resolução que as imagens originais, sob o ponto 
 de vista de altas frequências?
- \item Como as redes neurais aprenderam as altas frequências?
+ \item Como as redes neurais aprendem as altas frequências?
  \item É possível parametrizar o processo de super-resolução para imagens pós-inversão?
- \item Quais as faixas de alta frequências foram inseridas?
- \item Qual o limite de alta frequência é possível inserir nas imagens de alta resolução?
+ \item Quais faixas de alta frequências são inseridas?
+ \item Qual limite de alta frequência é possível inserir nas imagens de alta resolução?
  \item Existe coerência geoestatística no resultado do modelo convolucional?
  \item O modelo é expansível para outros tipos de propriedades petrofísicas?
 \end{itemize}
 
-A proposta para o restante do projeto é implementar a rede convolucional para
-realizar super-resolução sobre valores contínuos, definir uma estratégia para
+A proposta para o restante do projeto é obter resultados mais consistentes com o modelo de teste atual,
+implementar a rede convolucional para realizar super-resolução sobre valores contínuos, definir uma estratégia para
 a análise de incerteza sobre os resultados da rede convolucional, adaptar o modelo para realizar a super-resolução
 de imagens em dimensões maiores que $32$ x $32$ e analisar o comportamento da rede para inversão
 com um conjunto de dados reais.

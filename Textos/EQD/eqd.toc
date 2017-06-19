@@ -2,7 +2,7 @@
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Hip\IeC {\'o}tese}{4}{section.1.1}
 \contentsline {section}{\numberline {1.2}Objetivos}{4}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Objetivos Espec\IeC {\'\i }ficos}{5}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.1}Objetivos Espec\IeC {\'\i }ficos}{4}{subsection.1.2.1}
 \contentsline {section}{\numberline {1.3}Organiza\IeC {\c c}\IeC {\~a}o do Texto}{5}{section.1.3}
 \contentsline {chapter}{\numberline {2}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}Problema Inverso}{6}{section.2.1}
@@ -15,17 +15,17 @@
 \contentsline {subsection}{\numberline {2.3.4}Propriedades das Redes Convolucionais}{15}{subsection.2.3.4}
 \contentsline {section}{\numberline {2.4}Resumo}{17}{section.2.4}
 \contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o da Literatura}{18}{chapter.3}
-\contentsline {section}{\numberline {3.1}M\IeC {\'e}todos de Invers\IeC {\~a}o S\IeC {\'\i }smica}{19}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{19}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}M\IeC {\'a}ximo \textit {a posteriori}}{21}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}M\IeC {\'e}todos de Super-resolu\IeC {\c c}\IeC {\~a}o de Imagens}{23}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Super-resolu\IeC {\c c}\IeC {\~a}o por RNC}{23}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Resumo}{26}{section.3.3}
-\contentsline {chapter}{\numberline {4}Super-Resolu\IeC {\c c}\IeC {\~a}o P\IeC {\'o}s-Invers\IeC {\~a}o S\IeC {\'\i }smica}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Modelo de Super-Resolu\IeC {\c c}\IeC {\~a}o}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}Resultados Preliminares}{28}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Caso sint\IeC {\'e}tico: Cunha}{29}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Caso sint\IeC {\'e}tico: imped\IeC {\^a}ncia Ac\IeC {\'u}stica}{29}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Transformada r\IeC {\'a}pida de Fourier}{33}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Proposta e Plano de Trabalho}{34}{section.4.3}
-\contentsline {chapter}{Bibliografia}{36}{section.4.3}
+\contentsline {section}{\numberline {3.1}M\IeC {\'e}todos de Invers\IeC {\~a}o S\IeC {\'\i }smica}{20}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{20}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}M\IeC {\'a}ximo \textit {a posteriori}}{22}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}M\IeC {\'e}todos de Super-resolu\IeC {\c c}\IeC {\~a}o de Imagens}{24}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Super-resolu\IeC {\c c}\IeC {\~a}o por RNC}{24}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Resumo}{28}{section.3.3}
+\contentsline {chapter}{\numberline {4}Super-Resolu\IeC {\c c}\IeC {\~a}o P\IeC {\'o}s-Invers\IeC {\~a}o S\IeC {\'\i }smica}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Modelo de Super-Resolu\IeC {\c c}\IeC {\~a}o}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}Resultados Preliminares}{30}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Caso sint\IeC {\'e}tico: Cunha}{31}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Caso sint\IeC {\'e}tico: Imped\IeC {\^a}ncia Ac\IeC {\'u}stica}{32}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Transformada R\IeC {\'a}pida de Fourier}{35}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Proposta e Plano de Trabalho}{36}{section.4.3}
+\contentsline {chapter}{Bibliografia}{39}{section.4.3}
