@@ -18,14 +18,6 @@ Buland, A. e Omre, H.  \harvardyearleft 2003\harvardyearright , Bayesian
 Dahl, R.; Norouzi, M. e Shlens, J.  \harvardyearleft 2017\harvardyearright ,
   Pixel recursive super resolution, { CoRR} .
 
-\harvarditem[de~Figueiredo et~al.]{de~Figueiredo; Grana; Santos; Figueiredo;
-  Roisenberg e Neto}{2017}{Figueiredo17}
-de~Figueiredo, L.~P.; Grana, D.; Santos, M.; Figueiredo, W.; Roisenberg, M. e
-  Neto, G.~S.  \harvardyearleft 2017\harvardyearright , Bayesian seismic
-  inversion based on rock-physics prior modeling for the joint estimation of
-  acoustic impedance, porosity and lithofacies, { Journal of Computational
-  Physics} {\bf 336},~128 -- 142.
-
 \harvarditem{Deutsch}{2002}{deutsch2002}
 Deutsch, C.  \harvardyearleft 2002\harvardyearright , { Geostatistical
   Reservoir Modeling}, Applied geostatistics series, Oxford University Press.
@@ -34,6 +26,14 @@ Deutsch, C.  \harvardyearleft 2002\harvardyearright , { Geostatistical
 Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2014\harvardyearright
   , { Learning a Deep Convolutional Network for Image Super-Resolution},
   Springer International Publishing, Cham.
+
+\harvarditem[Figueiredo et~al.]{Figueiredo; Grana; Santos; Figueiredo;
+  Roisenberg e Neto}{2017}{Figueiredo17}
+Figueiredo, L.~P.; Grana, D.; Santos, M.; Figueiredo, W.; Roisenberg, M. e
+  Neto, G.~S.  \harvardyearleft 2017\harvardyearright , Bayesian seismic
+  inversion based on rock-physics prior modeling for the joint estimation of
+  acoustic impedance, porosity and lithofacies, { Journal of Computational
+  Physics} {\bf 336},~128 -- 142.
 
 \harvarditem[Figueiredo et~al.]{Figueiredo; Santos; Roisenberg; Neto e
   Figueiredo}{2014}{leandroGRSL}
@@ -46,6 +46,10 @@ Figueiredo, L.~P.; Santos, M.; Roisenberg, M.; Neto, G. e Figueiredo, W.
 Freeman, W.~T.; Jones, T.~R. e Pasztor, E.~C.  \harvardyearleft
   2002\harvardyearright , Example-based super-resolution, { IEEE Computer
   Graphics and Applications} {\bf 22}(2),~56--65.
+
+\harvarditem{Gillis}{2017}{WinNT}
+Gillis, G.  \harvardyearleft 2017\harvardyearright , Oilfild
+  glossary:inversion.
 
 \harvarditem[]{Goodfellow; Bengio e Courville}{2016}{Gdfl16}
 Goodfellow, I.; Bengio, Y. e Courville, A.  \harvardyearleft
@@ -75,6 +79,22 @@ Huang, J.~B.; Singh, A. e Ahuja, N.  \harvardyearleft 2015\harvardyearright ,
   Single image super-resolution from transformed self-exemplars,  2015 IEEE
   Conference on Computer Vision and Pattern Recognition (CVPR), pp.~5197--5206.
 
+\harvarditem[Jin et~al.]{Jin; McCann; Froustey e Unser}{2016}{Hwan16}
+Jin, K.~H.; McCann, M.~T.; Froustey, E. e Unser, M.  \harvardyearleft
+  2016\harvardyearright , Deep convolutional neural network for inverse
+  problems in imaging, { CoRR} {\bf abs/1611.03679}.
+
+\harvarditem[Korjani et~al.]{Korjani; Popa; Grijalva e
+  Ershaghi}{2016}{Korjani16}
+Korjani, M.; Popa, A.; Grijalva, E. e Ershaghi, S. C.~I.  \harvardyearleft
+  2016\harvardyearright , A new approach to reservoir characterization using
+  deep learning neural networks.
+
+\harvarditem[Liu et~al.]{Liu; Luo; Wang e Tang}{2015}{liu15}
+Liu, Z.; Luo, P.; Wang, X. e Tang, X.  \harvardyearleft 2015\harvardyearright ,
+  Deep learning face attributes in the wild,  Proceedings of International
+  Conference on Computer Vision (ICCV).
+
 \harvarditem{Ma}{2002}{max_inv_simulated}
 Ma, X.  \harvardyearleft 2002\harvardyearright , Simultaneous inversion of
   prestack seismic data for rock properties using simulated annealing, {
@@ -85,8 +105,8 @@ Mallick, S.  \harvardyearleft 1995\harvardyearright , Model-based inversion of
   amplitude-variations-with-offset data using a genetic algorithm, {
   Geophysics} {\bf 60}(4),~939--954.
 
-\harvarditem{Narayana15 e Thirivikraman}{2015}{Narayana15}
-Narayana15, S. e Thirivikraman, P.~K.  \harvardyearleft 2015\harvardyearright ,
+\harvarditem{Narayana e Thirivikraman}{2015}{Narayana15}
+Narayana, S. e Thirivikraman, P.~K.  \harvardyearleft 2015\harvardyearright ,
   Image similarity using fourier transform, { International Journal of Computer
   Engeneering and Technology} {\bf 6}(2),~29--37.
 
@@ -98,6 +118,11 @@ Nasrollahi, K. e Moeslund, T.~B.  \harvardyearleft 2014\harvardyearright ,
 \harvarditem{Nielson}{2015}{Nielson15}
 Nielson, M.~A.  \harvardyearleft 2015\harvardyearright , { Neural Network and
   Deep Learning}, Determination Press.
+
+\harvarditem[Qian et~al.]{Qian; Yin; Su; Wang e Hu}{2017}{Qian17}
+Qian, F.; Yin, M.; Su, M.; Wang, Y. e Hu, G.  \harvardyearleft
+  2017\harvardyearright , Seismic facies recognition based on prestack data
+  using deep convolutional autoencoder, { CoRR} {\bf abs/1704.02446}.
 
 \harvarditem[]{Romano; Isidoro e Milanfar}{2017}{Romano2017}
 Romano, Y.; Isidoro, J. e Milanfar, P.  \harvardyearleft 2017\harvardyearright
@@ -113,6 +138,11 @@ Srivastava, R.~P. e Sen, M.~K.  \harvardyearleft 2009\harvardyearright ,
   Fractal-based stochastic inversion of poststack seismic data using very fast
   simulated annealing, { Journal of Geophysics and Engineering} {\bf
   6}(4),~412.
+
+\harvarditem[T. et~al.]{T.; V.; A. e J.}{2015}{ZhaoSAE29}
+T., Z.; V., J.; A., R. e J., M.~K.  \harvardyearleft 2015\harvardyearright , A
+  comparison of classification techniques for seismic facies recognition, {
+  Interpretation} {\bf 3}(4),~SAE29--SAE58.
 
 \harvarditem{Tarantola}{2005}{tarantola}
 Tarantola, A.  \harvardyearleft 2005\harvardyearright , { Inverse Problem

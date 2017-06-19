@@ -27,21 +27,6 @@ A solução pode ser determinada inserindo um valor pra $H$ na equação \ref{eq
 valor de $T$. O problema inverso é uma abordagem mais difícil, pois se deseja
 saber a profundidade $H$, dado apenas o tempo $T$.
 
-% Para entender o problema inverso é conveniente explicar o problema direto antes.
-% Considere o seguinte exemplo: suponha que uma pedra é lançada em um poço de água.
-% Após determinado tempo um som é ouvido. É esperado que haja uma relação entre a
-% profundidade do poço e o tempo entre soltar a pedra e ouvir o som do impacto. Considere
-% a existência de uma relação causa-efeito para este evento, dada por:
-% \begin{equation}
-% \label{eq:forw}
-% T = f(H)
-% \end{equation}
-% onde a profundidade $H$ é a causa e o tempo $T$ é o efeito.
-% Neste caso, o problema direto é calcular o tempo $T$ para ouvir o som, dada profundidade $H$.
-% Se a forma da função $f$ é conhecida, a solução pode ser determinada inserindo um valor pra $H$ na equação \ref{eq:forw} e calcular o
-% valor de $T$. O problema inverso é uma abordagem mais difícil, pois se deseja
-% saber a profundidade $H$, dado apenas o tempo $T$.
-
 No exemplo citado, ambos os problemas, direto e inverso, possuem solução. Entretanto,
 a maioria dos problemas inversos recai sobre duas características
 comuns que tornam sua solução não-trivial. Primeiro, a não unicidade de solução
@@ -67,31 +52,19 @@ e caracterização de reservatórios, cujo tema é de amplo interesse para a ind
 e gás. Por caracterização de reservatório se entende o processo para obter um modelo de propriedades
 petrofísicas (tais como, tipos de contato entre rochas, porosidade e permeabilidade),
 em 3-D e alta resolução, e que seja consistente com os dados de que se dispõe \citep{deutsch2002}.
-O processo de caracterização de reservatórios possui diferentes
-etapas que podem ser descritas em alto nível como na abordagem sequencial \citep{deutsch2002}:
-\begin{enumerate}
- \item A primeira etapa envolve definição da geometria e estratigrafia dos intervalos do reservatório
- a ser modelado. Ainda, o desenvolvimento de um modelo conceitual de continuidade para
- propriedades como fácies, porosidade e permeabilidade \label{itm:1}.
- \item Modelagem dos tipos de contato entre rochas, mais conhecidos como \textit{facies}\label{itm:2}.
- \item Modelagem da propriedade porosidade com base nos tipos de facies. A modelagem de porosidade
- costuma ser realizada antes da permeabilidade, devido à disponibilidade de dados sísmicos e dados
- amostrais\label{itm:3}.
- \item Os modelos 3-D para permeabilidade são atrelados à porosidade e facies anteriormente estabelecidos\label{itm:4}.
- \item Múltiplas realizações, igualmente prováveis, são realizadas por repetição de todo o processo. Embora todas as
- realizações sejam equiprováveis, há realizações mais similares a outras, de modo que a classe à qual pertencem possui
- maior probabilidade\label{itm:5}.
- \item Os modelos são usados como entrada em um simulador ou visualizados e usados como suporte na tomada de decisão\label{itm:6}.
-\end{enumerate}
 
-Porque os dados medidos são obtidos por sísmica de reflexão,
+Em Geofísica, a inversão é o processo no qual os dados são usados para obter um modelo
+consistente. Dados de sísmica de superfície, perfis sísmicos verticais e
+dados de \textit{log} de poços podem ser usados para realizar inversão, cujo
+resultado é um modelo das camadas da Terra, densidade e velocidades compressional
+e cisalhante \citep{WinNT}. O sucesso da inversão depende da razão sinal-ruído e uma extensa
+largura de banda. Porque os dados medidos são obtidos por sísmica de reflexão,
 este método é chamado de inversão sísmica. A inversão sísmica na
 modelagem de reservatórios disponibiliza artefatos que são modelos de propriedades de rocha
 (propriedades petrofísicas) a partir principalmente, mas não exclusivamente,
 da sísmica disponível e de modelos construídos com dados amostrais. Tais artefatos
 são visualizados na forma de imagens, de modo que é possível supor que quanto maior
-o nível de resolução destas imagens, mais contundente será a justificativa para a tomada de decisão
-(etapa \ref{itm:6}).
+o nível de resolução destas imagens, mais contundente será a justificativa para a tomada de decisão.
 %
 Atualmente, em relação aos métodos de Aprendizagem de Máquina, \textit{Deep Learning} é o tema em
 maior evidência. \textit{Deep Learning} é toda solução que permite aos
@@ -141,7 +114,7 @@ de forma iterativa e para um conjunto de diferentes imagens.
 A proposta aqui discutida, sugere incorporar a abordagem das redes convolucionais ao final do processo de inversão.
 As imagens obtidas da inversão sísmica podem ser pós-processadas pelo modelo convolucional
 a fim de gerar imagens com maior riqueza de detalhes. Como mencionado, o ganho de resolução
-nas imagens de propriedades petrofísicas pós-inversão pode conferir maior confiabilidade
+nas imagens de propriedades acústicas pós-inversão pode conferir maior confiabilidade
 na interpretação da solução inversa e, consequentemente na tomada de decisão.
 
 A seção seguinte apresenta a hipótese de pesquisa deste trabalho. Nos capítulos posteriores
@@ -160,7 +133,7 @@ Este trabalho investiga a problemática da super-resolução dos artefatos da in
 por meio de um modelo de redes neurais convolucionais.
 A abordagem se dá através da incorporação deste modelo de rede neural na última
 etapa do processo de inversão sísmica, para alcançar um maior nível de
-resolução das imagens de propriedades petrofísicas.
+resolução das imagens de impedância acústica.
 Resultados prévios indicam que o modelo baseado em redes neurais convolucionais é capaz
 de agregar informações de alta frequência às inversões sísmicas.
 
