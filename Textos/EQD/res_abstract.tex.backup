@@ -13,7 +13,7 @@ a partir do dado sísmico disponível e de modelos construídos com dados amostr
 Tais artefatos são visualizados na forma de imagens, de modo que
 o nível de resolução destas imagens pode implicar no julgamento julgamento do resultado e
 em uma possível tomada de decisão.
-Super-resolução é um método de processamento de imagens e visão computacional que
+O processo de super-resolução é um método de processamento de imagens e visão computacional que
 consiste em recuperar imagens de alta resolução a partir de imagens
 de baixa resolução. Na literatura se observa o desenvolvimento de modelos de rede neural convolucional para super-resolução baseados na classificação de cada
 \textit{pixel} dentro de uma faixa de valores possíveis. Entretanto a discretização de imagens de propriedades físicas
@@ -22,12 +22,12 @@ para aumentar a resolução das imagens de impedância acústica
 obtidas pelo processo de inversão sísmica. Com esta abordagem se espera obter um ganho
 quantitativo, através da inserção de altas frequências no espectro de frequência da
 propriedade acústica, e qualitativo, com a entrega de imagens com maior definição entre camadas.
-Os resultados obtidos com o modelo de super-resolução passará também por um processo de análise
+Os resultados obtidos com o modelo de super-resolução passará também por um processo de análise de
 de incerteza, afim de considerar as imprecisões na previsão realizada pela rede convolucional.
 
 \vspace*{0.5cm}
 
-\noindent Palavras chave: Inversão Sísmica; Modelagem de Incerteza; Super-resolução; Aprendizagem Profunda; Aprendizagem de Máquina; Redes Neurais Convolucionais.
+\noindent Palavras chave: Inversão Sísmica; Modelagem de Incerteza; Super-resolução; Deep Learning; Aprendizagem de Máquina; Redes Neurais Convolucionais.
 
 \end{quotation}
 
@@ -45,16 +45,7 @@ interest. Seismic Inversion is a nonlinear, ill posed and ambiguous problem, whi
 intervention to restrain the results to constraint and apply the results on decision making.
 Seismic inversion in reservoir modeling provides artifacts that are models of rock properties
 based on the available seismic data and the models manufactured with masters data.
-Such artifacts are visualized in the form of images, in such way that the level of image resolution may
-interfere in judgment of the outcome and in possible decision making.
-Super-resolution is a method of image processing and computer vision that consists of recovering high resolution images from images
-Low resolution. In the literature the development of convolutional neural network models for super resolution based on the classification
-of each pixel within a range of possible values ​​is observed. However, the discretization of images of physical properties
-leads to loss of information. This research investigates the use of a convolutional neural network model to increase the resolution
-of the acoustic impedance images obtained by the seismic inversion process. With this approach, it is expected to obtain a quantitative gain,
-through the insertion of high frequencies in the frequency spectrum of the acoustic property, and a qualitative gain, with the delivery of images with
-greater definition between layers. The results obtained with the super-resolution model will also undergo a process of uncertainty analysis,
-in order to consider the imprecision in the forecast realized by the convolutional network.
+Such artifacts are visualized in the form of images, so that level of image resolution may imply in judging judgment of the outcome and in possible decision making.
 
 \vspace*{0.5cm}
 

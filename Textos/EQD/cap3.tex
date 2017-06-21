@@ -47,7 +47,16 @@ Mais recentemente, um modelo de RNC foi desenvolvido para realizar classificaç�
 sísmicos pré-empilhados. O modelo apresentado por \cite{Qian17} é uma rede auto-codificadora (\textit{autoenconder})
 capaz de aprender características de dados sísmicos pré-empilhados e supera a Análise de Componentes Principais (ACP)
 na remoção de redundâncias e extração de informações válidas. As características extraídas pela RNC são submetidas a um algoritmo
-de classificação para obter o reconhecimento de fácies.
+de classificação para obter o reconhecimento de fácies. O problema de inversão de litofácies com dados pré-empilhados também foi
+abordado por \cite{Lihui2017} por meio da combinação de dois métodos de \textit{Deep Learning}: \textit{Deep Belief Network} (DBN)
+e \textit{Restricted Boltzmann} (RBM).
+O modelo proposto superou as limitações relacionadas ao uso de redes neurais tradicionais na inversão de litofácies. Os autores
+descrevem estas limitações como convergência local, resultados instáveis e inaplicabilidade das redes neurais tradicionais para 
+conjuntos de dados extensos. O modelo não-supervisionado RBM foi treinado com as litofácies conhecidas e com dados de atributos
+sísmicos de todas as camadas, desta forma o modelo definiu relacionamentos entre atributos sísmicos e fácies classificadas.
+Em seguida, um modelo DBM de aprendizado de litofácies foi definido de modo que as litofácies foram
+calculadas em toda a extensão do dado sísmico, com isto o modelo reduziu a incerteza na inversão de camadas finas
+em diferentes bandas de frequência da sísmica.
 
 De acordo com \cite{Xiaoyu2012}, um caminho
 para melhorar a resolução da inversão sísmica é adicionar alta frequência
@@ -61,12 +70,11 @@ contínua, mas não na parte de mutação da impedância. Isto sugere que a aus�
 na tendência vertical do resultado da inversão \citep{Xiaoyu2012}. Por outro lado, a inversão na qual o dado sísmico possui baixas e
 altas frequências ($0 - 0 - 100 - 300Hz$) é similar ao modelo geológico.
 Assim, a estratégia sugerida neste trabalho objetiva a inserção de faixas de alta frequência no pós-processamento da propriedade invertida.
-A hipótese deste trabalho é de que estas altas frequências pode ser obtidas em padrões existentes nas imagens de treinamento
+A hipótese deste trabalho é de que estas altas frequências podem ser obtidas em padrões existentes nas imagens de treinamento
 e em seus respectivos dados sísmicos e que estes padrões podem ser aprendidos por um modelo de rede convolucional
 para serem utilizados na reconstrução de imagens que não possuem altas frequências. Ainda, as altas frequências podem ser obtidas
 a partir de dados de poços e a super-resolução pode ser realizada unidimensionalmente, um traço por vez.
-Os modelos que representam o estado da arte em inversão
-acústica e redes convolucionais para super-resolução são discutidos nas seções a seguir.
+Os modelos que representam o estado da arte em inversão acústica e redes convolucionais para super-resolução são discutidos nas seções a seguir.
 
 \section{Métodos de Inversão Sísmica}
 É importante ter em mente que, durante a inversão, as operações são realizadas
@@ -412,5 +420,5 @@ de redes convolucionais podem ser implementados e testados.
 
 Neste capítulo foram revisados os estados da arte em inversão sísmica acústica e modelos
 de rede convolucional para super-resolução.
-O próximo capítulo irá definir a proposta de pesquisa, apresentar o plano de trabalho e concluir com as perspectivas de
+O próximo capítulo irá definir a proposta de pesquisa, apresentar os resultados preliminares, o plano de trabalho e concluir com as perspectivas de
 contribuição.

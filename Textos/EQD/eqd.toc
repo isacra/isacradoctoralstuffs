@@ -16,10 +16,10 @@
 \contentsline {section}{\numberline {2.4}Resumo}{17}{section.2.4}
 \contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o da Literatura}{18}{chapter.3}
 \contentsline {section}{\numberline {3.1}M\IeC {\'e}todos de Invers\IeC {\~a}o S\IeC {\'\i }smica}{20}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{20}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Invers\IeC {\~a}o S\IeC {\'\i }smica Linear e N\IeC {\~a}o Linear}{21}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}M\IeC {\'a}ximo \textit {a posteriori}}{22}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}M\IeC {\'e}todos de Super-resolu\IeC {\c c}\IeC {\~a}o de Imagens}{24}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Super-resolu\IeC {\c c}\IeC {\~a}o por RNC}{24}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Super-resolu\IeC {\c c}\IeC {\~a}o por RNC}{25}{subsection.3.2.1}
 \contentsline {section}{\numberline {3.3}Resumo}{28}{section.3.3}
 \contentsline {chapter}{\numberline {4}Super-Resolu\IeC {\c c}\IeC {\~a}o P\IeC {\'o}s-Invers\IeC {\~a}o S\IeC {\'\i }smica}{29}{chapter.4}
 \contentsline {section}{\numberline {4.1}Modelo de Super-Resolu\IeC {\c c}\IeC {\~a}o}{29}{section.4.1}

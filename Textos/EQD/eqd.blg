@@ -10,7 +10,7 @@ Database file #1: bib/bibliografia.bib
 Warning--entry type for "WinNT" isn't style-file defined
 --line 1 of file bib/bibliografia.bib
 Warning--entry type for "figsismica" isn't style-file defined
---line 1453 of file bib/bibliografia.bib
+--line 1479 of file bib/bibliografia.bib
 You can't pop an empty literal stack for entry Gdfl16
 while executing---line 1226 of file my-agsm.bst
 You can't pop an empty literal stack for entry Bosch2010
@@ -117,6 +117,11 @@ ptr=1, stack=
 
 ---the literal stack isn't empty for entry Korjani16
 while executing---line 1350 of file my-agsm.bst
+Warning--empty publisher Lihui2017
+ptr=1, stack=
+
+---the literal stack isn't empty for entry Lihui2017
+while executing---line 1350 of file my-agsm.bst
 ptr=1, stack=
 
 ---the literal stack isn't empty for entry liu15
@@ -180,45 +185,45 @@ ptr=1, stack=
 
 ---the literal stack isn't empty for entry zhe_nonlinear
 while executing---line 1350 of file my-agsm.bst
-You've used 33 entries,
+You've used 34 entries,
             2912 wiz_defined-function locations,
-            859 strings with 10607 characters,
-and the built_in function-call counts, 151923 in all, are:
-= -- 24803
-> -- 2120
+            866 strings with 10864 characters,
+and the built_in function-call counts, 156112 in all, are:
+= -- 25451
+> -- 2211
 < -- 0
-+ -- 11973
-- -- 637
-* -- 13201
-:= -- 30352
-add.period$ -- 34
-call.type$ -- 33
-change.case$ -- 453
-chr.to.int$ -- 33
-cite$ -- 34
-duplicate$ -- 520
-empty$ -- 1070
-format.name$ -- 726
-if$ -- 27351
++ -- 12285
+- -- 665
+* -- 13563
+:= -- 31189
+add.period$ -- 35
+call.type$ -- 34
+change.case$ -- 466
+chr.to.int$ -- 34
+cite$ -- 36
+duplicate$ -- 545
+empty$ -- 1115
+format.name$ -- 757
+if$ -- 28119
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 40
-newline$ -- 103
-num.names$ -- 347
-pop$ -- 162
+missing$ -- 42
+newline$ -- 106
+num.names$ -- 358
+pop$ -- 172
 preamble$ -- 1
-purify$ -- 495
+purify$ -- 510
 quote$ -- 0
-skip$ -- 406
+skip$ -- 427
 stack$ -- 0
-substring$ -- 35220
-swap$ -- 71
-text.length$ -- 462
+substring$ -- 36119
+swap$ -- 80
+text.length$ -- 476
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 114
-warning$ -- 1
-while$ -- 717
+type$ -- 116
+warning$ -- 2
+while$ -- 740
 width$ -- 0
-write$ -- 439
-(There were 51 error messages)
+write$ -- 453
+(There were 52 error messages)

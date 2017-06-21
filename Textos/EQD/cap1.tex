@@ -57,8 +57,8 @@ Em Geofísica, a inversão é o processo no qual os dados são usados para obter
 consistente. Dados de sísmica de superfície, perfis sísmicos verticais e
 dados de \textit{log} de poços podem ser usados para realizar inversão, cujo
 resultado é um modelo das camadas da Terra, densidade e velocidades compressional
-e cisalhante \citep{WinNT}. O sucesso da inversão depende da razão sinal-ruído e uma extensa
-largura de banda. Porque os dados medidos são obtidos por sísmica de reflexão,
+e cisalhante \citep{WinNT}. O sucesso da inversão depende da razão sinal-ruído e da
+largura de banda do dado sísmico. Porque os dados medidos são obtidos por sísmica de reflexão,
 este método é chamado de inversão sísmica. A inversão sísmica na
 modelagem de reservatórios disponibiliza artefatos que são modelos de propriedades de rocha
 (propriedades petrofísicas) a partir principalmente, mas não exclusivamente,
@@ -109,16 +109,16 @@ realizar três operações:
  deve ser similar à imagem que representa a verdade $X$.
 \end{enumerate}
 
-Um modelo de rede neural convolucional pode pode ser treinada para realizar as etapas listadas anteriormente,
+Um modelo de rede neural convolucional pode ser treinada para realizar as etapas listadas anteriormente,
 de forma iterativa e para um conjunto de diferentes imagens.
 A proposta aqui discutida, sugere incorporar a abordagem das redes convolucionais ao final do processo de inversão.
 As imagens obtidas da inversão sísmica podem ser pós-processadas pelo modelo convolucional
 a fim de gerar imagens com maior riqueza de detalhes. Como mencionado, o ganho de resolução
 nas imagens de propriedades acústicas pós-inversão pode conferir maior confiabilidade
-na interpretação da solução inversa e, consequentemente na tomada de decisão.
+na interpretação da solução inversa e, consequentemente, na tomada de decisão.
 
 A seção seguinte apresenta a hipótese de pesquisa deste trabalho. Nos capítulos posteriores
-serão apresentados os aspectos físicos, de implementação desta proposta e os resultados preliminares.
+serão apresentados os aspectos físicos e de implementação desta proposta, além dos resultados preliminares.
 
 \section{Hipótese}
 A super-resolução das imagens de inversão sísmica pode ser realizada com o aumento da alta frequência na aquisição e
@@ -157,8 +157,8 @@ de Ciências Geológicas, Universidade Stanford, sob orientação do Prof. Dr. J
 
 Este documento está organizado da seguinte forma. Após esta breve introdução, o
 Capítulo \ref{cap:2fundamentacao} apresenta a fundamentação teórica para os
-processos de inversão sísmica, as redes neurais 
-convolucionais e a super-resolução. O Capítulo 3%\ref{cap:3revisaoliteraria} 
+processos de inversão sísmica, redes neurais 
+convolucionais e super-resolução. O Capítulo 3 %\ref{cap:3revisaoliteraria} 
 apresenta o estado da arte relacionado à inversão acústica  e
 redes convolucionais aplicadas na geração de imagens em super-resolução. 
 O Capítulo 4 %\ref{cap:3modeloHibrido} 

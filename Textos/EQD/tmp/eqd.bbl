@@ -1,65 +1,39 @@
 \begin{thebibliography}{xx}
 
-\harvarditem{Artun e Mohaghegh}{2011}{Artun2011143}
-Artun, E. e Mohaghegh, S.  \harvardyearleft 2011\harvardyearright , Intelligent
-  seismic inversion workflow for high-resolution reservoir characterization, {
-  Computers \& Geosciences} {\bf 37}(2),~143 -- 157.
+\harvarditem[]{Bosch; Mukerji e Gonzalez}{2010}{Bosch2010}
+Bosch, M.; Mukerji, T. e Gonzalez, E.~F.  \harvardyearleft
+  2010\harvardyearright , Seismic inversion for reservoir properties combining
+  statistical rock physics and geostatistics: A review, { Geophysics} {\bf
+  75}(5),~75A165--75A176.
 
-\harvarditem[]{Aster; Borchers e Thurber}{2013}{aster2013parameter}
-Aster, R.; Borchers, B. e Thurber, C.  \harvardyearleft 2013\harvardyearright ,
-  { Parameter Estimation and Inverse Problems}, Academic Press, Academic Press.
+\harvarditem{Buduma}{2015}{Buduma15}
+Buduma, N.  \harvardyearleft 2015\harvardyearright , { Fundamentals of Deep
+  Learning}, Academic Press, O'Reilly Media.
 
-\harvarditem[Azevedo et~al.]{Azevedo; Nunes; Soares e
-  Neto}{2013}{azevedo2013_avoinv}
-Azevedo, L.; Nunes, R.; Soares, A. e Neto, G.  \harvardyearleft
-  2013\harvardyearright , Stochastic seismic {AVO} inversion,  75th EAGE
-  Conference \& Exhibition incorporating SPE EUROPEC 2013, EAGE, Londres, Reino
-  Unido.
-
-\harvarditem{Buland e Omre}{2003{ a}}{Buland01012003}
-Buland, A. e Omre, H.  \harvardyearleft 2003{ a}\harvardyearright , Bayesian
+\harvarditem{Buland e Omre}{2003}{Buland01012003}
+Buland, A. e Omre, H.  \harvardyearleft 2003\harvardyearright , Bayesian
   linearized avo inversion, { Geophysics} {\bf 68}(1),~185--198.
 
-\harvarditem{Buland e Omre}{2003{ b}}{BulandWavStochastic}
-Buland, A. e Omre, H.  \harvardyearleft 2003{ b}\harvardyearright , Bayesian
-  wavelet estimation from seismic and well data, { Geophysics} {\bf
-  68}(6),~2000--2009.
+\harvarditem[]{Dahl; Norouzi e Shlens}{2017}{DahlNS17}
+Dahl, R.; Norouzi, M. e Shlens, J.  \harvardyearleft 2017\harvardyearright ,
+  Pixel recursive super resolution, { CoRR} .
 
-\harvarditem{Caers}{2011}{caers2011modeling}
-Caers, J.  \harvardyearleft 2011\harvardyearright , { Modeling Uncertainty in
-  the Earth Sciences}, Wiley.
+\harvarditem{Deutsch}{2002}{deutsch2002}
+Deutsch, C.  \harvardyearleft 2002\harvardyearright , { Geostatistical
+  Reservoir Modeling}, Applied geostatistics series, Oxford University Press.
 
-\harvarditem[]{Clapp; Clapp e Biondi}{2005}{clappRegLeast3D}
-Clapp, M.~L.; Clapp, R.~G. e Biondi, B.~L.  \harvardyearleft
-  2005\harvardyearright , Regularized least-squares inversion for {3-D} subsalt
-  imaging,  SEG Annual Meeting, Society of Exploration Geophysicists, Houston,
-  Texas, pp.~1814--1817.
+\harvarditem[Dong et~al.]{Dong; Loy; He e Tang}{2014}{DongLoy14}
+Dong, C.; Loy, C.~C.; He, K. e Tang, X.  \harvardyearleft 2014\harvardyearright
+  , { Learning a Deep Convolutional Network for Image Super-Resolution},
+  Springer International Publishing, Cham.
 
-\harvarditem{Coléou}{2012}{coleou_qualityanomalyinv}
-Coléou, T.  \harvardyearleft 2012\harvardyearright , Use of quality and
-  anomaly indicators in the {QC} of seismic inversion,  74th EAGE Conference
-  and Exhibition - Workshops, EAGE, Copenhague, Dinamarca.
-
-\harvarditem[]{Fernández~Martínez; Fernández~Muñiz e
-  Tompkins}{2012}{Martinez2011Topogra}
-Fernández~Martínez, J.~L.; Fernández~Muñiz, M.~Z. e Tompkins, M.~J.
-  \harvardyearleft 2012\harvardyearright , On the topography of the cost
-  functional in linear and nonlinear inverse problems, { Geophysics} {\bf
-  77}(1),~W1--W15.
-
-\harvarditem[Fernández~Martínez et~al.]{Fernández~Martínez; Mukerji;
-  García~Gonzalo e Suman}{2012}{MartinezPSO}
-Fernández~Martínez, J.~L.; Mukerji, T.; García~Gonzalo, E. e Suman, A.
-  \harvardyearleft 2012\harvardyearright , Reservoir characterization and
-  inversion uncertainty via a family of particle swarm optimizers, {
-  Geophysics} {\bf 77}(1),~M1--M16.
-
-\harvarditem[Figueiredo et~al.]{Figueiredo; Santos; Roisenberg e
-  Neto}{2013}{leandro_SEG}
-Figueiredo, L.~P.; Santos, M.; Roisenberg, M. e Neto, G.  \harvardyearleft
-  2013\harvardyearright , { Stochastic Bayesian algorithm to a jointly acoustic
-  inversion and wavelet estimation}, Society of Exploration Geophysicists,
-  chapter 635, pp.~3273--3277.
+\harvarditem[Figueiredo et~al.]{Figueiredo; Grana; Santos; Figueiredo;
+  Roisenberg e Neto}{2017}{Figueiredo17}
+Figueiredo, L.~P.; Grana, D.; Santos, M.; Figueiredo, W.; Roisenberg, M. e
+  Neto, G.~S.  \harvardyearleft 2017\harvardyearright , Bayesian seismic
+  inversion based on rock-physics prior modeling for the joint estimation of
+  acoustic impedance, porosity and lithofacies, { Journal of Computational
+  Physics} {\bf 336},~128 -- 142.
 
 \harvarditem[Figueiredo et~al.]{Figueiredo; Santos; Roisenberg; Neto e
   Figueiredo}{2014}{leandroGRSL}
@@ -68,28 +42,58 @@ Figueiredo, L.~P.; Santos, M.; Roisenberg, M.; Neto, G. e Figueiredo, W.
   estimation and linearized acoustic inversion, { Geoscience and Remote Sensing
   Letters, IEEE} {\bf PP}(99),~1--5.
 
-\harvarditem{FishSAFE}{2014}{figsismica}
-FishSAFE  \harvardyearleft 2014\harvardyearright , Seismic surveys,
-  \url{http://fishsafe.eu/en/offshore-structures/seismic-surveys.aspx}.
+\harvarditem[]{Freeman; Jones e Pasztor}{2002}{Freeman2002}
+Freeman, W.~T.; Jones, T.~R. e Pasztor, E.~C.  \harvardyearleft
+  2002\harvardyearright , Example-based super-resolution, { IEEE Computer
+  Graphics and Applications} {\bf 22}(2),~56--65.
 
-\harvarditem{Goovaerts}{1997}{goovaerts1997geostatistics}
-Goovaerts, P.  \harvardyearleft 1997\harvardyearright , { Geostatistics for
-  Natural Resources Evaluation}, Applied geostatistics series, Oxford
-  University Press.
+\harvarditem{Gillis}{2017}{WinNT}
+Gillis, G.  \harvardyearleft 2017\harvardyearright , Oilfild
+  glossary:inversion.
 
-\harvarditem[]{Hansen; Cordua e Mosegaard}{2012}{hansenGibbsPrior}
-Hansen, T.; Cordua, K. e Mosegaard, K.  \harvardyearleft 2012\harvardyearright
-  , Inverse problems with non-trivial priors: efficient solution through
-  sequential gibbs sampling, { Computational Geosciences} {\bf
-  16}(3),~593--611.
+\harvarditem[]{Goodfellow; Bengio e Courville}{2016}{Gdfl16}
+Goodfellow, I.; Bengio, Y. e Courville, A.  \harvardyearleft
+  2016\harvardyearright , { Deep Learning}, MIT Press.
+\newblock \url{http://www.deeplearningbook.org}.
 
-\harvarditem{Isaaks e Srivastava}{1989}{isaaks1989geostats}
-Isaaks, E.~H. e Srivastava, R.~M.  \harvardyearleft 1989\harvardyearright , {
-  Applied geostatistics}, Oxford University Press, New York.
+\harvarditem{GSIPL}{2017}{figsismica}
+GSIPL  \harvardyearleft 2017\harvardyearright , Seismic surveys,
+  \url{http://geostar-surveys.com/methodology%20-%20High%20Resolution%20Seismic%20surveys.html}.
 
-\harvarditem{Jolliffe}{2002}{jolliffe2002principal}
-Jolliffe, I.~T.  \harvardyearleft 2002\harvardyearright , { Principal component
-  analysis}, Springer, New York.
+\harvarditem{Géron}{2017}{aurelien17}
+Géron, A.  \harvardyearleft 2017\harvardyearright , { Hands-on Machine
+  Learning with Scikit-Learn and TensorFlow}, Academic Press, O'Reilly Media.
+
+\harvarditem[He et~al.]{He; Zhang; Ren e Sun}{2016}{He2016}
+He, K.; Zhang, X.; Ren, S. e Sun, J.  \harvardyearleft 2016\harvardyearright ,
+  Deep residual learning for image recognition,  2016 IEEE Conference on
+  Computer Vision and Pattern Recognition (CVPR), pp.~770--778.
+
+\harvarditem{Hou e Andrews}{1978}{HsiehAndrews1978}
+Hou, H. e Andrews, H.  \harvardyearleft 1978\harvardyearright , Cubic splines
+  for image interpolation and digital filtering, { IEEE Transactions on
+  Acoustics, Speech, and Signal Processing} {\bf 26}(6),~508--517.
+
+\harvarditem[]{Huang; Singh e Ahuja}{2015}{Huang2015}
+Huang, J.~B.; Singh, A. e Ahuja, N.  \harvardyearleft 2015\harvardyearright ,
+  Single image super-resolution from transformed self-exemplars,  2015 IEEE
+  Conference on Computer Vision and Pattern Recognition (CVPR), pp.~5197--5206.
+
+\harvarditem[Jin et~al.]{Jin; McCann; Froustey e Unser}{2016}{Hwan16}
+Jin, K.~H.; McCann, M.~T.; Froustey, E. e Unser, M.  \harvardyearleft
+  2016\harvardyearright , Deep convolutional neural network for inverse
+  problems in imaging, { CoRR} {\bf abs/1611.03679}.
+
+\harvarditem[Korjani et~al.]{Korjani; Popa; Grijalva e
+  Ershaghi}{2016}{Korjani16}
+Korjani, M.; Popa, A.; Grijalva, E. e Ershaghi, S. C.~I.  \harvardyearleft
+  2016\harvardyearright , A new approach to reservoir characterization using
+  deep learning neural networks.
+
+\harvarditem[Liu et~al.]{Liu; Luo; Wang e Tang}{2015}{liu15}
+Liu, Z.; Luo, P.; Wang, X. e Tang, X.  \harvardyearleft 2015\harvardyearright ,
+  Deep learning face attributes in the wild,  Proceedings of International
+  Conference on Computer Vision (ICCV).
 
 \harvarditem{Ma}{2002}{max_inv_simulated}
 Ma, X.  \harvardyearleft 2002\harvardyearright , Simultaneous inversion of
@@ -101,88 +105,65 @@ Mallick, S.  \harvardyearleft 1995\harvardyearright , Model-based inversion of
   amplitude-variations-with-offset data using a genetic algorithm, {
   Geophysics} {\bf 60}(4),~939--954.
 
-\harvarditem[Mart\'{\i}nez et~al.]{Mart\'{\i}nez; Gonzalo; Mu\~{n}iz; Mariethoz
-  e Mukerji}{2010}{Martinez:2010PSO}
-Mart\'{\i}nez, J. L.~F.; Gonzalo, E.~G.; Mu\~{n}iz, Z.~F.; Mariethoz, G. e
-  Mukerji, T.  \harvardyearleft 2010\harvardyearright , Posterior sampling
-  using particle swarm optimizers and model reduction techniques, { Int. J.
-  Appl. Evol. Comput.} {\bf 1}(3),~27--48.
+\harvarditem{Narayana e Thirivikraman}{2015}{Narayana15}
+Narayana, S. e Thirivikraman, P.~K.  \harvardyearleft 2015\harvardyearright ,
+  Image similarity using fourier transform, { International Journal of Computer
+  Engeneering and Technology} {\bf 6}(2),~29--37.
 
-\harvarditem{Sambridge}{2013}{Sambridge22102013}
-Sambridge, M.  \harvardyearleft 2013\harvardyearright , A parallel tempering
-  algorithm for probabilistic sampling and multimodal optimization, {
-  Geophysical Journal International} .
+\harvarditem{Nasrollahi e Moeslund}{2014}{Nasrollahi2014}
+Nasrollahi, K. e Moeslund, T.~B.  \harvardyearleft 2014\harvardyearright ,
+  Super-resolution: a comprehensive survey, { Machine Vision and Applications}
+  {\bf 25}(6),~1423--1468.
 
-\harvarditem{Scheidt e Caers}{2009}{caers_distance_kernels_MDS}
-Scheidt, C. e Caers, J.  \harvardyearleft 2009\harvardyearright , Representing
-  spatial uncertainty using distances and kernels, { Mathematical Geosciences}
-  {\bf 41}(4),~397--419.
+\harvarditem{Nielson}{2015}{Nielson15}
+Nielson, M.~A.  \harvardyearleft 2015\harvardyearright , { Neural Network and
+  Deep Learning}, Determination Press.
+
+\harvarditem[Qian et~al.]{Qian; Yin; Su; Wang e Hu}{2017}{Qian17}
+Qian, F.; Yin, M.; Su, M.; Wang, Y. e Hu, G.  \harvardyearleft
+  2017\harvardyearright , Seismic facies recognition based on prestack data
+  using deep convolutional autoencoder, { CoRR} {\bf abs/1704.02446}.
+
+\harvarditem[]{Romano; Isidoro e Milanfar}{2017}{Romano2017}
+Romano, Y.; Isidoro, J. e Milanfar, P.  \harvardyearleft 2017\harvardyearright
+  , Raisr: Rapid and accurate image super resolution, { IEEE Transactions on
+  Computational Imaging} {\bf 3}(1),~110--125.
 
 \harvarditem{Sen}{2006}{sen_livro}
 Sen, M.~K.  \harvardyearleft 2006\harvardyearright , { {Seismic Inversion}},
   Society of Petroleum Engineers, Richardson, TX, USA.
 
-\harvarditem{Sen e Stoffa}{1991}{senSimulatedAnnealin}
-Sen, M.~K. e Stoffa, P.~L.  \harvardyearleft 1991\harvardyearright , Nonlinear
-  one-dimensional seismic waveform inversion using simulated annealing, {
-  Geophysics} {\bf 56}(10),~1624--1638.
+\harvarditem{Srivastava e Sen}{2009}{Srivastava2009}
+Srivastava, R.~P. e Sen, M.~K.  \harvardyearleft 2009\harvardyearright ,
+  Fractal-based stochastic inversion of poststack seismic data using very fast
+  simulated annealing, { Journal of Geophysics and Engineering} {\bf
+  6}(4),~412.
 
-\harvarditem{Sen e Stoffa}{1995}{Sen1995v}
-Sen, M.~K. e Stoffa, P.~L.  \harvardyearleft 1995\harvardyearright , { Global
-  Optimization Methods in Geophysical Inversion}, Vol.~4 of { Advances in
-  Exploration Geophysics}, Elsevier.
-
-\harvarditem{Smolyak}{1963}{smolyak63quadrature}
-Smolyak, S.  \harvardyearleft 1963\harvardyearright , {Quadrature and
-  interpolation formulas for tensor products of certain classes of functions},
-  { Soviet Mathematics, Doklady} {\bf 4},~240--243.
-
-\harvarditem{Soares}{2001}{2001amilcarDSS}
-Soares, A.  \harvardyearleft 2001\harvardyearright , Direct sequential
-  simulation and cosimulation, { Mathematical Geology} {\bf 33}(8),~911--926.
-
-\harvarditem[]{Soares; Diet e Guerreiro}{2007}{amilcarInversao}
-Soares, A.; Diet, J. e Guerreiro, L.  \harvardyearleft 2007\harvardyearright ,
-  Stochastic inversion with a global perturbation method,  Petroleum
-  Geostatistics 2007, EAGE.
+\harvarditem[T. et~al.]{T.; V.; A. e J.}{2015}{ZhaoSAE29}
+T., Z.; V., J.; A., R. e J., M.~K.  \harvardyearleft 2015\harvardyearright , A
+  comparison of classification techniques for seismic facies recognition, {
+  Interpretation} {\bf 3}(4),~SAE29--SAE58.
 
 \harvarditem{Tarantola}{2005}{tarantola}
 Tarantola, A.  \harvardyearleft 2005\harvardyearright , { Inverse Problem
   Theory and Methods for Model Parameter Estimation}, Society for Industrial
   and Applied Mathematics.
 
-\harvarditem{Tompkins}{2012}{TompkinsCupature}
-Tompkins, M.~J.  \harvardyearleft 2012\harvardyearright , Efficient estimation
-  of nonlinear posterior model covariances using maximally sparse cubature
-  rules, { Geophysics} {\bf 77}(5),~ID1--ID8.
+\harvarditem[van~den Oord et~al.]{van~den Oord; Kalchbrenner; Vinyals;
+  Espeholt; Graves e Kavukcuoglu}{2016}{Oord16}
+van~den Oord, A.; Kalchbrenner, N.; Vinyals, O.; Espeholt, L.; Graves, A. e
+  Kavukcuoglu, K.  \harvardyearleft 2016\harvardyearright , Conditional image
+  generation with pixelcnn decoders, { CoRR} {\bf abs/1606.05328}.
 
-\harvarditem[Tompkins et~al.]{Tompkins; Fernández~Martínez; Alumbaugh e
-  Mukerji}{2011}{TompkinsScalabUnce2011}
-Tompkins, M.~J.; Fernández~Martínez, J.~L.; Alumbaugh, D.~L. e Mukerji, T.
-  \harvardyearleft 2011\harvardyearright , Scalable uncertainty estimation for
-  nonlinear inverse problems using parameter reduction, constraint mapping, and
-  geometric sampling: Marine controlled-source electromagnetic examples, {
-  Geophysics} {\bf 76}(4),~F263--F281.
-
-\harvarditem[]{Tompkins; Fernández~Martínez e
-  Fernández~Muñiz}{2013}{tompkins_comparisonBayes}
-Tompkins, M.~J.; Fernández~Martínez, J.~L. e Fernández~Muñiz, Z.
-  \harvardyearleft 2013\harvardyearright , Comparison of sparse-grid geometric
-  and random sampling methods in nonlinear inverse solution uncertainty
-  estimation, { Geophysical Prospecting} {\bf 61}(1),~28--41.
+\harvarditem[Xiaoyu et~al.]{Xiaoyu; Yun; Desheng; Xiangyu e
+  Huifeng}{2012}{Xiaoyu2012}
+Xiaoyu, X.; Yun, L.; Desheng, S.; Xiangyu, G. e Huifeng, W.  \harvardyearleft
+  2012\harvardyearright , { Studying the effect of expanding low or high
+  frequency on post-stack seismic inversion}, pp.~1--5.
 
 \harvarditem{Zhe e Hanming}{2013}{zhe_nonlinear}
 Zhe, Y. e Hanming, G.  \harvardyearleft 2013\harvardyearright , Non-linear
   prestack seismic inversion with global optimization using an edge-preserving
   smoothing filter, { Geophysical Prospecting} {\bf 61}(4),~747--760.
-
-\harvarditem[Zunino et~al.]{Zunino; Lange; Melnikova; Hansen e
-  Mosegaard}{2014}{zunino2014}
-Zunino, A.; Lange, K.; Melnikova, Y.; Hansen, T. e Mosegaard, K.
-  \harvardyearleft 2014\harvardyearright , Reservoir modeling combining
-  geostatistics with markov chain monte carlo inversion,  E.~Pardo-Igúzquiza;
-  C.~Guardiola-Albert; J.~Heredia; L.~Moreno-Merino; J.~J. Durán e J.~A.
-  Vargas-Guzmán, (Eds.), Mathematics of Planet Earth, Lecture Notes in Earth
-  System Sciences, Springer Berlin Heidelberg, pp.~683--687.
 
 \end{thebibliography}
