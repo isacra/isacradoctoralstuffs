@@ -18,7 +18,7 @@ desejados, mas que não são passíveis de medição. Frequentemente, algum conh
 é incorporado ao modelo.
 
 Um sistema físico depende do domínio em estudo. Pode ser uma galáxia para um
-astro-físico, pode ser a Terra para um geofísico ou uma partícula quântica
+astro-físico, pode ser o subsolo para um geofísico ou uma partícula quântica
 para um físico quântico. Em comum, o fato de que, para ser estudado, um sistema
 físico segue três passos básicos: a parametrização do sistema, a modelagem direta e a modelagem inversa \citep{tarantola}.
 A parametrização do sistema se refere à definição do conjunto mínimo de elementos (parâmetros)
@@ -50,17 +50,17 @@ uma coleção de observações discretas.
 \section{Inversão Sísmica}
 Os métodos geofísicos frequentemente envolvem a solução e avaliação de problemas inversos,
 pois permitem inferir a distribuição das propriedades físicas na subsuperfície da Terra
-usando observações a partir da superfície. A inversão sísmica tem um papel fundamental na solução 
+usando observações indiretas. A inversão sísmica tem um papel fundamental na solução 
 de problemas geofísicos, em especial na caracterização de reservatórios \citep{Bosch2010,Srivastava2009}.
 Do ponto de vista prático, as soluções para o problema de inversão sísmica melhoram a exploração e
-o gerenciamento na indústria petrolífera, uma vez que os dados sísmicos estimados possuem forte correlação com as
+o gerenciamento na indústria petrolífera, uma vez que os dados sísmicos estimados possuem alta correlação com as
 propriedades petrofísicas (porosidade, densidade, etc.) das rochas da subsuperfície \citep{leandroGRSL}.
 Para facilitar o entendimento da inversão sísmica, considere a subsuperfície como sendo formada por camadas
 sobrepostas de diferentes tipos de rochas.
 
 \subsection{Aquisição Sísmica}
 O dado sísmico é o principal parâmetro observável utilizado na inversão sísmica.
-A aquisição destes dados se dá por meio da sísmica de reflexão. Este
+A aquisição destes dados para exploração de petróleo se dá por meio da sísmica de reflexão. Este
 método utiliza pulsos sísmicos de uma fonte artificial controlada e monitora a resposta em
 função do tempo. Neste sistema, cada região de contato entre dois tipos de rochas
 diferentes gera reflexão e refração do pulso sísmico, como demonstrado na Figura
@@ -105,7 +105,19 @@ d(t) = s(\tau) * \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
 onde $N$ é o número total de camadas, $e_d(t)$ representa o ruído aleatório em função do tempo
 e cada $d$ é chamado de traço sísmico. Um conjunto de traços
 sísmicos também é chamado de imagem, seção ou cubo, no caso de um
-levantamento 3-D. A \textit{wavelet} ideal seria um pulso tipo delta contendo
+levantamento 3-D.
+A Figura \ref{fig:seismicpos} ilustra um exemplo do dado sísmico obtido por reflexão e utilizado
+no processo de inversão. 
+
+\begin{figure}[ht!]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{fig/seismicpos}
+  \caption{Exemplo de uma seção sísmica após empilhamento. \citep{Buland01012003}}
+  \label{fig:seismicpos}
+\end{center}
+\end{figure}
+
+A \textit{wavelet} ideal seria um pulso tipo delta contendo
 todas as frequências, entretanto, na prática as
 \textit{wavelets} são pulsos de banda limitada entre $6Hz$ e $65Hz$, o que
 limita a frequência da sísmica e sua resolução \citep[p. 11]{sen_livro}.
@@ -223,9 +235,9 @@ de cada um com uma certa imagem. O primeiro filtro é um quadrado preto
 (\textit{pixels} de valor 0) contendo uma coluna central branca (\textit{pixels} com valor 1). 
 Analogamente, o segundo filtro é um quadrado preto contendo uma linha central branca.
 É possível notar na imagem da esquerda que as linhas verticais brancas se tornaram mais
-evidentes, enquanto as outras partes da imagem se tornaram mais borradas. Na imagem da direita 
+evidentes, enquanto as outras partes da imagem se tornaram menos visíveis. Na imagem da direita 
 a convolução com o filtro horizontal destacou as linhas brancas horizontais, ao passo que
-o restante ficou borrado. Assim, quando uma característica é detectada por um neurônio, ela representa
+o restante ficou menos evidente. Assim, quando uma característica é detectada por um neurônio, ela representa
 o tipo de padrão da entrada que causará a sua ativação.
 Estes padrões podem ser bordas, contornos ou estruturas com outras formas.
 \begin{figure}[htp]

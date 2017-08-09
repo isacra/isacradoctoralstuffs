@@ -11,6 +11,7 @@ classdef ImageCubeClass
         im_index
         fft_image_instance
         images
+        gray_images
     end
     
     methods

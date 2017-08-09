@@ -1,39 +1,71 @@
 %%Read the images generated on output CNN (Images/gen_hr_imgs)
-imp_hr_dir = '/home/malik/Dados/MAPImpedancia_Porosidade/MAPjoint05_impedance_sparse.segy';
-imp_lr_dir = '/home/malik/Dados/MAPImpedancia_Porosidade/MAPjoint05_impedance.segy';
-im_size = 32;
-save_ims = false;
-isRGB = false;
+%imp_hr_dir = '/home/malik/Dados/MAPImpedancia_Porosidade/MAPjoint05_impedance_sparse.segy';
+%imp_lr_dir = '/home/malik/Dados/MAPImpedancia_Porosidade/MAPjoint05_impedance.segy';
+%im_size = 32;
+%save_ims = false;
+%isRGB = false;
 
-[~, hr_cube_class] = Impedance_Image_Blur(imp_hr_dir, save_ims,im_size,isRGB);
-[~, lr_cube_class] = Impedance_Image_Blur(imp_lr_dir, save_ims,im_size,isRGB);
+%[~, hr_cube_class] = Impedance_Image_Blur(imp_hr_dir, save_ims,im_size,isRGB);
+%[~, lr_cube_class] = Impedance_Image_Blur(imp_lr_dir, save_ims,im_size,isRGB);
 
-imagefiles = dir('Images/gen_hr_imgs/*.jpg');
+lr_dir_name = 'Images/sintetico_lr_test/';
+hr_dir_name = 'Images/sintetico_hr_test/'; 
+%result_dir_name ='Images/Resultados/Cunha/'; 
+result_dir_name = 'Resultados/Sintetico/';
+
+imagefiles = dir(strcat(result_dir_name,'*.jpg'));
+hr_imagesfiles = dir(strcat(hr_dir_name,'*.jpg'));
+lr_imagesfiles = dir(strcat(lr_dir_name,'*.jpg'));
+
 nfiles = length(imagefiles);
-images = [];
+filesNames = natsort({imagefiles.name});
+cnn_images = [];
 for ii=1:nfiles
-   currentfilename = imagefiles(ii).name;
-   currentfilename = strcat('Images/gen_hr_imgs/',currentfilename);
+   currentfilename = char(filesNames(ii));
+   currentfilename = strcat(result_dir_name,currentfilename);
    currentimage = imread(currentfilename);
    
-   images(:,:,ii) = currentimage;
+   cnn_images(:,:,ii) = currentimage;
+end
+
+nfiles = length(hr_imagesfiles);
+filesNames = natsort({hr_imagesfiles.name});
+sintetic_images = [];
+for ii=1:nfiles
+   currentfilename = char(filesNames(ii));
+   currentfilename = strcat(hr_dir_name,currentfilename);
+   currentimage = imread(currentfilename);
+   
+   sintetic_images(:,:,ii) = currentimage;
+end
+
+nfiles = length(lr_imagesfiles);
+filesNames = natsort({lr_imagesfiles.name});
+low_images = [];
+for ii=1:nfiles
+   currentfilename = char(filesNames(ii));
+   currentfilename = strcat(lr_dir_name,currentfilename);
+   currentimage = imread(currentfilename);
+   
+   low_images(:,:,ii) = currentimage;
 end
 
 %new_impedance_cube = gray2prop(images,hr_cube_class);
 
-cnn_imgs_fourier_cube = fourier_transform(images); %Transformada para imagens geradas pela rede
-original_imgs_fourier_cube = fourier_transform(hr_cube_class.images); %Transformada para imagens originais de alta resolucao
-lr_imgs_fourier_cube = fourier_transform(lr_cube_class.images); % Transformada para imagens originais de baixa resolucao
+cnn_imgs_fourier_cube = fourier_transform(cnn_images); %Transformada para imagens geradas pela rede
+original_imgs_fourier_cube = fourier_transform(sintetic_images); %Transformada para imagens originais de alta resolucao
+lr_imgs_fourier_cube = fourier_transform(low_images); % Transformada para imagens originais de baixa resolucao
 
 %% Busca os matches dos índices de fourier entre as imagens geradas pela rede
 %e as imagens de alta resolução originais
-[immatches, four_inds_map] = fourier_indices_calculate(images, hr_cube_class.images, cnn_imgs_fourier_cube,original_imgs_fourier_cube);
+[immatches, four_inds_map] = fourier_indices_calculate(cnn_images, sintetic_images, cnn_imgs_fourier_cube,original_imgs_fourier_cube);
 
-%% Busca os matches dos indices de fourier entre as imagens de alta e baixa
+%% Busca os matches dos indices de fourier entre as imagens da rede e baixa resolução
 %resolucao originais
-[immmatches2, four_inds_map2] = fourier_indices_calculate(lr_cube_class.images, hr_cube_class.images, lr_imgs_fourier_cube,original_imgs_fourier_cube);
+[immmatches2, four_inds_map2] = fourier_indices_calculate(cnn_images,low_images, cnn_imgs_fourier_cube, lr_imgs_fourier_cube);
 
 
 %% Recupera a propriedade original das imagens e plota o trio de imagens (CNN, Alta e Baixa resolução)
 %bem como seus histogramas
-recovered_props = recover_props(immatches,immmatches2, images, lr_cube_class, hr_cube_class);
+recovered_props = recover_props(immatches,immmatches2, cnn_images , low_images, sintetic_images);
+

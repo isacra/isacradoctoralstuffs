@@ -37,7 +37,7 @@ A união de ambos os processos, inversão e treinamento da rede de super-resolu�
 pode ser sintetizada de acordo com as seguintes etapas:
 \begin{enumerate}
   \item Parametrização do método de inversão acústica com a sísmica, a \textit{wavelet} e o modelo de baixa frequência.
-  \item Geração das imagens de baixa resolução
+  \item Aplicação da inversão MAP para gerar as imagens de baixa resolução.
   \item Formação dos pares de imagens de treinamento: impedância invertida(sem alta frequência) e impedância sintética
   (com alta frequência).
   \item Divisão do conjunto de dados entre conjunto de treinamento e conjunto de teste.

@@ -6,35 +6,40 @@ crop = false;
 
 deslocamento_max = 32;
 profundidade_max = 32;
-num_imgs = 696;
+num_imgs = 672;
 idx = 1;
 batch_size = 32;
 
-mkdir Images/cunha_lr_test
-mkdir Images/cunha_hr_test
-mkdir Images/cunha_hr
-mkdir Images/cunha_lr
-delete Images/cunha_hr/*.jpg;
-delete Images/cunha_lr/*.jpg;
-delete Images/cunha_lr_test/*.jpg;
-delete Images/cunha_hr_test/*.jpg;
+mkdir Cunha/cunha_lr_test
+mkdir Cunha/cunha_hr_test
+mkdir Cunha/cunha_hr
+mkdir Cunha/cunha_lr
+delete Cunha/cunha_hr/*.jpg;
+delete Cunha/cunha_lr/*.jpg;
+delete Cunha/cunha_lr_test/*.jpg;
+delete Cunha/cunha_hr_test/*.jpg;
 
 if crop
     deslocamento_max = 320;
     profundidade_max = 320;
-    mkdir Images/cunha320_hr
-    mkdir Images/cunha320_lr
-    mkdir Images/cunha320_lr_test
-    mkdir Images/cunha320_hr_test
-    delete Images/cunha320_hr/*.jpg;
-    delete Images/cunha320_lr/*.jpg;
-    delete Images/cunha320_lr_test/*.jpg;
-    delete Images/cunha320_hr_test/*.jpg;
+    mkdir Cunha/cunha320_hr
+    mkdir Cunha/cunha320_lr
+    mkdir Cunha/cunha320_lr_test
+    mkdir Cunha/cunha320_hr_test
+    delete Cunha/cunha320_hr/*.jpg;
+    delete Cunha/cunha320_lr/*.jpg;
+    delete Cunha/cunha320_lr_test/*.jpg;
+    delete Cunha/cunha320_hr_test/*.jpg;
     num_imgs = 100;
 end
 
 hr_im_cube_class = ImageCubeClass;
 lr_im_cube_class = ImageCubeClass;
+hr_im_cube_test = ImageCubeClass;
+lr_im_cube_test = ImageCubeClass;
+
+cube_high = [];
+cube_low = [];
 
 for image=1:num_imgs
     
@@ -87,35 +92,28 @@ for coluna = 1:deslocamento_max
 		if linha >= topo_cunha && linha < base_cunha
 			impedancia_profundidade_deslocamento(linha,coluna) = 2.4 * 2500;
 		else
-			impedancia_profundidade_deslocamento(linha,coluna) = 2.6 * 3500;
+			impedancia_profundidade_deslocamento(linha,coluna) = 2.6 * 3s500;
 		end;
 	end;
 end;
 
+img_high = impedancia_profundidade_deslocamento;
+
 impedancia_profundidade_deslocamento_low = lowPassFilter2(impedancia_profundidade_deslocamento,4,100,20);
-%impedancia_profundidade_deslocamento_low  = exponential_filter2(2,impedancia_profundidade_deslocamento,4,100,10);
-
-
-%cunha(:,:,image) = impedancia_profundidade_deslocamento;
-%im = prop2rgb(impedancia_profundidade_deslocamento);
-
-[img_hr, hr_im_cube_class] = prop2gray(impedancia_profundidade_deslocamento,hr_im_cube_class);
-[img_lr, lr_im_cube_class] = prop2gray(impedancia_profundidade_deslocamento_low,lr_im_cube_class);
+img_low =  impedancia_profundidade_deslocamento_low;
 
 if crop
-    imgs_hr = crop_and_print(img_hr,'Images/cunha_hr/', image);
-    imgs_lr = crop_and_print(img_lr,'Images/cunha_lr/', image);
+    imgs_hr = crop_and_print(img_hr,'Cunha/cunha_hr/', image);
+    imgs_lr = crop_and_print(img_lr,'Cunha/cunha_lr/', image);
 else
     if image <= num_imgs - batch_size 
-        imwrite(img_hr,strcat('Images/cunha_hr/',int2str(image),'.jpg'));
-        imwrite(img_lr,strcat('Images/cunha_lr/',int2str(image),'.jpg'));
-    
+       
+        cube_righ(:,:,image) = img_high;
+        cube_low(:,:,image) = img_low;
     else
-        imwrite(img_hr,strcat('Images/cunha_hr_test/',int2str(image),'.jpg'));
-        imwrite(img_lr,strcat('Images/cunha_lr_test/',int2str(image),'.jpg'));
-    
-        images_hr(idx,:,:) = img_hr;
-        images(idx,:,:) = img_lr;
+     
+        images_hr(:,:,idx) = img_high;
+        images(:,:,idx) = img_low;
         idx = idx+1;
     end
     
@@ -123,16 +121,36 @@ end
 
 
 end
-save 'images.mat' images;
-save workspace.mat;
 
-image = [];
-ims = [];
-for i=1:25
-image = [image, reshape(images_hr_test(:,:,i),32,32)];
-if mod(i, 5) == 0
-ims = [ims;image];
-image = [];
+%% Gera cubo e arquivos de Imagens de treinamento
+[~, hr_im_cube_class] = prop2gray(cube_righ,hr_im_cube_class);
+imgs_hr = crop_and_print(hr_im_cube_class,'Cunha/cunha_hr/');
+
+[~, lr_im_cube_class] = prop2gray(cube_low,lr_im_cube_class);
+imgs_lr = crop_and_print(lr_im_cube_class,'Cunha/cunha_lr/');
+
+
+%% Gera cubo e arquivos de imagens de teste
+[~, hr_im_cube_test] = prop2gray(images_hr,hr_im_cube_test);
+imgs_hr = crop_and_print(hr_im_cube_test,'Cunha/cunha_hr_test/');
+
+[~, lr_im_cube_test] = prop2gray(images,lr_im_cube_test);
+imgs_lr = crop_and_print(lr_im_cube_test,'Cunha/cunha_lr_test/');
+images = [];
+for i = 1:size(lr_im_cube_test.gray_images,3)
+   images(i,:,:) =  lr_im_cube_test.gray_images(:,:,i);
 end
-end
+save 'images.mat' images;
+save workspace_cunha.mat;
+
+%% Impressão das imagens unidadas em uma única imagem
+% image = [];
+% ims = [];
+% for i=1:25
+% image = [image, reshape(images_hr_test(:,:,i),32,32)];
+% if mod(i, 5) == 0
+% ims = [ims;image];
+% image = [];
+% end
+% end
 

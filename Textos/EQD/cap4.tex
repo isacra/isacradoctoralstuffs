@@ -1,9 +1,13 @@
 \chapter{Super-Resolução Pós-Inversão Sísmica}
 \label{cap:3modeloHibrido}
 
-Neste Capítulo é apresentada a metodologia discutida neste trabalho.
-São apresentadas as estratégias iniciais de aplicação do modelo convolucional,
-os resultados preliminares e o cronograma de atividades.
+Neste Capítulo é apresentado o modelo de rede convolucional que motiva esta proposta. Será discutida
+a metodologia proposta neste trabalho, na qual um modelo de rede convolucional para super-resolução é adaptado
+para obter imagens de impedância acústica em alta resolução após a inversão acústica.
+São apresentadas as estratégias iniciais de aplicação do modelo convolucional e
+os resultados preliminares. Também é apresentada a métrica de similaridade utilizada
+para comparação entre as imagens obtidas pelo modelo convolucional e as imagens sintéticas utilizadas no
+treinamento do modelo.
 
 \section{Modelo de Super-Resolução}
 
@@ -50,6 +54,9 @@ A rede convolucional é um modelo cujo treinamento é supervisionado, de modo qu
 para otimizar seus parâmetros, é necessário dispor dos pares de imagens de alta
 e baixa resolução. Uma vez a rede convolucional treinada, é possível aumentar a
 resolução de imagens provenientes de outros cenários da inversão acústica.
+
+\section{Proposta de Solução}
+
 
 \section{Resultados Preliminares}
 Os primeiros experimentos exploraram o potencial do modelo de rede convolucional que representa

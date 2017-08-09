@@ -18,7 +18,7 @@ desejados, mas que não são passíveis de medição. Frequentemente, algum conh
 é incorporado ao modelo.
 
 Um sistema físico depende do domínio em estudo. Pode ser uma galáxia para um
-astro-físico, pode ser a Terra para um geofísico ou uma partícula quântica
+astro-físico, pode ser o subsolo para um geofísico ou uma partícula quântica
 para um físico quântico. Em comum, o fato de que, para ser estudado, um sistema
 físico segue três passos básicos: a parametrização do sistema, a modelagem direta e a modelagem inversa \citep{tarantola}.
 A parametrização do sistema se refere à definição do conjunto mínimo de elementos (parâmetros)
@@ -50,17 +50,17 @@ uma coleção de observações discretas.
 \section{Inversão Sísmica}
 Os métodos geofísicos frequentemente envolvem a solução e avaliação de problemas inversos,
 pois permitem inferir a distribuição das propriedades físicas na subsuperfície da Terra
-usando observações a partir da superfície. A inversão sísmica tem um papel fundamental na solução 
+usando observações indiretas. A inversão sísmica tem um papel fundamental na solução 
 de problemas geofísicos, em especial na caracterização de reservatórios \citep{Bosch2010,Srivastava2009}.
 Do ponto de vista prático, as soluções para o problema de inversão sísmica melhoram a exploração e
-o gerenciamento na indústria petrolífera, uma vez que os dados sísmicos estimados possuem forte correlação com as
+o gerenciamento na indústria petrolífera, uma vez que os dados sísmicos estimados possuem alta correlação com as
 propriedades petrofísicas (porosidade, densidade, etc.) das rochas da subsuperfície \citep{leandroGRSL}.
 Para facilitar o entendimento da inversão sísmica, considere a subsuperfície como sendo formada por camadas
 sobrepostas de diferentes tipos de rochas.
 
 \subsection{Aquisição Sísmica}
 O dado sísmico é o principal parâmetro observável utilizado na inversão sísmica.
-A aquisição destes dados se dá por meio da sísmica de reflexão. Este
+A aquisição destes dados para exploração de petróleo se dá por meio da sísmica de reflexão. Este
 método utiliza pulsos sísmicos de uma fonte artificial controlada e monitora a resposta em
 função do tempo. Neste sistema, cada região de contato entre dois tipos de rochas
 diferentes gera reflexão e refração do pulso sísmico, como demonstrado na Figura
@@ -74,7 +74,7 @@ conhecido como inversão acústica.
 \begin{figure}[ht!]
 \begin{center}
   \includegraphics[width=0.8\textwidth]{fig/seismic_survey_2}
-  \caption{Método de sísmica de reflexão \citep{figsismica}}
+  \caption{Método de sísmica de reflexão. \citep{figsismica}}
   \label{fig:1sismica}
 \end{center}
 \end{figure}
@@ -105,7 +105,19 @@ d(t) = s(\tau) * \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
 onde $N$ é o número total de camadas, $e_d(t)$ representa o ruído aleatório em função do tempo
 e cada $d$ é chamado de traço sísmico. Um conjunto de traços
 sísmicos também é chamado de imagem, seção ou cubo, no caso de um
-levantamento 3-D. A \textit{wavelet} ideal seria um pulso tipo delta contendo
+levantamento 3-D.
+A Figura \ref{fig:seismicpos} ilustra um exemplo do dado sísmico obtido por reflexão e utilizado
+no p
+
+\begin{figure}[ht!]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{fig/seismicpos}
+  \caption{Exemplo de uma seção sísmica após empilhamento. \citep{Buland01012003}}
+  \label{fig:seismicpos}
+\end{center}
+\end{figure}
+
+A \textit{wavelet} ideal seria um pulso tipo delta contendo
 todas as frequências, entretanto, na prática as
 \textit{wavelets} são pulsos de banda limitada entre $6Hz$ e $65Hz$, o que
 limita a frequência da sísmica e sua resolução \citep[p. 11]{sen_livro}.
@@ -190,7 +202,7 @@ características de mais alto nível nas camadas seguintes.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.6\textwidth]{fig/cnn_arq}
-  \caption{Camadas de uma RNC com campos receptivos retangulares.}
+  \caption{Camadas de uma RNC com campos receptivos retangulares. \citep{aurelien17}}
   \label{fig:cnn_arq}
 \end{center}
 \end{figure}
@@ -208,7 +220,7 @@ de tamanho $0$ a camada seguinte terá as mesmas dimensões da camada anterior.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.6\textwidth]{fig/cnn_layer_stride_2}
-  \caption{Conexão entre camadas com campo receptivo 3 x 3 e \textit{strides} de tamanho 2.}
+  \caption{Conexão entre camadas com campo receptivo 3 x 3 e \textit{strides} de tamanho 2. \citep{aurelien17}}
   \label{fig:cnn_stride}
 \end{center}
 \end{figure}
@@ -223,15 +235,15 @@ de cada um com uma certa imagem. O primeiro filtro é um quadrado preto
 (\textit{pixels} de valor 0) contendo uma coluna central branca (\textit{pixels} com valor 1). 
 Analogamente, o segundo filtro é um quadrado preto contendo uma linha central branca.
 É possível notar na imagem da esquerda que as linhas verticais brancas se tornaram mais
-evidentes, enquanto as outras partes da imagem se tornaram mais borradas. Na imagem da direita 
+evidentes, enquanto as outras partes da imagem se tornaram menos visíveis. Na imagem da direita 
 a convolução com o filtro horizontal destacou as linhas brancas horizontais, ao passo que
-o restante ficou borrado. Assim, quando uma característica é detectada por um neurônio, ela representa
+o restante ficou menos evidente. Assim, quando uma característica é detectada por um neurônio, ela representa
 o tipo de padrão da entrada que causará a sua ativação.
 Estes padrões podem ser bordas, contornos ou estruturas com outras formas.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/conv_filt}
-  \caption{Exemplo de convolução com dois tipos diferentes de filtros.}
+  \caption{Exemplo de convolução com dois tipos diferentes de filtros. \citep{aurelien17}}
   \label{fig:conv_filt}
 \end{center}
 \end{figure}
@@ -244,7 +256,7 @@ a estrutura ilustrada se replica horizontalmente.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.6\textwidth]{fig/feat_maps}
-  \caption{Camadas convolucionais com múltiplos mapas de características e imagens com três canais.}
+  \caption{Camadas convolucionais com múltiplos mapas de características e imagens com três canais. \citep{aurelien17}}
   \label{fig:featmaps}
 \end{center}
 \end{figure}
@@ -260,11 +272,13 @@ campo receptivo e o deslocamento é definido por um \textit{stride}. O \textit{p
 invariante pequenas translações no conjunto de entrada, ou seja, ainda que haja pequenas translações na
 entrada, os valores da maioria das saídas após o \textit{pooling} permanecem iguais.
 A Figura \ref{fig:pool} ilustra o funcionamento da função de \textit{pooling} máximo, na qual
-o máximo valor de ativação dentro de uma vizinhança é selecionado.
+o máximo valor de ativação dentro de uma vizinhança é selecionado. Outras funções de \textit{pooling}
+incluem o valor médio dentro de uma região retangular, a normalização $L2$ de uma vizinhança, ou a
+média ponderada baseada na distância do \textit{pixel} central \citep{Gdfl16}.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/pool}
-  \caption{Operação de \textit{pooling} com campo receptivo de tamanho $3$. Nesta operação é selecionado o máximo valor de ativação da etapa de detecção.}
+  \caption{Operação de \textit{pooling} com campo receptivo de tamanho $3$. Nesta operação é selecionado o máximo valor de ativação da etapa de detecção. \citep{Gdfl16}}
   \label{fig:pool}
 \end{center}
 \end{figure}
@@ -306,13 +320,13 @@ conectividade esparsa é definido pelo tamanho do filtro utilizado na convoluç�
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.9\linewidth]{fig/sparse}
-  \caption{Conectividade esparsa.}
+  \caption{Conectividade esparsa.\citep{Gdfl16}}
   \label{fig:sparse}
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.9\linewidth]{fig/full}
-  \caption{Conectividade tradicional.}
+  \caption{Conectividade tradicional.\citep{Gdfl16}}
   \label{fig:full}
 \end{subfigure}%
 \end{figure}
@@ -326,7 +340,7 @@ de entrada \citep{Gdfl16}.
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{fig/shallow_nn}
-  \caption{Organização de camadas de uma rede neural do tipo \textit{feedforward}.}
+  \caption{Organização de camadas de uma rede neural do tipo \textit{feedforward}. \citep{Nielson15}}
   \label{fig:shallow}
 \end{center}
 \end{figure}
@@ -334,7 +348,7 @@ Parece senso comum que estas informações estruturais são muito relevantes em 
 neste domínio representam estruturas geológicas.
 
 No compartilhamento de pesos a saída de cada neurônio
-de uma camada depende apenas do conjunto de neurônios de uma pequena região definida pelo campo receptivo da camada anterior:
+de uma camada depende apenas do conjunto de neurônios de uma pequena região definida pelo campo receptivo da camada anterior \citep{Nielson15}:
 \begin{equation}
  {\sigma} \times \bigg( b + \sum_{m}\sum_{n}{w_{m,n}a_{i+m,j+n} \bigg) }
 \end{equation}
@@ -356,7 +370,7 @@ A propriedade de equivariância permite rastrear objetos transladados na entrada
 em uma determinada posição e, em seguida, aparece em outra posição, sua representação
 irá mover a mesma quantidade na saída. É importante frisar que, nas RNC, a propriedade de equivariância
 é aplicável apenas para a translação, de modo que a convolução não é equivariante para transformações 
-de escala e rotações na imagem.
+de escala e rotações na imagem \citep{Gdfl16}.
 
 \section{Resumo}
 

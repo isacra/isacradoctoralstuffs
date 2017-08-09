@@ -1,4 +1,4 @@
-function [ output_args ] = recover_props( immatches,immatches2, images,lr_cube_class, hr_cube_class)
+function [ output_args ] = recover_props( immatches,immatches2, cnnresults,lr_imgs, hr_imgs )
 %SELECT_IMAGES Summary of this function goes here
 %   This method recover from gray (0 - 255) images obtained from de CNN to
 %   the property. It uses the correspondence between the CNN response and
@@ -8,21 +8,24 @@ function [ output_args ] = recover_props( immatches,immatches2, images,lr_cube_c
 %   propertie image. Both, the original property and the new one are showed
 %   side by side.
     [~ ,num_imgs] = size(immatches);
-   
+   load workspace_sintetico.mat
+
     
     for i = 1 : num_imgs
         figure;
         
-        corr_idx = immatches{i}.immatch;
+        %Atenção, estamos recuperando as imagens de impedancia obtidas pela
+        %rede usando os maximos e minimos das imagens de alta resolução
+        %sintéticas. Nao são adicionados os ruídos
+        cnnresult = gray2prop(cnnresults(:,:,i), im_hr_cube_test,false,i);
         
-        prop(:,:,i) = gray2prop(images(:,:,i), hr_cube_class,false,corr_idx);
-        orig_prop = gray2prop(hr_cube_class.images(:,:,corr_idx), hr_cube_class,true,corr_idx);
-        lr_prop = gray2prop(lr_cube_class.images(:,:,corr_idx), lr_cube_class,true,corr_idx);
+        orig_prop = gray2prop(hr_imgs(:,:,i), im_hr_cube_test,true,i);
+        lr_prop = gray2prop(lr_imgs(:,:,i), im_lr_cube_test,true,i);
         
         set(gcf, 'color','w')
         
         subplot(3,1,1)
-        imagesc(prop(:,:,i));
+        imagesc(cnnresult);
         text = strcat('Impedância gerada - Similaridade com (IE).: ', mat2str(round(abs(immatches{i}.fft_param),4)));
         title(text);
         

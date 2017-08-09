@@ -102,8 +102,7 @@ O conteúdo desta seção apresenta as suposições de linearidade necessárias
 que tornam a inversão acústica um processo analítico e computacionalmente
 eficiente. O detalhamento matemático pode ser consultado em \cite{leandroGRSL,Figueiredo17}.
 
-É importante ter em mente
-que os problemas inversos podem ser classificados de acordo com a natureza
+É importante considerar que os problemas inversos podem ser classificados de acordo com a natureza
 do relacionamento entre os dados e o modelo, e de acordo com o comportamento da função objetivo \citep{sen_livro}.
 Assim, eles podem ser: linear, fracamente não-linear, quasi-linear e não-linear.
 Na maioria dos problemas geofísicos o operador direto $G$ é não-linear.
@@ -129,8 +128,8 @@ dada pela operação matricial:
 \label{eq:sismDiscreta}
 \mathbf{d = Sr + e},
 \end{equation}
-onde $\mathbf{S}$ é uma matriz convolucional construída utilizando uma
-\textit{wavelet}, $\mathbf{r}$ é a matriz de refletividades e $e$ é um
+onde $\mathbf{S}$ é um vetor convolucional construído utilizando uma
+\textit{wavelet}, $\mathbf{r}$ é a vetor de refletividades e $e$ é um
 ruído admitido. Em teoria, o ruído é uma interferência aleatória que não se tem
 controle, na prática se considera ruído tudo que não é explicado pela função
 $G$, e.g. imprecisões no modelo físico e problemas com filtragem e processamento
@@ -140,9 +139,9 @@ Para escapar da problemática da não-linearidade do operador direto, é
 necessário aproximar linearmente o pulso sísmico da impedância acústica.
 Para isto, duas medidas são necessárias. A primeira é admitir a 
 refletividade como o logaritmo da impedância acústica (Equação \ref{eq:lnz}).
-Esta aproximação é válida para valores de refletividade menores que $0.3$.
+Esta aproximação é válida para valores de refletividade menores que $0.3$ \cite{Buland01012003}.
 \begin{equation}
-r(t) = \frac{1}{2}\Delta \ln(z(t)).
+r(t) = \frac{1}{2}\frac{\partial}{\partial t}\ln(z(t)).
 \label{eq:lnz}
 \end{equation}
 A segunda medida, é adotar um operador diferencial $\textbf{D}$. Assim,
@@ -175,7 +174,7 @@ No modelo estocástico proposto por \cite{leandroGRSL}, as distribuições
 são consideradas normais e multivariadas e são denotadas por $N(\boldsymbol{\mu},\boldsymbol{\Sigma})$.
 Assumindo que o ruído $\boldsymbol{e}$ respeita uma distribuição também gaussiana,
 as distribuições de probabilidade para o vetor dos dados sísmicos experimentais
-$\boldsymbol{d}$, para a \textit{wavelet} $\boldsymbol{w}$ e para
+$\boldsymbol{d}$, para a \textit{wavelet} $\boldsymbol{s}$ e para
 o vetor dos parâmetros do modelo $\boldsymbol{m}$ são
 definidos, respectivamente, pelas distribuições \ref{eq:psismico}, \ref{eq:pwavelet} e \ref{eq:pmodelo}.
 

@@ -3,7 +3,7 @@
 \pagenumbering{arabic}
 % 
 Um aspecto importante nas ciências físicas é poder inferir sobre parâmetros
-físicos a partir de dados. Em geral, as leis da física disponibilizam os
+físicos a partir de dados obtidos a partir de experimentos. Em geral, as leis da física disponibilizam os
 artefatos necessários para calcular valores de dados, a partir de um modelo.
 Este procedimento é conhecido como problema direto (\textit{forward problem}).
 A modelagem direta, portanto, inicia com um modelo, sobre o qual um experimento ou processo
@@ -13,9 +13,9 @@ consiste em utilizar as medidas efetuadas para inferir os valores de parâmetros
 caracterizam o sistema \citep{tarantola}.
 
 Para entender o problema inverso é conveniente explicar o problema direto antes.
-Considere o seguinte exemplo: suponha que uma pedra é lançada em um poço de água.
+Considere o seguinte exemplo, ilustrado na Figura \ref{fig:LanRoc}: suponha que uma rocha é lançada em um poço de água.
 Após determinado tempo um som é ouvido. É esperado que haja uma relação entre a
-profundidade do poço e o tempo entre soltar a pedra e ouvir o som do impacto. Da física,
+profundidade do poço e o tempo entre soltar a rocha e ouvir o som do impacto. Da física,
 ocorre a existência de uma relação causa-efeito para este evento, dada por:
 \begin{equation}
 \label{eq:forw}
@@ -26,6 +26,14 @@ Neste caso, o problema direto é calcular o tempo $T$ para ouvir o som, dada pro
 A solução pode ser determinada inserindo um valor pra $H$ na equação \ref{eq:forw} e calcular o
 valor de $T$. O problema inverso é uma abordagem mais difícil, pois se deseja
 saber a profundidade $H$, dado apenas o tempo $T$.
+
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{fig/LancamentoRocha}
+  \caption{Ilustração de lançamento de uma rocha em um poço. Adaptação do próprio autor.}
+  \label{fig:LanRoc}
+\end{center}
+\end{figure}
 
 No exemplo citado, ambos os problemas, direto e inverso, possuem solução. Entretanto,
 a maioria dos problemas inversos recai sobre duas características
@@ -50,19 +58,19 @@ como Matemática, Medicina, Física e Geoefísica. Geoestatística é a aplicaç
 estatísticos nas ciências da terra. Esta é a disciplina que trata, dentre outros assuntos, da modelagem
 e caracterização de reservatórios, cujo tema é de amplo interesse para a indústria de óleo
 e gás. Por caracterização de reservatório se entende o processo para obter um modelo de propriedades
-petrofísicas (tais como, tipos de contato entre rochas, porosidade e permeabilidade),
-em 3-D e alta resolução, e que seja consistente com os dados de que se dispõe \citep{deutsch2002}.
+petrofísicas (tais como, litologia, porosidade e permeabilidade),
+em 3-D e alta resolução, e que seja coerente geologicamente com os dados de que se dispõe \citep{deutsch2002}.
 
 Em Geofísica, a inversão é o processo no qual os dados são usados para obter um modelo
 consistente. Dados de sísmica de superfície, perfis sísmicos verticais e
-dados de \textit{log} de poços podem ser usados para realizar inversão, cujo
+perfis de poços podem ser usados para realizar inversão, cujo
 resultado é um modelo das camadas da Terra, densidade e velocidades compressional
 e cisalhante \citep{WinNT}. O sucesso da inversão depende da razão sinal-ruído e da
 largura de banda do dado sísmico. Porque os dados medidos são obtidos por sísmica de reflexão,
 este método é chamado de inversão sísmica. A inversão sísmica na
-modelagem de reservatórios disponibiliza artefatos que são modelos de propriedades de rocha
+modelagem de reservatórios disponibiliza modelos de propriedades de rocha
 (propriedades petrofísicas) a partir principalmente, mas não exclusivamente,
-da sísmica disponível e de modelos construídos com dados amostrais. Tais artefatos
+da sísmica disponível e de modelos construídos com dados amostrais. Tais modelos
 são visualizados na forma de imagens, de modo que é possível supor que quanto maior
 o nível de resolução destas imagens, mais contundente será a justificativa para a tomada de decisão.
 %
@@ -102,8 +110,9 @@ De um ponto de vista conceitual, o mapeamento $F$ consiste essencialmente em
 realizar três operações:
 \begin{enumerate}
  \item Para a imagem de baixa resolução $Y$, extração de mapas de características. Um mapa de características
- pode ser imaginado como um conjunto de sub-imagens com determinadas características da imagem original.
- \item Mapeamento não-linear do mapa de características. Após a operação não-linear, cada característica mapeada
+ pode ser imaginado como um conjunto de sub-imagens nas quais se pode identificar estruturas, ocultas na imagem original, com
+ alguma representação semântica.
+ \item Mapeamento não-linear do mapa de características. Após a operação não-linear, cada estrutura mapeada
  passa a ter uma representação em alta resolução.
  \item Reconstrução da imagem a partir das representações de alta resolução citadas. Esta nova imagem
  deve ser similar à imagem que representa a verdade $X$.
@@ -123,13 +132,13 @@ serão apresentados os aspectos físicos e de implementação desta proposta, al
 \section{Hipótese}
 A super-resolução das imagens de inversão sísmica pode ser realizada com o aumento da alta frequência na aquisição e
 processamento do dado sísmico utilizado na inversão, entretanto, esta é uma tarefa difícil
-devido a fatores como atenuação da terra e ruído \citep{Xiaoyu2012}.
+devido a fatores como atenuação da subsuperfície e ruído \citep{Xiaoyu2012}.
 Baseado neste fato, a hipótese de pesquisa deste trabalho é de que é possível obter ganho de resolução
 na inversão sísmica através da aplicação de um modelo de rede neural convolucional como método de pós-processamento.
 
 \section{Objetivos}
 
-Este trabalho investiga a problemática da super-resolução dos artefatos da inversão sísmica
+Este trabalho investiga a problemática da super-resolução dos modelos da subsuperfície da inversão sísmica
 por meio de um modelo de redes neurais convolucionais.
 A abordagem se dá através da incorporação deste modelo de rede neural na última
 etapa do processo de inversão sísmica, para alcançar um maior nível de
@@ -141,19 +150,13 @@ de agregar informações de alta frequência às inversões sísmicas.
 Os objetivos específicos deste trabalho são:
 \begin{itemize}
  \item Conceber um modelo de rede neural convolucional para super-resolução de imagens de inversão.
- \item Entender as abstrações em cada camada da rede neural.
+ \item Entender as características aprendidas em cada camada da rede neural.
  \item Estudar o espectro de frequência das imagens pós-processadas com o modelo de rede convolucional.
  \item Definir uma estratégia de aplicação do modelo para diferentes tipos de dados de inversão (parametrização).
  \item Estudo de incerteza do processo de super-resolução.
 \end{itemize}
 
-Um objetivo secundário deste trabalho é utilizar o conhecimento acumulado para estudar estratégias que
-relacionem as redes convolucionais e a simulação geoestatística multiponto. Esta etapa de trabalho será desenvolvida
-mediante aprovação do processo de doutorado sanduíche, em tramitação no CNPq com número 202482/2017-0.
-Em caso de aprovação, esta atividade será realizada em cooperação com o Departamento
-de Ciências Geológicas, Universidade Stanford, sob orientação do Prof. Dr. Jef Karel Caers.
-
-\section{Organização do Texto}
+\section{Síntese}
 
 Este documento está organizado da seguinte forma. Após esta breve introdução, o
 Capítulo \ref{cap:2fundamentacao} apresenta a fundamentação teórica para os

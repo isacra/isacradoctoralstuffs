@@ -3,7 +3,7 @@
 \pagenumbering{arabic}
 % 
 Um aspecto importante nas ciências físicas é poder inferir sobre parâmetros
-físicos a partir de dados. Em geral, as leis da física disponibilizam os
+físicos a partir de dados obtidos a partir de experimentos. Em geral, as leis da física disponibilizam os
 artefatos necessários para calcular valores de dados, a partir de um modelo.
 Este procedimento é conhecido como problema direto (\textit{forward problem}).
 A modelagem direta, portanto, inicia com um modelo, sobre o qual um experimento ou processo
@@ -13,7 +13,7 @@ consiste em utilizar as medidas efetuadas para inferir os valores de parâmetros
 caracterizam o sistema \citep{tarantola}.
 
 Para entender o problema inverso é conveniente explicar o problema direto antes.
-Considere o seguinte exemplo: suponha que uma pedra é lançada em um poço de água.
+Considere o seguinte exemplo, ilustrado na Figura \ref{}: suponha que uma pedra é lançada em um poço de água.
 Após determinado tempo um som é ouvido. É esperado que haja uma relação entre a
 profundidade do poço e o tempo entre soltar a pedra e ouvir o som do impacto. Da física,
 ocorre a existência de uma relação causa-efeito para este evento, dada por:
@@ -26,21 +26,6 @@ Neste caso, o problema direto é calcular o tempo $T$ para ouvir o som, dada pro
 A solução pode ser determinada inserindo um valor pra $H$ na equação \ref{eq:forw} e calcular o
 valor de $T$. O problema inverso é uma abordagem mais difícil, pois se deseja
 saber a profundidade $H$, dado apenas o tempo $T$.
-
-% Para entender o problema inverso é conveniente explicar o problema direto antes.
-% Considere o seguinte exemplo: suponha que uma pedra é lançada em um poço de água.
-% Após determinado tempo um som é ouvido. É esperado que haja uma relação entre a
-% profundidade do poço e o tempo entre soltar a pedra e ouvir o som do impacto. Considere
-% a existência de uma relação causa-efeito para este evento, dada por:
-% \begin{equation}
-% \label{eq:forw}
-% T = f(H)
-% \end{equation}
-% onde a profundidade $H$ é a causa e o tempo $T$ é o efeito.
-% Neste caso, o problema direto é calcular o tempo $T$ para ouvir o som, dada profundidade $H$.
-% Se a forma da função $f$ é conhecida, a solução pode ser determinada inserindo um valor pra $H$ na equação \ref{eq:forw} e calcular o
-% valor de $T$. O problema inverso é uma abordagem mais difícil, pois se deseja
-% saber a profundidade $H$, dado apenas o tempo $T$.
 
 No exemplo citado, ambos os problemas, direto e inverso, possuem solução. Entretanto,
 a maioria dos problemas inversos recai sobre duas características
@@ -68,12 +53,12 @@ e gás. Por caracterização de reservatório se entende o processo para obter u
 petrofísicas (tais como, tipos de contato entre rochas, porosidade e permeabilidade),
 em 3-D e alta resolução, e que seja consistente com os dados de que se dispõe \citep{deutsch2002}.
 
-Em Geoefísica, a inversão é o processo no qual os dados são usados parar um modelo
+Em Geofísica, a inversão é o processo no qual os dados são usados para obter um modelo
 consistente. Dados de sísmica de superfície, perfis sísmicos verticais e
 dados de \textit{log} de poços podem ser usados para realizar inversão, cujo
 resultado é um modelo das camadas da Terra, densidade e velocidades compressional
-e longitudinal \ref{}. O sucesso da inversão depende da razão sinal-ruído e uma e
-Porque os dados medidos são obtidos por sísmica de reflexão,
+e cisalhante \citep{WinNT}. O sucesso da inversão depende da razão sinal-ruído e da
+largura de banda do dado sísmico. Porque os dados medidos são obtidos por sísmica de reflexão,
 este método é chamado de inversão sísmica. A inversão sísmica na
 modelagem de reservatórios disponibiliza artefatos que são modelos de propriedades de rocha
 (propriedades petrofísicas) a partir principalmente, mas não exclusivamente,
@@ -124,16 +109,16 @@ realizar três operações:
  deve ser similar à imagem que representa a verdade $X$.
 \end{enumerate}
 
-Um modelo de rede neural convolucional pode pode ser treinada para realizar as etapas listadas anteriormente,
+Um modelo de rede neural convolucional pode ser treinada para realizar as etapas listadas anteriormente,
 de forma iterativa e para um conjunto de diferentes imagens.
 A proposta aqui discutida, sugere incorporar a abordagem das redes convolucionais ao final do processo de inversão.
 As imagens obtidas da inversão sísmica podem ser pós-processadas pelo modelo convolucional
 a fim de gerar imagens com maior riqueza de detalhes. Como mencionado, o ganho de resolução
 nas imagens de propriedades acústicas pós-inversão pode conferir maior confiabilidade
-na interpretação da solução inversa e, consequentemente na tomada de decisão.
+na interpretação da solução inversa e, consequentemente, na tomada de decisão.
 
 A seção seguinte apresenta a hipótese de pesquisa deste trabalho. Nos capítulos posteriores
-serão apresentados os aspectos físicos, de implementação desta proposta e os resultados preliminares.
+serão apresentados os aspectos físicos e de implementação desta proposta, além dos resultados preliminares.
 
 \section{Hipótese}
 A super-resolução das imagens de inversão sísmica pode ser realizada com o aumento da alta frequência na aquisição e
@@ -172,8 +157,8 @@ de Ciências Geológicas, Universidade Stanford, sob orientação do Prof. Dr. J
 
 Este documento está organizado da seguinte forma. Após esta breve introdução, o
 Capítulo \ref{cap:2fundamentacao} apresenta a fundamentação teórica para os
-processos de inversão sísmica, as redes neurais 
-convolucionais e a super-resolução. O Capítulo 3%\ref{cap:3revisaoliteraria} 
+processos de inversão sísmica, redes neurais 
+convolucionais e super-resolução. O Capítulo 3 %\ref{cap:3revisaoliteraria} 
 apresenta o estado da arte relacionado à inversão acústica  e
 redes convolucionais aplicadas na geração de imagens em super-resolução. 
 O Capítulo 4 %\ref{cap:3modeloHibrido} 
