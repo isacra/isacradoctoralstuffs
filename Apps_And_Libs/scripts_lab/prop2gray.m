@@ -8,7 +8,10 @@ function [ image_gray im_cube] = prop2gray( image,im_cube )
         indx = indx +1;
         max_im = max(max(image(:,:,i)));
         min_im = min(min(image(:,:,i)));
-
+        
+        max_im = 20000;
+        min_im = 5000;
+        
         im_cube.max(:,indx) = max_im;
         im_cube.min(:,indx) = min_im;
 

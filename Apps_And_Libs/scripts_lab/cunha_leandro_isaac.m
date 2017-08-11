@@ -6,9 +6,15 @@ crop = false;
 
 deslocamento_max = 32;
 profundidade_max = 32;
-num_imgs = 672;
+num_imgs = 2;
 idx = 1;
 batch_size = 32;
+
+max_val = 3500
+min_val = 2500
+
+%max_val = 5500
+%min_val = 4500
 
 mkdir Cunha/cunha_lr_test
 mkdir Cunha/cunha_hr_test
@@ -30,7 +36,7 @@ if crop
     delete Cunha/cunha320_lr/*.jpg;
     delete Cunha/cunha320_lr_test/*.jpg;
     delete Cunha/cunha320_hr_test/*.jpg;
-    num_imgs = 100;
+    num_imgs = 2;
 end
 
 hr_im_cube_class = ImageCubeClass;
@@ -68,31 +74,31 @@ for coluna = 1:deslocamento_max
 	% Calcula tempo ate atingir determinada profundidade, baseado na velocidade do meio
 	topo_cunha = base_cunha - espessura_cunha(coluna);
 	if topo_cunha ~= base_cunha
-		tempo_ate_topo_cunha(coluna) = 2 * (1000 * topo_cunha / 3500); % 1000 de milissegundos
-		tempo_na_cunha(coluna) = tempo_ate_topo_cunha(coluna) + 2 * (1000 * (base_cunha - topo_cunha) / 2500);
-		tempo_depois_cunha(coluna) = tempo_na_cunha(coluna) + 2 * (1000 * (profundidade_max - base_cunha) / 3500);
+		tempo_ate_topo_cunha(coluna) = 2 * (1000 * topo_cunha / max_val); % 1000 de milissegundos
+		tempo_na_cunha(coluna) = tempo_ate_topo_cunha(coluna) + 2 * (1000 * (base_cunha - topo_cunha) / min_val);
+		tempo_depois_cunha(coluna) = tempo_na_cunha(coluna) + 2 * (1000 * (profundidade_max - base_cunha) / max_val);
 	else
 		tempo_ate_topo_cunha(coluna) = 0;
 		tempo_na_cunha(coluna) = 0;
-		tempo_depois_cunha(coluna) = 2 * (1000 * profundidade_max / 3500);
+		tempo_depois_cunha(coluna) = 2 * (1000 * profundidade_max / max_val);
 	end;
 	% Calcula valores de impedância em uma matriz Deslocamento x Tempo
 	tempo_max = tempo_depois_cunha(1);
 	for tempo = 1:tempo_max
 		if tempo <= tempo_ate_topo_cunha(coluna)
-			impedancia_tempo_deslocamento(tempo,coluna) = 2.6 * 3500;
+			impedancia_tempo_deslocamento(tempo,coluna) = 2.6 * max_val;
 		elseif tempo <= tempo_na_cunha(coluna)
-			impedancia_tempo_deslocamento(tempo,coluna) = 2.4 * 2500;
+			impedancia_tempo_deslocamento(tempo,coluna) = 2.4 * min_val;
 		else
-			impedancia_tempo_deslocamento(tempo,coluna) = 2.6 * 3500;
+			impedancia_tempo_deslocamento(tempo,coluna) = 2.6 * max_val;
 		end;
 	end;
 	for linha = 1:profundidade_max
 	% Armazema matriz de impedância Deslocamento x Profundidade
 		if linha >= topo_cunha && linha < base_cunha
-			impedancia_profundidade_deslocamento(linha,coluna) = 2.4 * 2500;
+			impedancia_profundidade_deslocamento(linha,coluna) = 2.4 * min_val;
 		else
-			impedancia_profundidade_deslocamento(linha,coluna) = 2.6 * 3s500;
+			impedancia_profundidade_deslocamento(linha,coluna) = 2.6 * max_val;
 		end;
 	end;
 end;
@@ -108,7 +114,7 @@ if crop
 else
     if image <= num_imgs - batch_size 
        
-        cube_righ(:,:,image) = img_high;
+        cube_high(:,:,image) = img_high;
         cube_low(:,:,image) = img_low;
     else
      
@@ -118,17 +124,15 @@ else
     end
     
 end
-
-
 end
 
 %% Gera cubo e arquivos de Imagens de treinamento
-[~, hr_im_cube_class] = prop2gray(cube_righ,hr_im_cube_class);
-imgs_hr = crop_and_print(hr_im_cube_class,'Cunha/cunha_hr/');
-
-[~, lr_im_cube_class] = prop2gray(cube_low,lr_im_cube_class);
-imgs_lr = crop_and_print(lr_im_cube_class,'Cunha/cunha_lr/');
-
+% [~, hr_im_cube_class] = prop2gray(cube_high,hr_im_cube_class);
+% imgs_hr = crop_and_print(hr_im_cube_class,'Cunha/cunha_hr/');
+% 
+% [~, lr_im_cube_class] = prop2gray(cube_low,lr_im_cube_class);
+% imgs_lr = crop_and_print(lr_im_cube_class,'Cunha/cunha_lr/');
+% 
 
 %% Gera cubo e arquivos de imagens de teste
 [~, hr_im_cube_test] = prop2gray(images_hr,hr_im_cube_test);
@@ -138,7 +142,11 @@ imgs_hr = crop_and_print(hr_im_cube_test,'Cunha/cunha_hr_test/');
 imgs_lr = crop_and_print(lr_im_cube_test,'Cunha/cunha_lr_test/');
 images = [];
 for i = 1:size(lr_im_cube_test.gray_images,3)
-   images(i,:,:) =  lr_im_cube_test.gray_images(:,:,i);
+   im =  lr_im_cube_test.gray_images(:,:,i);
+   im(im<100) = 10;
+   im(im>100) = 50;
+   images(i,:,:) = im;
+   
 end
 save 'images.mat' images;
 save workspace_cunha.mat;

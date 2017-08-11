@@ -84,15 +84,15 @@ for coluna = 1:deslocamento_max
 		elseif tempo <= tempo_na_cunha(coluna)
 			impedancia_tempo_deslocamento(tempo,coluna) = 2.4 * 2500;
 		else
-			impedancia_tempo_deslocamento(tempo,coluna) = 2.6 * 2500;
+			impedancia_tempo_deslocamento(tempo,coluna) = 2.6 * 3500;
 		end;
 	end;
 	for linha = 1:profundidade_max
 	% Armazema matriz de impedância Deslocamento x Profundidade
 		if linha >= topo_cunha && linha < base_cunha
-			impedancia_profundidade_deslocamento(linha,coluna) = 2.4 * 1500;
+			impedancia_profundidade_deslocamento(linha,coluna) = 2.4 * 2500;
 		else
-			impedancia_profundidade_deslocamento(linha,coluna) = 2.6 * 2500;
+			impedancia_profundidade_deslocamento(linha,coluna) = 2.6 * 3s500;
 		end;
 	end;
 end;
@@ -138,7 +138,7 @@ imgs_hr = crop_and_print(hr_im_cube_test,'Cunha/cunha_hr_test/');
 imgs_lr = crop_and_print(lr_im_cube_test,'Cunha/cunha_lr_test/');
 images = [];
 for i = 1:size(lr_im_cube_test.gray_images,3)
-   images(i,:,:) =  lr_im_cube_test.gray_images(:,:,i);
+   images(i,lr_im_cube_test.gray_images(:,:,i)<100) =  ;
 end
 save 'images.mat' images;
 save workspace_cunha.mat;
