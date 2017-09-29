@@ -6,38 +6,23 @@ crop = false;
 
 deslocamento_max = 32;
 profundidade_max = 32;
-num_imgs = 2;
+num_imgs = 8;
 idx = 1;
 batch_size = 32;
 
-max_val = 3500
-min_val = 2500
 
-%max_val = 5500
-%min_val = 4500
+%max_val = 5500;
+%min_val = 4500;
+
+%max_val = 3500;
+%min_val = 2500;
+max_val = 4500;
+min_val = 3500;
 
 mkdir Cunha/cunha_lr_test
 mkdir Cunha/cunha_hr_test
 mkdir Cunha/cunha_hr
 mkdir Cunha/cunha_lr
-delete Cunha/cunha_hr/*.jpg;
-delete Cunha/cunha_lr/*.jpg;
-delete Cunha/cunha_lr_test/*.jpg;
-delete Cunha/cunha_hr_test/*.jpg;
-
-if crop
-    deslocamento_max = 320;
-    profundidade_max = 320;
-    mkdir Cunha/cunha320_hr
-    mkdir Cunha/cunha320_lr
-    mkdir Cunha/cunha320_lr_test
-    mkdir Cunha/cunha320_hr_test
-    delete Cunha/cunha320_hr/*.jpg;
-    delete Cunha/cunha320_lr/*.jpg;
-    delete Cunha/cunha320_lr_test/*.jpg;
-    delete Cunha/cunha320_hr_test/*.jpg;
-    num_imgs = 2;
-end
 
 hr_im_cube_class = ImageCubeClass;
 lr_im_cube_class = ImageCubeClass;
@@ -46,22 +31,26 @@ lr_im_cube_test = ImageCubeClass;
 
 cube_high = [];
 cube_low = [];
-
+idx = 1;
+idx2 = 1;
 for image=1:num_imgs
+
     
+% if mod(image,2) == 0
+%     max_val = 2500;
+%     min_val = 1500;
+% else 
+%     max_val = 4500;
+%     min_val = 3500;
+% end
+
 espessura_cunha_max = 10 + rand*15;
-base_cunha = 15 + rand*15;
+base_cunha = 15 + rand*17;
 tamanho_cunha = 0.5 + rand*0.40;
-
-if crop
-    espessura_cunha_max = 32 + rand*160;
-    base_cunha = 192 + rand*132;
-    tamanho_cunha = 0.5 + rand*0.45;1
-end
-
+inicio_cunha = randi(12,1);
 
 % Calcula a espessura da cunha ao longo do deslocamento
-for coluna = 1:deslocamento_max
+for coluna = 5:deslocamento_max
 	espessura = espessura_cunha_max - ( (espessura_cunha_max / (tamanho_cunha * deslocamento_max)) * (coluna - 1) );
 	if espessura < 0
 		espessura_cunha(coluna) = 0;
@@ -69,6 +58,8 @@ for coluna = 1:deslocamento_max
 		espessura_cunha(coluna) = espessura;
 	end;
 end;
+
+
 
 for coluna = 1:deslocamento_max
 	% Calcula tempo ate atingir determinada profundidade, baseado na velocidade do meio
@@ -97,58 +88,82 @@ for coluna = 1:deslocamento_max
 	% Armazema matriz de impedância Deslocamento x Profundidade
 		if linha >= topo_cunha && linha < base_cunha
 			impedancia_profundidade_deslocamento(linha,coluna) = 2.4 * min_val;
+            
 		else
-			impedancia_profundidade_deslocamento(linha,coluna) = 2.6 * max_val;
+			
+            impedancia_profundidade_deslocamento(linha,coluna) = 2.6 * max_val;
+            
 		end;
 	end;
 end;
-
-img_high = impedancia_profundidade_deslocamento;
-
-impedancia_profundidade_deslocamento_low = lowPassFilter2(impedancia_profundidade_deslocamento,4,100,20);
-img_low =  impedancia_profundidade_deslocamento_low;
-
-if crop
-    imgs_hr = crop_and_print(img_hr,'Cunha/cunha_hr/', image);
-    imgs_lr = crop_and_print(img_lr,'Cunha/cunha_lr/', image);
-else
-    if image <= num_imgs - batch_size 
-       
-        cube_high(:,:,image) = img_high;
-        cube_low(:,:,image) = img_low;
+for i = 1 : 4
+    %ang = randi(360,1);
+    ang = 90;
+    if image <= 8
+         imm = imrotate(impedancia_profundidade_deslocamento, i*ang);
+         %imm = imm(1:32,1:32);
+         images_hr(:,:,idx2) = imm;
+         %images_lr(:,:,idx2) = lowPassFilter2(imm,4,100,20);
+         images_lr(:,:,idx2) = imrotate(lowPassFilter2(impedancia_profundidade_deslocamento,4,randi(100,1),randi(50,1)), i*ang);
+         idx2 = idx2 + 1;
     else
-     
-        images_hr(:,:,idx) = img_high;
-        images(:,:,idx) = img_low;
-        idx = idx+1;
+        cube_high(:,:,idx) = imrotate(impedancia_profundidade_deslocamento, ang);
+        cube_low(:,:,idx) = imrotate(lowPassFilter2(impedancia_profundidade_deslocamento,4,100,20), ang);
+        idx = idx + 1;
     end
     
 end
+
+% img_high = impedancia_profundidade_deslocamento;
+% 
+% impedancia_profundidade_deslocamento_low = lowPassFilter2(impedancia_profundidade_deslocamento,4,100,20);
+% img_low =  impedancia_profundidade_deslocamento_low;
+
+%imgrgb = prop2rgb(img_high);
+
+%     if image <= num_imgs - batch_size 
+%        
+%         cube_high(:,:,image) = img_high;
+%         cube_low(:,:,image) = img_low;
+%     else
+%      
+%         images_hr(:,:,idx) = img_high;
+%         images(:,:,idx) = img_low;
+%         idx = idx+1;
+%     end
+    
+
 end
 
-%% Gera cubo e arquivos de Imagens de treinamento
-% [~, hr_im_cube_class] = prop2gray(cube_high,hr_im_cube_class);
+
+X = 5000:3:15000;
+X = X';
+[~,Centroides] = kmeans(X,255);
+cent_sort = sort(Centroides);
+[indClt,Centroides] = kmeans(X,255,'Start',cent_sort);
+
+% %% Gera cubo e arquivos de Imagens de treinamento
+% [ hr_im_cube_class] = prop2gray(cube_high,hr_im_cube_class,Centroides);
 % imgs_hr = crop_and_print(hr_im_cube_class,'Cunha/cunha_hr/');
-% 
-% [~, lr_im_cube_class] = prop2gray(cube_low,lr_im_cube_class);
+% % 
+% [lr_im_cube_class] = prop2gray(cube_low,lr_im_cube_class,Centroides);
 % imgs_lr = crop_and_print(lr_im_cube_class,'Cunha/cunha_lr/');
-% 
+% % % 
 
 %% Gera cubo e arquivos de imagens de teste
-[~, hr_im_cube_test] = prop2gray(images_hr,hr_im_cube_test);
+[hr_im_cube_test] = prop2gray(images_hr,hr_im_cube_test,Centroides);
 imgs_hr = crop_and_print(hr_im_cube_test,'Cunha/cunha_hr_test/');
 
-[~, lr_im_cube_test] = prop2gray(images,lr_im_cube_test);
+[lr_im_cube_test] = prop2gray(images_lr,lr_im_cube_test,Centroides);
 imgs_lr = crop_and_print(lr_im_cube_test,'Cunha/cunha_lr_test/');
 images = [];
 for i = 1:size(lr_im_cube_test.gray_images,3)
    im =  lr_im_cube_test.gray_images(:,:,i);
-   im(im<100) = 10;
-   im(im>100) = 50;
+ 
    images(i,:,:) = im;
    
 end
-save 'images.mat' images;
+save 'images_teste.mat' images;
 save workspace_cunha.mat;
 
 %% Impressão das imagens unidadas em uma única imagem

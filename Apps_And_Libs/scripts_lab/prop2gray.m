@@ -1,33 +1,28 @@
-function [ image_gray im_cube] = prop2gray( image,im_cube )
+function [ im_cube] = prop2gray( image,im_cube,Centroides )
     %PROP2GRAY Summary of this function goes here
     %   Detailed explanation goes here
+    
+    
     for i=1:size(image,3)
-        [~,indx] = size(im_cube.max);
+         
         im_cube.images(:,:,i) = image(:,:,i);
-        
-        indx = indx +1;
-        max_im = max(max(image(:,:,i)));
-        min_im = min(min(image(:,:,i)));
-        
-        max_im = 20000;
-        min_im = 5000;
-        
-        im_cube.max(:,indx) = max_im;
-        im_cube.min(:,indx) = min_im;
 
-        new_impedance = 256*(image(:,:,i) - min_im)/max_im;
-        %O round vai arrendondar o valor para inteiro.
-        %posso guardar uma matrix de ruido referente ao que foi retirado de cada
-        %pixel para reconstruir depois. Fazer um cubo de ruidos para todas as
-        %imagens. Uma opcao é esta funcao receber o cubo de imagens e retornar o
-        %cubo convertido e o cubo de ruidos.
-        image_gray = fix(new_impedance);
-        noise = new_impedance - image_gray;
-        im_cube.noise(:,:,indx) = noise;
-
-        
-        im_cube.gray_images(:,:,indx) = uint8(image_gray);;
-    %recovery = gray2prop(image_gray,min_im, max_im, noise);
+        novaImg = zeros(32);
+        for lin =1:32
+            for col = 1:32
+                D=[];
+                for k=1:255
+         
+                    D(:,k) = ((image(lin,col,i)- Centroides(k,:)).^2).^0.5;
+                end
+                [~, novopixel] = min(D,[],2);
+                novaImg(lin,col) = novopixel;
+            end
+            
+        end
+       
+        im_cube.gray_images(:,:,i) = novaImg;
+        %figure; imagesc(im_cube.gray_images(:,:,i));
     end
 end
 

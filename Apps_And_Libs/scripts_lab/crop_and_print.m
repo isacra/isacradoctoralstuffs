@@ -5,8 +5,10 @@ function [images] = crop_and_print(cube,path)
 %imagens cortadas são salvar em formato jpg com indicado pela variavel path
     for indx=1:size(cube.gray_images,3)
         img = cube.gray_images(:,:,indx);
+        %img = cube.images(:,:,indx);
         imwrite(uint8(img),strcat(path,strcat('Image',int2str(indx),int2str(indx),int2str(indx)),'.jpg'));
-%         
+        
+        %imwrite(uint16(img),strcat(path,strcat('Image',int2str(indx),int2str(indx),int2str(indx)),'.png'));
 %         imgs = mat2tiles(img,[32,32]);
 %         [l c] = size(imgs);
 %         n= 1;

@@ -8,10 +8,15 @@
 %[~, hr_cube_class] = Impedance_Image_Blur(imp_hr_dir, save_ims,im_size,isRGB);
 %[~, lr_cube_class] = Impedance_Image_Blur(imp_lr_dir, save_ims,im_size,isRGB);
 
-lr_dir_name = 'Images/sintetico_lr_test/';
-hr_dir_name = 'Images/sintetico_hr_test/'; 
-%result_dir_name ='Images/Resultados/Cunha/'; 
-result_dir_name = 'Resultados/Sintetico/';
+%lr_dir_name = 'Images/sintetico_lr_test/';
+%hr_dir_name = 'Images/sintetico_hr_test/'; 
+
+result_dir_name ='Images/Resultados/Cunha/'; 
+lr_dir_name = 'Cunha/cunha_lr_test/';
+hr_dir_name = 'Cunha/cunha_hr_test/'; 
+
+
+%result_dir_name = 'Resultados/Sintetico/';
 
 imagefiles = dir(strcat(result_dir_name,'*.jpg'));
 hr_imagesfiles = dir(strcat(hr_dir_name,'*.jpg'));

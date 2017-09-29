@@ -1,6 +1,6 @@
 function prop2rgb = prop2rgb(image)
     
-    C = colormap;
+    C = colormap(jet);
     L = size(C,1);
     Gs = round(interp1(linspace(min(image(:)),max(image(:)),L),1:L,image));
     H1 = reshape(C(Gs,:),[size(Gs) 3]);
