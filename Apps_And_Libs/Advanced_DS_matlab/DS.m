@@ -14,8 +14,8 @@
 clear;home
 
 % Simulation parameters
-simul_size = [50 50 1];%size of the simulation: y x z
-search_radius = 20;    %maximum extension of the data events
+simul_size = [32 32 1];%size of the simulation: y x z
+search_radius = 25;    %maximum extension of the data events
 n = 20;                %maximum number of points in the data event
 f = 0.5;               %maximum fraction of scanned training image
 t = 0.05;               %distance threshold (between 0 and 1)
@@ -25,12 +25,15 @@ distance_type=1;       %type of variable (0=categorical, 1= continuous with
 %DO NOT USE FR BENCHMARKING
 
 %loading training image
-tifile='ti.txt';
+tifile='ti.mat';
 %loading conditioning data
-datafile = 'cond.txt';
+datafile = 'cond.mat';
 
 ti=load(tifile);
 data = load(datafile);
+data = data.cond;
+ti = ti.ti;
+
 ti_size = [size(ti,1) size(ti,2) size(ti,3)]; %to make sure size_ti is a vector of size 3
 sizeyxti = ti_size(1)*ti_size(2);
 sizeyxsim = simul_size(1)*simul_size(2);
@@ -43,14 +46,14 @@ path_sim = randperm(simul_size(1)*simul_size(2)*simul_size(3));
 simul = nan(simul_size(1)*simul_size(2)*simul_size(3),1);
 
 %inserting conditioning data in realization
-for i = 1:size(data,1)
-    %finding ids of data points
-    dataid = (simul_size(1).*simul_size(2)).*(data(i,3)-1)+simul_size(1).*(data(i,2)-1)+data(i,1);
-    simul(dataid) = data(i,4);
-    %eliminating data points in the path
-    ind = find(path_sim==dataid);
-    path_sim(ind) = [];
-end
+% for i = 1:size(data,1)
+%     %finding ids of data points
+%     dataid = (simul_size(1).*simul_size(2)).*(data(i,3)-1)+simul_size(1).*(data(i,2)-1)+data(i,1);
+%     simul(dataid) = data(i,4);
+%     %eliminating data points in the path
+%     ind = find(path_sim==dataid);
+%     path_sim(ind) = [];
+% end
 
 bestmin = zeros(size(path_sim,2),1);
 nbtries = zeros(size(path_sim,2),1);

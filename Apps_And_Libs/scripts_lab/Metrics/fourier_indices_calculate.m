@@ -23,6 +23,7 @@ function [ ims_matchs, indices ] = fourier_indices_calculate(images, imagesOrig,
         T2 = sum(abs2(:).^2) - k*( mean2(imOrigFourier)^2);
         
         indices(i) = numerator / (T1*T2);
+        indices(i) = round(abs(indices(i)),4);
         if (ims_matchs{i}.fft_param < indices(i))
             ims_matchs{i}.fft_param = indices(i);
             %ims_matchs{i}.immatch = j;

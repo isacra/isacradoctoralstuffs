@@ -25,7 +25,7 @@ for i =1 : num_cunhas
     imm = zeros(32);
     %imm(find(im>150)) = 3500*2.6;
     %imm(find(im<=150)) = 2500*2.4;
-     imm(find(im>150)) = 0.7;
+    imm(find(im>150)) = 0.7;
     imm(find(im<=150)) = 0.3;
     imm_blur =lowPassFilter2(imm,4,100,20);
     imagesc(imm)

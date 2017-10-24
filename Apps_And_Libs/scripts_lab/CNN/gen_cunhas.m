@@ -1,5 +1,5 @@
-% Este arquivo carrega os dados a serem usados como referencia na otimizacao
-function [ cube_high, cube_low, gray_hr, gray_lr] = gen_cunhas( num_cunhas )
+    % Este arquivo carrega os dados a serem usados como referencia na otimizacao
+function [ cube_high, cube_low, gray_hr, gray_lr,randI] = gen_cunhas( num_cunhas )
 
     deslocamento_max = 32;
     profundidade_max = 32;
@@ -7,7 +7,7 @@ function [ cube_high, cube_low, gray_hr, gray_lr] = gen_cunhas( num_cunhas )
     cube_low = [];
     gray_hr = [];
     gray_lr = [];
-
+    randI=[];
     idx = 1;
 
     in_val = rand(1,1);
@@ -109,22 +109,23 @@ function [ cube_high, cube_low, gray_hr, gray_lr] = gen_cunhas( num_cunhas )
     end;
 
         for i = 1 : 4
-            
+            r = randi(20,1);
             if (length(find(impedancia_profundidade_deslocamento==0.7)) + length(find(impedancia_profundidade_deslocamento==0.3))) == 1024
                 cube_high(:,:,idx) = imrotate(impedancia_profundidade_deslocamento, i*90);
                 gray_hr(idx,:) = reshape(cube_high(:,:,idx),1,1024);
                 
-                cube_low(:,:,1,idx) = lowPassFilter2(cube_high(:,:,idx),4,100,20);
+                cube_low(:,:,1,idx) = lowPassFilter2(cube_high(:,:,idx),r,100,20);
                 gray_lr(:,:,1,idx) = cube_low(:,:,1,idx);
                 idx = idx + 1;
             else
                 cube_high(:,:,idx) = imrotate(impedancia_profundidade_deslocamento, i*90);
                 gray_hr(idx,:) = reshape(mat2gray(cube_high(:,:,idx)),1,1024);
                 
-                cube_low(:,:,1,idx) = lowPassFilter2(cube_high(:,:,idx),4,100,20);
+                cube_low(:,:,1,idx) = lowPassFilter2(cube_high(:,:,idx),r,100,20);
                 gray_lr(:,:,1,idx) = mat2gray(cube_low(:,:,1,idx));
                 idx = idx + 1;
             end
+            randI = [randI, r];
         end
     end
       
