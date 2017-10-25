@@ -391,8 +391,8 @@ Email: homer@thesimpsons.com}}
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-This paper presents convolutional neural network model
-for deblurring post-insversion images.
+In this paper we will present a new convolution neural network
+model to deblurr post-insversion acoustic impedance images.
 
 \end{abstract}
 
@@ -436,19 +436,42 @@ by its capacity to learn and generalize spacial patterns present in the training
 The primary studies on CNN  are dated of 1980 and its application was mainly
 in image recognition. With the advances in Graphic Processing Unit (GPU) and the
 availability of training data, CNNs are successfully applied on image searching, self-driving mobiles and
-images classification \citep[p. 50]{Buduma15}.
+images classification \cite{Buduma15}.
 
-
+In this paper we propose a new multilayer convolution network model to perform deblurring in post-inversion impedance.
+Each layer maps higher level features originated in the lower layer with convolutional filters.
+The filters, also named wights, are adjusted by minimizing a loss function. The model enhances the
+resolution of the impedance image through the increase of the high-frequency band.
+We compare the deblurred images depicted by our model and by two other deblurring methods ().
 
 %\hfill mds
  
 %\hfill August 26, 2015
 
 \section{Related Work}
+Deblurring plays an important role in computer vision.
+Methods based on...However these methods lack
+of ...
 
-\section{Data}
+Recent research apply deep learning solutions, such as convolution networks, to solve different 
+Most recently a convolution autoencoder performs seismic faces recognition \cite{}.
+
+Improving the resolution of sismic inversion is possible by adding high frequency in acquisition and processing
+seismic data. The seismic data is generally short of high and low frequencies and this phenomenon is caused by seismic acquisition,
+earth attenuation, high-frequency noise, etc., what negatively influence on geologic interpretations of seismic data \cite{xiaoiu}.
+Thus, we propose enhancing seismic impedance resolution through adding high-frequency post-inversion.
+
 
 \section{Convolution Neural Network}
+The workflow of the proposed method consists of the following
+steps:
+\begin{itemize}
+ \item 
+ \item
+ \item
+ \item
+\end{itemize}
+
 The approach adopted in this paper consists in training a CNN model to
 proceed deblurring over synthetic acoustic impedance images. The model
 is able to solve two important problems related to physical properties
@@ -462,19 +485,38 @@ network weights in every layer by minimizing the Mean Squared Error (MSE)
 in each batch of images. Thus, after training phase, the model is capable
 to deblurr any other image not presented in training dataset. The output
 image must recover higher frequencies and, in advance, be more similar
-to the high resolution image than the blurred image according to the
-IFFT similarity metric, defined in Eq. \ref{}.
+to the high resolution image than the blurred image.
 
-Additionally, the Root Mean Squared Error (RMSE) is calculated
-in order to measure the global error in each pair of
-deblurred and high resolution images.
+Three metrics assess the performance of the convolution networks: fourier index (IFFT),
+frequency IFFT similarity metric, defined in Eq. \ref{eq:fourier},
+\begin{equation}
+ C = \frac{ (\sum_{i=1}^{N}{F_{1i}F_{2i}} - N \bar{F}_1\bar{F}_2 )^2 }{ (\sum_{i=1}^{N}{|F_{1i}|^2} - N{\bar{F}^2}_1)( \sum_{i=1}^{N}{|F_{2i}|^2} - N{\bar{F}^2}_2 )},
+ \label{eq:fourier}
+\end{equation}
+where, for each frequency, an intensity value is calculated from the real and complex parts of fourier
+transform. $F_{1i}$ represents the intensity value of $i$-th \textit{pixel} in the first image and $F_{2i}$
+is the intensity value of $i$-th \textit{pixel} in the second image. $\bar{F}_1$ e $\bar{F}_2$ are the mean
+frequencies in each image. The closer IFFT is to 1, the higher the similarity between the images.
+The frequencies spectrum is indeed useful to present the graphic of frequency magnitudes in the images.
+This approach makes possible distinguishing the frequency spectrum added by the proposed model. 
+Additionally, the Root Mean Squared Error (RMSE), Eq. \ref{eq:mse} is calculated in order to measure
+the global error in each pair of deblurred and high resolution images.
 
+\begin{equation}
+ RMSE = \sqrt{\frac{ (\sum_{i=1}^{N}{(x_i -y_i)^2 } }{N}},
+ \label{eq:mse}
+\end{equation}
 
-
-
+The model architecture consists on two convolution layers, each one followed by one
+pooling layer and regularization layer. The second regularization layer is followed
+by a fully connected layer, which maps the convolution layer's output to 1024 neurons.
+The output model comprises a regression layer to predict the intensity value of each pixel.
 
 \section{Experiments}
-
+The proposed model aims to deblurr image representations of acoustic impedance.
+In this context, the model was first trained with a synthetic dataset.
+The dataset is composed by images representing two geological structures, in
+which one of them is in form of a 
 
 
 % An example of a floating figure using the graphicx package.
@@ -624,10 +666,10 @@ The authors would like to thank...
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
+\bibitem{IEEEhowto:kopka} H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+\bibitem{xiaoiu}  Xi Xiaoyu, Ling Yun, Sun Desheng, Guo Xiangyu, and Wang Huifeng, ``Studying the effect of expanding low or high frequency on post-stack seismic inversion,'' SEG Technical Program Expanded Abstracts 2012. September 2012, 1-5 
+\bibitem{Buduma15}  Buduma, N., `` Fundamentals of Deep Learning,'' Academic Press, 2015, O'Reilly Media
+\bibitem{qian} Qian Feng, Yin Miao, Su Ming-Jun, Wang Yaojun, Hu Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''. 
 \end{thebibliography}
 
 
