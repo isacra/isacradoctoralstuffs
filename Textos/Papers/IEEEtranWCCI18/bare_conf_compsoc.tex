@@ -453,42 +453,50 @@ Deblurring plays an important role in computer vision.
 Methods based on...However these methods lack
 of ...
 
-Recent research apply deep learning solutions, such as convolution networks, to solve different 
-Most recently a convolution autoencoder performs seismic faces recognition \cite{}.
+Recent researches in geophysics have applied deep learning solutions, such as convolution networks, to solve a wide
+sort of problems such as lithofacies recognition \cite{Qian} and calculation \cite{Liu}, 
 
-Improving the resolution of sismic inversion is possible by adding high frequency in acquisition and processing
-seismic data. The seismic data is generally short of high and low frequencies and this phenomenon is caused by seismic acquisition,
+However, there is a lack of researches to investigate methods for improving the resolution of
+images resulting from inversion processes. Improving the resolution of seismic inversion is
+possible by adding high frequency in acquisition and processing seismic data. The seismic data
+is generally short of high and low frequencies and this phenomenon is caused by seismic acquisition,
 earth attenuation, high-frequency noise, etc., what negatively influence on geologic interpretations of seismic data \cite{xiaoiu}.
-Thus, we propose enhancing seismic impedance resolution through adding high-frequency post-inversion.
+Thus, we propose enhancing seismic impedance resolution adding high-frequency post-inversion through a convolutional
+neural network.
 
 
 \section{Convolution Neural Network}
 The workflow of the proposed method consists of the following
 steps:
 \begin{itemize}
- \item 
- \item
- \item
- \item
+ \item Generate synthetic impedance images;
+ \item Blur these images through a low-pass filter;
+ \item Train the convolutional model with the pair of images;
+ \item Test the model with different blurry images;
+ \item Assess the result for the testing output.
 \end{itemize}
 
 The approach adopted in this paper consists in training a CNN model to
-proceed deblurring over synthetic acoustic impedance images. The model
+to deblurr synthetic acoustic impedance images. The model
 is able to solve two important problems related to physical properties
 deblurring: (1) learning the spacial patterns in the low resolution
 training images  and (2) predict each pixel intensity value in the new
-higher resolution image.
+higher resolution image. To reach these two goals, the structure of the
+model contains convolutional layers combined with a regression output
+layer.
 
-The model proceeds a supervised learning through the pairs of low
+The model proceeds a supervised learning through a dictionary of pairs of low
 and high resolution images. The optimization algorithm adjust the 
 network weights in every layer by minimizing the Mean Squared Error (MSE)
-in each batch of images. Thus, after training phase, the model is capable
+in each batch of images. Thus, after the training phase, the model is capable
 to deblurr any other image not presented in training dataset. The output
 image must recover higher frequencies and, in advance, be more similar
 to the high resolution image than the blurred image.
 
 Three metrics assess the performance of the convolution networks: fourier index (IFFT),
-frequency IFFT similarity metric, defined in Eq. \ref{eq:fourier},
+the Rooted Mean Square Error (RMSE) and the frequencies magnitudes.
+The IFFT similarity metric is defined as in Eq. \ref{eq:fourier} and was introduced
+by \cite{}
 \begin{equation}
  C = \frac{ (\sum_{i=1}^{N}{F_{1i}F_{2i}} - N \bar{F}_1\bar{F}_2 )^2 }{ (\sum_{i=1}^{N}{|F_{1i}|^2} - N{\bar{F}^2}_1)( \sum_{i=1}^{N}{|F_{2i}|^2} - N{\bar{F}^2}_2 )},
  \label{eq:fourier}
@@ -669,7 +677,8 @@ The authors would like to thank...
 \bibitem{IEEEhowto:kopka} H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
 \bibitem{xiaoiu}  Xi Xiaoyu, Ling Yun, Sun Desheng, Guo Xiangyu, and Wang Huifeng, ``Studying the effect of expanding low or high frequency on post-stack seismic inversion,'' SEG Technical Program Expanded Abstracts 2012. September 2012, 1-5 
 \bibitem{Buduma15}  Buduma, N., `` Fundamentals of Deep Learning,'' Academic Press, 2015, O'Reilly Media
-\bibitem{qian} Qian Feng, Yin Miao, Su Ming-Jun, Wang Yaojun, Hu Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''. 
+\bibitem{qian} Qian Feng, Yin Miao, Su Ming-Jun, Wang Yaojun, Hu Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''.
+\bibitem{Liu} Liu Lihui, Lu Rong, Li Jianhai, Yang Wenkui, ``Seismic Lithofacies Computation Method Based on Deep Learning,'' 649-652. 10.1190/IGC2017-165. 
 \end{thebibliography}
 
 
