@@ -424,8 +424,8 @@ to uniquely recover a plausible image, this feature sets
 deblurring as an ill-posed problem. In this sense, deblurring
 images characterizes an inversion problem.
 
-Geostatistical iversion techniques, such as Maximum-a-posteriori,
-produce blurred images. Deblurring is an important
+Geostatistical iversion techniques, such as Maximum-a-posteriori(MAP), Recursive
+Inversion and Sparse Spike  produce blurred images. Deblurring is an important
 task in pós-inversion decision making.
 
 
@@ -477,22 +477,28 @@ steps:
 \end{itemize}
 
 The approach adopted in this paper consists in training a CNN model to
-proceed deblurring over synthetic acoustic impedance images. The model
-is able to solve two important problems related to physical properties
-deblurring: (1) learning the spacial patterns in the low resolution
-training images  and (2) predict each pixel intensity value in the new
-higher resolution image.
+to deblurr synthetic acoustic impedance images. The model
+is able to solve two important problems related to deblurring physical properties
+images: (1) learning the spacial patterns in the low resolution
+training images and (2) predict each pixel intensity value in the new
+higher resolution image. The CNN is a well stablished method for
+patter recognition. Thus, an important breakthrough was developing a model
+capable to proceed the regression task. To reach these two goals, the structure of the
+model contains convolutional layers combined with a regression output
+layer.
 
-The model proceeds a supervised learning through the pairs of low
+The model proceeds a supervised learning through a dictionary of pairs of low
 and high resolution images. The optimization algorithm adjust the 
 network weights in every layer by minimizing the Mean Squared Error (MSE)
-in each batch of images. Thus, after training phase, the model is capable
+in each batch of images. Thus, after the training phase, the model is capable
 to deblurr any other image not presented in training dataset. The output
 image must recover higher frequencies and, in advance, be more similar
 to the high resolution image than the blurred image.
 
 Three metrics assess the performance of the convolution networks: fourier index (IFFT),
-frequency IFFT similarity metric, defined in Eq. \ref{eq:fourier},
+the Rooted Mean Square Error (RMSE) and the frequencies magnitudes.
+The IFFT similarity metric is defined as in Eq. \ref{eq:fourier} and was introduced
+by \cite{}
 \begin{equation}
  C = \frac{ (\sum_{i=1}^{N}{F_{1i}F_{2i}} - N \bar{F}_1\bar{F}_2 )^2 }{ (\sum_{i=1}^{N}{|F_{1i}|^2} - N{\bar{F}^2}_1)( \sum_{i=1}^{N}{|F_{2i}|^2} - N{\bar{F}^2}_2 )},
  \label{eq:fourier}
@@ -511,7 +517,7 @@ the global error in each pair of deblurred and high resolution images.
  \label{eq:mse}
 \end{equation}
 
-The model architecture consists on two convolution layers, each one followed by one
+The model architecture consists in two convolution layers, each one followed by one
 pooling layer and regularization layer. The second regularization layer is followed
 by a fully connected layer, which maps the convolution layer's output to 1024 neurons.
 The output model comprises a regression layer to predict the intensity value of each pixel.
