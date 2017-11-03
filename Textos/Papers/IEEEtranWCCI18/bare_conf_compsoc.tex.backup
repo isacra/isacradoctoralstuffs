@@ -418,15 +418,27 @@ model to deblurr post-insversion acoustic impedance images.
 Deblurring is an important problem in image processing.
 It seeks to remove distortions from a blurry image in order to
 recover the original image. Recovering the original image
-is possible if the the detail of the blurring method are known.
+is possible if the details of the blurring method are known.
 In most cases, blurred images lack of enough information
 to uniquely recover a plausible image, this feature sets
-deblurring as an ill-posed problem. In this sense, deblurring
-images characterizes an inversion problem.
+deblurring as an ill-posed problem and characterizes as an inversion problem.
+It is not observed in the literature a general object deblurring algorithm. Thus, as mentioned by \cite{Chrysos} exploiting domain-specific
+knowledge can result in superior deblurring. The focus of this work is post-inversion acoustic impedance
+deblurring. Specifically, acoustic impedance deblurring must take into account the fact that
+the resulting image still must to reflect the synthetic seismic data characteristics.
 
-Geostatistical iversion techniques, such as Maximum-a-posteriori(MAP), Recursive
-Inversion and Sparse Spike  produce blurred images. Deblurring is an important
-task in pós-inversion decision making.
+Reservoir characterization consists in determining the multidimensional
+and quantitative structure and properties of an oil field.
+In this context, inverting the seismic data to acoustic impedance plays an important role,
+once it accurately integrates the seismic information
+to generate models that contribute to the subsurface characterization.
+According to \cite{}, a good acoustic impedance model contains more information
+then the seismic data because this model keeps all the seismic data information and additional
+information originated in the well-logs.
+
+The Inversion techniques, such as Maximum-a-posteriori(MAP), Recursive
+Inversion and Sparse Spike, produce blurred images. Deblurring is an important
+task in post-inversion decision making.
 
 
 %A solução
@@ -443,7 +455,8 @@ Each layer maps higher level features originated in the lower layer with convolu
 The filters, also named wights, are adjusted by minimizing a loss function. The model enhances the
 resolution of the impedance image through the increase of the high-frequency band.
 We compare the deblurred images depicted by our model and by two other deblurring methods ().
-
+The core concept of our architecture is the combination of the convolution layers with regression
+layers, thus proceeding a regression solution, instead of classification.
 %\hfill mds
  
 %\hfill August 26, 2015
@@ -680,7 +693,8 @@ The authors would like to thank...
 \bibitem{xiaoiu}  Xi Xiaoyu, Ling Yun, Sun Desheng, Guo Xiangyu, and Wang Huifeng, ``Studying the effect of expanding low or high frequency on post-stack seismic inversion,'' SEG Technical Program Expanded Abstracts 2012. September 2012, 1-5 
 \bibitem{Buduma15}  Buduma, N., `` Fundamentals of Deep Learning,'' Academic Press, 2015, O'Reilly Media
 \bibitem{qian} Qian Feng, Yin Miao, Su Ming-Jun, Wang Yaojun, Hu Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''.
-\bibitem{Liu} Liu Lihui, Lu Rong, Li Jianhai, Yang Wenkui, ``Seismic Lithofacies Computation Method Based on Deep Learning,'' 649-652. 10.1190/IGC2017-165. 
+\bibitem{Liu} Liu Lihui, Lu Rong, Li Jianhai, Yang Wenkui, ``Seismic Lithofacies Computation Method Based on Deep Learning,'' 649-652. 10.1190/IGC2017-165.
+\bibitem{Chrysos} G. G. Chrysos, S. Zafeiriou, "Deep Face Deblurring," 2017 IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), Honolulu, HI, 2017, pp. 2015-2024.
 \end{thebibliography}
 
 
