@@ -429,6 +429,10 @@ the resulting image still must to reflect the synthetic seismic data characteris
 
 Reservoir characterization consists in determining the multidimensional
 and quantitative structure and properties of an oil field.
+To achieve this goal, it is essential to combine in a single model
+all the information, knowledge and data about the field, in such a
+way that the quantitative predictions about the reservoir behaviour is
+possible.
 In this context, inverting the seismic data to acoustic impedance plays an important role,
 once it accurately integrates the seismic information
 to generate models that contribute to the subsurface characterization.
@@ -695,9 +699,22 @@ The authors would like to thank...
 \bibitem{qian} Qian Feng, Yin Miao, Su Ming-Jun, Wang Yaojun, Hu Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''.
 \bibitem{Liu} Liu Lihui, Lu Rong, Li Jianhai, Yang Wenkui, ``Seismic Lithofacies Computation Method Based on Deep Learning,'' 649-652. 10.1190/IGC2017-165.
 \bibitem{Chrysos} G. G. Chrysos, S. Zafeiriou, "Deep Face Deblurring," 2017 IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), Honolulu, HI, 2017, pp. 2015-2024.
+\bibitem{Latimer} Rebecca Buxton Latimer, Rick Davidson, Paul van Riel, ``An interpreter's guide to understanding and working with seismic-derived acoustic impedance data,'',2017, pp. 242-256, vol. 19, num. 3, in The Leading Edge.
 \end{thebibliography}
 
-
+%0 Journal Article
+%A Rebecca Buxton Latimer
+%A Rick Davidson
+%A Paul van Riel
+%T An interpreter's guide to understanding and working with seismic-derived acoustic impedance data
+%D 2000
+%J The Leading Edge
+%P 242-256
+%V 19
+%N 3
+%R 10.1190/1.1438580
+%U http://library.seg.org/doi/abs/10.1190/1.1438580
+%K 
 
 
 % that's all folks
