@@ -431,22 +431,32 @@ Reservoir characterization consists in determining the multidimensional
 and quantitative structure and properties of an oil field.
 To achieve this goal, it is essential to combine in a single model
 all the information, knowledge and data about the field, in such a
-way that the quantitative predictions about the reservoir behaviour is
-possible \cite{}. These data are usually, but not exclusively, geological models,
-data logs, testimunhal data, production summary and 3D seismic data. The seismic
+way that is possible to make the quantitative predictions about the reservoir behavior \cite{buiting}.
+These data are usually geological models,
+data logs, testimonial data, production summary and 3D seismic data. The seismic
 amplitude is used in model generation and  reservoir characterization,
-however, the deeper the investigated horizon is, the bigger the limit in using the seismic amplitude data \cite{}. 
-In this context, inverting the seismic data to acoustic impedance plays an important role,
-once it accurately integrates the seismic information
-to generate models that contribute to the subsurface characterization.
-According to \cite{}, a good acoustic impedance model contains more information
+however, the deeper the investigated horizon is, the bigger the limit in using the seismic amplitude data \cite{riel}.
+The seismic data inversion has proved to be an efficient tool to accurately integrate the seismic information
+in order to generate models that contribute to an effective reservoir characterization \cite{sergio}.
+Besides integrating data, seismic inversion is widely used because of its facility and precision
+in interpreting the acoustic impedance.
+According to \cite{Latimer}, a good acoustic impedance model contains more information
 then the seismic data because this model keeps all the seismic data information and additional
 information originated in the well-logs.
-
-The Inversion techniques, such as Maximum-a-posteriori(MAP), Recursive
-Inversion and Sparse Spike, produce blurred images. Deblurring is an important
-task in post-inversion decision making.
-
+Depending on the applied method, the acoustic impedance volume is the result of
+the integration of data from different sources, such as, the seismic data, well logs and
+velocity models. Thus, building an acoustic impedance model is the natural process to 
+integrate the available informations to obtain a model accessible to geophysicists, geologists
+and engineers. 
+The acoustic impedance models allow fast interpretations and an efficient identification of
+exploratory targets in seismic scale. The seismic data are band-limited, in other words,
+the seismic data are short of high and low frequencies. This is a consequence
+of seismic acquisition, earth attenuation, high-frequency noise, etc \cite{xiaoiu}. This phenomenon leads
+to a misinterpretation of seismic data and, by consequence, the same to the resulting acoustic
+impedance models, that lacks of high-frequency details.
+In this sense, we believe that increasing the resolution of the acoustic impedance models
+through deblurring the model sections, as a post-inversion refining process, can lead to a more accurate
+interpretation of the impedance models.
 
 %A solução
 Convolution Neural Network (CNN) is a topic of great interest in different
@@ -457,10 +467,13 @@ in image recognition. With the advances in Graphic Processing Unit (GPU) and the
 availability of training data, CNNs are successfully applied on image searching, self-driving mobiles and
 images classification \cite{Buduma15}.
 
-In this paper we propose a new multilayer convolution network model to perform deblurring in post-inversion impedance.
-Each layer maps higher level features originated in the lower layer with convolutional filters.
-The filters, also named wights, are adjusted by minimizing a loss function. The model enhances the
-resolution of the impedance image through the increase of the high-frequency band.
+In this paper we propose a new multilayer convolution network model to perform deblurring in post-inversion acoustic impedance.
+Each network layer maps higher level features originated in the lower layer through convolutional filters.
+To perform this mapping, the filters, also named weights, are adjusted by minimizing a loss function. The trained model enhances the
+resolution of the impedance image, resulting in an equivalent image with increased high-frequency band and lower noise.
+First, we blurr the synthetic acoustic impedance to form the pairs of images of high and low resolution. Then,
+the dictionary of images is normalized to the real interval $[0,1]$ and used to train the convolutional model. Once
+the model 
 We compare the deblurred images depicted by our model and by two other deblurring methods ().
 The core concept of our architecture is the combination of the convolution layers with regression
 layers, thus proceeding a regression solution, instead of classification.
@@ -474,7 +487,7 @@ Methods based on...However these methods lack
 of ...
 
 Recent researches in geophysics have applied deep learning solutions, such as convolution networks, to solve a wide
-sort of problems such as lithofacies recognition \cite{Qian} and calculation \cite{Liu}, 
+sort of problems such as lithofacies recognition \cite{qian} and calculation \cite{Liu}, 
 
 However, there is a lack of researches to investigate methods for improving the resolution of
 images resulting from inversion processes. Improving the resolution of seismic inversion is
@@ -485,7 +498,12 @@ Thus, we propose enhancing seismic impedance resolution adding high-frequency po
 neural network.
 
 
-\section{Convolution Neural Network}
+\section{Data and Method}
+
+\subsection{Acoustic Impedance Images}
+
+
+\subsection{Convolutional Neural Network}
 The workflow of the proposed method consists of the following
 steps:
 \begin{itemize}
@@ -696,13 +714,17 @@ The authors would like to thank...
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka} H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-\bibitem{xiaoiu}  Xi Xiaoyu, Ling Yun, Sun Desheng, Guo Xiangyu, and Wang Huifeng, ``Studying the effect of expanding low or high frequency on post-stack seismic inversion,'' SEG Technical Program Expanded Abstracts 2012. September 2012, 1-5 
-\bibitem{Buduma15}  Buduma, N., `` Fundamentals of Deep Learning,'' Academic Press, 2015, O'Reilly Media
-\bibitem{qian} Qian Feng, Yin Miao, Su Ming-Jun, Wang Yaojun, Hu Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''.
-\bibitem{Liu} Liu Lihui, Lu Rong, Li Jianhai, Yang Wenkui, ``Seismic Lithofacies Computation Method Based on Deep Learning,'' 649-652. 10.1190/IGC2017-165.
-\bibitem{Chrysos} G. G. Chrysos, S. Zafeiriou, "Deep Face Deblurring," 2017 IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), Honolulu, HI, 2017, pp. 2015-2024.
-\bibitem{Latimer} Rebecca Buxton Latimer, Rick Davidson, Paul van Riel, ``An interpreter's guide to understanding and working with seismic-derived acoustic impedance data,'',2017, pp. 242-256, vol. 19, num. 3, in The Leading Edge.
+\bibitem{IEEEhowto:kopka} 	H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+\bibitem{xiaoiu}  		Xi Xiaoyu, Ling Yun, Sun Desheng, Guo Xiangyu, and Wang Huifeng, ``Studying the effect of expanding low or high frequency on post-stack seismic inversion,'' in SEG Technical Program Expanded Abstracts 2012. September 2012, 1-5.
+\bibitem{Buduma15}  		Buduma, N., `` Fundamentals of Deep Learning,'' Academic Press, 2015, in O'Reilly Media.
+\bibitem{qian} 			Qian Feng, Yin Miao, Su Ming-Jun, Wang Yaojun, Hu Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''.
+\bibitem{Liu} 			Liu Lihui, Lu Rong, Li Jianhai, Yang Wenkui, ``Seismic Lithofacies Computation Method Based on Deep Learning,'' p. 649-652.
+\bibitem{Chrysos} 		G. G. Chrysos, S. Zafeiriou, "Deep Face Deblurring," 2017 IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), Honolulu, HI, 2017, pp. 2015-2024.
+\bibitem{Latimer} 		Rebecca Buxton Latimer, Rick Davidson, Paul van Riel, ``An interpreter's guide to understanding and working with seismic-derived acoustic impedance data,'',2017, pp. 242-256, v. 19, num. 3, in The Leading Edge.
+\bibitem{buiting} 		JJM. Buiting, M. Bacon,``Using geophysical, geological, and petrophysical data to characterize reservoirs in the North Sea.'', in 5th Conference on Petroleum Geology of NW Europe, London. CD-ROM.
+\bibitem{riel} 			Paul van Riel,  ``The past, present and future of quantitative reservoir characterization.'', in The Leading Edge, 19, p. 878–881.
+\bibitem{sergio}		Sergio Sacani Sancevero, Armando Zaupa Remacre, Rodrigo de Souza Portugal, ``O papel da inversão para a impedância no processo de caracterização sísmica de reservatórios'',in Revista Brasileira de Geofísica, 2006, p. 495-512, v. 24.
+
 \end{thebibliography}
 
 %0 Journal Article
