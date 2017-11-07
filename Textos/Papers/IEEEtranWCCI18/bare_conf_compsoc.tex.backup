@@ -459,19 +459,18 @@ through deblurring the model sections, as a post-inversion refining process, can
 interpretation of the impedance models.
 
 %A solução
-Convolution Neural Network (CNN) is a topic of great interest in different
-research areas. The success of convolutional networks can be explained
-by its capacity to learn and generalize spacial patterns present in the training data.
-The primary studies on CNN  are dated of 1980 and its application was mainly
-in image recognition. With the advances in Graphic Processing Unit (GPU) and the
-availability of training data, CNNs are successfully applied on image searching, self-driving mobiles and
-images classification \cite{Buduma15}.
+We approach the problem of deblurring acoustic impedance images through
+the Convolution Neural Networks (CNN). The availability of benchmarks
+\cite{} and the advances in Graphical Processing Unit (GPU) \cite{Buduma15} allowed CNN to outperform thechniques in detection \cite{}, model-free
+tracking \cite{}, classification \cite{}.
 
 In this paper we propose a new multilayer convolution network model to perform deblurring in post-inversion acoustic impedance.
 Each network layer maps higher level features originated in the lower layer through convolutional filters.
 To perform this mapping, the filters, also named weights, are adjusted by minimizing a loss function. The trained model enhances the
 resolution of the impedance image, resulting in an equivalent image with increased high-frequency band and lower noise.
-First, we ...Then ...
+First, we blurr the synthetic acoustic impedance to form the pairs of images of high and low resolution. Then,
+the dictionary of images is normalized to the real interval $[0,1]$ and used to train the convolutional model. Once
+the model 
 We compare the deblurred images depicted by our model and by two other deblurring methods ().
 The core concept of our architecture is the combination of the convolution layers with regression
 layers, thus proceeding a regression solution, instead of classification.
