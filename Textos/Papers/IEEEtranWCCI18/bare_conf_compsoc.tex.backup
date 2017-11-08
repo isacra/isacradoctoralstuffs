@@ -449,25 +449,33 @@ velocity models. Thus, building an acoustic impedance model is the natural proce
 integrate the available informations to obtain a model accessible to geophysicists, geologists
 and engineers. 
 The acoustic impedance models allow fast interpretations and an efficient identification of
-exploratory targets in seismic scale. The seismic data are band-limited, in other words,
+exploratory targets in seismic scale. However, the seismic data are band-limited, in other words,
 the seismic data are short of high and low frequencies. This is a consequence
 of seismic acquisition, earth attenuation, high-frequency noise, etc \cite{xiaoiu}. This phenomenon leads
 to a misinterpretation of seismic data and, by consequence, the same to the resulting acoustic
-impedance models, that lacks of high-frequency details.
+impedance models, that lacks of high-frequency details, additionally, inversion methods such as MAP (Maximum a posteriori),
+lead to blurry images \cite{Levin}.
 In this sense, we believe that increasing the resolution of the acoustic impedance models
 through deblurring the model sections, as a post-inversion refining process, can lead to a more accurate
 interpretation of the impedance models.
 
 %A solução
-We approach the problem of deblurring acoustic impedance images through
-the Convolution Neural Networks (CNN). The availability of benchmarks
-\cite{} and the advances in Graphical Processing Unit (GPU) \cite{Buduma15} allowed CNN to outperform thechniques in detection \cite{}, model-free
-tracking \cite{}, classification \cite{}.
+We approach the problem of deblurring post-inversion acoustic impedance images through
+the Convolution Neural Networks (CNN). CNN is a framework of deep learning which has been
+used in a wide sort of machine learning tasks. The availability of benchmarks
+\cite{Russakovsky} and the advances in Graphical Processing Unit (GPU) \cite{Buduma15}
+allowed CNN to outperform thechniques in detection \cite{Girshick,Bell}, model-free
+tracking \cite{Nam}, classification \cite{He}. With excellence in feature learning,
+CNN achieved notorious success in image classification \cite{Krizhevsky}, action
+recognition \cite{S_Ji}, video classification \cite{AbdelHamid} and speech recognition \cite{Farfade}.
+From post-inversion perpective, we consider acoustic impedance as image
+
 
 In this paper we propose a new multilayer convolution network model to perform deblurring in post-inversion acoustic impedance.
-Each network layer maps higher level features originated in the lower layer through convolutional filters.
+Each network layer maps higher level features originated in the previewa layers through convolutional filters.
 To perform this mapping, the filters, also named weights, are adjusted by minimizing a loss function. The trained model enhances the
 resolution of the impedance image, resulting in an equivalent image with increased high-frequency band and lower noise.
+The model was tested
 First, we blurr the synthetic acoustic impedance to form the pairs of images of high and low resolution. Then,
 the dictionary of images is normalized to the real interval $[0,1]$ and used to train the convolutional model. Once
 the model 
@@ -721,7 +729,16 @@ The authors would like to thank...
 \bibitem{buiting} 		JJM. Buiting, M. Bacon,``Using geophysical, geological, and petrophysical data to characterize reservoirs in the North Sea.'', in 5th Conference on Petroleum Geology of NW Europe, London. CD-ROM.
 \bibitem{riel} 			Paul van Riel,  ``The past, present and future of quantitative reservoir characterization.'', in The Leading Edge, 19, p. 878–881.
 \bibitem{sergio}		Sergio Sacani Sancevero, Armando Zaupa Remacre, Rodrigo de Souza Portugal, ``O papel da inversão para a impedância no processo de caracterização sísmica de reservatórios'',in Revista Brasileira de Geofísica, 2006, p. 495-512, v. 24.
-
+\bibitem{Russakovsky}		O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, ``Imagenet large scale visual recognition challenge,'' in ternational Journal of Computer Vision (IJCV), p. 211–252, 2015.
+\bibitem{Girshick}		R. Girshick, ``Fast r-cnn,'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), pages 1440–1448, 2015.
+\bibitem{Bell} 			S. Bell, C. L. Zitnick, K. Bala, and R. Girshick, ``Inside-outside net: Detecting objects in context with skip pooling and recurrent neural networks,'' in arXiv preprint arXiv:1512.04143, 2015.s
+\bibitem{Nam}			H. Nam and B. Han, ``Learning multi-domain convolutional neural networks for visual tracking,'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
+\bibite{He}			K. He, X. Zhang, S. Ren, and J. Sun, ``Deep residual learning for image recognition,'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
+\bibitem{Levin}			A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. Understanding and evaluating blind deconvolution algorithms. In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), p. 1964–1971.
+\bibitem{Krizhevsky}		A. Krizhevsky, I. Sutskever, G. E. Hinton, ``Imagenet classification with deep convolutional neural networks: Advances in neural information processing systems,'' 2012, p. 1097–1105.
+\bibitem{S_Ji}			S. Ji,W. Xu, M. Yang, K. Yu, 2013, ``3d convolutional neural networks for human action recognition,'' in IEEE transactions on pattern analysis and machine intelligence, n. 35, p. 221–231.
+\bibitem{AbdelHamid}		O. Abdel-Hamid, A.-r. Mohamed, H. Jiang, L. Deng, G. Penn, D. Yu, 2014, ``Convolutional neural networks for speech recognition,'' in IEEE/ACM Transactions on audio, speech, and language processing, n. 22, p. 1533–1545.
+\bibitem{Farfade}		S. S. Farfade, M. J. Saberian, L.-J. Li, 2015, ``Multi-view face detection using deep convolutional neural networks,'' in Proceedings of the 5th ACM on International Conference on Multimedia Retrieval, ACM, p. 643–650.
 \end{thebibliography}
 
 %0 Journal Article
