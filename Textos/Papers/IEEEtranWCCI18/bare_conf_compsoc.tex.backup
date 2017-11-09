@@ -468,8 +468,8 @@ allowed CNN to outperform thechniques in detection \cite{Girshick,Bell}, model-f
 tracking \cite{Nam}, classification \cite{He}. With excellence in feature learning,
 CNN achieved notorious success in image classification \cite{Krizhevsky}, action
 recognition \cite{S_Ji}, video classification \cite{AbdelHamid} and speech recognition \cite{Farfade}.
-From post-inversion perpective, we consider acoustic impedance as image
-
+Under the post-inversion perpective, we consider acoustic impedance as image and work on it with
+image processing algorithms.
 
 In this paper we propose a new multilayer convolution network model to perform deblurring in post-inversion acoustic impedance.
 Each network layer maps higher level features originated in the previewa layers through convolutional filters.
@@ -504,7 +504,14 @@ neural network.
 
 
 \section{Data and Method}
-
+The experiments described in this paper were performed
+on a set of synthetic acoustic impedance image. Using synthetic models
+allows studying the results of the algorithms without external interferencies,
+what leading to efficient interpretations and assessments. 
+According to \cite{Harvey}, wedge shaped models is a straight way to analyse the
+seismic model modeling and inversion processes. It realisticaly reproduces
+reservoir contexts such as statigraphic refinements, \textit{pich-outs} in sand layers, 
+edges and channel structures.
 \subsection{Acoustic Impedance Images}
 
 
@@ -733,12 +740,13 @@ The authors would like to thank...
 \bibitem{Girshick}		R. Girshick, ``Fast r-cnn,'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), pages 1440–1448, 2015.
 \bibitem{Bell} 			S. Bell, C. L. Zitnick, K. Bala, and R. Girshick, ``Inside-outside net: Detecting objects in context with skip pooling and recurrent neural networks,'' in arXiv preprint arXiv:1512.04143, 2015.s
 \bibitem{Nam}			H. Nam and B. Han, ``Learning multi-domain convolutional neural networks for visual tracking,'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
-\bibite{He}			K. He, X. Zhang, S. Ren, and J. Sun, ``Deep residual learning for image recognition,'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
+\bibitem{He}			K. He, X. Zhang, S. Ren, and J. Sun, ``Deep residual learning for image recognition,'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
 \bibitem{Levin}			A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. Understanding and evaluating blind deconvolution algorithms. In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), p. 1964–1971.
 \bibitem{Krizhevsky}		A. Krizhevsky, I. Sutskever, G. E. Hinton, ``Imagenet classification with deep convolutional neural networks: Advances in neural information processing systems,'' 2012, p. 1097–1105.
 \bibitem{S_Ji}			S. Ji,W. Xu, M. Yang, K. Yu, 2013, ``3d convolutional neural networks for human action recognition,'' in IEEE transactions on pattern analysis and machine intelligence, n. 35, p. 221–231.
 \bibitem{AbdelHamid}		O. Abdel-Hamid, A.-r. Mohamed, H. Jiang, L. Deng, G. Penn, D. Yu, 2014, ``Convolutional neural networks for speech recognition,'' in IEEE/ACM Transactions on audio, speech, and language processing, n. 22, p. 1533–1545.
 \bibitem{Farfade}		S. S. Farfade, M. J. Saberian, L.-J. Li, 2015, ``Multi-view face detection using deep convolutional neural networks,'' in Proceedings of the 5th ACM on International Conference on Multimedia Retrieval, ACM, p. 643–650.
+\bibitem{Harvey} 		P. J. Harvey, D. J. MacDONALD, ``Seismic modelling of porosity within the jurassic aged carbonate bank, offshore Nova Scotia,'' in  Canadian Journal of Exploration Geophysics, n. 26, p. 54–71.
 \end{thebibliography}
 
 %0 Journal Article
