@@ -504,24 +504,36 @@ neural network.
 
 
 \section{Data and Method}
+
+\subsection{Acoustic Impedance Inversion}
 The experiments described in this paper were performed
-on a set of synthetic acoustic impedance image. Using synthetic models
-allows studying the results of the algorithms without external interferencies,
-what leading to efficient interpretations and assessments. 
-According to \cite{Harvey}, wedge shaped models is a straight way to analyse the
-seismic model modeling and inversion processes. It realisticaly reproduces
-reservoir contexts such as statigraphic refinements, \textit{pich-outs} in sand layers, 
+on a set of synthetic acoustic impedance images. Using synthetic models
+allows studying the results of the algorithms without external interferences,
+this leads to efficient interpretations and assessments. 
+According to \cite{Harvey}, wedge shaped models is a straight way to analysis the
+seismic model modeling and inversion processes. It realistically reproduces
+reservoir contexts such as stratigraphic refinements, \textit{pich-outs} in sand layers, 
 edges and channel structures.
 
-In order to generate a set of training images, we procceed two steps to obtain the wedge images.
+In order to generate a set of training images, we proceed two steps to obtain the wedge images.
 In the fist step we created the a set of random wedges forms, containing two horizontal dimensions represented in images 32 x 32.
 The wedges representing the reservoir varied in width and length. The second step
-was filling the lithologies with values of petrophysical properties.
-\subsection{Acoustic Impedance Images}
+filled the lithology with values of petrophysical properties. In order to simplify
+the assessments and conclusions, the lithology structures are filled with constant
+reference values of rock densities and compressional velocity observed in the literature.
+Fig. \ref{} illustrate the lithology model with the corresponding values for density and velocity.
 
+With the density and velocity models the acoustic impedance model is calculated.
+The  high resolution final model used to train the model is illustrated in Fig. \ref{}.
+To proceed the supervised training, the acoustic impedance models were filtered
+and the high frequencies removed in order to obtain blurred images. The blurred image
+is illustrated in Fig. \ref{}
+To increase the number of examples in the training dataset and allow the model to
+learn general edges in wedges images, we rotate the impedance models 
+in angles countable multiples of 90 degrees.
 
 \subsection{Convolutional Neural Network}
-The workflow of the proposed method consists of the following
+The work-flow of the proposed method consists of the following
 steps:
 \begin{itemize}
  \item Generate synthetic impedance images;
