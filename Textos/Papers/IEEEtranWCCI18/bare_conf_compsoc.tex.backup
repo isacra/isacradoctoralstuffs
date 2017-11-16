@@ -504,10 +504,12 @@ neural network.
 
 
 \section{Data and Method}
+
+\subsection{Acoustic Impedance Inversion}
 The experiments described in this paper were performed
 on a set of synthetic acoustic impedance images. Using synthetic models
-allows studying the results of the algorithms without external interferences,
-this leads to efficient interpretations and assessments. 
+allows to study the results of the algorithms without external interferences and to obtain
+efficient interpretations and assessments. 
 According to \cite{Harvey}, wedge shaped models is a straight way to analysis the
 seismic model modeling and inversion processes. It realistically reproduces
 reservoir contexts such as stratigraphic refinements, \textit{pich-outs} in sand layers, 
@@ -524,13 +526,11 @@ Fig. \ref{} illustrate the lithology model with the corresponding values for den
 With the density and velocity models the acoustic impedance model is calculated.
 The  high resolution final model used to train the model is illustrated in Fig. \ref{}.
 To proceed the supervised training, the acoustic impedance models were filtered
-and the high frequencies removed in order to obtain blurred images.
+and the high frequencies removed in order to obtain blurred images. The blurred image
+is illustrated in Fig. \ref{}
 To increase the number of examples in the training dataset and allow the model to
 learn general edges in wedges images, we rotate the impedance models 
 in angles countable multiples of 90 degrees.
-
-\subsection{Acoustic Impedance Inversion}
-
 
 \subsection{Convolutional Neural Network}
 The work-flow of the proposed method consists of the following
