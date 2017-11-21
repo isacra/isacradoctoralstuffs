@@ -87,7 +87,7 @@
 
 
 
-
+\usepackage{graphicx}
 
 
 % *** CITATION PACKAGES ***
@@ -464,21 +464,19 @@ We approach the problem of deblurring post-inversion acoustic impedance images t
 the Convolution Neural Networks (CNN). CNN is a framework of deep learning which has been
 used in a wide sort of machine learning tasks. The availability of benchmarks
 \cite{Russakovsky} and the advances in Graphical Processing Unit (GPU) \cite{Buduma15}
-allowed CNN to outperform thechniques in detection \cite{Girshick,Bell}, model-free
+allowed CNN to outperform techniques in detection \cite{Girshick,Bell}, model-free
 tracking \cite{Nam}, classification \cite{He}. With excellence in feature learning,
 CNN achieved notorious success in image classification \cite{Krizhevsky}, action
 recognition \cite{S_Ji}, video classification \cite{AbdelHamid} and speech recognition \cite{Farfade}.
-Under the post-inversion perpective, we consider acoustic impedance as image and work on it with
+Under the post-inversion perspective, we consider acoustic impedance as image and work on it with
 image processing algorithms.
 
 In this paper we propose a new multilayer convolution network model to perform deblurring in post-inversion acoustic impedance.
-Each network layer maps higher level features originated in the previewa layers through convolutional filters.
+Each network layer maps higher level features originated in the previews layers through convolutional filters.
 To perform this mapping, the filters, also named weights, are adjusted by minimizing a loss function. The trained model enhances the
 resolution of the impedance image, resulting in an equivalent image with increased high-frequency band and lower noise.
-The model was tested
 First, we blurr the synthetic acoustic impedance to form the pairs of images of high and low resolution. Then,
-the dictionary of images is normalized to the real interval $[0,1]$ and used to train the convolutional model. Once
-the model 
+the dictionary of images is normalized to the real interval $[0,1]$ and used to train the convolutional model.
 We compare the deblurred images depicted by our model and by two other deblurring methods ().
 The core concept of our architecture is the combination of the convolution layers with regression
 layers, thus proceeding a regression solution, instead of classification.
@@ -508,39 +506,51 @@ neural network.
 \subsection{Acoustic Impedance Inversion}
 The experiments described in this paper were performed
 on a set of synthetic acoustic impedance images. Using synthetic models
-allows to study the results of the algorithms without external interferences and to obtain
+is a common practice in reservoir characterization \cite{}. It allows to study the
+results of the algorithms without external interferences and to obtain
 efficient interpretations and assessments. 
 According to \cite{Harvey}, wedge shaped models is a straight way to analysis the
 seismic model modeling and inversion processes. It realistically reproduces
 reservoir contexts such as stratigraphic refinements, \textit{pich-outs} in sand layers, 
 edges and channel structures.
 
-In the context of 
-
 In order to generate a set of training images, we proceed two steps to obtain the wedge images.
-In the fist step we created the a set of random wedges forms, containing two horizontal dimensions represented in images 32 x 32.
+In the fist step we create a set of random wedges forms, containing two horizontal dimensions represented in images 32 x 32.
 The wedges representing the reservoir varied in width and length. The second step
 filled the lithology with values of petrophysical properties. In order to simplify
 the assessments and conclusions, the lithology structures are filled with constant
 reference values of rock densities and compressional velocity observed in the literature.
-Fig. \ref{} illustrate the lithology model with the corresponding values for density and velocity.
+With the density and velocity models the acoustic impedance is calculated and a high
+resolution model is obtained. Fig. \ref{fig_lithology} illustrate the lithology
+model with the corresponding values for density and velocity.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.0in]{Image_Paper}
+\DeclareGraphicsExtensions.
+\caption{Acoustic impedance blurred model.}
+\label{fig_lithology}
+\end{figure}
 
-With the density and velocity models the acoustic impedance model is calculated.
-The  high resolution final model used to train the model is illustrated in Fig. \ref{}.
-To proceed the supervised training, the acoustic impedance models were filtered
-and the high frequencies removed in order to obtain blurred images. The blurred image
-is illustrated in Fig. \ref{}
-To increase the number of examples in the training dataset and allow the model to
-learn general edges in wedges images, we rotate the impedance models 
-in angles countable multiples of 90 degrees.
+In a real scenario, the blurred acoustic impedance is the
+result of an inversion method. However, for experimental purpose, the acoustic impedance models were low-passed filtered
+and the high frequencies removed, this way we proceed the supervised training with high resolution and blurred images. The blurred image
+is illustrated in Fig. \ref{Image_Paper_blurred}. To increase the number of examples in the training dataset we rotate the impedance models 
+in angles countable multiples of 90 degrees. This approach allows the model to learn the maximum edges variability in wedges images.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.0in]{Image_Paper_blurred}
+\DeclareGraphicsExtensions.
+\caption{Acoustic impedance blurred model.}
+\label{fig_blur}
+\end{figure}
 
 \subsection{Convolutional Neural Network}
 The work-flow of the proposed method consists of the following
 steps:
 \begin{itemize}
- \item Generate synthetic impedance images;
+ \item Generate the synthetic impedance images;
  \item Blur these images through a low-pass filter;
- \item Train the convolutional model with the pair of images;
+ \item Train the convolutional model with the pair of high and low resolution images;
  \item Test the model with different blurry images;
  \item Assess the result for the testing output.
 \end{itemize}
@@ -550,24 +560,27 @@ to deblurr synthetic acoustic impedance images. The model
 is able to solve two important problems related to deblurring physical properties
 images: (1) learning the spacial patterns in the low resolution
 training images and (2) predict each pixel intensity value in the new
-higher resolution image. The CNN is a well stablished method for
+higher resolution image. The CNN is a well established method for
 patter recognition. Thus, an important breakthrough was developing a model
 capable to proceed the regression task. To reach these two goals, the structure of the
 model contains convolutional layers combined with a regression output
 layer.
 
-The model proceeds a supervised learning through a dictionary of pairs of low
+The model proceeds a supervised learning through the dictionary of pairs of low
 and high resolution images. The optimization algorithm adjust the 
 network weights in every layer by minimizing the Mean Squared Error (MSE)
 in each batch of images. Thus, after the training phase, the model is capable
 to deblurr any other image not presented in training dataset. The output
-image must recover higher frequencies and, in advance, be more similar
-to the high resolution image than the blurred image.
+image recovers the high frequencies and presents higher similarity
+to the high resolution image than to the blurred image according to a
+specified metric. The model was adjusted to deblurr a wide variety
+of wedges shapes and impedance values. Those wedges which the model was unable
+to predict were added in the training set.
 
-Three metrics assess the performance of the convolution networks: fourier index (IFFT),
+Three metrics assess the performance of the convolution networks: Fast Fourier Transform Index (FFTI),
 the Rooted Mean Square Error (RMSE) and the frequencies magnitudes.
-The IFFT similarity metric is defined as in Eq. \ref{eq:fourier} and was introduced
-by \cite{}
+The FFTI is a similarity metric calculated based on the Fast Fourier Transform (FFT) of each image.
+It is introduced by \cite{naranyana} and it is calculated as in Eq. \ref{eq:fourier}
 \begin{equation}
  C = \frac{ (\sum_{i=1}^{N}{F_{1i}F_{2i}} - N \bar{F}_1\bar{F}_2 )^2 }{ (\sum_{i=1}^{N}{|F_{1i}|^2} - N{\bar{F}^2}_1)( \sum_{i=1}^{N}{|F_{2i}|^2} - N{\bar{F}^2}_2 )},
  \label{eq:fourier}
@@ -575,10 +588,11 @@ by \cite{}
 where, for each frequency, an intensity value is calculated from the real and complex parts of fourier
 transform. $F_{1i}$ represents the intensity value of $i$-th \textit{pixel} in the first image and $F_{2i}$
 is the intensity value of $i$-th \textit{pixel} in the second image. $\bar{F}_1$ e $\bar{F}_2$ are the mean
-frequencies in each image. The closer IFFT is to 1, the higher the similarity between the images.
-The frequencies spectrum is indeed useful to present the graphic of frequency magnitudes in the images.
-This approach makes possible distinguishing the frequency spectrum added by the proposed model. 
-Additionally, the Root Mean Squared Error (RMSE), Eq. \ref{eq:mse} is calculated in order to measure
+frequencies in each image. The closer FFTI is to 1, the higher the similarity between the images.
+The frequencies spectrum is additionally useful to present the graphic of frequency magnitudes in the images.
+The frequency magnitude graphic allows distinguishing what high frequencies were added to the acoustic impedance
+after the low resolution image is passed through the trained CNN. 
+Additionally, the Root Mean Squared Error (RMSE) in Eq. \ref{eq:mse} is calculated in order to measure
 the global error in each pair of deblurred and high resolution images.
 
 \begin{equation}
@@ -592,11 +606,18 @@ by a fully connected layer, which maps the convolution layer's output to 1024 ne
 The output model comprises a regression layer to predict the intensity value of each pixel.
 
 \section{Experiments}
-The proposed model aims to deblurr image representations of acoustic impedance.
-In this context, the model was first trained with a synthetic dataset.
-The dataset is composed by images representing two geological structures, in
-which one of them is in form of a 
+This section describes the implementation details and compares the proposed method  with the state-of-the-art
+deblurring alritms in three different scenarios. The first scenario
+evaluated the model capacity to deblurr lithologies with similar acoustic impedance
+values as in the training dataset, but with different shapes.
+This scenario allows assessing the generalization capacity of the model
+to identify the lithology structure and deblurr the contours and edges.
+The second scenario tested images with different acoustic impedance values and
+different wedge shapes, in comparison to the ones the images used in the training phase.
+In this case we tested the model capacity to deblurr the shapes of the wedges and
+extrapolate the acoustic impedance values.
 
+\subsection{Implementation Details}
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -766,6 +787,7 @@ The authors would like to thank...
 \bibitem{AbdelHamid}		O. Abdel-Hamid, A.-r. Mohamed, H. Jiang, L. Deng, G. Penn, D. Yu, 2014, ``Convolutional neural networks for speech recognition,'' in IEEE/ACM Transactions on audio, speech, and language processing, n. 22, p. 1533–1545.
 \bibitem{Farfade}		S. S. Farfade, M. J. Saberian, L.-J. Li, 2015, ``Multi-view face detection using deep convolutional neural networks,'' in Proceedings of the 5th ACM on International Conference on Multimedia Retrieval, ACM, p. 643–650.
 \bibitem{Harvey} 		P. J. Harvey, D. J. MacDONALD, ``Seismic modelling of porosity within the jurassic aged carbonate bank, offshore Nova Scotia,'' in  Canadian Journal of Exploration Geophysics, n. 26, p. 54–71.
+\bibitem{naranyana}		S. Narayana, P. K. Thirivikraman, ``Image similarity using fourier transform,'' in International Journal of Computer Engeneering and Technology, 2015, n. 6, p. 29–37.
 \end{thebibliography}
 
 %0 Journal Article
