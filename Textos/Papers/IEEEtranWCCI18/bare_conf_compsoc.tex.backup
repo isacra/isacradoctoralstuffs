@@ -513,7 +513,7 @@ seismic model modeling and inversion processes. It realistically reproduces
 reservoir contexts such as stratigraphic refinements, \textit{pich-outs} in sand layers, 
 edges and channel structures.
 
-In order to generate a set of training images, we proceed two steps to obtain the wedge images.
+In order to generate a set of training image pairs, we proceed two steps to obtain the wedge images.
 In the fist step we create a set of random wedges forms, containing two horizontal dimensions represented in images 32 x 32.
 The wedges representing the reservoir varied randomly in width and length. The second step
 filled the lithology with values of petrophysical properties. In order to simplify
@@ -535,7 +535,7 @@ result of an inversion method, that might be Maximum a Posteriori \cite{}, Spars
 However, for experimental purpose, the acoustic impedance models were low-passed filtered
 and the high frequencies were removed, this way we proceed the supervised training with high resolution and blurred images. The blurred image 
 is illustrated in Fig. \ref{Image_Paper_blurred}. To increase the number of examples in the training dataset we rotate the impedance models 
-in angles countable multiples of 90 degrees. This approach allows the model learning the maximum edge variabilities in wedges images.
+in integer multiples of right angle. This approach allows the model learning the maximum edge variabilities in wedges images.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.0in]{Image_Paper_blurred}
@@ -561,8 +561,8 @@ Thus, an important breakthrough when applying CNN to
 deal with physical property images is developing a model
 capable to solve regression tasks. The model presented in this paper
 is able to solve two important problems related to deblurring physical properties
-images: (1) learning the spacial patterns in the low resolution
-training images and (2) predicting each pixel intensity value in the new
+images: ($1$) learning the spacial patterns in the low resolution
+training images and ($2$) predicting each pixel intensity value in the new
 higher resolution image. To reach these two goals, the architecture of the
 CNN contains convolutional layers combined with a regression output
 layer.
@@ -603,7 +603,7 @@ the global error in each pair of deblurred and high resolution images.
 
 The model architecture consists in two convolution layers, each one followed by one
 pooling layer and a regularization layer. The second regularization layer is followed
-by a fully connected layer, which maps the convolution layer's output to 1024 neurons.
+by a fully connected layer, which maps the convolution layer's output to $1024$ neurons.
 The output model comprises a regression layer to predict the intensity value of each pixel.
 
 \section{Experiments}
@@ -620,14 +620,50 @@ extrapolate the acoustic impedance values.
 
 \subsection{Implementation Details}
 The model was implemented using the Deep Learning toolbox
-delivered in MATLAB R2017A. The network weights are
-randomly initialized and the Stochastic Gradient Descendant with
-Momentum (SGDM) is used to minimize the MSE for mini-batches with
-32 training examples.
+delivered in MATLAB R2017A.
+For training the network, we used a mini-batch with size of $32$ training examples;
+the network weights are randomly initialized and the Stochastic Gradient Descendant with
+Momentum (SGDM) \cite{Ning}. We adopted an exponentially decreasing learning rate (initially
+set to 0.005), and decreasing every iteration in a total of 100 iterations.
+It should be noted that, once the wedge shapes are generated randomly, every image is different
+and was introduced only once to the network, this way avoiding over-fitting.
 
-\subsection{Rotated Wedges}
+\subsection{Integer Angles Rotated Wedges}
+We adopted an incremental approach for building a consistent convolutional model.
+The initial model was composed by the input layer, one convolutional layer,
+one max-pooling layer, a fully connected layer and the output layer mapped to $1024$
+output neurons. To build the training dataset, we generated 500 random wedge 
+images, these were rotated in integer multiple of 90 degrees, making a total
+of 2000 images. The rotated images were blurred by applying a low-pass filter with
+cut frequency 4Hz and the pairs of blurred and not-blurred images were used to
+adjust the model weights. The same process was applied to generate 4 testing images.
+
+The scenarios tested in this experiment We normalized the acoustic impedance images to values in the interval between
+0 and 1 and the  model was trained through 100 iterations.
+%Figura aqui
+Fig. \ref{} presents the result obtained with the initial model applied to the
+test images. The first column shows the high resolution images followed
+by the blurred images, the third column shows the result of the convolutional deblurring network
+and the fourth column shows the graph of frequency magnitudes. The global error for each image in comparison
+to the high resolution image is presented on top of it, as well as, the fourier metric FFTI.
+%Explicar os resultados dos indices
+
+In the second scenario, we inverted the impedance values of the lithology structures.
+
+In the third scenario, we arbitrarily changed the normalized impedance to values
+of higher impedance out of the wedge ( with value of 0.3) and lower impedance (with value of 0.7)
+into the lithology structure. These values are out the range learned by the model during the training phase.
+Doing this, we tested the model generalization capacity to reach the learned pixel intensity values. We observed that, once the model
+is trained with pixel valued to 0 and 1, the network poorly extrapolated and a new training dataset was generated
+containing wedges with the new pixel values. The Fig. \ref{} shows the result for the network trained with the extended
+dataset.
+%Explicar os resultados dos indices para este cenário
+
+
 
 \subsection{Randomly Rotated Wedges}
+
+
 
 \subsection{Inverted Impedance}
 
@@ -803,6 +839,7 @@ The authors would like to thank...
 \bibitem{Farfade}		S. S. Farfade, M. J. Saberian, L.-J. Li, 2015, ``Multi-view face detection using deep convolutional neural networks,'' in Proceedings of the 5th ACM on International Conference on Multimedia Retrieval, ACM, p. 643–650.
 \bibitem{Harvey} 		P. J. Harvey, D. J. MacDONALD, ``Seismic modelling of porosity within the jurassic aged carbonate bank, offshore Nova Scotia,'' in  Canadian Journal of Exploration Geophysics, n. 26, p. 54–71.
 \bibitem{naranyana}		S. Narayana, P. K. Thirivikraman, ``Image similarity using fourier transform,'' in International Journal of Computer Engeneering and Technology, 2015, n. 6, p. 29–37.
+\bibitem{Ning}			N. Qian, ``On the momentum term in gradient descent learning algorithms,'' in Neural Networks, v. 12, i. 1, 1999, p. 145-151.
 \end{thebibliography}
 
 %0 Journal Article
