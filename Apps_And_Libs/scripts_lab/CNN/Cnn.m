@@ -59,7 +59,7 @@ for i=1:4
    subplot(4,4,k)
    imagesc(sintetic)
    colorbar
-   title('HIGH');
+   title('Synthetic');
    
    
    subplot(4,4,k+1)
@@ -67,9 +67,9 @@ for i=1:4
    imagesc(blured)
    colorbar
    mse = MRSE(blured,sintetic);
-   tit = strcat('BLURED (',mat2str(randI(i)),' Hz)');
+   tit = strcat('Blurred (',mat2str(randI(i)),' Hz)');
    text = strcat('MSE.: ',mat2str(mse));
-   text2 = strcat('IFFT.: ',mat2str(blured_inds));
+   text2 = strcat('FFTI.: ',mat2str(blured_inds));
    title({tit,text,text2});
    
    subplot(4,4,k+2)

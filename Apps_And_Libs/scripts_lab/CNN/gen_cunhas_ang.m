@@ -23,15 +23,18 @@ for i =1 : num_cunhas
     im = rgb2gray(im);
     im = imresize(im,[32 32]);
     imm = zeros(32);
-    %imm(find(im>150)) = 3500*2.6;
-    %imm(find(im<=150)) = 2500*2.4;
-    imm(find(im>150)) = 0.7;
-    imm(find(im<=150)) = 0.3;
-    imm_blur =lowPassFilter2(imm,4,100,20);
-    imagesc(imm)
-    gray_hr(i,:) = reshape(imm,1,1024);
-    gray_lr(:,:,1,i) = imm_blur;
-    %gray_hr(i,:) = reshape(mat2gray(imm),1,1024);
-    %gray_lr(:,:,1,i) = mat2gray(lowPassFilter2(im,4,100,20));
+    
+    imm(find(im>150)) = 3500*2.6;
+    imm(find(im<=150)) = 2500*2.4;
+    gray_hr(i,:) = reshape(mat2gray(imm),1,1024);
+    gray_lr(:,:,1,i) = mat2gray(lowPassFilter2(im,4,100,20));
+    
+    %imm(find(im>150)) = 0.7;
+    %imm(find(im<=150)) = 0.3;
+    %imm_blur =lowPassFilter2(imm,4,100,20);
+    %imagesc(imm)
+    %gray_hr(i,:) = reshape(imm,1,1024);
+    %gray_lr(:,:,1,i) = imm_blur;
+    
 end
 end

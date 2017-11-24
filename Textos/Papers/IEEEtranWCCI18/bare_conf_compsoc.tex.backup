@@ -490,15 +490,14 @@ Methods based on...However these methods lack
 of ...
 
 Recent researches in geophysics have applied deep learning solutions, such as convolution networks, to solve a wide
-sort of problems such as lithofacies recognition \cite{qian} and calculation \cite{Liu}, 
+sort of problems such as lithofacies recognition \cite{qian} and calculation \cite{Liu}.
 
 However, there is a lack of researches to investigate methods for improving the resolution of
-images resulting from inversion processes. Improving the resolution of seismic inversion is
+images resulting from inversion processes. According to \cite{xiaoiu}, improving the resolution of seismic inversion is
 possible by adding high frequency in acquisition and processing seismic data. The seismic data
 is generally short of high and low frequencies and this phenomenon is caused by seismic acquisition,
-earth attenuation, high-frequency noise, etc., what negatively influence on geologic interpretations of seismic data \cite{xiaoiu}.
-Thus, we propose enhancing seismic impedance resolution adding high-frequency post-inversion through a convolutional
-neural network.
+earth attenuation, high-frequency noise, etc., what negatively influence on geologic interpretations of seismic data.
+Thus, we propose enhancing seismic impedance resolution through adding high-frequency as a post-inversion.
 
 
 \section{Data and Method}
@@ -609,16 +608,23 @@ The output model comprises a regression layer to predict the intensity value of 
 \section{Experiments}
 This section describes the experiments and results obtained with the proposed method.
 We compare the results with the state-of-the-art
-deblurring algorithms in two different scenarios. In the first scenario
-we trained and tested the network with images of acoustic impedance normalized to 0 and 1. but with
-different shapes. This scenario evaluated the model capability to deblurr lithology with similar acoustic impedance
-values as in the training dataset, but with different shapes.
-This scenario allows assessing the generalization ability of the model
-to identify the lithology structure and deblurr the contours and edges.
-The second scenario tested images with different acoustic impedance values and
-different wedge shapes, in comparison to the images used in the training phase.
-In this case we tested the model capability to deblurr the shapes of the wedges and
-extrapolate the acoustic impedance values.
+deblurring algorithms in four different scenarios.
+
+In the first scenario we trained and tested the network with images of acoustic impedance normalized to 0 and 1.
+This scenario evaluated the model capability to deblurr lithology with similar acoustic impedance
+values as in the training dataset, but with different shapes. 
+In the second scenario, we  inverted the lithology impedance values in the test images to evaluate the ability of the 
+network to predict the correct impedance value, despite the position of the a pixel on the image. 
+
+In the third scenario, we kept the training dataset, but
+tested with images impedance values normalized to $0.3$ and $0.7$.
+In this scenario assess the ability of the network in extrapolating
+the prediction of impedance values to a range not presented in the training dataset. 
+
+The fourth scenario tested images with different acoustic impedance values and
+different wedge shapes and rotations, in comparison to the images used in the training phase.
+In this case we tested the model capability to deblurr different wedge shapes, located in
+different positions, and to extrapolate the acoustic impedance values.
 
 \subsection{Implementation Details}
 The model was implemented using the Deep Learning toolbox

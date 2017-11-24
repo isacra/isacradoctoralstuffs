@@ -21,5 +21,5 @@ function [] = calcfrequencies(sintetic,blured,cnn,pos)
     plot(f, sintetic_fourier, 'r');
     xlabel('Hz')
     ylabel('Magnitude')
-    legend('blured','cnn', 'sintetic');
+    legend('Blurred','CNN', 'Synthetic');
 end
