@@ -607,15 +607,17 @@ by a fully connected layer, which maps the convolution layer's output to $1024$ 
 The output model comprises a regression layer to predict the intensity value of each pixel.
 
 \section{Experiments}
-This section describes the implementation details and compares the proposed method  with the state-of-the-art
-deblurring algorithms in two different scenarios. The first scenario
-evaluated the model capacity to deblurr lithology with similar acoustic impedance
+This section describes the experiments and results obtained with the proposed method.
+We compare the results with the state-of-the-art
+deblurring algorithms in two different scenarios. In the first scenario
+we trained and tested the network with images of acoustic impedance normalized to 0 and 1. but with
+different shapes. This scenario evaluated the model capability to deblurr lithology with similar acoustic impedance
 values as in the training dataset, but with different shapes.
-This scenario allows assessing the generalization capacity of the model
+This scenario allows assessing the generalization ability of the model
 to identify the lithology structure and deblurr the contours and edges.
 The second scenario tested images with different acoustic impedance values and
 different wedge shapes, in comparison to the images used in the training phase.
-In this case we tested the model capacity to deblurr the shapes of the wedges and
+In this case we tested the model capability to deblurr the shapes of the wedges and
 extrapolate the acoustic impedance values.
 
 \subsection{Implementation Details}
@@ -624,7 +626,7 @@ delivered in MATLAB R2017A.
 For training the network, we used a mini-batch with size of $32$ training examples;
 the network weights are randomly initialized and the Stochastic Gradient Descendant with
 Momentum (SGDM) \cite{Ning}. We adopted an exponentially decreasing learning rate (initially
-set to 0.005), and decreasing every iteration in a total of 100 iterations.
+set to $0.005$), and decreasing every iteration in a total of $100$ iterations.
 It should be noted that, once the wedge shapes are generated randomly, every image is different
 and was introduced only once to the network, this way avoiding over-fitting.
 
@@ -632,15 +634,17 @@ and was introduced only once to the network, this way avoiding over-fitting.
 We adopted an incremental approach for building a consistent convolutional model.
 The initial model was composed by the input layer, one convolutional layer,
 one max-pooling layer, a fully connected layer and the output layer mapped to $1024$
-output neurons. To build the training dataset, we generated 500 random wedge 
-images, these were rotated in integer multiple of 90 degrees, making a total
-of 2000 images. The rotated images were blurred by applying a low-pass filter with
-cut frequency 4Hz and the pairs of blurred and not-blurred images were used to
+output neurons. To build the training dataset, we generated $500$ random wedge 
+images, these were rotated in integer multiple of $90$ degrees, making a total
+of $2000$ images. The rotated images were blurred by applying a low-pass filter with
+cut frequency $4Hz$ and the pairs of blurred and not-blurred images were used to
 adjust the model weights. The same process was applied to generate 4 testing images.
 
-The scenarios tested in this experiment We normalized the acoustic impedance images to values in the interval between
-0 and 1 and the  model was trained through 100 iterations.
 %Figura aqui
+The first scenario we tested the model with acoustic impedance images with the
+same features of the images in the training dataset, that means, the same rotation
+and the same impedance values. The wedges in the testing set differ from
+the the ones in the training set only by their shapes.
 Fig. \ref{} presents the result obtained with the initial model applied to the
 test images. The first column shows the high resolution images followed
 by the blurred images, the third column shows the result of the convolutional deblurring network
@@ -648,36 +652,40 @@ and the fourth column shows the graph of frequency magnitudes. The global error 
 to the high resolution image is presented on top of it, as well as, the fourier metric FFTI.
 %Explicar os resultados dos indices
 
-In the second scenario, we inverted the impedance values of the lithology structures.
+In the second scenario, we inverted the impedance values of the lithology structures. This
+experiment showed the network capacity to predict the correct value of a pixel
+based only on the value of the input pixel. This way we verified that the pixel value
+is disconnected to the lithology shape. 
+Fig. \ref{} shows the results obtained in this scenario.
+%Explicar os indicadores
 
 In the third scenario, we arbitrarily changed the normalized impedance to values
-of higher impedance out of the wedge ( with value of 0.3) and lower impedance (with value of 0.7)
+of higher impedance out of the wedge ( with value of $0.3$) and lower impedance (with value of $0.7$)
 into the lithology structure. These values are out the range learned by the model during the training phase.
 Doing this, we tested the model generalization capacity to reach the learned pixel intensity values. We observed that, once the model
-is trained with pixel valued to 0 and 1, the network poorly extrapolated and a new training dataset was generated
-containing wedges with the new pixel values. The Fig. \ref{} shows the result for the network trained with the extended
-dataset.
+is trained with pixel valued to $0$ and $1$, the network poorly extrapolated and a new training dataset was generated
+containing wedges with the new pixel values.
+The Fig. \ref{} shows the result for the network trained with the extended dataset.
 %Explicar os resultados dos indices para este cenário
 
-
-
 \subsection{Randomly Rotated Wedges}
+Randomly rotated wedge is related to a lithology positioned in a random angle.
+In this case, we evaluated the CNN capability to deblurr the lithology with unknown shape and position. Unknown,
+means that test cases presented in this section did not integrate the training dataset. Thus,
+we simulated a wedge completely immersed in a second lithology.
+The model was trained with lithologies rotated in integer multiple of the right angle.
+and with both range of normalized impedance $[0,1]$ and $[0.3, 0.7]$. Thus, we expected that the model recover
+the correct values for both lithologies, and extrapolate the identification of edges and contours of the wedges.
+
+Fig. \ref{} shows the test case in which the acoustic impedance was generated with values $0$ and $1$.
+As the network was trained with wedges with the same value, the network was able to predict
+the pixel intensity value.
 
 
+Fig. \ref{} shows the test case in which the acoustic impedance was generated with values equal
+to $0.3$ and $0.7$. These values were not present in the training dataset and it notable a wider
+spread of values in both lithologies outputed by the network.
 
-\subsection{Inverted Impedance}
-
-
-
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
 %
 % Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
 % option should be used if it is desired that the figures are to be
@@ -769,11 +777,6 @@ dataset.
 
 \section{Conclusion}
 The conclusion goes here.
-
-
-
-
-% conference papers do not normally have an appendix
 
 
 
