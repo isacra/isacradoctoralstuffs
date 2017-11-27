@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.27)  23 NOV 2017 00:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.27)  26 NOV 2017 14:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -253,37 +253,69 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 ]
-<Image_Paper.png, id=10, 1396.4672pt x 753.5653pt>
-File: Image_Paper.png Graphic file (type png)
- <use Image_Paper.png>
-Package pdftex.def Info: Image_Paper.png used on input line 527.
+<Figs/Image_Paper.png, id=10, 1396.4672pt x 753.5653pt>
+File: Figs/Image_Paper.png Graphic file (type png)
+
+<use Figs/Image_Paper.png>
+Package pdftex.def Info: Figs/Image_Paper.png used on input line 526.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
 
+<Figs/Image_Paper_blurred.png, id=11, 1396.4672pt x 753.5653pt>
+File: Figs/Image_Paper_blurred.png Graphic file (type png)
 
-LaTeX Warning: Reference `Image_Paper_blurred' on page 2 undefined on input lin
-e 537.
-
-<Image_Paper_blurred.png, id=11, 1396.4672pt x 753.5653pt>
-File: Image_Paper_blurred.png Graphic file (type png)
-
-<use Image_Paper_blurred.png>
-Package pdftex.def Info: Image_Paper_blurred.png used on input line 541.
+<use Figs/Image_Paper_blurred.png>
+Package pdftex.def Info: Figs/Image_Paper_blurred.png used on input line 540.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
- [2 <./Image_Paper.png (PNG copy)> <./Image_Paper_blurred.png (PNG copy)>]
+ [2 <./Figs/Image_Paper.png (PNG copy)> <./Figs/Image_Paper_blurred.png (PNG co
+py)>]
+<Figs/Caso1.png, id=18, 1396.4672pt x 753.5653pt>
+File: Figs/Caso1.png Graphic file (type png)
+ <use Figs/Caso1.png>
+Package pdftex.def Info: Figs/Caso1.png used on input line 650.
+(pdftex.def)             Requested size: 289.07999pt x 155.98817pt.
 
-LaTeX Warning: Reference `' on page 3 undefined on input line 644.
+Overfull \hbox (45.16873pt too wide) in paragraph at lines 650--652
+ [][] 
+ []
 
+[3] <Figs/Caso6.png, id=26, 1396.4672pt x 753.5653pt>
+File: Figs/Caso6.png Graphic file (type png)
+ <use Figs/Caso6.png>
+Package pdftex.def Info: Figs/Caso6.png used on input line 669.
+(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
 
-LaTeX Warning: Reference `' on page 3 undefined on input line 656.
+<Figs/Caso2.png, id=27, 1396.4672pt x 753.5653pt>
+File: Figs/Caso2.png Graphic file (type png)
+ <use Figs/Caso2.png>
+Package pdftex.def Info: Figs/Caso2.png used on input line 683.
+(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
 
-[3]
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 813.
+<Figs/Caso5.png, id=29, 1396.4672pt x 753.5653pt>
+File: Figs/Caso5.png Graphic file (type png)
+ <use Figs/Caso5.png>
+Package pdftex.def Info: Figs/Caso5.png used on input line 705.
+(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
+
+<Figs/Caso4.png, id=30, 1396.4672pt x 753.5653pt>
+File: Figs/Caso4.png Graphic file (type png)
+ <use Figs/Caso4.png>
+Package pdftex.def Info: Figs/Caso4.png used on input line 722.
+(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
+
+<Figs/Caso3.png, id=31, 1396.4672pt x 753.5653pt>
+File: Figs/Caso3.png Graphic file (type png)
+ <use Figs/Caso3.png>
+Package pdftex.def Info: Figs/Caso3.png used on input line 736.
+(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
+ [4 <./Figs/Caso1.png (PNG copy)> <./Figs/Caso6.png (PNG copy)> <./Figs/Caso2.p
+ng> <./Figs/Caso5.png>]
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 875.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8.03> on input line 813.
+(Font)              <8.03> on input line 875.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.62097> on input line 813.
+(Font)              <5.62097> on input line 875.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.015> on input line 813.
+(Font)              <4.015> on input line 875.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -340,34 +372,31 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] (./bare_conf_compsoc.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[5 <./Figs/Caso4.png (PNG copy)> <./Figs/Caso3.png (PNG copy)>]
+(./bare_conf_compsoc.aux) ) 
 Here is how much of TeX's memory you used:
- 2526 strings out of 494925
- 41264 string characters out of 6180250
- 104552 words of memory out of 5000000
- 5813 multiletter control sequences out of 15000+600000
- 41986 words of font info for 76 fonts, out of 8000000 for 9000
+ 2560 strings out of 494925
+ 41874 string characters out of 6180250
+ 104600 words of memory out of 5000000
+ 5841 multiletter control sequences out of 15000+600000
+ 40879 words of font info for 75 fonts, out of 8000000 for 9000
  19 hyphenation exceptions out of 8191
  39i,7n,25p,292b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_conf_compsoc.pdf (4 pages, 182113 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/
+8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
+mbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on bare_conf_compsoc.pdf (5 pages, 791184 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
