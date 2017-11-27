@@ -486,12 +486,29 @@ layers, thus proceeding a regression solution, instead of classification.
 
 \section{Related Work}
 Deblurring plays an important role in computer vision.
-Methods based on...However these methods lack
-of ...
+It is mainly modeled as the convolution of a blur kernel $k$
+with a latent image $I$ as
+\begin{equation}
+ y = k \otimes I + n
+ \label{eq:fourier}
+\end{equation}
+where $n$ is the noise. Since $k$, $I$ and $n$ are unknown, the problem 
+is highly ill-posed and admits infinity solutions for $k$ and $I$.
+
+Recent deblurring methods based on blind deconvolution are widely
+investigated in image processing \cite{bishop}.
+Applying blind deconvolution generally implies in making assumptions on
+blur kernels and/or on latent images. For example, assuming sparsity of blur kernel
+or that natural images have super-Gaussian statistics. The second assumption
+leads to the use of image priors and, consequently, to the maximum a posteriori
+(MAP) estimation \cite{babacan}. However, \cite{levin} show that deblurring methods
+based on this prior tent to favor specially for algorithms formulated within the MAP framework.
+
+\cite{levin} introduced Bayesian inference method in which the image is
+marginalized from the optimization while estimating the unknown blur.
 
 Recent researches in geophysics have applied deep learning solutions, such as convolution networks, to solve a wide
 sort of problems such as lithofacies recognition \cite{qian} and calculation \cite{Liu}.
-
 However, there is a lack of researches to investigate methods for improving the resolution of
 images resulting from inversion processes. According to \cite{xiaoiu}, improving the resolution of seismic inversion is
 possible by adding high frequency in acquisition and processing seismic data. The seismic data
@@ -886,6 +903,9 @@ The authors would like to thank...
 \bibitem{Harvey} 		P. J. Harvey, D. J. MacDONALD, ``Seismic modelling of porosity within the jurassic aged carbonate bank, offshore Nova Scotia,'' in  Canadian Journal of Exploration Geophysics, n. 26, p. 54–71.
 \bibitem{naranyana}		S. Narayana, P. K. Thirivikraman, ``Image similarity using fourier transform,'' in International Journal of Computer Engeneering and Technology, 2015, n. 6, p. 29–37.
 \bibitem{Ning}			N. Qian, ``On the momentum term in gradient descent learning algorithms,'' in Neural Networks, v. 12, i. 1, 1999, p. 145-151.
+\bibitem{bishop}		T.E. Bishop, S.D. Babacan, Amizic, T. Chan, R. Molina, A. Katsaggelos, ``Blind image deconvolution: problem formulation and existing approaches.'' in. Blindimage deconvolution: theory and applications,  CRC press (2007).
+\bibitem{babacan}		S. D. Babacan, R. Molina, M. N. Do, and A. K. Katsaggelos, ``Bayesian blind deconvolution with general sparse image priors.'' In. Proceedings of European Conference on Computer Vision (ECCV), p. 341–355, 2012.
+\bibitem{levin}			A. Levin, Y. Weiss, F. Durand, W. T. Freeman, ``Understanding and evaluating blind deconvolution algorithms.''  In CVPR, 2009, p. 1964–1971.
 \end{thebibliography}
 
 %0 Journal Article
