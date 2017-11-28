@@ -414,50 +414,66 @@ model to deblurr post-insversion acoustic impedance images.
 
 
 \section{Introduction}
-%O problema
-Deblurring is an important problem in image processing.
-It seeks to remove distortions from a blurry image in order to
-recover the original image. Recovering the original image
-is possible if the details of the blurring method are known.
-In most cases, blurred images lack of enough information
-to uniquely recover a plausible image, this feature sets
-deblurring as an ill-posed problem and characterizes as an inversion problem.
-It is not observed in the literature a general object deblurring algorithm. Thus, as mentioned by \cite{Chrysos} exploiting domain-specific
-knowledge can result in superior deblurring. The focus of this work is post-inversion acoustic impedance
-deblurring. Specifically, acoustic impedance deblurring must take into account the fact that
-the resulting image still must to reflect the synthetic seismic data characteristics.
+%Contextualização
+Deblurring is the task of estimating the sharp latent image
+given a blurry image as input. Recovering the original image
+is possible if the details of the blurring method are known, but
+in most cases, blurry images lack of enough information
+to recover a unique image. It not observable in the literature
+an algorithm for deblurring all objects. Thus, methods that exploit
+domains-specific knowledge have emerged for deblurring
+targeted categories of objects, e.g. text or faces. Similarly,
+the focus of this work is post-inversion acoustic impedance deblurring.
+Despite the notorious efficience of the inversion methods in reservoir
+characterization, post-inversion images deblurring has not
+received much attention.
+%Specifically, acoustic impedance deblurring must take into account the fact that
+%the resulting image still must to reflect the synthetic seismic data characteristics.
 
-Reservoir characterization consists in determining the multidimensional
-and quantitative structure and properties of an oil field.
-To achieve this goal, it is essential to combine in a single model
-all the information, knowledge and data about the field, in such a
-way that is possible to make the quantitative predictions about the reservoir behavior \cite{buiting}.
-These data are usually geological models,
-data logs, testimonial data, production summary and 3D seismic data. The seismic
-amplitude is used in model generation and  reservoir characterization,
-however, the deeper the investigated horizon is, the bigger the limit in using the seismic amplitude data \cite{riel}.
-The seismic data inversion has proved to be an efficient tool to accurately integrate the seismic information
-in order to generate models that contribute to an effective reservoir characterization \cite{sergio}.
-Besides integrating data, seismic inversion is widely used because of its facility and precision
-in interpreting the acoustic impedance.
-According to \cite{Latimer}, a good acoustic impedance model contains more information
-then the seismic data because this model keeps all the seismic data information and additional
-information originated in the well-logs.
-Depending on the applied method, the acoustic impedance volume is the result of
-the integration of data from different sources, such as, the seismic data, well logs and
-velocity models. Thus, building an acoustic impedance model is the natural process to 
-integrate the available informations to obtain a model accessible to geophysicists, geologists
-and engineers. 
-The acoustic impedance models allow fast interpretations and an efficient identification of
-exploratory targets in seismic scale. However, the seismic data are band-limited, in other words,
-the seismic data are short of high and low frequencies. This is a consequence
-of seismic acquisition, earth attenuation, high-frequency noise, etc \cite{xiaoiu}. This phenomenon leads
-to a misinterpretation of seismic data and, by consequence, the same to the resulting acoustic
-impedance models, that lacks of high-frequency details, additionally, inversion methods such as MAP (Maximum a posteriori),
-lead to blurry images \cite{Levin}.
-In this sense, we believe that increasing the resolution of the acoustic impedance models
-through deblurring the model sections, as a post-inversion refining process, can lead to a more accurate
+%O GAP
+Reservoir characterization aims to determine a multidimensional
+structure and properties of an oil field. To achieve this goal, it is essential to combine, through an
+inversion algorithm, the information, knowledge and available data about the field,
+in such a way that it is possible to make the
+quantitative predictions about the reservoir behavior \cite{buiting}.
+%One of the data used in this process is the seismic amplitude.
+The seismic data is widely used in inversion processes because of its facility and precision
+in interpreting the acoustic impedance property.
+To succeed in seismic inversion, it is necessary to include strategies to deal with multiple
+sources of uncertainties. Specifically, the limited band-width of the seismic data leads to
+a misinterpretation of the resulting acoustic impedance models.
+According to \cite{xiaoiu}, improving the resolution of seismic inversion is
+possible by adding high frequency in acquisition and processing seismic data.
+However, the earth attenuation, high-frequency noise and other sources, causes 
+the lack of high and low frequencies \cite{xiaoiu} in seismic data. 
+Thus, deblurring the acoustic impedance models, as a post-inversion refinement process, should lead to a more accurate
 interpretation of the impedance models.
+
+% , mainly because 
+% of the absent of high-frequency details \cite{Levin}.
+
+
+%However, the deep the investigated horizon is, the big the limitation in using the seismic amplitude \cite{riel}.
+%As a consequence of this limitation, the post-inversion acoustic impedance 
+
+
+
+%The seismic data inversion has proved to be an efficient tool to accurately integrate the seismic information
+%in order to generate models that contribute to an effective reservoir characterization \cite{sergio}.
+%According to \cite{Latimer}, a good acoustic impedance model contains more information
+%then the seismic data because this model keeps all the seismic data information and additional
+%information originated in the well-logs.
+% Depending on the applied method, the acoustic impedance volume is the result of
+% the integration of data from different sources, such as, the seismic data, well logs and
+% velocity models. Thus, building an acoustic impedance model is the natural process to 
+% integrate the available informations to obtain a model accessible to geophysicists, geologists
+% and engineers. 
+% The acoustic impedance models allow fast interpretations and an efficient identification of
+% exploratory targets in seismic scale. 
+
+%O Estado da arte
+ 
+
 
 %A solução
 We approach the problem of deblurring post-inversion acoustic impedance images through
@@ -468,10 +484,14 @@ allowed CNN to outperform techniques in detection \cite{Girshick,Bell}, model-fr
 tracking \cite{Nam}, classification \cite{He}. With excellence in feature learning,
 CNN achieved notorious success in image classification \cite{Krizhevsky}, action
 recognition \cite{S_Ji}, video classification \cite{AbdelHamid} and speech recognition \cite{Farfade}.
-Under the post-inversion perspective, we consider acoustic impedance as image and work on it with
-image processing algorithms.
+Under the perspective of the reservoir characterization, CNN has been applied to lithofacies recognition
+\cite{qian} and calculation \cite{Liu}.
+...
+However, there is a lack of researches to investigate methods for improving the resolution of
+images resulting from inversion processes. . As mentioned, the lack
+of high and low frequencies negatively influence on geologic interpretations of seismic data.
 
-In this paper we propose a new multilayer convolution network model to perform deblurring in post-inversion acoustic impedance.
+In this paper, we propose a new multilayer convolution network model to perform deblurring in post-inversion acoustic impedance.
 Each network layer maps higher level features originated in the previews layers through convolutional filters.
 To perform this mapping, the filters, also named weights, are adjusted by minimizing a loss function. The trained model enhances the
 resolution of the impedance image, resulting in an equivalent image with increased high-frequency band and lower noise.
@@ -486,7 +506,8 @@ layers, thus proceeding a regression solution, instead of classification.
 
 \section{Related Work}
 Deblurring plays an important role in computer vision.
-It is mainly modeled as the convolution of a blur kernel $k$
+
+Thus, It is generally modeled as the convolution of a blur kernel $k$
 with a latent image $I$ as
 \begin{equation}
  y = k \otimes I + n
@@ -495,28 +516,20 @@ with a latent image $I$ as
 where $n$ is the noise. Since $k$, $I$ and $n$ are unknown, the problem 
 is highly ill-posed and admits infinity solutions for $k$ and $I$.
 
-Recent deblurring methods based on blind deconvolution are widely
+
+Blind deconvolution methods are widely
 investigated in image processing \cite{bishop}.
 Applying blind deconvolution generally implies in making assumptions on
-blur kernels and/or on latent images, for example, sparsity of blur kernel
-and that natural images have super-Gaussian statistics. Particularly, deconvolution
-is supposed to make the statistics less Gaussian, this leads to the use of super-Gaussian image priors.
-On the other side, using priors in the inference of blinding deconvolution generally incurs in the use of maximum a posteriori
-(MAP) estimation \cite{babacan}. However, it has been proved  \cite{levin} that MAP is
-not a suitable for blind deconvolution, because it favors the blurry images over original
-clear images.
+blur kernels and/or on latent images. For example, assuming sparsity of blur kernel
+or that natural images have super-Gaussian statistics. The second assumption
+leads to the use of image priors and, consequently, to the maximum a posteriori
+(MAP) estimation \cite{babacan}. However, \cite{levin} show that deblurring methods
+based on this prior tent to favor specially for algorithms formulated within the MAP framework.
 
 \cite{levin} introduced Bayesian inference method in which the image is
 marginalized from the optimization while estimating the unknown blur.
 
-Recent researches in geophysics have applied deep learning solutions, such as convolution networks, to solve a wide
-sort of problems such as lithofacies recognition \cite{qian} and calculation \cite{Liu}.
-However, there is a lack of researches to investigate methods for improving the resolution of
-images resulting from inversion processes. According to \cite{xiaoiu}, improving the resolution of seismic inversion is
-possible by adding high frequency in acquisition and processing seismic data. The seismic data
-is generally short of high and low frequencies and this phenomenon is caused by seismic acquisition,
-earth attenuation, high-frequency noise, etc., what negatively influence on geologic interpretations of seismic data.
-Thus, we propose enhancing seismic impedance resolution through adding high-frequency as a post-inversion.
+
 
 
 \section{Data and Method}
