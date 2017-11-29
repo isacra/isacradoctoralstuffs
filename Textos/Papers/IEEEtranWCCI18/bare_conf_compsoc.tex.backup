@@ -413,18 +413,19 @@ model to deblurr post-insversion acoustic impedance images.
 
 \section{Introduction}
 %Contextualização
-Deblurring is the task of estimating the sharp latent image
+Deblurring is the task of estimating a sharp latent image,
 given a blurry image as input. Recovering the original image
 is possible if the details of the blurring method are known, but
 in most cases, blurry images lack of enough information
-to recover a unique image. It not observable in the literature
+to recover a unique image. It is not observable in the literature
 an algorithm for deblurring all objects. Thus, methods that exploit
 domains-specific knowledge have emerged for deblurring
 targeted categories of objects, e.g. text or faces. Similarly,
-the focus of this work is post-inversion acoustic impedance deblurring.
-Despite the notorious efficience of the inversion methods in reservoir
-characterization, post-inversion images deblurring has not
-received much attention.
+the focus of this work is in post-inversion acoustic impedance deblurring.
+Obtaining high resolution acoustic impedance images, through seismic inversion methods,
+is a critical part in oil reservoir characterization.
+Despite the notorious efficiency of the inversion methods,
+post-inversion images deblurring has not received much attention.
 %Specifically, acoustic impedance deblurring must take into account the fact that
 %the resulting image still must to reflect the synthetic seismic data characteristics.
 
@@ -443,7 +444,7 @@ a misinterpretation of the resulting acoustic impedance models.
 According to \cite{xiaoiu}, improving the resolution of seismic inversion is
 possible by adding high frequency in acquisition and processing seismic data.
 However, the earth attenuation, high-frequency noise and other sources, causes 
-the lack of high and low frequencies \cite{xiaoiu} in seismic data. 
+the lack of high and low frequencies in seismic data. 
 Thus, deblurring the acoustic impedance models, as a post-inversion refinement process, should lead to a more accurate
 interpretation of the impedance models.
 
@@ -463,6 +464,50 @@ interpretation of the impedance models.
 % and engineers. 
 % The acoustic impedance models allow fast interpretations and an efficient identification of
 % exploratory targets in seismic scale. 
+We approach the problem of deblurring post-inversion acoustic impedance images through
+the Convolution Neural Networks (CNN). CNN is a framework of deep learning which has been
+used in a wide sort of machine learning tasks. The availability of benchmarks
+\cite{Russakovsky} and the advances in Graphical Processing Unit (GPU) \cite{Buduma15}
+allowed CNN to outperform techniques in detection \cite{Girshick,Bell}, model-free
+tracking \cite{Nam}, classification \cite{He}. With excellence in feature learning,
+CNN achieved notorious success in image classification \cite{Krizhevsky}, action
+recognition \cite{S_Ji}, video classification \cite{AbdelHamid} and speech recognition \cite{Farfade}.
+Under the perspective of the reservoir characterization, CNN has been applied to lithofacies recognition
+\cite{qian} and calculation \cite{Liu}.
+However, there is a lack of researches on Deep Learning algorithms to investigate methods for improving the resolution of
+images resulting from inversion processes.As mentioned, the lack
+of high and low frequencies negatively influence on geologic interpretations of seismic data.
+
+%A solução
+In this paper, we propose a new multilayer convolution network model to perform deblurring in post-inversion acoustic impedance.
+Each network layer maps higher level features originated in the previews layers through convolutional blur kernels.
+To perform this mapping, the kernels, also named weights, are adjusted by minimizing a loss function. 
+The model enhances the resolution of acoustic impedance images, resulting in sharp images with
+increased high-frequency band and lower noise. 
+In order to train the model, we blur a set of the synthetic acoustic impedance images to create a dictionary of
+images of high and low resolution. Then, the pairs of blur and latent images are normalized and 
+presented to the network as input and target, respectively.
+%We compare the deblurred images depicted by our model and by two other deblurring methods ().
+The core concept of our architecture is the combination of the convolution layers with regression
+layers, thus proceeding a regression solution, instead of classification.
+%\hfill mds
+ 
+%\hfill August 26, 2015
+
+\section{Related Works}
+Deblurring plays an important role in computer vision.
+Several works have developed different deblurring methods for different purposes.
+referencciar os trabalhos.
+
+
+Thus, It is generally modeled as the convolution of a blur kernel $k$
+with a latent image $I$ as
+\begin{equation}
+ y = k \otimes I + n
+ \label{eq:fourier}
+\end{equation}
+where $n$ is the noise. Since $k$, $I$ and $n$ are unknown, the problem 
+is highly ill-posed and admits infinity solutions for $k$ and $I$.
 
 %O Estado da arte
 Blind deconvolution methods are widely
@@ -479,51 +524,8 @@ The Bayesian inference approach \cite{levin} outperforms the MAP based methods. 
 the image from the optimization while estimating the unknown blur.
 The proposal shows that it is possible to define a classe of prior images
 suitable enough for representing sharp images features. Based on the prior
-formulation it is possible to use Bayesian inference for estimation of the of
+formulation, it is possible to use Bayesian inference for estimation of the of
 the unknown image and the blur kernel.
-
-We approach the problem of deblurring post-inversion acoustic impedance images through
-the Convolution Neural Networks (CNN). CNN is a framework of deep learning which has been
-used in a wide sort of machine learning tasks. The availability of benchmarks
-\cite{Russakovsky} and the advances in Graphical Processing Unit (GPU) \cite{Buduma15}
-allowed CNN to outperform techniques in detection \cite{Girshick,Bell}, model-free
-tracking \cite{Nam}, classification \cite{He}. With excellence in feature learning,
-CNN achieved notorious success in image classification \cite{Krizhevsky}, action
-recognition \cite{S_Ji}, video classification \cite{AbdelHamid} and speech recognition \cite{Farfade}.
-Under the perspective of the reservoir characterization, CNN has been applied to lithofacies recognition
-\cite{qian} and calculation \cite{Liu}.
-...
-However, there is a lack of researches on Deep Learning algorithms to investigate methods for improving the resolution of
-images resulting from inversion processes. . As mentioned, the lack
-of high and low frequencies negatively influence on geologic interpretations of seismic data.
-
-%A solução
-In this paper, we propose a new multilayer convolution network model to perform deblurring in post-inversion acoustic impedance.
-Each network layer maps higher level features originated in the previews layers through convolutional filters.
-To perform this mapping, the filters, also named weights, are adjusted by minimizing a loss function. The trained model enhances the
-resolution of the impedance image, resulting in an equivalent image with increased high-frequency band and lower noise.
-First, we blurr the synthetic acoustic impedance to form the pairs of images of high and low resolution. Then,
-the dictionary of images is normalized to the real interval $[0,1]$ and used to train the convolutional model.
-We compare the deblurred images depicted by our model and by two other deblurring methods ().
-The core concept of our architecture is the combination of the convolution layers with regression
-layers, thus proceeding a regression solution, instead of classification.
-%\hfill mds
- 
-%\hfill August 26, 2015
-
-\section{Related Works}
-Deblurring plays an important role in computer vision.
-
-Thus, It is generally modeled as the convolution of a blur kernel $k$
-with a latent image $I$ as
-\begin{equation}
- y = k \otimes I + n
- \label{eq:fourier}
-\end{equation}
-where $n$ is the noise. Since $k$, $I$ and $n$ are unknown, the problem 
-is highly ill-posed and admits infinity solutions for $k$ and $I$.
-
-
 
 
 
