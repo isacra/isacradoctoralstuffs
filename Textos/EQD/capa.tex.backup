@@ -17,7 +17,7 @@ Programa de Pós-Graduação em Ciência da Computação
 \vspace*{2.3cm}
 
 \begin{center}
-{\sc  \tituloTese }
+{\sc  \tituloTese Modelo de rede neural convolucional para super-resolução da impedância acústica na inversão sísmica}
 \end{center}
 
 \vspace*{5.5cm}
@@ -33,7 +33,7 @@ prévios.
 
 \vspace*{0.5cm}
 Orientador: \nomeProf\\
-Coorientador: \nomeCoorientador
+%Coorientador: \nomeCoorientador
 
 \end{minipage}
 \end{flushright}

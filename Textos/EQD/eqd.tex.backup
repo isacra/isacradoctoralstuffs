@@ -68,7 +68,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
-
+\usepackage{mathtools}
 %\usepackage{multibib}
 %\newcites{apubs}{Author Publications}
 
@@ -80,7 +80,7 @@
 
 \DeclareSymbolFont{lettersA}{U}{txmia}{m}{it} 
  \DeclareMathSymbol{\real}{\mathord}{lettersA}{"92} 
-
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 \linespread{1.3}
 
 \begin{document}
@@ -135,7 +135,7 @@
 %Integração de 
 \include{cap3}
 
-
+\include{cap4}
 
 
 %=============================== Bibliografia ===============================================

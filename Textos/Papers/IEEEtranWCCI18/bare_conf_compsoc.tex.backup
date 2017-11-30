@@ -489,12 +489,36 @@ images of high and low resolution. Then, the pairs of blur and latent images are
 presented to the network as input and target, respectively.
 %We compare the deblurred images depicted by our model and by two other deblurring methods ().
 The core concept of our architecture is the combination of the convolution layers with regression
-layers, thus proceeding a regression solution, instead of classification.
+layers, thus the convolutional layers learn the spatial structures existing in different
+acoustic impedance images, while the regression layer proceed the prediction of the property values.
 %\hfill mds
  
 %\hfill August 26, 2015
 
-\section{Related Works}
+\section{Theoretical foundations}
+Inversion theory is used in several areas to infer parameters values
+related to physical processes, based on experimental data.
+The inversion modeling refers to using the current measurements of observable
+physical parameters in order to infer the current model parameters (not observable).
+The inversion problem is described as (Eq. \ref{eq:deqgm})
+\begin{equation}
+\label{eq:deqgm}
+m = F^{-1}(d)
+\end{equation}
+where, is the investigated physical system, and relates a set of model parameters
+$m=(m_1, m_2,...,m_n)\subset R^n$ estimated through the observed data $d \in R^s$.
+Frequently, in inversion problems some \textit{a priori} data is incorporated to the model.
+
+Geophysical methods frequently involve the solution and assessment of inversion problems.
+Studying these problems allow inferring physical properties distributions in the Earth subsurface, using measured
+data. Among these data, the seismic data is mainly used in seismic inversion, which plays an important role in
+reservoir characterization. From a practical perspective, solving seismic inversion problems improves
+the exploration and management in oil industry, once the seismic data is highly correlated to petrophysical
+properties, e.g., density and porosity in subsurface.
+
+Different seismic inversion methods are used \ref{}.
+
+
 Deblurring plays an important role in computer vision.
 Several works have developed different deblurring methods for different purposes.
 referencciar os trabalhos.
