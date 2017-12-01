@@ -517,12 +517,29 @@ the exploration and management in oil industry, once the seismic data is highly 
 properties, e.g., density and porosity in subsurface.
 
 The offshore seismic data is the main observable data used in seismic inversion. Its acquisition is performed
-through a controlled artificial source sending pulses to under water surface and the
-observation of responses in function of time.
+sending pulses to under water surface through a controlled artificial source and capturing the
+the vertical component responses in function of time. The seismic data is a composition of
+the wave pulse used in the acquisition, named wavelet, and the characteristic of the interfaces between rock layers,
+on which the wavelet reflects. This charachteristic is called reflectivity coeficient and it is
+calculated as
+\begin{equation}
+r(t) = \frac{z(t+\delta t)-z(t)}{z(t+\delta t)+z(t)},
+\label{eq:refletv}
+\end{equation}
+where, $z(t)$ is the acoustic impedance, in function of time $t$, defined as 
+$z(t)=\rho(t)v(t)$, where $\rho(t)$ is the rock density and $v(t)$ the propagation velocity
+of acoustic wave.
+Therefore, the seismic data  $d(t)$ is modeled as a discrete convolution operation $*$ of the wavelet $s$ with the
+reflectivity coeficient $r$ as
+\begin{equation}
+d(t) = s(\tau) * \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
+\end{equation}
+where, $N$ is the number of subsurface layers, $e_d(t)$ is a random noise in function of the time.
+One ideal wavelet is a delta pulse with all the frequency band-width, however, in practice
+wavelets have their band-width generally limited from $6Hz$ to $65Hz$. As a consequence,
+the images resulting from the seismic inversion will have their frequency spectrum limited.
 
-Different seismic inversion methods are used \ref{}.
-
-
+To remedy the pro
 Deblurring plays an important role in computer vision.
 Several works have developed different deblurring methods for different purposes.
 referencciar os trabalhos.
