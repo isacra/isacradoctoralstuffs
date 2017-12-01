@@ -448,6 +448,38 @@ the lack of high and low frequencies in seismic data.
 Thus, deblurring the acoustic impedance models, as a post-inversion refinement process, should lead to a more accurate
 interpretation of the impedance models.
 
+Deblurring is generally modeled as the convolution of a blur kernel $k$
+with a latent image $I$: 
+\begin{equation}
+ y = k \otimes I + n
+ \label{eq:fourier}
+\end{equation}
+where $n$ is the noise. Since $k$, $I$ and $n$ are unknown, the problem 
+is highly ill-posed and admits infinity solutions for $k$ and $I$.
+Several works have developed different deblurring methods for specific purposes.
+Blind deconvolution methods are widely investigated in image processing \cite{bishop}.
+In recent years, considerable effort has been employed in single image
+\cite{babacan,} and multi-image \cite{} blind deconvolution. 
+
+[6, 14, 7, 9, 20, 2]single image
+[4, 3, 13, 22] multi-image
+
+Applying blind deconvolution generally implies in making assumptions on
+blur kernels and/or on latent images. For example, assuming sparsity of blur kernel
+or that natural images have super-Gaussian statistics. The second assumption
+leads to the use of image priors and, consequently, to the maximum a posteriori
+(MAP) estimation \cite{babacan}. However, \cite{levin} show that deblurring methods
+based on this prior tend to favor blurry images over original latent images,
+specially for algorithms formulated within the MAP framework.
+
+The Bayesian inference approach \cite{levin} outperforms the MAP based methods. It marginalizes
+the image from the optimization while estimating the unknown blur.
+The proposal shows that it is possible to define a classe of prior images
+suitable enough for representing sharp images features. Based on the prior
+formulation, it is possible to use Bayesian inference for estimation of the of
+the unknown image and the blur kernel.
+
+
 % , mainly because 
 % of the absent of high-frequency details \cite{Levin}.
 %However, the deep the investigated horizon is, the big the limitation in using the seismic amplitude \cite{riel}.
@@ -520,7 +552,7 @@ The offshore seismic data is the main observable data used in seismic inversion.
 sending pulses to under water surface through a controlled artificial source and capturing the
 the vertical component responses in function of time. The seismic data is a composition of
 the wave pulse used in the acquisition, named wavelet, and the characteristic of the interfaces between rock layers,
-on which the wavelet reflects. This charachteristic is called reflectivity coeficient and it is
+on which the wavelet reflects. This characteristic is called reflectivity coefficient and it is
 calculated as
 \begin{equation}
 r(t) = \frac{z(t+\delta t)-z(t)}{z(t+\delta t)+z(t)},
@@ -534,45 +566,13 @@ reflectivity coeficient $r$ as
 \begin{equation}
 d(t) = s(\tau) * \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
 \end{equation}
-where, $N$ is the number of subsurface layers, $e_d(t)$ is a random noise in function of the time.
+where, $N$ is the number of subsurface layers, $e_d(t)$ is a random noise in function of time.
 One ideal wavelet is a delta pulse with all the frequency band-width, however, in practice
 wavelets have their band-width generally limited from $6Hz$ to $65Hz$. As a consequence,
 the images resulting from the seismic inversion will have their frequency spectrum limited.
 
-To remedy the pro
-Deblurring plays an important role in computer vision.
-Several works have developed different deblurring methods for different purposes.
-referencciar os trabalhos.
-
-
-Thus, It is generally modeled as the convolution of a blur kernel $k$
-with a latent image $I$ as
-\begin{equation}
- y = k \otimes I + n
- \label{eq:fourier}
-\end{equation}
-where $n$ is the noise. Since $k$, $I$ and $n$ are unknown, the problem 
-is highly ill-posed and admits infinity solutions for $k$ and $I$.
-
-%O Estado da arte
-Blind deconvolution methods are widely
-investigated in image processing \cite{bishop}.
-Applying blind deconvolution generally implies in making assumptions on
-blur kernels and/or on latent images. For example, assuming sparsity of blur kernel
-or that natural images have super-Gaussian statistics. The second assumption
-leads to the use of image priors and, consequently, to the maximum a posteriori
-(MAP) estimation \cite{babacan}. However, \cite{levin} show that deblurring methods
-based on this prior tend to favor blurry images over original latent images,
-specially for algorithms formulated within the MAP framework.
-
-The Bayesian inference approach \cite{levin} outperforms the MAP based methods. It marginalizes
-the image from the optimization while estimating the unknown blur.
-The proposal shows that it is possible to define a classe of prior images
-suitable enough for representing sharp images features. Based on the prior
-formulation, it is possible to use Bayesian inference for estimation of the of
-the unknown image and the blur kernel.
-
-
+CNN can remedy this problem by estimating the numerous kernels, which are convolved along the
+training images. T
 
 \section{Data and Method}
 
