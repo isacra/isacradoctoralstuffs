@@ -489,17 +489,17 @@ is not always available.
 
 The optimization methods previously described use a set of priors based on
 generic image statistics or domain-specific priors. It has been demonstrated
-that these methods work properly on synthetic blurs. However, they failure
-when applied to real world blury images \cite{} and keep a high computational cost \cite{}.
+that these methods work properly on synthetic blurs. However, newly studies show that they failure
+when applied to real world blurry images \cite{Lai2016} and keep a high computational cost \cite{Chakrabarti2016}.
 In contrast, the learning-based methods have gained attention with the advances in neural
 networks. The adequate hyper-parameter adjustment allows neural network to learn
-non-linear function or blur kernels. Thus, de-blurring becomes a function of a blur image
+non-linear function or blur kernels. Thus, deblurring becomes a function of a blur image
 and a set of parameters as
 \begin{equation}
  y = \sigma(I,p)
  \label{eq:deblur}
 \end{equation}
-
+where, $p$ represents the hyper-parameters of the network model.
 
 % , mainly because 
 % of the absent of high-frequency details \cite{Levin}.
@@ -525,6 +525,7 @@ allowed CNN to outperform techniques in detection \cite{Girshick,Bell}, model-fr
 tracking \cite{Nam}, classification \cite{He}. With excellence in feature learning,
 CNN achieved notorious success in image classification \cite{Krizhevsky}, action
 recognition \cite{S_Ji}, video classification \cite{AbdelHamid} and speech recognition \cite{Farfade}.
+
 Under the perspective of the reservoir characterization, CNN has been applied to lithofacies recognition
 \cite{qian} and calculation \cite{Liu}.
 However, there is a lack of researches on Deep Learning algorithms to investigate methods for improving the resolution of
@@ -591,11 +592,7 @@ where, $N$ is the number of subsurface layers, $e_d(t)$ is a random noise in fun
 One ideal wavelet is a delta pulse with all the frequency band-width, however, in practice
 wavelets have their band-width generally limited from $6Hz$ to $65Hz$. By consequence,
 the images resulting from the seismic inversion will have their frequency spectrum limited.
-
-CNN can remedy this problem by estimating its kernels, which are convolved along the
-training images. T
-
-\section{Data and Method}
+aDhota and Method}
 
 \subsection{Acoustic Impedance Inversion}
 The experiments described in this paper were performed
@@ -984,8 +981,9 @@ The authors would like to thank...
 \bibitem{bishop}		T.E. Bishop, S.D. Babacan, Amizic, T. Chan, R. Molina, A. Katsaggelos, ``Blind image deconvolution: problem formulation and existing approaches.'' in. Blindimage deconvolution: theory and applications,  CRC press (2007).
 \bibitem{babacan}		S. D. Babacan, R. Molina, M. N. Do, and A. K. Katsaggelos, ``Bayesian blind deconvolution with general sparse image priors.'' In. Proceedings of European Conference on Computer Vision (ECCV), p. 341–355, 2012.
 \bibitem{Hacohen2013}		Y. Hacohen, E. Shechtman, and D. Lischinski, ``Deblurring by example using dense correspondence.'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), p. 2384–2391, 2013.
-\bibitem{Pan2014}			J. Pan, Z. Hu, Z. Su, M. H. Yang., ``Deblurring face images with exemplars.'' In Proceedings of European Conference on Computer Vision (ECCV), p. 47–62. Springer, 2014.
-
+\bibitem{Pan2014}		J. Pan, Z. Hu, Z. Su, M. H. Yang., ``Deblurring face images with exemplars.'' In Proceedings of European Conference on Computer Vision (ECCV), p. 47–62. Springer, 2014.
+\bibitem{Lai2016}		W.S. Lai, J. B. Huang, Z. Hu, N. Ahuja, M. H. Yang.``A comparative study for single image blind deblurring.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
+\bibitem{Chakrabarti2016}	A. Chakrabarti. ``A neural approach to blind motion deblurring.'' In Proceedings of European Conference on Computer Vision (ECCV), p. 221–235. Springer, 2016.
 \end{thebibliography}
 
 %0 Journal Article
