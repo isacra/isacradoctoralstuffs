@@ -458,25 +458,42 @@ where $n$ is the noise. Since $k$, $I$ and $n$ are unknown, the problem
 is highly ill-posed and admits infinity solutions for $k$ and $I$.
 Several works have developed different deblurring methods for specific purposes.
 Blind deconvolution methods are widely investigated in image processing \cite{bishop}.
-In recent years, considerable advances has been employed in single image blind deconvolution
-\cite{babacan,} and multi-image
+In recent years, considerable effort has been employed in single image
+\cite{babacan,} and multi-image \cite{} blind deconvolution. 
 
-[6, 14, 7, 9, 20, 2]
+[6, 14, 7, 9, 20, 2]single image
+[4, 3, 13, 22] multi-image
 
 Applying blind deconvolution generally implies in making assumptions on
 blur kernels and/or on latent images. For example, assuming sparsity of blur kernel
 or that natural images have super-Gaussian statistics. The second assumption
 leads to the use of image priors and, consequently, to the maximum a posteriori
-(MAP) estimation \cite{babacan}. However, \cite{levin} show that deblurring methods
+(MAP) estimation \cite{babacan}. However, \cite{Levin} show that deblurring methods
 based on this prior tend to favor blurry images over original latent images,
 specially for algorithms formulated within the MAP framework.
 
-The Bayesian inference approach \cite{levin} outperforms the MAP based methods. It marginalizes
-the image from the optimization while estimating the unknown blur.
-The proposal shows that it is possible to define a classe of prior images
-suitable enough for representing sharp images features. Based on the prior
-formulation, it is possible to use Bayesian inference for estimation of the of
-the unknown image and the blur kernel.
+The Bayesian inference approach \cite{Levin} outperforms the MAP based methods. It marginalizes
+the image from the optimization step, while estimating the unknown blur.
+The authors show that it is possible to define a class of prior image
+based on natural image statistics, suitable enough for representing sharp images features.
+With the prior formulation, it is possible to use Bayesian inference in the estimation of the
+unknown image and the blur kernel. According to \cite{Hacohen13}, defining a gradient
+prior, by itself, is not sufficient to reach a sharp image, instead,
+they search in a dataset for a prior that densely correspond to
+the blurry image that is similar to a sharp image. This search is an
+iteratively optimization over the correspondence, the kernel and
+the sharp image estimation. 
+Although \cite{Pan2014} suggest a generalization
+of the method, it requires a similar reference image, which
+is not always available.
+
+The optimization methods previously described use a set of priors based on
+generic image statistics or domain-specific priors. It has been demonstrated
+that these methods work properly on synthetic blurs. However, they failure
+when applied to real world blury images \cite{} and keep a high computational cost \cite{}.
+In contrast, the learning-based methods have gained attention with the advances in neural
+networks. The adequate hyper-parameter adjustment allows neural network to approximate 
+
 
 
 % , mainly because 
@@ -561,16 +578,17 @@ where, $z(t)$ is the acoustic impedance, in function of time $t$, defined as
 $z(t)=\rho(t)v(t)$, where $\rho(t)$ is the rock density and $v(t)$ the propagation velocity
 of acoustic wave.
 Therefore, the seismic data  $d(t)$ is modeled as a discrete convolution operation $*$ of the wavelet $s$ with the
-reflectivity coeficient $r$ as
+reflectivity coefficient $r$ as
 \begin{equation}
 d(t) = s(\tau) * \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
 \end{equation}
 where, $N$ is the number of subsurface layers, $e_d(t)$ is a random noise in function of time.
 One ideal wavelet is a delta pulse with all the frequency band-width, however, in practice
-wavelets have their band-width generally limited from $6Hz$ to $65Hz$. As a consequence,
+wavelets have their band-width generally limited from $6Hz$ to $65Hz$. By consequence,
 the images resulting from the seismic inversion will have their frequency spectrum limited.
 
-To remedy the problem  
+CNN can remedy this problem by estimating its kernels, which are convolved along the
+training images. T
 
 \section{Data and Method}
 
@@ -960,7 +978,9 @@ The authors would like to thank...
 \bibitem{Ning}			N. Qian, ``On the momentum term in gradient descent learning algorithms,'' in Neural Networks, v. 12, i. 1, 1999, p. 145-151.
 \bibitem{bishop}		T.E. Bishop, S.D. Babacan, Amizic, T. Chan, R. Molina, A. Katsaggelos, ``Blind image deconvolution: problem formulation and existing approaches.'' in. Blindimage deconvolution: theory and applications,  CRC press (2007).
 \bibitem{babacan}		S. D. Babacan, R. Molina, M. N. Do, and A. K. Katsaggelos, ``Bayesian blind deconvolution with general sparse image priors.'' In. Proceedings of European Conference on Computer Vision (ECCV), p. 341–355, 2012.
-\bibitem{levin}			A. Levin, Y. Weiss, F. Durand, W. T. Freeman, ``Understanding and evaluating blind deconvolution algorithms.''  In CVPR, 2009, p. 1964–1971.
+\bibitem{Hacohen2013}		Y. Hacohen, E. Shechtman, and D. Lischinski, ``Deblurring by example using dense correspondence.'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), p. 2384–2391, 2013.
+\bibitem{Pan2014}			J. Pan, Z. Hu, Z. Su, M. H. Yang., ``Deblurring face images with exemplars.'' In Proceedings of European Conference on Computer Vision (ECCV), p. 47–62. Springer, 2014.
+
 \end{thebibliography}
 
 %0 Journal Article
