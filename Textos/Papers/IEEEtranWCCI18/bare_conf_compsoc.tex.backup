@@ -458,12 +458,8 @@ where $n$ is the noise. Since $k$, $I$ and $n$ are unknown, the problem
 is highly ill-posed and admits infinity solutions for $k$ and $I$.
 Several works have developed different deblurring methods for specific purposes.
 Blind deconvolution methods are widely investigated in image processing \cite{bishop}.
-In recent years, considerable effort has been employed in single image
-\cite{babacan,} and multi-image \cite{} blind deconvolution. 
-
-[6, 14, 7, 9, 20, 2]single image
-[4, 3, 13, 22] multi-image
-
+In the last six years, considerable effort has been employed in single image
+\cite{babacan,Krishnan2015,Levin2011,Zhang2011} and multi-image \cite{sroubek2012,Zhu2012} blind deconvolution. 
 Applying blind deconvolution generally implies in making assumptions on
 blur kernels and/or on latent images. For example, assuming sparsity of blur kernel
 or that natural images have super-Gaussian statistics. The second assumption
@@ -500,7 +496,12 @@ and a set of parameters as
  \label{eq:deblur}
 \end{equation}
 where, $p$ represents the hyper-parameters of the network model.
-
+Learning-based methods are motivated by the most recent interest in neural
+networks. These methods focus on developing a model to learn the function $\sigma$ \cite{Hradis2015}
+and to perform non-blind deblurring \cite{Chakrabarti2016}. \cite{Sun2015} learn a Convolution Neural Networks (CNN) to
+recognize motion kernels and performs non-blind deconvolution in
+dense motion field estimate, in addition, \cite{Hradis2015} minimize regularized $l_2$ 
+in order to perform text deblurring.
 % , mainly because 
 % of the absent of high-frequency details \cite{Levin}.
 %However, the deep the investigated horizon is, the big the limitation in using the seismic amplitude \cite{riel}.
@@ -517,8 +518,8 @@ where, $p$ represents the hyper-parameters of the network model.
 % and engineers. 
 % The acoustic impedance models allow fast interpretations and an efficient identification of
 % exploratory targets in seismic scale. 
-We approach the problem of deblurring post-inversion acoustic impedance images through
-the Convolution Neural Networks (CNN). CNN is a framework of deep learning which has been
+We approach the issue of deblurring post-inversion acoustic impedance images through
+a CNN model. CNN is a framework of deep learning which has been
 used in a wide sort of machine learning tasks. The availability of benchmarks
 \cite{Russakovsky} and the advances in Graphical Processing Unit (GPU) \cite{Buduma15}
 allowed CNN to outperform techniques in detection \cite{Girshick,Bell}, model-free
@@ -526,10 +527,8 @@ tracking \cite{Nam}, classification \cite{He}. With excellence in feature learni
 CNN achieved notorious success in image classification \cite{Krizhevsky}, action
 recognition \cite{S_Ji}, video classification \cite{AbdelHamid} and speech recognition \cite{Farfade}.
 Under the perspective of the reservoir characterization, CNN has been applied to lithofacies recognition
-\cite{qian} and calculation \cite{Liu}.
-However, there is a lack of researches on Deep Learning algorithms to investigate methods for improving the resolution of
-images resulting from inversion processes.As mentioned, the lack
-of high and low frequencies negatively influence on geologic interpretations of seismic data.
+\cite{qian} and calculation \cite{Liu}. However, there is a lack of researches on improving the resolution of
+images resulting from inversion processes.
 
 %A solução
 In this paper, we propose a new multilayer convolution network model to perform deblurring in post-inversion acoustic impedance.
@@ -549,19 +548,19 @@ acoustic impedance images, while the regression layer proceed the prediction of 
 %\hfill August 26, 2015
 
 \section{Theoretical foundations}
+
+\subsection{Inversion Theory}
 Inversion theory is used in several areas to infer parameters values
-related to physical processes, based on experimental data.
-The inversion modeling refers to using the current measurements of observable
+related to physical processes based on experimental data.
+Inversion modeling refers to using the current measurements of observable
 physical parameters in order to infer the current model parameters (not observable).
 The inversion problem is described as (Eq. \ref{eq:deqgm})
 \begin{equation}
 \label{eq:deqgm}
 m = F^{-1}(d)
 \end{equation}
-where, is the investigated physical system, and relates a set of model parameters
+where, $F$ is the investigated physical system, and relates a set of model parameters
 $m=(m_1, m_2,...,m_n)\subset R^n$ estimated through the observed data $d \in R^s$.
-Frequently, in inversion problems some \textit{a priori} data is incorporated to the model.
-
 Geophysical methods frequently involve the solution and assessment of inversion problems.
 Studying these problems allow inferring physical properties distributions in the Earth subsurface, using measured
 data. Among these data, the seismic data is mainly used in seismic inversion, which plays an important role in
@@ -569,11 +568,11 @@ reservoir characterization. From a practical perspective, solving seismic invers
 the exploration and management in oil industry, once the seismic data is highly correlated to petrophysical
 properties, e.g., density and porosity in subsurface.
 
-The offshore seismic data is the main observable data used in seismic inversion. Its acquisition is performed
-sending pulses to under water surface through a controlled artificial source and capturing the
+The offshore seismic data is the main observable data used in seismic inversion. To perform seismic acquisition,
+one sends pulses through a controlled artificial source and captures
 the vertical component responses in function of time. The seismic data is a composition of
 the wave pulse used in the acquisition, named wavelet, and the characteristic of the interfaces between rock layers,
-on which the wavelet reflects. This characteristic is called reflectivity coefficient and it is
+on which the wavelet reflects. This rock layer characteristic is called reflectivity coefficient and it is
 calculated as
 \begin{equation}
 r(t) = \frac{z(t+\delta t)-z(t)}{z(t+\delta t)+z(t)},
@@ -590,9 +589,17 @@ d(t) = s(\tau) * \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
 where, $N$ is the number of subsurface layers, $e_d(t)$ is a random noise in function of time.
 One ideal wavelet is a delta pulse with all the frequency band-width, however, in practice
 wavelets have their band-width generally limited from $6Hz$ to $65Hz$. By consequence,
-the images resulting from the seismic inversion will have their frequency spectrum limited.
-aDhota and Method}
+the images resulting from the seismic inversion will keep their frequency spectrum limited.
 
+According to \cite{Latimer}, a good acoustic impedance model contains more information
+then the seismic data because to this model is added additional
+information originated from well-logs. The well-logs are real data measured in drilled 
+wells spread in the field. With the local acoustic impedance one calculates the low-frequency
+model by interpolation between wells \cite{}. Despite the low-frequency model being added as a
+priori information, it remains the lack of high resolution details in the acoustic impedance
+final model.
+
+\section{Data and Methods}
 \subsection{Acoustic Impedance Inversion}
 The experiments described in this paper were performed
 on a set of synthetic acoustic impedance images. Using synthetic models
@@ -600,14 +607,14 @@ to test and parametrize algorithms is a common practice in reservoir characteriz
 results of the algorithms without external interferences and to obtain efficient interpretations and assessments. 
 According to \cite{Harvey}, wedge shaped models is a straight way to analysis the
 seismic model modeling and inversion processes. It realistically reproduces
-reservoir contexts such as stratigraphic refinements, \textit{pich-outs} in sand layers, 
-edges and channel structures.
+reservoir contexts such as stratigraphic refinements, edges and channel structures.
 
 In order to generate a set of training image pairs, we proceed two steps to obtain the wedge images.
-In the fist step we create a set of random wedges forms, containing two horizontal dimensions represented in images 32 x 32.
-The wedges representing the reservoir varied randomly in width and length. The second step
-filled the lithology with values of petrophysical properties. In order to simplify
-the assessments and conclusions, the lithology structures are filled with constant
+In the fist step we create a set of random wedges shapes, containing two horizontal dimensions represented
+by images with size $32$ x $32$. The wedges represent the reservoir and they
+randomly vary in width and length.
+In the second step we fill the lithology with values of petrophysical properties. To keep
+simplifyed assessments and conclusions, the lithology structures are filled with constant
 reference values of rock densities and compressional velocity observed in the literature.
 With the density and velocity models the acoustic impedance is calculated and a high
 resolution model is obtained. Fig. \ref{fig_lithology} illustrate the lithology
@@ -646,7 +653,7 @@ steps:
 \end{itemize}
 
 The CNN is a well established method for
-patter recognition and image classification.
+pattern recognition and image classification.
 Thus, an important breakthrough when applying CNN to
 deal with physical property images is developing a model
 capable to solve regression tasks. The model presented in this paper
@@ -969,7 +976,8 @@ The authors would like to thank...
 \bibitem{Bell} 			S. Bell, C. L. Zitnick, K. Bala, and R. Girshick, ``Inside-outside net: Detecting objects in context with skip pooling and recurrent neural networks,'' in arXiv preprint arXiv:1512.04143, 2015.s
 \bibitem{Nam}			H. Nam and B. Han, ``Learning multi-domain convolutional neural networks for visual tracking,'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
 \bibitem{He}			K. He, X. Zhang, S. Ren, and J. Sun, ``Deep residual learning for image recognition,'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
-\bibitem{Levin}			A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. Understanding and evaluating blind deconvolution algorithms. In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), p. 1964–1971.
+\bibitem{Levin}			A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. ``Understanding and evaluating blind deconvolution algorithms.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), p. 1964–1971.
+\bibitem{Levin2011}		A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. ``Efficient marginal likelihood optimization in blind deconvolution.'' In CVPR, 2011.
 \bibitem{Krizhevsky}		A. Krizhevsky, I. Sutskever, G. E. Hinton, ``Imagenet classification with deep convolutional neural networks: Advances in neural information processing systems,'' 2012, p. 1097–1105.
 \bibitem{S_Ji}			S. Ji,W. Xu, M. Yang, K. Yu, 2013, ``3d convolutional neural networks for human action recognition,'' in IEEE transactions on pattern analysis and machine intelligence, n. 35, p. 221–231.
 \bibitem{AbdelHamid}		O. Abdel-Hamid, A.-r. Mohamed, H. Jiang, L. Deng, G. Penn, D. Yu, 2014, ``Convolutional neural networks for speech recognition,'' in IEEE/ACM Transactions on audio, speech, and language processing, n. 22, p. 1533–1545.
@@ -983,6 +991,12 @@ The authors would like to thank...
 \bibitem{Pan2014}		J. Pan, Z. Hu, Z. Su, M. H. Yang., ``Deblurring face images with exemplars.'' In Proceedings of European Conference on Computer Vision (ECCV), p. 47–62. Springer, 2014.
 \bibitem{Lai2016}		W.S. Lai, J. B. Huang, Z. Hu, N. Ahuja, M. H. Yang.``A comparative study for single image blind deblurring.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
 \bibitem{Chakrabarti2016}	A. Chakrabarti. ``A neural approach to blind motion deblurring.'' In Proceedings of European Conference on Computer Vision (ECCV), p. 221–235. Springer, 2016.
+\bibitem{Hradis2015}		M. Hradiš, J. Kotera, P. Zemcı́k, F. Šroubek. ``Convolutional neural networks for direct text deblurring.'' In Proceedings of British Machine Vision Conference (BMVC), 2015.
+\bibitem{Sun2015}		J. Sun, W. Cao, Z. Xu, J. Ponce. ``Learning a convolutional neural network for non-uniform motion blur removal.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), p. 769–777, 2015.
+\bibitem{Krishnan2015}		D. Krishnan, T. Tay, R. Fergus. ``Blind deconvolution using anormalized sparsity measure.'' In CVPR, 2011.
+\bibitem{Zhang2011}		H. Zhang, J. Yang, Y. Zhang, N. M. Nasrabadi, T. S. Huang. ``Close the loop: Joint blind image restoration and recognition with sparse representation prior.'' In ICCV, 2011. 
+\bibitem{sroubek2012}		F. Šroubek and P. Milanfar. ``Robust multichannel blind deconvolution via fast alternating minimization.'' in IEEE Trans. on Image Processing, p. 1687–1700, 2012.
+\bibitem{Zhu2012}		X. Zhu, F. Šroubek, P. Milanfar. ``Deconvolving PSFs for a better motion deblurring using multiple images.'' In ECCV, 2012.
 \end{thebibliography}
 
 %0 Journal Article
