@@ -420,7 +420,7 @@ in most cases, blurry images lack of enough information
 to recover a unique image. It is not observable in the literature
 an algorithm for deblurring all objects. Thus, methods that exploit
 domains-specific knowledge have emerged for deblurring
-categories of objects, e.g. text, faces and motion images. Similarly,
+categories of objects, e.g., text, faces and motion images. Similarly,
 the focus of this work is in post-inversion acoustic impedance deblurring.
 Obtaining high resolution acoustic impedance images, through seismic inversion methods,
 is a critical part in oil reservoir characterization.
@@ -476,7 +476,7 @@ This prior formulation makes possible to use Bayesian inference in the estimatio
 unknown image and the blur kernel. According to \cite{Hacohen13}, defining a gradient
 prior, by itself, is not sufficient to reach a sharp image, instead,
 they search in a dataset for a prior that densely correspond to
-the blurry image that is similar to a sharp image. This search is an
+the blurry image similar to a sharp image. This search is an
 iteratively optimization over the correspondence between the images, the kernel and
 the sharp image estimation. Although \cite{Pan2014} suggest a generalization
 for the method proposed by \cite{Hacohen13}, it still requires a similar reference image,
@@ -531,7 +531,7 @@ In this paper, we propose a new multilayer convolution network model to perform 
 Each network layer maps higher level features originated in the previews layers through convolutional blur kernels.
 To perform this mapping, the kernels, also named weights, are adjusted by minimizing a loss function. 
 The model enhances the resolution of acoustic impedance images, resulting in sharp images with
-increased high-frequency band and lower noise. 
+increased high-frequency band-width and lower noise. 
 In order to train the model, we blur a set of the synthetic acoustic impedance images to create a dictionary of
 images of high and low resolution. Then, the pairs of blur and latent images are normalized and 
 presented to the network as input and target, respectively.
@@ -618,12 +618,12 @@ resolution model are obtained, as illustrated in  Fig. \ref{fig_lithology}.
 \caption{Wedge with reference values for density and compressional velocity.}
 \label{fig_lithology}
 \end{figure}
-In a real scenario, the blurred acoustic impedance is the
+In a real scenario, the blurry acoustic impedance is the
 result of an acoustic inversion method, such as Maximum \textit{a posteriori} \cite{Buland2003,Figueiredo2012}, Sparse Spike \cite{Debeye1990} 
 and Recursive Inversion \cite{Chopra2001}, using seismic data with limited band-with.
 However, for experimental purpose, the acoustic impedance models were filtered
 and the high frequencies were removed to obtain the blurry images, as illustrated in Fig. \ref{fig_blur}.
-This way the supervised learning is performed with the high resolution images and blurred images.
+This way, the supervised learning is performed with the high resolution images and blurred images.
 To increase the number of examples in the training dataset we rotate
 the impedance models in angles integer multiples of right angle. This approach allows the model learning the maximum edge variabilities
 in wedges images.
@@ -654,64 +654,55 @@ capable to solve regression tasks. The model presented in this paper
 is able to solve two important problems related to deblurring physical properties
 images: ($1$) learning the spacial patterns in the low resolution
 training images and ($2$) predicting each pixel intensity value in the new
-higher resolution image. To reach these two goals, the architecture of the
-CNN contains convolutional layers combined with a regression output
-layer.
+higher resolution image. To reach these two goals, the model architecture consists of two convolution layers,
+each one followed by one pooling layer and a regularization layer. The second regularization layer is followed
+by a fully connected layer, which maps the convolution layer's output to $1024$ neurons.
+The output model comprises a regression layer to predict the intensity value of each pixel.
 
-The model proceeds a supervised learning through a dictionary containing pairs of low
+The model performs a supervised learning through a dictionary containing pairs of low
 and high resolution images. The optimization algorithm adjusts the 
 network weights in every layer by minimizing the Mean Squared Error (MSE)
 in each batch of images. Thus, after the training phase, the model is capable
-to deblurr any other image not presented in training dataset. The output
+to deblur any other wedge shaped acoustic impedance image not presented in the training dataset. The outputted
 image recovers the high frequencies and presents higher similarity
-to the high resolution image than to the blurred image, according to stablished metric.
-The model was adjusted to deblurr a wide variety
-of wedges shapes and impedance values. Those wedges which the model was unable
-to predict were added in the training set.
+to the high resolution image than to the blurred image, according to a established metric.
+The model was adjusted to deblur a wide variety of wedge shapes and impedance values.
+Those wedges which the model was unable to predict were added in the training set.
 
-Three metrics assess the performance of the convolution networks: Fast Fourier Transform Index (FFTI),
-the Rooted Mean Square Error (RMSE) and the frequencies magnitudes.
-The FFTI is a similarity metric calculated based on the Fast Fourier Transform (FFT) of each image.
-It is introduced by \cite{naranyana} and calculates as in Eq. \ref{eq:fourier}
+Three metrics assess the performance of the convolution networks: Fast Fourier Transform Index - FFTI (Eq. \ref{eq:fourier}),
+Rooted Mean Square Error - RMSE (Eq. \ref{eq:mse}). 
+The FFTI is a similarity metric calculated based on the fast fourier transform (FFT) of each image.
+It is introduced by \cite{naranyana} and calculates as 
 \begin{equation}
  C = \frac{ (\sum_{i=1}^{N}{F_{1i}F_{2i}} - N \bar{F}_1\bar{F}_2 )^2 }{ (\sum_{i=1}^{N}{|F_{1i}|^2} - N{\bar{F}^2}_1)( \sum_{i=1}^{N}{|F_{2i}|^2} - N{\bar{F}^2}_2 )},
  \label{eq:fourier}
 \end{equation}
-where, for each frequency, an intensity value is calculated from the real and complex parts of fourier
+where, for each frequency, an intensity value is calculated from the real and complex parts of the fourier
 transform. $F_{1i}$ represents the intensity value of $i$-th \textit{pixel} in the first image and $F_{2i}$
 is the intensity value of $i$-th \textit{pixel} in the second image. $\bar{F}_1$ e $\bar{F}_2$ are the mean
 frequencies in each image. The closer FFTI is to $1$, the higher the similarity between the images.
 The frequencies spectrum is additionally useful to present the graphic of frequency magnitudes in the images.
 The frequency magnitude graphic allows distinguishing what high frequencies were added to the acoustic impedance
 after the low resolution image is passed through the trained CNN. 
-Additionally, the Root Mean Squared Error (RMSE) in Eq. \ref{eq:mse} is calculated in order to measure
-the global error in each pair of deblurred and high resolution images.
-
 \begin{equation}
  RMSE = \sqrt{\frac{ (\sum_{i=1}^{N}{(x_i -y_i)^2 } }{N}},
  \label{eq:mse}
 \end{equation}
 
-The model architecture consists in two convolution layers, each one followed by one
-pooling layer and a regularization layer. The second regularization layer is followed
-by a fully connected layer, which maps the convolution layer's output to $1024$ neurons.
-The output model comprises a regression layer to predict the intensity value of each pixel.
-
 \section{Experiments}
 %This section describes the experiments and results obtained with the proposed method.
 %We compare the results with the state-of-the-art deblurring algorithms in four different scenarios.
-To build the training dataset we generated $500$ random wedge 
-images. Each image was rotated in four angles integer multiple of $90$
+To build the training dataset we generated $500$ images of random wedge. Each image was rotated in four integer angles, multiple of $90$
 degrees, then comprising a total of $2000$ images. 
-By rotating the images, we aimed to present to the network the 
-lithologies in different positions and expected the network
-to identify a general sort of wedges in angles different from integer
-multiples of $90$ degrees. The rotated images were blurred by applying a low-pass filter with
-cut frequency $4Hz$ and the pairs of blurred and not-blurred images were used to
-adjust the model weights. The same approach was applied to generate different
+By rotating the images, we present to the network the 
+lithologies in different positions and expect the network
+to identify general sorts of wedges in angles different from those with which the it was trained.
+The rotated images are blurred by applying a low-pass filter with
+cuttig frequency $4Hz$, then the pairs of blurred and not-blurred images are used to
+adjust the model weights. The same approach is applied to generate different
 scenarios for test cases. Some scenarios do probably not
-address a geological meaning, however, we have with them evaluated the capability of the model
-in deblurring and predicting a wide sort of acoustic impedance images.
+contain a significant geological meaning, however, we have evaluated the capability of the model
+in deblurring and predicting any wedge shaped acoustic impedance image.
 
 % In the first scenario we trained and tested the network with images of acoustic impedance normalized to $0$ and $1$.
 % This scenario evaluated the model capability to deblurr lithology with similar acoustic impedance

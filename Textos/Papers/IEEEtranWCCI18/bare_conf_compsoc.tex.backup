@@ -420,7 +420,7 @@ in most cases, blurry images lack of enough information
 to recover a unique image. It is not observable in the literature
 an algorithm for deblurring all objects. Thus, methods that exploit
 domains-specific knowledge have emerged for deblurring
-categories of objects, e.g. text, faces and motion images. Similarly,
+categories of objects, e.g., text, faces and motion images. Similarly,
 the focus of this work is in post-inversion acoustic impedance deblurring.
 Obtaining high resolution acoustic impedance images, through seismic inversion methods,
 is a critical part in oil reservoir characterization.
@@ -476,7 +476,7 @@ This prior formulation makes possible to use Bayesian inference in the estimatio
 unknown image and the blur kernel. According to \cite{Hacohen13}, defining a gradient
 prior, by itself, is not sufficient to reach a sharp image, instead,
 they search in a dataset for a prior that densely correspond to
-the blurry image that is similar to a sharp image. This search is an
+the blurry image similar to a sharp image. This search is an
 iteratively optimization over the correspondence between the images, the kernel and
 the sharp image estimation. Although \cite{Pan2014} suggest a generalization
 for the method proposed by \cite{Hacohen13}, it still requires a similar reference image,
@@ -531,7 +531,7 @@ In this paper, we propose a new multilayer convolution network model to perform 
 Each network layer maps higher level features originated in the previews layers through convolutional blur kernels.
 To perform this mapping, the kernels, also named weights, are adjusted by minimizing a loss function. 
 The model enhances the resolution of acoustic impedance images, resulting in sharp images with
-increased high-frequency band and lower noise. 
+increased high-frequency band-width and lower noise. 
 In order to train the model, we blur a set of the synthetic acoustic impedance images to create a dictionary of
 images of high and low resolution. Then, the pairs of blur and latent images are normalized and 
 presented to the network as input and target, respectively.
@@ -610,7 +610,7 @@ randomly vary in width and length. The second step fills the lithology with valu
 In order to simplify the assessments and conclusions, the lithology structures are filled with constant
 reference values of rock densities and compressional velocity observed in the literature \cite{Mavko2009}.
 The acoustic impedance is calculated using the density and velocity models and the images in high
-resolution model are obtained, as ilustrated in  Fig. \ref{fig_lithology}.
+resolution model are obtained, as illustrated in  Fig. \ref{fig_lithology}.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.0in]{Figs/Image_Paper}
@@ -618,15 +618,15 @@ resolution model are obtained, as ilustrated in  Fig. \ref{fig_lithology}.
 \caption{Wedge with reference values for density and compressional velocity.}
 \label{fig_lithology}
 \end{figure}
-In a real scenario, the blurred acoustic impedance is the
-result of an acoustic inversion method with limited band-with seismic,
-that might be Maximum \textit{a posteriori} \cite{Buland2003,Figueiredo2012}, Sparse Spike \cite{Debeye1990} 
-and Recursive Inversion \cite{Chopra2001}.
-However, for experimental purpose, the acoustic impedance models were low-passed filtered
-and the high frequencies were removed, this way the supervised learning proceeds with the high resolution and the blurred images.
+In a real scenario, the blurry acoustic impedance is the
+result of an acoustic inversion method, such as Maximum \textit{a posteriori} \cite{Buland2003,Figueiredo2012}, Sparse Spike \cite{Debeye1990} 
+and Recursive Inversion \cite{Chopra2001}, using seismic data with limited band-with.
+However, for experimental purpose, the acoustic impedance models were filtered
+and the high frequencies were removed to obtain the blurry images, as illustrated in Fig. \ref{fig_blur}.
+This way, the supervised learning is performed with the high resolution images and blurred images.
 To increase the number of examples in the training dataset we rotate
-the impedance models in integer multiples of right angle. This approach allows the model learning the maximum edge variabilities
-in wedges images. A blurry image is illustrated in Fig. \ref{fig_blur}.
+the impedance models in angles integer multiples of right angle. This approach allows the model learning the maximum edge variabilities
+in wedges images.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.0in]{Figs/Image_Paper_blurred}
@@ -658,33 +658,33 @@ higher resolution image. To reach these two goals, the architecture of the
 CNN contains convolutional layers combined with a regression output
 layer.
 
-The model proceeds a supervised learning through a dictionary containing pairs of low
+The model performs a supervised learning through a dictionary containing pairs of low
 and high resolution images. The optimization algorithm adjusts the 
 network weights in every layer by minimizing the Mean Squared Error (MSE)
 in each batch of images. Thus, after the training phase, the model is capable
-to deblurr any other image not presented in training dataset. The output
+to deblur any other wedge shaped acoustic impedance image not presented in the training dataset. The outputted
 image recovers the high frequencies and presents higher similarity
-to the high resolution image than to the blurred image, according to stablished metric.
-The model was adjusted to deblurr a wide variety
-of wedges shapes and impedance values. Those wedges which the model was unable
-to predict were added in the training set.
+to the high resolution image than to the blurred image, according to a established metric.
+The model was adjusted to deblur a wide variety of wedge shapes and impedance values.
+Those wedges which the model was unable to predict were added in the training set.
 
 Three metrics assess the performance of the convolution networks: Fast Fourier Transform Index (FFTI),
-the Rooted Mean Square Error (RMSE) and the frequencies magnitudes.
-The FFTI is a similarity metric calculated based on the Fast Fourier Transform (FFT) of each image.
+Rooted Mean Square Error (RMSE) and Root Mean Squared Error (RMSE). Additionally, we present the 
+graphs with the frequencies magnitudes of the high resolution image, the blurry image and the CNN output.
+The FFTI is a similarity metric calculated based on the fast fourier transform (FFT) of each image.
 It is introduced by \cite{naranyana} and calculates as in Eq. \ref{eq:fourier}
 \begin{equation}
  C = \frac{ (\sum_{i=1}^{N}{F_{1i}F_{2i}} - N \bar{F}_1\bar{F}_2 )^2 }{ (\sum_{i=1}^{N}{|F_{1i}|^2} - N{\bar{F}^2}_1)( \sum_{i=1}^{N}{|F_{2i}|^2} - N{\bar{F}^2}_2 )},
  \label{eq:fourier}
 \end{equation}
-where, for each frequency, an intensity value is calculated from the real and complex parts of fourier
+where, for each frequency, an intensity value is calculated from the real and complex parts of the fourier
 transform. $F_{1i}$ represents the intensity value of $i$-th \textit{pixel} in the first image and $F_{2i}$
 is the intensity value of $i$-th \textit{pixel} in the second image. $\bar{F}_1$ e $\bar{F}_2$ are the mean
 frequencies in each image. The closer FFTI is to $1$, the higher the similarity between the images.
 The frequencies spectrum is additionally useful to present the graphic of frequency magnitudes in the images.
 The frequency magnitude graphic allows distinguishing what high frequencies were added to the acoustic impedance
 after the low resolution image is passed through the trained CNN. 
-Additionally, the Root Mean Squared Error (RMSE) in Eq. \ref{eq:mse} is calculated in order to measure
+Additionally, the  in Eq. \ref{eq:mse} is calculated in order to measure
 the global error in each pair of deblurred and high resolution images.
 
 \begin{equation}
