@@ -654,9 +654,10 @@ capable to solve regression tasks. The model presented in this paper
 is able to solve two important problems related to deblurring physical properties
 images: ($1$) learning the spacial patterns in the low resolution
 training images and ($2$) predicting each pixel intensity value in the new
-higher resolution image. To reach these two goals, the architecture of the
-CNN contains convolutional layers combined with a regression output
-layer.
+higher resolution image. To reach these two goals, the model architecture consists of two convolution layers,
+each one followed by one pooling layer and a regularization layer. The second regularization layer is followed
+by a fully connected layer, which maps the convolution layer's output to $1024$ neurons.
+The output model comprises a regression layer to predict the intensity value of each pixel.
 
 The model performs a supervised learning through a dictionary containing pairs of low
 and high resolution images. The optimization algorithm adjusts the 
@@ -668,11 +669,10 @@ to the high resolution image than to the blurred image, according to a establish
 The model was adjusted to deblur a wide variety of wedge shapes and impedance values.
 Those wedges which the model was unable to predict were added in the training set.
 
-Three metrics assess the performance of the convolution networks: Fast Fourier Transform Index (FFTI),
-Rooted Mean Square Error (RMSE) and Root Mean Squared Error (RMSE). Additionally, we present the 
-graphs with the frequencies magnitudes of the high resolution image, the blurry image and the CNN output.
+Three metrics assess the performance of the convolution networks: Fast Fourier Transform Index - FFTI (Eq. \ref{eq:fourier}),
+Rooted Mean Square Error - RMSE (Eq. \ref{eq:mse}). 
 The FFTI is a similarity metric calculated based on the fast fourier transform (FFT) of each image.
-It is introduced by \cite{naranyana} and calculates as in Eq. \ref{eq:fourier}
+It is introduced by \cite{naranyana} and calculates as 
 \begin{equation}
  C = \frac{ (\sum_{i=1}^{N}{F_{1i}F_{2i}} - N \bar{F}_1\bar{F}_2 )^2 }{ (\sum_{i=1}^{N}{|F_{1i}|^2} - N{\bar{F}^2}_1)( \sum_{i=1}^{N}{|F_{2i}|^2} - N{\bar{F}^2}_2 )},
  \label{eq:fourier}
@@ -684,34 +684,25 @@ frequencies in each image. The closer FFTI is to $1$, the higher the similarity 
 The frequencies spectrum is additionally useful to present the graphic of frequency magnitudes in the images.
 The frequency magnitude graphic allows distinguishing what high frequencies were added to the acoustic impedance
 after the low resolution image is passed through the trained CNN. 
-Additionally, the  in Eq. \ref{eq:mse} is calculated in order to measure
-the global error in each pair of deblurred and high resolution images.
-
 \begin{equation}
  RMSE = \sqrt{\frac{ (\sum_{i=1}^{N}{(x_i -y_i)^2 } }{N}},
  \label{eq:mse}
 \end{equation}
 
-The model architecture consists in two convolution layers, each one followed by one
-pooling layer and a regularization layer. The second regularization layer is followed
-by a fully connected layer, which maps the convolution layer's output to $1024$ neurons.
-The output model comprises a regression layer to predict the intensity value of each pixel.
-
 \section{Experiments}
 %This section describes the experiments and results obtained with the proposed method.
 %We compare the results with the state-of-the-art deblurring algorithms in four different scenarios.
-To build the training dataset we generated $500$ random wedge 
-images. Each image was rotated in four angles integer multiple of $90$
+To build the training dataset we generated $500$ images of random wedge. Each image was rotated in four integer angles, multiple of $90$
 degrees, then comprising a total of $2000$ images. 
-By rotating the images, we aimed to present to the network the 
-lithologies in different positions and expected the network
-to identify a general sort of wedges in angles different from integer
-multiples of $90$ degrees. The rotated images were blurred by applying a low-pass filter with
-cut frequency $4Hz$ and the pairs of blurred and not-blurred images were used to
-adjust the model weights. The same approach was applied to generate different
+By rotating the images, we present to the network the 
+lithologies in different positions and expect the network
+to identify general sorts of wedges in angles different from those with which the it was trained.
+The rotated images are blurred by applying a low-pass filter with
+cuttig frequency $4Hz$, then the pairs of blurred and not-blurred images are used to
+adjust the model weights. The same approach is applied to generate different
 scenarios for test cases. Some scenarios do probably not
-address a geological meaning, however, we have with them evaluated the capability of the model
-in deblurring and predicting a wide sort of acoustic impedance images.
+contain a significant geological meaning, however, we have evaluated the capability of the model
+in deblurring and predicting any wedge shaped acoustic impedance image.
 
 % In the first scenario we trained and tested the network with images of acoustic impedance normalized to $0$ and $1$.
 % This scenario evaluated the model capability to deblurr lithology with similar acoustic impedance
@@ -727,17 +718,21 @@ in deblurring and predicting a wide sort of acoustic impedance images.
 The model was implemented using the Deep Learning toolbox
 delivered in MATLAB R2017A. For training the network, we used a mini-batch with size of $32$ training examples.
 The network weights are randomly initialized and the Stochastic Gradient Descendant with
-Momentum (SGDM) \cite{Ning}. We adopted an exponentially decreasing learning rate (initially
+Momentum (SGDM) \cite{Ning} is the optimization algorithm.
+We adopted an exponentially decreasing learning rate (initially
 set to $0.005$), decreasing every iteration in a total of $100$ iterations.
 It should be noted that, once the wedge shapes are randomly generated, every image is different
 and each one was introduced only once to the network, this way avoiding over-fitting.
 
-\subsection{Integer Angles Rotated Wedges}
+%Falar que foram usadas 4 figuras, 
 
-In the first scenario, we used acoustic impedance images
-with the same rotation and impedance values as the images in the
-training dataset. The wedges in the testing set differ from
-the the ones in the training set only by their shapes.
+\subsection{Integer Angles Rotated Wedges}
+In the first scenario, both the training and test images had
+the same reference values for density and compressional velocity.
+We also applied the same rotation to both set of images.
+The wedges in the testing set differ from the ones in the training set only by their shapes.
+Thus, the first experiment concerns to correctly modeling the shape of the wedges in the testing image
+and deblur the edges and contourns in a simple perspective.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.0in]{Figs/Caso1}
@@ -746,11 +741,40 @@ the the ones in the training set only by their shapes.
 \label{fig_scenario1}
 \end{figure}
 Fig. \ref{fig_scenario1} presents the result obtained with the initial model applied to the
-test images. The first column shows the high resolution images followed
-by the blurred images, the third column shows the result of the convolutional deblurring network
+test images. The first column shows the high resolution images, followed
+by the blurry images, the third column shows the result of the convolutional deblurring network
 and the fourth column shows the graph of frequency magnitudes of each image
 (synthetic, blurred and CNN).
 %Explicar os resultados dos indices
+Table \ref{table_caso_1} presents the values for each metric obtained for the CNN output and the
+blurry image related to the latent image.
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{An Example of a Table}
+\label{table_caso_1}
+\centering
+\begin{tabular}{|c||c||c|}
+\hline
+ & Blurry Image & CNN Output \\
+\hline
+Example 1 & $0.1294$ & $0.0644$\\
+\hline
+	  & $0.9819$ & $0.9857$\\
+\hline
+Example 2 & $0.1948$ & $0.0774$ \\
+\hline
+	  & $0.9549$ & $0.9862$\\
+\hline
+Example 3 & $0.1294$ & $0.0645$\\
+\hline
+	  & $0.9819$ & $0.9876$\\
+\hline
+Example 4 & $0.1948$ & $0.0775$\\
+\hline
+	  & $0.9575$ & $0.9902$\\
+\hline
+\end{tabular}
+\end{table}
 
 In the second scenario, we inverted the impedance values of the lithology structures.
 This way we verified that the prediction of the pixel value is disconnected to the lithology shape.
@@ -762,6 +786,35 @@ Fig. \ref{fig_scenario6} shows the results obtained in this scenario.
 \caption{Acoustic impedance blurred with inverted property values.}
 \label{fig_scenario6}
 \end{figure}
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{An Example of a Table}
+\label{table_caso_2}
+\centering
+\begin{tabular}{|c||c||c|}
+\hline
+ & Blurry Image & CNN Output \\
+\hline
+Example 1 & $0.1294$ & $0.0644$\\
+\hline
+	  & $0.9819$ & $0.9857$\\
+\hline
+Example 2 & $0.1948$ & $0.0774$ \\
+\hline
+	  & $0.9549$ & $0.9862$\\
+\hline
+Example 3 & $0.1294$ & $0.0645$\\
+\hline
+	  & $0.9819$ & $0.9876$\\
+\hline
+Example 4 & $0.1948$ & $0.0775$\\
+\hline
+	  & $0.9575$ & $0.9902$\\
+\hline
+\end{tabular}
+\end{table}
+
 
 In the third scenario, we arbitrarily changed the normalized impedance to values
 of higher impedance out of the wedge (with value of $0.7$) and lower impedance (with value of $0.3$)
@@ -779,6 +832,33 @@ The Fig. \ref{fig_scenario2} shows the result for the network trained with the e
 \end{figure}
 
 %Explicar os resultados dos indices para este cenário
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{An Example of a Table}
+\label{table_caso_3}
+\centering
+\begin{tabular}{|c||c||c|}
+\hline
+ & Blurry Image & CNN Output \\
+\hline
+Example 1 & $0.3529$ & $0.0333$\\
+\hline
+	  & $0.9901$ & $0.9915$\\
+\hline
+Example 2 & $0.0561$ & $0.0444$ \\
+\hline
+	  & $0.9744$ & $0.9868$\\
+\hline
+Example 3 & $0.3529$ & $0.0319$\\
+\hline
+	  & $0.9901$ & $0.9908$\\
+\hline
+Example 4 & $0.0561$ & $0.0435$\\
+\hline
+	  & $0.9746$ & $0.9860$\\
+\hline
+\end{tabular}
+\end{table}
 
 A new scenario was simulated, in which the  synthetic images were blurred with different
 cut frequencies. Each one of the four test images was blurred with a cut frequency
@@ -793,6 +873,34 @@ Fig. \ref{fig_scenario5} shows the results for this scenarios.
 \caption{Acoustic impedance blurred with different frequencies.}
 \label{fig_scenario5}
 \end{figure}
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{An Example of a Table}
+\label{table_caso_5}
+\centering
+\begin{tabular}{|c||c||c|}
+\hline
+ & Blurry Image & CNN Output \\
+\hline
+Example 1 ($18Hz$) & $0.0933$ & $0.0841$\\
+\hline
+	  & $0.9576$ & $0.8094$\\
+\hline
+Example 2 ($14Hz$)& $0.1277$ & $0.0983$ \\
+\hline
+	  & $0.9169$ & $0.8001$\\
+\hline
+Example 3 ($4Hz$)& $0.1228$ & $0.0795$\\
+\hline
+	  & $0.9228$ & $0.8299$\\
+\hline
+Example 4 ($8Hz$)& $0.8946$ & $0.7983$\\
+\hline
+  & $0.0933$ & $0.0841$\\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{Randomly Rotated Wedges}
 Randomly rotated wedge is related to a lithology positioned in a random angle.
