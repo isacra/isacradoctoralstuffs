@@ -698,8 +698,9 @@ The normalized images are then rotated in four integer angles multiple of $90$
 degrees, then comprising a total of $2000$ images. By doing so, we present to the network the same lithologies in different positions and expect that the network
 identify general sorts of wedges in angles different from those with which the it was trained.
 The rotated images are blurred by applying a low-pass filter with
-cuttig frequency $4Hz$, then the pairs of blurred and not-blurred images are used to
-adjust the model weights. It is relevant to mention that the images which are blurred with the same cutting frequency and that remains simmetric after the rotation, have the values for the metrics MSE and FFTI. This means that rotating the images causes no changes in impedance values.
+cutting frequency $4Hz$, then the pairs of blurred and not-blurred images are used to
+adjust the model weights. It is relevant to mention that the images which are blurred with the same cutting frequency and that remains simmetric after the rotation,
+have the values for the metrics RMSE and FFTI. This means that rotating the images causes no changes in impedance values.
 We apply the same approach to generate different scenarios for test cases.
 % We are aware that some scenarios approached in this work probably do not
 % contain a significant geological meaning, however, we have evaluated the capability of the model
@@ -714,16 +715,16 @@ We adopted an exponentially decreasing learning rate (initially
 set to $0.005$), decreasing every iteration in a total of $100$ iterations.
 It should be noted that, once the wedge shapes are randomly generated, every image is different
 and each one is introduced only once to the network, this way avoiding over-fitting.
-
+In the following subsection we present the results divided into those test cases in which the wedges are
+rotated in angles integer multiple of right angle and those in which the wedges are rotated according
+to a random angle.
 %Falar que foram usadas 4 figuras, 
 
 \subsection{Integer Angles Rotated Wedges}
-In the first scenario, both the training and test images had
-the same reference values for density and compressional velocity.
-We also applied the same rotation to both set of images.
-The wedges in the testing set differ from the ones in the training set only by their shapes.
-Thus, the first experiment concerns to correctly modeling the shape of the wedges in the testing image
-and deblur the edges and contourns in a simple perspective.
+We firstly test if the network is capable to correctly model the shape of the wedges
+and to deblur the edges and contours in a simple perspective.
+Thus, the training images and the test images have the same reference values for density and compressional velocity,
+they are different only by their shapes.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.0in]{Figs/Caso1}
@@ -731,14 +732,15 @@ and deblur the edges and contourns in a simple perspective.
 \caption{Acoustic impedance blurred model.}
 \label{fig_scenario1}
 \end{figure}
-Fig. \ref{fig_scenario1} presents the result obtained with the initial model applied to the
-test images. The first column shows the high resolution images, followed
-by the blurry images, the third column shows the result of the convolutional deblurring network
-and the fourth column shows the graph of frequency magnitudes of each image
-(synthetic, blurred and CNN).
-%Explicar os resultados dos indices
-Table \ref{table_caso_1} presents the values for each metric obtained for the CNN output and the
-blurry image related to the latent image.
+Comparing the blurry image and the CNN output,
+in the second and third columns of Fig. \ref{fig_scenario1} respectively,
+it is notable that the CNN output reached a sharp image and accurately
+predicted the pixel values. The frequency magnitude graphs in the fourth
+column shows that the the model precisely recovered the range of frequency
+of the original image. It is noticeable in Tab. \ref{table_caso_1}
+that the RMSE for the network output is less than of the blurry image,
+while the FFTI.
+%When we compare our model to....
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
 \caption{An Example of a Table}
@@ -767,9 +769,14 @@ Example 4 & $0.1948$ & $0.0775$\\
 \end{tabular}
 \end{table}
 
-In the second scenario, we inverted the impedance values of the lithology structures.
-This way we verified that the prediction of the pixel value is disconnected to the lithology shape.
-Fig. \ref{fig_scenario6} shows the results obtained in this scenario.
+In the second scenario, we invert the impedance values of the lithology structures, that means,
+we fill the reservoir lithology with normalized impedance value equal $1$ and the lithology
+around of the reservoir with value equal to $0$. This allows to verify the disconnection between the prediction
+of the pixel value and the lithology shape.
+Even though the network outputs show lower RMSE and recover all the frequency spectrum (Fig. \ref{fig_scenario6}), the similarity
+between the CNN images is lower than the blurred images.
+This result is related to the fact that the model reconstruct the lithology structures, however they lack of thin
+details, what makes them slightly less similar to the latent image.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.0in]{Figs/Caso6}
@@ -850,8 +857,8 @@ Example 4 & $0.0561$ & $0.0435$\\
 \end{tabular}
 \end{table}
 
-A new scenario is simulated, in which the  synthetic images were blurred with different
-cut frequencies. Each one of the four test images are blurred with a cut frequency
+A new scenario is simulated in which the synthetic images are blurred with different
+cutting frequencies. Each one of the four test images are blurred with different frequency
 randomly chosen between $3$ and $20$ Hz. This is particularly interesting, because
 in a scenario with real data, physical aspects as signal attenuation may lead to
 different blurring profiles in post-inversion images.
@@ -893,11 +900,11 @@ Example 4 ($8Hz$)& $0.8946$ & $0.7983$\\
 \end{table}
 
 \subsection{Randomly Rotated Wedges}
-Randomly rotated wedge is related to a lithology positioned in a random angle.
+Randomly rotated wedges are related to lithologies positioned at a random angle.
 In this case, we evaluated the CNN capability to deblurr the lithologies with shape and position absent
-in the training dataset. Fig. \ref{fig_scenario4} shows the test case in which the acoustic impedance was generated with values $0$ and $1$.
-As the network was trained with wedges with the same value, the network was able to predict
-the pixel intensity value.
+in the training dataset. Fig. \ref{fig_scenario4} shows the test case in which the acoustic impedance
+is normalized to values equals to $0$ and $1$. As the same range of values were used during
+the network training, it was able to predict the pixel intensity value.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.0in]{Figs/Caso4}
@@ -906,8 +913,39 @@ the pixel intensity value.
 \label{fig_scenario4}
 \end{figure}
 
-Fig. \ref{fig_scenario3} shows the test case in which the wedges were positioned in random angles and the acoustic impedance
-was normalized to values equal to $0.3$ and $0.7$. These values were absent in the training dataset and it
+The results presented in Tab. \ref{table_caso_6} show that the RMSE for the network outputs
+is slightly worst than for the filtered image, as well as they are less similar to latent
+images. 
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Table of metric values for wedges in random positions and acoustic impedance normalized to $0$ and $1$.}
+\label{table_caso_6}
+\centering
+\begin{tabular}{|c||c||c|}
+\hline
+ & Blurry Image & CNN Output \\
+\hline
+Example 1 & $0.2155$ & $0.2164$\\
+\hline
+	  & $0.9357$ & $0.9361$\\
+\hline
+Example 2 & $0.2248$ & $0.2045$ \\
+\hline
+	  & $0.9357$ & $0.9235$\\
+\hline
+Example 3 & $0.2197$ & $0.2209$\\
+\hline
+	  & $0.9406$ & $0.9236$\\
+\hline
+Example 4 & $0.2174$ & $0.1879$\\
+\hline
+	  & $0.9555$ & $0.9549$\\
+\hline
+\end{tabular}
+\end{table}
+
+In this same scenario, we normalized the values of impedance to  range equal to $0.3$ and $0.7$, as
+illustrated in Fig. \ref{fig_scenario3}. These values were absent in the training dataset and it
 is notable a wider spread of values in both lithologies outputted by the network.
 \begin{figure}[!t]
 \centering
@@ -916,81 +954,36 @@ is notable a wider spread of values in both lithologies outputted by the network
 \caption{Acoustic impedance blurred model.}
 \label{fig_scenario3}
 \end{figure}
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure}
 
-% Note that the IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a 
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
-% labels, the optional argument to \subfloat must be present. If a
-% subcaption is not desired, just leave its contents blank,
-% e.g., \subfloat[].
-
-
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table and, given that table
-% captions serve much like titles, are usually capitalized except for words
-% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
-% and up, which are usually not capitalized unless they are the first or
-% last word of the caption. Table text will default to \footnotesize as
-% the IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
+Tab. \ref{table_caso_7} presents the values error values for this test case. It is notable
+that.
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Table of metric values for wedges in random positions and acoustic impedance normalized to $0.3$ and $0.7$.}
+\label{table_caso_7}
+\centering
+\begin{tabular}{|c||c||c|}
+\hline
+ & Blurry Image & CNN Output \\
+\hline
+Example 1 & $0.0747$ & $0.0885$\\
+\hline
+	  & $0.9390$ & $0.9180$\\
+\hline
+Example 2 & $0.07014$ & $0.0933$ \\
+\hline
+	  & $0.9437$ & $0.8967$\\
+\hline
+Example 3 & $0.0712$ & $0.1046$\\
+\hline
+	  & $0.9289$ & $0.8733$\\
+\hline
+Example 4 & $0.0685$ & $0.0751$\\
+\hline
+	  & $0.9542$ & $0.9266$\\
+\hline
+\end{tabular}
+\end{table}
 
 % Note that the IEEE does not put floats in the very first column
 % - or typically anywhere on the first page for that matter. Also,
@@ -1001,10 +994,6 @@ is notable a wider spread of values in both lithologies outputted by the network
 % Note that, LaTeX2e, unlike IEEE journals/conferences, places
 % footnotes above bottom floats. This can be corrected via the
 % \fnbelowfloat command of the stfloats package.
-
-
-
-
 \section{Conclusion}
 The conclusion goes here.
 
@@ -1021,10 +1010,6 @@ The conclusion goes here.
 
 
 The authors would like to thank...
-
-
-
-
 
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page
@@ -1049,8 +1034,6 @@ The authors would like to thank...
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
-
-\bibitem{IEEEhowto:kopka} 	H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
 \bibitem{xiaoiu}  		Xi Xiaoyu, Ling Yun, Sun Desheng, Guo Xiangyu, and Wang Huifeng, ``Studying the effect of expanding low or high frequency on post-stack seismic inversion,'' in SEG Technical Program Expanded Abstracts 2012. September 2012, 1-5.
 \bibitem{Buduma15}  		Buduma, N., `` Fundamentals of Deep Learning,'' Academic Press, 2015, in O'Reilly Media.
 \bibitem{qian} 			Qian Feng, Yin Miao, Su Ming-Jun, Wang Yaojun, Hu Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''.
