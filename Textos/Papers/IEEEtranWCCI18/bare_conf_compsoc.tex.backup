@@ -699,20 +699,11 @@ lithologies in different positions and expect the network
 to identify general sorts of wedges in angles different from those with which the it was trained.
 The rotated images are blurred by applying a low-pass filter with
 cuttig frequency $4Hz$, then the pairs of blurred and not-blurred images are used to
-adjust the model weights. The same approach is applied to generate different
-scenarios for test cases. Some scenarios do probably not
+adjust the model weights.
+The same approach is applied to generate different scenarios for test cases.
+We are aware that some scenarios approached in this work probably do not
 contain a significant geological meaning, however, we have evaluated the capability of the model
 in deblurring and predicting any wedge shaped acoustic impedance image.
-
-% In the first scenario we trained and tested the network with images of acoustic impedance normalized to $0$ and $1$.
-% This scenario evaluated the model capability to deblurr lithology with similar acoustic impedance
-% values as in the training dataset, but with different shapes. 
-% In the second scenario, we  inverted the lithology impedance values in the test images to evaluate the ability of the 
-% network to predict the correct impedance value, despite the position of the a pixel on the image. 
-% The fourth scenario tested images with different acoustic impedance values and
-% different wedge shapes and rotations, in comparison to the images used in the training phase.
-% In this case we tested the model capability to deblurr different wedge shapes, located in
-% different positions, and to extrapolate the acoustic impedance values.
 
 \subsection{Implementation Details}
 The model was implemented using the Deep Learning toolbox
@@ -796,25 +787,24 @@ Fig. \ref{fig_scenario6} shows the results obtained in this scenario.
 \hline
  & Blurry Image & CNN Output \\
 \hline
-Example 1 & $0.1294$ & $0.0644$\\
+Example 1 & $0.1248$ & $0.0702$\\
 \hline
-	  & $0.9819$ & $0.9857$\\
+	  & $0.9005$ & $0.7904$\\
 \hline
-Example 2 & $0.1948$ & $0.0774$ \\
+Example 2 & $0.1738$ & $0.0855$ \\
 \hline
-	  & $0.9549$ & $0.9862$\\
+	  & $0.8064$ & $0.7918$\\
 \hline
-Example 3 & $0.1294$ & $0.0645$\\
+Example 3 & $0.1248$ & $0.0727$\\
 \hline
-	  & $0.9819$ & $0.9876$\\
+	  & $0.9005$ & $0.8190$\\
 \hline
-Example 4 & $0.1948$ & $0.0775$\\
+Example 4 & $0.1738$ & $0.0858$\\
 \hline
-	  & $0.9575$ & $0.9902$\\
+	  & $0.8512$ & $0.7906$\\
 \hline
 \end{tabular}
 \end{table}
-
 
 In the third scenario, we arbitrarily changed the normalized impedance to values
 of higher impedance out of the wedge (with value of $0.7$) and lower impedance (with value of $0.3$)

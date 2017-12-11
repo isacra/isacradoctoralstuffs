@@ -690,39 +690,30 @@ after the low resolution image is passed through the trained CNN.
 \end{equation}
 
 \section{Experiments}
-%This section describes the experiments and results obtained with the proposed method.
-%We compare the results with the state-of-the-art deblurring algorithms in four different scenarios.
-To build the training dataset we generated $500$ images of random wedge. Each image was rotated in four integer angles, multiple of $90$
-degrees, then comprising a total of $2000$ images. 
-By rotating the images, we present to the network the 
-lithologies in different positions and expect the network
-to identify general sorts of wedges in angles different from those with which the it was trained.
+To build the training dataset we generated $500$ images of random wedge.
+Because the last layer of the network is a regression unit, it is necessary the
+normalization of the images to values between $0$ and $1$, and the results
+are presented in terms of this normalization.
+The normalized images are then rotated in four integer angles multiple of $90$
+degrees, then comprising a total of $2000$ images. By doing so, we present to the network the same lithologies in different positions and expect that the network
+identify general sorts of wedges in angles different from those with which the it was trained.
 The rotated images are blurred by applying a low-pass filter with
 cuttig frequency $4Hz$, then the pairs of blurred and not-blurred images are used to
-adjust the model weights. The same approach is applied to generate different
-scenarios for test cases. Some scenarios do probably not
-contain a significant geological meaning, however, we have evaluated the capability of the model
-in deblurring and predicting any wedge shaped acoustic impedance image.
-
-% In the first scenario we trained and tested the network with images of acoustic impedance normalized to $0$ and $1$.
-% This scenario evaluated the model capability to deblurr lithology with similar acoustic impedance
-% values as in the training dataset, but with different shapes. 
-% In the second scenario, we  inverted the lithology impedance values in the test images to evaluate the ability of the 
-% network to predict the correct impedance value, despite the position of the a pixel on the image. 
-% The fourth scenario tested images with different acoustic impedance values and
-% different wedge shapes and rotations, in comparison to the images used in the training phase.
-% In this case we tested the model capability to deblurr different wedge shapes, located in
-% different positions, and to extrapolate the acoustic impedance values.
+adjust the model weights. It is relevant to mention that the images which are blurred with the same cutting frequency and that remains simmetric after the rotation, have the values for the metrics MSE and FFTI. This means that rotating the images causes no changes in impedance values.
+We apply the same approach to generate different scenarios for test cases.
+% We are aware that some scenarios approached in this work probably do not
+% contain a significant geological meaning, however, we have evaluated the capability of the model
+% in deblurring and predicting any wedge shaped acoustic impedance image.
 
 \subsection{Implementation Details}
-The model was implemented using the Deep Learning toolbox
+The model is implemented using the Deep Learning toolbox
 delivered in MATLAB R2017A. For training the network, we used a mini-batch with size of $32$ training examples.
 The network weights are randomly initialized and the Stochastic Gradient Descendant with
 Momentum (SGDM) \cite{Ning} is the optimization algorithm.
 We adopted an exponentially decreasing learning rate (initially
 set to $0.005$), decreasing every iteration in a total of $100$ iterations.
 It should be noted that, once the wedge shapes are randomly generated, every image is different
-and each one was introduced only once to the network, this way avoiding over-fitting.
+and each one is introduced only once to the network, this way avoiding over-fitting.
 
 %Falar que foram usadas 4 figuras, 
 
@@ -820,7 +811,7 @@ of higher impedance out of the wedge (with value of $0.7$) and lower impedance (
 into the wedge. These values are out the range learned by the model during the training phase.
 Doing this, we tested the model generalization capacity to reach the learned pixel intensity values.
 We observed that, once the model is trained with pixel valued to $0$ and $1$, the network poorly
-extrapolated and a new training dataset was generated containing wedges with the new pixel values.
+extrapolated and a new training dataset is generated containing wedges with the new pixel values.
 The Fig. \ref{fig_scenario2} shows the result for the network trained with the extended dataset.
 \begin{figure}[!t]
 \centering
@@ -859,8 +850,8 @@ Example 4 & $0.0561$ & $0.0435$\\
 \end{tabular}
 \end{table}
 
-A new scenario was simulated, in which the  synthetic images were blurred with different
-cut frequencies. Each one of the four test images was blurred with a cut frequency
+A new scenario is simulated, in which the  synthetic images were blurred with different
+cut frequencies. Each one of the four test images are blurred with a cut frequency
 randomly chosen between $3$ and $20$ Hz. This is particularly interesting, because
 in a scenario with real data, physical aspects as signal attenuation may lead to
 different blurring profiles in post-inversion images.
@@ -904,10 +895,7 @@ Example 4 ($8Hz$)& $0.8946$ & $0.7983$\\
 \subsection{Randomly Rotated Wedges}
 Randomly rotated wedge is related to a lithology positioned in a random angle.
 In this case, we evaluated the CNN capability to deblurr the lithologies with shape and position absent
-in the training dataset. As in the previews tests, the model was trained with lithologies rotated
-in integer multiple of the right angle and the model was expected to identify the edges and contours of the wedges,
-and recover the correct values of impedance.
-Fig. \ref{fig_scenario4} shows the test case in which the acoustic impedance was generated with values $0$ and $1$.
+in the training dataset. Fig. \ref{fig_scenario4} shows the test case in which the acoustic impedance was generated with values $0$ and $1$.
 As the network was trained with wedges with the same value, the network was able to predict
 the pixel intensity value.
 \begin{figure}[!t]
