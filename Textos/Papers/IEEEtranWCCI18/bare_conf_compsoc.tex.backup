@@ -443,7 +443,7 @@ sources of uncertainties. Specifically, the limited band-width of the seismic da
 a misinterpretation of the resulting acoustic impedance models.
 According to \cite{xiaoiu}, improving the resolution of seismic inversion is
 possible by adding high frequency in acquisition and processing seismic data.
-However, the earth attenuation, high-frequency noise and other sources, causes 
+However, the earth attenuation, high-frequency noise and other sources, cause
 the lack of high and low frequencies in seismic data. 
 Thus, deblurring the acoustic impedance models, as a post-inversion refinement process, should lead to a more accurate
 interpretation of the impedance models.
@@ -471,7 +471,7 @@ based on this prior tend to favor blurry images over original latent images.
 The Bayesian inference approach \cite{Levin} outperforms the MAP based methods. It marginalizes
 the image from the optimization step, while estimating the unknown blur.
 The authors show that it is possible to define a class of prior image
-based on natural image statistics, suitable enough for representing sharp images features.
+based on natural image statistics, suitable enough to represent sharp images features.
 This prior formulation makes possible to use Bayesian inference in the estimation of the
 unknown image and the blur kernel. According to \cite{Hacohen13}, defining a gradient
 prior, by itself, is not sufficient to reach a sharp image, instead,
@@ -595,7 +595,7 @@ low-frequency model, the final model for acoustic impedance still lacks of high 
 
 \section{Data and Methods}
 \subsection{Acoustic Impedance Inversion}
-The experiments described in this paper were performed
+The experiments described in this paper perform
 on a set of synthetic acoustic impedance images. Using synthetic models
 to test and parametrize algorithms is a common practice in reservoir characterization \cite{sergio}. It allows studying the
 results of the algorithms without external interferences and performing efficient interpretations and assessments. 
@@ -603,11 +603,11 @@ According to \cite{Harvey}, wedge shaped models is a straight way to analysis th
 seismic model and inversion processes. It reproduces
 reservoir contexts such as stratigraphic refinements, edges and channel structures in a realistic manner.
 
-The training set generation is performed in two steps.
+The training set generation occurs in two steps.
 The fist step creates a set of wedge shapes represented
-by images with size $32$ x $32$. The wedges represent the reservoir and they
+by images with size $32$ x $32$. The wedge shapes represent the reservoir and they
 randomly vary in width and length. The second step fills the lithology with values of petrophysical properties.
-In order to simplify the assessments and conclusions, the lithology structures are filled with constant
+In order to simplify the assessments and conclusions, we fill the lithology structures with constant
 reference values of rock densities and compressional velocity observed in the literature \cite{Mavko2009}.
 The acoustic impedance is calculated using the density and velocity models and the images in high
 resolution model are obtained, as illustrated in  Fig. \ref{fig_lithology}.
@@ -625,7 +625,8 @@ However, for experimental purpose, the acoustic impedance models were filtered
 and the high frequencies were removed to obtain the blurry images, as illustrated in Fig. \ref{fig_blur}.
 This way, the supervised learning is performed with the high resolution images and blurred images.
 To increase the number of examples in the training dataset we rotate
-the impedance models in angles integer multiples of right angle. This approach allows the model learning the maximum edge variabilities
+the impedance models in angles integer multiples of right angle. 
+This approach allows the model learning an wide edge variabilities
 in wedges images.
 \begin{figure}[!t]
 \centering
@@ -654,10 +655,13 @@ capable to solve regression tasks. The model presented in this paper
 is able to solve two important problems related to deblurring physical properties
 images: ($1$) learning the spacial patterns in the low resolution
 training images and ($2$) predicting each pixel intensity value in the new
-higher resolution image. To reach these two goals, the model architecture consists of two convolution layers,
+higher resolution image.
+To reach these two goals, the model architecture consists of two convolution layers,
 each one followed by one pooling layer and a regularization layer. The second regularization layer is followed
 by a fully connected layer, which maps the convolution layer's output to $1024$ neurons.
-The output model comprises a regression layer to predict the intensity value of each pixel.
+The output model comprises a regression layer to predict the intensity value of each pixel Fig. \rt.
+
+
 
 The model performs a supervised learning through a dictionary containing pairs of low
 and high resolution images. The optimization algorithm adjusts the 
@@ -722,7 +726,7 @@ rotated in angles integer multiple of right angle and those in which the wedges 
 to a random angle.
 %Falar que foram usadas 4 figuras, 
 
-\subsection{Integer Angles Rotated Wedges}
+\subsection{Integer Angles Rotated Wedges} \label{IARW}
 We firstly test if the network is capable to correctly model the shape of the wedges
 and to deblur the edges and contours in a simple perspective.
 Thus, the training images and the test images have the same reference values for density and compressional velocity,
@@ -907,12 +911,18 @@ Example 4 ($8Hz$)& $0.8946$ & $0.7983$\\
 \end{table}
 
 \subsection{Randomly Rotated Wedges}
-The randomly rotated wedges are related to lithologies positioned at a random angle.
-In this case, we evaluate the CNN capability to deblur the wedges which shape and
-position is absent of the training dataset.
-We firstly test the wedges with the acoustic impedance normalized to values equals to $0$ and $1$.
-Considering that As the same range of values were used during
-the network training, it was able to predict the pixel intensity value.
+The randomly rotated wedges are related to lithologies positioned at random angles.
+In this case, we evaluate the CNN capability to deblur the wedges with specific shape and
+position, that are absent of the training dataset.
+We test the wedges with the acoustic impedance normalized to values equals to $0$ and $1$.
+It is observable in Fig. \ref{fig_scenario4} that the model presents higher uncertainty
+in modeling the edges and corners of the wedges. On the other side, as the test images contain the same range of values
+as in the training images, the model keep its predictive capacity and recover the  This result is evident in the metrics values
+(Tab. \ref{table_caso_6}). In examples 2 and 4, the network outputs present lower RMSE than the blurry images, 
+while it is higher in the other examples 1 and 3. However, according to the FFTI, all the network outputs present
+less similarity to the latent image, than the blurred image and we believe that is explained by the higher uncertainty
+observed. A mitigation for this problem is adding examples of this image to the network dataset, as stated previously in
+Section \ref{IARW}.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.0in]{Figs/Caso4}
@@ -921,9 +931,6 @@ the network training, it was able to predict the pixel intensity value.
 \label{fig_scenario4}
 \end{figure}
 
-The results presented in Tab. \ref{table_caso_6} show that the RMSE for the network outputs
-is slightly worst than for the filtered image, as well as they are less similar to latent
-images. 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
 \caption{Table of metric values for wedges in random positions and acoustic impedance normalized to $0$ and $1$.}
@@ -952,46 +959,46 @@ Example 4 & $0.2174$ & $0.1879$\\
 \end{tabular}
 \end{table}
 
-In this same scenario, we normalized the values of impedance to  range equal to $0.3$ and $0.7$, as
-illustrated in Fig. \ref{fig_scenario3}. These values were absent in the training dataset and it
-is notable a wider spread of values in both lithologies outputted by the network.
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.0in]{Figs/Caso3}
-\DeclareGraphicsExtensions.
-\caption{Acoustic impedance blurred model.}
-\label{fig_scenario3}
-\end{figure}
-
-Tab. \ref{table_caso_7} presents the values error values for this test case. It is notable
-that.
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
-\caption{Table of metric values for wedges in random positions and acoustic impedance normalized to $0.3$ and $0.7$.}
-\label{table_caso_7}
-\centering
-\begin{tabular}{|c||c||c|}
-\hline
- & Blurry Image & CNN Output \\
-\hline
-Example 1 & $0.0747$ & $0.0885$\\
-\hline
-	  & $0.9390$ & $0.9180$\\
-\hline
-Example 2 & $0.07014$ & $0.0933$ \\
-\hline
-	  & $0.9437$ & $0.8967$\\
-\hline
-Example 3 & $0.0712$ & $0.1046$\\
-\hline
-	  & $0.9289$ & $0.8733$\\
-\hline
-Example 4 & $0.0685$ & $0.0751$\\
-\hline
-	  & $0.9542$ & $0.9266$\\
-\hline
-\end{tabular}
-\end{table}
+% In the following scenario of random rotated wedges, we normalize the values of impedance to $0.3$ and $0.7$, as
+% illustrated in Fig. \ref{fig_scenario3}. 
+% 
+% \begin{figure}[!t]
+% \centering
+% \includegraphics[width=3.0in]{Figs/Caso3}
+% \DeclareGraphicsExtensions.
+% \caption{Acoustic impedance blurred model.}
+% \label{fig_scenario3}
+% \end{figure}
+% 
+% Tab. \ref{table_caso_7} presents the values error values for this test case. It is notable
+% that.
+% \begin{table}[!t]
+% \renewcommand{\arraystretch}{1.3}
+% \caption{Table of metric values for wedges in random positions and acoustic impedance normalized to $0.3$ and $0.7$.}
+% \label{table_caso_7}
+% \centering
+% \begin{tabular}{|c||c||c|}
+% \hline
+%  & Blurry Image & CNN Output \\
+% \hline
+% Example 1 & $0.0747$ & $0.0885$\\
+% \hline
+% 	  & $0.9390$ & $0.9180$\\
+% \hline
+% Example 2 & $0.07014$ & $0.0933$ \\
+% \hline
+% 	  & $0.9437$ & $0.8967$\\
+% \hline
+% Example 3 & $0.0712$ & $0.1046$\\
+% \hline
+% 	  & $0.9289$ & $0.8733$\\
+% \hline
+% Example 4 & $0.0685$ & $0.0751$\\
+% \hline
+% 	  & $0.9542$ & $0.9266$\\
+% \hline
+% \end{tabular}
+% \end{table}
 
 % Note that the IEEE does not put floats in the very first column
 % - or typically anywhere on the first page for that matter. Also,
