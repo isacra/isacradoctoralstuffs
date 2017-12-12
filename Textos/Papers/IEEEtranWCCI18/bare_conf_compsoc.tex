@@ -690,16 +690,18 @@ after the low resolution image is passed through the trained CNN.
 \end{equation}
 
 \section{Experiments}
-To build the training dataset we generated $500$ images of random wedge.
+To build the training dataset we generate $500$ images of random wedge.
 Because the last layer of the network is a regression unit, it is necessary the
 normalization of the images to values between $0$ and $1$, and the results
 are presented in terms of this normalization.
 The normalized images are then rotated in four integer angles multiple of $90$
-degrees, then comprising a total of $2000$ images. By doing so, we present to the network the same lithologies in different positions and expect that the network
+degrees, then comprising a total of $2000$ images. By doing so, we present to
+the network the same lithologies in different positions and expect that the network
 identify general sorts of wedges in angles different from those with which the it was trained.
 The rotated images are blurred by applying a low-pass filter with
 cutting frequency $4Hz$, then the pairs of blurred and not-blurred images are used to
-adjust the model weights. It is relevant to mention that the images which are blurred with the same cutting frequency and that remains simmetric after the rotation,
+adjust the model weights. It is relevant to mention that the images which are blurred with
+the same cutting frequency and that remains symmetric after the rotation,
 have the values for the metrics RMSE and FFTI. This means that rotating the images causes no changes in impedance values.
 We apply the same approach to generate different scenarios for test cases.
 % We are aware that some scenarios approached in this work probably do not
@@ -771,8 +773,8 @@ Example 4 & $0.1948$ & $0.0775$\\
 
 In the second scenario, we invert the impedance values of the lithology structures, that means,
 we fill the reservoir lithology with normalized impedance value equal $1$ and the lithology
-around of the reservoir with value equal to $0$. This allows to verify the disconnection between the prediction
-of the pixel value and the lithology shape.
+around of the reservoir with value equal to $0$.
+%This allows to verify the disconnection between the prediction of the pixel value and the lithology shape.
 Even though the network outputs show lower RMSE and recover all the frequency spectrum (Fig. \ref{fig_scenario6}), the similarity
 between the CNN images is lower than the blurred images.
 This result is related to the fact that the model reconstruct the lithology structures, however they lack of thin
@@ -813,13 +815,19 @@ Example 4 & $0.1738$ & $0.0858$\\
 \end{tabular}
 \end{table}
 
-In the third scenario, we arbitrarily changed the normalized impedance to values
-of higher impedance out of the wedge (with value of $0.7$) and lower impedance (with value of $0.3$)
-into the wedge. These values are out the range learned by the model during the training phase.
-Doing this, we tested the model generalization capacity to reach the learned pixel intensity values.
-We observed that, once the model is trained with pixel valued to $0$ and $1$, the network poorly
-extrapolated and a new training dataset is generated containing wedges with the new pixel values.
-The Fig. \ref{fig_scenario2} shows the result for the network trained with the extended dataset.
+In the following scenario, we arbitrarily change the normalized impedance in both
+lithologies to values $ 0.7 $ out of the wedge and $ 0.3$ into the wedge.
+These values are different from those learned by the model during the
+training phase and we test the model generalization capacity to reach
+the learned pixel intensity values. Once the model is trained with pixel valued to
+$ 0 $ and $ 1 $, it poorly extrapolated and a new training dataset is generated
+containing wedges with the new pixel values. It is noticeable in
+Fig. \ref{fig_scenario2} that the network, trained with the new dataset, learned
+the wedges shapes and the predicted pixel intensities with low variance. The values
+for each image example in Tab. \ref{table_caso_3} show a short decreasing in the RMSE,
+while the FTTI indicates a slight increase in CNN images similarity with the latent image.
+Although the short positive change in the metrics, the output images present increasing
+frequency magnitude in the range between $ 20 $ and $ 50 Hz $ and between $ 60 $ and $ 100 Hz $.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.0in]{Figs/Caso2}
@@ -857,10 +865,9 @@ Example 4 & $0.0561$ & $0.0435$\\
 \end{tabular}
 \end{table}
 
-A new scenario is simulated in which the synthetic images are blurred with different
-cutting frequencies. Each one of the four test images are blurred with different frequency
-randomly chosen between $3$ and $20$ Hz. This is particularly interesting, because
-in a scenario with real data, physical aspects as signal attenuation may lead to
+In the last scenario, we blurr each synthetic image with a different
+cutting frequency randomly chosen between $3$ and $20 Hz$. This is particularly interesting, because
+in a scenario with real data, physical aspects as signal attenuation caused by the depth lead to
 different blurring profiles in post-inversion images.
 Fig. \ref{fig_scenario5} shows the results for this scenarios.
 \begin{figure}[!t]
@@ -900,10 +907,11 @@ Example 4 ($8Hz$)& $0.8946$ & $0.7983$\\
 \end{table}
 
 \subsection{Randomly Rotated Wedges}
-Randomly rotated wedges are related to lithologies positioned at a random angle.
-In this case, we evaluated the CNN capability to deblurr the lithologies with shape and position absent
-in the training dataset. Fig. \ref{fig_scenario4} shows the test case in which the acoustic impedance
-is normalized to values equals to $0$ and $1$. As the same range of values were used during
+The randomly rotated wedges are related to lithologies positioned at a random angle.
+In this case, we evaluate the CNN capability to deblur the wedges which shape and
+position is absent of the training dataset.
+We firstly test the wedges with the acoustic impedance normalized to values equals to $0$ and $1$.
+Considering that Fig. \ref{fig_scenario4}  As the same range of values were used during
 the network training, it was able to predict the pixel intensity value.
 \begin{figure}[!t]
 \centering
