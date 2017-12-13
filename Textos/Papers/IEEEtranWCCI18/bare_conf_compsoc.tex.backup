@@ -656,11 +656,25 @@ is able to solve two important problems related to deblurring physical propertie
 images: ($1$) learning the spacial patterns in the low resolution
 training images and ($2$) predicting each pixel intensity value in the new
 higher resolution image.
-To reach these two goals, the model architecture consists of two convolution layers,
-each one followed by one pooling layer and a regularization layer. The second regularization layer is followed
-by a fully connected layer, which maps the convolution layer's output to $1024$ neurons.
-The output model comprises a regression layer to predict the intensity value of each pixel Fig. \rt.
+To reach these two goals, our model, outlined in Fig. \ref{}, comprises two major
+components that are combined to perform deblurring and the physical property prediction
+jointly: (1) convolutional component and (2) regression component. The convolutional component
+is a two layer structure that maps a blurry image to a non-blurred model, while 
+the regression layer is supposed to predict the continuous values of each pixel
+representing the acoustic impedance value. Solving the deblurring problem
+combined with the regression step to predict the physics property represents 
+a relevant advance, because to the combined avoiding relevance advance in developing a 
 
+Each convolutional layer is configured with $50$ kernels, sized $5$ x $5$
+and stride $1$, meaning that after each convolution operation the blur kernel is shifted
+one position in each direction. After each convolutional layer we proceed a maximum pooling operation
+to obtain the maximum value of small regions in the input image. Following \cite{Nair2010} suggestion, we
+apply rectified linear units (ReLU) after each pooling layer in order to speed up the training
+step and to learn qualitatively sensible features from images. The second regularization layer is followed
+by a fully connected layer, which maps the convolution layer's output to $1024$ neurons.
+The output model comprises a regression layer to predict the intensity value of each pixel.
+
+The 
 
 
 The model performs a supervised learning through a dictionary containing pairs of low
@@ -1089,6 +1103,7 @@ The authors would like to thank...
 \bibitem{Mavko2009}		G. Mavko, T. Mukerji, J. Dvorkin, ``The Rock Physics Handbook: Tools for Seismic Analysis of Porous Media.'' 2009 Cambridge: Cambridge University Press, p. 359-369.
 \bibitem{Debeye1990}		H. DEBEYE, P. RIEL van, ``Lp-norm deconvolution.'' 1990, Geophysical Prospecting, p. 381–403
 \bibitem{Chopra2001}		S. Chopra, ``Integrating coherence cube imaging and seismic inversion.'' 2001, The Leading Edge, p. 354–362.
+\bibitem{Nair2010} 			V. Nair, G. E. Hinton. ``Rectified linear units improve restricted boltzmann machines.'' In Proc. 27th International Conference on Machine Learning, 2010.
 \end{thebibliography}
 
 %0 Journal Article
