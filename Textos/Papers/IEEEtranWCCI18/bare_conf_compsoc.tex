@@ -661,8 +661,14 @@ components that are combined to perform deblurring and the physical property pre
 jointly: (1) convolutional component and (2) regression component. The convolutional component
 is a two layer structure that maps a blurry image to a non-blurred model, while 
 the regression layer is supposed to predict the continuous values of each pixel
-representing the acoustic impedance value. Solving the deblurring problem
-combined with the regression step to predict the physics property represents 
+representing the acoustic impedance value. 
+
+The state-of-the-art CNN based models for image deblurring \cite{} and super-resolution \cite{}
+work classifying each pixel in the input image in one or three channels. 
+Adapting these methods to solve the issue of deblurring physical properties image
+implies in discreticizing each pixel in order to generate an image file. Returning
+to the original data results in data loss, what represents a considerable inconvenient.
+Solving the deblurring problem combined with the regression step to predict the physics property represents 
 a relevant advance, because to the combined avoiding relevance advance in developing a 
 
 Each convolutional layer is configured with $50$ kernels, sized $5$ x $5$

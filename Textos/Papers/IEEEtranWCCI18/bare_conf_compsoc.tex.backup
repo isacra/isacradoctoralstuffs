@@ -661,21 +661,26 @@ components that are combined to perform deblurring and the physical property pre
 jointly: (1) convolutional component and (2) regression component. The convolutional component
 is a two layer structure that maps a blurry image to a non-blurred model, while 
 the regression layer is supposed to predict the continuous values of each pixel
-representing the acoustic impedance value. Solving the deblurring problem
+representing the acoustic impedance value. 
+
+The state-of-the-art CNN based models for image deblurring \cite{} and super-resolution \cite{}
+work classifying each pixel in the input image in one or three channels.
+Adapting these methods 
+modelos baseados em CNN serem classificadores e então para usá-los neste problema
+eh necessário discretizar as imagens de propriedades físicas.
+Solving the deblurring problem
 combined with the regression step to predict the physics property represents 
 a relevant advance, because to the combined avoiding relevance advance in developing a 
 
 Each convolutional layer is configured with $50$ kernels, sized $5$ x $5$
 and stride $1$, meaning that after each convolution operation the blur kernel is shifted
 one position in each direction. After each convolutional layer we proceed a maximum pooling operation
-to obtain the maximum value of small regions in the input image. Following \cite{Nair2010} suggestion, we
+to obtain the maximum value of small regions in the input image. We
 apply rectified linear units (ReLU) after each pooling layer in order to speed up the training
-step and to learn qualitatively sensible features from images. The second regularization layer is followed
-by a fully connected layer, which maps the convolution layer's output to $1024$ neurons.
-The output model comprises a regression layer to predict the intensity value of each pixel.
-
-The 
-
+step and to learn sensible features from images, following the proposal of \cite{Nair2010}. After
+the second regularization layer the model proceeds a fully connected, which maps the convolution layer's output
+to $1024$ neurons. The output model comprises a regression layer to predict the intensity value of each pixel, then
+the output vector resizes to the original image dimension.
 
 The model performs a supervised learning through a dictionary containing pairs of low
 and high resolution images. The optimization algorithm adjusts the 
