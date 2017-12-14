@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.3)  12 DEC 2017 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.3)  14 DEC 2017 15:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -265,52 +265,49 @@ File: Figs/Image_Paper_blurred.png Graphic file (type png)
 <use Figs/Image_Paper_blurred.png>
 Package pdftex.def Info: Figs/Image_Paper_blurred.png used on input line 633.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
- [3 <./Figs/Image_Paper.png (PNG copy)> <./Figs/Image_Paper_blurred.png (PNG co
-py)>]
-<Figs/Caso1.png, id=25, 1396.4672pt x 753.5653pt>
+
+
+LaTeX Warning: Reference `' on page 3 undefined on input line 659.
+
+[3 <./Figs/Image_Paper.png (PNG copy)> <./Figs/Image_Paper_blurred.png (PNG cop
+y)>] <Figs/Caso1.png, id=25, 1396.4672pt x 753.5653pt>
 File: Figs/Caso1.png Graphic file (type png)
  <use Figs/Caso1.png>
-Package pdftex.def Info: Figs/Caso1.png used on input line 733.
+Package pdftex.def Info: Figs/Caso1.png used on input line 749.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 752.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 768.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8.03> on input line 752.
+(Font)              <8.03> on input line 768.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.62097> on input line 752.
+(Font)              <5.62097> on input line 768.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.015> on input line 752.
+(Font)              <4.015> on input line 768.
 
 <Figs/Caso6.png, id=26, 1396.4672pt x 753.5653pt>
 File: Figs/Caso6.png Graphic file (type png)
  <use Figs/Caso6.png>
-Package pdftex.def Info: Figs/Caso6.png used on input line 785.
+Package pdftex.def Info: Figs/Caso6.png used on input line 801.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
-
-<Figs/Caso2.png, id=27, 1396.4672pt x 753.5653pt>
-File: Figs/Caso2.png Graphic file (type png)
- <use Figs/Caso2.png>
-Package pdftex.def Info: Figs/Caso2.png used on input line 834.
-(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
- [4 <./Figs/Caso1.png (PNG copy)>] <Figs/Caso5.png, id=34, 1396.4672pt x 753.56
+ [4 <./Figs/Caso1.png (PNG copy)>] <Figs/Caso2.png, id=30, 1396.4672pt x 753.56
 53pt>
+File: Figs/Caso2.png Graphic file (type png)
+
+<use Figs/Caso2.png>
+Package pdftex.def Info: Figs/Caso2.png used on input line 850.
+(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
+ <Figs/Caso5.png, id=32, 1396.4672pt x 753.5653pt>
 File: Figs/Caso5.png Graphic file (type png)
 
 <use Figs/Caso5.png>
-Package pdftex.def Info: Figs/Caso5.png used on input line 876.
+Package pdftex.def Info: Figs/Caso5.png used on input line 892.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
- <Figs/Caso4.png, id=35, 1396.4672pt x 753.5653pt>
+ <Figs/Caso4.png, id=33, 1396.4672pt x 753.5653pt>
 File: Figs/Caso4.png Graphic file (type png)
 
 <use Figs/Caso4.png>
-Package pdftex.def Info: Figs/Caso4.png used on input line 925.
+Package pdftex.def Info: Figs/Caso4.png used on input line 941.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
- [5 <./Figs/Caso6.png (PNG copy)> <./Figs/Caso2.png> <./Figs/Caso5.png>] <Figs/
-Caso3.png, id=41, 1396.4672pt x 753.5653pt>
-File: Figs/Caso3.png Graphic file (type png)
-
-<use Figs/Caso3.png>
-Package pdftex.def Info: Figs/Caso3.png used on input line 967.
-(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
+ [5 <./Figs/Caso6.png (PNG copy)> <./Figs/Caso2.png> <./Figs/Caso5.png>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -337,7 +334,6 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [6 <./Figs/Caso4.png (PNG copy)> <./Figs/Caso3.png (PNG copy)>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -347,6 +343,7 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
+ [6 <./Figs/Caso4.png (PNG copy)>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -410,32 +407,36 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] (./bare_conf_compsoc.aux) ) 
+[7] (./bare_conf_compsoc.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2585 strings out of 493029
- 42070 string characters out of 6136234
- 113390 words of memory out of 5000000
- 6102 multiletter control sequences out of 15000+600000
- 39783 words of font info for 74 fonts, out of 8000000 for 9000
+ 2581 strings out of 493029
+ 41975 string characters out of 6136234
+ 117378 words of memory out of 5000000
+ 6098 multiletter control sequences out of 15000+600000
+ 40890 words of font info for 75 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  38i,9n,23p,292b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/b
-ase/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
-s/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_conf_compsoc.pdf (7 pages, 824130 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on bare_conf_compsoc.pdf (7 pages, 680607 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
+ 91 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
