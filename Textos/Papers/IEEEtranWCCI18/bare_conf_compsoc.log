@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.3)  14 DEC 2017 15:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.3)  15 DEC 2017 20:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -154,7 +154,41 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-(./bare_conf_compsoc.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen128
+\captionmargin@=\dimen129
+\captionwidth=\dimen130
+\caption@tempdima=\dimen131
+\caption@indent=\dimen132
+\caption@parindent=\dimen133
+\caption@hangindent=\dimen134
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+\c@KVtest=\count95
+\sf@farskip=\skip44
+\sf@captopadj=\dimen135
+\sf@capskip=\skip45
+\sf@nearskip=\skip46
+\c@subfigure=\count96
+\c@subfigure@save=\count97
+\c@lofdepth=\count98
+\c@subtable=\count99
+\c@subtable@save=\count100
+\c@lotdepth=\count101
+\sf@top=\skip47
+\sf@bottom=\skip48
+)
+(./bare_conf_compsoc.aux
+
+LaTeX Warning: Label `fig_scenario5' multiply defined.
+
+)
 \openout1 = `bare_conf_compsoc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 329.
@@ -173,16 +207,16 @@ LaTeX Font Info:    ... okay on input line 329.
 -- Lines per column: 58 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count95
-\scratchdimen=\dimen128
+\scratchcounter=\count102
+\scratchdimen=\dimen136
 \scratchbox=\box28
-\nofMPsegments=\count96
-\nofMParguments=\count97
+\nofMPsegments=\count103
+\nofMParguments=\count104
 \everyMPshowfont=\toks16
-\MPscratchCnt=\count98
-\MPscratchDim=\dimen129
-\MPnumerator=\count99
-\makeMPintoPDFobject=\count100
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen137
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
 \everyMPtoPDFconversion=\toks17
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -232,6 +266,9 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 389.
 
 
@@ -240,74 +277,168 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.05249> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 389.
-LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 45
-1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.03749> on input line 451.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.0262> on input line 451.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.01874> on input line 451.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2]
+]
+LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 49
+1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.03749> on input line 491.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7.0262> on input line 491.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.01874> on input line 491.
+ [2]
 <Figs/Image_Paper.png, id=20, 1396.4672pt x 753.5653pt>
 File: Figs/Image_Paper.png Graphic file (type png)
 
 <use Figs/Image_Paper.png>
-Package pdftex.def Info: Figs/Image_Paper.png used on input line 616.
+Package pdftex.def Info: Figs/Image_Paper.png used on input line 607.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
 
 <Figs/Image_Paper_blurred.png, id=21, 1396.4672pt x 753.5653pt>
 File: Figs/Image_Paper_blurred.png Graphic file (type png)
 
 <use Figs/Image_Paper_blurred.png>
-Package pdftex.def Info: Figs/Image_Paper_blurred.png used on input line 633.
+Package pdftex.def Info: Figs/Image_Paper_blurred.png used on input line 625.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
 
 
-LaTeX Warning: Reference `' on page 3 undefined on input line 659.
+LaTeX Warning: Reference `' on page 3 undefined on input line 651.
 
 [3 <./Figs/Image_Paper.png (PNG copy)> <./Figs/Image_Paper_blurred.png (PNG cop
-y)>] <Figs/Caso1.png, id=25, 1396.4672pt x 753.5653pt>
-File: Figs/Caso1.png Graphic file (type png)
- <use Figs/Caso1.png>
-Package pdftex.def Info: Figs/Caso1.png used on input line 749.
-(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 768.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8.03> on input line 768.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.62097> on input line 768.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.015> on input line 768.
+y)>] <Figs/Caso1/synthetic.png, id=25, 243.15843pt x 627.09282pt>
+File: Figs/Caso1/synthetic.png Graphic file (type png)
 
-<Figs/Caso6.png, id=26, 1396.4672pt x 753.5653pt>
-File: Figs/Caso6.png Graphic file (type png)
- <use Figs/Caso6.png>
-Package pdftex.def Info: Figs/Caso6.png used on input line 801.
-(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
- [4 <./Figs/Caso1.png (PNG copy)>] <Figs/Caso2.png, id=30, 1396.4672pt x 753.56
-53pt>
-File: Figs/Caso2.png Graphic file (type png)
+<use Figs/Caso1/synthetic.png>
+Package pdftex.def Info: Figs/Caso1/synthetic.png used on input line 742.
+(pdftex.def)             Requested size: 144.54pt x 372.75647pt.
 
-<use Figs/Caso2.png>
-Package pdftex.def Info: Figs/Caso2.png used on input line 850.
-(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
- <Figs/Caso5.png, id=32, 1396.4672pt x 753.5653pt>
+Underfull \hbox (badness 1412) in paragraph at lines 742--742
+[]\OT1/phv/m/n/8.03 (a) |Syn-thetic acous-tic impedance im-
+ []
+
+<Figs/Caso1/blurred.png, id=27, 243.91125pt x 627.84563pt>
+File: Figs/Caso1/blurred.png Graphic file (type png)
+
+<use Figs/Caso1/blurred.png>
+Package pdftex.def Info: Figs/Caso1/blurred.png used on input line 745.
+(pdftex.def)             Requested size: 144.54pt x 372.05432pt.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 745.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8.03> on input line 745.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.62097> on input line 745.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <4.015> on input line 745.
+
+<Figs/Caso1/cnn.png, id=28, 243.91125pt x 625.58719pt>
+File: Figs/Caso1/cnn.png Graphic file (type png)
+
+<use Figs/Caso1/cnn.png>
+Package pdftex.def Info: Figs/Caso1/cnn.png used on input line 748.
+(pdftex.def)             Requested size: 144.54pt x 370.716pt.
+
+<Figs/Caso6/synthetic.png, id=29, 246.9225pt x 621.07031pt>
+File: Figs/Caso6/synthetic.png Graphic file (type png)
+
+<use Figs/Caso6/synthetic.png>
+Package pdftex.def Info: Figs/Caso6/synthetic.png used on input line 809.
+(pdftex.def)             Requested size: 144.54pt x 363.54736pt.
+
+Underfull \hbox (badness 1412) in paragraph at lines 809--809
+[]\OT1/phv/m/n/8.03 (a) |Syn-thetic acous-tic impedance im-
+ []
+
+<Figs/Caso6/blurred.png, id=30, 246.9225pt x 621.07031pt>
+File: Figs/Caso6/blurred.png Graphic file (type png)
+
+<use Figs/Caso6/blurred.png>
+Package pdftex.def Info: Figs/Caso6/blurred.png used on input line 812.
+(pdftex.def)             Requested size: 144.54pt x 363.54736pt.
+
+<Figs/Caso6/cnn.png, id=31, 246.9225pt x 621.07031pt>
+File: Figs/Caso6/cnn.png Graphic file (type png)
+ <use Figs/Caso6/cnn.png>
+Package pdftex.def Info: Figs/Caso6/cnn.png used on input line 815.
+(pdftex.def)             Requested size: 144.54pt x 363.54736pt.
+
+[4] [5 <./Figs/Caso1/synthetic.png> <./Figs/Caso1/blurred.png> <./Figs/Caso1/cn
+n.png>] <Figs/Caso2/synthetic.png, id=45, 252.945pt x 626.34pt>
+File: Figs/Caso2/synthetic.png Graphic file (type png)
+
+<use Figs/Caso2/synthetic.png>
+Package pdftex.def Info: Figs/Caso2/synthetic.png used on input line 875.
+(pdftex.def)             Requested size: 144.54pt x 357.91588pt.
+
+Underfull \hbox (badness 1412) in paragraph at lines 875--875
+[]\OT1/phv/m/n/8.03 (a) |Syn-thetic acous-tic impedance im-
+ []
+
+<Figs/Caso2/blurred.png, id=46, 252.945pt x 626.34pt>
+File: Figs/Caso2/blurred.png Graphic file (type png)
+
+<use Figs/Caso2/blurred.png>
+Package pdftex.def Info: Figs/Caso2/blurred.png used on input line 878.
+(pdftex.def)             Requested size: 144.54pt x 357.91588pt.
+
+<Figs/Caso2/cnn.png, id=47, 250.68657pt x 627.09282pt>
+File: Figs/Caso2/cnn.png Graphic file (type png)
+
+<use Figs/Caso2/cnn.png>
+Package pdftex.def Info: Figs/Caso2/cnn.png used on input line 881.
+(pdftex.def)             Requested size: 144.54pt x 361.58028pt.
+ <Figs/Caso5.png, id=48, 1396.4672pt x 753.5653pt>
 File: Figs/Caso5.png Graphic file (type png)
 
 <use Figs/Caso5.png>
-Package pdftex.def Info: Figs/Caso5.png used on input line 892.
+Package pdftex.def Info: Figs/Caso5.png used on input line 924.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
- <Figs/Caso4.png, id=33, 1396.4672pt x 753.5653pt>
-File: Figs/Caso4.png Graphic file (type png)
 
-<use Figs/Caso4.png>
-Package pdftex.def Info: Figs/Caso4.png used on input line 941.
+<Figs/Caso5/synthetic.png, id=49, 247.67531pt x 607.51968pt>
+File: Figs/Caso5/synthetic.png Graphic file (type png)
+
+<use Figs/Caso5/synthetic.png>
+Package pdftex.def Info: Figs/Caso5/synthetic.png used on input line 933.
+(pdftex.def)             Requested size: 144.54pt x 354.5401pt.
+
+Underfull \hbox (badness 1412) in paragraph at lines 933--933
+[]\OT1/phv/m/n/8.03 (a) |Syn-thetic acous-tic impedance im-
+ []
+
+<Figs/Caso5/blurred.png, id=50, 246.1697pt x 614.295pt>
+File: Figs/Caso5/blurred.png Graphic file (type png)
+
+<use Figs/Caso5/blurred.png>
+Package pdftex.def Info: Figs/Caso5/blurred.png used on input line 936.
+(pdftex.def)             Requested size: 144.54pt x 360.69682pt.
+
+<Figs/Caso5/cnn.png, id=51, 246.1697pt x 614.295pt>
+File: Figs/Caso5/cnn.png Graphic file (type png)
+ <use Figs/Caso5/cnn.png>
+Package pdftex.def Info: Figs/Caso5/cnn.png used on input line 939.
+(pdftex.def)             Requested size: 144.54pt x 360.69682pt.
+
+<Figs/Caso4.png, id=52, 1396.4672pt x 753.5653pt>
+File: Figs/Caso4.png Graphic file (type png)
+ <use Figs/Caso4.png>
+Package pdftex.def Info: Figs/Caso4.png used on input line 988.
 (pdftex.def)             Requested size: 216.81pt x 116.98538pt.
- [5 <./Figs/Caso6.png (PNG copy)> <./Figs/Caso2.png> <./Figs/Caso5.png>]
+
+Underfull \vbox (badness 6252) has occurred while \output is active []
+
+ [6 <./Figs/Caso6/synthetic.png> <./Figs/Caso6/blurred.png> <./Figs/Caso6/cnn.p
+ng>]
+[7 <./Figs/Caso2/synthetic.png> <./Figs/Caso2/blurred.png> <./Figs/Caso2/cnn.pn
+g> <./Figs/Caso5.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./Figs/Caso5/synthetic.png> <./Figs/Caso5/blurred.png> <./Figs/Caso5/cnn.p
+ng> <./Figs/Caso4.png (PNG copy)>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -343,7 +474,6 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [6 <./Figs/Caso4.png (PNG copy)>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -395,7 +525,7 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-
+ [9]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -407,19 +537,24 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] (./bare_conf_compsoc.aux)
+[10
+
+] (./bare_conf_compsoc.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 2581 strings out of 493029
- 41975 string characters out of 6136234
- 117378 words of memory out of 5000000
- 6098 multiletter control sequences out of 15000+600000
- 40890 words of font info for 75 fonts, out of 8000000 for 9000
+ 3389 strings out of 493029
+ 57183 string characters out of 6136234
+ 132284 words of memory out of 5000000
+ 6893 multiletter control sequences out of 15000+600000
+ 42650 words of font info for 77 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 38i,9n,23p,292b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,49p,392b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -428,15 +563,17 @@ type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/times/utmri8a.pfb>
-Output written on bare_conf_compsoc.pdf (7 pages, 680607 bytes).
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
+>
+Output written on bare_conf_compsoc.pdf (10 pages, 736387 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 128 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
