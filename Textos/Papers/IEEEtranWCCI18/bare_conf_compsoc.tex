@@ -642,7 +642,7 @@ higher resolution image. To reach these two goals, our model, outlined in Fig. \
 \begin{figure*}[!t]
 \centering
 \subfloat{\includegraphics[width=5.0in]{Figs/model}}
-\caption{Figure model}
+\caption{Proposed model achitecture.}
 \label{fig_model}
 \end{figure*}
 comprises two major components that are combined to perform deblurring and physical property prediction
@@ -737,7 +737,7 @@ in the second and third columns of Fig. \ref{fig_scenario1} respectively,
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso1/synthetic.png}%
 \label{fig_first_case_synthetic}}
 \hfil
-\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso1/blurred.png}%
+\subfloat[Equivalent blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso1/blurred.png}%
 \label{fig_second_case_blurred}}
 \hfil
 \subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso1/cnn.png}%
@@ -747,36 +747,28 @@ $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impe
 \label{fig_scenario1}
 \end{figure*}
 it is notable that the CNN output reached a sharp image and accurately
-predicted the pixel values. The frequency magnitude graphs in the fourth
-column shows that the model precisely recovered the range of frequencies
+predicted the pixel values. The frequency magnitude illustrated in Fig. \ref{fig_frequencies_2}
+shows that the model precisely recovered the range of frequencies
 of the original image. It is noticeable in Tab. \ref{table_caso_1}
 that the RMSE for the network output is less than of the blurry image,
-while the FFTI .
-%When we compare our model to....
+while the FFTI slightly increses and indicates more similarity between the network outputs
+and the latent images.
 \begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.2}
 \caption{An Example of a Table}
 \label{table_caso_1}
 \centering
 \begin{tabular}{|c||c||c|}
 \hline
- & Blurry Image & CNN Output \\
+ & Blurry Image (MSE - FFTI) & CNN (MSE - FFTI)\\
 \hline
-Example 1 & $0.1294$ & $0.0644$\\
+Example 1 & $0.1294$ | $0.9819$ & $0.0644$ | $0.9857$\\
 \hline
-	  & $0.9819$ & $0.9857$\\
+Example 2 & $0.1948$ | $0.9549$ & $0.0774$ | $0.9862$\\
 \hline
-Example 2 & $0.1948$ & $0.0774$ \\
+Example 3 & $0.1294$ | $0.9819$ & $0.0645$ | $0.9876$\\
 \hline
-	  & $0.9549$ & $0.9862$\\
-\hline
-Example 3 & $0.1294$ & $0.0645$\\
-\hline
-	  & $0.9819$ & $0.9876$\\
-\hline
-Example 4 & $0.1948$ & $0.0775$\\
-\hline
-	  & $0.9575$ & $0.9902$\\
+Example 4 & $0.1948$ | $0.9575$ & $0.0775$ | $0.9902$\\
 \hline
 \end{tabular}
 \end{table}
@@ -794,7 +786,7 @@ details, what makes them slightly less similar to the latent image.
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso6/synthetic.png}%
 \label{fig_scenario6_synthetic}}
 \hfil
-\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso6/blurred.png}%
+\subfloat[Equivalent blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso6/blurred.png}%
 \label{fig_scenario6_blurred}}
 \hfil
 \subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso6/cnn.png}%
@@ -806,29 +798,21 @@ the lithology around the reservoir is filled with values equal to $0$. }
 \end{figure*}
 
 \begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.2}
 \caption{An Example of a Table}
 \label{table_caso_2}
 \centering
 \begin{tabular}{|c||c||c|}
 \hline
- & Blurry Image & CNN Output \\
+ & Blurry Image (MSE - FFTI) & CNN (MSE - FFTI)\\
 \hline
-Example 1 & $0.1248$ & $0.0702$\\
+Example 1 & $0.1248$ | $0.9005$ & $0.0702$ | $0.7904$\\
 \hline
-	  & $0.9005$ & $0.7904$\\
+Example 2 & $0.1738$ | $0.8064$ & $0.0855$ | $0.7918$ \\
+\hline 
+Example 3 & $0.1248$ | $0.9005$ & $0.0727$ | $0.8190$\\
 \hline
-Example 2 & $0.1738$ & $0.0855$ \\
-\hline
-	  & $0.8064$ & $0.7918$\\
-\hline
-Example 3 & $0.1248$ & $0.0727$\\
-\hline
-	  & $0.9005$ & $0.8190$\\
-\hline
-Example 4 & $0.1738$ & $0.0858$\\
-\hline
-	  & $0.8512$ & $0.7906$\\
+Example 4 & $0.1738$ | $0.8512$ & $0.0858$ | $0.7906$\\
 \hline
 \end{tabular}
 \end{table}
@@ -851,41 +835,32 @@ frequency magnitude in the range between $ 20 $ and $ 50 Hz $ and between $ 60 $
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso2/synthetic.png}%
 \label{fig_scenario2_synthetic}}
 \hfil
-\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso2/blurred.png}%
+\subfloat[Proposed blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso2/blurred.png}%
 \label{fig_scenario2_blurred}}
 \hfil
 \subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso2/cnn.png}%
 \label{fig_scenario2_cnn}}
-\caption{First test case for synthetic acoustic impedance. The wedges are positioned in 
-$0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impedance values are normalized to $0$ and $1$.}
+\caption{The wedges are positioned in $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$. The acoustic impedance values are normalized to $0.3$ and $0.7$.}
 \label{fig_scenario2}
 \end{figure*}
 
 %Explicar os resultados dos indices para este cenário
 \begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.2}
 \caption{An Example of a Table}
 \label{table_caso_3}
 \centering
 \begin{tabular}{|c||c||c|}
 \hline
- & Blurry Image & CNN Output \\
+ & Blurry Image (MSE - FFTI) & CNN (MSE - FFTI)\\
 \hline
-Example 1 & $0.3529$ & $0.0333$\\
+Example 1 & $0.3529$ | $0.9901$ & $0.0333$ | $0.9915$\\
 \hline
-	  & $0.9901$ & $0.9915$\\
+Example 2 & $0.0561$ | $0.9744$ & $0.0444$ | $0.9868$ \\
 \hline
-Example 2 & $0.0561$ & $0.0444$ \\
+Example 3 & $0.3529$ | $0.9901$ & $0.0319$ | $0.9908$\\
 \hline
-	  & $0.9744$ & $0.9868$\\
-\hline
-Example 3 & $0.3529$ & $0.0319$\\
-\hline
-	  & $0.9901$ & $0.9908$\\
-\hline
-Example 4 & $0.0561$ & $0.0435$\\
-\hline
-	  & $0.9746$ & $0.9860$\\
+Example 4 & $0.0561$ | $0.9746$ & $0.0435$ | $0.9860$\\ 
 \hline
 \end{tabular}
 \end{table}
@@ -900,39 +875,31 @@ Fig. \ref{fig_scenario5} shows the results for this scenarios.
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso5/synthetic.png}%
 \label{fig_scenario5_synthetic}}
 \hfil
-\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso5/blurred.png}%
+\subfloat[Equivalent blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso5/blurred.png}%
 \label{fig_scenario5_blurred}}
 \hfil
 \subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso5/cnn.png}%
 \label{fig_scenario5_case_cnn}}
-\caption{Acoustic impedance models blurred with different frequencies.}
+\caption{The wedges are positioned in $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$. The acoustic impedance models are blurred using different cutting frequencies.}
 \label{fig_scenario5}
 \end{figure*}
 
 \begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.2}
 \caption{An Example of a Table}
 \label{table_caso_5}
 \centering
 \begin{tabular}{|c||c||c|}
 \hline
- & Blurry Image & CNN Output \\
+  & Blurry Image (MSE - FFTI) & CNN (MSE - FFTI)\\
 \hline
-Example 1 ($18Hz$) & $0.0933$ & $0.0841$\\
+Example 1 ($3Hz$) & $0.0933$ | $0.9576$ & $0.0841$ | $0.8094$\\
 \hline
-	  & $0.9576$ & $0.8094$\\
+Example 2 ($10Hz$)& $0.1277$ | $0.9169$ & $0.0983$ | $0.8001$\\
 \hline
-Example 2 ($14Hz$)& $0.1277$ & $0.0983$ \\
+Example 3 ($20Hz$)& $0.1228$ | $0.9228$ & $0.0795$ | $0.8299$\\
 \hline
-	  & $0.9169$ & $0.8001$\\
-\hline
-Example 3 ($4Hz$)& $0.1228$ & $0.0795$\\
-\hline
-	  & $0.9228$ & $0.8299$\\
-\hline
-Example 4 ($8Hz$)& $0.8946$ & $0.7983$\\
-\hline
-  & $0.0933$ & $0.0841$\\
+Example 4 ($7Hz$)& $0.8946$ | $0.0933$ & $0.7983$ | $0.0841$\\
 \hline
 \end{tabular}
 \end{table}
@@ -945,8 +912,8 @@ We test the wedges with the acoustic impedance normalized to values equals to $0
 It is observable in Fig. \ref{fig_scenario4} that the model presents higher uncertainty
 in modeling the edges and corners of the wedges. On the other side, as the test images contain the same range of values
 as in the training images, the model keep its predictive capacity and recover the  This result is evident in the metrics values
-(Tab. \ref{table_caso_6}). In examples 2 and 4, the network outputs present lower RMSE than the blurry images, 
-while it is higher in the other examples 1 and 3. However, according to the FFTI, all the network outputs present
+(Tab. \ref{table_caso_6}). In examples $2$ and $4$, the network outputs present lower RMSE than the blurry images, 
+while it is higher in the other examples $1$ and $3$. However, according to the FFTI, all the network outputs present
 less similarity to the latent image, than the blurred image and we believe that is explained by the higher uncertainty
 observed. A mitigation for this problem is adding examples of this image to the network dataset, as stated previously in
 Section \ref{IARW}.
@@ -960,34 +927,26 @@ Section \ref{IARW}.
 \hfil
 \subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso4/cnn.png}%
 \label{fig_scenario4_case_cnn}}
-\caption{Acoustic impedance models blurred with different frequencies.}
+\caption{Examples in which the wedges have random shapes and are positioned at random angles. }
 \label{fig_scenario4}
 \end{figure*}
 
 \begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.2}
 \caption{Table of metric values for wedges in random positions and acoustic impedance normalized to $0$ and $1$.}
 \label{table_caso_6}
 \centering
 \begin{tabular}{|c||c||c|}
 \hline
- & Blurry Image & CNN Output \\
+  & Blurry Image (MSE - FFTI) & CNN (MSE - FFTI)\\
 \hline
-Example 1 & $0.2155$ & $0.2164$\\
+Example 1 & $0.2155$ | $0.9357$ & $0.2164$ | $0.9361$\\
 \hline
-	  & $0.9357$ & $0.9361$\\
+Example 2 & $0.2248$ | $0.9357$ & $0.2045$ | $0.9235$\\
 \hline
-Example 2 & $0.2248$ & $0.2045$ \\
+Example 3 & $0.2197$ | $0.9406$ & $0.2209$ | $0.9236$\\
 \hline
-	  & $0.9357$ & $0.9235$\\
-\hline
-Example 3 & $0.2197$ & $0.2209$\\
-\hline
-	  & $0.9406$ & $0.9236$\\
-\hline
-Example 4 & $0.2174$ & $0.1879$\\
-\hline
-	  & $0.9555$ & $0.9549$\\
+Example 4 & $0.2174$ | $0.9555$ & $0.1879$ | $0.9549$\\
 \hline
 \end{tabular}
 \end{table}
@@ -1085,92 +1044,76 @@ The authors would like to thank...
 
 \begin{figure*}[!t]
 \centering
-\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.2in]{Figs/Caso1/frequencies}%
+\subfloat[Frequency magnitudes of each example in the first test case.]{\includegraphics[width=2.2in]{Figs/Caso1/frequencies}%
 \label{fig_frequencies_2}}
 \hfil
-\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.2in]{Figs/Caso2/frequencies}%
+\subfloat[Frequency magnitudes of each example in the second test case, inverted values of acoustic impedance.]{\includegraphics[width=2.2in]{Figs/Caso2/frequencies}%
 \label{fig_frequencies_3}}
 \hfil
-\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.2in]{Figs/Caso4/frequencies}%
+\subfloat[Frequency magnitudes of each example in the third test case, acoustic impedance normalized to $0.3$ and $0.7$.]{\includegraphics[width=2.2in]{Figs/Caso4/frequencies}%
 \label{fig_frequencies_4}}
+\caption{Frequency magnitude distributions.}
 \label{fig_frequencies}
 \end{figure*}
 
 \begin{figure*}[!t]
 \centering
-\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.2in]{Figs/Caso5/frequencies}%
+\subfloat[Frequency magnitudes of each example in the fourth case, images blurred with different cutting frequencies.]{\includegraphics[width=2.2in]{Figs/Caso5/frequencies}%
 \label{fig_frequencies_5}}
 \hfil
-\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.2in]{Figs/Caso6/frequencies}%
+\subfloat[Frequency magnitudes of each example in the fifth case, images with random shapes and positioned in random angles.]{\includegraphics[width=2.2in]{Figs/Caso6/frequencies}%
 \label{fig_frequencies_6}}
-\caption{Acoustic impedance models blurred with different frequencies.}
+\caption{Frequency magnitude distributions.}
 \label{fig_frequencies_freq}
 \end{figure*}
 
-
-
 \begin{thebibliography}{1}
-\bibitem{xiaoiu}  		Xi Xiaoyu, Ling Yun, Sun Desheng, Guo Xiangyu, and Wang Huifeng, ``Studying the effect of expanding low or high frequency on post-stack seismic inversion,'' in SEG Technical Program Expanded Abstracts 2012. September 2012, 1-5.
-\bibitem{Buduma15}  		Buduma, N., `` Fundamentals of Deep Learning,'' Academic Press, 2015, in O'Reilly Media.
-\bibitem{qian} 			Qian Feng, Yin Miao, Su Ming-Jun, Wang Yaojun, Hu Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''.
-\bibitem{Liu} 			Liu Lihui, Lu Rong, Li Jianhai, Yang Wenkui, ``Seismic Lithofacies Computation Method Based on Deep Learning,'' p. 649-652.
+\bibitem{xiaoiu}  		X. Xiaoyu, L. Yun, S. Desheng, G. Xiangyu, and W. Huifeng, ``Studying the effect of expanding low or high frequency on post-stack seismic inversion,'' in SEG Technical Program Expanded Abstracts 2012, pp. 1-5, September 2012.
+\bibitem{Buduma15}  		N. Buduma, `` Fundamentals of Deep Learning,'' Academic Press, in O'Reilly Media, 2015.
+\bibitem{qian} 			Q. Feng, Y. Miao, S. Ming-Jun, W. Yaojun, H. Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''.
+\bibitem{Liu} 			L. Lihui, L. Rong, L. Jianhai, Y. Wenkui, ``Seismic Lithofacies Computation Method Based on Deep Learning,'' in International Geophysical Conference, pp. 649-652, April 2017.
 \bibitem{Chrysos} 		G. G. Chrysos, S. Zafeiriou, "Deep Face Deblurring," 2017 IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), Honolulu, HI, 2017, pp. 2015-2024.
-\bibitem{Latimer} 		Rebecca Buxton Latimer, Rick Davidson, Paul van Riel, ``An interpreter's guide to understanding and working with seismic-derived acoustic impedance data,'',2017, pp. 242-256, v. 19, num. 3, in The Leading Edge.
-\bibitem{buiting} 		JJM. Buiting, M. Bacon,``Using geophysical, geological, and petrophysical data to characterize reservoirs in the North Sea.'', in 5th Conference on Petroleum Geology of NW Europe, London. CD-ROM.
-\bibitem{riel} 			Paul van Riel,  ``The past, present and future of quantitative reservoir characterization.'', in The Leading Edge, 19, p. 878–881.
-\bibitem{sergio}		Sergio Sacani Sancevero, Armando Zaupa Remacre, Rodrigo de Souza Portugal, ``O papel da inversão para a impedância no processo de caracterização sísmica de reservatórios'',in Revista Brasileira de Geofísica, 2006, p. 495-512, v. 24.
-\bibitem{Russakovsky}		O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, ``Imagenet large scale visual recognition challenge,'' in ternational Journal of Computer Vision (IJCV), p. 211–252, 2015.
-\bibitem{Girshick}		R. Girshick, ``Fast r-cnn,'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), pages 1440–1448, 2015.
-\bibitem{Bell} 			S. Bell, C. L. Zitnick, K. Bala, and R. Girshick, ``Inside-outside net: Detecting objects in context with skip pooling and recurrent neural networks,'' in arXiv preprint arXiv:1512.04143, 2015.s
-\bibitem{Nam}			H. Nam and B. Han, ``Learning multi-domain convolutional neural networks for visual tracking,'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
+\bibitem{Latimer} 		R. B. Latimer, R. Davidson, P. van Riel, ``An interpreter's guide to understanding and working with seismic-derived acoustic impedance data,'' in The Leading Edge, pp. 242-256, vol. 19, num. 3, 2017.
+\bibitem{buiting} 		JJM. Buiting, M. Bacon,``Using geophysical, geological, and petrophysical data to characterize reservoirs in the North Sea.'' in 5th Conference on Petroleum Geology of NW Europe, London. CD-ROM.
+\bibitem{riel} 			P. van Riel,  ``The past, present and future of quantitative reservoir characterization.'' in The Leading Edge, 19, pp. 878–881.
+\bibitem{sergio}		S. S. Sancevero, A. Z. Remacre, R. S. Portugal, ``O papel da inversão para a impedância no processo de caracterização sísmica de reservatórios.'' in Revista Brasileira de Geofísica, p. 495-512, v. 24, 2006.
+\bibitem{Russakovsky}		O. Russakovsky, J. Deng, H. Su, J. Krause, S. Satheesh, S. Ma, Z. Huang, A. Karpathy, A. Khosla, M. Bernstein, ``Imagenet large scale visual recognition challenge,'' in ternational Journal of Computer Vision (IJCV), pp. 211–252, 2015.
+\bibitem{Girshick}		R. Girshick, ``Fast r-cnn,'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), pp. 1440–1448, 2015.
+\bibitem{Bell} 			S. Bell, C. L. Zitnick, K. Bala, and R. Girshick, ``Inside-outside net: Detecting objects in context with skip pooling and recurrent neural networks,'' in arXiv preprint arXiv:1512.04143, 2015.
+\bibitem{Nam}			H. Nam and B. Han, ``Learning multi-domain convolutional neural networks for visual tracking,'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR) IEEE, 2016.
 \bibitem{He}			K. He, X. Zhang, S. Ren, and J. Sun, ``Deep residual learning for image recognition,'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
-\bibitem{Levin}			A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. ``Understanding and evaluating blind deconvolution algorithms.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), p. 1964–1971.
+\bibitem{Levin}			A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. ``Understanding and evaluating blind deconvolution algorithms.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), pp. 1964–1971.
 \bibitem{Levin2011}		A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. ``Efficient marginal likelihood optimization in blind deconvolution.'' In CVPR, 2011.
-\bibitem{Krizhevsky}		A. Krizhevsky, I. Sutskever, G. E. Hinton, ``Imagenet classification with deep convolutional neural networks: Advances in neural information processing systems,'' 2012, p. 1097–1105.
-\bibitem{S_Ji}			S. Ji,W. Xu, M. Yang, K. Yu, 2013, ``3d convolutional neural networks for human action recognition,'' in IEEE transactions on pattern analysis and machine intelligence, n. 35, p. 221–231.
-\bibitem{AbdelHamid}		O. Abdel-Hamid, A.-r. Mohamed, H. Jiang, L. Deng, G. Penn, D. Yu, 2014, ``Convolutional neural networks for speech recognition,'' in IEEE/ACM Transactions on audio, speech, and language processing, n. 22, p. 1533–1545.
-\bibitem{Farfade}		S. S. Farfade, M. J. Saberian, L.-J. Li, 2015, ``Multi-view face detection using deep convolutional neural networks,'' in Proceedings of the 5th ACM on International Conference on Multimedia Retrieval, ACM, p. 643–650.
-\bibitem{Harvey} 		P. J. Harvey, D. J. MacDONALD, ``Seismic modelling of porosity within the jurassic aged carbonate bank, offshore Nova Scotia,'' in  Canadian Journal of Exploration Geophysics, n. 26, p. 54–71.
-\bibitem{naranyana}		S. Narayana, P. K. Thirivikraman, ``Image similarity using fourier transform,'' in International Journal of Computer Engeneering and Technology, 2015, n. 6, p. 29–37.
-\bibitem{Ning}			N. Qian, ``On the momentum term in gradient descent learning algorithms,'' in Neural Networks, v. 12, i. 1, 1999, p. 145-151.
-\bibitem{bishop}		T.E. Bishop, S.D. Babacan, Amizic, T. Chan, R. Molina, A. Katsaggelos, ``Blind image deconvolution: problem formulation and existing approaches.'' in. Blindimage deconvolution: theory and applications,  CRC press (2007).
-\bibitem{babacan}		S. D. Babacan, R. Molina, M. N. Do, and A. K. Katsaggelos, ``Bayesian blind deconvolution with general sparse image priors.'' In. Proceedings of European Conference on Computer Vision (ECCV), p. 341–355, 2012.
-\bibitem{Hacohen13}		Y. Hacohen, E. Shechtman, and D. Lischinski, ``Deblurring by example using dense correspondence.'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), p. 2384–2391, 2013.
-\bibitem{Pan2014}		J. Pan, Z. Hu, Z. Su, M. H. Yang., ``Deblurring face images with exemplars.'' In Proceedings of European Conference on Computer Vision (ECCV), p. 47–62. Springer, 2014.
-\bibitem{Lai2016}		W.S. Lai, J. B. Huang, Z. Hu, N. Ahuja, M. H. Yang.``A comparative study for single image blind deblurring.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
-\bibitem{Chakrabarti2016}	A. Chakrabarti. ``A neural approach to blind motion deblurring.'' In Proceedings of European Conference on Computer Vision (ECCV), p. 221–235. Springer, 2016.
-\bibitem{Hradis2015}		M. Hradiš, J. Kotera, P. Zemcı́k, F. Šroubek. ``Convolutional neural networks for direct text deblurring.'' In Proceedings of British Machine Vision Conference (BMVC), 2015.
-\bibitem{Sun2015}		J. Sun, W. Cao, Z. Xu, J. Ponce. ``Learning a convolutional neural network for non-uniform motion blur removal.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), p. 769–777, 2015.
-\bibitem{Krishnan2015}		D. Krishnan, T. Tay, R. Fergus. ``Blind deconvolution using anormalized sparsity measure.'' In CVPR, 2011.
-\bibitem{Zhang2011}		H. Zhang, J. Yang, Y. Zhang, N. M. Nasrabadi, T. S. Huang. ``Close the loop: Joint blind image restoration and recognition with sparse representation prior.'' In ICCV, 2011. 
-\bibitem{sroubek2012}		F. Šroubek and P. Milanfar. ``Robust multichannel blind deconvolution via fast alternating minimization.'' in IEEE Trans. on Image Processing, p. 1687–1700, 2012.
-\bibitem{Zhu2012}		X. Zhu, F. Šroubek, P. Milanfar. ``Deconvolving PSFs for a better motion deblurring using multiple images.'' In ECCV, 2012.
-\bibitem{Figueiredo2012}	L. P. Figueiredo, M. Santos, M. Roisenberg, G. Neto, W. Figueiredo, ``Bayesian framework to wavelet estimation and linearized acoustic inversion,'' In Geoscience and Remote Sensing Letters, 2012, p. 1–5.
-\bibitem{Buland2003}		A. Buland,  H. Omre, ``Bayesian linearized avo inversion,'' In Geophysics, 2003, p. 185–198.
-\bibitem{Mavko2009}		G. Mavko, T. Mukerji, J. Dvorkin, ``The Rock Physics Handbook: Tools for Seismic Analysis of Porous Media.'' 2009 Cambridge: Cambridge University Press, p. 359-369.
-\bibitem{Debeye1990}		H. DEBEYE, P. RIEL van, ``Lp-norm deconvolution.'' 1990, Geophysical Prospecting, p. 381–403
-\bibitem{Chopra2001}		S. Chopra, ``Integrating coherence cube imaging and seismic inversion.'' 2001, The Leading Edge, p. 354–362.
-\bibitem{Nair2010} 		V. Nair, G. E. Hinton. ``Rectified linear units improve restricted boltzmann machines.'' In Proc. 27th International Conference on Machine Learning, 2010.
-\bibitem{Dahl2017}		R. Dahl, M. Norouzi, J. Shlens, ``Pixel recursive super resolution'', 2017, CoRR.
-\bibitem{Grigorios2017}		G. G. Chrysos, S. Zafeiriou, ``Deep Face Deblurring.'', 2017, p. 2015-2024, 10.1109/CVPRW.2017.252. 
+\bibitem{Krizhevsky}		A. Krizhevsky, I. Sutskever, G. E. Hinton, ``Imagenet classification with deep convolutional neural networks: Advances in neural information processing systems,'' 2012, pp. 1097–1105.
+\bibitem{S_Ji}			S. Ji,W. Xu, M. Yang, K. Yu, 2013, ``3d convolutional neural networks for human action recognition,'' in IEEE transactions on pattern analysis and machine intelligence, num. 35, p. 221–231.
+\bibitem{AbdelHamid}		O. Abdel-Hamid, A.-r. Mohamed, H. Jiang, L. Deng, G. Penn, and D. Yu, ``Convolutional neural networks for speech recognition,'' in IEEE/ACM Transactions on audio, speech, and language processing, num. 22, pp. 1533–1545, 2014.
+\bibitem{Farfade}		S. S. Farfade, M. J. Saberian, and L.-J. Li, 2015, ``Multi-view face detection using deep convolutional neural networks,'' in Proceedings of the 5th ACM on International Conference on Multimedia Retrieval, ACM, pp. 643–650.
+\bibitem{Harvey} 		P. J. Harvey, and D. J. MacDONALD, ``Seismic modelling of porosity within the jurassic aged carbonate bank, offshore Nova Scotia,'' in  Canadian Journal of Exploration Geophysics, num. 26, pp. 54–71.
+\bibitem{naranyana}		S. Narayana, and P. K. Thirivikraman, ``Image similarity using fourier transform,'' in International Journal of Computer Engeneering and Technology, 2015, num. 6, pp. 29–37.
+\bibitem{Ning}			N. Qian, ``On the momentum term in gradient descent learning algorithms,'' in Neural Networks, vol. 12, pp. 145-151, 1999.
+\bibitem{bishop}		T.E. Bishop, S.D. Babacan, Amizic, T. Chan, R. Molina, and A. Katsaggelos, ``Blind image deconvolution: problem formulation and existing approaches.'' in. Blindimage deconvolution: theory and applications,  CRC press, 2007.
+\bibitem{babacan}		S. D. Babacan, R. Molina, M. N. Do, and A. K. Katsaggelos, ``Bayesian blind deconvolution with general sparse image priors.'' in Proceedings of European Conference on Computer Vision (ECCV), pp. 341–355, 2012.
+\bibitem{Hacohen13}		Y. Hacohen, E. Shechtman, and D. Lischinski, ``Deblurring by example using dense correspondence.'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), pp. 2384–2391, 2013.
+\bibitem{Pan2014}		J. Pan, Z. Hu, Z. Su, and M. H. Yang, ``Deblurring face images with exemplars.'' In Proceedings of European Conference on Computer Vision (ECCV), pp. 47–62. Springer, 2014.
+\bibitem{Lai2016}		W.S. Lai, J. B. Huang, Z. Hu, N. Ahuja, and M. H. Yang, ``A comparative study for single image blind deblurring.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
+\bibitem{Chakrabarti2016}	A. Chakrabarti, ``A neural approach to blind motion deblurring.'' In Proceedings of European Conference on Computer Vision (ECCV), pp. 221–235. Springer, 2016.
+\bibitem{Hradis2015}		M. Hradiš, J. Kotera, P. Zemcı́k, and F. Šroubek, ``Convolutional neural networks for direct text deblurring.'' In Proceedings of British Machine Vision Conference (BMVC), 2015.
+\bibitem{Sun2015}		J. Sun, W. Cao, Z. Xu, and J. Ponce, ``Learning a convolutional neural network for non-uniform motion blur removal.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), pp. 769–777, 2015.
+\bibitem{Krishnan2015}		D. Krishnan, T. Tay, and R. Fergus, ``Blind deconvolution using anormalized sparsity measure.'' In CVPR, 2011.
+\bibitem{Zhang2011}		H. Zhang, J. Yang, Y. Zhang, N. M. Nasrabadi, and T. S. Huang, ``Close the loop: Joint blind image restoration and recognition with sparse representation prior.'' in ICCV, 2011. 
+\bibitem{sroubek2012}		F. Šroubek and P. Milanfar, ``Robust multichannel blind deconvolution via fast alternating minimization.'' in IEEE Trans. on Image Processing, pp. 1687–1700, 2012.
+\bibitem{Zhu2012}		X. Zhu, F. Šroubek, P. Milanfar, ``Deconvolving PSFs for a better motion deblurring using multiple images.'' in ECCV, 2012.
+\bibitem{Figueiredo2012}	L. P. Figueiredo, M. Santos, M. Roisenberg, G. Neto, and W. Figueiredo, ``Bayesian framework to wavelet estimation and linearized acoustic inversion,'' in Geoscience and Remote Sensing Letters, pp. 1–5, 2012.
+\bibitem{Buland2003}		A. Buland,  and H. Omre, ``Bayesian linearized avo inversion,'' In Geophysics, 2003, pp. 185–198.
+\bibitem{Mavko2009}		G. Mavko, T. Mukerji, and J. Dvorkin, ``The Rock Physics Handbook: Tools for Seismic Analysis of Porous Media.'' Cambridge: Cambridge University Press, pp. 359-369, 2009.
+\bibitem{Debeye1990}		H. DEBEYE, and P. RIEL van, ``Lp-norm deconvolution.'' 1990, Geophysical Prospecting, pp. 381–403
+\bibitem{Chopra2001}		S. Chopra, ``Integrating coherence cube imaging and seismic inversion.'' The Leading Edge, pp. 354–362, 2001.
+\bibitem{Nair2010} 		V. Nair, and G. E. Hinton. ``Rectified linear units improve restricted boltzmann machines.'' In Proc. 27th International Conference on Machine Learning, 2010.
+\bibitem{Dahl2017}		R. Dahl, M. Norouzi, and J. Shlens, ``Pixel recursive super resolution'' CoRR, 2017,
+\bibitem{Grigorios2017}		G. G. Chrysos, and S. Zafeiriou, ``Deep Face Deblurring.'' pp. 2015-2024, 10.1109/CVPRW.2017.252, 2017. 
 \end{thebibliography}
 
-%0 Journal Article
-%A Rebecca Buxton Latimer
-%A Rick Davidson
-%A Paul van Riel
-%T An interpreter's guide to understanding and working with seismic-derived acoustic impedance data
-%D 2000
-%J The Leading Edge
-%P 242-256
-%V 19
-%N 3
-%R 10.1190/1.1438580
-%U http://library.seg.org/doi/abs/10.1190/1.1438580
-%K 
 
-
-% that's all folks
 \end{document}
 
 
