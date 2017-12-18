@@ -432,8 +432,6 @@ Obtaining high resolution acoustic impedance images, through seismic inversion m
 is a critical part in oil reservoir characterization.
 Despite the notorious efficiency of the inversion methods,
 post-inversion images deblurring has not received much attention.
-%Specifically, acoustic impedance deblurring must take into account the fact that
-%the resulting image still must to reflect the synthetic seismic data characteristics.
 
 %O GAP
 Reservoir characterization aims to determine a multidimensional
@@ -478,9 +476,6 @@ presented to the network as input and target, respectively.
 The core concept of our architecture is the combination of the convolution layers with regression
 layers, thus the convolutional layers learn the spatial structures existing in different
 acoustic impedance images, while the regression layer proceed the prediction of the property values.
-%\hfill mds
- 
-%\hfill August 26, 2015
 
 \section{Theoretical Foundations and Related Works}
 Inversion theory is used in several areas to infer parameters values
@@ -602,13 +597,7 @@ In order to simplify the assessments and conclusions, we fill the lithology stru
 reference values of rock densities and compressional velocity observed in the literature \cite{Mavko2009}.
 The acoustic impedance is calculated using the density and velocity models and the images in high
 resolution model are obtained, as illustrated in  Fig. \ref{fig_lithology}.
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.0in]{Figs/Image_Paper}
-\DeclareGraphicsExtensions.
-\caption{Wedge with reference values for density and compressional velocity.}
-\label{fig_lithology}
-\end{figure}
+
 In a real scenario, the blurry acoustic impedance is the
 result of an acoustic inversion method, such as Maximum \textit{a posteriori} \cite{Buland2003,Figueiredo2012}, Sparse Spike \cite{Debeye1990} 
 and Recursive Inversion \cite{Chopra2001}, using seismic data with limited band-with.
@@ -618,15 +607,17 @@ This way, the supervised learning is performed with the high resolution images a
 To increase the number of examples in the training dataset we rotate
 the impedance models to establish the wedge structure in four different angles
 ($0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$).
-This approach allows the model learning an wide edge variabilities
-in wedges images.
-\begin{figure}[!t]
+This approach allows the model learning an wide edge variabilities in wedges images.
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.0in]{Figs/Image_Paper_blurred}
-\DeclareGraphicsExtensions.
-\caption{Acoustic impedance blurred model.}
-\label{fig_blur}
-\end{figure}
+\subfloat[Wedge with reference values for density and compressional velocity.]{\includegraphics[width=3.0in]{Figs/Image_Paper}%
+\label{fig_lithology}}
+\hfil
+\subfloat[Acoustic impedance blurred model.]{\includegraphics[width=3.0in]{Figs/Image_Paper_blurred}%
+\label{fig_blur}}
+\caption{Synthetic and Blurry Images}
+\label{fig_acoustic_impedances}
+\end{figure*}
 
 \subsection{Proposed Architecture}
 The workflow of the proposed method consists of the following
@@ -647,15 +638,20 @@ capable to solve regression tasks. The model presented in this paper
 is able to solve two important problems related to deblurring  images of physical properties
 : ($1$) learning the spacial patterns in the low resolution
 training images and ($2$) predicting each pixel intensity value in the new
-higher resolution image.
-To reach these two goals, our model, outlined in Fig. \ref{}, comprises two major
-components that are combined to perform deblurring and physical property prediction
+higher resolution image. To reach these two goals, our model, outlined in Fig. \ref{fig_model},
+\begin{figure*}[!t]
+\centering
+\subfloat{\includegraphics[width=5.0in]{Figs/model}}
+\caption{Figure model}
+\label{fig_model}
+\end{figure*}
+comprises two major components that are combined to perform deblurring and physical property prediction
 jointly: (1) convolutional component and (2) regression component. The convolutional component
 is a two layer structure that maps a blurry image to a non-blurred model, while 
 the regression layer is supposed to predict the continuous values of each pixel
 representing the acoustic impedance value. 
 The state-of-the-art CNN models for image deblurring \cite{Grigorios2017} and super-resolution \cite{Dahl2017}
-classify each pixel in the input image for one or three channels. 
+classify each pixel in the input image. 
 Using these methods to solve the issue of deblurring continuous physical properties 
 implies in discretization of each pixel in order to generate an image file. However, returning
 to the original data, results in information loss, what represents a serious inconvenient.
@@ -664,16 +660,8 @@ the physics property represents a relevant advance.
 
 \subsection{Implementation Details}
 The model is implemented using the Deep Learning toolbox
-delivered in MATLAB R2017A. For training the network, we use a mini-batch with size of $32$ training examples.
-The network weights initialize randomly and the Stochastic Gradient Descendant with
-Momentum (SGDM) \cite{Ning} is the optimization algorithm.
-We adopt an exponentially decreasing learning rate (initially
-set to $0.005$), decreasing every iteration in a total of $100$ iterations.
-It should be noted that, once the wedge shapes are randomly generated, every image is different
-and each one is introduced only once to the network, this way avoiding over-fitting.
-%Falar que foram usadas 4 figuras, 
-
-In our model, each convolutional layer is configured with $50$ kernels, sized $5$ x $5$
+delivered in MATLAB R2017A. Our model comprises a simple architecture with two convolutional layers.
+Each one of them is configured with $50$ kernels, sized $5$ x $5$
 and stride $1$, meaning that after each convolution operation the blur kernel is shifted
 one position in each direction. After each convolutional layer we proceed a maximum pooling operation
 to obtain the maximum value of small regions in the input image and obtain  statistical summaries of these regions . We also
@@ -683,11 +671,16 @@ the second regularization layer,  we add a fully connected layer, which maps the
 to $1024$ neurons. Finally, the output layer comprises a regression unit to predict the intensity of acoustic impedance in each pixel.
 The output vector is then resized to the original image dimension.
 
-The model performs a supervised learning through a dictionary containing pairs of low resolution and high resolution images.
-The optimization algorithm adjusts the network weights in every layer by minimizing the Mean Squared Error (MSE)
+For training the network, we use a mini-batch with size of $32$ training examples
+and we adopt an exponentially decreasing learning rate (initially
+set to $0.005$), decreasing every iteration in a total of $100$ iterations.
+It should be noted that, once the wedge shapes are randomly generated, every image is different
+and each one is introduced only once to the network, this way avoiding over-fitting.
+The network weights initialize randomly and the model performs a supervised learning through a dictionary containing pairs of low resolution and high resolution images.
+The Stochastic Gradient Descendant with Momentum (SGDM) \cite{Ning} adjusts the network weights in every layer by minimizing the Mean Squared Error (MSE)
 in each batch of images. Thus, after the training phase, the model is capable
 to deblur any other wedge shaped acoustic impedance image not presented in the training dataset. The outputted
-image recovers the high frequencies and presents higher similarity
+image recovers the high frequencies and shows higher similarity
 to the high resolution image than to the blurred image, according to a established metric.
 The model was adjusted to deblur a wide variety of wedge shapes and impedance values.
 Those wedges which the model was unable to predict were added in the training set.
@@ -717,7 +710,7 @@ To build the training dataset we generate $500$ images of random wedge.
 Because the last layer of the network is a regression unit, it is necessary the
 normalization of the images to values between $0$ and $1$, and the results
 are presented in terms of this normalization.
-The normalized images are then rotated according to the established angles mentioned in Sec. \ref{DMsection},
+The normalized images are then rotated according to the established angles mentioned in Section \ref{DMsection},
 then comprising a total of $2000$ images. By doing so, we present to
 the network the same lithologies in different positions and expect that the network
 identify general sorts of wedges in angles different from those with which the it was trained.
@@ -734,8 +727,11 @@ to a random angle.
 \subsection{Integer Angles Rotated Wedges} \label{IARW}
 We firstly test if the network is capable to correctly model the shape of the wedges
 and to deblur the edges and contours in a simple perspective.
-Thus, the training images and the test images have the same reference values for density and compressional velocity,
-they are different only by their shapes.
+Thus, the training images and the test images have the same reference values for
+density and compressional velocity, they are different only by their shapes.
+
+Comparing the blurry image and the CNN output,
+in the second and third columns of Fig. \ref{fig_scenario1} respectively,
 \begin{figure*}[!t]
 \centering
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso1/synthetic.png}%
@@ -750,15 +746,12 @@ they are different only by their shapes.
 $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impedance values are normalized to $0$ and $1$.}
 \label{fig_scenario1}
 \end{figure*}
-
-Comparing the blurry image and the CNN output,
-in the second and third columns of Fig. \ref{fig_scenario1} respectively,
 it is notable that the CNN output reached a sharp image and accurately
 predicted the pixel values. The frequency magnitude graphs in the fourth
-column shows that the the model precisely recovered the range of frequency
+column shows that the model precisely recovered the range of frequencies
 of the original image. It is noticeable in Tab. \ref{table_caso_1}
 that the RMSE for the network output is less than of the blurry image,
-while the FFTI.
+while the FFTI .
 %When we compare our model to....
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -796,13 +789,6 @@ Even though the network outputs show lower RMSE and recover all the frequency sp
 between the CNN images is lower than the blurred images.
 This result is related to the fact that the model reconstruct the lithology structures, however they lack of thin
 details, what makes them slightly less similar to the latent image.
-% \begin{figure}[!t]
-% \centering
-% \includegraphics[width=3.0in]{Figs/Caso6}
-% \DeclareGraphicsExtensions.
-% \caption{Acoustic impedance blurred with inverted property values.}
-% \label{fig_scenario6}
-% \end{figure}
 \begin{figure*}[!t]
 \centering
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso6/synthetic.png}%
@@ -818,7 +804,6 @@ The wedge, that represents the reservoir is filled with normalized impedance val
 the lithology around the reservoir is filled with values equal to $0$. }
 \label{fig_scenario6}
 \end{figure*}
-
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -861,14 +846,6 @@ for each image example in Tab. \ref{table_caso_3} show a short decreasing in the
 while the FTTI indicates a slight increase in CNN images similarity with the latent image.
 Although the short positive change in the metrics, the output images present increasing
 frequency magnitude in the range between $ 20 $ and $ 50 Hz $ and between $ 60 $ and $ 100 Hz $.
-% \begin{figure}[!t]
-% \centering
-% \includegraphics[width=3.0in]{Figs/Caso2}
-% \DeclareGraphicsExtensions.
-% \caption{Acoustic impedance normalized to arbitrary values.}
-% \label{fig_scenario2}
-% \end{figure}
-
 \begin{figure*}[!t]
 \centering
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso2/synthetic.png}%
@@ -883,7 +860,6 @@ frequency magnitude in the range between $ 20 $ and $ 50 Hz $ and between $ 60 $
 $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impedance values are normalized to $0$ and $1$.}
 \label{fig_scenario2}
 \end{figure*}
-
 
 %Explicar os resultados dos indices para este cenário
 \begin{table}[!t]
@@ -919,14 +895,6 @@ cutting frequency randomly chosen between $3$ and $20 Hz$. This is particularly 
 in a scenario with real data, physical aspects as signal attenuation caused by the depth lead to
 different blurring profiles in post-inversion images.
 Fig. \ref{fig_scenario5} shows the results for this scenarios.
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.0in]{Figs/Caso5}
-\DeclareGraphicsExtensions.
-\caption{Acoustic impedance blurred with different frequencies.}
-\label{fig_scenario5}
-\end{figure}
-
 \begin{figure*}[!t]
 \centering
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso5/synthetic.png}%
@@ -940,7 +908,6 @@ Fig. \ref{fig_scenario5} shows the results for this scenarios.
 \caption{Acoustic impedance models blurred with different frequencies.}
 \label{fig_scenario5}
 \end{figure*}
-
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -983,13 +950,19 @@ while it is higher in the other examples 1 and 3. However, according to the FFTI
 less similarity to the latent image, than the blurred image and we believe that is explained by the higher uncertainty
 observed. A mitigation for this problem is adding examples of this image to the network dataset, as stated previously in
 Section \ref{IARW}.
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.0in]{Figs/Caso4}
-\DeclareGraphicsExtensions.
-\caption{Acoustic impedance blurred model.}
+\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso4/synthetic.png}%
+\label{fig_scenario4_synthetic}}
+\hfil
+\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso4/blurred.png}%
+\label{fig_scenario4_blurred}}
+\hfil
+\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso4/cnn.png}%
+\label{fig_scenario4_case_cnn}}
+\caption{Acoustic impedance models blurred with different frequencies.}
 \label{fig_scenario4}
-\end{figure}
+\end{figure*}
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -1108,6 +1081,34 @@ The authors would like to thank...
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
+\newpage
+
+\begin{figure*}[!t]
+\centering
+\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.2in]{Figs/Caso1/frequencies}%
+\label{fig_frequencies_2}}
+\hfil
+\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.2in]{Figs/Caso2/frequencies}%
+\label{fig_frequencies_3}}
+\hfil
+\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.2in]{Figs/Caso4/frequencies}%
+\label{fig_frequencies_4}}
+\label{fig_frequencies}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering
+\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.2in]{Figs/Caso5/frequencies}%
+\label{fig_frequencies_5}}
+\hfil
+\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.2in]{Figs/Caso6/frequencies}%
+\label{fig_frequencies_6}}
+\caption{Acoustic impedance models blurred with different frequencies.}
+\label{fig_frequencies_freq}
+\end{figure*}
+
+
+
 \begin{thebibliography}{1}
 \bibitem{xiaoiu}  		Xi Xiaoyu, Ling Yun, Sun Desheng, Guo Xiangyu, and Wang Huifeng, ``Studying the effect of expanding low or high frequency on post-stack seismic inversion,'' in SEG Technical Program Expanded Abstracts 2012. September 2012, 1-5.
 \bibitem{Buduma15}  		Buduma, N., `` Fundamentals of Deep Learning,'' Academic Press, 2015, in O'Reilly Media.

@@ -648,7 +648,8 @@ is able to solve two important problems related to deblurring  images of physica
 : ($1$) learning the spacial patterns in the low resolution
 training images and ($2$) predicting each pixel intensity value in the new
 higher resolution image.
-To reach these two goals, our model, outlined in Fig. \ref{}, comprises two major
+To reach these two goals, our model, outlined in Fig. \ref{fig_model},
+comprises two major
 components that are combined to perform deblurring and physical property prediction
 jointly: (1) convolutional component and (2) regression component. The convolutional component
 is a two layer structure that maps a blurry image to a non-blurred model, while 
@@ -661,6 +662,12 @@ implies in discretization of each pixel in order to generate an image file. Howe
 to the original data, results in information loss, what represents a serious inconvenient.
 Thus, combining the convolutional approach with the regression layer to deblur and predict
 the physics property represents a relevant advance.
+\begin{figure*}[!t]
+\centering
+\subfloat{\includegraphics[width=5.0in]{Figs/model}}
+\caption{Figure model}
+\label{fig_model}
+\end{figure*}
 
 \subsection{Implementation Details}
 The model is implemented using the Deep Learning toolbox
@@ -736,19 +743,19 @@ We firstly test if the network is capable to correctly model the shape of the we
 and to deblur the edges and contours in a simple perspective.
 Thus, the training images and the test images have the same reference values for density and compressional velocity,
 they are different only by their shapes.
-
 \begin{figure*}[!t]
 \centering
-\subfloat[Case I]{\includegraphics[width=2.2in]{Figs/Caso1/synthetic.png}%
+\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso1/synthetic.png}%
 \label{fig_first_case_synthetic}}
 \hfil
-\subfloat[Case II]{\includegraphics[width=2.2in]{Figs/Caso1/blurred.png}%
+\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso1/blurred.png}%
 \label{fig_second_case_blurred}}
 \hfil
-\subfloat[Case II]{\includegraphics[width=2.2in]{Figs/Caso1/cnn.png}%
+\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso1/cnn.png}%
 \label{fig_second_case_cnn}}
-\caption{Simulation results for the network.}
-\label{fig_sim}
+\caption{First test case for synthetic acoustic impedance. The wedges are positioned in 
+$0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impedance values are normalized to $0$ and $1$.}
+\label{fig_scenario1}
 \end{figure*}
 
 Comparing the blurry image and the CNN output,
@@ -796,13 +803,29 @@ Even though the network outputs show lower RMSE and recover all the frequency sp
 between the CNN images is lower than the blurred images.
 This result is related to the fact that the model reconstruct the lithology structures, however they lack of thin
 details, what makes them slightly less similar to the latent image.
-\begin{figure}[!t]
+% \begin{figure}[!t]
+% \centering
+% \includegraphics[width=3.0in]{Figs/Caso6}
+% \DeclareGraphicsExtensions.
+% \caption{Acoustic impedance blurred with inverted property values.}
+% \label{fig_scenario6}
+% \end{figure}
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.0in]{Figs/Caso6}
-\DeclareGraphicsExtensions.
-\caption{Acoustic impedance blurred with inverted property values.}
+\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso6/synthetic.png}%
+\label{fig_scenario6_synthetic}}
+\hfil
+\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso6/blurred.png}%
+\label{fig_scenario6_blurred}}
+\hfil
+\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso6/cnn.png}%
+\label{fig_scenario6_case_cnn}}
+\caption{Acoustic impedance models in which the physical property values are inverted in each lithology.
+The wedge, that represents the reservoir is filled with normalized impedance value equal to $1$, while
+the lithology around the reservoir is filled with values equal to $0$. }
 \label{fig_scenario6}
-\end{figure}
+\end{figure*}
+
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -845,13 +868,29 @@ for each image example in Tab. \ref{table_caso_3} show a short decreasing in the
 while the FTTI indicates a slight increase in CNN images similarity with the latent image.
 Although the short positive change in the metrics, the output images present increasing
 frequency magnitude in the range between $ 20 $ and $ 50 Hz $ and between $ 60 $ and $ 100 Hz $.
-\begin{figure}[!t]
+% \begin{figure}[!t]
+% \centering
+% \includegraphics[width=3.0in]{Figs/Caso2}
+% \DeclareGraphicsExtensions.
+% \caption{Acoustic impedance normalized to arbitrary values.}
+% \label{fig_scenario2}
+% \end{figure}
+
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.0in]{Figs/Caso2}
-\DeclareGraphicsExtensions.
-\caption{Acoustic impedance normalized to arbitrary values.}
+\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso2/synthetic.png}%
+\label{fig_scenario2_synthetic}}
+\hfil
+\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso2/blurred.png}%
+\label{fig_scenario2_blurred}}
+\hfil
+\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso2/cnn.png}%
+\label{fig_scenario2_cnn}}
+\caption{First test case for synthetic acoustic impedance. The wedges are positioned in 
+$0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impedance values are normalized to $0$ and $1$.}
 \label{fig_scenario2}
-\end{figure}
+\end{figure*}
+
 
 %Explicar os resultados dos indices para este cenário
 \begin{table}[!t]
@@ -887,13 +926,27 @@ cutting frequency randomly chosen between $3$ and $20 Hz$. This is particularly 
 in a scenario with real data, physical aspects as signal attenuation caused by the depth lead to
 different blurring profiles in post-inversion images.
 Fig. \ref{fig_scenario5} shows the results for this scenarios.
-\begin{figure}[!t]
+% \begin{figure}[!t]
+% \centering
+% \includegraphics[width=3.0in]{Figs/Caso5}
+% \DeclareGraphicsExtensions.
+% \caption{Acoustic impedance blurred with different frequencies.}
+% \label{fig_scenario5}
+% \end{figure}
+
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.0in]{Figs/Caso5}
-\DeclareGraphicsExtensions.
-\caption{Acoustic impedance blurred with different frequencies.}
+\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso5/synthetic.png}%
+\label{fig_scenario5_synthetic}}
+\hfil
+\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso5/blurred.png}%
+\label{fig_scenario5_blurred}}
+\hfil
+\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso5/cnn.png}%
+\label{fig_scenario5_case_cnn}}
+\caption{Acoustic impedance models blurred with different frequencies.}
 \label{fig_scenario5}
-\end{figure}
+\end{figure*}
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -936,13 +989,26 @@ while it is higher in the other examples 1 and 3. However, according to the FFTI
 less similarity to the latent image, than the blurred image and we believe that is explained by the higher uncertainty
 observed. A mitigation for this problem is adding examples of this image to the network dataset, as stated previously in
 Section \ref{IARW}.
-\begin{figure}[!t]
+% \begin{figure}[!t]
+% \centering
+% \includegraphics[width=3.0in]{Figs/Caso4}
+% \DeclareGraphicsExtensions.
+% \caption{Acoustic impedance blurred model.}
+% \label{fig_scenario4}
+% \end{figure}
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.0in]{Figs/Caso4}
-\DeclareGraphicsExtensions.
-\caption{Acoustic impedance blurred model.}
+\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso4/synthetic.png}%
+\label{fig_scenario4_synthetic}}
+\hfil
+\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso4/blurred.png}%
+\label{fig_scenario4_blurred}}
+\hfil
+\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso4/cnn.png}%
+\label{fig_scenario4_case_cnn}}
+\caption{Acoustic impedance models blurred with different frequencies.}
 \label{fig_scenario4}
-\end{figure}
+\end{figure*}
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}

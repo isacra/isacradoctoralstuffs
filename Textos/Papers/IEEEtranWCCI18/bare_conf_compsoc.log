@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.3)  15 DEC 2017 20:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.27)  17 DEC 2017 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **bare_conf_compsoc.tex
 (./bare_conf_compsoc.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+LaTeX2e <2017/01/01> patch level 3
+Babel <3.9r> and hyphenation patterns for 4 language(s) loaded.
 (./IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -125,24 +125,24 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count94
 ))
@@ -158,7 +158,7 @@ Package: cite 2015/02/27  v 5.5
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen128
 \captionmargin@=\dimen129
@@ -184,11 +184,7 @@ Package caption Info: Unknown document class (or package),
 \sf@top=\skip47
 \sf@bottom=\skip48
 )
-(./bare_conf_compsoc.aux
-
-LaTeX Warning: Label `fig_scenario5' multiply defined.
-
-)
+(./bare_conf_compsoc.aux)
 \openout1 = `bare_conf_compsoc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 329.
@@ -205,7 +201,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 329.
 LaTeX Font Info:    ... okay on input line 329.
 
 -- Lines per column: 58 (exact).
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count102
 \scratchdimen=\dimen136
@@ -219,16 +215,15 @@ LaTeX Font Info:    ... okay on input line 329.
 \makeMPintoPDFobject=\count107
 \everyMPtoPDFconversion=\toks17
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -236,31 +231,33 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -284,161 +281,205 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 49
-1.
+LaTeX Font Info:    Calculating math sizes for size <10.03749> on input line 48
+6.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.03749> on input line 491.
+(Font)              <10.03749> on input line 486.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.0262> on input line 491.
+(Font)              <7.0262> on input line 486.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.01874> on input line 491.
+(Font)              <5.01874> on input line 486.
  [2]
-<Figs/Image_Paper.png, id=20, 1396.4672pt x 753.5653pt>
+<Figs/Image_Paper.png, id=20, 759.58781pt x 412.54124pt>
 File: Figs/Image_Paper.png Graphic file (type png)
 
 <use Figs/Image_Paper.png>
-Package pdftex.def Info: Figs/Image_Paper.png used on input line 607.
-(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
+Package pdftex.def Info: Figs/Image_Paper.png used on input line 614.
+(pdftex.def)             Requested size: 216.81pt x 117.75172pt.
 
-<Figs/Image_Paper_blurred.png, id=21, 1396.4672pt x 753.5653pt>
+<Figs/Image_Paper_blurred.png, id=21, 759.58781pt x 410.2828pt>
 File: Figs/Image_Paper_blurred.png Graphic file (type png)
 
 <use Figs/Image_Paper_blurred.png>
-Package pdftex.def Info: Figs/Image_Paper_blurred.png used on input line 625.
-(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
+Package pdftex.def Info: Figs/Image_Paper_blurred.png used on input line 617.
+(pdftex.def)             Requested size: 216.81pt x 117.1071pt.
 
-
-LaTeX Warning: Reference `' on page 3 undefined on input line 651.
-
-[3 <./Figs/Image_Paper.png (PNG copy)> <./Figs/Image_Paper_blurred.png (PNG cop
-y)>] <Figs/Caso1/synthetic.png, id=25, 243.15843pt x 627.09282pt>
+<Figs/model.png, id=22, 699.21225pt x 204.765pt>
+File: Figs/model.png Graphic file (type png)
+ <use Figs/model.png>
+Package pdftex.def Info: Figs/model.png used on input line 644.
+(pdftex.def)             Requested size: 361.34999pt x 105.82227pt.
+ [3]
+[4 <./Figs/Image_Paper.png (PNG copy)> <./Figs/Image_Paper_blurred.png (PNG cop
+y)> <./Figs/model.png>]
+<Figs/Caso1/synthetic.png, id=30, 243.15843pt x 627.09282pt>
 File: Figs/Caso1/synthetic.png Graphic file (type png)
 
 <use Figs/Caso1/synthetic.png>
-Package pdftex.def Info: Figs/Caso1/synthetic.png used on input line 742.
+Package pdftex.def Info: Figs/Caso1/synthetic.png used on input line 735.
 (pdftex.def)             Requested size: 144.54pt x 372.75647pt.
 
-Underfull \hbox (badness 1412) in paragraph at lines 742--742
+Underfull \hbox (badness 1412) in paragraph at lines 735--735
 []\OT1/phv/m/n/8.03 (a) |Syn-thetic acous-tic impedance im-
  []
 
-<Figs/Caso1/blurred.png, id=27, 243.91125pt x 627.84563pt>
+<Figs/Caso1/blurred.png, id=32, 243.91125pt x 627.84563pt>
 File: Figs/Caso1/blurred.png Graphic file (type png)
 
 <use Figs/Caso1/blurred.png>
-Package pdftex.def Info: Figs/Caso1/blurred.png used on input line 745.
+Package pdftex.def Info: Figs/Caso1/blurred.png used on input line 738.
 (pdftex.def)             Requested size: 144.54pt x 372.05432pt.
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 745.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 738.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8.03> on input line 745.
+(Font)              <8.03> on input line 738.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.62097> on input line 745.
+(Font)              <5.62097> on input line 738.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.015> on input line 745.
+(Font)              <4.015> on input line 738.
 
-<Figs/Caso1/cnn.png, id=28, 243.91125pt x 625.58719pt>
+<Figs/Caso1/cnn.png, id=33, 243.91125pt x 625.58719pt>
 File: Figs/Caso1/cnn.png Graphic file (type png)
 
 <use Figs/Caso1/cnn.png>
-Package pdftex.def Info: Figs/Caso1/cnn.png used on input line 748.
+Package pdftex.def Info: Figs/Caso1/cnn.png used on input line 741.
 (pdftex.def)             Requested size: 144.54pt x 370.716pt.
 
-<Figs/Caso6/synthetic.png, id=29, 246.9225pt x 621.07031pt>
+<Figs/Caso6/synthetic.png, id=34, 246.9225pt x 621.07031pt>
 File: Figs/Caso6/synthetic.png Graphic file (type png)
 
 <use Figs/Caso6/synthetic.png>
-Package pdftex.def Info: Figs/Caso6/synthetic.png used on input line 809.
+Package pdftex.def Info: Figs/Caso6/synthetic.png used on input line 795.
 (pdftex.def)             Requested size: 144.54pt x 363.54736pt.
 
-Underfull \hbox (badness 1412) in paragraph at lines 809--809
+Underfull \hbox (badness 1412) in paragraph at lines 795--795
 []\OT1/phv/m/n/8.03 (a) |Syn-thetic acous-tic impedance im-
  []
 
-<Figs/Caso6/blurred.png, id=30, 246.9225pt x 621.07031pt>
+<Figs/Caso6/blurred.png, id=35, 246.9225pt x 621.07031pt>
 File: Figs/Caso6/blurred.png Graphic file (type png)
 
 <use Figs/Caso6/blurred.png>
-Package pdftex.def Info: Figs/Caso6/blurred.png used on input line 812.
+Package pdftex.def Info: Figs/Caso6/blurred.png used on input line 798.
 (pdftex.def)             Requested size: 144.54pt x 363.54736pt.
 
-<Figs/Caso6/cnn.png, id=31, 246.9225pt x 621.07031pt>
+<Figs/Caso6/cnn.png, id=36, 246.9225pt x 621.07031pt>
 File: Figs/Caso6/cnn.png Graphic file (type png)
  <use Figs/Caso6/cnn.png>
-Package pdftex.def Info: Figs/Caso6/cnn.png used on input line 815.
+Package pdftex.def Info: Figs/Caso6/cnn.png used on input line 801.
 (pdftex.def)             Requested size: 144.54pt x 363.54736pt.
 
-[4] [5 <./Figs/Caso1/synthetic.png> <./Figs/Caso1/blurred.png> <./Figs/Caso1/cn
-n.png>] <Figs/Caso2/synthetic.png, id=45, 252.945pt x 626.34pt>
+<Figs/Caso2/synthetic.png, id=37, 252.945pt x 626.34pt>
 File: Figs/Caso2/synthetic.png Graphic file (type png)
 
 <use Figs/Caso2/synthetic.png>
-Package pdftex.def Info: Figs/Caso2/synthetic.png used on input line 875.
+Package pdftex.def Info: Figs/Caso2/synthetic.png used on input line 852.
 (pdftex.def)             Requested size: 144.54pt x 357.91588pt.
 
-Underfull \hbox (badness 1412) in paragraph at lines 875--875
+Underfull \hbox (badness 1412) in paragraph at lines 852--852
 []\OT1/phv/m/n/8.03 (a) |Syn-thetic acous-tic impedance im-
  []
 
-<Figs/Caso2/blurred.png, id=46, 252.945pt x 626.34pt>
+<Figs/Caso2/blurred.png, id=38, 252.945pt x 626.34pt>
 File: Figs/Caso2/blurred.png Graphic file (type png)
 
 <use Figs/Caso2/blurred.png>
-Package pdftex.def Info: Figs/Caso2/blurred.png used on input line 878.
+Package pdftex.def Info: Figs/Caso2/blurred.png used on input line 855.
 (pdftex.def)             Requested size: 144.54pt x 357.91588pt.
 
-<Figs/Caso2/cnn.png, id=47, 250.68657pt x 627.09282pt>
+<Figs/Caso2/cnn.png, id=39, 250.68657pt x 627.09282pt>
 File: Figs/Caso2/cnn.png Graphic file (type png)
 
 <use Figs/Caso2/cnn.png>
-Package pdftex.def Info: Figs/Caso2/cnn.png used on input line 881.
+Package pdftex.def Info: Figs/Caso2/cnn.png used on input line 858.
 (pdftex.def)             Requested size: 144.54pt x 361.58028pt.
- <Figs/Caso5.png, id=48, 1396.4672pt x 753.5653pt>
-File: Figs/Caso5.png Graphic file (type png)
 
-<use Figs/Caso5.png>
-Package pdftex.def Info: Figs/Caso5.png used on input line 924.
-(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
-
-<Figs/Caso5/synthetic.png, id=49, 247.67531pt x 607.51968pt>
+<Figs/Caso5/synthetic.png, id=40, 247.67531pt x 607.51968pt>
 File: Figs/Caso5/synthetic.png Graphic file (type png)
 
 <use Figs/Caso5/synthetic.png>
-Package pdftex.def Info: Figs/Caso5/synthetic.png used on input line 933.
+Package pdftex.def Info: Figs/Caso5/synthetic.png used on input line 901.
 (pdftex.def)             Requested size: 144.54pt x 354.5401pt.
 
-Underfull \hbox (badness 1412) in paragraph at lines 933--933
+Underfull \hbox (badness 1412) in paragraph at lines 901--901
 []\OT1/phv/m/n/8.03 (a) |Syn-thetic acous-tic impedance im-
  []
 
-<Figs/Caso5/blurred.png, id=50, 246.1697pt x 614.295pt>
+<Figs/Caso5/blurred.png, id=41, 246.1697pt x 614.295pt>
 File: Figs/Caso5/blurred.png Graphic file (type png)
 
 <use Figs/Caso5/blurred.png>
-Package pdftex.def Info: Figs/Caso5/blurred.png used on input line 936.
+Package pdftex.def Info: Figs/Caso5/blurred.png used on input line 904.
 (pdftex.def)             Requested size: 144.54pt x 360.69682pt.
 
-<Figs/Caso5/cnn.png, id=51, 246.1697pt x 614.295pt>
+<Figs/Caso5/cnn.png, id=42, 246.1697pt x 614.295pt>
 File: Figs/Caso5/cnn.png Graphic file (type png)
  <use Figs/Caso5/cnn.png>
-Package pdftex.def Info: Figs/Caso5/cnn.png used on input line 939.
+Package pdftex.def Info: Figs/Caso5/cnn.png used on input line 907.
 (pdftex.def)             Requested size: 144.54pt x 360.69682pt.
 
-<Figs/Caso4.png, id=52, 1396.4672pt x 753.5653pt>
-File: Figs/Caso4.png Graphic file (type png)
- <use Figs/Caso4.png>
-Package pdftex.def Info: Figs/Caso4.png used on input line 988.
-(pdftex.def)             Requested size: 216.81pt x 116.98538pt.
+<Figs/Caso4/synthetic.png, id=43, 244.66406pt x 624.08156pt>
+File: Figs/Caso4/synthetic.png Graphic file (type png)
 
-Underfull \vbox (badness 6252) has occurred while \output is active []
+<use Figs/Caso4/synthetic.png>
+Package pdftex.def Info: Figs/Caso4/synthetic.png used on input line 956.
+(pdftex.def)             Requested size: 144.54pt x 368.69058pt.
 
- [6 <./Figs/Caso6/synthetic.png> <./Figs/Caso6/blurred.png> <./Figs/Caso6/cnn.p
+Underfull \hbox (badness 1412) in paragraph at lines 956--956
+[]\OT1/phv/m/n/8.03 (a) |Syn-thetic acous-tic impedance im-
+ []
+
+<Figs/Caso4/blurred.png, id=44, 244.66406pt x 624.08156pt>
+File: Figs/Caso4/blurred.png Graphic file (type png)
+
+<use Figs/Caso4/blurred.png>
+Package pdftex.def Info: Figs/Caso4/blurred.png used on input line 959.
+(pdftex.def)             Requested size: 144.54pt x 368.69058pt.
+
+<Figs/Caso4/cnn.png, id=45, 244.66406pt x 624.08156pt>
+File: Figs/Caso4/cnn.png Graphic file (type png)
+
+<use Figs/Caso4/cnn.png>
+Package pdftex.def Info: Figs/Caso4/cnn.png used on input line 962.
+(pdftex.def)             Requested size: 144.54pt x 368.69058pt.
+ [5]
+Underfull \vbox (badness 3364) has occurred while \output is active []
+
+ [6 <./Figs/Caso1/synthetic.png> <./Figs/Caso1/blurred.png> <./Figs/Caso1/cnn.p
 ng>]
-[7 <./Figs/Caso2/synthetic.png> <./Figs/Caso2/blurred.png> <./Figs/Caso2/cnn.pn
-g> <./Figs/Caso5.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<Figs/Caso1/frequencies.png, id=58, 266.49562pt x 630.85687pt>
+File: Figs/Caso1/frequencies.png Graphic file (type png)
 
- [8 <./Figs/Caso5/synthetic.png> <./Figs/Caso5/blurred.png> <./Figs/Caso5/cnn.p
-ng> <./Figs/Caso4.png (PNG copy)>]
+<use Figs/Caso1/frequencies.png>
+Package pdftex.def Info: Figs/Caso1/frequencies.png used on input line 1089.
+(pdftex.def)             Requested size: 158.99377pt x 376.38968pt.
+
+<Figs/Caso2/frequencies.png, id=59, 275.52937pt x 639.13782pt>
+File: Figs/Caso2/frequencies.png Graphic file (type png)
+
+<use Figs/Caso2/frequencies.png>
+Package pdftex.def Info: Figs/Caso2/frequencies.png used on input line 1092.
+(pdftex.def)             Requested size: 158.99377pt x 368.82773pt.
+
+<Figs/Caso4/frequencies.png, id=60, 277.035pt x 633.86812pt>
+File: Figs/Caso4/frequencies.png Graphic file (type png)
+
+<use Figs/Caso4/frequencies.png>
+Package pdftex.def Info: Figs/Caso4/frequencies.png used on input line 1095.
+(pdftex.def)             Requested size: 158.99377pt x 363.78462pt.
+
+<Figs/Caso5/frequencies.png, id=61, 266.49562pt x 617.30624pt>
+File: Figs/Caso5/frequencies.png Graphic file (type png)
+
+<use Figs/Caso5/frequencies.png>
+Package pdftex.def Info: Figs/Caso5/frequencies.png used on input line 1102.
+(pdftex.def)             Requested size: 158.99377pt x 368.30493pt.
+
+<Figs/Caso6/frequencies.png, id=62, 267.24844pt x 627.84563pt>
+File: Figs/Caso6/frequencies.png Graphic file (type png)
+
+<use Figs/Caso6/frequencies.png>
+Package pdftex.def Info: Figs/Caso6/frequencies.png used on input line 1105.
+(pdftex.def)             Requested size: 158.99377pt x 373.53925pt.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -462,6 +503,8 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
+ [7 <./Figs/Caso6/synthetic.png> <./Figs/Caso6/blurred.png> <./Figs/Caso6/cnn.p
+ng>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -489,6 +532,8 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
+ [8 <./Figs/Caso2/synthetic.png> <./Figs/Caso2/blurred.png> <./Figs/Caso2/cnn.p
+ng>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -525,7 +570,8 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [9]
+ [9 <./Figs/Caso5/synthetic.png> <./Figs/Caso5/blurred.png> <./Figs/Caso5/cnn.p
+ng>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -539,41 +585,37 @@ Before submitting the final camera ready copy, remember to:
 
 [10
 
-] (./bare_conf_compsoc.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+ <./Figs/Caso4/synthetic.png> <./Figs/Caso4/blurred.png> <./Figs/Caso4/cnn.png>
+] [11 <./Figs/Caso1/frequencies.png> <./Figs/Caso2/frequencies.png> <./Figs/Cas
+o4/frequencies.png>] [12 <./Figs/Caso5/frequencies.png> <./Figs/Caso6/frequenci
+es.png>] (./bare_conf_compsoc.aux) ) 
 Here is how much of TeX's memory you used:
- 3389 strings out of 493029
- 57183 string characters out of 6136234
- 132284 words of memory out of 5000000
- 6893 multiletter control sequences out of 15000+600000
- 42650 words of font info for 77 fonts, out of 8000000 for 9000
- 1144 hyphenation exceptions out of 8191
- 38i,10n,49p,392b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
-mes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
->
-Output written on bare_conf_compsoc.pdf (10 pages, 736387 bytes).
+ 3446 strings out of 494925
+ 58773 string characters out of 6180250
+ 133831 words of memory out of 5000000
+ 6714 multiletter control sequences out of 15000+600000
+ 41543 words of font info for 76 fonts, out of 8000000 for 9000
+ 19 hyphenation exceptions out of 8191
+ 39i,10n,49p,392b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvet
+ic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/times/utmri8a.pfb>
+Output written on bare_conf_compsoc.pdf (12 pages, 927198 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 148 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
