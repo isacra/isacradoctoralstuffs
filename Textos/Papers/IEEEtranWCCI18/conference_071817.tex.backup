@@ -135,7 +135,7 @@ Inversion theory is used in several areas to infer parameters values
 related to physical processes based on experimental data.
 Inversion modeling refers to using the current measurements of observable
 physical parameters in order to infer the current model parameters (not observable).
-The inversion problem is described as  \eqref{eq:deqgm}
+The inversion problem is described as (Eq. \ref{eq:deqgm})
 \begin{equation}
 \label{eq:deqgm}
 m = F^{-1}(d)
@@ -154,7 +154,7 @@ one sends pulses through a controlled artificial source and captures
 the vertical component responses in function of time. The seismic data is a composition of
 the wave pulse used in the acquisition, named wavelet, and the characteristic of the interfaces between rock layers,
 on which the wavelet reflects. This rock layer characteristic is called reflectivity coefficient and it is
-calculated as \eqref{eq:refletv}
+calculated as
 \begin{equation}
 r(t) = \frac{z(t+\delta t)-z(t)}{z(t+\delta t)+z(t)},
 \label{eq:refletv}
@@ -163,10 +163,9 @@ where, $z(t)$ is the acoustic impedance, in function of time $t$, defined as
 $z(t)=\rho(t)v(t)$, where $\rho(t)$ is the rock density and $v(t)$ the propagation velocity
 of acoustic wave.
 Therefore, the seismic data  $d(t)$ is modeled as a discrete convolution operation $*$ of the wavelet $s$ with the
-reflectivity coefficient $r$ as \eqref{eq:seismic_conv}
+reflectivity coefficient $r$ as
 \begin{equation}
 d(t) = s(\tau) * \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
-\label{eq:seismic_conv}
 \end{equation}
 where, $N$ is the number of subsurface layers, $e_d(t)$ is a random noise in function of time.
 One ideal wavelet is a delta pulse with all the frequency band-width, however, in practice
@@ -222,7 +221,7 @@ when applied to real world blurry images \cite{Lai2016} and take a severe comput
 In contrast, the learning-based methods have gained attention with the resumption and recent advances in neural
 networks. The adequate hyper-parameter adjustment allows neural network to learn
 non-linear function or blur kernels. Thus, deblurring becomes a function of a blurry image $I$
-and a set of parameters $p$ as \eqref{eq:deblur}
+and a set of parameters $p$ as
 \begin{equation}
  y = \sigma(I,p)
  \label{eq:deblur}
@@ -233,45 +232,7 @@ recognize motion kernels and performs non-blind deconvolution in
 dense motion field estimate, in addition, \cite{Hradis2015} minimize regularized $l_2$ 
 in order to perform text deblurring.
 
-\section{Data and Methods} \label{DMsection}
-\subsection{Acoustic Impedance Inversion}
-The experiments described in this paper perform
-on a set of synthetic acoustic impedance images. Using synthetic models
-to test and parametrize algorithms is a common practice in reservoir characterization \cite{Sergio2016}. It allows studying the
-results of the algorithms without external interferences and performing efficient interpretations and assessments. 
-According to \cite{Harvey}, wedge shaped models is a straight way to analysis the
-seismic model and inversion processes. It reproduces
-reservoir contexts such as stratigraphic refinements, edges and channel structures in a realistic manner.
 
-The training set generation occurs in two steps.
-The fist step creates a set of wedge shapes represented
-by images with size $32$ x $32$. The wedge shapes represent the reservoir and they
-randomly vary in width and length. The second step fills the lithology with values of petrophysical properties.
-In order to simplify the assessments and conclusions, we fill the lithology structures with constant
-reference values of rock densities and compressional velocity observed in the literature \cite{Mavko2009}.
-The acoustic impedance is calculated using the density and velocity models and the images in high
-resolution model are obtained, as illustrated in  Fig. \ref{fig_lithology}.
-
-In a real scenario, the blurry acoustic impedance is the
-result of an acoustic inversion method, such as Maximum \textit{a posteriori} \cite{Buland2003,Figueiredo2012}, Sparse Spike \cite{Debeye1990} 
-and Recursive Inversion \cite{Chopra2001}, using seismic data with limited band-with.
-However, for experimental purpose, the acoustic impedance models were filtered
-and the high frequencies were removed to obtain the blurry images, as illustrated in Fig. \ref{fig_blur}.
-This way, the supervised learning is performed with the high resolution images and blurred images.
-To increase the number of examples in the training dataset we rotate
-the impedance models to establish the wedge structure in four different angles
-($0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$).
-This approach allows the model learning an wide edge variabilities in wedges images.
-% \begin{figure*}[!t]
-% \centering
-% \subfloat[Wedge with reference values for density and compressional velocity.]{\includegraphics[width=3.0in]{Figs/Image_Paper}%
-% \label{fig_lithology}}
-% \hfil
-% \subfloat[Acoustic impedance blurred model.]{\includegraphics[width=3.0in]{Figs/Image_Paper_blurred}%
-% \label{fig_blur}}
-% \caption{Synthetic and Blurry Images}
-% \label{fig_acoustic_impedances}
-% \end{figure*}
 
 \section{Ease of Use}
 
@@ -492,23 +453,6 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{Bishop2007}		T.E. Bishop, S.D. Babacan, Amizic, T. Chan, R. Molina, and A. Katsaggelos, ``Blind image deconvolution: problem formulation and existing approaches.'' in. Blindimage deconvolution: theory and applications,  CRC press, 2007.
 \bibitem{Babacan2012}		S. D. Babacan, R. Molina, M. N. Do, and A. K. Katsaggelos, ``Bayesian blind deconvolution with general sparse image priors.'' in Proceedings of European Conference on Computer Vision (ECCV), pp. 341–355, 2012.
 \bibitem{Krishnan2015}		D. Krishnan, T. Tay, and R. Fergus, ``Blind deconvolution using anormalized sparsity measure.'' In CVPR, 2011.
-\bibitem{Levin2011}		A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. ``Efficient marginal likelihood optimization in blind deconvolution.'' In CVPR, 2011.
-\bibitem{Zhang2011}		H. Zhang, J. Yang, Y. Zhang, N. M. Nasrabadi, and T. S. Huang, ``Close the loop: Joint blind image restoration and recognition with sparse representation prior.'' in ICCV, 2011. 
-\bibitem{sroubek2012}		F. Šroubek and P. Milanfar, ``Robust multichannel blind deconvolution via fast alternating minimization.'' in IEEE Trans. on Image Processing, pp. 1687–1700, 2012.
-\bibitem{Zhu2012}		X. Zhu, F. Šroubek, P. Milanfar, ``Deconvolving PSFs for a better motion deblurring using multiple images.'' in ECCV, 2012.
-\bibitem{Levin}			A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. ``Understanding and evaluating blind deconvolution algorithms.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), pp. 1964–1971.
-\bibitem{Hacohen13}		Y. Hacohen, E. Shechtman, and D. Lischinski, ``Deblurring by example using dense correspondence.'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), pp. 2384–2391, 2013.
-\bibitem{Pan2014}		J. Pan, Z. Hu, Z. Su, and M. H. Yang, ``Deblurring face images with exemplars.'' In Proceedings of European Conference on Computer Vision (ECCV), pp. 47–62. Springer, 2014.
-\bibitem{Lai2016}		W.S. Lai, J. B. Huang, Z. Hu, N. Ahuja, and M. H. Yang, ``A comparative study for single image blind deblurring.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
-\bibitem{Chakrabarti2016}	A. Chakrabarti, ``A neural approach to blind motion deblurring.'' In Proceedings of European Conference on Computer Vision (ECCV), pp. 221–235. Springer, 2016.
-\bibitem{Hradis2015}		M. Hradiš, J. Kotera, P. Zemcı́k, and F. Šroubek, ``Convolutional neural networks for direct text deblurring.'' In Proceedings of British Machine Vision Conference (BMVC), 2015.
-\bibitem{Sun2015}		J. Sun, W. Cao, Z. Xu, and J. Ponce, ``Learning a convolutional neural network for non-uniform motion blur removal.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), pp. 769–777, 2015.
-\bibitem{Sergio2016}		S. S. Sancevero, A. Z. Remacre, R. S. Portugal, ``O papel da inversão para a impedância no processo de caracterização sísmica de reservatórios.'' in Revista Brasileira de Geofísica, p. 495-512, v. 24, 2006.
-\bibitem{Harvey} 		P. J. Harvey, and D. J. MacDONALD, ``Seismic modelling of porosity within the jurassic aged carbonate bank, offshore Nova Scotia,'' in  Canadian Journal of Exploration Geophysics, num. 26, pp. 54–71.
-\bibitem{Mavko2009}		G. Mavko, T. Mukerji, and J. Dvorkin, ``The Rock Physics Handbook: Tools for Seismic Analysis of Porous Media.'' Cambridge: Cambridge University Press, pp. 359-369, 2009.
-\bibitem{Debeye1990}		H. DEBEYE, and P. RIEL van, ``Lp-norm deconvolution.'' 1990, Geophysical Prospecting, pp. 381–403
-\bibitem{Chopra2001}		S. Chopra, ``Integrating coherence cube imaging and seismic inversion.'' The Leading Edge, pp. 354–362, 2001.
-
 
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
 \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
@@ -520,16 +464,26 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 
 \bibitem{Chrysos} 		G. G. Chrysos, S. Zafeiriou, "Deep Face Deblurring," 2017 IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), Honolulu, HI, 2017, pp. 2015-2024.
 \bibitem{riel} 			P. van Riel,  ``The past, present and future of quantitative reservoir characterization.'' in The Leading Edge, 19, pp. 878–881.
-
+\bibitem{sergio}		S. S. Sancevero, A. Z. Remacre, R. S. Portugal, ``O papel da inversão para a impedância no processo de caracterização sísmica de reservatórios.'' in Revista Brasileira de Geofísica, p. 495-512, v. 24, 2006.
 \bibitem{Girshick}		R. Girshick, ``Fast r-cnn,'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), pp. 1440–1448, 2015.
 \bibitem{Bell} 			S. Bell, C. L. Zitnick, K. Bala, and R. Girshick, ``Inside-outside net: Detecting objects in context with skip pooling and recurrent neural networks,'' in arXiv preprint arXiv:1512.04143, 2015.
-
+\bibitem{Levin}			A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. ``Understanding and evaluating blind deconvolution algorithms.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), pp. 1964–1971.
+\bibitem{Levin2011}		A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. ``Efficient marginal likelihood optimization in blind deconvolution.'' In CVPR, 2011.
+\bibitem{Harvey} 		P. J. Harvey, and D. J. MacDONALD, ``Seismic modelling of porosity within the jurassic aged carbonate bank, offshore Nova Scotia,'' in  Canadian Journal of Exploration Geophysics, num. 26, pp. 54–71.
 \bibitem{naranyana}		S. Narayana, and P. K. Thirivikraman, ``Image similarity using fourier transform,'' in International Journal of Computer Engeneering and Technology, 2015, num. 6, pp. 29–37.
 \bibitem{Ning}			N. Qian, ``On the momentum term in gradient descent learning algorithms,'' in Neural Networks, vol. 12, pp. 145-151, 1999.
-
-
-
-
+\bibitem{Hacohen13}		Y. Hacohen, E. Shechtman, and D. Lischinski, ``Deblurring by example using dense correspondence.'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), pp. 2384–2391, 2013.
+\bibitem{Pan2014}		J. Pan, Z. Hu, Z. Su, and M. H. Yang, ``Deblurring face images with exemplars.'' In Proceedings of European Conference on Computer Vision (ECCV), pp. 47–62. Springer, 2014.
+\bibitem{Lai2016}		W.S. Lai, J. B. Huang, Z. Hu, N. Ahuja, and M. H. Yang, ``A comparative study for single image blind deblurring.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
+\bibitem{Chakrabarti2016}	A. Chakrabarti, ``A neural approach to blind motion deblurring.'' In Proceedings of European Conference on Computer Vision (ECCV), pp. 221–235. Springer, 2016.
+\bibitem{Hradis2015}		M. Hradiš, J. Kotera, P. Zemcı́k, and F. Šroubek, ``Convolutional neural networks for direct text deblurring.'' In Proceedings of British Machine Vision Conference (BMVC), 2015.
+\bibitem{Sun2015}		J. Sun, W. Cao, Z. Xu, and J. Ponce, ``Learning a convolutional neural network for non-uniform motion blur removal.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), pp. 769–777, 2015.
+\bibitem{Zhang2011}		H. Zhang, J. Yang, Y. Zhang, N. M. Nasrabadi, and T. S. Huang, ``Close the loop: Joint blind image restoration and recognition with sparse representation prior.'' in ICCV, 2011. 
+\bibitem{sroubek2012}		F. Šroubek and P. Milanfar, ``Robust multichannel blind deconvolution via fast alternating minimization.'' in IEEE Trans. on Image Processing, pp. 1687–1700, 2012.
+\bibitem{Zhu2012}		X. Zhu, F. Šroubek, P. Milanfar, ``Deconvolving PSFs for a better motion deblurring using multiple images.'' in ECCV, 2012.
+\bibitem{Mavko2009}		G. Mavko, T. Mukerji, and J. Dvorkin, ``The Rock Physics Handbook: Tools for Seismic Analysis of Porous Media.'' Cambridge: Cambridge University Press, pp. 359-369, 2009.
+\bibitem{Debeye1990}		H. DEBEYE, and P. RIEL van, ``Lp-norm deconvolution.'' 1990, Geophysical Prospecting, pp. 381–403
+\bibitem{Chopra2001}		S. Chopra, ``Integrating coherence cube imaging and seismic inversion.'' The Leading Edge, pp. 354–362, 2001.
 \bibitem{Nair2010} 		V. Nair, and G. E. Hinton. ``Rectified linear units improve restricted boltzmann machines.'' In Proc. 27th International Conference on Machine Learning, 2010.
 \bibitem{Dahl2017}		R. Dahl, M. Norouzi, and J. Shlens, ``Pixel recursive super resolution'' CoRR, 2017,
 
