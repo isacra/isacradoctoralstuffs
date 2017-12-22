@@ -28,10 +28,10 @@
 %    
 % %% F
 load trained_net_1.mat
-%[~,~,im_hr,im_lr,randI] = gen_cunhas(1);
+[~,~,im_hr,im_lr,randI] = gen_cunhas(1);
 %im_pred = predict(net,im_lr);
 
-[im_hr,im_lr] = gen_cunhas_ang(4); randI=[4, 4, 4, 4];
+%[im_hr,im_lr] = gen_cunhas_ang(4); randI=[4, 4, 4, 4];
 
 im_pred = predict(net,im_lr);
 
