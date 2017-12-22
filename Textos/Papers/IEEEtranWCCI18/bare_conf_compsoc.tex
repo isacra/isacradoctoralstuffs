@@ -906,10 +906,10 @@ Example 4 ($7Hz$)& $0.8946$ | $0.0933$ & $0.7983$ | $0.0841$\\
 
 \subsection{Randomly Rotated Wedges}
 The randomly rotated wedges are related to lithologies positioned at random angles.
-In this case, we evaluate the CNN capability to deblur the wedges with specific shape and
-position, that are absent of the training dataset.
-We test the wedges with the acoustic impedance normalized to values equals to $0$ and $1$.
-It is observable in Fig. \ref{fig_scenario4} that the model presents higher uncertainty
+In this case, we evaluate the CNN capability to deblur the wedges which the shape and
+position are absent of the training dataset.
+%We test the wedges with the acoustic impedance normalized to values equals to $0$ and $1$.
+It is observable in Fig. \ref{fig_scenario4} that random shape and random rotation angle caused higher uncertainty
 in modeling the edges and corners of the wedges. On the other side, as the test images contain the same range of values
 as in the training images, the model keep its predictive capacity and recover the  This result is evident in the metrics values
 (Tab. \ref{table_caso_6}). In examples $2$ and $4$, the network outputs present lower RMSE than the blurry images, 
@@ -919,13 +919,13 @@ observed. A mitigation for this problem is adding examples of this image to the 
 Section \ref{IARW}.
 \begin{figure*}[!t]
 \centering
-\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso4/synthetic.png}%
+\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso4/synthetic.png}%
 \label{fig_scenario4_synthetic}}
 \hfil
-\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=2.0in]{Figs/Caso4/blurred.png}%
+\subfloat[Blurry images filtered with cutting frequency in $4Hz$]{\includegraphics[width=1.5in]{Figs/Caso4/blurred.png}%
 \label{fig_scenario4_blurred}}
 \hfil
-\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=2.0in]{Figs/Caso4/cnn.png}%
+\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso4/cnn.png}%
 \label{fig_scenario4_case_cnn}}
 \caption{Examples in which the wedges have random shapes and are positioned at random angles. }
 \label{fig_scenario4}
