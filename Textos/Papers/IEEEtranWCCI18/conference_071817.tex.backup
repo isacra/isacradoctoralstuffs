@@ -390,9 +390,10 @@ adjust the model weights. It is relevant to mention that the images which are bl
 the same cutting frequency and that remain symmetric after the rotation, what means that rotating the images causes no changes in impedance values.
 In the following subsections we present the results divided into the cases we consider relevant to test. In the
 first case, we test the wedges rotated according to the established angles and with acoustic impedance values normalized to $0$ and $1$.
-In the second case we invert the impedance values in such a way that the wedges are set with normalized value equal to $1$, and $0$ out of it.
-In the third case we test images with impedance values normalized to the interval between $0.3$ and $0.7$, therefore, out of the range used during the training phase.
-In the fouth and fith cases we test present to the model wedges rotated at random angles and with random shapes.
+In the second case we test images with impedance values normalized to the interval between $0.3$ and $0.7$, therefore, out of the range used during the training phase.
+%we invert the impedance values in such a way that the wedges are set with normalized value equal to $1$, and $0$ out of it.
+In the third case we assess the model response for images blurred with different cutting frequencies.
+Finally, in the last case we present to the model wedges rotated at random angles and with random shapes.
 
 \subsection{Integer Angles Rotated Wedges} \label{IARW}
 We firstly test if the network is capable to correctly model the shape of the wedges
@@ -414,10 +415,8 @@ $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impe
 \end{figure*}
 it is noticeable that the CNN output reached a sharp image and accurately
 predicted the pixel values. The RMSE for the network output in Tab. \ref{table_caso_1} is considerably less than the RMSE for the blurry image,
-while the FFTI slightly increses and indicates more similarity between the network outputs
-and the latent images, except for the first image, for which the IFFT shows not representative change.
-The frequency magnitude illustrated in Fig. \ref{fig_frequencies_1}
-shows that the model precisely recovered the frequency spectrum of the original image.
+while the FFTI slightly increases and indicates more similarity between the network outputs
+and the latent images, except for the first image, for which the FFTI shows not representative change.
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
 \caption{Metrics values for the first test case.}
@@ -491,8 +490,6 @@ Fig. \ref{fig_scenario2} that the network, trained with the new dataset, learned
 the wedges shapes and the predicted pixel intensities with low variance. The values
 for each image example in Tab. \ref{table_caso_3} show a short decreasing in the RMSE
 of the CNN images, while the FTTI indicates a considerable increase in CNN images similarity with the latent image.
-Although the short positive change in the metrics, the output images present increasing
-frequency magnitude in the range between $ 20 $ and $ 50 Hz $ and between $ 60 $ and $ 100 Hz $.
 \begin{figure*}[!t]
 \centering
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso2/synthetic.png}%
@@ -530,11 +527,8 @@ cutting frequency randomly chosen between $3$ and $20 Hz$. In a real data scenar
 physical aspects as signal attenuation caused by the depth, lead to
 different blurring profiles in post-inversion images, what makes this case interesting.
 Fig. \ref{fig_scenario5} shows that the model will deblurr images containing different blurry resolution, and
-highlight their edges and interfaces. The RMSE of each CNN output is lower than the RMSE of the
-blurry images, even though its magnitude is considered non-representative. On the other side, through
-the frequency spectrum graphs in Fig. \ref{} , it is evident the model capability to recover the frequency magnitudes.
-It is interesting to note, for the middles frequencies, the model recovers higher magnitudes than in the latent
-image. This particularity still demand on assessment.
+highlight their edges and interfaces. The metrics in Tab. \ref{table_caso_5} shows that the RMSE of each CNN output is lower than the RMSE of the
+blurry images, even though its magnitude is considered non-representative.
 \begin{figure*}[!t]
 \centering
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso5/synthetic.png}%
@@ -612,6 +606,32 @@ Example 4 & $0.2238$ | $0.9348$ & $0.2353$ | $0.9067$\\
 \end{tabular}
 \end{table}
 
+\begin{figure*}[!t]
+\centering
+\subfloat[First test case.]{\includegraphics[width=1.5in]{Figs/Caso1/frequencies}%
+\label{fig_frequencies_1}}
+\subfloat[Second test case.]{\includegraphics[width=1.5in]{Figs/Caso2/frequencies}%
+\label{fig_frequencies_3}}
+\subfloat[Third test case.]{\includegraphics[width=1.5in]{Figs/Caso5/frequencies}%
+\label{fig_frequencies_5}}
+\subfloat[Fourth test case]{\includegraphics[width=1.5in]{Figs/Caso4/frequencies}%
+\label{fig_frequencies_4}}
+\caption{Frequency magnitude distributions.}
+\label{fig_frequencies}
+\end{figure*}
+
+\subsection{Frequency Recovering}
+% The frequency magnitude illustrated in Fig. \ref{fig_frequencies_1}
+% shows that the model precisely recovered the frequency spectrum of the original image.
+% Although the short positive change in the metrics, the output images present increasing
+% frequency magnitude in the range between $ 20 $ and $ 50 Hz $ and between $ 60 $ and $ 100 Hz $.
+% Similar to the previews case, the model recovers the frequency magnitudes,
+% illustrated in Fig. \ref{fig_frequencies_3}, however with magnitude slightly lower in the region of higher
+% frequencies.
+% On the other side, through the frequency spectrum graphs in Fig. \ref{fig_frequencies_5} , it is evident the model capability to recover the frequency magnitudes.
+% It is interesting to note, for the middles frequencies, between $10Hz$ and $60Hz$, the model recovers higher magnitudes than in the latent
+% image. This particularity still demand on assessment.
+% The frequency magnitude for this case (Fig. \ref{fig_frequencies_4}) shows....
 
 \section{Conclusion}
 

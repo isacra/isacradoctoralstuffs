@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.12.21)  22 DEC 2017 00:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex 2017.12.21)  23 DEC 2017 01:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,7 +23,7 @@ LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
--- Using PDF output.
+-- Using DVI output.
 \@IEEEnormalsizeunitybaselineskip=\dimen105
 -- This is a 10 point document.
 \CLASSINFOnormalsizebaselineskip=\dimen106
@@ -234,18 +234,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: dvips.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count113
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/dvips.def
+File: dvips.def 2016/07/10 v3.1a Driver-dependent file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen143
 \Gin@req@width=\dimen144
@@ -359,70 +351,7 @@ LaTeX Font Info:    ... okay on input line 16.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count114
-\scratchdimen=\dimen145
-\scratchbox=\box30
-\nofMPsegments=\count115
-\nofMParguments=\count116
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count117
-\MPscratchDim=\dimen146
-\MPnumerator=\count118
-\makeMPintoPDFobject=\count119
-\everyMPtoPDFconversion=\toks22
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 LaTeX Font Info:    Try loading font information for U+msa on input line 61.
-
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -458,132 +387,382 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ³ in font ptmr7t!
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+ [1
 
 
 ] [2]
-<Figs/Image_Paper.png, id=20, 759.58781pt x 412.54124pt>
-File: Figs/Image_Paper.png Graphic file (type png)
 
-<use Figs/Image_Paper.png>
-Package pdftex.def Info: Figs/Image_Paper.png used on input line 261.
-(pdftex.def)             Requested size: 144.54pt x 78.49695pt.
+! LaTeX Error: File `Figs/Image_Paper' not found.
 
-<Figs/Image_Paper_blurred.png, id=21, 759.58781pt x 410.2828pt>
-File: Figs/Image_Paper_blurred.png Graphic file (type png)
-
-<use Figs/Image_Paper_blurred.png>
-Package pdftex.def Info: Figs/Image_Paper_blurred.png used on input line 279.
-(pdftex.def)             Requested size: 144.54pt x 78.06723pt.
-
-<Figs/model.png, id=22, 699.21225pt x 204.765pt>
-File: Figs/model.png Graphic file (type png)
- <use Figs/model.png>
-Package pdftex.def Info: Figs/model.png used on input line 325.
-(pdftex.def)             Requested size: 216.81pt x 63.49211pt.
- [3 <./Figs/Image_Paper.png (PNG copy)> <./Figs/Image_Paper_blurred.png (PNG co
-py)> <./Figs/model.png>] <Figs/Caso1/synthetic.png, id=26, 238.64156pt x 484.81
-125pt>
-File: Figs/Caso1/synthetic.png Graphic file (type png)
-
-<use Figs/Caso1/synthetic.png>
-Package pdftex.def Info: Figs/Caso1/synthetic.png used on input line 406.
-(pdftex.def)             Requested size: 108.405pt x 220.22697pt.
-
-<Figs/Caso1/blurred.png, id=28, 238.64156pt x 484.81125pt>
-File: Figs/Caso1/blurred.png Graphic file (type png)
-
-<use Figs/Caso1/blurred.png>
-Package pdftex.def Info: Figs/Caso1/blurred.png used on input line 408.
-(pdftex.def)             Requested size: 108.405pt x 220.22697pt.
-
-<Figs/Caso1/cnn.png, id=29, 238.64156pt x 484.81125pt>
-File: Figs/Caso1/cnn.png Graphic file (type png)
-
-<use Figs/Caso1/cnn.png>
-Package pdftex.def Info: Figs/Caso1/cnn.png used on input line 410.
-(pdftex.def)             Requested size: 108.405pt x 220.22697pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.261 ...degraphics[width=2.0in]{Figs/Image_Paper}
+                                                  
+I could not locate the file with any of these extensions:
+.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: Reference `fig_frequencies_1' on page 4 undefined on input line 
-419.
+! LaTeX Error: File `Figs/Image_Paper_blurred' not found.
 
-<Figs/Caso2/synthetic.png, id=30, 246.1697pt x 476.53032pt>
-File: Figs/Caso2/synthetic.png Graphic file (type png)
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.279 ...cs[width=2.0in]{Figs/Image_Paper_blurred}
+                                                  
+I could not locate the file with any of these extensions:
+.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<use Figs/Caso2/synthetic.png>
-Package pdftex.def Info: Figs/Caso2/synthetic.png used on input line 499.
-(pdftex.def)             Requested size: 108.405pt x 209.8485pt.
 
-<Figs/Caso2/blurred.png, id=31, 242.40562pt x 476.53032pt>
-File: Figs/Caso2/blurred.png Graphic file (type png)
+! LaTeX Error: File `Figs/model' not found.
 
-<use Figs/Caso2/blurred.png>
-Package pdftex.def Info: Figs/Caso2/blurred.png used on input line 501.
-(pdftex.def)             Requested size: 108.405pt x 213.10602pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.325 \includegraphics[width=3.0in]{Figs/model}
+                                               
+I could not locate the file with any of these extensions:
+.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<Figs/Caso2/cnn.png, id=32, 242.40562pt x 476.53032pt>
-File: Figs/Caso2/cnn.png Graphic file (type png)
+[3]
 
-<use Figs/Caso2/cnn.png>
-Package pdftex.def Info: Figs/Caso2/cnn.png used on input line 503.
-(pdftex.def)             Requested size: 108.405pt x 213.10602pt.
- [4]
-<Figs/Caso5/synthetic.png, id=36, 236.38312pt x 505.89pt>
-File: Figs/Caso5/synthetic.png Graphic file (type png)
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso1/synthetic.png (no
+ BoundingBox).
 
-<use Figs/Caso5/synthetic.png>
-Package pdftex.def Info: Figs/Caso5/synthetic.png used on input line 536.
-(pdftex.def)             Requested size: 108.405pt x 232.00204pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.407 \label{fig_first_case_synthetic}}
+                                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<Figs/Caso5/blurred.png, id=37, 236.38312pt x 505.89pt>
-File: Figs/Caso5/blurred.png Graphic file (type png)
+File: Figs/Caso1/synthetic.png Graphic file (type eps)
+<Figs/Caso1/synthetic.png>
 
-<use Figs/Caso5/blurred.png>
-Package pdftex.def Info: Figs/Caso5/blurred.png used on input line 538.
-(pdftex.def)             Requested size: 108.405pt x 232.00204pt.
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso1/blurred.png (no B
+oundingBox).
 
-<Figs/Caso5/cnn.png, id=38, 236.38312pt x 505.89pt>
-File: Figs/Caso5/cnn.png Graphic file (type png)
- <use Figs/Caso5/cnn.png>
-Package pdftex.def Info: Figs/Caso5/cnn.png used on input line 540.
-(pdftex.def)             Requested size: 108.405pt x 232.00204pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.409 \label{fig_second_case_blurred}}
+                                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-Overfull \hbox (10.90141pt too wide) in paragraph at lines 550--563
+File: Figs/Caso1/blurred.png Graphic file (type eps)
+<Figs/Caso1/blurred.png>
+
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso1/cnn.png (no Bound
+ingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.411 \label{fig_second_case_cnn}}
+                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: Figs/Caso1/cnn.png Graphic file (type eps)
+<Figs/Caso1/cnn.png>
+
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso2/synthetic.png (no
+ BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.496 \label{fig_scenario2_synthetic}}
+                                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: Figs/Caso2/synthetic.png Graphic file (type eps)
+<Figs/Caso2/synthetic.png>
+
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso2/blurred.png (no B
+oundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.498 \label{fig_scenario2_blurred}}
+                                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: Figs/Caso2/blurred.png Graphic file (type eps)
+<Figs/Caso2/blurred.png>
+
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso2/cnn.png (no Bound
+ingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.500 \label{fig_scenario2_cnn}}
+                                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: Figs/Caso2/cnn.png Graphic file (type eps)
+<Figs/Caso2/cnn.png>
+
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso5/synthetic.png (no
+ BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.535 \label{fig_scenario5_synthetic}}
+                                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: Figs/Caso5/synthetic.png Graphic file (type eps)
+<Figs/Caso5/synthetic.png>
+
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso5/blurred.png (no B
+oundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.537 \label{fig_scenario5_blurred}}
+                                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: Figs/Caso5/blurred.png Graphic file (type eps)
+<Figs/Caso5/blurred.png>
+
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso5/cnn.png (no Bound
+ingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.539 \label{fig_scenario5_case_cnn}}
+                                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: Figs/Caso5/cnn.png Graphic file (type eps)
+<Figs/Caso5/cnn.png> [4]
+Overfull \hbox (10.90141pt too wide) in paragraph at lines 549--562
  [][] 
  []
 
-<Figs/Caso4/synthetic.png, id=39, 238.64156pt x 481.04718pt>
-File: Figs/Caso4/synthetic.png Graphic file (type png)
 
-<use Figs/Caso4/synthetic.png>
-Package pdftex.def Info: Figs/Caso4/synthetic.png used on input line 581.
-(pdftex.def)             Requested size: 108.405pt x 218.51714pt.
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso4/synthetic.png (no
+ BoundingBox).
 
-<Figs/Caso4/blurred.png, id=40, 239.39438pt x 481.04718pt>
-File: Figs/Caso4/blurred.png Graphic file (type png)
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.580 \label{fig_scenario4_synthetic}}
+                                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<use Figs/Caso4/blurred.png>
-Package pdftex.def Info: Figs/Caso4/blurred.png used on input line 583.
-(pdftex.def)             Requested size: 108.405pt x 217.8345pt.
+File: Figs/Caso4/synthetic.png Graphic file (type eps)
+<Figs/Caso4/synthetic.png>
 
-<Figs/Caso4/cnn.png, id=41, 235.63031pt x 481.04718pt>
-File: Figs/Caso4/cnn.png Graphic file (type png)
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso4/blurred.png (no B
+oundingBox).
 
-<use Figs/Caso4/cnn.png>
-Package pdftex.def Info: Figs/Caso4/cnn.png used on input line 585.
-(pdftex.def)             Requested size: 108.405pt x 221.31375pt.
- [5 <./Figs/Caso1/synthetic.png> <./Figs/Caso1/blurred.png> <./Figs/Caso1/cnn.p
-ng>]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.582 \label{fig_scenario4_blurred}}
+                                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: Figs/Caso4/blurred.png Graphic file (type eps)
+<Figs/Caso4/blurred.png>
+
+! LaTeX Error: Cannot determine size of graphic in Figs/Caso4/cnn.png (no Bound
+ingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.584 \label{fig_scenario4_case_cnn}}
+                                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: Figs/Caso4/cnn.png Graphic file (type eps)
+<Figs/Caso4/cnn.png>
+
+! LaTeX Error: File `Figs/Caso1/frequencies' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.612 \label{fig_frequencies_1}}
+                                
+I could not locate the file with any of these extensions:
+.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (8.8799pt too wide) in paragraph at lines 612--612
+[]\OT1/ptm/m/n/8 (a)
+ []
+
+
+Overfull \hbox (14.67169pt too wide) in paragraph at lines 612--612
+|\OT1/ptm/m/n/8 First
+ []
+
+
+Overfull \hbox (11.11172pt too wide) in paragraph at lines 612--612
+\OT1/ptm/m/n/8 test
+ []
+
+
+Overfull \hbox (15.76779pt too wide) in paragraph at lines 612--612
+\OT1/ptm/m/n/8 case.| 
+ []
+
+
+! LaTeX Error: File `Figs/Caso2/frequencies' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.614 \label{fig_frequencies_3}}
+                                
+I could not locate the file with any of these extensions:
+.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (9.32794pt too wide) in paragraph at lines 614--614
+[]\OT1/ptm/m/n/8 (b)
+ []
+
+
+Overfull \hbox (14.21584pt too wide) in paragraph at lines 614--614
+|\OT1/ptm/m/n/8 Sec-
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 614--614
+\OT1/ptm/m/n/8 ond
+ []
+
+
+Overfull \hbox (11.11172pt too wide) in paragraph at lines 614--614
+\OT1/ptm/m/n/8 test
+ []
+
+
+Overfull \hbox (15.76779pt too wide) in paragraph at lines 614--614
+\OT1/ptm/m/n/8 case.| 
+ []
+
+
+! LaTeX Error: File `Figs/Caso5/frequencies' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.616 \label{fig_frequencies_5}}
+                                
+I could not locate the file with any of these extensions:
+.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (8.8799pt too wide) in paragraph at lines 616--616
+[]\OT1/ptm/m/n/8 (c)
+ []
+
+
+Overfull \hbox (17.77588pt too wide) in paragraph at lines 616--616
+|\OT1/ptm/m/n/8 Third
+ []
+
+
+Overfull \hbox (11.11172pt too wide) in paragraph at lines 616--616
+\OT1/ptm/m/n/8 test
+ []
+
+
+Overfull \hbox (15.76779pt too wide) in paragraph at lines 616--616
+\OT1/ptm/m/n/8 case.| 
+ []
+
+
+! LaTeX Error: File `Figs/Caso4/frequencies' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.618 \label{fig_frequencies_4}}
+                                
+I could not locate the file with any of these extensions:
+.eps,.ps,.eps.gz,.ps.gz,.eps.Z,.mps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (9.32794pt too wide) in paragraph at lines 618--618
+[]\OT1/ptm/m/n/8 (d)
+ []
+
+
+Overfull \hbox (21.21593pt too wide) in paragraph at lines 618--618
+|\OT1/ptm/m/n/8 Fourth
+ []
+
+
+Overfull \hbox (11.11172pt too wide) in paragraph at lines 618--618
+\OT1/ptm/m/n/8 test
+ []
+
+
+Overfull \hbox (13.76779pt too wide) in paragraph at lines 618--618
+\OT1/ptm/m/n/8 case| 
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./Figs/Caso2/synthetic.png> <./Figs/Caso2/blurred.png> <./Figs/Caso2/cnn.p
-ng> <./Figs/Caso5/synthetic.png> <./Figs/Caso5/blurred.png> <./Figs/Caso5/cnn.p
-ng>]
+ [5]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -593,28 +772,6 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no Ì in font ptmr7t!
-Missing character: There is no Œ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no Ì in font ptmr7t!
-Missing character: There is no Œ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -625,8 +782,32 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-[7 <./Figs/Caso4/synthetic.png> <./Figs/Caso4/blurred.png> <./Figs/Caso4/cnn.pn
-g>]
+[6]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no Ì in font ptmr7t!
+Missing character: There is no Œ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no Ì in font ptmr7t!
+Missing character: There is no Œ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -679,39 +860,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[8
+[7] (./conference_071817.aux)
 
-] (./conference_071817.aux)
-
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 4704 strings out of 493013
- 73522 string characters out of 6135681
- 141807 words of memory out of 5000000
- 8171 multiletter control sequences out of 15000+600000
- 52016 words of font info for 111 fonts, out of 8000000 for 9000
+ 3737 strings out of 493014
+ 57936 string characters out of 6135707
+ 121258 words of memory out of 5000000
+ 7249 multiletter control sequences out of 15000+600000
+ 36714 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,10n,49p,295b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on conference_071817.pdf (8 pages, 488384 bytes).
-PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36i,10n,49p,1491b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+Output written on conference_071817.dvi (7 pages, 51488 bytes).
