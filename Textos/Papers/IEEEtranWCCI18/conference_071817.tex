@@ -77,18 +77,18 @@ given a blurry image as input.
 % is possible if the details of the blurring method are known, but
 % in most cases, blurry images lack of enough information
 % to recover a unique image \cite{}. 
-It is not observable in the literature
-an algorithm for deblurring all objects. Thus, methods that exploit
-domain-specific knowledge have emerged for deblurring
-categories of objects, e.g., text, faces and motion images \cite{Grigorios2017}.
+According to \cite{Grigorios2017}, it is not observable in the literature
+an algorithm for deblurring all objects, i.e., domain-specific knowledge should,
+somehow, be incorporated to the algorithm in order to proceed effective deblurring.
 In oil exploration field, the seismic data acquisition and its
 inversion to acoustic impedance attribute typically generates
 blurry images of the subsurface, in such a way that it is not
-clearly observe the interfaces between different rock layers,
-geological structures such as channels, etc.
+clearly observeble the interfaces between different rock layers,
+the geological structures that make up the reservoir, such as channels, fans, traps, fails,
+connectivity patterns, etc.
 Obtaining high resolution acoustic impedance images, through seismic inversion methods,
 is a critical part in oil reservoir characterization.
-Despite the notorious efficiency of the inversion methods,
+Despite the notorious efficiency of inversion methods,
 post-inversion images deblurring has not received much attention.
 
 %O GAP
@@ -98,8 +98,11 @@ inversion algorithm, the informations, knowledges and available data about the f
 in such a way that it is possible to make the
 quantitative predictions about the reservoir behavior \cite{buiting}.
 %One of the data used in this process is the seismic amplitude.
-The seismic data is widely used in inversion processes because of its facility and precision
-in interpreting the acoustic impedance property.
+%The seismic data is widely used in inversion processes because of its facility and precision
+%in interpreting the acoustic impedance property.
+Using the seismmic data in deepwater reservoir modeling leads to errors in estimating
+the reservoir properties, beacause such data do not allow the wide understanding of the field
+under study \cite{Sergio2016}.
 To succeed in seismic inversion, it is necessary to include strategies to deal with multiple
 sources of uncertainties. Specifically, the limited band-width of the seismic data leads to
 a misinterpretation of the resulting acoustic impedance models.
@@ -126,10 +129,13 @@ In this paper, we propose a new multilayer convolution network model to perform 
 Each network layer maps higher level features originated in the previews layers through convolutional blur kernels.
 To perform this mapping, the kernels, also named weights, are adjusted by minimizing a loss function. 
 The model enhances the resolution of acoustic impedance images, resulting in sharp images with
-increased high-frequency band-width and lower noise. 
+increased high-frequency band-width and lower noise.
 In order to train the model, we blur a set of the synthetic acoustic impedance images to create a dictionary of
 images of high and low resolution. Then, the pairs of blur and latent images are normalized and 
 presented to the network as input and target, respectively.
+In our approach, the domain-specific knowledge used in deblurring acoustic impedance impedance images is comonly
+obtained through training images containing geological knowladge. Generally, the images are obtained from a specialist
+(geologist or geophysicist) knowladge about relevant characteristics of the reservoir for which one wishes enhancing the impedance images.
 %We compare the deblurred images depicted by our model and by two other deblurring methods ().
 The core concept of our architecture is the combination of the convolution layers with regression
 layers, thus the convolutional layers learn the spatial structures existing in different
@@ -193,10 +199,10 @@ with a latent image $I$:
  \label{eq:deblurr}
 \end{equation}
 where $n$ is the noise. Since $k$, $I$ and $n$ are unknown, the problem 
-is highly ill-posed and admits infinity solutions for $k$ and $I$.
+is highly ill-posed and admits infinite solutions for $k$ and $I$.
 Several works have developed different deblurring methods for specific purposes.
 Blind deconvolution methods are widely investigated in image processing \cite{Bishop2007}.
-For the last six years, considerable effort has been employed in single image
+For the last six years, considerable effort has been made in single image
 \cite{Babacan2012,Krishnan2015,Levin2011,Zhang2011} and multi-image \cite{sroubek2012,Zhu2012} blind deconvolutions. 
 Applying blind deconvolution generally implies in making assumptions on
 blur kernels and/or on latent images. For example, assuming sparsity of blur kernel
@@ -222,10 +228,10 @@ which is not always available.
 
 The optimization methods previously described use a set of priors based on
 generic image statistics or domain-specific priors. It has been demonstrated
-that these methods work properly on synthetic blurs. However, newly studies show that they failure
+that these methods work properly on synthetic blurs. However, new studies show that they failure
 when applied to real world blurry images \cite{Lai2016} and take a severe computational cost \cite{Chakrabarti2016}.
-In contrast, the learning-based methods have gained attention with the resumption and recent advances in neural
-networks. The adequate hyper-parameter adjustment allows neural network to learn
+In contrast, the learning-based methods have gained attention with the resumption and recent advances in convolutional neural
+networks (CNN). The adequate hyper-parameter adjustment allows CNN to learn
 non-linear function or blur kernels. Thus, deblurring becomes a function of a blurry image $I$
 and a set of parameters $p$ as \eqref{eq:deblur}
 \begin{equation}
@@ -233,7 +239,7 @@ and a set of parameters $p$ as \eqref{eq:deblur}
  \label{eq:deblur}
 \end{equation}
 Learning-based methods focus on developing a model to learn the function $\sigma$ \cite{Hradis2015}
-and to perform non-blind deblurring \cite{Chakrabarti2016}. \cite{Sun2015} learn a convolution neural networks (CNN) to
+and to perform non-blind deblurring \cite{Chakrabarti2016}. \cite{Sun2015} teaches a CNN to
 recognize motion kernels and performs non-blind deconvolution in
 dense motion field estimate, in addition, \cite{Hradis2015} minimize regularized $l_2$ 
 in order to perform text deblurring.
@@ -606,32 +612,39 @@ Example 4 & $0.2238$ | $0.9348$ & $0.2353$ | $0.9067$\\
 \end{tabular}
 \end{table}
 
-\begin{figure*}[!t]
-\centering
-\subfloat[First test case.]{\includegraphics[width=1.5in]{Figs/Caso1/frequencies}%
-\label{fig_frequencies_1}}
-\subfloat[Second test case.]{\includegraphics[width=1.5in]{Figs/Caso2/frequencies}%
-\label{fig_frequencies_3}}
-\subfloat[Third test case.]{\includegraphics[width=1.5in]{Figs/Caso5/frequencies}%
-\label{fig_frequencies_5}}
-\subfloat[Fourth test case]{\includegraphics[width=1.5in]{Figs/Caso4/frequencies}%
-\label{fig_frequencies_4}}
-\caption{Frequency magnitude distributions.}
-\label{fig_frequencies}
-\end{figure*}
-
 \subsection{Frequency Recovering}
-% The frequency magnitude illustrated in Fig. \ref{fig_frequencies_1}
-% shows that the model precisely recovered the frequency spectrum of the original image.
-% Although the short positive change in the metrics, the output images present increasing
-% frequency magnitude in the range between $ 20 $ and $ 50 Hz $ and between $ 60 $ and $ 100 Hz $.
-% Similar to the previews case, the model recovers the frequency magnitudes,
-% illustrated in Fig. \ref{fig_frequencies_3}, however with magnitude slightly lower in the region of higher
-% frequencies.
-% On the other side, through the frequency spectrum graphs in Fig. \ref{fig_frequencies_5} , it is evident the model capability to recover the frequency magnitudes.
-% It is interesting to note, for the middles frequencies, between $10Hz$ and $60Hz$, the model recovers higher magnitudes than in the latent
-% image. This particularity still demand on assessment.
-% The frequency magnitude for this case (Fig. \ref{fig_frequencies_4}) shows....
+In order to asses the high frequencies recovering, we use the Fourier Transform
+to present the graph containing the frequency magnitudes of each image in the
+examples we test.
+
+The frequency magnitude in the first test case, illustrated in Fig. \ref{fig_frequencies_1},
+shows that the model precisely recovered the frequency spectrum of the original image.
+This test case presents the ideal result, in which the metrics indicate 
+decreasing error, increasing similarity and frequency band-with in the CNN output images.
+The output images present increasing frequency magnitude in the range between $ 20 $ and $ 50 Hz $ and between $ 60 $ and $ 100 Hz $.
+
+Similar to the previews case, the model recovers the frequency magnitudes when we change the normalized
+acoustic impedance to $0.3$ and $0.7$, illustrated in Fig. \ref{fig_frequencies_3}, however, slightly lower in the region of higher frequencies. 
+
+On the other side, through the frequency spectrum graphs in Fig. \ref{fig_frequencies_5} , it is evident the model capability to recover the frequency magnitudes.
+
+It is interesting to note, for the middles frequencies, between $10Hz$ and $60Hz$, the model recovers higher magnitudes than in the latent
+image. This particularity still demand on assessment.
+The frequency magnitude for this case (Fig. \ref{fig_frequencies_4}) shows....
+
+\begin{figure*}[!t]
+	\centering
+	\subfloat[First test case.]{\includegraphics[width=1.5in]{Figs/Caso1/frequencies}%
+		\label{fig_frequencies_1}}
+	\subfloat[Second test case.]{\includegraphics[width=1.5in]{Figs/Caso2/frequencies}%
+		\label{fig_frequencies_3}}
+	\subfloat[Third test case.]{\includegraphics[width=1.5in]{Figs/Caso5/frequencies}%
+		\label{fig_frequencies_5}}
+	\subfloat[Fourth test case]{\includegraphics[width=1.5in]{Figs/Caso4/frequencies}%
+		\label{fig_frequencies_4}}
+	\caption{Frequency magnitude distributions.}
+	\label{fig_frequencies}
+\end{figure*}
 
 \section{Conclusion}
 
