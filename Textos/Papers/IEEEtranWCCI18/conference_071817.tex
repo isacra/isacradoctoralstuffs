@@ -83,7 +83,7 @@ somehow, be incorporated to the algorithm in order to proceed effective deblurri
 In oil exploration field, the seismic data acquisition and its
 inversion to acoustic impedance attribute typically generates
 blurry images of the subsurface, in such a way that it is not
-clearly observeble the interfaces between different rock layers,
+clearly observable the interfaces between different rock layers,
 the geological structures that make up the reservoir, such as channels, fans, traps, fails,
 connectivity patterns, etc.
 Obtaining high resolution acoustic impedance images, through seismic inversion methods,
@@ -100,8 +100,8 @@ quantitative predictions about the reservoir behavior \cite{buiting}.
 %One of the data used in this process is the seismic amplitude.
 %The seismic data is widely used in inversion processes because of its facility and precision
 %in interpreting the acoustic impedance property.
-Using the seismmic data in deepwater reservoir modeling leads to errors in estimating
-the reservoir properties, beacause such data do not allow the wide understanding of the field
+Using the seismic data in deep-water reservoir modeling leads to errors in estimating
+the reservoir properties, because such data do not allow the wide understanding of the field
 under study \cite{Sergio2016}.
 To succeed in seismic inversion, it is necessary to include strategies to deal with multiple
 sources of uncertainties. Specifically, the limited band-width of the seismic data leads to
@@ -180,7 +180,7 @@ d(t) = s(\tau) * \sum_{j-1}^{N}{r(t- t_j) \delta(t - t_j) + e_d(t)}
 \label{eq:seismic_conv}
 \end{equation}
 where, $N$ is the number of subsurface layers, $e_d(t)$ is a random noise in function of time.
-One ideal wavelet is a delta pulse with all the frequency band-width, however, in practice
+One ideal wavelet is a delta pulse with complete frequency band-width, however, in practice
 wavelets have their band-width generally limited from $6Hz$ to $65Hz$. By consequence,
 the images resulting from the seismic inversion will keep their frequency spectrum limited.
 
@@ -340,7 +340,7 @@ delivered in MATLAB R2017A. Our model comprises a simple architecture with two c
 Each one of them is configured with $50$ kernels, sized $5$ x $5$
 and stride $1$, meaning that after each convolution operation the blur kernel is shifted
 one position in each direction. After each convolutional layer we proceed a maximum pooling operation
-to obtain the maximum value of small regions in the input image and obtain  statistical summaries of these regions . We also
+to obtain the maximum value of small regions in the input image and obtain statistical summaries of these regions. We also
 apply rectified linear units (ReLU) after each pooling layer in order to speed up the training
 step and to learn sensible features from the images, following the proposal of \cite{Nair2010}. After
 the second regularization layer,  we add a fully connected layer, which maps the convolution layer's output
@@ -353,16 +353,16 @@ set to $0.005$), decreasing every iteration in a total of $100$ iterations.
 It should be noted that, once the wedge shapes are randomly generated, every image is different
 and each one is introduced only once to the network, this way avoiding over-fitting.
 The network weights initialize randomly and the model performs a supervised learning through a dictionary containing pairs of low resolution and high resolution images.
-The Stochastic Gradient Descendant with Momentum (SGDM) \cite{Ning1999} adjusts the network weights in every layer by minimizing the Mean Squared Error (MSE)
+The Stochastic Gradient Descent with Momentum (SGDM) \cite{Ning1999} adjusts the network weights in every layer by minimizing the Mean Squared Error (MSE)
 in each batch of images. Thus, after the training phase, the model is capable
-to deblur any other wedge shaped acoustic impedance image not presented in the training dataset. The outputted
+to deblur any other wedge shaped acoustic impedance image not presented in the training dataset. The output
 image recovers the high frequencies and shows higher similarity
-to the high resolution image than to the blurred image, according to a established metric.
-The model was adjusted to deblur a wide variety of wedge shapes and impedance values.
-Those wedges which the model was unable to predict were added in the training set.
-
-Three metrics assess the performance of the convolution network: Fast Fourier Transform Index - FFTI \eqref{eq:fourier},
-Rooted Mean Square Error - RMSE \ref{eq:mse}. 
+to the high resolution image than to the blurred image, according to established metric.
+The model is adjusted to deblur a wide variety of wedge shapes and impedance values.
+Thus, the images whose wedges the model are unable to predict, are used to form a new training dataset
+and the model is retrained.
+Three metrics assess the performance of our convolution network: Fast Fourier Transform Index - FFTI \eqref{eq:fourier},
+Rooted Mean Square Error - RMSE \eqref{eq:mse}. 
 The FFTI is a similarity metric calculated based on the fast fourier transform (FFT) of each image.
 It is introduced by \cite{Naranyana2015} and calculates as 
 \begin{equation}
@@ -372,10 +372,8 @@ It is introduced by \cite{Naranyana2015} and calculates as
 where, for each frequency, an intensity value is calculated from the real and complex parts of the fourier
 transform. $F_{1i}$ represents the intensity value of $i$-th \textit{pixel} in the first image and $F_{2i}$
 is the intensity value of $i$-th \textit{pixel} in the second image. $\bar{F}_1$ e $\bar{F}_2$ are the mean
-frequencies in each image. The closer FFTI is to $1$, the higher the similarity between the images.
-The frequencies spectrum is additionally useful to present the graphic of frequency magnitudes in the images.
-The frequency magnitude graphic allows distinguishing what high frequencies were added to the acoustic impedance
-after the low resolution image is passed through the trained CNN. 
+frequencies in each image. The closer FFTI is to $1$, the higher the similarity between images.
+Additionally, we use the frequency spectrum to show the graphics of magnitudes, which allow distinguishing what high frequencies are added to the acoustic impedance after the low resolution images pass through the trained CNN. 
 \begin{equation}
  RMSE = \sqrt{\frac{ (\sum_{i=1}^{N}{(x_i -y_i)^2 } }{N}},
  \label{eq:mse}
@@ -389,24 +387,23 @@ are presented in terms of this normalization.
 The normalized images are then rotated according to the established angles mentioned in Section \ref{DMsection},
 then comprising a total of $2000$ images. By doing so, we present to
 the network the same lithologies in different positions and expect that the network
-identify general sorts of wedges in angles different from those with which the it was trained.
-The rotated images are blurred by applying a low-pass filter with
-cutting frequency $4Hz$, then the pairs of blurred and not-blurred images are used to
+identify general sorts of wedges in different angles.
+The rotated images are blurred by applying a low-pass filter with $4Hz$
+cutting frequency, then the pairs of blurred and not-blurred images are used to
 adjust the model weights. It is relevant to mention that the images which are blurred with
 the same cutting frequency and that remain symmetric after the rotation, what means that rotating the images causes no changes in impedance values.
-In the following subsections we present the results divided into the cases we consider relevant to test. In the
-first case, we test the wedges rotated according to the established angles and with acoustic impedance values normalized to $0$ and $1$.
-In the second case we test images with impedance values normalized to the interval between $0.3$ and $0.7$, therefore, out of the range used during the training phase.
-%we invert the impedance values in such a way that the wedges are set with normalized value equal to $1$, and $0$ out of it.
-In the third case we assess the model response to images blurred with different cutting frequencies.
-Finally, in the last case we present to the model wedges rotated at random angles and with random shapes.
+
+In the following subsections we present the results divided into the cases we consider relevant to test.
+First, we test the wedges rotated according to the established angles and with acoustic impedance values normalized to $0$ and $1$. Next, we test images with impedance values normalized to the interval between $0.3$ and $0.7$, therefore, out of the range used during the training phase. %we invert the impedance values in such a way that the wedges are set with normalized value equal to $1$, and $0$ out of it.
+We then assess the model response to images blurred with different cutting frequencies.
+At last, we present to the model wedges with random shapes, rotated at random angles.
 
 \subsection{Integer Angles Rotated Wedges} \label{IARW}
-We firstly test if the network is capable to correctly model the shape of the wedges
-and to deblur the edges and contours in a simple perspective.
-Thus, the training images and the test images have the same reference values for
-density and compressional velocity, they are different only by their shapes.
-Comparing the blurry image (Fig. \ref{fig_second_case_blurred}) and the CNN output (Fig. \ref{fig_second_case_cnn})
+We firstly test the network capability to correctly model the shape of wedges
+and to deblur their edges and contours in a simple perspective.
+Thus, the training and test images have the same reference values for
+density and compression velocity, different from each other only by the shape.
+Comparing the blurry images in Fig. \ref{fig_second_case_blurred} and the CNN outputs in Fig. \ref{fig_second_case_cnn},
 \begin{figure*}[!t]
 \centering
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso1/synthetic.png}%
@@ -419,9 +416,9 @@ Comparing the blurry image (Fig. \ref{fig_second_case_blurred}) and the CNN outp
 $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impedance values are normalized to $0$ and $1$.}
 \label{fig_scenario1}
 \end{figure*}
-it is noticeable that the CNN output reached a sharp image and accurately
-predicted the pixel values. The RMSE for the network output in Tab. \ref{table_caso_1} is considerably less than the RMSE for the blurry image,
-while the FFTI slightly increases and indicates more similarity between the network outputs
+the CNN outputs notably reach sharp images and accurately
+predict the pixel intensities. Tab. \ref{table_caso_1} shows that the error values between the network output and the latent images are considerably lower than the RMSE between the latent and the blurry images. Furthermore,
+the FFTI slightly increases and indicates more similarity between the network outputs
 and the latent images, except for the first image, for which the FFTI shows not representative change.
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
@@ -488,14 +485,12 @@ Example 4 & $0.1976$ | $0.9498$ & $0.0767$ | $0.9771$\\
 In the following scenario, we arbitrarily change the normalized impedance in both
 lithologies to values $ 0.7 $ out of the wedge and $ 0.3$ into the wedge.
 These values are different from those first learned by the model during the
-training phase and we test the model generalization capacity to reach
-the learned pixel intensity values. Once the model is trained with pixel valued to
-$ 0 $ and $ 1 $, it poorly extrapolated and a new training dataset is generated containing $30\%$
-of the images normalized to the new impedance values. It is noticeable in
-Fig. \ref{fig_scenario2} that the network, trained with the new dataset, learned
-the wedges shapes and the predicted pixel intensities with low variance. The values
-for each image example in Tab. \ref{table_caso_3} show a short decreasing in the RMSE
-of the CNN images, while the FTTI indicates a considerable increase in CNN images similarity with the latent image.
+training phase and we test the model generalization capability to reach
+the learned pixel intensities. Once the model is trained with pixel valued to
+$ 0 $ and $ 1 $, it poorly extrapolated to the new values. Thus, we retrained the model with a new dataset containing $30\%$
+of images normalized to the mentioned impedance values ($0.7$, $0.3$) and tested with the images shown in Fig. \ref{fig_scenario2_blurred}. It is noticeable in Fig. \ref{fig_scenario2} that the network trained with the new dataset, learned
+the wedges shapes and the predicted pixel intensities, with low variance. Considering the CNN outputs, the metric values in Tab. \ref{table_caso_3}
+show that the RMSE slightly decrease, while the similarity with the latent image increases.
 \begin{figure*}[!t]
 \centering
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso2/synthetic.png}%
@@ -528,12 +523,13 @@ Example 4 & $0.0605$ | $0.9649$ & $0.0374$ | $0.9804$\\
 \end{tabular}
 \end{table}
 
-In the last scenario, we blurr each synthetic image with a different
-cutting frequency randomly chosen between $3$ and $20 Hz$. In a real data scenario,
-physical aspects as signal attenuation caused by the depth, lead to
-different blurring profiles in post-inversion images, what makes this case interesting.
-Fig. \ref{fig_scenario5} shows that the model will deblurr images containing different blurry resolution, and
-highlight their edges and interfaces. The metrics in Tab. \ref{table_caso_5} shows that the RMSE of each CNN output is lower than the RMSE of the
+In a real data scenario, physical aspects, such as signal attenuation caused by the depth, lead to
+different blurring profiles in post-inversion images, what motivates this test case.
+In order to investigate this scenario, we blur each synthetic image with a different
+cutting frequency, randomly chosen between $3$ and $20 Hz$. 
+Fig. \ref{fig_scenario5} shows that the model deblur images containing different blurry resolution, and
+highlight edges and possible interfaces between rock layers. Metrics in Tab. \ref{table_caso_5} show that the RMSE
+of each CNN output is lower than the RMSE of the
 blurry images, even though its magnitude is considered non-representative.
 \begin{figure*}[!t]
 \centering
@@ -576,9 +572,9 @@ It is observable in Fig. \ref{fig_scenario4} that the model presents higher unce
 in modeling the edges and corners of the wedges. On the other side, as the test images contain the same range of values
 as in the training images, the model keep its predictive capacity and recover the  This result is evident in the metrics values
 (Tab. \ref{table_caso_6}). In examples $2$ and $4$, the network outputs present lower RMSE than the blurry images, 
-while it is higher in the other examples $1$ and $3$. However, according to the FFTI, all the network outputs are
+while it is higher in the other examples $1$ and $3$. However, according to the FFTI, all network outputs are
 less similar to the latent image, than the blurred image and we believe that is explained by the higher uncertainty
-observed. A mitigation for this problem is adding examples of this image to the network dataset, as stated previously in
+observed. A mitigation for this problem is adding examples of this image to the network training dataset, as stated previously in
 Section \ref{IARW}.
 \begin{figure*}[!t]
 \centering
@@ -647,6 +643,9 @@ The frequency magnitude for this case (Fig. \ref{fig_frequencies_4}) shows....
 \end{figure*}
 
 \section{Conclusion}
+This paper provides a neural network model, composed by a convolutional and a regression component, for recoverying latent and high-quality
+sythetic acoustic impedance images from degraded images (blurry, noisy).
+
 
 \begin{thebibliography}{00}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.27)  27 DEC 2017 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.27)  4 JAN 2018 23:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -462,140 +462,134 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 <Figs/Image_Paper.png, id=20, 759.58781pt x 412.54124pt>
 File: Figs/Image_Paper.png Graphic file (type png)
 <use Figs/Image_Paper.png>
-Package pdftex.def Info: Figs/Image_Paper.png  used on input line 261.
+Package pdftex.def Info: Figs/Image_Paper.png  used on input line 267.
 (pdftex.def)             Requested size: 144.54pt x 78.49695pt.
 <Figs/Image_Paper_blurred.png, id=21, 759.58781pt x 410.2828pt>
 File: Figs/Image_Paper_blurred.png Graphic file (type png)
 <use Figs/Image_Paper_blurred.png>
-Package pdftex.def Info: Figs/Image_Paper_blurred.png  used on input line 279.
+Package pdftex.def Info: Figs/Image_Paper_blurred.png  used on input line 285.
 (pdftex.def)             Requested size: 144.54pt x 78.06723pt.
 <Figs/model.png, id=22, 699.21225pt x 204.765pt>
 File: Figs/model.png Graphic file (type png)
 <use Figs/model.png>
-Package pdftex.def Info: Figs/model.png  used on input line 325.
+Package pdftex.def Info: Figs/model.png  used on input line 331.
 (pdftex.def)             Requested size: 216.81pt x 63.49211pt.
  [3 <./Figs/Image_Paper.png (PNG copy)> <./Figs/Image_Paper_blurred.png (PNG co
-py)> <./Figs/model.png>]
+py)>]
 <Figs/Caso1/synthetic.png, id=26, 238.64156pt x 484.81125pt>
 File: Figs/Caso1/synthetic.png Graphic file (type png)
 <use Figs/Caso1/synthetic.png>
-Package pdftex.def Info: Figs/Caso1/synthetic.png  used on input line 407.
+Package pdftex.def Info: Figs/Caso1/synthetic.png  used on input line 410.
 (pdftex.def)             Requested size: 108.405pt x 220.22697pt.
 <Figs/Caso1/blurred.png, id=28, 238.64156pt x 484.81125pt>
 File: Figs/Caso1/blurred.png Graphic file (type png)
 <use Figs/Caso1/blurred.png>
-Package pdftex.def Info: Figs/Caso1/blurred.png  used on input line 409.
+Package pdftex.def Info: Figs/Caso1/blurred.png  used on input line 412.
 (pdftex.def)             Requested size: 108.405pt x 220.22697pt.
 <Figs/Caso1/cnn.png, id=29, 238.64156pt x 484.81125pt>
 File: Figs/Caso1/cnn.png Graphic file (type png)
 <use Figs/Caso1/cnn.png>
-Package pdftex.def Info: Figs/Caso1/cnn.png  used on input line 411.
+Package pdftex.def Info: Figs/Caso1/cnn.png  used on input line 414.
 (pdftex.def)             Requested size: 108.405pt x 220.22697pt.
 <Figs/Caso2/synthetic.png, id=30, 246.1697pt x 476.53032pt>
 File: Figs/Caso2/synthetic.png Graphic file (type png)
 <use Figs/Caso2/synthetic.png>
-Package pdftex.def Info: Figs/Caso2/synthetic.png  used on input line 496.
+Package pdftex.def Info: Figs/Caso2/synthetic.png  used on input line 498.
 (pdftex.def)             Requested size: 108.405pt x 209.8485pt.
 <Figs/Caso2/blurred.png, id=31, 242.40562pt x 476.53032pt>
 File: Figs/Caso2/blurred.png Graphic file (type png)
 <use Figs/Caso2/blurred.png>
-Package pdftex.def Info: Figs/Caso2/blurred.png  used on input line 498.
+Package pdftex.def Info: Figs/Caso2/blurred.png  used on input line 500.
 (pdftex.def)             Requested size: 108.405pt x 213.10602pt.
 <Figs/Caso2/cnn.png, id=32, 242.40562pt x 476.53032pt>
 File: Figs/Caso2/cnn.png Graphic file (type png)
 <use Figs/Caso2/cnn.png>
-Package pdftex.def Info: Figs/Caso2/cnn.png  used on input line 500.
+Package pdftex.def Info: Figs/Caso2/cnn.png  used on input line 502.
 (pdftex.def)             Requested size: 108.405pt x 213.10602pt.
- [4]
+ [4 <./Figs/model.png>]
 <Figs/Caso5/synthetic.png, id=36, 236.38312pt x 505.89pt>
 File: Figs/Caso5/synthetic.png Graphic file (type png)
 <use Figs/Caso5/synthetic.png>
-Package pdftex.def Info: Figs/Caso5/synthetic.png  used on input line 535.
+Package pdftex.def Info: Figs/Caso5/synthetic.png  used on input line 537.
 (pdftex.def)             Requested size: 108.405pt x 232.00204pt.
 <Figs/Caso5/blurred.png, id=37, 236.38312pt x 505.89pt>
 File: Figs/Caso5/blurred.png Graphic file (type png)
 <use Figs/Caso5/blurred.png>
-Package pdftex.def Info: Figs/Caso5/blurred.png  used on input line 537.
+Package pdftex.def Info: Figs/Caso5/blurred.png  used on input line 539.
 (pdftex.def)             Requested size: 108.405pt x 232.00204pt.
 <Figs/Caso5/cnn.png, id=38, 236.38312pt x 505.89pt>
 File: Figs/Caso5/cnn.png Graphic file (type png)
 <use Figs/Caso5/cnn.png>
-Package pdftex.def Info: Figs/Caso5/cnn.png  used on input line 539.
+Package pdftex.def Info: Figs/Caso5/cnn.png  used on input line 541.
 (pdftex.def)             Requested size: 108.405pt x 232.00204pt.
 
-Overfull \hbox (10.90141pt too wide) in paragraph at lines 549--562
+Overfull \hbox (10.90141pt too wide) in paragraph at lines 551--564
  [][] 
  []
 
 <Figs/Caso4/synthetic.png, id=39, 238.64156pt x 481.04718pt>
 File: Figs/Caso4/synthetic.png Graphic file (type png)
 <use Figs/Caso4/synthetic.png>
-Package pdftex.def Info: Figs/Caso4/synthetic.png  used on input line 580.
+Package pdftex.def Info: Figs/Caso4/synthetic.png  used on input line 582.
 (pdftex.def)             Requested size: 108.405pt x 218.51714pt.
 <Figs/Caso4/blurred.png, id=40, 239.39438pt x 481.04718pt>
 File: Figs/Caso4/blurred.png Graphic file (type png)
 <use Figs/Caso4/blurred.png>
-Package pdftex.def Info: Figs/Caso4/blurred.png  used on input line 582.
+Package pdftex.def Info: Figs/Caso4/blurred.png  used on input line 584.
 (pdftex.def)             Requested size: 108.405pt x 217.8345pt.
 <Figs/Caso4/cnn.png, id=41, 235.63031pt x 481.04718pt>
 File: Figs/Caso4/cnn.png Graphic file (type png)
 <use Figs/Caso4/cnn.png>
-Package pdftex.def Info: Figs/Caso4/cnn.png  used on input line 584.
+Package pdftex.def Info: Figs/Caso4/cnn.png  used on input line 586.
 (pdftex.def)             Requested size: 108.405pt x 221.31375pt.
-<Figs/Caso1/frequencies.png, id=42, 269.50688pt x 627.09282pt>
-File: Figs/Caso1/frequencies.png Graphic file (type png)
-<use Figs/Caso1/frequencies.png>
-Package pdftex.def Info: Figs/Caso1/frequencies.png  used on input line 612.
-(pdftex.def)             Requested size: 108.405pt x 252.23927pt.
-<Figs/Caso2/frequencies.png, id=43, 264.23718pt x 627.09282pt>
-File: Figs/Caso2/frequencies.png Graphic file (type png)
-<use Figs/Caso2/frequencies.png>
-Package pdftex.def Info: Figs/Caso2/frequencies.png  used on input line 614.
-(pdftex.def)             Requested size: 108.405pt x 257.26282pt.
-<Figs/Caso5/frequencies.png, id=44, 259.7203pt x 627.84563pt>
-File: Figs/Caso5/frequencies.png Graphic file (type png)
-<use Figs/Caso5/frequencies.png>
-Package pdftex.def Info: Figs/Caso5/frequencies.png  used on input line 616.
-(pdftex.def)             Requested size: 108.405pt x 262.05516pt.
-<Figs/Caso4/frequencies.png, id=45, 263.48438pt x 623.32875pt>
-File: Figs/Caso4/frequencies.png Graphic file (type png)
-<use Figs/Caso4/frequencies.png>
-Package pdftex.def Info: Figs/Caso4/frequencies.png  used on input line 618.
-(pdftex.def)             Requested size: 108.405pt x 256.4605pt.
 [5 <./Figs/Caso1/synthetic.png> <./Figs/Caso1/blurred.png> <./Figs/Caso1/cnn.pn
 g>]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6 <./Figs/Caso2/synthetic.png> <./Figs/Caso2/blurred.png> <./Figs/Caso2/cnn.p
 ng> <./Figs/Caso5/synthetic.png> <./Figs/Caso5/blurred.png> <./Figs/Caso5/cnn.p
 ng>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+<Figs/Caso1/frequencies.png, id=60, 269.50688pt x 627.09282pt>
+File: Figs/Caso1/frequencies.png Graphic file (type png)
+<use Figs/Caso1/frequencies.png>
+Package pdftex.def Info: Figs/Caso1/frequencies.png  used on input line 634.
+(pdftex.def)             Requested size: 108.405pt x 252.23927pt.
+<Figs/Caso2/frequencies.png, id=61, 264.23718pt x 627.09282pt>
+File: Figs/Caso2/frequencies.png Graphic file (type png)
+<use Figs/Caso2/frequencies.png>
+Package pdftex.def Info: Figs/Caso2/frequencies.png  used on input line 636.
+(pdftex.def)             Requested size: 108.405pt x 257.26282pt.
+<Figs/Caso5/frequencies.png, id=62, 259.7203pt x 627.84563pt>
+File: Figs/Caso5/frequencies.png Graphic file (type png)
+<use Figs/Caso5/frequencies.png>
+Package pdftex.def Info: Figs/Caso5/frequencies.png  used on input line 638.
+(pdftex.def)             Requested size: 108.405pt x 262.05516pt.
+<Figs/Caso4/frequencies.png, id=63, 263.48438pt x 623.32875pt>
+File: Figs/Caso4/frequencies.png Graphic file (type png)
+<use Figs/Caso4/frequencies.png>
+Package pdftex.def Info: Figs/Caso4/frequencies.png  used on input line 640.
+(pdftex.def)             Requested size: 108.405pt x 256.4605pt.
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7 <./Figs/Caso4/synthetic.png> <./Figs/Caso4/blurred.png> <./Figs/Caso4/cnn.p
-ng> <./Figs/Caso1/frequencies.png> <./Figs/Caso2/frequencies.png> <./Figs/Caso5
-/frequencies.png> <./Figs/Caso4/frequencies.png>]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
+[7 <./Figs/Caso4/synthetic.png> <./Figs/Caso4/blurred.png> <./Figs/Caso4/cnn.pn
+g>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -662,6 +656,10 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
+Underfull \vbox (badness 1365) has occurred while \output is active []
+
+ [8 <./Figs/Caso1/frequencies.png> <./Figs/Caso2/frequencies.png> <./Figs/Caso5
+/frequencies.png> <./Figs/Caso4/frequencies.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -673,32 +671,34 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[8] (./conference_071817.aux) ) 
+[9
+
+] (./conference_071817.aux) ) 
 Here is how much of TeX's memory you used:
  4676 strings out of 492985
  73234 string characters out of 6136283
- 140216 words of memory out of 5000000
+ 138216 words of memory out of 5000000
  8162 multiletter control sequences out of 15000+600000
  50909 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,49p,297b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2017/texmf-dist/fonts/enc/dvips/base
-/8r.enc}<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texliv
-e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2017/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2017/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c
-:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/
-2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2017/texmf-dist/fo
-nts/type1/urw/times/utmbi8a.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/tim
-es/utmr8a.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_071817.pdf (8 pages, 551553 bytes).
+ 41i,10n,49p,437b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2017/texmf-dist/fonts/enc/dvips/base/8
+r.enc}<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2017/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2017/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/20
+17/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2017/texmf-dist/font
+s/type1/urw/times/utmbi8a.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times
+/utmr8a.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on conference_071817.pdf (9 pages, 553226 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
