@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.27)  4 JAN 2018 23:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.27)  8 JAN 2018 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -494,53 +494,56 @@ Package pdftex.def Info: Figs/Caso1/cnn.png  used on input line 414.
 <Figs/Caso2/synthetic.png, id=30, 246.1697pt x 476.53032pt>
 File: Figs/Caso2/synthetic.png Graphic file (type png)
 <use Figs/Caso2/synthetic.png>
-Package pdftex.def Info: Figs/Caso2/synthetic.png  used on input line 498.
+Package pdftex.def Info: Figs/Caso2/synthetic.png  used on input line 497.
 (pdftex.def)             Requested size: 108.405pt x 209.8485pt.
 <Figs/Caso2/blurred.png, id=31, 242.40562pt x 476.53032pt>
 File: Figs/Caso2/blurred.png Graphic file (type png)
 <use Figs/Caso2/blurred.png>
-Package pdftex.def Info: Figs/Caso2/blurred.png  used on input line 500.
+Package pdftex.def Info: Figs/Caso2/blurred.png  used on input line 499.
 (pdftex.def)             Requested size: 108.405pt x 213.10602pt.
 <Figs/Caso2/cnn.png, id=32, 242.40562pt x 476.53032pt>
 File: Figs/Caso2/cnn.png Graphic file (type png)
 <use Figs/Caso2/cnn.png>
-Package pdftex.def Info: Figs/Caso2/cnn.png  used on input line 502.
+Package pdftex.def Info: Figs/Caso2/cnn.png  used on input line 501.
 (pdftex.def)             Requested size: 108.405pt x 213.10602pt.
  [4 <./Figs/model.png>]
 <Figs/Caso5/synthetic.png, id=36, 236.38312pt x 505.89pt>
 File: Figs/Caso5/synthetic.png Graphic file (type png)
 <use Figs/Caso5/synthetic.png>
-Package pdftex.def Info: Figs/Caso5/synthetic.png  used on input line 537.
+Package pdftex.def Info: Figs/Caso5/synthetic.png  used on input line 536.
 (pdftex.def)             Requested size: 108.405pt x 232.00204pt.
 <Figs/Caso5/blurred.png, id=37, 236.38312pt x 505.89pt>
 File: Figs/Caso5/blurred.png Graphic file (type png)
 <use Figs/Caso5/blurred.png>
-Package pdftex.def Info: Figs/Caso5/blurred.png  used on input line 539.
+Package pdftex.def Info: Figs/Caso5/blurred.png  used on input line 538.
 (pdftex.def)             Requested size: 108.405pt x 232.00204pt.
 <Figs/Caso5/cnn.png, id=38, 236.38312pt x 505.89pt>
 File: Figs/Caso5/cnn.png Graphic file (type png)
 <use Figs/Caso5/cnn.png>
-Package pdftex.def Info: Figs/Caso5/cnn.png  used on input line 541.
+Package pdftex.def Info: Figs/Caso5/cnn.png  used on input line 540.
 (pdftex.def)             Requested size: 108.405pt x 232.00204pt.
 
-Overfull \hbox (10.90141pt too wide) in paragraph at lines 551--564
+Underfull \vbox (badness 1320) has occurred while \output is active []
+
+
+Overfull \hbox (10.90141pt too wide) in paragraph at lines 550--563
  [][] 
  []
 
 <Figs/Caso4/synthetic.png, id=39, 238.64156pt x 481.04718pt>
 File: Figs/Caso4/synthetic.png Graphic file (type png)
 <use Figs/Caso4/synthetic.png>
-Package pdftex.def Info: Figs/Caso4/synthetic.png  used on input line 582.
+Package pdftex.def Info: Figs/Caso4/synthetic.png  used on input line 581.
 (pdftex.def)             Requested size: 108.405pt x 218.51714pt.
 <Figs/Caso4/blurred.png, id=40, 239.39438pt x 481.04718pt>
 File: Figs/Caso4/blurred.png Graphic file (type png)
 <use Figs/Caso4/blurred.png>
-Package pdftex.def Info: Figs/Caso4/blurred.png  used on input line 584.
+Package pdftex.def Info: Figs/Caso4/blurred.png  used on input line 583.
 (pdftex.def)             Requested size: 108.405pt x 217.8345pt.
 <Figs/Caso4/cnn.png, id=41, 235.63031pt x 481.04718pt>
 File: Figs/Caso4/cnn.png Graphic file (type png)
 <use Figs/Caso4/cnn.png>
-Package pdftex.def Info: Figs/Caso4/cnn.png  used on input line 586.
+Package pdftex.def Info: Figs/Caso4/cnn.png  used on input line 585.
 (pdftex.def)             Requested size: 108.405pt x 221.31375pt.
 [5 <./Figs/Caso1/synthetic.png> <./Figs/Caso1/blurred.png> <./Figs/Caso1/cnn.pn
 g>]
@@ -552,38 +555,33 @@ ng>]
 <Figs/Caso1/frequencies.png, id=60, 269.50688pt x 627.09282pt>
 File: Figs/Caso1/frequencies.png Graphic file (type png)
 <use Figs/Caso1/frequencies.png>
-Package pdftex.def Info: Figs/Caso1/frequencies.png  used on input line 634.
+Package pdftex.def Info: Figs/Caso1/frequencies.png  used on input line 643.
 (pdftex.def)             Requested size: 108.405pt x 252.23927pt.
 <Figs/Caso2/frequencies.png, id=61, 264.23718pt x 627.09282pt>
 File: Figs/Caso2/frequencies.png Graphic file (type png)
 <use Figs/Caso2/frequencies.png>
-Package pdftex.def Info: Figs/Caso2/frequencies.png  used on input line 636.
+Package pdftex.def Info: Figs/Caso2/frequencies.png  used on input line 645.
 (pdftex.def)             Requested size: 108.405pt x 257.26282pt.
 <Figs/Caso5/frequencies.png, id=62, 259.7203pt x 627.84563pt>
 File: Figs/Caso5/frequencies.png Graphic file (type png)
 <use Figs/Caso5/frequencies.png>
-Package pdftex.def Info: Figs/Caso5/frequencies.png  used on input line 638.
+Package pdftex.def Info: Figs/Caso5/frequencies.png  used on input line 647.
 (pdftex.def)             Requested size: 108.405pt x 262.05516pt.
 <Figs/Caso4/frequencies.png, id=63, 263.48438pt x 623.32875pt>
 File: Figs/Caso4/frequencies.png Graphic file (type png)
 <use Figs/Caso4/frequencies.png>
-Package pdftex.def Info: Figs/Caso4/frequencies.png  used on input line 640.
+Package pdftex.def Info: Figs/Caso4/frequencies.png  used on input line 649.
 (pdftex.def)             Requested size: 108.405pt x 256.4605pt.
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no § in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no £ in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no   in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no § in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no £ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -599,8 +597,18 @@ Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-Missing character: There is no Ì in font ptmr7t!
-Missing character: There is no Œ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -609,12 +617,19 @@ Missing character: There is no Œ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
+Missing character: There is no Ì in font ptmr7t!
+Missing character: There is no Œ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+ [8 <./Figs/Caso1/frequencies.png> <./Figs/Caso2/frequencies.png> <./Figs/Caso5
+/frequencies.png> <./Figs/Caso4/frequencies.png>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -656,10 +671,6 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
 
-Underfull \vbox (badness 1365) has occurred while \output is active []
-
- [8 <./Figs/Caso1/frequencies.png> <./Figs/Caso2/frequencies.png> <./Figs/Caso5
-/frequencies.png> <./Figs/Caso4/frequencies.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -695,7 +706,7 @@ texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/20
 17/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2017/texmf-dist/font
 s/type1/urw/times/utmbi8a.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_071817.pdf (9 pages, 553226 bytes).
+Output written on conference_071817.pdf (9 pages, 554674 bytes).
 PDF statistics:
  127 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream

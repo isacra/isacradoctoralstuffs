@@ -222,7 +222,7 @@ prior, by itself, is not sufficient to reach a sharp image, instead,
 they search in a dataset for a prior that densely correspond to
 the blurry image similar to a sharp image. This search is an
 iteratively optimization over the correspondence between the images, the kernel and
-the sharp image estimation. Although \cite{Pan2014} suggest a generalization
+the sharp image estimation. Even though \cite{Pan2014} suggest a generalization
 for the method proposed by \cite{Hacohen13}, it still requires a similar reference image,
 which is not always available.
 
@@ -484,7 +484,7 @@ Example 4 & $0.1976$ | $0.9498$ & $0.0767$ | $0.9771$\\
 
 In the following scenario, we arbitrarily change the normalized impedance in both
 lithologies to values $ 0.7 $ out of the wedge and $ 0.3$ into the wedge.
-These values are different from those first learned by the model during the
+These values are different from those learned at first by the model during the
 training phase and we test the model generalization capability to reach
 the learned pixel intensities. Once the model is trained with pixel valued to
 $ 0 $ and $ 1 $, it poorly extrapolated to the new values. Thus, we retrained the model with a new dataset containing $30\%$
@@ -529,8 +529,7 @@ In order to investigate this scenario, we blur each synthetic image with a diffe
 cutting frequency, randomly chosen between $3$ and $20 Hz$. 
 Fig. \ref{fig_scenario5} shows that the model deblur images containing different blurry resolution, and
 highlight edges and possible interfaces between rock layers. Metrics in Tab. \ref{table_caso_5} show that the RMSE
-of each CNN output is lower than the RMSE of the
-blurry images, even though its magnitude is considered non-representative.
+of each CNN output is lower than the RMSE of the blurry images, even though its magnitude is considered non-representative.
 \begin{figure*}[!t]
 \centering
 \subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso5/synthetic.png}%
@@ -609,24 +608,30 @@ Example 4 & $0.2238$ | $0.9348$ & $0.2353$ | $0.9067$\\
 \end{table}
 
 \subsection{Frequency Recovering}
-In order to asses the high frequencies recovering, we use the Fourier Transform
-to present the graph containing the frequency magnitudes of each image in the
-examples we test.
+A relevant aspect of deblurring acoustic impedance images is the
+evidence of high frequencies recovering in the deblurry images and in
+the resulting seismic data. Here, we use the Fourier Transform
+to introduce the graphs containing frequency magnitudes of each image in our
+test examples.
 
-The frequency magnitude in the first test case, illustrated in Fig. \ref{fig_frequencies_1},
-shows that the model precisely recovered the frequency spectrum of the original image.
-This test case presents the ideal result, in which the metrics indicate 
+%Caso1
+The frequency magnitudes in our first test case, illustrated in Fig. \ref{fig_frequencies_1},
+show that the model precisely recovered the frequency spectrum of the original image.
+The resulting acoustic impedance shows increasing frequency magnitude in the range
+between $ 20Hz$ and $ 50Hz $, and between $ 60Hz $ and $ 100Hz $.
+This test case represents the ideal result due to the
 decreasing error, increasing similarity and frequency band-with in the CNN output images.
-The output images present increasing frequency magnitude in the range between $ 20 $ and $ 50 Hz $ and between $ 60 $ and $ 100 Hz $.
-
-Similar to the previews case, the model recovers the frequency magnitudes when we change the normalized
-acoustic impedance to $0.3$ and $0.7$, illustrated in Fig. \ref{fig_frequencies_3}, however, slightly lower in the region of higher frequencies. 
-
-On the other side, through the frequency spectrum graphs in Fig. \ref{fig_frequencies_5} , it is evident the model capability to recover the frequency magnitudes.
-
-It is interesting to note, for the middles frequencies, between $10Hz$ and $60Hz$, the model recovers higher magnitudes than in the latent
-image. This particularity still demand on assessment.
-The frequency magnitude for this case (Fig. \ref{fig_frequencies_4}) shows....
+%Caso2 Normalizacao entree 0.3 e 0.7
+Next, by training the model with the new dataset containing acoustic impedance images normalized to $0.3$ and $0.7$,
+we recovered the frequency magnitudes slightly lower than the ones of latent images, in the range of higher frequencies
+(Fig. \ref{fig_frequencies_3}). This result reflects the insertion of only $30\%$ images normalized to the mentioned range
+of property values.
+%Caso3 Imagens com diferentes frequencias de corte
+Figure \ref{fig_frequencies_5} shows the recovering of frequency spectrum for images blurred with random cutting
+frequencies. Clearly, our model is able to deblur and highlight interfaces separating rock layers, for impedance images containing different blurs caused by attenuation elements in seismic data acquisition (\ref{}).
+%Caso4 Imagens com formatos genericos
+Finally, for the test images with random shape and position, the proposed model recovered magnitudes higher than in the latent images (Fig. \ref{fig_frequencies_4}). This result still depend on a new assessment due to the increase in frequency magnitudes between $10Hz$ and $60Hz$,  whereas the metrics suggest higher error and lower similarity in the comparison among
+the model outputs and the blurry images.
 
 \begin{figure*}[!t]
 	\centering
@@ -643,9 +648,25 @@ The frequency magnitude for this case (Fig. \ref{fig_frequencies_4}) shows....
 \end{figure*}
 
 \section{Conclusion}
-This paper provides a neural network model, composed by a convolutional and a regression component, for recoverying latent and high-quality
-sythetic acoustic impedance images from degraded images (blurry, noisy).
+In this paper, we introduce a convolutional neural network model for recovering high-quality
+synthetic acoustic impedance images from degraded images (blurry, noisy). Moreover,
+we introduce a simple architecture composed by a convolutional and a regression component.
+We demonstrate that, the proposed CNN recovers the high frequencies magnitudes, absent in blurry images. Experimental results validate the proposed method in different blurry scenarios. The methodology is promising for deblurrying acoustic impedance images, due to its capability in highlighting the edges and contours of wedge shaped lithologies and, in addition,
+predict the values of rock property. For future work, we aim to assess the model on real post-inversion acoustic impedance images and investigate its influence on seismic profile.
 
+% use section* for acknowledgment
+\ifCLASSOPTIONcompsoc
+% The Computer Society usually uses the plural form
+\section*{Acknowledgments}
+\else
+% regular IEEE prefers the singular form
+\section*{Acknowledgment}
+\fi
+
+The authors would like to thank Conselho
+Nacional de Pesquisa e Desenvolvimento, Fundação de
+Amparo à Pesquisa e Inovação do Estado de Santa Catarina
+and Petrobras for their support and availability during the work.
 
 \begin{thebibliography}{00}
 
