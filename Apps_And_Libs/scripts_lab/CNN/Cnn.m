@@ -1,5 +1,5 @@
 % 
-%     [cunhas_hr, cunhas_lr, gray_hr, gray_lr] = gen_cunhas(500);
+     [cunhas_hr, cunhas_lr, gray_hr, gray_lr] = gen_cunhas(500);
 %     %load workspace_cunha.mat
 % 
 % %     for i=1:size(hr_im_cube_class.images,3)
