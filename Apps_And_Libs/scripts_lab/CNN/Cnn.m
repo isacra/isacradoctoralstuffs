@@ -1,5 +1,5 @@
 % 
-     [cunhas_hr, cunhas_lr, gray_hr, gray_lr] = gen_cunhas(500);
+%     [cunhas_hr, cunhas_lr, gray_hr, gray_lr] = gen_cunhas(500);
 %     %load workspace_cunha.mat
 % 
 % %     for i=1:size(hr_im_cube_class.images,3)
@@ -12,7 +12,7 @@
 %         convolution2dLayer( 5, 50, 'Stride', 1, 'Padding', 1)
 %         maxPooling2dLayer(2,'Stride',2);
 %         reluLayer
-%         convolution2dLayer( 3, 50, 'Stride', 1, 'Padding', 0)
+%         convolution2dLayer( 3, 50, 'Stride', 1, 'Padding', 1)
 %         maxPooling2dLayer(2,'Stride',2);
 %         reluLayer
 %         fullyConnectedLayer(1024)
@@ -27,7 +27,8 @@
 %     save 'trained_net.mat' net
 %    
 % %% F
-load trained_net_1.mat
+%load trained_net_1.mat
+load net_result_3_nov.mat
 [~,~,im_hr,im_lr,randI] = gen_cunhas(1);
 %im_pred = predict(net,im_lr);
 
@@ -54,7 +55,7 @@ for i=1:4
    [cnnmatches, cnn_inds] = fourier_indices_calculate(cnn, sintetic, cnn_fourier,sintetic_fourier);
    [bluredmatches, blured_inds] = fourier_indices_calculate(blured, sintetic, blured_fourier,sintetic_fourier);
    
-   
+   colormap(gray)
    set(gcf,'color','w')
    
    subplot(4,4,k)

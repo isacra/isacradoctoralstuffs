@@ -115,14 +115,17 @@ function [ cube_high, cube_low, gray_hr, gray_lr,randI] = gen_cunhas( num_cunhas
                 cube_high(:,:,idx) = imrotate(impedancia_profundidade_deslocamento, i*90);
                 gray_hr(idx,:) = reshape(cube_high(:,:,idx),1,1024);
                 
-                cube_low(:,:,1,idx) = lowPassFilter2(cube_high(:,:,idx),r,100,20);
+                cube_low(:,:,1,idx) = lowPassFilter2(cube_high(:,:,idx),4,100,r);
+                %cube_low(:,:,1,idx) = imrotate(lowPassFilter2(impedancia_profundidade_deslocamento,r,150,20), i*90);
+        
                 gray_lr(:,:,1,idx) = cube_low(:,:,1,idx);
                 idx = idx + 1;
             else
                 cube_high(:,:,idx) = imrotate(impedancia_profundidade_deslocamento, i*90);
                 gray_hr(idx,:) = reshape(mat2gray(cube_high(:,:,idx)),1,1024);
                 
-                cube_low(:,:,1,idx) = lowPassFilter2(cube_high(:,:,idx),r,100,20);
+                cube_low(:,:,1,idx) = lowPassFilter2(cube_high(:,:,idx),4,100,r);
+                %cube_low(:,:,1,idx) = imrotate(lowPassFilter2(impedancia_profundidade_deslocamento,r,150,20), i*90);
                 gray_lr(:,:,1,idx) = mat2gray(cube_low(:,:,1,idx));
                 idx = idx + 1;
             end
