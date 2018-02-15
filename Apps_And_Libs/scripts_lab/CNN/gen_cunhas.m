@@ -32,9 +32,9 @@ function [ cube_high, cube_low, gray_hr, gray_lr,randI] = gen_cunhas( num_cunhas
     %     min_val = 3500;
     % end
 
-    espessura_cunha_max = 10 + rand*15;
+    espessura_cunha_max = 7 + rand*18;
     base_cunha = 15 + rand*15;
-    tamanho_cunha = 0.5 + rand*0.40;
+    tamanho_cunha = 0.4 + rand*0.50;
 
     modulo = randi(100,1);
     
@@ -109,21 +109,21 @@ function [ cube_high, cube_low, gray_hr, gray_lr,randI] = gen_cunhas( num_cunhas
     end;
 
         for i = 1 : 4
-            if i==1
-                r = 2;
-            else
-                if i==2
-                    r=4;
-                else
-                    if i==3
-                        r = 6;
-                    else
-                        r = 15;
-                    end
-                end
-            end
+%             if i==1
+%                 r = 2;
+%             else
+%                 if i==2
+%                     r=4;
+%                 else
+%                     if i==3
+%                         r = 6;
+%                     else
+%                         r = 15;
+%                     end
+%                 end
+%             end
             %r = randi(20,1);
-            %r = 4;
+            r = 4;
             if (length(find(impedancia_profundidade_deslocamento==0.7)) + length(find(impedancia_profundidade_deslocamento==0.3))) == 1024
                 cube_high(:,:,idx) = imrotate(impedancia_profundidade_deslocamento, i*90);
                 gray_hr(idx,:) = reshape(cube_high(:,:,idx),1,1024);

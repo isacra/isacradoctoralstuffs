@@ -1,34 +1,36 @@
 % 
-%     [cunhas_hr, cunhas_lr, gray_hr, gray_lr] = gen_cunhas(500);
+     [cunhas_hr, cunhas_lr, gray_hr, gray_lr] = gen_cunhas(500);
 %     %load workspace_cunha.mat
 % 
 % %     for i=1:size(hr_im_cube_class.images,3)
 % %        gray_hr(i,:) = reshape(mat2gray(hr_im_cube_class.images(:,:,i)),1,1024);
 % %        gray_lr(:,:,1,i) = mat2gray(lr_im_cube_class.images(:,:,i));
 % %     end
-%     layers = [ ...
-%         imageInputLayer([32 32 1])
-%         
-%         convolution2dLayer( 5, 50, 'Stride', 1, 'Padding', 1)
-%         maxPooling2dLayer(2,'Stride',2);
-%         reluLayer
-%         convolution2dLayer( 3, 50, 'Stride', 1, 'Padding', 1)
-%         maxPooling2dLayer(2,'Stride',2);
-%         reluLayer
-%         fullyConnectedLayer(1024)
-%         regressionLayer
-%         
-%         ];
-% 
-%     options = trainingOptions('sgdm','InitialLearnRate',0.001, ...
-%         'MaxEpochs',100,'MiniBatchSize',32);
-% 
-%     net = trainNetwork(gray_lr,gray_hr,layers,options);
-%     save 'trained_net.mat' net
+    layers = [ ...
+        imageInputLayer([32 32 1])
+        
+        convolution2dLayer( 5, 50, 'Stride', 1, 'Padding', 1)
+        maxPooling2dLayer(2,'Stride',2);
+        dropoutLayer(0.2,'Name','dropout1')
+        reluLayer
+        convolution2dLayer( 3, 50, 'Stride', 1, 'Padding', 1)
+        maxPooling2dLayer(2,'Stride',2);
+        dropoutLayer(0.2,'Name','dropout2')
+        reluLayer
+        fullyConnectedLayer(1024)
+        regressionLayer
+        
+        ];
+
+    options = trainingOptions('sgdm','InitialLearnRate',0.001, ...
+        'MaxEpochs',100,'MiniBatchSize',32);
+
+    net = trainNetwork(gray_lr,gray_hr,layers,options);
+    save 'trained_net_with_dropout.mat' net
 %    
 % %% F
 %load trained_net_1.mat
-load net_result_3_nov.mat
+%load net_result_3_nov.mat
 [~,~,im_hr,im_lr,randI] = gen_cunhas(1);
 %im_pred = predict(net,im_lr);
 
