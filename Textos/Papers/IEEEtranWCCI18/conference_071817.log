@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.27)  19 JAN 2018 13:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.27)  25 JAN 2018 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,15 +434,6 @@ Package caption Info: End \AtBeginDocument code.
 \makeMPintoPDFobject=\count119
 \everyMPtoPDFconversion=\toks23
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
- (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
-
-(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ³ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
@@ -486,17 +477,27 @@ acous-tic
 [1{c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2]
+]
+LaTeX Font Info:    Try loading font information for U+msa on input line 151.
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 151.
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [2]
 <Figs/image_cunha.png, id=20, 564.60938pt x 380.17032pt>
 File: Figs/image_cunha.png Graphic file (type png)
 <use Figs/image_cunha.png>
 Package pdftex.def Info: Figs/image_cunha.png  used on input line 270.
-(pdftex.def)             Requested size: 216.81pt x 145.98605pt.
+(pdftex.def)             Requested size: 173.44756pt x 116.79001pt.
 <Figs/image_cunha_blurry.png, id=22, 564.60938pt x 414.04688pt>
 File: Figs/image_cunha_blurry.png Graphic file (type png)
 <use Figs/image_cunha_blurry.png>
 Package pdftex.def Info: Figs/image_cunha_blurry.png  used on input line 288.
-(pdftex.def)             Requested size: 216.81pt x 158.9947pt.
+(pdftex.def)             Requested size: 173.44756pt x 127.19704pt.
  [3 <./Figs/image_cunha.png> <./Figs/image_cunha_blurry.png>]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ² in font ptmr7t!
@@ -506,117 +507,64 @@ File: Figs/model.png Graphic file (type png)
 Package pdftex.def Info: Figs/model.png  used on input line 328.
 (pdftex.def)             Requested size: 216.81pt x 68.27933pt.
  [4 <./Figs/model.png>]
-<Figs/Caso1/synthetic.png, id=33, 238.64156pt x 484.81125pt>
-File: Figs/Caso1/synthetic.png Graphic file (type png)
-<use Figs/Caso1/synthetic.png>
-Package pdftex.def Info: Figs/Caso1/synthetic.png  used on input line 408.
-(pdftex.def)             Requested size: 108.405pt x 220.22697pt.
-<Figs/Caso1/blurred.png, id=34, 238.64156pt x 484.81125pt>
-File: Figs/Caso1/blurred.png Graphic file (type png)
-<use Figs/Caso1/blurred.png>
-Package pdftex.def Info: Figs/Caso1/blurred.png  used on input line 410.
-(pdftex.def)             Requested size: 108.405pt x 220.22697pt.
-<Figs/Caso1/cnn.png, id=35, 238.64156pt x 484.81125pt>
-File: Figs/Caso1/cnn.png Graphic file (type png)
-<use Figs/Caso1/cnn.png>
-Package pdftex.def Info: Figs/Caso1/cnn.png  used on input line 412.
-(pdftex.def)             Requested size: 108.405pt x 220.22697pt.
-<Figs/Caso2/synthetic.png, id=36, 246.1697pt x 476.53032pt>
-File: Figs/Caso2/synthetic.png Graphic file (type png)
-<use Figs/Caso2/synthetic.png>
-Package pdftex.def Info: Figs/Caso2/synthetic.png  used on input line 451.
-(pdftex.def)             Requested size: 108.405pt x 209.8485pt.
-<Figs/Caso2/blurred.png, id=37, 242.40562pt x 476.53032pt>
-File: Figs/Caso2/blurred.png Graphic file (type png)
-<use Figs/Caso2/blurred.png>
-Package pdftex.def Info: Figs/Caso2/blurred.png  used on input line 453.
-(pdftex.def)             Requested size: 108.405pt x 213.10602pt.
-<Figs/Caso2/cnn.png, id=38, 242.40562pt x 476.53032pt>
-File: Figs/Caso2/cnn.png Graphic file (type png)
-<use Figs/Caso2/cnn.png>
-Package pdftex.def Info: Figs/Caso2/cnn.png  used on input line 455.
-(pdftex.def)             Requested size: 108.405pt x 213.10602pt.
-<Figs/Caso5/synthetic.png, id=39, 236.38312pt x 505.89pt>
-File: Figs/Caso5/synthetic.png Graphic file (type png)
-<use Figs/Caso5/synthetic.png>
-Package pdftex.def Info: Figs/Caso5/synthetic.png  used on input line 489.
-(pdftex.def)             Requested size: 108.405pt x 232.00204pt.
-<Figs/Caso5/blurred.png, id=40, 236.38312pt x 505.89pt>
-File: Figs/Caso5/blurred.png Graphic file (type png)
-<use Figs/Caso5/blurred.png>
-Package pdftex.def Info: Figs/Caso5/blurred.png  used on input line 491.
-(pdftex.def)             Requested size: 108.405pt x 232.00204pt.
-<Figs/Caso5/cnn.png, id=41, 236.38312pt x 505.89pt>
-File: Figs/Caso5/cnn.png Graphic file (type png)
-<use Figs/Caso5/cnn.png>
-Package pdftex.def Info: Figs/Caso5/cnn.png  used on input line 493.
-(pdftex.def)             Requested size: 108.405pt x 232.00204pt.
+<Figs/teste1.png, id=33, 270.41025pt x 215.00325pt>
+File: Figs/teste1.png Graphic file (type png)
+<use Figs/teste1.png>
+Package pdftex.def Info: Figs/teste1.png  used on input line 419.
+(pdftex.def)             Requested size: 187.90244pt x 149.4022pt.
+<Figs/teste2.png, id=34, 264.99pt x 186.6975pt>
+File: Figs/teste2.png Graphic file (type png)
+<use Figs/teste2.png>
+Package pdftex.def Info: Figs/teste2.png  used on input line 470.
+(pdftex.def)             Requested size: 202.35622pt x 142.56956pt.
+<Figs/teste3.png, id=35, 269.808pt x 230.66174pt>
+File: Figs/teste3.png Graphic file (type png)
+<use Figs/teste3.png>
+Package pdftex.def Info: Figs/teste3.png  used on input line 519.
+(pdftex.def)             Requested size: 202.35622pt x 173.0029pt.
 
-Overfull \hbox (10.90141pt too wide) in paragraph at lines 503--516
+Overfull \hbox (4.10136pt too wide) in paragraph at lines 530--543
  [][] 
  []
 
-<Figs/Caso4/synthetic.png, id=42, 238.64156pt x 481.04718pt>
-File: Figs/Caso4/synthetic.png Graphic file (type png)
-<use Figs/Caso4/synthetic.png>
-Package pdftex.def Info: Figs/Caso4/synthetic.png  used on input line 531.
-(pdftex.def)             Requested size: 108.405pt x 218.51714pt.
-<Figs/Caso4/blurred.png, id=43, 239.39438pt x 481.04718pt>
-File: Figs/Caso4/blurred.png Graphic file (type png)
-<use Figs/Caso4/blurred.png>
-Package pdftex.def Info: Figs/Caso4/blurred.png  used on input line 533.
-(pdftex.def)             Requested size: 108.405pt x 217.8345pt.
-<Figs/Caso4/cnn.png, id=44, 235.63031pt x 481.04718pt>
-File: Figs/Caso4/cnn.png Graphic file (type png)
-<use Figs/Caso4/cnn.png>
-Package pdftex.def Info: Figs/Caso4/cnn.png  used on input line 535.
-(pdftex.def)             Requested size: 108.405pt x 221.31375pt.
-<Figs/Caso1/frequencies.png, id=45, 269.50688pt x 627.09282pt>
+<Figs/teste4.png, id=36, 399.29175pt x 310.761pt>
+File: Figs/teste4.png Graphic file (type png)
+<use Figs/teste4.png>
+Package pdftex.def Info: Figs/teste4.png  used on input line 566.
+(pdftex.def)             Requested size: 209.58255pt x 163.11403pt.
+[5 <./Figs/teste1.png> <./Figs/teste2.png>]
+<Figs/Caso1/frequencies.png, id=43, 196.48407pt x 557.08125pt>
 File: Figs/Caso1/frequencies.png Graphic file (type png)
 <use Figs/Caso1/frequencies.png>
-Package pdftex.def Info: Figs/Caso1/frequencies.png  used on input line 594.
-(pdftex.def)             Requested size: 180.67499pt x 420.39879pt.
-<Figs/Caso2/frequencies.png, id=46, 264.23718pt x 627.09282pt>
+Package pdftex.def Info: Figs/Caso1/frequencies.png  used on input line 627.
+(pdftex.def)             Requested size: 180.67499pt x 512.29147pt.
+<Figs/Caso2/frequencies.png, id=44, 192.72pt x 553.31718pt>
 File: Figs/Caso2/frequencies.png Graphic file (type png)
 <use Figs/Caso2/frequencies.png>
-Package pdftex.def Info: Figs/Caso2/frequencies.png  used on input line 594.
-(pdftex.def)             Requested size: 180.67499pt x 428.78093pt.
-<Figs/Caso5/frequencies.png, id=47, 259.7203pt x 627.84563pt>
+Package pdftex.def Info: Figs/Caso2/frequencies.png  used on input line 627.
+(pdftex.def)             Requested size: 180.67499pt x 518.73358pt.
+<Figs/Caso5/frequencies.png, id=45, 207.02344pt x 562.35094pt>
 File: Figs/Caso5/frequencies.png Graphic file (type png)
 <use Figs/Caso5/frequencies.png>
-Package pdftex.def Info: Figs/Caso5/frequencies.png  used on input line 594.
-(pdftex.def)             Requested size: 180.67499pt x 436.75859pt.
-<Figs/Caso4/frequencies.png, id=48, 263.48438pt x 623.32875pt>
+Package pdftex.def Info: Figs/Caso5/frequencies.png  used on input line 627.
+(pdftex.def)             Requested size: 187.90244pt x 510.42729pt.
+<Figs/Caso4/frequencies.png, id=46, 200.24812pt x 558.58687pt>
 File: Figs/Caso4/frequencies.png Graphic file (type png)
 <use Figs/Caso4/frequencies.png>
-Package pdftex.def Info: Figs/Caso4/frequencies.png  used on input line 594.
-(pdftex.def)             Requested size: 180.67499pt x 427.44366pt.
+Package pdftex.def Info: Figs/Caso4/frequencies.png  used on input line 627.
+(pdftex.def)             Requested size: 180.67499pt x 504.01909pt.
 
-Overfull \hbox (207.75859pt too wide) in paragraph at lines 585--595
+Overfull \hbox (289.73358pt too wide) in paragraph at lines 618--628
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 77.53198pt on input line 597.
+LaTeX Warning: Float too large for page by 84.75943pt on input line 630.
 
-[5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./Figs/Caso1/synthetic.png> <./Figs/Caso1/blurred.png> <./Figs/Caso1/cnn.p
-ng> <./Figs/Caso2/synthetic.png> <./Figs/Caso2/blurred.png> <./Figs/Caso2/cnn.p
-ng>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7 <./Figs/Caso5/synthetic.png> <./Figs/Caso5/blurred.png> <./Figs/Caso5/cnn.p
-ng> <./Figs/Caso4/synthetic.png> <./Figs/Caso4/blurred.png> <./Figs/Caso4/cnn.p
-ng>]
+[6 <./Figs/teste3.png> <./Figs/teste4.png>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -712,16 +660,16 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[8] [9
+[7] [8
 
  <./Figs/Caso1/frequencies.png> <./Figs/Caso2/frequencies.png> <./Figs/Caso5/fr
 equencies.png> <./Figs/Caso4/frequencies.png>] (./conference_071817.aux) ) 
 Here is how much of TeX's memory you used:
- 4756 strings out of 492985
- 74313 string characters out of 6136283
- 146768 words of memory out of 5000000
- 8240 multiletter control sequences out of 15000+600000
- 43318 words of font info for 88 fonts, out of 8000000 for 9000
+ 4699 strings out of 492985
+ 72717 string characters out of 6136283
+ 138540 words of memory out of 5000000
+ 8183 multiletter control sequences out of 15000+600000
+ 41733 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,51p,594b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/t
@@ -738,10 +686,10 @@ fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2017/texmf-dist/fonts/type
 s/utmb8a.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/
 texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2017/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_071817.pdf (9 pages, 548560 bytes).
+Output written on conference_071817.pdf (8 pages, 493714 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

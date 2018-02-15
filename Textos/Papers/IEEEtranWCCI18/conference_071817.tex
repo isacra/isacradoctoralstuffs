@@ -18,9 +18,9 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Paper Title*\\
-{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
-should not be used}
+\title{Combined Convolutional Neural Network for High Frequency Restoration in Acoustic Impedance Images\\
+%{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
+%should not be used}
 \thanks{The authors would like to thank Conselho Nacional de Pesquisa e Desenvolvimento, Fundação de Amparo à Pesquisa e Inovação do Estado de Santa Catarina and Petrobras for their support and availability during the work.}
 }
 
@@ -52,7 +52,7 @@ leandrop.fgr@gmail.com}
 \IEEEauthorblockA{\textit{Petrobras Research Center} \\
 	\textit{Petrobras}\\
 	Rio de Janeiro, Brazil \\
-	leandrop.fgr@gmail.com}
+	bbrodrigues@gmail.com }
 
 }
 
@@ -64,7 +64,7 @@ objects have gained increasing attention due to the ineffectiveness
 of generic methods.
 We present a simple and effective convolutional
 neural network that deblurs synthetic acoustic impedance images. 
-The architecture of our is divided into two basic structures: convolutional layers and regression unit. The convolutional layers highlight edges and contours related to
+The architecture of our model is divided into two basic structures: convolutional layers and regression unit. The convolutional layers highlight edges and contours related to
 interfaces between rock layers whereas the regression layer
 performs a non-linear estimation of acoustic impedance values.
 We consider a training dataset composed by wedge shaped images, positioned at
@@ -73,7 +73,7 @@ that exploit the dataset of artificially blurred and high resolution images.
 We also present an analysis comparing the frequency band-width among 
 the latent, blurry, and deblurred images.
 We additionally address the requirement of deep learning for the huge amount
-of training examples by inserting rectified linear units (RELU) and keeping
+of training examples by inserting rectified linear units (ReLU) and keeping
 the network architecture simple. 
 Experimental results on synthetic test images demonstrate the efficacy of the proposed method.
 \end{abstract}
@@ -267,7 +267,7 @@ The acoustic impedance is calculated using the density and velocity models and t
 resolution model are obtained, as illustrated in  Fig. \ref{fig_lithology}.
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.0in]{Figs/image_cunha}
+\includegraphics[width=2.4in]{Figs/image_cunha}
 \DeclareGraphicsExtensions.
 \caption{Acoustic impedance model generation. Wedge with reference values for density and compression velocity.}
 \label{fig_lithology}
@@ -285,7 +285,7 @@ the impedance models to establish the wedge structure in four different angles
 This approach allows the model learning an wide edge variability in wedges images.
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.0in]{Figs/image_cunha_blurry}
+\includegraphics[width=2.4in]{Figs/image_cunha_blurry}
 \DeclareGraphicsExtensions.
 \caption{Acoustic impedance blurred model.}
 \label{fig_blur}
@@ -401,38 +401,46 @@ We first tested the network capability to correctly model the shape of wedges
 and to deblur their edges and contours in a simple perspective.
 The training and testing images had the same reference values for
 density and compression velocity. They differed from each other only by the shape.
-Comparing the blurry images in Fig. \ref{fig_second_case_blurred} and the CNN outputs in Fig. \ref{fig_second_case_cnn},
-\begin{figure*}[!t]
-\centering
-\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso1/synthetic.png}%
-\label{fig_first_case_synthetic}}
-\subfloat[Equivalent blurry images.]{\includegraphics[width=1.5in]{Figs/Caso1/blurred.png}%
-\label{fig_second_case_blurred}}
-\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso1/cnn.png}%
-\label{fig_second_case_cnn}}
-\caption{First test case: the wedges are positioned in 
-$0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impedance values are normalized to $0$ and $1$.}
-\label{fig_scenario1}
-\end{figure*}
+Comparing the blurry images (middle column in Fig. \ref{fig_scenario1}) and the CNN outputs (right column in Fig. \ref{fig_scenario1}),
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1in]{Figs/Caso1/synthetic.png}%
+%\label{fig_first_case_synthetic}}
+%\subfloat[Equivalent blurry images.]{\includegraphics[width=1in]{Figs/Caso1/blurred.png}%
+%\label{fig_second_case_blurred}}
+%\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=1in]{Figs/Caso1/cnn.png}%
+%\label{fig_second_case_cnn}}
+%\caption{First test case: the wedges are positioned in 
+%$0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impedance values are normalized to $0$ and $1$.}
+%\label{fig_scenario1}
+%\end{figure*}
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=2.6in]{Figs/teste1}
+	\DeclareGraphicsExtensions.
+	\caption{First test case: the wedges are positioned in 
+		$0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$ and the acoustic impedance values are normalized to $0$ and $1$.}
+	\label{fig_scenario1}
+\end{figure}
 the CNN outputs notably achieved sharper images and accurately
-predicted the pixel intensities. Tab. \ref{table_caso_1} shows that the error values related to the network output and the latent images are considerably lower than the RMSE related to the latent and the blurry images. Furthermore, the FFTI slightly increased and indicates more similarity among the outputs
+predicted the pixel intensities. Tab. \ref{table_caso_1} shows that the error values related to the network output and the latent images are considerably lower than the RMSE related to the latent and the blurry images. Furthermore, the FFTI increased and indicates more similarity among the outputs
 and the latent images, except for the first image in which the FFTI shows non-representative changes.
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
-\caption{Metrics values for the first test case.}
+\caption{Table of metric values for wedges with acoustic impedance normalized to $0$ and $1$.}
 \label{table_caso_1}
 \centering
 \begin{tabular}{|c||c||c|}
 \hline
  \textbf{Metrics} & \textbf{\textit{Blurry Image (MSE - FFTI)}} & \textbf{\textit{CNN (MSE - FFTI)}}\\
 \hline
-Example 1 & $0.1337$ | $0.9773$ & $0.0621$ | $0.9724$\\
+Example 1 & $0.1990$ | $0.9548$ & $0.1195$ | $0.9884$\\
 \hline
-Example 2 & $0.1972$ | $0.9464$ & $0.0776$ | $0.9747$\\
+Example 2 & $0.3132$ | $0.8854$ & $0.1639$ | $0.9682$\\
 \hline
-Example 3 & $0.1337$ | $0.9773$ & $0.0616$ | $0.9861$\\
+Example 3 & $0.1990$ | $0.9548$ & $0.1194$ | $0.9838$\\
 \hline
-Example 4 & $0.1976$ | $0.9498$ & $0.0767$ | $0.9771$\\
+Example 4 & $0.3132$ | $0.8970$ & $0.1736$ | $0.9627$\\
 \hline
 \end{tabular}
 \end{table}
@@ -442,37 +450,45 @@ lithologies to values $ 0.7 $ out of the wedges and $ 0.3$ into them.
 These values are different from those learned by the model during the
 training phase and we tested the model generalization capability. Once the model was trained to pixels in the range
 $ 0 $ and $ 1 $, the model poorly extrapolated to the new values. Thus, we retrained the model with a new dataset containing $30\%$
-of images normalized to the mentioned impedance values ($0.7$, $0.3$) and tested it with the images shown in Fig. \ref{fig_scenario2_blurred}. It is noticeable in Fig. \ref{fig_scenario2} that the network trained with the new dataset, learned
+of images normalized to the mentioned impedance values ($0.7$, $0.3$) and tested it with the blurry images shown in Fig. \ref{fig_scenario2}. It is noticeable that the network trained with the new dataset, learned
 the wedge shapes and the new pixel intensities, with low variance. Considering the CNN outputs, the metric values in Tab. \ref{table_caso_3}
-show that the RMSE slightly decreased, while the similarity with the latent image increased.
-\begin{figure*}[!t]
-\centering
-\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso2/synthetic.png}%
-\label{fig_scenario2_synthetic}}
-\subfloat[Equivalent blurry images.]{\includegraphics[width=1.5in]{Figs/Caso2/blurred.png}%
-\label{fig_scenario2_blurred}}
-\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso2/cnn.png}%
-\label{fig_scenario2_cnn}}
-\caption{The wedges are positioned in $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$. The acoustic impedance values are normalized to $0.3$ and $0.7$.}
-\label{fig_scenario2}
-\end{figure*}
+show that the RMSE decreased, while the similarity with the latent image increased.
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1in]{Figs/Caso2/synthetic.png}%
+%\label{fig_scenario2_synthetic}}
+%\subfloat[Equivalent blurry images.]{\includegraphics[width=1in]{Figs/Caso2/blurred.png}%
+%\label{fig_scenario2_blurred}}
+%\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=1in]{Figs/Caso2/cnn.png}%
+%\label{fig_scenario2_cnn}}
+%\caption{The wedges are positioned in $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$. The acoustic impedance values are normalized to $0.3$ and $0.7$.}
+%\label{fig_scenario2}
+%\end{figure*}
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=2.8in]{Figs/teste2}
+	\DeclareGraphicsExtensions.
+	\caption{The wedges are positioned in $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$. The acoustic impedance values are normalized to $0.3$ and $0.7$.}
+	\label{fig_scenario2}
+\end{figure}
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
-\caption{An Example of a Table}
+\caption{Table of metric values for wedges with acoustic impedance normalized to $0.3$ and $0.7$.}
 \label{table_caso_3}
 \centering
 \begin{tabular}{|c||c||c|}
 \hline
  & Blurry Image (MSE - FFTI) & CNN (MSE - FFTI)\\
 \hline
-Example 1 & $0.0433$ | $0.9830$ & $0.0329$ | $0.0988$\\
+Example 1 & $0.0876$ | $0.9463$ & $0.0593$ | $0.9694$\\
 \hline
-Example 2 & $0.0605$ | $0.9647$ & $0.03677$ | $0.9814$ \\
+Example 2 & $0.1135$ | $0.9093$ & $0.0721$ | $0.9693$ \\
 \hline
-Example 3 & $0.0433$ | $0.9830$ & $0.0336$ | $0.9801$\\
+Example 3 & $0.0876$ | $0.9463$ & $0.0549$ | $0.9734$\\
 \hline
-Example 4 & $0.0605$ | $0.9649$ & $0.0374$ | $0.9804$\\ 
+Example 4 & $0.1135$ | $0.9101$ & $0.0699$ | $0.9730$\\ 
 \hline
 \end{tabular}
 \end{table}
@@ -480,62 +496,78 @@ Example 4 & $0.0605$ | $0.9649$ & $0.0374$ | $0.9804$\\
 In a real data scenario, signal attenuation caused by the depth would lead to
 different blurring profiles in post-inversion images.
 In order to investigate this scenario, we blur each synthetic image with a different
-cutting frequency, randomly choosing between $3$ and $20 Hz$. 
-Fig. \ref{fig_scenario5} shows that the model deblurred images containing different blurry resolution, and
-highlighted edges as well as possible interfaces between rock layers. Metrics in Tab. \ref{table_caso_5} show that the RMSE of each CNN output is lower than the RMSE of the blurry images, even though its magnitude is considered non-representative.
-\begin{figure*}[!t]
-\centering
-\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso5/synthetic.png}%
-\label{fig_scenario5_synthetic}}
-\subfloat[Equivalent blurry images.]{\includegraphics[width=1.5in]{Figs/Caso5/blurred.png}%
-\label{fig_scenario5_blurred}}
-\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso5/cnn.png}%
-\label{fig_scenario5_case_cnn}}
-\caption{The wedges are positioned in $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$. The acoustic impedance models are blurred using different cutting frequencies.}
-\label{fig_scenario5}
-\end{figure*}
+cutting frequency, randomly choosing between $1$ and $20 Hz$. 
+Figure \ref{fig_scenario3} shows that the model deblurred images containing different blurry resolution, and
+highlighted edges as well as possible interfaces between rock layers.
+As illustrated in Fig. \ref{fig_scenario3}, the experiments revealed that the model trained with images blurred in $4Hz$
+correctly deblurred images in the range of higher attenuation. However, the model was unable to properly deblur images with higher frequencies.
+Metrics in Tab. \ref{table_caso_5} show that the RMSE of each CNN output is lower than the RMSE of the blurry images, except for the image blurred with $15Hz$ cutting frequency.
+%even though its magnitude is considered non-representative, 
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1in]{Figs/Caso5/synthetic.png}%
+%\label{fig_scenario5_synthetic}}
+%\subfloat[Equivalent blurry images.]{\includegraphics[width=1in]{Figs/Caso5/blurred.png}%
+%\label{fig_scenario5_blurred}}
+%\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=1in]{Figs/Caso5/cnn.png}%
+%\label{fig_scenario5_case_cnn}}
+%\caption{The wedges are positioned in $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$. The acoustic impedance models are blurred using different cutting frequencies.}
+%\label{fig_scenario5}
+%\end{figure*}
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=2.8in]{Figs/teste3}
+	\DeclareGraphicsExtensions.
+	\caption{The wedges are positioned in $0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$. The acoustic impedance models are blurred using different cutting frequencies.}
+	\label{fig_scenario3}
+\end{figure}
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
-\caption{An Example of a Table}
+\caption{Table of metric values for wedges blurred with different cutting frequencies.}
 \label{table_caso_5}
 \centering
 \begin{tabular}{|c||c||c|}
 \hline
   & Blurry Image (MSE - FFTI) & CNN (MSE - FFTI)\\
 \hline
-Example 1 ($13Hz$) & $0.0820$ | $0.9963$ & $0.0763$ | $0.8094$\\
+Example ($2Hz$) & $0.2074$ | $0.9533$ & $0.1981$ | $0.9660$\\
 \hline
-Example 2 ($06Hz$)& $0.1606$ | $0.9780$ & $0.1025$ | $0.9886$\\
+Example ($4Hz$)& $0.3136$ | $0.8927$ & $0.1770$ | $0.9710$\\
 \hline
-Example 3 ($17Hz$)& $0.0961$ | $0.9966$ & $0.0781$ | $0.9921$\\
+Example ($6Hz$)& $0.1539$ | $0.9756$ & $0.1385$ | $0.9898$\\
 \hline
-Example 4 ($20Hz$)& $0.1236$ | $0.9938$ & $0.1923$ | $0.9810$\\
+Example ($15Hz$)& $0.1904$ | $0.9676$ & $0.5561$ | $0.8053$\\
 \hline
 \end{tabular}
 \end{table}
 
 \subsection{Randomly Shapes and Random Positions}
-Hier, we tested the network capability to deblur wedges with random shapes, at random position in the image.
-Additionally, this test case is comprised of images with acoustic impedance normalized to values equal to $0$ and $1$.
+Hier, we tested the network capability to deblur wedges with random shapes, at random position in the image. Additionally, this test case is comprised of images with acoustic impedance normalized to values equal to $0$ and $1$, moreover images blurred at $20Hz$ were added to the training dataset.
 It is observable in Fig. \ref{fig_scenario4} that the model presented higher uncertainty
 in modeling the edges and corners. On the other side, due to the same range of values
 in the training and testing images, the model kept its predictive capacity. This result is evident in the metrics' values
-(Tab. \ref{table_caso_6}). In examples $2$ and $4$, the model's outputs presented RMSE values lower than the blurry images, 
-while it is higher in examples $1$ and $3$. However, according to the FFTI, all network outputs are
-more similar to the blurred images than to the latent ones. That is explained by the higher uncertainty related to the wedge shapes. A mitigation for this problem is adding examples of this image to the network training dataset, as stated previously in
+(Tab. \ref{table_caso_6}). The model's outputs presented RMSE values lower than the blurry images. However, according to the FFTI, only in example $4$ the model's output showed higher
+similarity to the latent image. That is explained by the higher uncertainty related to the wedge shapes. A mitigation for this problem is adding examples of this image, in different blurry frequencies, to the network training dataset, as stated previously in
 Section \ref{IARW}.
-\begin{figure*}[!t]
-\centering
-\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso4/synthetic.png}%
-\label{fig_scenario4_synthetic}}
-\subfloat[Blurred acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso4/blurred.png}%
-\label{fig_scenario4_blurred}}
-\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso4/cnn.png}%
-\label{fig_scenario4_case_cnn}}
-\caption{Examples in which the wedges have random shapes and are positioned at random angles. }
-\label{fig_scenario4}
-\end{figure*}
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Synthetic acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso4/synthetic.png}%
+%\label{fig_scenario4_synthetic}}
+%\subfloat[Blurred acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso4/blurred.png}%
+%\label{fig_scenario4_blurred}}
+%\subfloat[Deblurred acoustic impedance images.]{\includegraphics[width=1.5in]{Figs/Caso4/cnn.png}%
+%\label{fig_scenario4_case_cnn}}
+%\caption{Examples in which the wedges have random shapes and are positioned at random angles. }
+%\label{fig_scenario4}
+%\end{figure*}
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=2.9in]{Figs/teste4}
+	\DeclareGraphicsExtensions.
+	\caption{Examples in which the wedges have random shapes and are positioned at random angles.}
+	\label{fig_scenario4}
+\end{figure}
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
@@ -546,13 +578,13 @@ Section \ref{IARW}.
 \hline
   & Blurry Image (MSE - FFTI) & CNN (MSE - FFTI)\\
 \hline
-Example 1 & $0.2283$ | $0.9333$ & $0.1959$ | $0.9261$\\
+Example 1 & $0.2310$ | $0.9241$ & $0.2170$ | $0.9146$\\
 \hline
-Example 2 & $0.2235$ | $0.9309$ & $0.2306$ | $0.8974$\\
+Example 2 & $0.2180$ | $0.9441$ & $0.2155$ | $0.9280$\\
 \hline
-Example 3 & $0.2319$ | $0.9321$ & $0.2681$ | $0.9157$\\
+Example 3 & $0.2196$ | $0.9464$ & $0.1957$ | $0.9447$\\
 \hline
-Example 4 & $0.2238$ | $0.9348$ & $0.2353$ | $0.9067$\\
+Example 4 & $0.2234$ | $0.9562$ & $0.2031$ | $0.9603$\\
 \hline
 \end{tabular}
 \end{table}
@@ -572,14 +604,15 @@ between $ 20Hz$ and $ 50Hz $, and between $ 60Hz $ and $ 100Hz $.
 This test case represents the ideal result due to the
 decreasing error, increasing similarity, and frequency band-with in the CNN output images.
 %Caso2 Normalizacao entree 0.3 e 0.7
-Next, by training the model with a new dataset containing acoustic impedance images normalized to $0.3$ and $0.7$, we recovered the frequency magnitudes slightly lower than the ones of latent images, in the range of higher frequencies
-(Fig. \ref{fig_frequencies_3}). This result reflects the insertion of only $30\%$ images normalized to the mentioned range
+Next, by training the model with a new dataset containing acoustic impedance images normalized to $0.3$ and $0.7$, we recovered the frequency magnitudes slightly lower than the ones of latent images, in the range of middle frequencies
+(Fig. \ref{fig_frequencies_3}). It is noticeable that the model deblurred with
+more low frequency than exist in latent images. This result reflects the insertion of only $30\%$ images normalized to the mentioned range
 of values.
 %Caso3 Imagens com diferentes frequencias de corte
 Figure \ref{fig_frequencies_5} shows the frequency spectrum recovering for images blurred with random cutting
-frequencies. Clearly, our model is able to deblur and highlight interfaces separating rock layers for impedance images containing different blurs caused by attenuation elements in seismic data acquisition.
+frequencies. Clearly, our model is able to deblur and highlight interfaces separating rock layers for impedance images containing different blurs caused by attenuation elements in seismic data acquisition. However, it shows increasing uncertainty and degradation as long as the difference among the blurry image frequencies and the ones learned by the model increases.
 %Caso4 Imagens com formatos genericos
-Finally, for the test images with random shape and position, the proposed model recovered magnitudes higher than in the latent images (Fig. \ref{fig_frequencies_4}). This result still depend on a new assessment due to the increase in frequency magnitudes between $10Hz$ and $60Hz$,  whereas the metrics suggest higher error and lower similarity when comparing the model outputs and the blurry images.
+Finally, for the test images with random shape and position, the proposed model recovered magnitudes slightly lower than in the latent images (Fig. \ref{fig_frequencies_4}). These results still depend on a new assessment due to the increase in frequency magnitudes between $10Hz$ and $60Hz$,  whereas the metrics suggest lower error and lower similarity when comparing the model outputs and the blurry images.
 \begin{figure}[!h]
 	\centering
 	\rotatebox{90}{
@@ -587,7 +620,7 @@ Finally, for the test images with random shape and position, the proposed model 
 			\label{fig_frequencies_1}}
 		\subfloat[Second test case.]{\includegraphics[width=2.5in]{Figs/Caso2/frequencies}%
 			\label{fig_frequencies_3}}
-		\subfloat[Third test case.]{\includegraphics[width=2.5in]{Figs/Caso5/frequencies}%
+		\subfloat[Third test case.]{\includegraphics[width=2.6in]{Figs/Caso5/frequencies}%
 			\label{fig_frequencies_5}}
 		\subfloat[Fourth test case]{\includegraphics[width=2.5in]{Figs/Caso4/frequencies}%
 			\label{fig_frequencies_4}}

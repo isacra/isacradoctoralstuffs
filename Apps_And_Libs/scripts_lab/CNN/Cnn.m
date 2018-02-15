@@ -39,6 +39,7 @@ im_pred = predict(net,im_lr);
 % load workspace_teste.mat
 % im_test = [];
 k=1;
+
 fig = figure;
 for i=1:4
    k=4*i-3;
