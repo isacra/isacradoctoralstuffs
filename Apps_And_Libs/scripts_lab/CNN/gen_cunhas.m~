@@ -34,8 +34,8 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
     %     min_val = 3500;
     % end
 
-    espessura_cunha_max = 5 + rand*30;
-    base_cunha = 20 + rand*30;
+    espessura_cunha_max = 5 + rand*10;
+    base_cunha = 30 + rand*20;
     tamanho_cunha = 0.40 + rand*0.30;
 
     modulo = randi(100,1);
@@ -79,7 +79,7 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
         for linha = 1:profundidade_max
        
         % Armazema matriz de impedância Deslocamento x Profundidade
-            if image/num_cunhas < 0.33   %modulo < 33
+            if modulo < 33
                 if linha >= topo_cunha && linha < base_cunha
                     %
                     impedancia_profundidade_deslocamento(linha,coluna) = 2.4 * min_val;
@@ -88,7 +88,7 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
                     impedancia_profundidade_deslocamento(linha,coluna) = 2.6 * max_val;
                 end;
             
-            else if  image/num_cunhas >=0.33 &&  image/num_cunhas < 0.66 %modulo >=33 && modulo < 66
+            else if modulo >=33 && modulo < 66
                 if linha >= topo_cunha && linha < base_cunha
                     impedancia_profundidade_deslocamento(linha,coluna) = 2.6 * max_val;
                     
@@ -96,7 +96,7 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
 
                     impedancia_profundidade_deslocamento(linha,coluna) = 2.4 * min_val;
                 end;
-                else if image/num_cunhas>0.66 %modulo>=66
+                else if modulo>=66
                         if linha >= topo_cunha && linha < base_cunha
                             impedancia_profundidade_deslocamento(linha,coluna) = 0.3;
                             
@@ -111,6 +111,19 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
     end;
 
         for i = 1 : 4
+%             if i==1
+%                 r = 2;
+%             else
+%                 if i==2
+%                     r=4;
+%                 else
+%                     if i==3
+%                         r = 6;
+%                     else
+%                         r = 15;
+%                     end
+%                 end
+%             end
             %r = randi(20,1);
             r = 8;
             ncoef = 20;
@@ -132,7 +145,7 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
                 idx = idx + 1;
             else
                 cube_high(:,:,idx) = imrotate(impedancia_profundidade_deslocamento, i*90);
-                gray_hr(idx,:) = reshape(mat2gray(cube_high(:,:,idx)),1,im_dim);
+                gray_hr(idx,:) = reshape(mat2gray(cube_high(:,:,idx)),1,1024);
                 im_gray = mat2gray(cube_high(:,:,idx));
                 images_hr(idx,:,:) = im_gray;
                 
@@ -146,9 +159,9 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
                 
                 idx = idx + 1;
             end
-%             figure; imagesc(impedancia_profundidade_deslocamento);
-%             figure; imagesc(im_gray);
-%             figure; imagesc(im_low);
+            figure; imagesc(impedancia_profundidade_deslocamento);
+            figure; imagesc(im_gray);
+            figure; imagesc(im_low);
             randI = [randI, r];
         end
     end
