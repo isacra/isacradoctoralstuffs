@@ -1,10 +1,10 @@
     % Este arquivo carrega os dados a serem usados como referencia na otimizacao
 function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunhas )
 
-    im_size = 64;
+    im_size = 32;
     im_dim = im_size^2;
-    deslocamento_max = 64;
-    profundidade_max = 64;
+    deslocamento_max = 32;
+    profundidade_max = 32;
     cube_high =[];
     cube_low = [];
     gray_hr = [];
@@ -18,26 +18,17 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
     %Valores de referencia para treinamento
     max_val = 3500;
     min_val = 2500;
-
-    %Valores de referencia para teste
-    %max_val = 7500;
-    %min_val = 6500;
     
     for image=1:num_cunhas
 
-
-    % if mod(image,2) == 0
-    %     max_val = 2500;
-    %     min_val = 1500;
-    % else 
-    %     max_val = 4500;
-    %     min_val = 3500;
-    % end
-
-    espessura_cunha_max = 5 + rand*30;
-    base_cunha = 20 + rand*30;
+    %espessura_cunha_max = 5 + rand*30;
+    %base_cunha = 20 + rand*30;
+    %tamanho_cunha = 0.40 + rand*0.30;
+    
+    espessura_cunha_max = 5 + rand*10;
+    base_cunha = 15 + rand*10;
     tamanho_cunha = 0.40 + rand*0.30;
-
+    
     modulo = randi(100,1);
     
     % Calcula a espessura da cunha ao longo do deslocamento
@@ -98,11 +89,12 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
                 end;
                 else if image/num_cunhas>0.66 %modulo>=66
                         if linha >= topo_cunha && linha < base_cunha
-                            impedancia_profundidade_deslocamento(linha,coluna) = 0.3;
-                            
+                            %impedancia_profundidade_deslocamento(linha,coluna) = 0.3;
+                             impedancia_profundidade_deslocamento(linha,coluna) = 6500;
                         else
                             
-                            impedancia_profundidade_deslocamento(linha,coluna) = 0.7;
+                            %impedancia_profundidade_deslocamento(linha,coluna) = 0.7;
+                             impedancia_profundidade_deslocamento(linha,coluna) = 8500;
                         end;
                     end
                 end
@@ -133,7 +125,8 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
             else
                 cube_high(:,:,idx) = imrotate(impedancia_profundidade_deslocamento, i*90);
                 gray_hr(idx,:) = reshape(mat2gray(cube_high(:,:,idx)),1,im_dim);
-                im_gray = mat2gray(cube_high(:,:,idx));
+                %im_gray = mat2gray(cube_high(:,:,idx));
+                im_gray = cube_high(:,:,idx);
                 images_hr(idx,:,:) = im_gray;
                 
                 
@@ -141,14 +134,15 @@ function [ images_hr, images_lr, gray_hr, gray_lr,randI] = gen_cunhas( num_cunha
                 cube_low(:,:,1,idx) = imrotate(lowPassFilter2(impedancia_profundidade_deslocamento,4,ncoef,r),i*90);
                 %cube_low(:,:,1,idx) = imrotate(lowPassFilter2(impedancia_profundidade_deslocamento,r,150,20), i*90);
                 gray_lr(:,:,1,idx) = mat2gray(cube_low(:,:,1,idx));
-                im_low = mat2gray(imrotate(lowPassFilter2(impedancia_profundidade_deslocamento,4,ncoef,r),i*90));
+                %im_low = mat2gray(imrotate(lowPassFilter2(impedancia_profundidade_deslocamento,4,ncoef,r),i*90));
+                im_low = imrotate(lowPassFilter2(impedancia_profundidade_deslocamento,4,ncoef,r),i*90);
                 images_lr(idx,:,:) = im_low;
                 
                 idx = idx + 1;
             end
-%             figure; imagesc(impedancia_profundidade_deslocamento);
-%             figure; imagesc(im_gray);
-%             figure; imagesc(im_low);
+%              figure; imagesc(impedancia_profundidade_deslocamento);
+%              figure; imagesc(im_gray);
+%              figure; imagesc(im_low);
             randI = [randI, r];
         end
     end

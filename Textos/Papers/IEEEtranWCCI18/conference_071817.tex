@@ -282,7 +282,7 @@ This way, the supervised learning is performed with the high resolution images a
 To increase the number of examples in the training dataset we rotate
 the impedance models to establish the wedge structure in four different angles
 ($0^{\circ}$, $90^{\circ}$, $180^{\circ}$ and $270^{\circ}$).
-This approach allows the model learning a wide edge variability in wedges images.
+This approach allows the model learning a wide edge variability in wedge images.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=2.4in]{Figs/image_cunha_blurry}
@@ -322,7 +322,7 @@ Using these methods to solve the issue of deblurring continuous physical propert
 implies a discretization of each pixel in order to generate an image file. However, returning
 to the original data, results in information loss what represents a serious inconvenient.
 Thus, combining the convolutional approach with the regression layer to deblur and predict
-the physics property represents a relevant advance.
+the rock property represents a relevant advance.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.0in]{Figs/model}
@@ -610,7 +610,7 @@ more low frequency than exist in latent images. This result reflects the inserti
 of values.
 %Caso3 Imagens com diferentes frequencias de corte
 Figure \ref{fig_frequencies_5} shows the frequency spectrum recovering for images blurred with random cutting
-frequencies. Clearly, our model is able to deblur and highlight interfaces separating rock layers for impedance images containing different blurs caused by attenuation elements in seismic data acquisition. However, it shows increasing uncertainty and degradation as long as the difference among the blurry image frequencies and the ones learned by the model increases.
+frequencies. Clearly, our model is able to deblur and highlight interfaces separating rock layers for impedance images containing different blurs caused by attenuation elements in seismic data acquisition. However, it shows increasing uncertainty and degradation as long as increases the difference among the blurry image frequencies and the ones learned by the model.
 %Caso4 Imagens com formatos genericos
 Finally, for the test images with random shape and position, the proposed model recovered magnitudes slightly lower than in the latent images (Fig. \ref{fig_frequencies_4}). These results still depend on a new assessment due to the increase in frequency magnitudes between $10Hz$ and $60Hz$,  whereas the metrics suggest lower error and lower similarity when comparing the model outputs and the blurry images.
 \begin{figure}[!h]

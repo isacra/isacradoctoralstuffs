@@ -1,5 +1,5 @@
 
-load /home/isaac/Documentos/Dados_Doutorado/Dados_leandro/dados.mat
+load /home/isaac/Documents/Dados_Doutorado/Leandro/dados.mat
 
 %% Inversão Acústica MAP
 

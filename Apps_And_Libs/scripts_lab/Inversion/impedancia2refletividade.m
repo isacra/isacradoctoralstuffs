@@ -1,5 +1,5 @@
 function [ refletividade ] = impedancia2refletividade( impedancia )
-%   Deve ser matriz ou vetor coluna, caso matriz é executado em cada coluna    
+%   Deve ser matriz ou vetor coluna, caso matriz ï¿½ executado em cada coluna    
     refletividade  = zeros(size(impedancia,1)-1,size(impedancia,2));
     for j=1:size(impedancia,2)
         [refletividade(:,j)] = impedancia2refletividade1(impedancia(:,j));

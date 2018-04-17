@@ -1,9 +1,0 @@
-imp_hr_dir = '/home/isaac/isaac_dados_reais/Timpedance_sintetica.sgy';
-imp_lr_dir = '/home/isaac/isaac_dados_reais/inverted_impedance_sintetico.sgy';
-cube_width = 550;
-cube_hight = 630;
-cube_depth = 173250/550;
-segy_structure = read_segy_file(imp_hr_dir);
-segy_structure_low =  read_segy_file(imp_lr_dir);
-imp_sint_resampled = resample(segy_structure.traces,1,8);
-cube_sint =  reshape(imp_sint_resampled, 251,315,550);
