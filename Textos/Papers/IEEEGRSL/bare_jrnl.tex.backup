@@ -457,14 +457,15 @@ IEEE, IEEEtran, journal, \LaTeX, paper, template.
 
 \IEEEPARstart{T}{his} letter presents a deep convolutional approach
 for recovering high frequency components in post-inversion acoustic
-impedance models.
-
-The inversion of seismic data to obtain acoustic impedance
+impedance models. The inversion of seismic data to obtain acoustic impedance
 is a frequently used technique because it offers several advantages: (1) it
 facilitates integrated interpretation, (2) stochastic inversion can improve
 data's vertical resolution, allowing subseismic features to be more precisaly
 mapped, and (3) it optimizes the correlation between seismic and petrophysical
-properties of the reservoir.
+properties of the reservoir. Using the seismic data in deep-water reservoir modeling leads to errors in estimating
+the reservoir properties because such data do not allow the wider understanding of the field
+under study \cite{Sergio2016}.
+
 
 % Reservoir characterization aims to determine the multidimensional
 % structure and properties of an oil field. To achieve this goal, it is essential to combine, through an
@@ -472,68 +473,75 @@ properties of the reservoir.
 % in such a way that it is possible to make the
 % quantitative predictions about the reservoir behavior \cite{buiting}.
 
-Using the seismic data in deep-water reservoir modeling leads to errors in estimating
-the reservoir properties because such data do not allow the wider understanding of the field
-under study \cite{Sergio2016}.
 
 Results from a typical post-stack or pre-stack seismic inversion are band-limited
 primarily due to missing low and high frequencies in the wavelet. Consequently, thin beds
-that are of primary interest in reservoir are generally poorly resolved \cite{Zhang2012}.
+that are of primary interest in reservoir and are generally poorly resolved \cite{Zhang2012}.
 The limited vertical resolution in the conventional seismic data is because 
 the frequency of the data is limited in both the low frequencies and the
 high frequencies. The inversion process can add low frequencies to the
 seismic spectrum through the constraint model.
+
 In deterministic inversion approaches, the vertical resolution remains constrained
 by the seismic bandwidth \cite{Sancevero2005}. Deterministic inversion is mainly useful for deriving
 general trends and and highlighting large features in an exploratory stage. Thus,
 the high frequencies incorporation, once they are related to subseismic informations \cite{Sancevero2005}.
-In stochastic inversion, the high frequency components are incorporated 
-by  conditioning the inversion results to thin-scale well logs. Vertical details
-observed in well location are projected away from it according to a continuity model
-previewsly defined. However, it has been proved that the mean solution is closer to a bandwidth limited solution,
-in such a way that the high frequencies charcteristics are lost \cite{Cook2010}.
 
-% Two different approaches are adopted for obtaining higher resolution
-% acoustic impedance models: (1) through pre-processing the seismic data
-% in order to enhance its resolution and (2) pos-processing the acoustic
-% impedance models resultant from the inversion method.
-The high frequency impedance information, outside the frequency band of seismic signal
-is incorporated in the output impedance, for example, by assuming a blocky model
-for the earth's impedance \cite{Cook2010}. However, this assumtion is not always valid,
+On the other hand, stochastic investion uses random variation of paramethers to
+reach results with vertical resolution that is superior to the convetional data.
+When working with multiple realizations, selecting the model that best characterizes
+the reservoir is difficult, since all of them are equally probable.
+Uniqueness problems are an inssue mainly adressed by calculating the mean of different realizations.
+However, it has been proved that the mean solution is closer to a bandwidth limited solution,
+in such a way that the high frequencies charcteristics are lost \cite{Cook2010}.
+Another approache to deal with the high frequency impedance information outside the frequency band of seismic signal
+is assuming a blocky model for the earth's impedance \cite{Cook2010}. This assumtion is not always valid,
 and in some cases the high frequencies in the inverted impedance are ignored \cite{YuanWang2015}.
-Very recent methods aims to enhance the seismic resolution
-and, by consequence, achieving an improvement in seismic inversion and reservoir characterization.
+Very recent methods aims to enhance the seismic resolution and, by consequence, achieving an improvement in
+seismic inversion and reservoir characterization.
 \cite{ChenWang2018} use wavelet frequency-dependent scaling to extends the amplitude spectrum of
 high- and low-frequency axes in time domain.
 
+% In stochastic inversion, the high frequency components are incorporated 
+% by  conditioning the inversion results to thin-scale well logs. Vertical details
+% observed in well location are projected away from it according to a continuity model
+% previewsly defined \cite{}. 
 % 
 % According to \cite{xiaoiu}, improving the resolution of seismic inversion is
 % possible by adding high frequency in the acquisition and processing seismic data.
 % However, the earth attenuation, high-frequency noise and other sources cause
 % the lack of high and low frequencies in seismic data.
-
-
 % To succeed in seismic inversion, it is necessary to include strategies to deal with multiple
 % sources of uncertainties. Specifically, the limited band-width of the seismic data leads to
 % a misinterpretation of the resulting acoustic impedance models.
-
-
-
-
-
-
-
-
-
 % On the other hand, stochastic investion uses random variation of paramethers to
 % create data with vertical resolution that is superior to the convetional data.
 % When working with multiple realizations, selecting the model best characterizes
 % the reservoir is difficult, since all of them are equally probable.
 % Uniqueness problems are an inssue mainly adressed by calculating the mean of different realizations.
-
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 
+We approach the acoustic impedance deblurring through
+a Convolutional Neural Network (CNN) model. CNN is a framework of deep learning which has been
+used in a wide sort of machine learning tasks, with notorious success in image and
+video classification \cite{Krizhevsky2012, AbdelHamid2014}, action  and speech recognition \cite{Farfade2015, S_Ji2013}.
+In reservoir characterization, CNN has been applied to lithofacies recognition \cite{Qian} and calculation \cite{Liu2017}.
+However, there is a lack of researches on improving the resolution of images resulting from inversion processes.
+
+%A solução
+In this paper, we propose a new multilayer convolutional network model to perform deblurring in post-inversion acoustic impedance.
+Each network layer maps higher level features originating in the previews layers through convolutional blur kernels.
+To perform this mapping, the kernels (also named weights) are adjusted by minimizing a loss function. 
+The model enhances the resolution of acoustic impedance images, resulting in sharp images with
+increased high-frequency band-width and lower noise.
+In order to train the model, we blur a set of the synthetic acoustic impedance images to create a dictionary of
+images of high and low resolution. Then, the pairs of blur and latent images are normalized and 
+presented to the network as input and target, respectively.
+In our approach, the domain-specific knowledge used in deblurring acoustic impedance impedance images is commonly
+obtained through training images containing geological knowladge. Generally, the images are obtained from a specialist's
+(geologist or geophysicist) knowledge about relevant characteristics of the reservoir for which one wishes enhancing the impedance images.
+The core concept of our architecture is the combination of the convolutional layers with regression layers, thus the convolutional layers learn the spatial structures existing in different acoustic impedance images, while the regression layer proceed the prediction of the property values.
 
 
 
@@ -646,6 +654,10 @@ interpretation of the impedance models.
 % Note that, LaTeX2e, unlike IEEE journals/conferences, places
 % footnotes above bottom floats. This can be corrected via the
 % \fnbelowfloat command of the stfloats package.
+\section{Theoretical Foundations and Related Works}
+
+
+
 \section{Proposed Method}
 
 
@@ -725,7 +737,6 @@ X. Xiaoyu, L. Yun, S. Desheng, G. Xiangyu, and W. Huifeng, ``Studying the effect
 
 \bibitem{Zhang2012}
 R. Zhang and M. K. Sen and S. Phan and S. Srinivasan, ``Stochastic and deterministic seismic inversion methods for thin-bed resolution'', Journal of Geophysics and Engineering, V. 9, N. 5, 2012.
-
 
 \bibitem{Sancevero2005}
 S. S. Sancevero and A. Z. Remacre and R. de S. Portugal and E. C. Mundim, ``Comparing deterministic and stochastic seismic inversion for thin-bed reservoir characterization in a turbidite synthetic reference model of Campos Basin, Brazil'', The Leading Edge, v. 24, num. 11, pp. 1168-1172, 2005. 
