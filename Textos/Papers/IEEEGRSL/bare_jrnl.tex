@@ -113,12 +113,12 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+   \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+   \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 \else
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no
@@ -464,32 +464,24 @@ data's vertical resolution, allowing subseismic features to be more precisaly
 mapped, and (3) it optimizes the correlation between seismic and petrophysical
 properties of the reservoir. Using the seismic data in deep-water reservoir modeling leads to errors in estimating
 the reservoir properties because such data do not allow the wider understanding of the field
-under study \cite{Sergio2016}. Obtaining high resolution acoustic impedance images, through seismic inversion methods,
-is a critical part in oil reservoir characterization.
-Despite the notorious efficiency of inversion methods,
-post-inversion images deblurring has not received much attention.
-
-
+under study \cite{Sergio2016}. 
 % Reservoir characterization aims to determine the multidimensional
 % structure and properties of an oil field. To achieve this goal, it is essential to combine, through an
 % inversion algorithm, the information, knowledge and available data about the field,
 % in such a way that it is possible to make the
 % quantitative predictions about the reservoir behavior \cite{buiting}.
 
-
 Results from a typical post-stack or pre-stack seismic inversion are band-limited
 primarily due to missing low and high frequencies in the wavelet. Consequently, thin beds
-that are of primary interest in reservoir and are generally poorly resolved \cite{Zhang2012}.
+are generally poorly resolved \cite{Zhang2012}.
 The limited vertical resolution in the conventional seismic data is because 
 the frequency of the data is limited in both the low frequencies and the
 high frequencies. The inversion process can add low frequencies to the
-seismic spectrum through the constraint model.
+seismic spectrum through constraint model. However, the high frequencies...
 
 In deterministic inversion approaches, the vertical resolution remains constrained
 by the seismic bandwidth \cite{Sancevero2005}. Deterministic inversion is mainly useful for deriving
-general trends and and highlighting large features in an exploratory stage. Thus,
-the high frequencies incorporation, once they are related to subseismic informations \cite{Sancevero2005}.
-
+general trends and highlighting large features in an exploratory stage.
 On the other hand, stochastic investion uses random variation of paramethers to
 reach results with vertical resolution that is superior to the convetional data.
 When working with multiple realizations, selecting the model that best characterizes
@@ -500,7 +492,7 @@ in such a way that the high frequencies charcteristics are lost \cite{Cook2010}.
 Another approache to deal with the high frequency impedance information outside the frequency band of seismic signal
 is assuming a blocky model for the earth's impedance \cite{Cook2010}. This assumtion is not always valid,
 and in some cases the high frequencies in the inverted impedance are ignored \cite{YuanWang2015}.
-Very recent methods aims to enhance the seismic resolution and, by consequence, achieving an improvement in
+Very recent methods aim to enhance the seismic resolution and, by consequence, achieving an improvement in
 seismic inversion and reservoir characterization.
 \cite{ChenWang2018} use wavelet frequency-dependent scaling to extends the amplitude spectrum of
 high- and low-frequency axes in time domain.
@@ -525,7 +517,7 @@ high- and low-frequency axes in time domain.
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 
-We approach the acoustic impedance deblurring through
+We approach the post-inversion acoustic impedance deblurring through
 a Convolutional Neural Network (CNN) model. CNN is a framework of deep learning which has been
 used in a wide sort of machine learning tasks, with notorious success in image and
 video classification \cite{Krizhevsky2012, AbdelHamid2014}, action and speech recognition \cite{Farfade2015, S_Ji2013}.
@@ -534,26 +526,24 @@ However, there is a lack of researches on improving the resolution of images res
 
 %A solução
 In this paper, we propose a new multilayer convolutional network model to perform deblurring in post-inversion acoustic impedance.
-Each network layer maps higher level features originating in the previews layers through convolutional blur kernels.
+Each network layer maps higher level features originating in the previews layers through unidimensional convolutional blur kernels.
 To perform this mapping, the kernels (also named weights) are adjusted by minimizing a loss function. 
-The model enhances the resolution of acoustic impedance images, resulting in sharp images with
+The model enhances the resolution of acoustic impedance images trace by trace, resulting in sharp images with
 increased high-frequency band-width and lower noise.
-In order to train the model, we blur a set of the synthetic acoustic impedance images to create a dictionary of
-images of high and low resolution. Then, the pairs of blur and latent images are normalized and 
+In order to train the model, we perform Maximum-a-Posteriori (MAP) inversion to obtain a band-limited acoustic impedance model.
+Then, the pairs of blur and latent images are normalized and 
 presented to the network as input and target, respectively.
 In our approach, the domain-specific knowledge used in deblurring acoustic impedance impedance images is commonly
 obtained through training images containing geological knowladge. Generally, the images are obtained from a specialist's
 (geologist or geophysicist) knowledge about relevant characteristics of the reservoir for which one wishes enhancing the impedance images.
 The core concept of our architecture is the combination of the convolutional layers with regression layers, thus the convolutional layers learn the spatial structures existing in different acoustic impedance images, while the regression layer proceed the prediction of the property values.
 
-
-
 Thus, deblurring the acoustic impedance models, as a post-inversion refinement process, should lead to a more accurate
 interpretation of the impedance models.
 
 The remainder of this letter is organized as follows. Section II
-reviews the DBN, a popularly used deep-learning technique.
-Section III describes the proposed feature-selection method.
+reviews the CNN, a popularly used deep-learning technique.
+Section III describes the proposed deblurring approach.
 Section IV \ref{Theoretics} reports the experiments and results, and Section \ref{Theoretics}
 concludes our work.
 
@@ -633,24 +623,6 @@ concludes our work.
 % the IEEE normally uses this smaller font for tables.
 % The \label must come after \caption as always.
 %
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
 
 
 % Note that the IEEE does not put floats in the very first column
@@ -673,6 +645,30 @@ concludes our work.
 
 \subsection{Data Set}
 The high frequencies observed 
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=2.5in]{Figs/Frequencies}
+	\DeclareGraphicsExtensions.
+	\caption{.}
+	\label{}
+\end{figure}
+
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Table of metric values for wedges with acoustic impedance normalized to $0$ and $1$.}
+\label{table_caso_1}
+\centering
+\begin{tabular}{|c||c||c|}
+\hline
+ \textbf{Image Section} & \textbf{\textit{Wiener Filter (dB)}} & \textbf{\textit{Our (dB)}}\\
+\hline
+Inline Section & $0.1$ & $0.1$ \\
+\hline
+Crossline Section & $0.1$ & $0.1$ \\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Conclusion} \label{Conclusion}
 The conclusion goes here.
