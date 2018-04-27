@@ -1,0 +1,108 @@
+/* Global style */
+
+body {
+  font-family: Verdana, Helvetica, Sans-serif;
+  background-color: #FFF;
+  margin: 2em 8% 1em 8%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+p {
+  text-indent: 2em;
+  text-align: justify;
+  line-height: 1.4em;
+  margin-top: 0.3;
+  margin-bottom: 0.3em;
+}
+
+p.reference {
+  font-size: smaller;
+  text-indent: 0em;
+  text-align: justify;
+  line-height: 1.4em;
+  margin-top: 0.3;
+  margin-bottom: 0.3em;
+  /*margin-left: 2em;*/
+}
+
+ul {
+  line-height:1.4em;
+}
+
+a:link, a:visited {
+  color: #002bb8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: #faa700;
+}
+
+h1 {
+  font-size: x-large;
+}
+
+h2 {
+  font-size: large;
+  padding-bottom: 2px;
+  border-bottom: 1px solid black;
+}
+
+h3 {
+  font-size: large;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #AAA;
+  padding-bottom: 2px;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  padding-bottom: 1em;
+  vertical-align: top;
+  padding: 0.5em;
+  /*line-height: 1.8em;*/
+}
+
+span.green {
+  color: #00AA00;
+  font-weight: bold;
+}
+
+span.red {
+  color: #AA0000;
+  font-weight: bold;
+}
+
+tr {
+  padding-bottom: 4em;
+}
+
+img {
+  border: none;
+}
+
+table#authors td.author {
+  padding: 0.5em;
+  text-align: center;
+}
+
+table#authors td.author span.author-name {
+  font-weight: bold;
+}
+
+table#authors td.author a.author-email {
+  font-size: small;
+}
+
+table#authors td.author-separator {
+  padding: 1em;
+}
+
+/* vim: set tabstop=2 shiftwidth=2 expandtab: */

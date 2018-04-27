@@ -1,0 +1,64 @@
+%% Main file
+% This file demonstrates how to use our method for the scenarios mentioned
+% in the paper.
+%%
+
+%% experiment settings
+experiment = 'sgwn';
+switch experiment
+  case 'sgsn'
+    % small gaussian, strong noise
+    f = fspecial('gaussian', 25, 1.6);
+    sigma = 0.04;
+    weights = 'data/neuralweights_sgsn.mat';
+
+  case 'sgwn'
+    % small gaussian, weak noise
+    f = fspecial('gaussian', 25, 1.6);
+    sigma = 0.0078;
+    weights = 'data/neuralweights_sgwn.mat';
+    
+  case 'lgsn'
+    % large gaussian, strong noise
+    f = fspecial('gaussian', 25, 3.);
+    sigma = 0.04;
+    weights = 'data/neuralweights_lgsn.mat';
+
+  case 'square'
+    % square blur
+    f = ones(19); f = f ./ sum(f(:));
+    sigma = 0.01;
+    weights = 'data/neuralweights_square.mat';
+
+  case 'motion'
+    % motion blur from Levin et al., "Understanding and evaluating blind 
+    % deconvolution algorithms", CVPR 2009
+    f = load('data/motion_blur.mat');
+    f = f.f;
+    sigma = 0.01;
+    weights = 'data/neuralweights_motion.mat';
+end
+sf = size(f);
+
+%% load test image
+image_file = 'data/lena.png';
+rng(0);
+x = im2double(y_test_corte_x);
+y = x %imfilter(x, f, 'circular', 'conv') + sigma*randn(size(x));
+psnr_blurry = psnr_noborder(x, y, sf);
+
+%% apply deconvolution
+xhat = deconv_neural(deconv(y, f, 20.*sigma^2), weights, 3, true);
+psnr_xhat = psnr_noborder(x, xhat, sf);
+
+%% show results
+subplot(131);
+imagesc(x); title('original')
+colormap gray; axis image; set(gca,'XTick',[]); set(gca,'YTick',[]);
+subplot(132);
+imagesc(y); title(sprintf('blurry (PSNR %.2f)', psnr_blurry))
+colormap gray; axis image; set(gca,'XTick',[]); set(gca,'YTick',[]);
+subplot(133);
+imagesc(xhat); title(sprintf('deblurred (PSNR %.2f)', psnr_xhat))
+colormap gray; axis image; set(gca,'XTick',[]); set(gca,'YTick',[]);
+
