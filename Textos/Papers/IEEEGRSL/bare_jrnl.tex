@@ -460,7 +460,7 @@ for recovering high frequency components in post-inversion acoustic
 impedance models. The inversion of seismic data to obtain acoustic impedance
 is a frequently used technique because it offers several advantages: (1) it
 facilitates integrated interpretation, (2) stochastic inversion can improve
-data's vertical resolution, allowing subseismic features to be more precisaly
+data's vertical resolution, allowing sub-seismic features to be more precisely
 mapped, and (3) it optimizes the correlation between seismic and petrophysical
 properties of the reservoir. Using the seismic data in deep-water reservoir modeling leads to errors in estimating
 the reservoir properties because such data do not allow the wider understanding of the field
@@ -483,14 +483,14 @@ In deterministic inversion approaches, the vertical resolution remains constrain
 by the seismic bandwidth \cite{Sancevero2005}. Deterministic inversion is mainly useful for deriving
 general trends and highlighting large features in an exploratory stage.
 On the other hand, stochastic investion uses random variation of paramethers to
-reach results with vertical resolution that is superior to the convetional data.
+reach results with vertical resolution that is superior to the conventional data.
 When working with multiple realizations, selecting the model that best characterizes
 the reservoir is difficult, since all of them are equally probable.
-Uniqueness problems are an inssue mainly adressed by calculating the mean of different realizations.
+Uniqueness problems are an issue mainly addressed by calculating the mean of different realizations.
 However, it has been proved that the mean solution is closer to a bandwidth limited solution,
-in such a way that the high frequencies charcteristics are lost \cite{Cook2010}.
-Another approache to deal with the high frequency impedance information outside the frequency band of seismic signal
-is assuming a blocky model for the earth's impedance \cite{Cook2010}. This assumtion is not always valid,
+in such a way that the high frequencies characteristics are lost \cite{Cook2010}.
+Another approach to deal with the high frequency impedance information outside the frequency band of seismic signal
+is assuming a blocky model for the earth's impedance \cite{Cook2010}. This assumption is not always valid,
 and in some cases the high frequencies in the inverted impedance are ignored \cite{YuanWang2015}.
 Very recent methods aim to enhance the seismic resolution and, by consequence, achieving an improvement in
 seismic inversion and reservoir characterization.
@@ -642,9 +642,31 @@ concludes our work.
 
 
 \section{Experiment and Discussion}\label{Experiments}
+Here, we validate the proposed post-inversion deblurring method.
+First, a large-scale acoustic impedance model is introduced.
+Then, the inversion process that generates blurry images is described.
+Next, the parameters settings for the model training are presented.
+Finally, the experimental results are given for the proposed method,
+as well as the comparison methods.
 
 \subsection{Data Set}
-The high frequencies observed 
+To evaluate the proposed frequency recovering method, an acoustic
+impedance data set is collected.
+\footnote{Available at https://github.com/SCRFpublic/Stanford-VI-E/tree/master/Acoustic\%20Impedance} %Badbox aqui
+The data set contains a cube of acoustic impedance values from the updated Stanford VI reservoir \cite{Lee2012},
+which is represented by a three-dimensional regular stratigraphic model. The cube contains 150x200x200 cells and 
+the dimensions of each cell are $25$ meters horizontally and $1$ meter vertically. The model represents
+a fluvial channel system composed of three layers:
+
+
+mwe perform the \textit{Maximum-a-Posteriori} (MAP) inversion using
+the synthetic seismic, and estimated Ricker wavelet and the low frequency
+model calculated by applying a low-pass filter with $4Hz$
+cutting frequency. 
+
+
+
+
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=2.5in]{Figs/Frequencies}
@@ -734,43 +756,46 @@ The authors would like to thank Conselho Nacional de Pesquisa e Desenvolvimento,
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 \bibitem{Sergio2016}
-S. S. Sancevero, A. Z. Remacre, R. S. Portugal, ``O papel da inversão para a impedância no processo de caracterização sísmica de reservatórios.'' in Revista Brasileira de Geofísica, p. 495-512, v. 24, 2006.
+S. S. Sancevero, A. Z. Remacre, R. S. Portugal, "O papel da inversão para a impedância no processo de caracterização sísmica de reservatórios." in Revista Brasileira de Geofísica, p. 495-512, v. 24, 2006.
 
 \bibitem{xiaoiu}
-X. Xiaoyu, L. Yun, S. Desheng, G. Xiangyu, and W. Huifeng, ``Studying the effect of expanding low or high frequency on post-stack seismic inversion,'' in SEG Technical Program Expanded Abstracts 2012, pp. 1-5, September 2012.
+X. Xiaoyu, L. Yun, S. Desheng, G. Xiangyu, and W. Huifeng, "Studying the effect of expanding low or high frequency on post-stack seismic inversion," in SEG Technical Program Expanded Abstracts 2012, pp. 1-5, September 2012.
 
 \bibitem{Zhang2012}
-R. Zhang and M. K. Sen and S. Phan and S. Srinivasan, ``Stochastic and deterministic seismic inversion methods for thin-bed resolution'', Journal of Geophysics and Engineering, V. 9, N. 5, 2012.
+R. Zhang and M. K. Sen and S. Phan and S. Srinivasan, "Stochastic and deterministic seismic inversion methods for thin-bed resolution", Journal of Geophysics and Engineering, V. 9, N. 5, 2012.
 
 \bibitem{Sancevero2005}
-S. S. Sancevero and A. Z. Remacre and R. de S. Portugal and E. C. Mundim, ``Comparing deterministic and stochastic seismic inversion for thin-bed reservoir characterization in a turbidite synthetic reference model of Campos Basin, Brazil'', The Leading Edge, v. 24, num. 11, pp. 1168-1172, 2005. 
+S. S. Sancevero and A. Z. Remacre and R. de S. Portugal and E. C. Mundim, "Comparing deterministic and stochastic seismic inversion for thin-bed reservoir characterization in a turbidite synthetic reference model of Campos Basin, Brazil", The Leading Edge, v. 24, num. 11, pp. 1168-1172, 2005. 
 
 \bibitem{Cook2010}
-D. Cooke and J. Cant and A. Santos and  P. Wa, Australia,  ``Model-based Seismic Inversion: Comparing deterministic and Probabilistic approaches''. CSEG Recorder, 2010. 
+D. Cooke and J. Cant and A. Santos and  P. Wa, Australia,  "Model-based Seismic Inversion: Comparing deterministic and Probabilistic approaches". CSEG Recorder, 2010. 
 
 \bibitem{YuanWang2015}
-S. Yuan and S. Wang and C. Luo and Y. He, ``Simultaneous multitrace impedance inversion with transform-domain sparsity promotion'', Geophysics, pp. 71-80, v. 80, n. 2, 2015.
+S. Yuan and S. Wang and C. Luo and Y. He, "Simultaneous multitrace impedance inversion with transform-domain sparsity promotion", Geophysics, pp. 71-80, v. 80, n. 2, 2015.
 
 \bibitem{ChenWang2018}
 S. Chen and Y. Wang, "Seismic Resolution Enhancement by Frequency-Dependent Wavelet Scaling," in IEEE Geoscience and Remote Sensing Letters, vol. PP, no. 99, pp. 1-5.
 
 \bibitem{Krizhevsky2012}
-A. Krizhevsky, I. Sutskever, G. E. Hinton, ``Imagenet classification with deep convolutional neural networks: Advances in neural information processing systems,'' , pp. 1097–1105, 2012.
+A. Krizhevsky, I. Sutskever, G. E. Hinton, "Imagenet classification with deep convolutional neural networks: Advances in neural information processing systems," , pp. 1097–1105, 2012.
 
 \bibitem{AbdelHamid2014}
-O. Abdel-Hamid, A.-r. Mohamed, H. Jiang, L. Deng, G. Penn, and D. Yu, ``Convolutional neural networks for speech recognition,'' in IEEE/ACM Transactions on audio, speech, and language processing, num. 22, pp. 1533–1545, 2014.
+O. Abdel-Hamid, A.-r. Mohamed, H. Jiang, L. Deng, G. Penn, and D. Yu, "Convolutional neural networks for speech recognition," in IEEE/ACM Transactions on audio, speech, and language processing, num. 22, pp. 1533–1545, 2014.
 
 \bibitem{Farfade2015}
-S. S. Farfade, M. J. Saberian, and L.-J. Li, 2015, ``Multi-view face detection using deep convolutional neural networks,'' in Proceedings of the 5th ACM on International Conference on Multimedia Retrieval, ACM, pp. 643–650.
+S. S. Farfade, M. J. Saberian, and L.-J. Li, 2015, "Multi-view face detection using deep convolutional neural networks," in Proceedings of the 5th ACM on International Conference on Multimedia Retrieval, ACM, pp. 643–650.
 
 \bibitem{S_Ji2013}
-S. Ji,W. Xu, M. Yang, K. Yu, 2013, ``3d convolutional neural networks for human action recognition,'' in IEEE transactions on pattern analysis and machine intelligence, num. 35, p. 221–231.
+S. Ji,W. Xu, M. Yang, K. Yu, 2013, "3d convolutional neural networks for human action recognition," in IEEE transactions on pattern analysis and machine intelligence, num. 35, p. 221–231.
 
 \bibitem{Qian}
-Q. Feng, Y. Miao, S. Ming-Jun, W. Yaojun, H. Guangmin, ``Seismic facies recognition based on prestack data using deep convolutional autoencoder,''.
+Q. Feng, Y. Miao, S. Ming-Jun, W. Yaojun, H. Guangmin, "Seismic facies recognition based on prestack data using deep convolutional autoencoder,".
 
 \bibitem{Liu2017}
-L. Lihui, L. Rong, L. Jianhai, Y. Wenkui, ``Seismic Lithofacies Computation Method Based on Deep Learning,'' in International Geophysical Conference, pp. 649-652, April 2017.
+L. Lihui, L. Rong, L. Jianhai, Y. Wenkui, "Seismic Lithofacies Computation Method Based on Deep Learning," in International Geophysical Conference, pp. 649-652, April 2017.
+
+\bibitem{Lee2012}
+Lee, J. and Mukerji, T., 2012, "The Stanford VI-E reservoir: A synthetic data set for joint seismic-EM time-lapse monitoring algorithms": 25th Annual Report, Stanford Center for Reservoir Forecasting, Stanford University, Stanford, CA.
 
 \end{thebibliography}
 
