@@ -655,15 +655,36 @@ impedance data set is collected.
 \footnote{Available at https://github.com/SCRFpublic/Stanford-VI-E/tree/master/Acoustic\%20Impedance} %Badbox aqui
 The data set contains a cube of acoustic impedance values from the updated Stanford VI reservoir \cite{Lee2012},
 which is represented by a three-dimensional regular stratigraphic model. The cube contains 150x200x200 cells and 
-the dimensions of each cell are $25$ meters horizontally and $1$ meter vertically. 
+the dimensions of each cell are $25$ meters horizontally and $1$ meter vertically. The model represents
+a fluvial channel system composed of three layers: the lowest one represents deltaic deposits (layer 3), the
+middle layer represents meandering channels (layer 2) and the first layer sinuous channels, deposited in the fluvial
+channel system. \footnote{See \cite{Castro2005} for more details about methodologies and model parameters.}
+Some sample images from Stanford VI are shown in Fig. \ref{fig_examples}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{Figs/Examples}
+\DeclareGraphicsExtensions.
+\caption{Examples.}
+\label{fig_examples}
+\end{figure}
+
+To build the training data set we perform the \textit{Maximum-a-Posteriori} (MAP) \cite{} inversion using
+the high resolution acoustic impedance. Initially, we created a Ricker wavelet with
+frequency band-width from $0Hz$ to $60Hz$. With the estimated wavelet, the forward model
+is applied to obtain the synthetic seismic. Additionally, the low frequency
+model is calculated by applying a low-pass filter with $4Hz$ cutting frequency.
 
 
-mwe perform the \textit{Maximum-a-Posteriori} (MAP) inversion using
-the synthetic seismic, and estimated Ricker wavelet and the low frequency
-model calculated by applying a low-pass filter with $4Hz$
-cutting frequency. 
+\subsection{Model Training}
+In order to train the CNN model, $80\%$ of the acoustic impedance images
+is used to infer the blur filters. Due to the predefined hyperbolic tangent
+sigmoid (\textit{tansig}) transfer function in the last layer, we
+normalized the acoustic impedance to values between 0 and 1,
+and the results are presented in terms of this normalization.
 
 
+\subsection{Acoustic Impedance Deblurring}
 
 
 \begin{figure}[!t]
@@ -795,6 +816,10 @@ L. Lihui, L. Rong, L. Jianhai, Y. Wenkui, "Seismic Lithofacies Computation Metho
 
 \bibitem{Lee2012}
 Lee, J. and Mukerji, T., 2012, "The Stanford VI-E reservoir: A synthetic data set for joint seismic-EM time-lapse monitoring algorithms": 25th Annual Report, Stanford Center for Reservoir Forecasting, Stanford University, Stanford, CA.
+
+\bibitem{Castro2005}
+Castro, S., Caers, J., and Mukerji, T., 2005, “The Stanford VI reservoir”: 18th Annual Report, Stanford Center for Reservoir Forecasting, Stanford University, Stanford, CA.
+
 
 \end{thebibliography}
 
