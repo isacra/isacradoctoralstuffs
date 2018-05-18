@@ -1,4 +1,4 @@
-function [] = calcfrequencies(sintetic,blured,cnn,wiener,pos)
+function [fig_frequencies fig_magnitude] = calcfrequencies(sintetic,blured,cnn,wiener,pos)
     num_freqs = 200;
     FS = 1/0.004;
     sintetic_fourier = fft(sintetic - mean(sintetic),[],1);
@@ -19,7 +19,7 @@ function [] = calcfrequencies(sintetic,blured,cnn,wiener,pos)
     
     f = FS*(0:(num_freqs/2))/num_freqs;
 
-    figure;
+    fig_frequencies = figure;
     %subplot(4,4,pos)
     hold on; plot(f,bluer_fourier,'b');
     hold on; plot(f,cnn_fourier,'k');
@@ -33,7 +33,7 @@ function [] = calcfrequencies(sintetic,blured,cnn,wiener,pos)
 
     
     %Plot percentual de frequência recuperado
-    figure;
+    fig_magnitude = figure;
     perc = cnn_fourier*100./(sintetic_fourier);
     plot(f(2:end),perc(2:end))
     xlabel('Frequency (Hz)')

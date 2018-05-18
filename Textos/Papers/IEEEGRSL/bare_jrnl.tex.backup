@@ -1,119 +1,11 @@
 
-%% bare_jrnl.tex
-%% V1.4b
-%% 2015/08/26
-%% by Michael Shell
-%% see http://www.michaelshell.org/
-%% for current contact information.
-%%
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
-%% journal paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/pkg/ieeetran
-%% and
-%% http://www.ieee.org/
-
-%%*************************************************************************
-%% Legal Notice:
-%% This code is offered as-is without any warranty either expressed or
-%% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE! 
-%% User assumes all risk.
-%% In no event shall the IEEE or any contributor to this code be liable for
-%% any damages or losses, including, but not limited to, incidental,
-%% consequential, or any other damages, resulting from the use or misuse
-%% of any information contained here.
-%%
-%% All comments are the opinions of their respective authors and are not
-%% necessarily endorsed by the IEEE.
-%%
-%% This work is distributed under the LaTeX Project Public License (LPPL)
-%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
-%% distributed and modified. A copy of the LPPL, version 1.3, is included
-%% in the base LaTeX documentation of all distributions of LaTeX released
-%% 2003/12/01 or later.
-%% Retain all contribution notices and credits.
-%% ** Modified files should be clearly indicated as such, including  **
-%% ** renaming them and changing author support contact information. **
-%%*************************************************************************
-
-
-% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
-% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
-% *** with production work. The IEEE's font choices and paper sizes can   ***
-% *** trigger bugs that do not appear when using other class files.       ***                          ***
-% The testflow support page is at:
-% http://www.michaelshell.org/tex/testflow/
-
-
-
 \documentclass[journal]{IEEEtran}
-%
-% If IEEEtran.cls has not been installed into the LaTeX system files,
-% manually specify the path to it like:
-% \documentclass[journal]{../sty/IEEEtran}
 
+\usepackage[utf8]{inputenc}
 
-
-
-
-% Some very useful LaTeX packages include:
-% (uncomment the ones you want to load)
-
-
-% *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/pkg/ifpdf
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
-
-
-
-
-
-
-% *** CITATION PACKAGES ***
-%
-%\usepackage{cite}
-% cite.sty was written by Donald Arseneau
-% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
-% \cite{} output to follow that of the IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off
-% such as if a citation ever needs to be enclosed in parenthesis.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 5.0 (2009-03-20) and later if using hyperref.sty.
-% The latest version can be obtained at:
-% http://www.ctan.org/pkg/cite
-% The documentation is contained in the cite.sty file itself.
-
-
-
-
-
-
-% *** GRAPHICS RELATED PACKAGES ***
-%
 \ifCLASSINFOpdf
    \usepackage[pdftex]{graphicx}
+   
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -130,582 +22,478 @@
   % every instance of \includegraphics
   % \DeclareGraphicsExtensions{.eps}
 \fi
-% graphicx was written by David Carlisle and Sebastian Rahtz. It is
-% required if you want graphics, photos, etc. graphicx.sty is already
-% installed on most LaTeX systems. The latest version and documentation
-% can be obtained at: 
-% http://www.ctan.org/pkg/graphicx
-% Another good source of documentation is "Using Imported Graphics in
-% LaTeX2e" by Keith Reckdahl which can be found at:
-% http://www.ctan.org/pkg/epslatex
-%
-% latex, and pdflatex in dvi mode, support graphics in encapsulated
-% postscript (.eps) format. pdflatex in pdf mode supports graphics
-% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
-% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
-% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
-% which can result in "jaggedy"/blurry rendering of lines and letters as
-% well as large increases in file sizes.
-%
-% You can find documentation about the pdfTeX application at:
-% http://www.tug.org/applications/pdftex
+
+\ifCLASSOPTIONcompsoc
+ \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+ \usepackage[caption=false,font=footnotesize]{subfig}
+\fi
 
 
-
-
-
-% *** MATH PACKAGES ***
-%
-%\usepackage{amsmath}
-% A popular package from the American Mathematical Society that provides
-% many useful and powerful commands for dealing with mathematics.
-%
-% Note that the amsmath package sets \interdisplaylinepenalty to 10000
-% thus preventing page breaks from occurring within multiline equations. Use:
-%\interdisplaylinepenalty=2500
-% after loading amsmath to restore such page breaks as IEEEtran.cls normally
-% does. amsmath.sty is already installed on most LaTeX systems. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/pkg/amsmath
-
-
-
-
-
-% *** SPECIALIZED LIST PACKAGES ***
-%
-%\usepackage{algorithmic}
-% algorithmic.sty was written by Peter Williams and Rogerio Brito.
-% This package provides an algorithmic environment fo describing algorithms.
-% You can use the algorithmic environment in-text or within a figure
-% environment to provide for a floating algorithm. Do NOT use the algorithm
-% floating environment provided by algorithm.sty (by the same authors) or
-% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
-% algorithm float types and packages that provide these will not provide
-% correct IEEE style captions. The latest version and documentation of
-% algorithmic.sty can be obtained at:
-% http://www.ctan.org/pkg/algorithms
-% Also of interest may be the (relatively newer and more customizable)
-% algorithmicx.sty package by Szasz Janos:
-% http://www.ctan.org/pkg/algorithmicx
-
-
-
-
-% *** ALIGNMENT PACKAGES ***
-%
-%\usepackage{array}
-% Frank Mittelbach's and David Carlisle's array.sty patches and improves
-% the standard LaTeX2e array and tabular environments to provide better
-% appearance and additional user controls. As the default LaTeX2e table
-% generation code is lacking to the point of almost being broken with
-% respect to the quality of the end results, all users are strongly
-% advised to use an enhanced (at the very least that provided by array.sty)
-% set of table tools. array.sty is already installed on most systems. The
-% latest version and documentation can be obtained at:
-% http://www.ctan.org/pkg/array
-
-
-% IEEEtran contains the IEEEeqnarray family of commands that can be used to
-% generate multiline equations as well as matrices, tables, etc., of high
-% quality.
-
-
-
-
-% *** SUBFIGURE PACKAGES ***
-%\ifCLASSOPTIONcompsoc
-%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
-%\else
-%  \usepackage[caption=false,font=footnotesize]{subfig}
-%\fi
-% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
-% for subfigure.sty, the latter of which is no longer maintained and is
-% incompatible with some LaTeX packages including fixltx2e. However,
-% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
-% which will override IEEEtran.cls' handling of captions and this will result
-% in non-IEEE style figure/table captions. To prevent this problem, be sure
-% and invoke subfig.sty's "caption=false" package option (available since
-% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
-% handling of captions.
-% Note that the Computer Society format requires a larger sans serif font
-% than the serif footnote size font used in traditional IEEE formatting
-% and thus the need to invoke different subfig.sty package options depending
-% on whether compsoc mode has been enabled.
-%
-% The latest version and documentation of subfig.sty can be obtained at:
-% http://www.ctan.org/pkg/subfig
-
-
-
-
-% *** FLOAT PACKAGES ***
-%
-%\usepackage{fixltx2e}
-% fixltx2e, the successor to the earlier fix2col.sty, was written by
-% Frank Mittelbach and David Carlisle. This package corrects a few problems
-% in the LaTeX2e kernel, the most notable of which is that in current
-% LaTeX2e releases, the ordering of single and double column floats is not
-% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
-% single column figure to be placed prior to an earlier double column
-% figure.
-% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
-% corrections already built into the system in which case a warning will
-% be issued if an attempt is made to load fixltx2e.sty as it is no longer
-% needed.
-% The latest version and documentation can be found at:
-% http://www.ctan.org/pkg/fixltx2e
-
-
-%\usepackage{stfloats}
-% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
-% the ability to do double column floats at the bottom of the page as well
-% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
-% LaTeX2e). It also provides a command:
-%\fnbelowfloat
-% to enable the placement of footnotes below bottom floats (the standard
-% LaTeX2e kernel puts them above bottom floats). This is an invasive package
-% which rewrites many portions of the LaTeX2e float routines. It may not work
-% with other packages that modify the LaTeX2e float routines. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/pkg/stfloats
-% Do not use the stfloats baselinefloat ability as the IEEE does not allow
-% \baselineskip to stretch. Authors submitting work to the IEEE should note
-% that the IEEE rarely uses double column equations and that authors should try
-% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
-% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
-% such ways.
-% Do not attempt to use stfloats with fixltx2e as they are incompatible.
-% Instead, use Morten Hogholm'a dblfloatfix which combines the features
-% of both fixltx2e and stfloats:
-%
-% \usepackage{dblfloatfix}
-% The latest version can be found at:
-% http://www.ctan.org/pkg/dblfloatfix
-
-
-
-
-%\ifCLASSOPTIONcaptionsoff
-%  \usepackage[nomarkers]{endfloat}
-% \let\MYoriglatexcaption\caption
-% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
-%\fi
-% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
-% Axel Sommerfeldt. This package may be useful when used in conjunction with 
-% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
-% submissions have lists of figures/tables at the end of the paper and that
-% figures/tables without any captions are placed on a page by themselves at
-% the end of the document. If needed, the draftcls IEEEtran class option or
-% \CLASSINPUTbaselinestretch interface can be used to increase the line
-% spacing as well. Be sure and use the nomarkers option of endfloat to
-% prevent endfloat from "marking" where the figures would have been placed
-% in the text. The two hack lines of code above are a slight modification of
-% that suggested by in the endfloat docs (section 8.4.1) to ensure that
-% the full captions always appear in the list of figures/tables - even if
-% the user used the short optional argument of \caption[]{}.
-% IEEE papers do not typically make use of \caption[]'s optional argument,
-% so this should not be an issue. A similar trick can be used to disable
-% captions of packages such as subfig.sty that lack options to turn off
-% the subcaptions:
-% For subfig.sty:
-% \let\MYorigsubfloat\subfloat
-% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
-% However, the above trick will not work if both optional arguments of
-% the \subfloat command are used. Furthermore, there needs to be a
-% description of each subfigure *somewhere* and endfloat does not add
-% subfigure captions to its list of figures. Thus, the best approach is to
-% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
-% and instead reference/explain all the subfigures within the main caption.
-% The latest version of endfloat.sty and its documentation can obtained at:
-% http://www.ctan.org/pkg/endfloat
-%
-% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
-% later in the document, say, to conditionally put the References on a 
-% page by themselves.
-
-
-
-
-% *** PDF, URL AND HYPERLINK PACKAGES ***
-%
-%\usepackage{url}
-% url.sty was written by Donald Arseneau. It provides better support for
-% handling and breaking URLs. url.sty is already installed on most LaTeX
-% systems. The latest version and documentation can be obtained at:
-% http://www.ctan.org/pkg/url
-% Basically, \url{my_url_here}.
-
-
-
-
-% *** Do not adjust lengths that control margins, column widths, etc. ***
-% *** Do not use packages that alter fonts (such as pslatex).         ***
-% There should be no need to do such things with IEEEtran.cls V1.6 and later.
-% (Unless specifically asked to do so by the journal or conference you plan
-% to submit to, of course. )
-
-
-% correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 
 \begin{document}
-%
-% paper title
-% Titles are generally capitalized except for words such as a, an, and, as,
-% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
-% not capitalized unless they are the first or last word of the title.
-% Linebreaks \\ can be used within to get better formatting as desired.
-% Do not put math or special symbols in the title.
+
 \title{Bare Demo of IEEEtran.cls\\ for IEEE Journals}
-%
-%
-% author names and IEEE memberships
-% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
-% a structure at a ~ so this keeps an author's name from being broken across
-% two lines.
-% use \thanks{} to gain access to the first footnote area
-% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
-% was not built to handle multiple paragraphs
-%
-
-\author{Michael~Shell,~\IEEEmembership{Member,~IEEE,}
-        John~Doe,~\IEEEmembership{Fellow,~OSA,}
-        and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
-\thanks{M. Shell was with the Department
-of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
-GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
-\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
-\thanks{Manuscript received April 19, 2005; revised August 26, 2015.}}
-
-% note the % following the last \IEEEmembership and also \thanks - 
-% these prevent an unwanted space from occurring between the last author name
-% and the end of the author line. i.e., if you had this:
-% 
-% \author{....lastname \thanks{...} \thanks{...} }
-%                     ^------------^------------^----Do not want these spaces!
-%
-% a space would be appended to the last name and could cause every name on that
-% line to be shifted left slightly. This is one of those "LaTeX things". For
-% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
-% "AB" then you have to do: "\textbf{A}\textbf{B}"
-% \thanks is no different in this regard, so shield the last } of each \thanks
-% that ends a line with a % and do not let a space in before the next \thanks.
-% Spaces after \IEEEmembership other than the last one are OK (and needed) as
-% you are supposed to have spaces between the names. For what it is worth,
-% this is a minor point as most people would not even notice if the said evil
-% space somehow managed to creep in.
 
 
+\author{Isaac~Sacramento,
+        Elton~Trindade,
+        Mauro~Roisenberg,
+        Fernando~Bordignon,
+        and~Bruno~Rodrigues
+\thanks{I. Sacramento and M. Roisenberg are with the Departament of Computer Science, Informatics and Statistics Institute,
+Federal University of Santa Catarina, Florianópolis, Santa Catarina, Brazil (e-email: isaac.sacramento@posgrad.ufsc.br;
+mauro.roisenberg@ufsc.br).}% <-this % stops a space
+\thanks{E. Trindade is with Petrobras, Rio de Janeiro, Rio de Janeiro, Brazil (e-email: elton.trindade@petrobras.com.br).}% <-this % stops a space
+\thanks{F. Bordignon is with Cognitive and Connectionism Laboratory, Federal University of Santa Catarina, Florianópolis,
+Santa Catarina, Brazil (e-mail: f.bordignon@gmail.com).}
+\thanks{B. Rodrigues is with Petrobras, Rio de Janeiro, Rio de Janeiro, Brazil (e-email: bbrodrigues@gmail.com).}}
 
 % The paper headers
 \markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
 {Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
-% The only time the second header will appear is for the odd numbered pages
-% after the title page when using the twoside option.
-% 
-% *** Note that you probably will NOT want to include the author's ***
-% *** name in the headers of peer review papers.                   ***
-% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
-% you desire.
 
-
-
-
-% If you want to put a publisher's ID mark on the page you can do it like
-% this:
-%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
-% Remember, if you use this you must call \IEEEpubidadjcol in the second
-% column for its text to clear the IEEEpubid mark.
-
-
-
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
-
-
-
-
-% make the title area
 \maketitle
 
-% As a general rule, do not put math, special symbols or citations
-% in the abstract or keywords.
 \begin{abstract}
-The abstract goes here.
+Domain-specific methods for deblurring particular sorts of
+objects have gained increasing attention due to the ineffectiveness
+of generic methods.
+We present a simple and effective convolutional
+neural network that deblurs post-inversion acoustic impedance images. 
+The architecture of our model consists of a convolutional layer
+that highlight edges and contours related to
+interfaces between rock layers; a locally-connected
+layer, that performs a convolutional step with unshared weights;
+finally, two fully-connected layers that
+perform a non-linear estimation of acoustic impedance values.
+We use the updated Standford VI reservoir model as training dataset,
+which is composed of 200 acoustic impedance sections, each section with
+150 traces. In our work, we adopt a strong supervised learning
+that exploit, trace by trace, the dataset of the inverted and ground truth impedance images.
+We also present an analysis comparing the frequency band-width among 
+the latent, blurry, and deblurred images. Furthermore, the Signal-to-Noise Ratio (SNR)
+is calculated and compared with a classical deblurring method.
+We additionally address the requirement of deep learning for the huge amount
+of training examples by inserting rectified linear units (ReLU) and keeping
+the network architecture simple. 
+The experimental results demonstrate the efficacy of the proposed method.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
-IEEE, IEEEtran, journal, \LaTeX, paper, template.
+convolutional neural network, acoustic impedance, deblurring, seismic inversion, frequency recovering.
 \end{IEEEkeywords}
 
-% For peer review papers, you can put extra information on the cover
-% page as needed:
-% \ifCLASSOPTIONpeerreview
-% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
-% \fi
-%
-% For peerreview papers, this IEEEtran command inserts a page break and
-% creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
 
 
 \section{Introduction}
 
-\IEEEPARstart{T}{his} letter presents a deep convolutional approach
-for recovering high frequency components in post-inversion acoustic
-impedance models. The inversion of seismic data to obtain acoustic impedance
-is a frequently used technique because it offers several advantages: (1) it
-facilitates integrated interpretation, (2) stochastic inversion can improve
-data's vertical resolution, allowing sub-seismic features to be more precisely
-mapped, and (3) it optimizes the correlation between seismic and petrophysical
-properties of the reservoir. Using the seismic data in deep-water reservoir modeling leads to errors in estimating
-the reservoir properties because such data do not allow the wider understanding of the field
-under study \cite{Sergio2016}. 
-% Reservoir characterization aims to determine the multidimensional
-% structure and properties of an oil field. To achieve this goal, it is essential to combine, through an
-% inversion algorithm, the information, knowledge and available data about the field,
-% in such a way that it is possible to make the
-% quantitative predictions about the reservoir behavior \cite{buiting}.
+\IEEEPARstart{T}{his} letter presents a deep convolutional
+approach for recovering high frequency components in
+post-inversion acoustic impedance models. The inversion of
+seismic data to obtain acoustic impedance is a frequently
+used technique because it offers several advantages: (1) it
+facilitates integrated interpretation, (2) stochastic
+inversion can improve data's vertical resolution, allowing
+sub-seismic features to be more precisely mapped, and (3)
+it optimizes the correlation between seismic and petrophysical
+properties of the reservoir. However, using the seismic data in
+deep-water reservoir modeling leads to errors in estimating
+the reservoir properties because such data do not allow the
+wider understanding of the field under study \cite{Sergio2016}.
 
-Results from a typical post-stack or pre-stack seismic inversion are band-limited
-primarily due to missing low and high frequencies in the wavelet. Consequently, thin beds
-are generally poorly resolved \cite{Zhang2012}.
-The limited vertical resolution in the conventional seismic data is because 
-the frequency of the data is limited in both the low frequencies and the
-high frequencies. The inversion process can add low frequencies to the
-seismic spectrum through constraint model. However, the high frequencies...
+The seismic vertical resolution is the minimal thickness that
+can be resolved by seismic. The most accepted value is a quarter
+of the wave length, that means that only layers thicker than
+that will be detected by seismic acquisition. In larger depths
+that value can be as high as $20$ meters, which may represent a
+significant amount of oil volume being under or overestimated.
+%or mitigate connectivity problems.
+Even though the inversion
+process can add low frequencies to the acoustic impedance
+spectrum through a constraint model, results from a typical
+post-stack or pre-stack seismic inversion are band-limited
+primarily due to missing very low and high frequencies in the
+wavelet. Consequently, thin beds are generally poorly resolved
+\cite{Zhang2012}. The limited vertical resolution in the
+conventional seismic data is due to the limited frequency of
+the data in both low frequencies and high frequencies.
 
-In deterministic inversion approaches, the vertical resolution remains constrained
-by the seismic bandwidth \cite{Sancevero2005}. Deterministic inversion is mainly useful for deriving
-general trends and highlighting large features in an exploratory stage.
-On the other hand, stochastic investion uses random variation of paramethers to
-reach results with vertical resolution that is superior to the conventional data.
-When working with multiple realizations, selecting the model that best characterizes
-the reservoir is difficult, since all of them are equally probable.
-Uniqueness problems are an issue mainly addressed by calculating the mean of different realizations.
-However, it has been proved that the mean solution is closer to a bandwidth limited solution,
-in such a way that the high frequencies characteristics are lost \cite{Cook2010}.
-Another approach to deal with the high frequency impedance information outside the frequency band of seismic signal
-is assuming a blocky model for the earth's impedance \cite{Cook2010}. This assumption is not always valid,
-and in some cases the high frequencies in the inverted impedance are ignored \cite{YuanWang2015}.
-Very recent methods aim to enhance the seismic resolution and, by consequence, achieving an improvement in
-seismic inversion and reservoir characterization.
-\cite{ChenWang2018} use wavelet frequency-dependent scaling to extends the amplitude spectrum of
-high- and low-frequency axes in time domain.
+In deterministic inversion approaches, the vertical resolution
+remains constrained by the seismic bandwidth \cite{Sancevero2005}.
+Deterministic inversion is mainly useful for deriving general
+trends and highlighting large features in an exploratory stage.
+On the other hand, stochastic inversion uses random variation
+of parameters to reach results with vertical resolution that is
+superior to the conventional data. When working with multiple
+realizations, selecting the model that best characterizes the
+reservoir is difficult, since all of them are equally probable.
+Uniqueness problems are an issue mainly addressed by calculating
+the mean of different realizations. However, it has been proved
+that the mean solution is closer to a bandwidth limited solution,
+in such a way that the high frequencies features are lost
+\cite{Cook2010}. An approach to deal with the high frequency
+impedance information out of the frequency bandwidth of seismic signal
+is assuming a blocked model for the earth's impedance \cite{Cook2010}.
+This assumption is not always valid, and in some cases the high
+frequencies in the inverted impedance are ignored \cite{YuanWang2015}.
+\cite{xiaoiu} aim to enhance the seismic acquisition resolution and, by
+consequence, achieving an improvement in seismic inversion and
+reservoir characterization, while \cite{ChenWang2018} latest use wavelet
+frequency-dependent scaling to extends the amplitude spectrum of
+high and low-frequency axes in time domain. 
+%However, the earth
+%attenuation, high-frequency noise and other sources cause the lack of high and
+%low frequencies in seismic data.
 
-% In stochastic inversion, the high frequency components are incorporated 
-% by  conditioning the inversion results to thin-scale well logs. Vertical details
-% observed in well location are projected away from it according to a continuity model
-% previewsly defined \cite{}. 
-% 
-% According to \cite{xiaoiu}, improving the resolution of seismic inversion is
-% possible by adding high frequency in the acquisition and processing seismic data.
-% However, the earth attenuation, high-frequency noise and other sources cause
-% the lack of high and low frequencies in seismic data.
-% To succeed in seismic inversion, it is necessary to include strategies to deal with multiple
-% sources of uncertainties. Specifically, the limited band-width of the seismic data leads to
-% a misinterpretation of the resulting acoustic impedance models.
-% On the other hand, stochastic investion uses random variation of paramethers to
-% create data with vertical resolution that is superior to the convetional data.
-% When working with multiple realizations, selecting the model best characterizes
-% the reservoir is difficult, since all of them are equally probable.
-% Uniqueness problems are an inssue mainly adressed by calculating the mean of different realizations.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-
-We approach the post-inversion acoustic impedance deblurring through
-a Convolutional Neural Network (CNN) model. CNN is a framework of deep learning which has been
-used in a wide sort of machine learning tasks, with notorious success in image and
-video classification \cite{Krizhevsky2012, AbdelHamid2014}, action and speech recognition \cite{Farfade2015, S_Ji2013}.
-In reservoir characterization, CNN has been applied to lithofacies recognition \cite{Qian} and calculation \cite{Liu2017}.
-However, there is a lack of researches on improving the resolution of images resulting from inversion processes.
-
-%A solução
-In this paper, we propose a new multilayer convolutional network model to perform deblurring in post-inversion acoustic impedance.
-Each network layer maps higher level features originating in the previews layers through unidimensional convolutional blur kernels.
-To perform this mapping, the kernels (also named weights) are adjusted by minimizing a loss function. 
-The model enhances the resolution of acoustic impedance images trace by trace, resulting in sharp images with
-increased high-frequency band-width and lower noise.
-In order to train the model, we perform Maximum-a-Posteriori (MAP) inversion to obtain a band-limited acoustic impedance model.
-Then, the pairs of blur and latent images are normalized and 
+% giving the result of the inversion process a blurry aspect that
+% makes unfeasible visualizing thin beds
+In this letter, we propose a new multichannel and multilayer
+Convolutional Neural Network (CNN) model to perform deblurring
+in post-inversion acoustic impedance. Each network's layer maps
+higher level features originating in the previews layers through
+one-dimensional convolutional blur kernels. To perform this
+mapping, the kernels (also named weights) are adjusted by
+minimizing a loss function. The model enhances the resolution
+of acoustic impedance images trace by trace, resulting in sharper
+images with increased high-frequency bandwidth and lower noise.
+In order to train the model, we perform \textit{Maximum-a-Posteriori} (MAP)
+inversion that commonly generates a band-limited acoustic impedance model.
+Then, the pairs of blurry and latent images are normalized and 
 presented to the network as input and target, respectively.
-In our approach, the domain-specific knowledge used in deblurring acoustic impedance impedance images is commonly
-obtained through training images containing geological knowladge. Generally, the images are obtained from a specialist's
-(geologist or geophysicist) knowledge about relevant characteristics of the reservoir for which one wishes enhancing the impedance images.
-The core concept of our architecture is the combination of the convolutional layers with regression layers, thus the convolutional layers learn the spatial structures existing in different acoustic impedance images, while the regression layer proceed the prediction of the property values.
+The core concept of our architecture is the combination of the
+convolutional, locally-connected and regression layers. Thus
+the convolutional layer learns the spatial structures existing
+in different acoustic impedance images, the locally-connected
+layer individualizes and refines the resolution of these structures,
+finally, the regression layer proceeds the prediction of the property values.
+Thus, deblurring the acoustic impedance models, as a post-inversion
+refinement process, should lead to a more accurate interpretation
+of the impedance models.
 
-Thus, deblurring the acoustic impedance models, as a post-inversion refinement process, should lead to a more accurate
-interpretation of the impedance models.
+The contributions of this work are threefold. First,
+according to our knowledge, it is the first to approach
+inversion resolution enhancement through a post-inversion
+refinement. Second, the proposed deep learning model
+effectively recovers the high frequency spectrum absent
+in the post-inversion acoustic impedance. Additionally, it
+corrects deformations existing in thin bodies caused
+by the inversion process. Third, our proposal
+shows to be more embracing than the state-of-art
+methods, since the CNN learns the high frequency
+based on different possible scenarios and freely solve
+the occurrences in the post-inversion images.
 
-The remainder of this letter is organized as follows. Section II
-reviews the CNN, a popularly used deep-learning technique.
-Section III describes the proposed deblurring approach.
-Section IV \ref{Theoretics} reports the experiments and results, and Section \ref{Theoretics}
-concludes our work.
-
-\hfill mds
- 
-\hfill August 26, 2015
-
-
+The remainder of this letter is organized as follows.
+Section \ref{Theoretics} reviews the deblurring methods
+and the CNN, a popularly used deep-learning technique.
+Section \ref{Method} describes the data and used for
+training the CNN and the architecture of the proposed model.
+Section \ref{Experiments} reports the experiments and
+results, and Section \ref{Conclusion} concludes our work.
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
 
-
-
-
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that the IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a 
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
-% labels, the optional argument to \subfloat must be present. If a
-% subcaption is not desired, just leave its contents blank,
-% e.g., \subfloat[].
-
-
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table and, given that table
-% captions serve much like titles, are usually capitalized except for words
-% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
-% and up, which are usually not capitalized unless they are the first or
-% last word of the caption. Table text will default to \footnotesize as
-% the IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-
-
-% Note that the IEEE does not put floats in the very first column
-% - or typically anywhere on the first page for that matter. Also,
-% in-text middle ("here") positioning is typically not used, but it
-% is allowed and encouraged for Computer Society conferences (but
-% not Computer Society journals). Most IEEE journals/conferences use
-% top floats exclusively. 
-% Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the
-% \fnbelowfloat command of the stfloats package.
 \section{Theoretical Foundations and Related Works}\label{Theoretics}
 
+Deblurring is generally modeled as the convolution of a blur kernel $k$
+with a latent image $I$: 
+\begin{equation}
+ y = k \otimes I + n
+ \label{eq:deblurr}
+\end{equation}
+where $n$ is the noise. Since $k$, $I$ and $n$ are unknown, the problem 
+is highly ill-posed and admits infinite solutions for $k$ and $I$.
+Blind deconvolution refers to the inference of the sharp image $I$,
+given only the blurry image $y$, without any knowledge regarding the
+kernel $k$ and the noise $n$ \cite{Zhang2013}. In contrary, if $k$
+is assumed to be known, the approach is called non-blind deconvolution
+\cite{Wang2009}.
+%Several works have developed different deblurring methods
+%for specific purposes. For the last six years, considerable effort has
+%been made in single image \cite{Babacan2012,Krishnan2015,Levin2011,Zhang2011}
+%and multi-image \cite{sroubek2012,Zhu2012} blind deconvolutions.
+Applying blind deconvolution generally implies in making assumptions
+on blur kernels and/or on latent images. For example, assuming sparsity
+of blur kernel or that natural images have super-Gaussian statistics.
+The second assumption leads to the use of image priors on inference process
+and, consequently, to the maximum \textit{a posteriori} (MAP) estimation
+\cite{Babacan2012}. However, \cite{Levin} show that deblurring methods based
+on this prior tend to favor blurry images over original latent images.
 
+The Bayesian inference approach \cite{Levin} outperforms the MAP based
+methods. It marginalizes the image from the optimization step, while
+estimating the unknown blur. 
+%The authors show that it is possible to
+%define a class of prior images based on natural image statistics,
+%suitable enough to represent sharp images features. This prior
+%formulation makes possible to use Bayesian inference in the
+%estimation of the unknown image and the blur kernel.
+According to \cite{Hacohen13}, defining a gradient prior, by itself,
+is not sufficient to reach a sharp image, instead, they search in a data
+set for a prior that densely correspond to the blurry image similar
+to a sharp image. Even though \cite{Pan2014} suggest a generalization
+for the method proposed by \cite{Hacohen13}, it still requires a similar
+reference image, which is not always available.
 
-\section{Proposed Method}\label{Method}
+%It has been demonstrated that 
+The methods described previously fail when applied to real world
+blurry images \cite{Lai2016} and take a severe computational cost
+\cite{Chakrabarti2016}. In contrast, the learning-based methods
+have gained attention with the resumption and recent advances in
+convolutional neural networks (CNN). 
+Currently, CNN is one of the most successful methods in computer vision.
+A basic architecture of a CNN model is composed of a convolutional layer
+with non-linear activation neuron, and a pooling layer.
+The convolutional layer takes into account a fixed-size and spacial
+location portion of the previous layer, and outputs
+a weighted representation of its input.
+Pooling layers calculate statistical summaries of spatial dimensions
+to down-sample feature maps. Thus, pooling layers can extract
+contextual information from a larger spatial context.
 
+The adequate hyper-parameter adjustment allows CNN to learn non-linear
+function or blur kernels. Thus, deblurring becomes a function of
+a blurry image $I$ and a set of parameters $p$ as \ref{eq:deblur}
+\begin{equation}
+ y = \sigma(I,p)
+ \label{eq:deblur}
+\end{equation}
+Learning-based methods focus on developing a model to learn the function
+$\sigma$ and to perform non-blind deblurring \cite{Chakrabarti2016}.
+\cite{Sun2015} teaches a CNN to recognize motion kernels and performs non-blind
+deconvolution in dense motion field estimate, in addition, \cite{Hradis2015}
+minimize regularized $l_2$ in order to perform text deblurring.
+In our approach, we perform a blind deconvolution by letting a CNN model
+to learn the unknown kernels that best deblurr the acoustic impedance
+traces, based on the knowledge of the ground truth image and their
+correspondent seismic traces.
+
+\section{Data and Methods}\label{Method}
+
+\subsection{Proposed Architecture}
+
+We propose a four-layer multichannel CNN architecture for deblurring
+post-inversion acoustic impedance images and recovering high
+frequency of thin layers. The model takes in each input channel the
+blurry acoustic impedance trace and the respective seismic
+profile. Additionally, by using the ground truth AI trace as
+target, the network is able to learn with the acoustic
+impedance data in association with the local high frequency seismic.
+The model consists of one convolutional layer and one locally-connected
+layer, each one of them followed by max pooling. The output of the
+locally-connected layer is flatted and two fully connected layers are
+added in the end (Fig. \ref{fig_model}).
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.4in]{Figs/model}
+\DeclareGraphicsExtensions.
+\caption{Examples.}
+\label{fig_model}
+\end{figure}
+
+The first convolutional layer deblurs the lower features in
+the input traces. Following, higher features are individually
+deblurred through a locally-connected layer \cite{},
+which performs a one-dimensional convolution
+with unshared weights. Thus, instead of performing standard
+convolution, the weights of the learned kernel matrices are not
+shared across the input. The number of filters in the convolution
+and locally-connected layers is $50$ and $100$, respectively.
+As long as the number of filters increases from the first to the
+second layer, the size of each filter decreases from $20$ to $10$.
+This way, we note that the CNN learns thinner geological
+bodies in the second layer.
+
+We use rectified linear unit (ReLU) function that is one
+of the most popular and efficient activation functions for
+CNNs. There are advantages of using ReLU such as efficient
+computation, and gradient propagation. The network uses
+Adam to optimize the loss function. This algorithm
+combines the AdaGrad and RMSProp methods and converges more efficiently in
+comparison to gradient descent, stochastic gradient descent, AdaGrad
+and RMSProp \cite{Kingma2014}. The Mean Absolute Error (MAE) is the
+loss function minimized in the training process.
+
+\subsection{Data Set}
+To evaluate the proposed deblurring method, an acoustic
+impedance data set is collected. \footnote{Available at https://github.com/SCRFpublic/Stanford-VI-E/tree/master/Acoustic\%20Impedance} %Badbox aqui
+The data set contains a cube of acoustic impedance values
+from the updated Stanford VI reservoir \cite{Lee2012}, which
+is represented by a three-dimensional regular stratigraphic
+model. The cube contains 150x200x200 cells and the dimensions
+of each cell are $25$ meters horizontally and $1$ meter vertically.
+The model represents a fluvial channel system composed of three
+layers: the lowest one represents deltaic deposits (layer 3), the
+middle layer represents meandering channels (layer 2) and the highest
+layer (layer 1) sinuous channels, deposited in the fluvial channel system.
+\footnote{See \cite{Castro2005} for more details about methodologies and model parameters.}
+Some sample images from Stanford VI are shown in Fig. \ref{fig_examples}
+% \begin{figure}[!t]
+% \centering
+% \includegraphics[width=2.5in]{Figs/Examples}
+% \DeclareGraphicsExtensions.
+% \caption{Examples.}
+% \label{fig_examples}
+% \end{figure}
+Even though the data has been synthetically generated,
+the layers represent geological bodies of high importance
+in reservoir characterization, such as channels connections and theirs
+discontinuity. 
+
+In a realistic scenario, the number of hard data available for
+training and validating supervised models is scarce. In order
+to address this common issue, we performed experiments with
+constrained amount of training data, set to 50\%, 30\% and
+10\% of the available data. Using 50\% and 30\% 
+produces similar results in the frequency spectrum,
+whereas 10\% showed more significant discrepancies in the
+amplitude recovering and additional noise mainly in higher frequencies.
+(Fig. \ref{fig_imgs}). Therefore, in the following experiments
+we adopted 30\% of available data as training data set, once we
+observed it is the minimum amount of data to keep the model learning
+capability.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{Figs/Images}
+\DeclareGraphicsExtensions.
+\caption{Examples.}
+\label{fig_imgs}
+\end{figure}
+
+To build the training data set we carry out the \textit{Maximum-a-Posteriori} (MAP)
+\cite{Buland2003,Figueiredo2012} inversion using the high resolution acoustic
+impedance. In order to proceed the inversion, we created a Ricker wavelet with
+frequency bandwidth from $0Hz$ to $60Hz$, with which the synthetic seismic was
+calculated through the forward model. Additionally, a low frequency
+model was calculated by applying a low-pass filter with $4Hz$ cutting frequency.
+Thus, the \textit{a posteriori} acoustic impedance cube was calculated and the pair of truth
+and inverted images compose the training data set. As expected, the inverted
+acoustic impedance bandwidth is restricted to the wavelet bandwidth with
+addition of the spectrum of the low frequency model. Due to the 1D
+convolution adopted in this work, the training data set contains $10000$ trace
+samples with $200$ cell along the depth. Each group of $200$ traces composes
+a section of the cube.
 
 \section{Experiment and Discussion}\label{Experiments}
 Here, we validate the proposed post-inversion deblurring method.
-First, a large-scale acoustic impedance model is introduced.
-Then, the inversion process that generates blurry images is described.
-Next, the parameters settings for the model training are presented.
-Finally, the experimental results are given for the proposed method,
+The parameters settings for the model training are presented.
+Next, the experimental results are given for the proposed method,
 as well as the comparison methods.
 
-\subsection{Data Set}
-To evaluate the proposed frequency recovering method, an acoustic
-impedance data set is collected.
-\footnote{Available at https://github.com/SCRFpublic/Stanford-VI-E/tree/master/Acoustic\%20Impedance} %Badbox aqui
-The data set contains a cube of acoustic impedance values from the updated Stanford VI reservoir \cite{Lee2012},
-which is represented by a three-dimensional regular stratigraphic model. The cube contains 150x200x200 cells and 
-the dimensions of each cell are $25$ meters horizontally and $1$ meter vertically. The model represents
-a fluvial channel system composed of three layers: the lowest one represents deltaic deposits (layer 3), the
-middle layer represents meandering channels (layer 2) and the first layer sinuous channels, deposited in the fluvial
-channel system. \footnote{See \cite{Castro2005} for more details about methodologies and model parameters.}
-Some sample images from Stanford VI are shown in Fig. \ref{fig_examples}
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=2.5in]{Figs/Examples}
-\DeclareGraphicsExtensions.
-\caption{Examples.}
-\label{fig_examples}
-\end{figure}
-
-To build the training data set we perform the \textit{Maximum-a-Posteriori} (MAP) \cite{} inversion using
-the high resolution acoustic impedance. Initially, we created a Ricker wavelet with
-frequency band-width from $0Hz$ to $60Hz$. With the estimated wavelet, the forward model
-is applied to obtain the synthetic seismic. Additionally, the low frequency
-model is calculated by applying a low-pass filter with $4Hz$ cutting frequency.
-
-
 \subsection{Model Training}
-In order to train the CNN model, $80\%$ of the acoustic impedance images
-is used to infer the blur filters. Due to the predefined hyperbolic tangent
-sigmoid (\textit{tansig}) transfer function in the last layer, we
-normalized the acoustic impedance to values between 0 and 1,
+We will use 33\% (10000 traces)
+of the available data, seismic and inverted acoustic impedance traces,
+to infer the blur filters. Furthermore, we will adopt 
+mini-batches with size of $10$ training examples and exponentially
+decreasing learning rate (initially set to $0.001$)
+in a total of $150$ iterations.
+
+The network contains two channels in the input layer and we set
+each input data in one channel.
+It should be noted that every image is different and each
+one is introduced only once to the network, this way avoiding
+over-fitting. We also deal with this issue by calculating
+the loss for the test images, and control the training,
+thus we early stop the training as soon as the test loss
+stops decreasing (Fig. \ref{}).
+Other techniques to avoid over-fitting, such as
+drotout, compromised the reconstruction of the entire image.
+The network weights
+will initialize randomly and the model will perform a supervised
+learning over tuples containing the pairs of inverted acoustic
+impedance and seismic profile as input, and ground truth traces as targets.
+To avoid neuron saturation and still keep the non-linearity predictability
+of the CNN, we will normalize the acoustic impedance to values between 0 and 1,
 and the results are presented in terms of this normalization.
 
-
-\subsection{Acoustic Impedance Deblurring}
-
-
+\subsection{Deblurring Post-Inversion Acoustic Impedance}
+By applying the trained model to a set of inverted traces,
+we notice that the CNN produced overall shaper acoustic
+impedance images. Looking into the details,
+the deblurred images show substantial recovery of high frequency events
+(thin layers), which can be seen in the intersections between
+two channels, as illustrated in Fig. \ref{ImSec26}.
 \begin{figure}[!t]
-	\centering
-	\includegraphics[width=2.5in]{Figs/Frequencies}
-	\DeclareGraphicsExtensions.
-	\caption{.}
-	\label{}
+\centering
+\includegraphics[width=3.5in]{Figs/ImSec26}
+\DeclareGraphicsExtensions.
+\caption{Examples.}
+\label{ImSec26}
 \end{figure}
 
+It should be pointed out that the horizontal resolution seem to be
+better enhanced when compared to the vertical resolution, which can
+be an effect of the wavelet signature and/or the deconvolution process.
+The increase in the horizontal resolution is particularly important,
+since it is related to events in which the layers become thinner and the porosity
+decreases, thus decreases the impedance contrast and, therefore, its
+seismic response. The vertical resolution improvement is essential to
+evaluate the vertical connectivity in the reservoir. In terms, it is possible
+that thin layers of shale act as barriers for the water injection and affect the production
+and pressurization of the reservoir. Besides significant improvements
+in the resolution, the model managed to correct some geometric deformations
+created during the inversion process (Fig. \ref{ImSec36}), which usually
+occurs in smaller depositional features, as channels.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{Figs/ImSec36}
+\DeclareGraphicsExtensions.
+\caption{Examples.}
+\label{ImSec36}
+\end{figure}
 
+A relevant aspect in deblurring acoustic impedance images
+is the observance of high frequencies recovering after the
+blurry images being submitted to the CNN. Moreover, the
+additional spectrum is associated to the insertion
+of high frequency signal, instead of noise.
+Fig. \ref{frequencies} introduces the graphs containing the frequency
+magnitudes of our test examples, as well as the recovery percentage
+for each frequency magnitude. As can be noticed,
+the CNN recovered around $100$\% of the signal frequency existing
+in the blurry image (from $4Hz$ to $60Hz$). The model recovered
+the total frequency in the spectrum lower than
+$4Hz$, as long as from $70$ to $90$\% of the possible frequencies
+in the spectrum higher than $60Hz$.
+Since these ranges of frequencies are absent in the inverted acoustic
+impedance, we note that the CNN learned the existing relation between the
+seismic profiles and the acoustic impedance in the ground truth images
+and correctly rebuilt them in the test images.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{Figs/frequencies}
+\DeclareGraphicsExtensions.
+\caption{Frequency spectrum comparison between the ground truth image,
+the MAP inversion image and the deblurred image. Additionally, the recovery percentage
+for each frequency magnitude.}
+\label{frequencies}
+\end{figure}
+
+In addition, we calculated the Signal-to-Noise Ratio (SNR) of each
+test section. Tab. \ref{table_results} list the values of SNR for the
+ground truth image, for the result of the inversion method, and
+for the image deblurred by the classical method using wiener
+filters and by our proposal. The proposed method holds clearly
+higher performance than the classical method, since it generates
+image with higher SNR. This result endorses that the high frequency
+components recovered by the CNN is related to signal, rather than noise.
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
-\caption{Table of metric values for wedges with acoustic impedance normalized to $0$ and $1$.}
-\label{table_caso_1}
+\caption{Results evaluated on updated Standford VI reservoir, examples
+introduced in Fig. \ref{ImSec26} and Fig. \ref{ImSec36}. Signal-to-Ratio (dB) is listed.}
+\label{table_results}
 \centering
 \begin{tabular}{|c||c||c|}
 \hline
  \textbf{Image Section} & \textbf{\textit{Wiener Filter (dB)}} & \textbf{\textit{Our (dB)}}\\
 \hline
-Inline Section & $0.1$ & $0.1$ \\
+Inline Section & $0.1$ & $28.3618$ \\
 \hline
 Crossline Section & $0.1$ & $0.1$ \\
 \hline
@@ -713,159 +501,115 @@ Crossline Section & $0.1$ & $0.1$ \\
 \end{table}
 
 \section{Conclusion} \label{Conclusion}
-The conclusion goes here.
+In summary, we proposed a multichannel and multilayer CNN
+for post-inversion acoustic impedance deblurring. Moreover, we introduced a simple architecture
+that combines convolution, locally connected and regression layers.
+We demonstrated that the CNN achieved reasonable results regarding the high frequency
+recovering in seismic inversion data. The methodology is promising for deblurring
+post-inversion acoustic impedance due to its capability to learn one-dimensional
+blur kernels and to recovery two-dimensional geometric features (such as deposition
+borders and thin layers). We tested the model on a limited synthetic data set
+significantly realistic in its structure and dimensions. 
+In order to obtain a more realistic and comprehensive training data, the model
+may be fed with shallower portions of the seismic data. This approach is
+feasible, since most geological features tend to repeat themselves
+(fractal) where the frequency spectrum is broader in the high frequencies (the frequency
+amplitude decreases exponentially with depth, due to attenuation and dispersion effects
+during propagation).
 
-% if have a single appendix:
-%\appendix[Proof of the Zonklar Equations]
-% or
-%\appendix  % for no appendix heading
-% do not use \section anymore after \appendix, only \section*
-% is possibly needed
-
-% use appendices with more than one appendix
-% then use \section to start each appendix
-% you must declare a \section before using any
-% \subsection or using \label (\appendices by itself
-% starts a section numbered zero.)
-%
-
-% \appendices
-% \section{Proof of the First Zonklar Equation}
-% Appendix one text goes here.
-% 
-% % you can choose not to have a title for an appendix
-% % if you want by leaving the argument blank
-% \section{}
-% Appendix two text goes here.
-
-
-% use section* for acknowledgment
 \section*{Acknowledgment}
 
-The authors would like to thank Conselho Nacional de Pesquisa e Desenvolvimento, Fundação de Amparo à Pesquisa e Inovação do Estado de Santa Catarina and Petrobras for their support and availability during the work.
+The authors would like to thank \textit{Conselho Nacional de Pesquisa e Desenvolvimento,
+Fundação de Amparo à Pesquisa e Inovação do Estado de Santa Catarina} and Petrobras
+for their support and availability during the work.
 
-
-% Can use something like this to put references on a page
-% by themselves when using endfloat and the captionsoff option.
 \ifCLASSOPTIONcaptionsoff
   \newpage
 \fi
 
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 \bibitem{Sergio2016}
-S. S. Sancevero, A. Z. Remacre, R. S. Portugal, "O papel da inversão para a impedância no processo de caracterização sísmica de reservatórios." in Revista Brasileira de Geofísica, p. 495-512, v. 24, 2006.
-
-\bibitem{xiaoiu}
-X. Xiaoyu, L. Yun, S. Desheng, G. Xiangyu, and W. Huifeng, "Studying the effect of expanding low or high frequency on post-stack seismic inversion," in SEG Technical Program Expanded Abstracts 2012, pp. 1-5, September 2012.
+S. S. Sancevero, A. Z. Remacre, R. S. Portugal, "O papel da inversão para a impedância no processo de caracterização sísmica de reservatórios." in Revista Brasileira de Geofísica, p. 495--512, v. 24, 2006.
 
 \bibitem{Zhang2012}
 R. Zhang and M. K. Sen and S. Phan and S. Srinivasan, "Stochastic and deterministic seismic inversion methods for thin-bed resolution", Journal of Geophysics and Engineering, V. 9, N. 5, 2012.
 
 \bibitem{Sancevero2005}
-S. S. Sancevero and A. Z. Remacre and R. de S. Portugal and E. C. Mundim, "Comparing deterministic and stochastic seismic inversion for thin-bed reservoir characterization in a turbidite synthetic reference model of Campos Basin, Brazil", The Leading Edge, v. 24, num. 11, pp. 1168-1172, 2005. 
+S. S. Sancevero and A. Z. Remacre and R. de S. Portugal and E. C. Mundim, "Comparing deterministic and stochastic seismic inversion for thin-bed reservoir characterization in a turbidite synthetic reference model of Campos Basin, Brazil", The Leading Edge, v. 24, num. 11, pp. 1168--1172, 2005. 
 
 \bibitem{Cook2010}
 D. Cooke and J. Cant and A. Santos and  P. Wa, Australia,  "Model-based Seismic Inversion: Comparing deterministic and Probabilistic approaches". CSEG Recorder, 2010. 
 
 \bibitem{YuanWang2015}
-S. Yuan and S. Wang and C. Luo and Y. He, "Simultaneous multitrace impedance inversion with transform-domain sparsity promotion", Geophysics, pp. 71-80, v. 80, n. 2, 2015.
+S. Yuan and S. Wang and C. Luo and Y. He, "Simultaneous multitrace impedance inversion with transform-domain sparsity promotion", Geophysics, pp. 71--80, v. 80, n. 2, 2015.
+
+\bibitem{xiaoiu}
+X. Xiaoyu, L. Yun, S. Desheng, G. Xiangyu, and W. Huifeng, "Studying the effect of expanding low or high frequency on post-stack seismic inversion," in SEG Technical Program Expanded Abstracts 2012, pp. 1--5, 2012.
 
 \bibitem{ChenWang2018}
-S. Chen and Y. Wang, "Seismic Resolution Enhancement by Frequency-Dependent Wavelet Scaling," in IEEE Geoscience and Remote Sensing Letters, vol. PP, no. 99, pp. 1-5.
+S. Chen and Y. Wang, "Seismic Resolution Enhancement by Frequency-Dependent Wavelet Scaling," in IEEE Geoscience and Remote Sensing Letters, no. 99, pp. 1--5, 2018.
 
-\bibitem{Krizhevsky2012}
-A. Krizhevsky, I. Sutskever, G. E. Hinton, "Imagenet classification with deep convolutional neural networks: Advances in neural information processing systems," , pp. 1097–1105, 2012.
+\bibitem{Zhang2013}
+H. Zhang, D. Wipf and Y. Zhang, "Multi-image Blind Deblurring Using a Coupled Adaptive Sparse Prior," IEEE Conference on Computer Vision and Pattern Recognition, Portland, OR, pp. 1051--1058, 2013.
 
-\bibitem{AbdelHamid2014}
-O. Abdel-Hamid, A.-r. Mohamed, H. Jiang, L. Deng, G. Penn, and D. Yu, "Convolutional neural networks for speech recognition," in IEEE/ACM Transactions on audio, speech, and language processing, num. 22, pp. 1533–1545, 2014.
+\bibitem{Wang2009}
+C. Wang, L. Sun, Z. Chen, S. Yang and J. Zhang, "High-quality non-blind motion deblurring," 16th IEEE International Conference on Image Processing (ICIP), Cairo, pp. 153--156, 2009.
 
-\bibitem{Farfade2015}
-S. S. Farfade, M. J. Saberian, and L.-J. Li, 2015, "Multi-view face detection using deep convolutional neural networks," in Proceedings of the 5th ACM on International Conference on Multimedia Retrieval, ACM, pp. 643–650.
+\bibitem{Babacan2012}
+S. D. Babacan, R. Molina, M. N. Do, and A. K. Katsaggelos, ``Bayesian blind deconvolution with general sparse image priors.'' in Proceedings of European Conference on Computer Vision (ECCV), pp. 341--355, 2012.
 
-\bibitem{S_Ji2013}
-S. Ji,W. Xu, M. Yang, K. Yu, 2013, "3d convolutional neural networks for human action recognition," in IEEE transactions on pattern analysis and machine intelligence, num. 35, p. 221–231.
+\bibitem{Levin}
+A. Levin, Y. Weiss, F. Durand, and W. T. Freeman. ``Understanding and evaluating blind deconvolution algorithms.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), pp. 1964--1971, 2009.
 
-\bibitem{Qian}
-Q. Feng, Y. Miao, S. Ming-Jun, W. Yaojun, H. Guangmin, "Seismic facies recognition based on prestack data using deep convolutional autoencoder,".
+\bibitem{Hacohen13}
+Y. Hacohen, E. Shechtman, and D. Lischinski, ``Deblurring by example using dense correspondence.'' In IEEE Proceedings of International Conference on Computer Vision (ICCV), pp. 2384--2391, 2013.
 
-\bibitem{Liu2017}
-L. Lihui, L. Rong, L. Jianhai, Y. Wenkui, "Seismic Lithofacies Computation Method Based on Deep Learning," in International Geophysical Conference, pp. 649-652, April 2017.
+\bibitem{Pan2014}
+J. Pan, Z. Hu, Z. Su, and M. H. Yang, ``Deblurring face images with exemplars.'' In Proceedings of European Conference on Computer Vision (ECCV), pp. 47--62. Springer, 2014.
+
+\bibitem{Lai2016}
+W.S. Lai, J. B. Huang, Z. Hu, N. Ahuja, and M. H. Yang, ``A comparative study for single image blind deblurring.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2016.
+
+\bibitem{Chakrabarti2016}
+A. Chakrabarti, ``A neural approach to blind motion deblurring.'' In Proceedings of European Conference on Computer Vision (ECCV), pp. 221--235, Springer, 2016.
+
+\bibitem{Sun2015}
+J. Sun, W. Cao, Z. Xu, and J. Ponce, ``Learning a convolutional neural network for non-uniform motion blur removal.'' In IEEE Proceedings of International Conference on Computer Vision and Pattern Recognition (CVPR), pp. 769--777, 2015.
+
+\bibitem{Hradis2015}
+M. Hradiš, J. Kotera, P. Zemcı́k, and F. Šroubek, ``Convolutional neural networks for direct text deblurring.'' In Proceedings of British Machine Vision Conference (BMVC), 2015.
+
+\bibitem{Kingma2014}
+D. P. Kingma and J. Ba. “Adam: A method for stochastic optimization.” Unpublished paper. [Online]. Available: https://arxiv.org/abs/1412.6980, 2014.
 
 \bibitem{Lee2012}
-Lee, J. and Mukerji, T., 2012, "The Stanford VI-E reservoir: A synthetic data set for joint seismic-EM time-lapse monitoring algorithms": 25th Annual Report, Stanford Center for Reservoir Forecasting, Stanford University, Stanford, CA.
+Lee, J. and Mukerji, T., "The Stanford VI-E reservoir: A synthetic data set for joint seismic-EM time-lapse monitoring algorithms": 25th Annual Report, Stanford Center for Reservoir Forecasting, Stanford University, Stanford, CA, 2012.
 
 \bibitem{Castro2005}
-Castro, S., Caers, J., and Mukerji, T., 2005, “The Stanford VI reservoir”: 18th Annual Report, Stanford Center for Reservoir Forecasting, Stanford University, Stanford, CA.
+Castro, S., Caers, J., and Mukerji, T., “The Stanford VI reservoir”: 18th Annual Report, Stanford Center for Reservoir Forecasting, Stanford University, Stanford, CA, 2005.
 
+\bibitem{Buland2003}
+A. Buland,  and H. Omre, ``Bayesian linearized avo inversion,'' In Geophysics, pp. 185--198, 2003.
+
+\bibitem{Figueiredo2012}
+L. P. Figueiredo, M. Santos, M. Roisenberg, G. Neto, and W. Figueiredo, ``Bayesian framework to wavelet estimation and linearized acoustic inversion,'' in Geoscience and Remote Sensing Letters, pp. 1--5, 2012.
 
 \end{thebibliography}
 
-% biography section
-% 
-% If you have an EPS/PDF photo (graphicx package needed) extra braces are
-% needed around the contents of the optional argument to biography to prevent
-% the LaTeX parser from getting confused when it sees the complicated
-% \includegraphics command within an optional argument. (You could create
-% your own custom macro containing the \includegraphics command to make things
-% simpler here.)
-%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
-% or if you just want to reserve a space for a photo:
-
-\begin{IEEEbiography}{Michael Shell}
-Biography text here.
-\end{IEEEbiography}
+%\begin{IEEEbiography}{Michael Shell}
+%Biography text here.
+%\end{IEEEbiography}
 
 % if you will not have a photo at all:
-\begin{IEEEbiographynophoto}{John Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
-
-% insert where needed to balance the two columns on the last page with
-% biographies
-%\newpage
-
-\begin{IEEEbiographynophoto}{Jane Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
-
-% You can push biographies down or up by placing
-% a \vfill before or after them. The appropriate
-% use of \vfill depends on what kind of text is
-% on the last page and whether or not the columns
-% are being equalized.
-
-%\vfill
-
-% Can be used to pull up biographies so that the bottom of the last one
-% is flush with the other column.
-%\enlargethispage{-5in}
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
 
 
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
 
-% that's all folks
 \end{document}
 
 
