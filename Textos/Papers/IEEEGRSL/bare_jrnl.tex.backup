@@ -166,6 +166,7 @@ In order to train the model, we perform \textit{Maximum-a-Posteriori} (MAP)
 inversion that commonly generates a band-limited acoustic impedance model.
 Then, the pairs of blurry and latent images are normalized and 
 presented to the network as input and target, respectively.
+
 The core concept of our architecture is the combination of the
 convolutional, locally-connected and regression layers. Thus
 the convolutional layer learns the spatial structures existing
@@ -196,8 +197,6 @@ Section \ref{Method} describes the data and used for
 training the CNN and the architecture of the proposed model.
 Section \ref{Experiments} reports the experiments and
 results, and Section \ref{Conclusion} concludes our work.
-% needed in second column of first page if using \IEEEpubid
-%\IEEEpubidadjcol
 
 \section{Theoretical Foundations and Related Works}\label{Theoretics}
 
@@ -491,11 +490,11 @@ introduced in Fig. \ref{ImSec26} and Fig. \ref{ImSec36}. Signal-to-Ratio (dB) is
 \centering
 \begin{tabular}{|c||c||c|}
 \hline
- \textbf{Image Section} & \textbf{\textit{Wiener Filter (dB)}} & \textbf{\textit{Our (dB)}}\\
+ \textbf{Image Section} & \textbf{\textit{Inversion (dB)}} & \textbf{\textit{Wiener Filter (dB)}} & \textbf{\textit{Our (dB)}}\\
 \hline
-Inline Section & $0.1$ & $28.3618$ \\
+Inline Section& $19.8206$ & $0.1$ & $28.3618$ \\
 \hline
-Crossline Section & $0.1$ & $0.1$ \\
+Crossline Section& $0.1$ & $0.1$ & $0.1$ \\
 \hline
 \end{tabular}
 \end{table}

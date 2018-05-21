@@ -1,15 +1,11 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.27)  16 MAY 2018 16:05
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.3)  2 MAY 2018 15:02
->>>>>>> 2dd7b352d7f20ab78d8a5c8717fb3ddef405c9dc
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.13)  20 MAY 2018 19:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **bare_jrnl.tex
 (./bare_jrnl.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+LaTeX2e <2017-04-15>
+Babel <3.12> and hyphenation patterns for 3 language(s) loaded.
 (./IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -117,7 +113,6 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-<<<<<<< HEAD
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks15
@@ -438,36 +433,24 @@ Now handling font encoding U ...
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
-=======
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
->>>>>>> 2dd7b352d7f20ab78d8a5c8717fb3ddef405c9dc
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count94
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
@@ -502,7 +485,38 @@ Package caption Info: Unknown document class (or package),
 \sf@top=\skip47
 \sf@bottom=\skip48
 )
-(./bare_jrnl.aux)
+(./bare_jrnl.aux
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63 <
+      <<<<<< HEAD
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Label `Theoretics' multiply defined.
+
+
+LaTeX Warning: Label `Method' multiply defined.
+
+
+LaTeX Warning: Label `Experiments' multiply defined.
+
+
+LaTeX Warning: Label `Conclusion' multiply defined.
+
+
+LaTeX Warning: Label `Lee2012' multiply defined.
+
+
+LaTeX Warning: Label `Castro2005' multiply defined.
+
+)
 \openout1 = `bare_jrnl.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -519,9 +533,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
 
 -- Lines per column: 58 (exact).
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-<<<<<<< HEAD
 \scratchcounter=\count101
 \scratchdimen=\dimen136
 \scratchbox=\box28
@@ -535,61 +548,54 @@ LaTeX Font Info:    ... okay on input line 36.
 \everyMPtoPDFconversion=\toks19
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-=======
-\scratchcounter=\count95
-\scratchdimen=\dimen128
-\scratchbox=\box28
-\nofMPsegments=\count96
-\nofMParguments=\count97
-\everyMPshowfont=\toks16
-\MPscratchCnt=\count98
-\MPscratchDim=\dimen129
-\MPnumerator=\count99
-\makeMPintoPDFobject=\count100
-\everyMPtoPDFconversion=\toks17
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
->>>>>>> 2dd7b352d7f20ab78d8a5c8717fb3ddef405c9dc
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.jpeg,.png,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -598,7 +604,15 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 58.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 58.
 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
 Underfull \hbox (badness 4229) in paragraph at lines 58--58
 [][][]\OT1/ptm/m/n/8 I. Sacra-mento and M. Roisen-berg are with the De-par-ta-m
 ent of
@@ -616,90 +630,103 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--88
 acous-tic
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 114.
-LaTeX Font Info:    External font `cmex10' loaded for size
-<<<<<<< HEAD
-(Font)              <5> on input line 114.
-=======
-(Font)              <7> on input line 637.
-
->>>>>>> 2dd7b352d7f20ab78d8a5c8717fb3ddef405c9dc
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
+[2
 
 ]
-<Figs/model.png, id=11, 1444.39626pt x 564.1075pt>
+<Figs/model.png, id=14, 1444.39626pt x 564.1075pt>
 File: Figs/model.png Graphic file (type png)
 <use Figs/model.png>
-Package pdftex.def Info: Figs/model.png  used on input line 294. on input line 
-294.
+Package pdftex.def Info: Figs/model.png  used on input line 316. on input line 
+316.
 Package pdftex.def Info: Requested size: 245.71754pt x 95.95724pt on input line
- 294.
- [2]
+ 316.
+ [3]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 325.
+(Font)              <8> on input line 347.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 325.
+(Font)              <6> on input line 347.
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--325
+Underfull \hbox (badness 10000) in paragraph at lines 347--347
 [][][]\OT1/ptm/m/n/8 Available at https://github.com/SCRFpublic/Stanford-VI-
  []
 
-<<<<<<< HEAD
-
-LaTeX Warning: Reference `fig_examples' on page 3 undefined on input line 336.
-
-<Figs/Images.png, id=19, 1011.78pt x 252.945pt>
+<Figs/Images.png, id=22, 1011.78pt x 252.945pt>
 File: Figs/Images.png Graphic file (type png)
 <use Figs/Images.png>
-Package pdftex.def Info: Figs/Images.png  used on input line 363. on input line
- 363.
+Package pdftex.def Info: Figs/Images.png  used on input line 385. on input line
+ 385.
 Package pdftex.def Info: Requested size: 252.94499pt x 63.23608pt on input line
- 363.
+ 385.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 363--365
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 385--387
  [][] 
  []
 
-<Figs/ImSec26.png, id=20, 1098.35344pt x 337.26pt>
+[4 <./Figs/model.png> <./Figs/Images.png>]
+<Figs/ImSec26.png, id=28, 1098.35344pt x 337.26pt>
 File: Figs/ImSec26.png Graphic file (type png)
 <use Figs/ImSec26.png>
-Package pdftex.def Info: Figs/ImSec26.png  used on input line 421. on input lin
-e 421.
+Package pdftex.def Info: Figs/ImSec26.png  used on input line 446. on input lin
+e 446.
 Package pdftex.def Info: Requested size: 252.94499pt x 77.66594pt on input line
- 421.
+ 446.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 421--423
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 446--448
  [][] 
  []
 
-<Figs/ImSec36.png, id=21, 1044.15094pt x 339.51843pt>
+<Figs/ImSec36.png, id=29, 1044.15094pt x 339.51843pt>
 File: Figs/ImSec36.png Graphic file (type png)
 <use Figs/ImSec36.png>
-Package pdftex.def Info: Figs/ImSec36.png  used on input line 442. on input lin
-e 442.
+Package pdftex.def Info: Figs/ImSec36.png  used on input line 467. on input lin
+e 467.
 Package pdftex.def Info: Requested size: 252.94499pt x 82.24763pt on input line
- 442.
-
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 442--444
- [][] 
- []
-
-[3 <./Figs/model.png> <./Figs/Images.png>]
-<Figs/frequencies.png, id=27, 1083.04625pt x 404.51125pt>
-File: Figs/frequencies.png Graphic file (type png)
-<use Figs/frequencies.png>
-Package pdftex.def Info: Figs/frequencies.png  used on input line 467. on input
- line 467.
-Package pdftex.def Info: Requested size: 252.94499pt x 94.47377pt on input line
  467.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 467--471
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 467--469
  [][] 
  []
 
-[4 <./Figs/ImSec26.png> <./Figs/ImSec36.png> <./Figs/frequencies.png>]
+<Figs/frequencies.png, id=30, 1083.04625pt x 404.51125pt>
+File: Figs/frequencies.png Graphic file (type png)
+<use Figs/frequencies.png>
+Package pdftex.def Info: Figs/frequencies.png  used on input line 492. on input
+ line 492.
+Package pdftex.def Info: Requested size: 252.94499pt x 94.47377pt on input line
+ 492.
+
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 492--496
+ [][] 
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.516 ... & \textbf{\textit{Wiener Filter (dB)}} &
+                                                   \textbf{\textit{Our (dB)}}\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.518 Inline Section& $19.8206$ & $0.1$ &
+                                          $28.3618$ \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.520 Crossline Section& $0.1$ & $0.1$ &
+                                         $0.1$ \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+[5 <./Figs/ImSec26.png> <./Figs/ImSec36.png> <./Figs/frequencies.png>]
 
 ! Package inputenc Error: Unicode char Ãå (U+30C)
 (inputenc)                not set up for use with LaTeX.
@@ -708,7 +735,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.577 M. HradisÃå
+l.602 M. HradisÃå
                  , J. Kotera, P. Zemcƒ±ÃÅk, and F. SÃåroubek, ``Convolutiona...
 
 Your command was ignored.
@@ -723,7 +750,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.577 M. HradisÃå, J. Kotera, P. Zemcƒ±ÃÅ
+l.602 M. HradisÃå, J. Kotera, P. Zemcƒ±ÃÅ
                                          k, and F. SÃåroubek, ``Convolutiona...
 
 Your command was ignored.
@@ -738,28 +765,26 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.577 ...isÃå, J. Kotera, P. Zemcƒ±ÃÅk, and F. SÃå
+l.602 ...isÃå, J. Kotera, P. Zemcƒ±ÃÅk, and F. SÃå
                                                   roubek, ``Convolutional ne...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[5
+[6] (./bare_jrnl.aux)
 
-] (./bare_jrnl.aux)
-
-LaTeX Warning: There were undefined references.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3384 strings out of 494931
- 54140 string characters out of 6180851
- 118134 words of memory out of 5000000
- 6653 multiletter control sequences out of 15000+600000
- 45750 words of font info for 80 fonts, out of 8000000 for 9000
+ 3391 strings out of 494931
+ 54220 string characters out of 6180851
+ 118284 words of memory out of 5000000
+ 6661 multiletter control sequences out of 15000+600000
+ 44643 words of font info for 79 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 41i,9n,38p,311b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,38p,311b,242s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
@@ -770,87 +795,10 @@ onts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (5 pages, 572404 bytes).
-=======
-<Figs/Examples.png, id=10, 429.10312pt x 316.18124pt>
-File: Figs/Examples.png Graphic file (type png)
- <use Figs/Examples.png>
-Package pdftex.def Info: Figs/Examples.png used on input line 666.
-(pdftex.def)             Requested size: 180.67499pt x 133.1281pt.
-
-<Figs/Frequencies.png, id=11, 493.0922pt x 307.90031pt>
-File: Figs/Frequencies.png Graphic file (type png)
-
-<use Figs/Frequencies.png>
-Package pdftex.def Info: Figs/Frequencies.png used on input line 697.
-(pdftex.def)             Requested size: 180.67499pt x 112.81725pt.
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ß in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no £ in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no † in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ß in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no £ in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no £ in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ¢ in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ß in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no £ in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ≠ in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ≥ in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ≠ in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
- [2 <./Figs/Examples.png (PNG copy)> <./Figs/Frequencies.png (PNG copy)>]
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
- [3
-
-] (./bare_jrnl.aux) ) 
-Here is how much of TeX's memory you used:
- 2366 strings out of 493029
- 38518 string characters out of 6136234
- 106430 words of memory out of 5000000
- 5886 multiletter control sequences out of 15000+600000
- 48317 words of font info for 85 fonts, out of 8000000 for 9000
- 1144 hyphenation exceptions out of 8191
- 37i,8n,28p,310b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
-}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
-r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (3 pages, 367363 bytes).
->>>>>>> 2dd7b352d7f20ab78d8a5c8717fb3ddef405c9dc
+Output written on bare_jrnl.pdf (6 pages, 575076 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 75 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

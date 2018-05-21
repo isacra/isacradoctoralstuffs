@@ -95,13 +95,18 @@ convolutional neural network, acoustic impedance, deblurring, seismic inversion,
 
 \IEEEPARstart{T}{his} letter presents a deep convolutional
 approach for recovering high frequency components in
-post-inversion acoustic impedance models. The inversion of
+post-inversion acoustic impedance models.
+Three different approaches for seismic inversion are mainly listed in 
+literature: Stochastic Inversion, Deterministic Inversion and 
+Bayesian Inversion.
+
+The inversion of
 seismic data to obtain acoustic impedance is a frequently
 used technique because it offers several advantages: (1) it
-facilitates integrated interpretation, (2) stochastic
-inversion can improve data's vertical resolution, allowing
-sub-seismic features to be more precisely mapped, and (3)
-it optimizes the correlation between seismic and petrophysical
+facilitates integrated interpretation, 
+%(2) stochastic inversion can improve data's vertical resolution, allowing
+%sub-seismic features to be more precisely mapped,
+and (2)it optimizes the correlation between seismic and petrophysical
 properties of the reservoir. However, using the seismic data in
 deep-water reservoir modeling leads to errors in estimating
 the reservoir properties because such data do not allow the
@@ -166,7 +171,7 @@ In order to train the model, we perform \textit{Maximum-a-Posteriori} (MAP)
 inversion that commonly generates a band-limited acoustic impedance model.
 Then, the pairs of blurry and latent images are normalized and 
 presented to the network as input and target, respectively.
-<<<<<<< HEAD
+
 The core concept of our architecture is the combination of the
 convolutional, locally-connected and regression layers. Thus
 the convolutional layer learns the spatial structures existing
@@ -197,29 +202,6 @@ Section \ref{Method} describes the data and used for
 training the CNN and the architecture of the proposed model.
 Section \ref{Experiments} reports the experiments and
 results, and Section \ref{Conclusion} concludes our work.
-=======
-In our approach, the domain-specific knowledge used in deblurring acoustic impedance impedance images is commonly
-obtained through training images containing geological knowladge. Generally, the images are obtained from a specialist's
-(geologist or geophysicist) knowledge about relevant characteristics of the reservoir for which one wishes enhancing the impedance images.
-The core concept of our architecture is the combination of the convolutional layers with regression layers, thus the convolutional layers learn the spatial structures existing in different acoustic impedance images, while the regression layer proceed the prediction of the property values.
-
-Thus, deblurring the acoustic impedance models, as a post-inversion refinement process, should lead to a more accurate
-interpretation of the impedance models.
-
-The remainder of this letter is organized as follows. Section II
-reviews the CNN, a popularly used deep-learning technique.
-Section III describes the proposed deblurring approach.
-Section IV \ref{Theoretics} reports the experiments and results, and Section \ref{Theoretics}
-concludes our work.
-
-% % \hfill mds
-% %  
-% % \hfill August 26, 2015
-
-
->>>>>>> 2dd7b352d7f20ab78d8a5c8717fb3ddef405c9dc
-% needed in second column of first page if using \IEEEpubid
-%\IEEEpubidadjcol
 
 \section{Theoretical Foundations and Related Works}\label{Theoretics}
 
