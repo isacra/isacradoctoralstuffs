@@ -96,21 +96,36 @@ convolutional neural network, acoustic impedance, deblurring, seismic inversion,
 \IEEEPARstart{T}{his} letter presents a deep convolutional
 approach for recovering high frequency components in
 post-inversion acoustic impedance models.
-Three different approaches for seismic inversion are mainly listed in 
-literature: Stochastic Inversion, Deterministic Inversion and 
-Bayesian Inversion.
+Seismic acoustic impedance inversion is a process applied to 
+seismic reflection data in order to infer rock density and 
+compressional velocity, and thereafter other rock properties.
+eg.: porosity, lithology and net pay. When used to build an
+integrated model of the reservoir, seismic inversion provides
+several advantages: (1) it facilitates integrated interpretation, 
+and (2) it optimizes the correlation between seismic and petrophysical
+properties of the reservoir, (3) if an stochastic method is used,
+it can improve data's vertical resolution.
 
-The inversion of
-seismic data to obtain acoustic impedance is a frequently
-used technique because it offers several advantages: (1) it
-facilitates integrated interpretation, 
-%(2) stochastic inversion can improve data's vertical resolution, allowing
-%sub-seismic features to be more precisely mapped,
-and (2)it optimizes the correlation between seismic and petrophysical
-properties of the reservoir. However, using the seismic data in
-deep-water reservoir modeling leads to errors in estimating
-the reservoir properties because such data do not allow the
-wider understanding of the field under study \cite{Sergio2016}.
+Three different approaches for seismic inversion are mainly listed in 
+literature: deterministic, stochastic, and 
+geostatistical. Deterministic inversion is mainly useful for deriving general
+trends and highlighting large features in an exploratory stage.
+Despite the efficiency in terms of time consuming,
+in deterministic methods the vertical resolution remains
+constrained by the seismic bandwidth \cite{Sancevero2005}.
+The results are obtained in terms of average solutions, thus generating
+blurry images. On the other hand, stochastic inversion uses random variation
+of parameters to reach results with vertical resolution that is
+superior to the conventional data. However, when working with multiple
+realizations, selecting the model that best characterizes the
+reservoir is difficult, since all of them are equally probable.
+Uniqueness problems are an issue mainly addressed by calculating
+the mean of different realizations. It has been proved
+that the mean solution is closer to a bandwidth limited solution,
+in such a way that the high frequencies features are lost
+\cite{Cook2010}. Geostatistical methods perform similar
+to the stochastic ones, except by the addition of variogram models
+to ensure that the models fit expected spatial patterns.
 
 The seismic vertical resolution is the minimal thickness that
 can be resolved by seismic. The most accepted value is a quarter
@@ -123,26 +138,11 @@ Even though the inversion
 process can add low frequencies to the acoustic impedance
 spectrum through a constraint model, results from a typical
 post-stack or pre-stack seismic inversion are band-limited
-primarily due to missing very low and high frequencies in the
+primarily due to missing the lowest and highest frequencies in the
 wavelet. Consequently, thin beds are generally poorly resolved
-\cite{Zhang2012}. The limited vertical resolution in the
-conventional seismic data is due to the limited frequency of
-the data in both low frequencies and high frequencies.
+\cite{Zhang2012}. 
 
-In deterministic inversion approaches, the vertical resolution
-remains constrained by the seismic bandwidth \cite{Sancevero2005}.
-Deterministic inversion is mainly useful for deriving general
-trends and highlighting large features in an exploratory stage.
-On the other hand, stochastic inversion uses random variation
-of parameters to reach results with vertical resolution that is
-superior to the conventional data. When working with multiple
-realizations, selecting the model that best characterizes the
-reservoir is difficult, since all of them are equally probable.
-Uniqueness problems are an issue mainly addressed by calculating
-the mean of different realizations. However, it has been proved
-that the mean solution is closer to a bandwidth limited solution,
-in such a way that the high frequencies features are lost
-\cite{Cook2010}. An approach to deal with the high frequency
+An approach to deal with the high frequency
 impedance information out of the frequency bandwidth of seismic signal
 is assuming a blocked model for the earth's impedance \cite{Cook2010}.
 This assumption is not always valid, and in some cases the high
@@ -151,13 +151,12 @@ frequencies in the inverted impedance are ignored \cite{YuanWang2015}.
 consequence, achieving an improvement in seismic inversion and
 reservoir characterization, while \cite{ChenWang2018} latest use wavelet
 frequency-dependent scaling to extends the amplitude spectrum of
-high and low-frequency axes in time domain. 
-%However, the earth
-%attenuation, high-frequency noise and other sources cause the lack of high and
-%low frequencies in seismic data.
+high and low-frequency axes in time domain. Instead, we first
+proceed a deterministic inversion through \textit{Maximum-a-Posteriori} (MAP),
+after, apply a supervised machine learning approach as a post-inversion
+processing to recover the high frequency components not captured by the inversion
+method.
 
-% giving the result of the inversion process a blurry aspect that
-% makes unfeasible visualizing thin beds
 In this letter, we propose a new multichannel and multilayer
 Convolutional Neural Network (CNN) model to perform deblurring
 in post-inversion acoustic impedance. Each network's layer maps
@@ -167,7 +166,7 @@ mapping, the kernels (also named weights) are adjusted by
 minimizing a loss function. The model enhances the resolution
 of acoustic impedance images trace by trace, resulting in sharper
 images with increased high-frequency bandwidth and lower noise.
-In order to train the model, we perform \textit{Maximum-a-Posteriori} (MAP)
+In order to train the model, we perform MAP
 inversion that commonly generates a band-limited acoustic impedance model.
 Then, the pairs of blurry and latent images are normalized and 
 presented to the network as input and target, respectively.
@@ -204,7 +203,6 @@ Section \ref{Experiments} reports the experiments and
 results, and Section \ref{Conclusion} concludes our work.
 
 \section{Theoretical Foundations and Related Works}\label{Theoretics}
-
 Deblurring is generally modeled as the convolution of a blur kernel $k$
 with a latent image $I$: 
 \begin{equation}
@@ -218,10 +216,6 @@ given only the blurry image $y$, without any knowledge regarding the
 kernel $k$ and the noise $n$ \cite{Zhang2013}. In contrary, if $k$
 is assumed to be known, the approach is called non-blind deconvolution
 \cite{Wang2009}.
-%Several works have developed different deblurring methods
-%for specific purposes. For the last six years, considerable effort has
-%been made in single image \cite{Babacan2012,Krishnan2015,Levin2011,Zhang2011}
-%and multi-image \cite{sroubek2012,Zhu2012} blind deconvolutions.
 Applying blind deconvolution generally implies in making assumptions
 on blur kernels and/or on latent images. For example, assuming sparsity
 of blur kernel or that natural images have super-Gaussian statistics.
@@ -232,12 +226,7 @@ on this prior tend to favor blurry images over original latent images.
 
 The Bayesian inference approach \cite{Levin} outperforms the MAP based
 methods. It marginalizes the image from the optimization step, while
-estimating the unknown blur. 
-%The authors show that it is possible to
-%define a class of prior images based on natural image statistics,
-%suitable enough to represent sharp images features. This prior
-%formulation makes possible to use Bayesian inference in the
-%estimation of the unknown image and the blur kernel.
+estimating the unknown blur.
 According to \cite{Hacohen13}, defining a gradient prior, by itself,
 is not sufficient to reach a sharp image, instead, they search in a data
 set for a prior that densely correspond to the blurry image similar
@@ -245,7 +234,6 @@ to a sharp image. Even though \cite{Pan2014} suggest a generalization
 for the method proposed by \cite{Hacohen13}, it still requires a similar
 reference image, which is not always available.
 
-%It has been demonstrated that 
 The methods described previously fail when applied to real world
 blurry images \cite{Lai2016} and take a severe computational cost
 \cite{Chakrabarti2016}. In contrast, the learning-based methods
@@ -281,7 +269,6 @@ correspondent seismic traces.
 \section{Data and Methods}\label{Method}
 
 \subsection{Proposed Architecture}
-
 We propose a four-layer multichannel CNN architecture for deblurring
 post-inversion acoustic impedance images and recovering high
 frequency of thin layers. The model takes in each input channel the
@@ -303,7 +290,7 @@ added in the end (Fig. \ref{fig_model}).
 
 The first convolutional layer deblurs the lower features in
 the input traces. Following, higher features are individually
-deblurred through a locally-connected layer \cite{},
+deblurred through a locally-connected layer, %\cite{},
 which performs a one-dimensional convolution
 with unshared weights. Thus, instead of performing standard
 convolution, the weights of the learned kernel matrices are not
@@ -405,7 +392,7 @@ one is introduced only once to the network, this way avoiding
 over-fitting. We also deal with this issue by calculating
 the loss for the test images, and control the training,
 thus we early stop the training as soon as the test loss
-stops decreasing (Fig. \ref{}).
+stops decreasing (Fig. \ref{ImLoss}).
 Other techniques to avoid over-fitting, such as
 drotout, compromised the reconstruction of the entire image.
 The network weights
@@ -415,6 +402,13 @@ impedance and seismic profile as input, and ground truth traces as targets.
 To avoid neuron saturation and still keep the non-linearity predictability
 of the CNN, we will normalize the acoustic impedance to values between 0 and 1,
 and the results are presented in terms of this normalization.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.0in]{Figs/LossAcc}
+\DeclareGraphicsExtensions.
+\caption{Training and testing losses of CNN.}
+\label{ImLoss}
+\end{figure}
 
 \subsection{Deblurring Post-Inversion Acoustic Impedance}
 By applying the trained model to a set of inverted traces,
@@ -427,7 +421,8 @@ two channels, as illustrated in Fig. \ref{ImSec26}.
 \centering
 \includegraphics[width=3.5in]{Figs/ImSec26}
 \DeclareGraphicsExtensions.
-\caption{Examples.}
+\caption{Visual close-ups of CNN deblur results on test set. Thin bodies and
+layer intersections are highlighted.}
 \label{ImSec26}
 \end{figure}
 
@@ -448,7 +443,8 @@ occurs in smaller depositional features, as channels.
 \centering
 \includegraphics[width=3.5in]{Figs/ImSec36}
 \DeclareGraphicsExtensions.
-\caption{Examples.}
+\caption{Visual close-ups of CNN deblur results on test set. Deformed bodies
+are precisely recovered and vertical resolution is improved.}
 \label{ImSec36}
 \end{figure}
 
@@ -475,31 +471,31 @@ and correctly rebuilt them in the test images.
 \DeclareGraphicsExtensions.
 \caption{Frequency spectrum comparison between the ground truth image,
 the MAP inversion image and the deblurred image. Additionally, the recovery percentage
-for each frequency magnitude.}
+for each frequency magnitude is introduced.}
 \label{frequencies}
 \end{figure}
 
-In addition, we calculated the Signal-to-Noise Ratio (SNR) of each
-test section. Tab. \ref{table_results} list the values of SNR for the
-ground truth image, for the result of the inversion method, and
-for the image deblurred by the classical method using wiener
-filters and by our proposal. The proposed method holds clearly
+In addition, we calculated the Peak Signal-to-Noise Ratio (PSNR) of each
+test section. Tab. \ref{table_results} list the values of PSNR for the
+ground truth image, for the inversion result, and
+for the image deblurred with the classical method using wiener
+filters, and for our proposal. The proposed method holds clearly
 higher performance than the classical method, since it generates
-image with higher SNR. This result endorses that the high frequency
+image with higher PSNR. This result endorses that the high frequency
 components recovered by the CNN is related to signal, rather than noise.
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
 \caption{Results evaluated on updated Standford VI reservoir, examples
-introduced in Fig. \ref{ImSec26} and Fig. \ref{ImSec36}. Signal-to-Ratio (dB) is listed.}
+introduced in Fig. \ref{ImSec26} and Fig. \ref{ImSec36}. PSNR (dB) is listed.}
 \label{table_results}
 \centering
-\begin{tabular}{|c||c||c|}
+\begin{tabular}{|c||c||c||c|}
 \hline
- \textbf{Image Section} & \textbf{\textit{Inversion (dB)}} & \textbf{\textit{Wiener Filter (dB)}} & \textbf{\textit{Our (dB)}}\\
+ \textbf{Image Section} & \textbf{\textit{Inversion (dB)}} & \textbf{\textit{Wiener Filter (dB)}} & \textbf{\textit{Our (dB)}} \\
 \hline
-Inline Section& $19.8206$ & $0.1$ & $28.3618$ \\
+Inline Section & $19.8206$ & $27.5145$ & $28.5245$ \\
 \hline
-Crossline Section& $0.1$ & $0.1$ & $0.1$ \\
+Crossline Section & $0.1$ & $0.1$ & $0.1$ \\
 \hline
 \end{tabular}
 \end{table}

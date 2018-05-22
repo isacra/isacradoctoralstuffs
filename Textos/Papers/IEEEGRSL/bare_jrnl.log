@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.13)  20 MAY 2018 19:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.4.27)  22 MAY 2018 16:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -485,38 +485,7 @@ Package caption Info: Unknown document class (or package),
 \sf@top=\skip47
 \sf@bottom=\skip48
 )
-(./bare_jrnl.aux
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.63 <
-      <<<<<< HEAD
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Label `Theoretics' multiply defined.
-
-
-LaTeX Warning: Label `Method' multiply defined.
-
-
-LaTeX Warning: Label `Experiments' multiply defined.
-
-
-LaTeX Warning: Label `Conclusion' multiply defined.
-
-
-LaTeX Warning: Label `Lee2012' multiply defined.
-
-
-LaTeX Warning: Label `Castro2005' multiply defined.
-
-)
+(./bare_jrnl.aux)
 \openout1 = `bare_jrnl.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -604,15 +573,7 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 58.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 58.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
 Underfull \hbox (badness 4229) in paragraph at lines 58--58
 [][][]\OT1/ptm/m/n/8 I. Sacra-mento and M. Roisen-berg are with the De-par-ta-m
 ent of
@@ -630,103 +591,97 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--88
 acous-tic
  []
 
-[2
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 134.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 134.
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
 
 ]
-<Figs/model.png, id=14, 1444.39626pt x 564.1075pt>
+<Figs/model.png, id=11, 1444.39626pt x 564.1075pt>
 File: Figs/model.png Graphic file (type png)
 <use Figs/model.png>
-Package pdftex.def Info: Figs/model.png  used on input line 316. on input line 
-316.
+Package pdftex.def Info: Figs/model.png  used on input line 285. on input line 
+285.
 Package pdftex.def Info: Requested size: 245.71754pt x 95.95724pt on input line
- 316.
- [3]
+ 285.
+ [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 347.
+(Font)              <8> on input line 316.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 347.
+(Font)              <6> on input line 316.
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--347
+Underfull \hbox (badness 10000) in paragraph at lines 316--316
 [][][]\OT1/ptm/m/n/8 Available at https://github.com/SCRFpublic/Stanford-VI-
  []
 
-<Figs/Images.png, id=22, 1011.78pt x 252.945pt>
+
+LaTeX Warning: Reference `fig_examples' on page 3 undefined on input line 327.
+
+<Figs/Images.png, id=19, 1011.78pt x 252.945pt>
 File: Figs/Images.png Graphic file (type png)
 <use Figs/Images.png>
-Package pdftex.def Info: Figs/Images.png  used on input line 385. on input line
- 385.
+Package pdftex.def Info: Figs/Images.png  used on input line 354. on input line
+ 354.
 Package pdftex.def Info: Requested size: 252.94499pt x 63.23608pt on input line
- 385.
+ 354.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 385--387
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 354--356
  [][] 
  []
 
-[4 <./Figs/model.png> <./Figs/Images.png>]
-<Figs/ImSec26.png, id=28, 1098.35344pt x 337.26pt>
+<Figs/LossAcc.png, id=20, 384.43625pt x 334.24875pt>
+File: Figs/LossAcc.png Graphic file (type png)
+<use Figs/LossAcc.png>
+Package pdftex.def Info: Figs/LossAcc.png  used on input line 407. on input lin
+e 407.
+Package pdftex.def Info: Requested size: 144.54pt x 125.67448pt on input line 4
+07.
+<Figs/ImSec26.png, id=21, 1098.35344pt x 337.26pt>
 File: Figs/ImSec26.png Graphic file (type png)
 <use Figs/ImSec26.png>
-Package pdftex.def Info: Figs/ImSec26.png  used on input line 446. on input lin
-e 446.
+Package pdftex.def Info: Figs/ImSec26.png  used on input line 422. on input lin
+e 422.
 Package pdftex.def Info: Requested size: 252.94499pt x 77.66594pt on input line
- 446.
+ 422.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 446--448
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 422--425
  [][] 
  []
 
-<Figs/ImSec36.png, id=29, 1044.15094pt x 339.51843pt>
+[3 <./Figs/model.png> <./Figs/Images.png>]
+<Figs/ImSec36.png, id=27, 1044.15094pt x 339.51843pt>
 File: Figs/ImSec36.png Graphic file (type png)
 <use Figs/ImSec36.png>
-Package pdftex.def Info: Figs/ImSec36.png  used on input line 467. on input lin
-e 467.
+Package pdftex.def Info: Figs/ImSec36.png  used on input line 444. on input lin
+e 444.
 Package pdftex.def Info: Requested size: 252.94499pt x 82.24763pt on input line
- 467.
+ 444.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 467--469
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 444--447
  [][] 
  []
 
-<Figs/frequencies.png, id=30, 1083.04625pt x 404.51125pt>
+<Figs/frequencies.png, id=28, 1083.04625pt x 404.51125pt>
 File: Figs/frequencies.png Graphic file (type png)
 <use Figs/frequencies.png>
-Package pdftex.def Info: Figs/frequencies.png  used on input line 492. on input
- line 492.
+Package pdftex.def Info: Figs/frequencies.png  used on input line 470. on input
+ line 470.
 Package pdftex.def Info: Requested size: 252.94499pt x 94.47377pt on input line
- 492.
+ 470.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 492--496
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 470--474
  [][] 
  []
 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.516 ... & \textbf{\textit{Wiener Filter (dB)}} &
-                                                   \textbf{\textit{Our (dB)}}\\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.518 Inline Section& $19.8206$ & $0.1$ &
-                                          $28.3618$ \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
+Overfull \hbox (1.52574pt too wide) in paragraph at lines 492--501
+ [][] 
+ []
 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.520 Crossline Section& $0.1$ & $0.1$ &
-                                         $0.1$ \\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-[5 <./Figs/ImSec26.png> <./Figs/ImSec36.png> <./Figs/frequencies.png>]
+[4 <./Figs/LossAcc.png> <./Figs/ImSec26.png> <./Figs/ImSec36.png> <./Figs/frequ
+encies.png>]
 
 ! Package inputenc Error: Unicode char ̌ (U+30C)
 (inputenc)                not set up for use with LaTeX.
@@ -735,7 +690,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.602 M. Hradiš
+l.580 M. Hradiš
                  , J. Kotera, P. Zemcı́k, and F. Šroubek, ``Convolutiona...
 
 Your command was ignored.
@@ -750,7 +705,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.602 M. Hradiš, J. Kotera, P. Zemcı́
+l.580 M. Hradiš, J. Kotera, P. Zemcı́
                                          k, and F. Šroubek, ``Convolutiona...
 
 Your command was ignored.
@@ -765,26 +720,26 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.602 ...iš, J. Kotera, P. Zemcı́k, and F. Š
+l.580 ...iš, J. Kotera, P. Zemcı́k, and F. Š
                                                   roubek, ``Convolutional ne...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[6] (./bare_jrnl.aux)
+[5] (./bare_jrnl.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3391 strings out of 494931
- 54220 string characters out of 6180851
- 118284 words of memory out of 5000000
- 6661 multiletter control sequences out of 15000+600000
- 44643 words of font info for 79 fonts, out of 8000000 for 9000
+ 3390 strings out of 494931
+ 54242 string characters out of 6180851
+ 118142 words of memory out of 5000000
+ 6658 multiletter control sequences out of 15000+600000
+ 45750 words of font info for 80 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 41i,9n,38p,311b,242s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,9n,38p,311b,226s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
@@ -795,10 +750,10 @@ onts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (6 pages, 575076 bytes).
+Output written on bare_jrnl.pdf (5 pages, 591122 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
